@@ -687,7 +687,63 @@
       "id": 4,
       "text": "Indywidualna wolność jest pierwszorzędną wartością polityczną, nadrzędną wobec innych dóbr społecznych",
       "description": "Teza ta zakłada, że prawo każdego człowieka do samodzielnego decydowania o własnym losie, sposobie życia i wyznawanych wartościach powinno być chronione w pierwszej kolejności. W tym ujęciu interesy społeczeństwa jako całości, tradycja, stabilność państwowa czy bezpieczeństwo zbiorowe nie stanowią wystarczającego powodu, by ograniczać swobodę osoby, która swoim działaniem nie narusza bezpośrednio praw innych ludzi. Każdy dorosły człowiek jest uznawany za najlepiej wiedzącego, co służy jego dobru, dlatego instytucje publiczne powinny powstrzymywać się od ingerowania w sferę prywatną, dopóki nie dochodzi do wyrządzenia wymiernej krzywdy osobom trzecim. Odpowiedzialność za skutki własnych wyborów spoczywa na osobie podejmującej decyzję, a nie na wspólnocie",
-      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Wolność należy rozumieć jako brak przymusu ze strony zewnętrznych podmiotów, które uniemożliwiają jednostce podejmowanie decyzji i działanie zgodnie z własną wolą",
+      "description": "XXXXXX",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -743,4 +799,3 @@
     }
   ]
 }
-
