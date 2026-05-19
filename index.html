@@ -1,19 +1,41 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Polityczny Test Ideologiczny</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test polityczny – zgodność ideologiczna</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>📊 Polityczny test ideologiczny</h1>
-  <p>Odpowiedz na pytania, a system obliczy zgodność Twoich poglądów z wartościami, ideologiami i partiami.</p>
-  <div id="questionsContainer"></div>
-  <button id="submitBtn">📈 Pokaż wyniki</button>
-  <div id="results"></div>
+    <main id="app">
+        <!-- Ekran powitalny -->
+        <div id="welcome-screen" class="screen active">
+            <div class="clause">
+                <p>⚠️ Niektóre tezy w tym teście mogą mieć ukryte presupozycje – zakładać istnienie państwa, własność prywatną, walkę klasową lub inny punkt wyjścia, z którym możesz się nie zgadzać. Inne mogą po prostu nie mieć sensu z perspektywy twojego światopoglądu. W takim przypadku użyj przycisku „Pomiń” – pominięcie pytania jest w pełni akceptowalne i nie wpłynie negatywnie na wynik. Wręcz przeciwnie: precyzyjniejszy wynik osiągniesz właśnie wtedy, gdy odpowiadasz wyłącznie na tezy, które cię dotyczą. Przy niektórych tezach pojawi się komunikat z podpowiedzią, kiedy warto pominąć, ale traktuj go jako sugestię, nie nakaz. Możesz pominąć dowolną tezę w dowolnym momencie.</p>
+                <button id="start-btn">Rozumiem, rozpocznij</button>
+            </div>
+        </div>
 
-  <script src="data.js"></script>
-  <script src="script.js"></script>
+        <!-- Ekran wyboru trybu -->
+        <div id="mode-screen" class="screen">
+            <h2>Rozwiązując ten test możesz odpowiedzieć na dwa sposoby:</h2>
+            <button class="mode-btn" data-mode="ideowo">Ideowo – idealny porządek społeczny</button>
+            <button class="mode-btn" data-mode="politycznie">Politycznie – realia tutaj i teraz</button>
+            <button class="mode-btn" data-mode="skip">Pomiń to pytanie</button>
+        </div>
+
+        <!-- Ekran pytań -->
+        <div id="questions-screen" class="screen">
+            <div id="questions-container"></div>
+            <button id="submit-btn">Pokaż wynik</button>
+        </div>
+
+        <!-- Ekran wyników -->
+        <div id="results-screen" class="screen">
+            <div id="results-content"></div>
+            <button id="restart-btn">Wykonaj test ponownie</button>
+        </div>
+    </main>
+    <script src="script.js"></script>
 </body>
 </html>
