@@ -513,13 +513,13 @@
   "questions": [
     {
       "id": 1,
-      "text": "Społeczeństwo nie posiada interesów ani woli niezależnych od interesów tworzących je indywidualnych jednostek",
+      "text": "HWDPHWDPHWDPHWDP",
       "description": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Indywidualizm"],
+          "values_for": ["Autonomia", "Anarchia", "Decentralizacja", "Ograniczenie władzy"],
           "values_against": ["Kolektywizm"],
           "ideologies_for": ["Anarchokapitalizm"],
           "ideologies_against": ["Marksizm"],
@@ -577,7 +577,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "values_for": ["Autonomia", "Anarchia", "Decentralizacja", "Ograniczenie władzy"],
           "values_against": ["Indywidualizm", "Autonomia"],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -634,7 +634,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Indywidualizm", "Autonomia"],
+          "values_for": ["Autonomia", "Anarchia", "Decentralizacja", "Ograniczenie władzy"],
           "values_against": ["Kolektywizm", "Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
