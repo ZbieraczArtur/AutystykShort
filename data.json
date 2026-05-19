@@ -1084,7 +1084,7 @@
     },
         {
       "id": 11,
-      "text": "XXXXXXXXXX",
+      "text": "Nie można zmuszać jednostki do określonych działań dla jej własnego dobra, nawet jeśli byłoby to dla niej korzystne",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1141,8 +1141,8 @@
       ]
     },
         {
-      "id": 12,
-      "text": "XXXXXXXXXX",
+      "id": 12
+      "text": "Władza publiczna powinna ograniczać działania jednostek, które naruszają ich własną godność, nawet jeśli są one dobrowolne,",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1200,7 +1200,7 @@
     },
         {
       "id": 13,
-      "text": "XXXXXXXXXX",
+      "text": "Władza publiczna ma obowiązek aktywnie kształtować zachowania obywateli w celu realizacji dobra wspólnego",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1316,7 +1316,7 @@
     },
         {
       "id": 15,
-      "text": "XXXXXXXXXX",
+      "text": "Istnieją sytuacje, w których państwo może ograniczyć wolność jednostki, nawet jeśli nie stanowi ona bezpośredniego zagrożenia dla innych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1374,7 +1374,7 @@
     },
         {
       "id": 16,
-      "text": "XXXXXXXXXX",
+      "text": "Przekonania i styl życia jednostki powinny być tolerowane przez innych, o ile nie powodują bezpośredniej szkody innym",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1432,7 +1432,7 @@
     },
         {
       "id": 17,
-      "text": "XXXXXXXXXX",
+      "text": "Tolerancja jest warunkiem rozwoju społecznego i współistnienia w społeczeństwie",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1490,7 +1490,7 @@
     },
         {
       "id": 18,
-      "text": "XXXXXXXXXX",
+      "text": "Istnieją pewne przyrodzone prawa przysługujące jednostce niezależnie od decyzji jakiejkolwiek władzy",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1548,7 +1548,7 @@
     },
         {
       "id": 19,
-      "text": "XXXXXXXXXX",
+      "text": "Moralność nie jest kwestią osobistego wyboru, ale wynika z ustalonych wartości i norm społecznych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1606,7 +1606,7 @@
     },
         {
       "id": 20,
-      "text": "XXXXXXXXXX",
+      "text": "Normy moralne mogą być uzasadniane przez tradycję religijną",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1664,7 +1664,7 @@
     },
         {
       "id": 21,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo jest jedynym źródłem wartości moralnych i duchowych w społeczeństwie",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1722,7 +1722,7 @@
     },
         {
       "id": 22,
-      "text": "XXXXXXXXXX",
+      "text": "Różnice dochodowe i majątkowe nie są same w sobie niesprawiedliwe ani niemoralne, dopóki wynikają z dobrowolnych transakcji rynkowych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1780,7 +1780,7 @@
     },
         {
       "id": 23,
-      "text": "XXXXXXXXXX",
+      "text": "Jednostka jest celem samym w sobie, a nie środkiem do realizacji celu, czy dobra wspólnego",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1838,7 +1838,7 @@
     },
         {
       "id": 24,
-      "text": "XXXXXXXXXX",
+      "text": "Dążenie do zysku ekonomicznego jest akceptowalną i wartościową motywacją człowieka)",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1896,7 +1896,7 @@
     },
         {
       "id": 25,
-      "text": "XXXXXXXXXX",
+      "text": "Tożsamość jednostki jest definiowana przede wszystkim przez jej wewnętrzne cechy, a nie przynależność do grup (np klasowej, rasowej, etnicznej, religijnej, seksualnej, czy rodzinnej)",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -1954,7 +1954,7 @@
     },
         {
       "id": 26,
-      "text": "XXXXXXXXXX",
+      "text": "Jednostka powinna przedkładać wymagania uznanego autorytetu i instytucji, do których należy (np kościół, rodzina czy korporacja zawodowa), nad własne indywidualne preferencje",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -2012,7 +2012,7 @@
     },
         {
       "id": 27,
-      "text": "XXXXXXXXXX",
+      "text": "Ochrona praw jednostki może być ograniczana w imię interesu zbiorowego",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -2070,7 +2070,7 @@
     },
         {
       "id": 28,
-      "text": "XXXXXXXXXX",
+      "text": "Tradycje społeczne i kulturowe są ważniejsze niż potrzeby i interesy pojedynczych jednostek",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -2128,7 +2128,7 @@
     },
         {
       "id": 29,
-      "text": "XXXXXXXXXX",
+      "text": "Bezpieczeństwo zbiorowe i stabilność społeczna powinny mieć pierwszeństwo przed wolnością jednostki",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -2186,7 +2186,7 @@
     },
         {
       "id": 30,
-      "text": "XXXXXXXXXX",
+      "text": "Grupy społeczne, takie jak klasy, narody czy inne zbiorowości, powinny mieć pierwszeństwo przed indywidualnymi preferencjami obywateli w procesie politycznym",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -2244,7 +2244,7 @@
     },
         {
       "id": 31,
-      "text": "XXXXXXXXXX",
+      "text": "Przetrwanie grupy jest ważniejsze niż życie pojedynczej jednostki",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
