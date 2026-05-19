@@ -162,11 +162,34 @@
   ],
 
   "ideologies": [
-    { "name": "Liberalizm klasyczny", "description": "Wolność jednostki, własność prywatna, wolny rynek, ograniczone państwo." },
-    { "name": "Socjalliberalizm", "description": "Łączy wolność z państwem opiekuńczym, równość szans, regulacje rynku." },
-    { "name": "Konserwatyzm liberalny", "description": "Wolność gospodarcza, tradycyjne wartości, umiarkowane państwo." },
-    { "name": "Socjalizm demokratyczny", "description": "Własność społeczna, demokracja gospodarcza, redystrybucja." },
-    { "name": "Anarchokomunizm", "description": "Zniesienie państwa i kapitalizmu, wspólnoty oparte na dobrowolności." }
+{
+    "name": "Absolutyzm klasyczny",
+    "description": "Absolutna, niepodzielna władza monarchy z mandatu Bożego, scentralizowane państwo, merkantylizm, hierarchia i posłuszeństwo."
+  },
+  {
+    "name": "Absolutyzm oświecony",
+    "description": "Silna centralna władza monarchy jako „pierwszego sługi państwa”, racjonalne reformy, modernizacja i oświeceniowe planowanie."
+  },
+  {
+    "name": "Fundamentalizm religijny",
+    "description": "Teokratyczny ustrój oparty na prawie objawionym, dominacja religii w życiu publicznym, odrzucenie sekularyzacji."
+  },
+  {
+    "name": "Tradycjonalizm integralny",
+    "description": "Hierarchiczny, organiczny ład społeczny oparty na transcendentnych zasadach i tradycji ponadludzkiej."
+  },
+  {
+    "name": "Konserwatyzm autorytarny",
+    "description": "Silne, scentralizowane państwo chroniące tradycyjne wartości, hierarchię i porządek społeczny."
+  },
+  {
+    "name": "Braunizm",
+    "description": "Monarchia katolicka z intronizacją Chrystusa, silne państwo minimum, tradycja, wiara i własność prywatna."
+  },
+  {
+    "name": "Korwinizm",
+    "description": "Ograniczony do minimum państwo „nocnego stróża”, radykalny wolny rynek, prywatyzacja i tradycyjne wartości."
+  }
   ],
 
   "parties": [
