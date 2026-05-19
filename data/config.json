@@ -185,17 +185,17 @@
     {
       "id": 1,
       "text": "Instytucja własności prywatnej powinna zostać zniesiona.",
-      "description": "Mega sraka panolaka.",
+      "description": "XDDDDDDD.",
       "comment": "Socjaliści uznają to za kluczowy postulat. Liberałowie będą przeciwni.",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "weight": 1.5,
           "supportValues": ["własność kolektywna"],
-          "opposeValues": [],
+          "opposeValues": ["własność prywatna"],
           "supportIdeologies": ["socjalizm demokratyczny", "anarchokomunizm"],
-          "opposeIdeologies": [],
-          "supportParties": ["Lewica", "Razem"],
+          "opposeIdeologies": ["PiS"],
+          "supportParties": ["Lewica", "KO"],
           "opposeParties": []
         },
         {
