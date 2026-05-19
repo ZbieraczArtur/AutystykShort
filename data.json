@@ -1,0 +1,182 @@
+{
+  "pairsOfValues": [
+    { "left": "Autonomia", "right": "Heteronomia", "leftDef": "Autonomia – zdolność jednostki do samostanowienia, działania według własnych reguł.", "rightDef": "Heteronomia – podporządkowanie się zewnętrznym normom i autorytetom." },
+    { "left": "Kolektywizm", "right": "Indywidualizm", "leftDef": "Kolektywizm – prymat grupy, wspólnoty lub społeczeństwa nad jednostką.", "rightDef": "Indywidualizm – prymat jednostki, jej praw i wolności." },
+    { "left": "Anty-hierarchiczność", "right": "Hierarchiczność", "leftDef": "Anty-hierarchiczność – sprzeciw wobec struktur władzy i stopniowania ważności.", "rightDef": "Hierarchiczność – akceptacja naturalnych lub koniecznych struktur władzy." },
+    { "left": "Anarchia", "right": "Etatyzm", "leftDef": "Anarchia – brak przymusowej władzy państwowej, samoorganizacja.", "rightDef": "Etatyzm – silne państwo kontrolujące większość aspektów życia." },
+    { "left": "Decentralizacja", "right": "Centralizacja", "leftDef": "Decentralizacja – rozproszenie władzy i decyzji na niższe szczeble.", "rightDef": "Centralizacja – koncentracja decyzji w centralnych organach." },
+    { "left": "Ograniczenie władzy", "right": "Absolutyzm władzy", "leftDef": "Ograniczenie władzy – kontrola, podział i hamulce wobec rządzących.", "rightDef": "Absolutyzm władzy – nieograniczona, suwerenna władza." },
+    { "left": "Desakralizacja autorytetu", "right": "Sakralizacja autorytetu", "leftDef": "Desakralizacja autorytetu – kwestionowanie i odczarowanie tradycyjnych autorytetów.", "rightDef": "Sakralizacja autorytetu – otaczanie władzy i tradycji czcią." },
+    { "left": "Demokracja", "right": "Anty-demokracja", "leftDef": "Demokracja – rządy ludu, decyzje większości, wolność polityczna.", "rightDef": "Anty-demokracja – odrzucenie rządów większości, preferowanie elity lub dyktatury." },
+    { "left": "Autokracja", "right": "Anty-autokracja", "leftDef": "Autokracja – rządy jednej osoby lub wąskiej grupy bez realnej kontroli.", "rightDef": "Anty-autokracja – sprzeciw wobec skoncentrowanej władzy." },
+    { "left": "Własność kolektywna", "right": "Własność prywatna", "leftDef": "Własność kolektywna – środki produkcji należą do społeczeństwa lub wspólnot.", "rightDef": "Własność prywatna – prawo jednostki do posiadania i dysponowania majątkiem." },
+    { "left": "Planowanie", "right": "Rynek", "leftDef": "Planowanie – centralne lub demokratyczne planowanie gospodarki.", "rightDef": "Rynek – spontaniczny porządek wymiany, ceny jako sygnały." },
+    { "left": "Regulacja instytucjonalna", "right": "Samoregulacja", "leftDef": "Regulacja instytucjonalna – zewnętrzne reguły narzucane przez państwo lub organizacje.", "rightDef": "Samoregulacja – zdolność rynku lub społeczności do samodzielnego porządkowania się." },
+    { "left": "Ograniczanie wymiany (protekcjonizm)", "right": "Swobodna wymiana", "leftDef": "Protekcjonizm – cła, bariery, ochrona rodzimej gospodarki.", "rightDef": "Swobodna wymiana – wolny handel bez barier." },
+    { "left": "Minimalizacja granic", "right": "Kontrola granic", "leftDef": "Minimalizacja granic – otwartość, znoszenie kontroli przepływu ludzi.", "rightDef": "Kontrola granic – ścisła regulacja migracji, suwerenność terytorialna." },
+    { "left": "Kosmopolityzm", "right": "Partykularyzm narodowy", "leftDef": "Kosmopolityzm – obywatel świata, wartości uniwersalne.", "rightDef": "Partykularyzm – prymat interesów własnego narodu, odrębność kulturowa." },
+    { "left": "Interwencjonizm zagraniczny", "right": "Izolacjonizm", "leftDef": "Interwencjonizm – aktywne angażowanie się w sprawy innych państw.", "rightDef": "Izolacjonizm – unikanie konfliktów i sojuszy, skupienie na sobie." },
+    { "left": "Preferencja użycia siły", "right": "Unikanie przemocy", "leftDef": "Preferencja użycia siły – wojsko, policja, siłowe rozwiązywanie konfliktów.", "rightDef": "Unikanie przemocy – pacyfizm, dialog, opór bez przemocy." },
+    { "left": "Rewolucja", "right": "Gradualizm", "leftDef": "Rewolucja – gwałtowna, radykalna zmiana systemu.", "rightDef": "Gradualizm – stopniowe reformy, ewolucja instytucji." },
+    { "left": "Progresywizm", "right": "Konserwatyzm", "leftDef": "Progresywizm – zmiana, postęp, odrzucenie tradycji jako przestarzałej.", "rightDef": "Konserwatyzm – zachowanie tradycji, stabilność, ostrożność wobec zmian." },
+    { "left": "Pluralizm kulturowy", "right": "Homogenizacja", "leftDef": "Pluralizm – akceptacja i ochrona różnorodności kulturowej.", "rightDef": "Homogenizacja – dążenie do jednolitej kultury narodowej." },
+    { "left": "Neutralność religijna", "right": "Instytucjonalna religia", "leftDef": "Neutralność – świeckie państwo, rozdział kościoła od państwa.", "rightDef": "Religia instytucjonalna – państwo wspiera lub utożsamia się z religią." },
+    { "left": "Włączanie", "right": "Wykluczenie", "leftDef": "Włączanie – integracja mniejszości, polityka otwartości.", "rightDef": "Wykluczenie – izolacja lub marginalizacja grup niepożądanych." },
+    { "left": "Egalitaryzm biologiczny", "right": "Suprematyzm biologiczny", "leftDef": "Egalitaryzm biologiczny – brak naturalnych hierarchii między ludźmi.", "rightDef": "Suprematyzm – przekonanie o biologicznej wyższości niektórych grup." },
+    { "left": "Wolność ekspresji", "right": "Cenzura", "leftDef": "Wolność ekspresji – swoboda wypowiedzi, brak kontroli treści.", "rightDef": "Cenzura – kontrolowanie i ograniczanie treści przez władzę." },
+    { "left": "Antropocentryzm", "right": "Ekocentryzm", "leftDef": "Antropocentryzm – człowiek w centrum, przyroda jako zasób.", "rightDef": "Ekocentryzm – przyroda ma wartość samoistną, ochrona ekosystemów." },
+    { "left": "Postęp technologiczny", "right": "Prymitywizm", "leftDef": "Postęp technologiczny – technika rozwiązuje problemy, rozwój nieograniczony.", "rightDef": "Prymitywizm – powrót do prostoty, odrzucenie zaawansowanej technologii." }
+  ],
+
+  "hiddenValues": [
+    "Prymat kolektywu",
+    "Prymat jednostki",
+    "Permisywność wobec odstępstwa",
+    "Uniformizacja norm",
+    "Absolutyzm władzy",
+    "Ograniczenie władzy",
+    "Sakralizacja władzy",
+    "Desakralizacja władzy"
+  ],
+
+  "ideologies": [
+    { "name": "Liberalizm klasyczny", "description": "Wolność jednostki, własność prywatna, wolny rynek, ograniczone państwo." },
+    { "name": "Socjalliberalizm", "description": "Łączy wolność z państwem opiekuńczym, równość szans, regulacje rynku." },
+    { "name": "Konserwatyzm liberalny", "description": "Wolność gospodarcza, tradycyjne wartości, umiarkowane państwo." },
+    { "name": "Socjalizm demokratyczny", "description": "Własność społeczna, demokracja gospodarcza, redystrybucja." },
+    { "name": "Anarchokomunizm", "description": "Zniesienie państwa i kapitalizmu, wspólnoty oparte na dobrowolności." }
+  ],
+
+  "parties": [
+    { "name": "PiS", "description": "Prawo i Sprawiedliwość – konserwatyzm, solidaryzm, silne państwo." },
+    { "name": "KO", "description": "Koalicja Obywatelska – liberalno-konserwatywna, proeuropejska." },
+    { "name": "PSL", "description": "Polskie Stronnictwo Ludowe – agraryzm, chadecja, umiarkowanie." },
+    { "name": "Lewica", "description": "Nowa Lewica – socjaldemokracja, równość, świeckość." },
+    { "name": "Polska2050", "description": "Centrum, ekologia, demokracja deliberatywna." },
+    { "name": "Razem", "description": "Lewica radykalna, socjalizm demokratyczny, antykapitalizm." },
+    { "name": "KKP", "description": "Konfederacja Korony Polskiej – narodowy konserwatyzm." },
+    { "name": "Ruch Narodowy", "description": "Skrajna prawica, nacjonalizm, eurosceptycyzm." },
+    { "name": "Nowa Nadzieja", "description": "Libertarianizm, wolny rynek, minimalne państwo." },
+    { "name": "PPS", "description": "Polska Partia Socjalistyczna – socjalizm patriotyczny." },
+    { "name": "Zieloni", "description": "Ekologia, feminizm, progresywizm." }
+  ],
+
+  "questions": [
+    {
+      "id": 1,
+      "text": "Instytucja własności prywatnej powinna zostać zniesiona.",
+      "description": "Chodzi o całkowite zniesienie prawa własności prywatnej środków produkcji (fabryki, ziemia, kapitał). Nie dotyczy własności osobistej.",
+      "comment": "Socjaliści często podkreślają różnicę między własnością osobistą a produkcyjną.",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": ["Własność kolektywna", "Planowanie"],
+          "values_against": ["Własność prywatna", "Rynek"],
+          "ideologies_for": ["Socjalizm demokratyczny", "Anarchokomunizm"],
+          "ideologies_against": ["Liberalizm klasyczny", "Konserwatyzm liberalny"],
+          "parties_for": ["Razem", "Lewica", "PPS"],
+          "parties_against": ["PiS", "KO", "PSL", "Nowa Nadzieja", "Ruch Narodowy", "KKP", "Polska2050"]
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Własność kolektywna", "Planowanie"],
+          "values_against": ["Własność prywatna"],
+          "ideologies_for": ["Socjalizm demokratyczny"],
+          "ideologies_against": ["Liberalizm klasyczny"],
+          "parties_for": ["Lewica", "Razem"],
+          "parties_against": ["Nowa Nadzieja"]
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": ["Własność prywatna", "Rynek"],
+          "values_against": ["Własność kolektywna", "Planowanie"],
+          "ideologies_for": ["Liberalizm klasyczny", "Konserwatyzm liberalny"],
+          "ideologies_against": ["Socjalizm demokratyczny", "Anarchokomunizm"],
+          "parties_for": ["Nowa Nadzieja", "KO", "PiS", "PSL", "Polska2050"],
+          "parties_against": ["Razem", "Lewica", "PPS"]
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": ["Własność prywatna", "Rynek"],
+          "values_against": ["Własność kolektywna", "Planowanie"],
+          "ideologies_for": ["Liberalizm klasyczny", "Konserwatyzm liberalny"],
+          "ideologies_against": ["Socjalizm demokratyczny", "Anarchokomunizm"],
+          "parties_for": ["Nowa Nadzieja", "KO", "PiS", "PSL", "Polska2050", "Ruch Narodowy", "KKP"],
+          "parties_against": ["Razem", "Lewica", "PPS"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Granice państwowe powinny być w zasadzie otwarte dla wszystkich, którzy chcą pracować lub mieszkać.",
+      "description": "Chodzi o zniesienie kontroli imigracyjnej lub jej minimalizację.",
+      "comment": "Niektóre ideologie lewicowe wspierają swobodną migrację, prawicowe – kontrolę.",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": ["Minimalizacja granic", "Kosmopolityzm"],
+          "values_against": ["Kontrola granic", "Partykularyzm narodowy"],
+          "ideologies_for": ["Socjalizm demokratyczny", "Anarchokomunizm"],
+          "ideologies_against": ["Konserwatyzm liberalny"],
+          "parties_for": ["Razem", "Lewica", "Zieloni"],
+          "parties_against": ["PiS", "Ruch Narodowy", "KKP", "Nowa Nadzieja"]
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Kosmopolityzm"],
+          "values_against": ["Partykularyzm narodowy"],
+          "ideologies_for": ["Socjalliberalizm"],
+          "ideologies_against": [],
+          "parties_for": ["KO", "Polska2050"],
+          "parties_against": ["PiS", "Ruch Narodowy"]
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": ["Kontrola granic", "Partykularyzm narodowy"],
+          "values_against": ["Kosmopolityzm"],
+          "ideologies_for": ["Konserwatyzm liberalny"],
+          "ideologies_against": [],
+          "parties_for": ["PiS", "PSL", "Polska2050"],
+          "parties_against": ["Razem"]
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": ["Kontrola granic", "Partykularyzm narodowy"],
+          "values_against": ["Minimalizacja granic", "Kosmopolityzm"],
+          "ideologies_for": ["Konserwatyzm liberalny"],
+          "ideologies_against": ["Socjalizm demokratyczny", "Anarchokomunizm"],
+          "parties_for": ["Ruch Narodowy", "KKP", "PiS", "Nowa Nadzieja"],
+          "parties_against": ["Razem", "Lewica", "Zieloni"]
+        }
+      ]
+    }
+  ]
+}
