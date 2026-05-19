@@ -511,259 +511,177 @@
   ],
 
   "questions": [
-   "id": 1,
-    "text": "Społeczeństwo nie posiada interesów ani woli niezależnych od interesów tworzących je indywidualnych jednostek",
-    "description": "Placeholder",
-    "answers": [
-      {
-        "label": "Zdecydowanie zgadzam się",
-        "value": 1.5,
-        "values_for": ["Indywidualizm"],
-        "values_against": ["Kolektywizm"],
-        "ideologies_for": ["Anarchokapitalizm"],
-        "ideologies_against": ["Marksizm"],
-        "parties_for": [],
-        "parties_against": ["PiS", "KO", "PSL", "Ruch Narodowy", "KKP", "Polska2050"]
-      },
-      {
-        "label": "Częściowo zgadzam się",
-        "value": 1.0,
-        "values_for": ["Indywidualizm"],
-        "values_against": ["Kolektywizm"],
-        "ideologies_for": ["Anarchokapitalizm"],
-        "ideologies_against": ["Marksizm"],
-        "parties_for": [],
-        "parties_against": ["PiS", "KO", "PSL", "Ruch Narodowy", "KKP", "Polska2050"]
-      },
-      {
-        "label": "Częściowo nie zgadzam się",
-        "value": -1.0,
-        "values_for": ["Kolektywizm"],
-        "values_against": ["Indywidualizm"],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      },
-      {
-        "label": "Zdecydowanie nie zgadzam się",
-        "value": -1.5,
-        "values_for": ["Kolektywizm"],
-        "values_against": ["Indywidualizm"],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      },
-      {
-        "label": "Pomiń pytanie",
-        "value": 0,
-        "values_for": [],
-        "values_against": [],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      }
-    ]
-  },
-  {
-    "id": 2,
-    "text": "Społeczeństwo, niczym żywy organizm, funkcjonuje jako spójna całość, w której każda część ma swoje miejsce i funkcję, przewyższając sumę indywidualnych interesów",
-    "description": "Placeholder",
-    "comment": "Placeholder",
-    "answers": [
-      {
-        "label": "Zdecydowanie zgadzam się",
-        "value": 1.5,
-        "values_for": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
-        "values_against": ["Indywidualizm", "Autonomia"],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      },
-      {
-        "label": "Częściowo zgadzam się",
-        "value": 1.0,
-        "values_for": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
-        "values_against": ["Indywidualizm", "Autonomia"],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      },
-      {
-        "label": "Pomiń pytanie",
-        "value": 0,
-        "values_for": [],
-        "values_against": [],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      },
-      {
-        "label": "Częściowo nie zgadzam się",
-        "value": -1.0,
-        "values_for": ["Indywidualizm", "Autonomia"],
-        "values_against": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      },
-      {
-        "label": "Zdecydowanie nie zgadzam się",
-        "value": -1.5,
-        "values_for": ["Indywidualizm", "Autonomia"],
-        "values_against": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "text": "Wspólnoty i grupy społeczne mają wartość tylko o tyle, o ile służą dobru jednostek, które je tworzą",
-    "description": "Placeholder",
-    "answers": [
-      {
-        "label": "Zdecydowanie zgadzam się",
-        "value": 1.5,
-        "values_for": ["Indywidualizm", "Autonomia"],
-        "values_against": ["Kolektywizm", "Heteronomia"],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      },
-      {
-        "label": "Częściowo zgadzam się",
-        "value": 1.0,
-        "values_for": ["Indywidualizm", "Autonomia"],
-        "values_against": ["Kolektywizm", "Heteronomia"],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      },
-      {
-        "label": "Pomiń pytanie",
-        "value": 0,
-        "values_for": [],
-        "values_against": [],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      },
-      {
-        "label": "Częściowo nie zgadzam się",
-        "value": -1.0,
-        "values_for": ["Kolektywizm", "Heteronomia"],
-        "values_against": ["Indywidualizm", "Autonomia"],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      },
-      {
-        "label": "Zdecydowanie nie zgadzam się",
-        "value": -1.5,
-        "values_for": ["Kolektywizm", "Heteronomia"],
-        "values_against": ["Indywidualizm", "Autonomia"],
-        "ideologies_for": [],
-        "ideologies_against": [],
-        "parties_for": [],
-        "parties_against": []
-      }
-    ]
-  },
-  {
-    "id": 4,
-    "text": "Indywidualna wolność jest pierwszorzędną wartością polityczną, nadrzędną wobec innych dóbr społecznych",
-    "description": "Placeholder",
-    "answers": [
-      { "label": "Zdecydowanie zgadzam się", "value": 1.5, "values_for": ["Indywidualizm", "Wolność negatywna"], "values_against": ["Kolektywizm"], "ideologies_for": ["Anarchokapitalizm", "Minarchizm", "Liberalizm klasyczny"], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo zgadzam się", "value": 1.0, "values_for": ["Indywidualizm", "Wolność negatywna"], "values_against": ["Kolektywizm"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Pomiń pytanie", "value": 0, "values_for": [], "values_against": [], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo nie zgadzam się", "value": -1.0, "values_for": ["Kolektywizm"], "values_against": ["Indywidualizm"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Zdecydowanie nie zgadzam się", "value": -1.5, "values_for": ["Kolektywizm"], "values_against": ["Indywidualizm"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] }
-    ]
-  },
-  {
-    "id": 5,
-    "text": "Wolność należy rozumieć jako brak przymusu ze strony zewnętrznych podmiotów, które uniemożliwiają jednostce podejmowanie decyzji i działanie zgodnie z własną wolą",
-    "description": "Placeholder",
-    "answers": [
-      { "label": "Zdecydowanie zgadzam się", "value": 1.5, "values_for": ["Wolność negatywna", "Indywidualizm"], "values_against": ["Wolność pozytywna"], "ideologies_for": ["Liberalizm klasyczny", "Anarchokapitalizm", "Libertarianizm"], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo zgadzam się", "value": 1.0, "values_for": ["Wolność negatywna"], "values_against": ["Wolność pozytywna"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Pomiń pytanie", "value": 0, "values_for": [], "values_against": [], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo nie zgadzam się", "value": -1.0, "values_for": ["Wolność pozytywna"], "values_against": ["Wolność negatywna"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Zdecydowanie nie zgadzam się", "value": -1.5, "values_for": ["Wolność pozytywna"], "values_against": ["Wolność negatywna"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] }
-    ]
-  },
-  {
-    "id": 6,
-    "text": "Żadna jednostka ani grupa nie ma prawa zmuszać kogokolwiek do działania na rzecz innych, nawet jeśli ci inni znajdują się w potrzebie lub cel pomocy wydaje się szlachetny",
-    "description": "Placeholder",
-    "answers": [
-      { "label": "Zdecydowanie zgadzam się", "value": 1.5, "values_for": ["Indywidualizm", "Wolność negatywna"], "values_against": ["Kolektywizm"], "ideologies_for": ["Anarchokapitalizm", "Minarchizm", "Randyzm"], "ideologies_against": ["Socjalizm"], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo zgadzam się", "value": 1.0, "values_for": ["Indywidualizm"], "values_against": ["Kolektywizm"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Pomiń pytanie", "value": 0, "values_for": [], "values_against": [], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo nie zgadzam się", "value": -1.0, "values_for": ["Kolektywizm"], "values_against": ["Indywidualizm"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Zdecydowanie nie zgadzam się", "value": -1.5, "values_for": ["Kolektywizm"], "values_against": ["Indywidualizm"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] }
-    ]
-  },
-  {
-    "id": 7,
-    "text": "Wolność jednostki nie ogranicza się do braku przymusu, lecz wymaga zapewnienia jednostce zasobów, które umożliwiają jej realizację własnych celów",
-    "description": "Placeholder",
-    "answers": [
-      { "label": "Zdecydowanie zgadzam się", "value": 1.5, "values_for": ["Wolność pozytywna", "Kolektywizm"], "values_against": ["Wolność negatywna"], "ideologies_for": ["Socjalliberalizm", "Socjalizm demokratyczny"], "ideologies_against": ["Liberalizm klasyczny"], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo zgadzam się", "value": 1.0, "values_for": ["Wolność pozytywna"], "values_against": ["Wolność negatywna"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Pomiń pytanie", "value": 0, "values_for": [], "values_against": [], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo nie zgadzam się", "value": -1.0, "values_for": ["Wolność negatywna"], "values_against": ["Wolność pozytywna"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Zdecydowanie nie zgadzam się", "value": -1.5, "values_for": ["Wolność negatywna"], "values_against": ["Wolność pozytywna"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] }
-    ]
-  },
-  {
-    "id": 8,
-    "text": "Wolność należy rozumieć jako możliwość czynienia dobra",
-    "description": "Placeholder",
-    "answers": [
-      { "label": "Zdecydowanie zgadzam się", "value": 1.5, "values_for": ["Wolność pozytywna"], "values_against": ["Wolność negatywna"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo zgadzam się", "value": 1.0, "values_for": ["Wolność pozytywna"], "values_against": ["Wolność negatywna"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Pomiń pytanie", "value": 0, "values_for": [], "values_against": [], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo nie zgadzam się", "value": -1.0, "values_for": ["Wolność negatywna"], "values_against": ["Wolność pozytywna"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Zdecydowanie nie zgadzam się", "value": -1.5, "values_for": ["Wolność negatywna"], "values_against": ["Wolność pozytywna"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] }
-    ]
-  },
-  {
-    "id": 9,
-    "text": "Państwo jest najwyższą wartością, której interesy są nadrzędne wobec interesów jednostki",
-    "description": "Placeholder",
-    "answers": [
-      { "label": "Zdecydowanie zgadzam się", "value": 1.5, "values_for": ["Kolektywizm", "Statyzm"], "values_against": ["Indywidualizm"], "ideologies_for": ["Faszyzm włoski", "Nazizm", "Absolutyzm klasyczny"], "ideologies_against": ["Libertarianizm"], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo zgadzam się", "value": 1.0, "values_for": ["Kolektywizm"], "values_against": ["Indywidualizm"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Pomiń pytanie", "value": 0, "values_for": [], "values_against": [], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo nie zgadzam się", "value": -1.0, "values_for": ["Indywidualizm"], "values_against": ["Kolektywizm"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Zdecydowanie nie zgadzam się", "value": -1.5, "values_for": ["Indywidualizm"], "values_against": ["Kolektywizm"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] }
-    ]
-  },
-  {
-    "id": 10,
-    "text": "Jednostka powinna być gotowa poświęcić swoje interesy dla dobra wspólnoty państwowej",
-    "description": "Placeholder",
-    "answers": [
-      { "label": "Zdecydowanie zgadzam się", "value": 1.5, "values_for": ["Kolektywizm"], "values_against": ["Indywidualizm"], "ideologies_for": ["Faszyzm", "Nazizm", "Nacjonalizm konserwatywny"], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo zgadzam się", "value": 1.0, "values_for": ["Kolektywizm"], "values_against": ["Indywidualizm"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Pomiń pytanie", "value": 0, "values_for": [], "values_against": [], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Częściowo nie zgadzam się", "value": -1.0, "values_for": ["Indywidualizm"], "values_against": ["Kolektywizm"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] },
-      { "label": "Zdecydowanie nie zgadzam się", "value": -1.5, "values_for": ["Indywidualizm"], "values_against": ["Kolektywizm"], "ideologies_for": [], "ideologies_against": [], "parties_for": [], "parties_against": [] }      ]
+    {
+      "id": 1,
+      "text": "Społeczeństwo nie posiada interesów ani woli niezależnych od interesów tworzących je indywidualnych jednostek",
+      "description": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": ["Indywidualizm"],
+          "values_against": ["Kolektywizm"],
+          "ideologies_for": ["Anarchokapitalizm"],
+          "ideologies_against": ["Marksizm"],
+          "parties_for": [],
+          "parties_against": ["PiS", "KO", "PSL", "Ruch Narodowy", "KKP", "Polska2050"]
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Indywidualizm"],
+          "values_against": ["Kolektywizm"],
+          "ideologies_for": ["Anarchokapitalizm"],
+          "ideologies_against": ["Marksizm"],
+          "parties_for": [],
+          "parties_against": ["PiS", "KO", "PSL", "Ruch Narodowy", "KKP", "Polska2050"]
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": ["Kolektywizm"],
+          "values_against": ["Indywidualizm"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": ["Kolektywizm"],
+          "values_against": ["Indywidualizm"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+         {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "text": "Społeczeństwo, niczym żywy organizm, funkcjonuje jako spójna całość, w której każda część ma swoje miejsce i funkcję, przewyższając sumę indywidualnych interesów",
+      "description": "Placeholder",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": ["Indywidualizm", "Autonomia"],
+          "values_against": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": ["Indywidualizm", "Autonomia"],
+          "values_against": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 3,
+      "text": "Wspólnoty i grupy społeczne mają wartość tylko o tyle, o ile służą dobru jednostek, które je tworzą",
+      "description": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": ["Indywidualizm", "Autonomia"],
+          "values_against": ["Kolektywizm", "Heteronomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Indywidualizm", "Autonomia"],
+          "values_against": ["Kolektywizm", "Heteronomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": ["Kolektywizm", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": ["Kolektywizm", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
     }
   ]
 }
