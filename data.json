@@ -595,16 +595,6 @@
           "parties_against": []
         },
         {
-          "label": "Pomiń pytanie",
-          "value": 0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": ["Indywidualizm", "Autonomia"],
@@ -619,6 +609,16 @@
           "value": -1.5,
           "values_for": ["Indywidualizm", "Autonomia"],
           "values_against": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -652,16 +652,6 @@
           "parties_against": []
         },
         {
-          "label": "Pomiń pytanie",
-          "value": 0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": ["Kolektywizm", "Heteronomia"],
@@ -676,6 +666,16 @@
           "value": -1.5,
           "values_for": ["Kolektywizm", "Heteronomia"],
           "values_against": ["Indywidualizm", "Autonomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
