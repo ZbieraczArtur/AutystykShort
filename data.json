@@ -513,14 +513,14 @@
   "questions": [
     {
       "id": 1,
-      "text": "HWDPHWDPHWDPHWDP",
+      "text": "JP JP JP JP JP HWDP 100%",
       "description": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Autonomia", "Anarchia", "Decentralizacja", "Ograniczenie władzy"],
-          "values_against": ["Kolektywizm"],
+          "values_for": ["Autonomia", "Anarchia", "Decentralizacja", "Własność kolektywna"],
+          "values_against": ["Heteronomia", "Etatyzm", "Centralizacja"],
           "ideologies_for": ["Anarchokapitalizm"],
           "ideologies_against": ["Marksizm"],
           "parties_for": [],
@@ -577,8 +577,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Autonomia", "Anarchia", "Decentralizacja", "Ograniczenie władzy"],
-          "values_against": ["Indywidualizm", "Autonomia"],
+          "values_for": ["Autonomia", "Anarchia", "Decentralizacja", "Własność kolektywna"],
+          "values_against": ["Heteronomia", "Etatyzm", "Centralizacja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -634,8 +634,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Autonomia", "Anarchia", "Decentralizacja", "Ograniczenie władzy"],
-          "values_against": ["Kolektywizm", "Heteronomia"],
+          "values_for": ["Autonomia", "Anarchia", "Decentralizacja", "Własność kolektywna"],
+          "values_against": ["Heteronomia", "Etatyzm", "Centralizacja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
