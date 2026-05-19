@@ -799,9 +799,8 @@
     },
     {
       "id": 6,
-      "text": "XXXXXXXXXX",
+      "text": "Żadna jednostka ani grupa nie ma prawa zmuszać kogokolwiek do działania na rzecz innych, nawet jeśli ci inni znajdują się w potrzebie lub cel pomocy wydaje się szlachetny",
       "description": "XXXXXX",
-      "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -857,9 +856,180 @@
     },
         {
       "id": 7,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
+      "text": "Wolność jednostki nie ogranicza się do braku przymusu, lecz wymaga zapewnienia jednostce zasobów, które umożliwiają jej realizację własnych celów",
+      "description": ". Wolność jest tu rozumiana jako zdolność do samorealizacji, co wymaga dbania o wyrównywanie szans startowych, aby każdy mógł faktycznie dążyć do realizacji wybranych przez siebie celów życiowych",
       "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 8,
+      "text": "Wolność należy rozumieć jako możliwość czynienia dobra",
+      "description": "XXXXXX",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 9,
+      "text": "Państwo jest najwyższą wartością, której interesy są nadrzędne wobec interesów jednostki",
+      "description": "Teza ta zakłada, że struktura państwowa stanowi nadrzędny byt, któremu powinny zostać całkowicie podporządkowane dążenia i prawa poszczególnych osób. W tym ujęciu państwo nie jest jedynie narzędziem służącym obywatelom, lecz autonomiczną wartością o najwyższym znaczeniu moralnym i politycznym. Dobro wspólne, definiowane przez pryzmat trwałości i jedności instytucji, bierze bezwzględne pierwszeństwo przed wolnością osobistą czy prywatnymi interesami jednostek. Tożsamość człowieka wywodzi się z jego przynależności do tej nadrzędnej całości, co nakłada na niego obowiązek lojalności oraz gotowość do poświęceń. Działania władzy są tu legitymizowane przez wyższy cel zbiorowy, a sfera prywatna traci swoją niezależność na rzecz interesu ogólnopaństwowego.",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 10,
+      "text": "Jednostka powinna być gotowa poświęcić swoje interesy dla dobra wspólnoty państwowej",
+      "description": "Teza ta zakłada, że pomyślność wspólnoty państwowej stanowi nadrzędny cel, któremu jednostka powinna podporządkować własne aspiracje i potrzeby. Państwo postrzegane jest tu jako organiczna całość, której stabilność wymaga od obywateli lojalności oraz gotowości do poświęceń. Dobro wspólne, rozumiane jako trwałość instytucji i bezpieczeństwo zbiorowe, bierze pierwszeństwo przed wolnością osobistą czy prywatnym zyskiem. Tożsamość człowieka wywodzi się z przynależności do tej nadrzędnej struktury, co nakłada na niego obowiązek służenia ogółowi. Działania władzy są tu uznawane za słuszne nawet wtedy, gdy ograniczają indywidualne prawa, ponieważ uważa się, że pomyślność osoby jest nierozerwalnie zależna od siły i jedności całego państwa.",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
