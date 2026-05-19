@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+    background: #f5f7fa;
+    color: #1e2a3e;
+    line-height: 1.5;
+    padding: 1rem;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 10px 25px -5px rgba(0,0,0,0.05);
+    padding: 1.5rem;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.subtitle {
+    color: #4a627a;
+    font-size: 0.95rem;
+}
+
+/* Modale */
+.modal {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    max-width: 500px;
+    width: 90%;
+    padding: 1.8rem;
+    border-radius: 1rem;
+    position: relative;
+    box-shadow: 0 20px 30px -10px rgba(0,0,0,0.2);
+}
+
+.small-modal .modal-content {
+    max-width: 350px;
+}
+
+.close-btn, .close-def-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1.2rem;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #7f8c8d;
+}
+
+.close-btn:hover, .close-def-btn:hover {
+    color: #2c3e50;
+}
+
+/* Przyciski */
+.btn-primary, .btn-secondary {
+    border: none;
+    padding: 0.7rem 1.5rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+    margin-top: 1rem;
+}
+
+.btn-primary {
+    background: #2c3e66;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #1e2f4a;
+}
+
+.btn-secondary {
+    background: #e2e8f0;
+    color: #1e2a3e;
+}
+
+.btn-secondary:hover {
+    background: #cbd5e1;
+}
+
+/* Pytania */
+.question-card {
+    background: #fefefe;
+    border: 1px solid #e2edf2;
+    border-radius: 1rem;
+    padding: 1.2rem;
+    margin-bottom: 1.8rem;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+
+.question-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.question-text {
+    font-weight: 600;
+    font-size: 1.1rem;
+    flex: 1;
+}
+
+.question-description {
+    font-size: 0.85rem;
+    color: #4b6a8b;
+    margin-bottom: 0.8rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid #bfd9f0;
+}
+
+.comment-icon {
+    background: #f1c40f;
+    color: #2c3e50;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.7rem;
+    cursor: pointer;
+    flex-shrink: 0;
+    margin-left: 0.5rem;
+    transition: 0.1s;
+}
+
+.comment-icon:hover {
+    background: #e67e22;
+    color: white;
+}
+
+.tooltip-comment {
+    background: #fef9e3;
+    border-left: 4px solid #f1c40f;
+    padding: 0.6rem;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+    border-radius: 0.5rem;
+}
+
+.answers {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-top: 1rem;
+}
+
+.answer-btn {
+    background: #f1f5f9;
+    border: 1px solid #cbd5e1;
+    padding: 0.4rem 1rem;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition: 0.1s;
+    font-size: 0.85rem;
+}
+
+.answer-btn.selected {
+    background: #2c3e66;
+    color: white;
+    border-color: #2c3e66;
+}
+
+/* Wyniki */
+.results-section {
+    margin: 2rem 0;
+}
+
+.value-pair {
+    margin-bottom: 1.5rem;
+}
+
+.value-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+}
+
+.value-bar-container {
+    background: #e2e8f0;
+    border-radius: 1rem;
+    height: 1.8rem;
+    overflow: hidden;
+    display: flex;
+}
+
+.value-bar-left {
+    background: #3b82f6;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-right: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+    transition: width 0.3s;
+}
+
+.value-bar-right {
+    background: #ef4444;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.clickable-value {
+    cursor: pointer;
+    border-bottom: 1px dashed #7f8c8d;
+}
+
+.ideology-item, .party-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2edf2;
+    padding: 0.6rem 0;
+}
+
+.ideology-name, .party-name {
+    font-weight: 500;
+    cursor: pointer;
+    color: #2c3e66;
+}
+
+.description-expanded {
+    background: #f8fafc;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border-radius: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.percentage {
+    font-weight: 600;
+    color: #2c3e66;
+}
+
+.submit-area {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+footer {
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 0.7rem;
+    color: #94a3b8;
+}
