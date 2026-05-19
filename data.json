@@ -796,6 +796,122 @@
           "parties_against": []
         }
       ]
+    },
+    {
+      "id": 6,
+      "text": "XXXXXXXXXX",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 7,
+      "text": "XXXXXXXXXX",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
     }
   ]
 }
