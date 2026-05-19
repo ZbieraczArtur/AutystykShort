@@ -190,9 +190,309 @@
     "name": "Korwinizm",
     "description": "Zwolennicy korwinizmu wierzą w państwo minimalne (nocny stróż) chroniące tylko życie, wolność i własność. Odrzucają demokrację, postulują radykalny wolny rynek, likwidację podatków dochodowych, prywatyzację i rygorystyczne prawo karne z karą śmierci. Przedstawiciele: Janusz Korwin-Mikke, Stefan Kisielewski."
   },
-    {
+  {
     "name": "Korwinizm-Mentzenizm",
     "description": "Zwolennicy mentzenizmu łączą wolnorynkowy konserwatyzm z katolicyzmem. Popierają ograniczenie rządu do bezpieczeństwa i sądownictwa, deregulację, obniżenie podatków, zasadę pomocniczości i protekcjonizm w wybranych sektorach (rolnictwo, energetyka)."
+  },
+  {
+    "name": "Paleokonserwatyzm",
+    "description": "Paleokonserwatyści wierzą w suwerenny naród zakorzeniony w tradycji chrześcijańskiej i zdecentralizowany rząd federalny. Popierają nacjonalizm ekonomiczny, protekcjonizm, kontrolę imigracji i ochronę zachodniego dziedzictwa. Przedstawiciele: Pat Buchanan, Russell Kirk, Paul Gottfried."
+  },
+  {
+    "name": "Neokonserwatyzm (Konserwatywna Nowa Prawica)",
+    "description": "Neokonserwatyści wierzą w silne, autorytarne państwo egzekwujące prawo, dyscyplinę i tradycyjne wartości moralne. Popierają surowe sankcje (w tym karę śmierci) oraz politykę budującą jednolitość kulturową."
+  },
+  {
+    "name": "Konserwatyzm paternalistyczny",
+    "description": "Konserwatyści paternalistyczni wierzą w roztropny rząd dbający o stabilność tradycji i stopniowe reformy. Popierają hierarchię, opiekę elit nad słabszymi i harmonijne społeczeństwo oparte na tradycyjnych wartościach."
+  },
+  {
+    "name": "Konserwatyzm jednego narodu",
+    "description": "Konserwatyści jednego narodu wierzą w paternalistyczne państwo dbające o jedność narodową i solidarność. Osoby zamożne mają obowiązek troski o słabszych dla zachowania spójności społecznej."
+  },
+  {
+    "name": "Chrześcijańska demokracja",
+    "description": "Chrześcijańscy demokraci wierzą w państwo dbające o dobro wspólne poprzez interwencję społeczną i gospodarczą przy zachowaniu demokracji i zasady subsydiarności. Popierają rynek społeczny, partnerstwo z instytucjami pośredniczącymi i solidarność."
+  },
+  {
+    "name": "Dystrybucjonizm",
+    "description": "Dystrybutyści wierzą w upowszechnienie własności prywatnej (zwłaszcza środków produkcji) i odrzucenie zarówno koncentracji kapitału, jak i etatyzmu. Popierają zasadę pomocniczości, spółdzielczość i rodzinne przedsiębiorstwa. Przedstawiciele: G.K. Chesterton, Hilaire Belloc."
+  },
+  {
+    "name": "Agraryzm",
+    "description": "Agraryści wierzą, że podstawą państwa jest samodzielne rodzinne gospodarstwo rolne i warstwa chłopska. Popierają trzecią drogę, decentralizację i spółdzielczość chroniącą przed wielkim kapitałem i biurokracją. Przedstawiciele: Wincenty Witos, Thomas Jefferson."
+  },
+  {
+    "name": "Konserwatyzm ewolucyjny",
+    "description": "Konserwatyści ewolucyjni wierzą w zachowanie sprawdzonych instytucji przy jednoczesnych powolnych, organicznych zmianach. Popierają regulowaną gospodarkę rynkową, bezpieczeństwo socjalne i partnerstwo publiczno-prywatne. Przedstawiciele: Bismarck, Disraeli, Churchill."
+  },
+  {
+    "name": "Liechtensteinizm",
+    "description": "Liechtensteinizm widzi państwo jako dobrowolne przedsiębiorstwo usługowe. Łączy monarchię z demokracją bezpośrednią, radykalną decentralizacją i prawem secesji gmin. Popiera wolny handel i niskie podatki."
+  },
+  {
+    "name": "Liberalny konserwatyzm",
+    "description": "Liberalni konserwatyści łączą wolny rynek z „wolnością uporządkowaną”, tradycją i silnym autorytetem państwa w sferze prawa i bezpieczeństwa. Podkreślają odpowiedzialność wobec wspólnoty. Przedstawiciele: Edmund Burke, Margaret Thatcher, Ronald Reagan."
+  },
+  {
+    "name": "Socjalliberalizm",
+    "description": "Socjalliberałowie wierzą w regulowaną gospodarkę rynkową i rozbudowaną opiekę społeczną dla równych szans. Popierają prawa pozytywne, swobody obywatelskie oraz progresywne wartości (równość płci, LGBTQ+, ochrona środowiska)."
+  },
+  {
+    "name": "Liberalizm egalitarny (Rawlsowski)",
+    "description": "Liberałowie egalitarni wierzą w sprawiedliwość jako uczciwą współpracę wolnych i równych. Popierają dwie zasady Rawlsa: równe podstawowe wolności oraz zasadę różnicy (nierówności tylko gdy korzystają z nich najsłabsi). Przedstawiciele: John Rawls."
+  },
+  {
+    "name": "Liberalizm klasyczny",
+    "description": "Klasyczni liberałowie wierzą w autonomiczną jednostkę, wolny rynek i państwo minimalne chroniące życie, wolność i własność. Podkreślają wolność negatywną, rozum i tolerancję."
+  },
+  {
+    "name": "Konserwatywny liberalizm",
+    "description": "Konserwatywni liberałowie traktują liberalizm jako cel, a konserwatyzm jako metodę jego ochrony. Popierają wolny rynek w ramach stabilnych instytucji, tradycji i „nawyków serca”. Przedstawiciele: Burke, Tocqueville, Adam Smith."
+  },
+  {
+    "name": "Ordoliberalizm",
+    "description": "Ordoliberałowie wierzą w państwo jako strażnika ładu konkurencyjnego (Ordnungspolitik). Popierają silne ramy prawne zapobiegające monopolom przy jednoczesnym powstrzymaniu się od doraźnych ingerencji. Przedstawiciele: Walter Eucken, Wilhelm Röpke."
+  },
+  {
+    "name": "Narodowy liberalizm",
+    "description": "Narodowi liberałowie łączą wolność jednostki z suwerennością narodu. Popierają konstytucjonalizm, modernizację i czasem protekcjonizm gospodarczy dla wzmocnienia państwa."
+  },
+  {
+    "name": "Liberalizm perfekcjonistyczny",
+    "description": "Liberalni perfekcjoniści odrzucają neutralność światopoglądową państwa na rzecz aktywnego wspierania obiektywnie wartościowych form życia i rozwoju autonomii jednostki. Przedstawiciele: Joseph Raz, Thomas Hurka."
+  },
+  {
+    "name": "Neorepublikanizm",
+    "description": "Neorepublikanie definiują wolność jako brak dominacji. Popierają demokrację kontestacyjną, checks and balances oraz bezpieczeństwo społeczne chroniące przed wyzyskiem. Przedstawiciele: Philip Pettit, Quentin Skinner."
+  },
+  {
+    "name": "Georgizm",
+    "description": "Georgiści wierzą, że ziemia jest wspólnym dziedzictwem, a renta gruntowa powinna służyć społeczeństwu. Postulują pojedynczy podatek od wartości ziemi (Single Tax) i zniesienie innych podatków. Przedstawiciele: Henry George."
+  },
+  {
+    "name": "Korwinizm-Sośnierzyzm",
+    "description": "Sośnierzyści widzą państwo jako zło konieczne ograniczone do wojska, policji, sądów i dróg. Popierają pełną prywatyzację reszty sfer i traktowanie relacji prywatnych jako dobrowolnych kontraktów."
+  },
+  {
+    "name": "Neolibertarianizm",
+    "description": "Neolibertarianie łączą libertariańskie zasady wewnętrzne z aktywnym promowaniem wolności na arenie międzynarodowej (w tym interwencjami)."
+  },
+  {
+    "name": "Randyzm (Obiektywizm)",
+    "description": "Zwolennicy obiektywizmu Ayn Rand wierzą w racjonalny egoizm, pełne laissez-faire i państwo chroniące wyłącznie przed inicjacją przemocy. Przedstawiciele: Ayn Rand."
+  },
+  {
+    "name": "Minarchizm",
+    "description": "Minarchiści popierają państwo minimalne ograniczające się do egzekwowania zasady nieagresji (ochrona przed agresją, kradzieżą, oszustwem)."
+  },
+  {
+    "name": "Anarchokapitalizm",
+    "description": "Anarchokapitaliści dążą do całkowitego zniesienia państwa i zastąpienia go prywatnymi agencjami ochrony i arbitrażem na wolnym rynku."
+  },
+  {
+    "name": "Libertarianizm konsekwencjalistyczny",
+    "description": "Libertarianie konsekwencjalistyczni uzasadniają wolność korzystnymi skutkami społecznymi (dobrobyt, efektywność), a nie prawami naturalnymi."
+  },
+  {
+    "name": "Paleolibertarianizm",
+    "description": "Paleolibertarianie łączą radykalny antyetatyzm z tradycjonalizmem kulturowym, religią i instytucjami pośredniczącymi."
+  },
+  {
+    "name": "Agoryzm",
+    "description": "Agoryści dążą do zniesienia państwa poprzez kontrekonomię – działalność na szarym/czarnym rynku i unikanie podatków. Przedstawiciele: Samuel Edward Konkin III."
+  },
+  {
+    "name": "Anarchoindywidualizm",
+    "description": "Anarchoindywidualiści wierzą w suwerenność jednostki i dobrowolne stowarzyszenia. Popierają wolną bankowość i własność opartą na użytkowaniu. Przedstawiciele: Lysander Spooner, Benjamin Tucker."
+  },
+  {
+    "name": "Egoizm / Stirneryzm",
+    "description": "Egoiści Maxa Stirnera odrzucają wszystkie abstrakcyjne „widma” (państwo, moralność, społeczeństwo) na rzecz absolutnej suwerenności Ego i dobrowolnego zrzeszenia egoistów."
+  },
+  {
+    "name": "Egokomunizm",
+    "description": "Egokomuniści łączą egoizm z zniesieniem własności prywatnej, pieniądza i pracy najemnej na rzecz wspólnego użytkowania zasobów w zrzeszeniach egoistów."
+  },
+  {
+    "name": "Narodowy anarchizm",
+    "description": "Narodowi anarchiści popierają bezpaństwowe, autonomiczne wspólnoty plemienne z prawem do secesji i separatyzmu. Przedstawiciele: Troy Southgate."
+  },
+  {
+    "name": "Lewicowy anarchizm rynkowy",
+    "description": "Lewicowi anarchiści rynkowi popierają „uwolniony rynek” bez przywilejów państwowych, co ma prowadzić do rozproszenia własności i spółdzielczości."
+  },
+  {
+    "name": "Mutualizm",
+    "description": "Mutualiści wierzą w sprawiedliwą, dobrowolną wymianę i wzajemną kooperację, spółdzielczość oraz minimalną ingerencję państwa."
+  },
+  {
+    "name": "Libertariański municypalizm",
+    "description": "Libertarianie municypalni dążą do przekazania władzy zgromadzeniom sąsiedzkim i municypalizacji gospodarki."
+  },
+  {
+    "name": "Anarchokolektywizm",
+    "description": "Anarchokolektywiści (Bakunin) popierają kolektywną własność, federacje i zniesienie państwa oraz religii instytucjonalnej."
+  },
+  {
+    "name": "Anarchosyndykalizm",
+    "description": "Anarchosyndykaliści widzą syndykaty jako zalążki nowego społeczeństwa i narzędzie bezpośredniej akcji (strajk generalny)."
+  },
+  {
+    "name": "Anarchokomunizm",
+    "description": "Anarchokomuniści dążą do „każdemu według potrzeb”, wspólnej własności i federacji komun. Przedstawiciele: Kropotkin, Malatesta."
+  },
+  {
+    "name": "Marksizm klasyczny",
+    "description": "Marksizm klasyczny opiera się na walce klas, materializmie historycznym i rewolucyjnym przejściu do społeczeństwa bezklasowego."
+  },
+  {
+    "name": "Leninizm",
+    "description": "Leninizm podkreśla rolę awangardowej partii i dyktatury proletariatu."
+  },
+  {
+    "name": "Stalinizm",
+    "description": "Stalinizm to totalna centralizacja, planowanie, kolektywizacja i represje."
+  },
+  {
+    "name": "Trockizm",
+    "description": "Trockizm opowiada się za rewolucją permanentną i internacjonalizmem."
+  },
+  {
+    "name": "Narodowy komunizm",
+    "description": "Narodowi komuniści łączą marksizm z interesem narodowym i suwerennością państwa."
+  },
+  {
+    "name": "Luksemburgizm",
+    "description": "Luksemburgizm podkreśla spontaniczność mas i strajk generalny zamiast elit partyjnych."
+  },
+  {
+    "name": "Komunizm rad",
+    "description": "Komuniści rad dążą do bezpośredniej władzy rad robotniczych bez biurokracji partyjnej."
+  },
+  {
+    "name": "De Leonizm",
+    "description": "Deleoniści łączą działalność polityczną z rewolucyjnymi związkami przemysłowymi."
+  },
+  {
+    "name": "Demokratyczny konfederalizm",
+    "description": "Demokratyczny konfederalizm (Öcalan) to bezpaństwowa demokracja bezpośrednia, ekologia i wyzwolenie kobiet."
+  },
+  {
+    "name": "Eurokomunizm",
+    "description": "Eurokomuniści dążą do socjalizmu drogą demokratyczną i pluralistyczną."
+  },
+  {
+    "name": "Socjalizm chrześcijański",
+    "description": "Chrześcijańscy socjaliści łączą wiarę z kolektywizmem i pokojową rewolucją społeczną."
+  },
+  {
+    "name": "Syndykalizm",
+    "description": "Syndykaliści widzą związki zawodowe jako podstawę samorządu pracowniczego i strajku generalnego."
+  },
+  {
+    "name": "Socjalizm rynkowy",
+    "description": "Socjalizm rynkowy łączy społeczną własność z mechanizmem rynkowym i cenami parametrycznymi."
+  },
+  {
+    "name": "Socjalizm demokratyczny",
+    "description": "Socjalizm demokratyczny dąży do demokratycznej kontroli nad środkami produkcji i równości społecznej."
+  },
+  {
+    "name": "Socjalizm fabiański",
+    "description": "Fabianie popierają stopniowe, ewolucyjne reformy i permeację instytucji. Przedstawiciele: Sidney i Beatrice Webb, George Bernard Shaw."
+  },
+  {
+    "name": "Socjaldemokracja",
+    "description": "Socjaldemokraci wierzą w korygowanie rynku poprzez państwo opiekuńcze i interwencję społeczną."
+  },
+  {
+    "name": "Trzecia droga",
+    "description": "Trzecia droga łączy sprawiedliwość społeczną z efektywnością rynkową i zasadą wzajemności (prawa z odpowiedzialnością)."
+  },
+  {
+    "name": "Nacjonalizm lewicowy",
+    "description": "Lewicowi nacjonaliści łączą suwerenność narodową z egalitaryzmem i antyimperializmem."
+  },
+  {
+    "name": "Nacjonalizm liberalny",
+    "description": "Nacjonaliści liberalni łączą suwerenność narodową z demokracją i liberalnymi wartościami."
+  },
+  {
+    "name": "Nacjonalizm obywatelski",
+    "description": "Nacjonaliści obywatelscy opierają naród na wspólnych wartościach politycznych i patriotyzmie konstytucyjnym."
+  },
+  {
+    "name": "Nacjonalizm konserwatywny",
+    "description": "Nacjonaliści konserwatywni chronią tożsamość narodową opartą na tradycji, kulturze i języku."
+  },
+  {
+    "name": "Nacjonalizm ekspansjonistyczny",
+    "description": "Nacjonalizm ekspansjonistyczny dąży do powiększania terytorium i budowy imperium."
+  },
+  {
+    "name": "Narodowa demokracja",
+    "description": "Narodowa demokracja stawia interes narodu jako całości ponad interesami klasowymi. Przedstawiciele: Roman Dmowski."
+  },
+  {
+    "name": "Faszyzm włoski",
+    "description": "Faszyzm widzi państwo jako najwyższą wartość totalitarną. Popiera wodzostwo i korporacjonizm. Przedstawiciele: Mussolini."
+  },
+  {
+    "name": "Nazizm",
+    "description": "Nazizm opiera się na rasowej Volksgemeinschaft, wodzostwie i dążeniu do Lebensraum."
+  },
+  {
+    "name": "Strasseryzm",
+    "description": "Strasseryzm łączy nacjonalizm z antykapitalistycznym solidaryzmem i systemem stanowym."
+  },
+  {
+    "name": "Narodowy bolszewizm",
+    "description": "Narodowi bolszewicy łączą nacjonalizm z etatyzmem i planową gospodarką."
+  },
+  {
+    "name": "Feminizm liberalny",
+    "description": "Liberalny feminizm dąży do równych praw i szans kobiet w ramach systemu liberalnego."
+  },
+  {
+    "name": "Feminizm socjalistyczny",
+    "description": "Feminizm socjalistyczny widzi wyzwolenie kobiet jako część walki z kapitalizmem i patriarchatem."
+  },
+  {
+    "name": "Anarchofeminizm",
+    "description": "Anarchofeminizm walczy jednocześnie z państwem, kapitalizmem i patriarchatem."
+  },
+  {
+    "name": "Feminizm radykalny",
+    "description": "Feminizm radykalny uznaje patriarchat za podstawowy system ucisku i dąży do jego całkowitego zniesienia."
+  },
+  {
+    "name": "Głęboka ekologia",
+    "description": "Głęboka ekologia uznaje wewnętrzną wartość wszystkich form życia i odrzuca antropocentryzm. Przedstawiciele: Arne Næss."
+  },
+  {
+    "name": "Zielony liberalizm",
+    "description": "Zielony liberalizm łączy wolność indywidualną z ochroną środowiska i odpowiedzialnością międzypokoleniową."
+  },
+  {
+    "name": "Ekologizm prawicowy",
+    "description": "Prawicowy ekologizm łączy ochronę środowiska z tradycją, decentralizacją i małą skalą."
+  },
+  {
+    "name": "Ekosocjalizm",
+    "description": "Ekosocjalizm widzi kapitalizm jako główną przyczynę kryzysu ekologicznego."
+  },
+  {
+    "name": "Ekoanarchizm",
+    "description": "Ekoanarchizm dąży do zniesienia hierarchii i powrotu do harmonii z naturą."
+  },
+  {
+    "name": "Neoluddyzm",
+    "description": "Neoluddyści dążą do demontażu systemu technicznego na rzecz autonomii małych grup."
+  },
+  {
+    "name": "Anarchoprymitywizm",
+    "description": "Anarchoprymitywiści dążą do powrotu do życia zbieracko-łowieckiego i odrzucenia cywilizacji."
   }
   ],
 
@@ -237,16 +537,6 @@
           "parties_against": ["PiS", "KO", "PSL", "Ruch Narodowy", "KKP", "Polska2050"]
         },
         {
-          "label": "Pomiń pytanie",
-          "value": 0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": ["Kolektywizm"],
@@ -261,6 +551,16 @@
           "value": -1.5,
           "values_for": ["Kolektywizm"],
           "values_against": ["Indywidualizm"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+         {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
