@@ -357,7 +357,7 @@ function computeAndDisplayResults() {
   const { pairResults, ideologyResults, partyResults } = computeScores();
 
   // Wyświetl pary wartości
-  valuesResults.innerHTML = '<h3>⚖️ Wartości;
+  valuesResults.innerHTML = '<h3>⚖️ Pary wartości (przeciąganie liny)</h3>';
   pairResults.forEach(pair => {
     const pairDiv = document.createElement('div');
     pairDiv.className = 'value-pair';
