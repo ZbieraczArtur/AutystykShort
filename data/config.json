@@ -184,9 +184,9 @@
   "questions": [
     {
       "id": 1,
-      "text": "Instytucja własności prywatnej powinna zostać zniesiona.",
+      "text": "Seks dupa seks.",
       "description": "XDDDDDDD.",
-      "comment": "Socjaliści uznają to za kluczowy postulat. Liberałowie będą przeciwni.",
+      "comment": "Sraka.",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -202,10 +202,10 @@
           "label": "Częściowo zgadzam się",
           "weight": 1,
           "supportValues": ["własność kolektywna"],
-          "opposeValues": [],
-          "supportIdeologies": ["socjalizm demokratyczny"],
-          "opposeIdeologies": [],
-          "supportParties": ["Lewica"],
+          "opposeValues": ["własność prywatna"],
+          "supportIdeologies": ["socjalizm demokratyczny", "anarchokomunizm"],
+          "opposeIdeologies": ["PiS"],
+          "supportParties": ["Lewica", "KO"],
           "opposeParties": []
         },
         {
