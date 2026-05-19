@@ -1,23 +1,161 @@
 {
   "valuePairs": [
-    {
-      "left": "Autonomia",
-      "right": "Heteronomia",
-      "leftDefinition": "Zdolność do rozstrzygania o własnym losie, która wynika z niezależności od wpływów zewnętrznych.",
-      "rightDefinition": "Prawo wywierania na innych wpływu ze względu na uznawany przez nich obowiązek posłuszeństwa."
-    },
-    {
-      "left": "Kolektywizm",
-      "right": "Indywidualizm",
-      "leftDefinition": "Pierwszeństwo dobra grupy, współpraca i wspólna własność.",
-      "rightDefinition": "Pierwszeństwo wolności i interesów jednostki."
-    },
-    {
-      "left": "Anty-hierarchiczność",
-      "right": "Hierarchiczność",
-      "leftDefinition": "Odrzucenie struktur władzy i naturalnych nierówności.",
-      "rightDefinition": "Akceptacja naturalnych lub ustanowionych hierarchii."
-    }
+   {
+    "left": "Autonomia",
+    "right": "Heteronomia",
+    "leftDefinition": "Zdolność jednostki lub grupy do samostanowienia i niezależnego działania.",
+    "rightDefinition": "Podporządkowanie się zewnętrznym regułom, tradycji lub autorytetom."
+  },
+  {
+    "left": "Kolektywizm",
+    "right": "Indywidualizm",
+    "leftDefinition": "Pierwszeństwo dobra grupy, współpraca i wspólna własność.",
+    "rightDefinition": "Pierwszeństwo wolności i interesów jednostki."
+  },
+  {
+    "left": "Anty-hierarchiczność",
+    "right": "Hierarchiczność",
+    "leftDefinition": "Odrzucenie struktur władzy i naturalnych nierówności.",
+    "rightDefinition": "Akceptacja naturalnych lub ustanowionych hierarchii."
+  },
+  {
+    "left": "Anarchia",
+    "right": "Etatyzm",
+    "leftDefinition": "Odrzucenie państwa i wszelkich przymusowych instytucji władzy.",
+    "rightDefinition": "Wiara w konieczność silnego, centralnego państwa."
+  },
+  {
+    "left": "Decentralizacja",
+    "right": "Centralizacja",
+    "leftDefinition": "Przenoszenie władzy i decyzji na niższe szczeble (lokalne, regionalne).",
+    "rightDefinition": "Koncentracja władzy i decyzji w centrum (państwie centralnym)."
+  },
+  {
+    "left": "Ograniczenie władzy",
+    "right": "Absolutyzm władzy",
+    "leftDefinition": "Dążenie do ograniczania kompetencji państwa i rządu.",
+    "rightDefinition": "Akceptacja lub dążenie do nieograniczonej, absolutnej władzy."
+  },
+  {
+    "left": "Desakralizacja autorytetu",
+    "right": "Sakralizacja autorytetu",
+    "leftDefinition": "Traktowanie autorytetów jako podlegających krytyce i racjonalnej ocenie.",
+    "rightDefinition": "Nadawanie autorytetom (państwo, kościół, przywódca) świętego, nietykalnego charakteru."
+  },
+  {
+    "left": "Demokracja",
+    "right": "Anty-demokracja",
+    "leftDefinition": "Poparcie dla rządów większości i mechanizmów demokratycznych.",
+    "rightDefinition": "Krytyka demokracji jako tyranii większości lub nieskutecznego systemu."
+  },
+  {
+    "left": "Autokracja",
+    "right": "Anty-autokracja",
+    "leftDefinition": "Poparcie dla silnej, scentralizowanej władzy jednej osoby lub elity.",
+    "rightDefinition": "Odrzucenie rządów autokratycznych na rzecz wolności lub demokracji."
+  },
+  {
+    "left": "Własność kolektywna",
+    "right": "Własność prywatna",
+    "leftDefinition": "Własność środków produkcji należy do grupy/społeczeństwa.",
+    "rightDefinition": "Prywatna własność środków produkcji jako podstawa gospodarki."
+  },
+  {
+    "left": "Planowanie",
+    "right": "Rynek",
+    "leftDefinition": "Gospodarka kierowana centralnym planem państwa.",
+    "rightDefinition": "Gospodarka oparta na wolnym rynku i mechanizmie cen."
+  },
+  {
+    "left": "Regulacja instytucjonalna",
+    "right": "Samoregulacja",
+    "leftDefinition": "Szeroka regulacja gospodarki i społeczeństwa przez państwo i instytucje.",
+    "rightDefinition": "Wiara w naturalną samoregulację rynku i relacji społecznych."
+  },
+  {
+    "left": "Ograniczanie wymiany (protekcjonizm)",
+    "right": "Swobodna wymiana",
+    "leftDefinition": "Ochrona rynku krajowego poprzez cła, kwoty i bariery handlowe.",
+    "rightDefinition": "Wolny handel międzynarodowy bez sztucznych ograniczeń."
+  },
+  {
+    "left": "Minimalizacja granic",
+    "right": "Kontrola granic",
+    "leftDefinition": "Dążenie do otwarcia lub zniesienia granic państwowych.",
+    "rightDefinition": "Silna ochrona granic i kontroli przepływu osób."
+  },
+  {
+    "left": "Kosmopolityzm",
+    "right": "Partykularyzm narodowy",
+    "leftDefinition": "Ponadnarodowa tożsamość, uniwersalizm i globalne obywatelstwo.",
+    "rightDefinition": "Priorytet interesów własnego narodu i kultury."
+  },
+  {
+    "left": "Interwencjonizm zagraniczny",
+    "right": "Izolacjonizm",
+    "leftDefinition": "Aktywna interwencja w sprawy innych państw (militarna, polityczna).",
+    "rightDefinition": "Nieangażowanie się w konflikty i sprawy zagraniczne."
+  },
+  {
+    "left": "Preferencja użycia siły",
+    "right": "Unikanie przemocy",
+    "leftDefinition": "Akceptacja lub gloryfikacja użycia siły jako narzędzia polityki.",
+    "rightDefinition": "Odrzucanie przemocy i preferencja pokojowych rozwiązań."
+  },
+  {
+    "left": "Rewolucja",
+    "right": "Gradualizm",
+    "leftDefinition": "Zmiana systemu poprzez gwałtowny, radykalny przewrót.",
+    "rightDefinition": "Stopniowe, ewolucyjne wprowadzanie zmian."
+  },
+  {
+    "left": "Progresywizm",
+    "right": "Konserwatyzm",
+    "leftDefinition": "Dążenie do ciągłych zmian społecznych i odrzucanie tradycji.",
+    "rightDefinition": "Zachowanie tradycji, porządku i sprawdzonych struktur."
+  },
+  {
+    "left": "Pluralizm kulturowy",
+    "right": "Homogenizacja",
+    "leftDefinition": "Akceptacja i promowanie wielości kultur w jednym społeczeństwie.",
+    "rightDefinition": "Dążenie do kulturowej jednorodności narodu."
+  },
+  {
+    "left": "Neutralność religijna",
+    "right": "Instytucjonalna religia",
+    "leftDefinition": "Oddzielenie państwa od religii, laickość państwa.",
+    "rightDefinition": "Współpraca państwa z dominującą religią lub nadawanie jej uprzywilejowanej pozycji."
+  },
+  {
+    "left": "Włączanie",
+    "right": "Wykluczenie",
+    "leftDefinition": "Dążenie do włączania różnych grup do społeczeństwa.",
+    "rightDefinition": "Preferencja wykluczania grup uznanych za obce lub niepożądane."
+  },
+  {
+    "left": "Egalitaryzm biologiczny",
+    "right": "Suprematyzm biologiczny",
+    "leftDefinition": "Wiara w równość biologiczną ludzi niezależnie od pochodzenia.",
+    "rightDefinition": "Wiara w biologiczne nierówności i wyższość niektórych grup."
+  },
+  {
+    "left": "Wolność ekspresji",
+    "right": "Cenzura",
+    "leftDefinition": "Pełna swoboda wypowiedzi bez ograniczeń.",
+    "rightDefinition": "Kontrola i ograniczanie treści uznanych za szkodliwe."
+  },
+  {
+    "left": "Antropocentryzm",
+    "right": "Ekocentryzm",
+    "leftDefinition": "Człowiek jako centrum i najwyższa wartość.",
+    "rightDefinition": "Równa lub wyższa wartość ekosystemu i natury względem człowieka."
+  },
+  {
+    "left": "Postęp technologiczny",
+    "right": "Prymitywizm",
+    "leftDefinition": "Entuzjastyczne poparcie dla rozwoju technologicznego i postępu.",
+    "rightDefinition": "Krytyka technologii i dążenie do powrotu do prostszego, pierwotnego stylu życia."
+  }
   ],
   "ideologies": [
     {
