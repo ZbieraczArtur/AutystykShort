@@ -37,12 +37,6 @@
       "rightDef": "Absolutyzm władzy – nieograniczona, suwerenna władza."
     },
     {
-      "left": "Desakralizacja autorytetu",
-      "right": "Sakralizacja autorytetu",
-      "leftDef": "Desakralizacja autorytetu – kwestionowanie i racjonalna krytyka tradycyjnych autorytetów.",
-      "rightDef": "Sakralizacja autorytetu – otaczanie władzy i tradycji czcią i nietykalnością."
-    },
-    {
       "left": "Demokracja",
       "right": "Anty-demokracja",
       "leftDef": "Demokracja – rządy ludu, decyzje większości i szeroka wolność polityczna.",
@@ -163,10 +157,8 @@
     "Prymat jednostki",
     "Permisywność wobec odstępstwa",
     "Uniformizacja norm",
-    "Absolutyzm władzy",
-    "Ograniczenie władzy",
-    "Sakralizacja władzy",
-    "Desakralizacja władzy"
+    "Sakralizacja autorytetu",
+    "Desakralizacja autorytetu"
   ],
 
   "ideologies": [
