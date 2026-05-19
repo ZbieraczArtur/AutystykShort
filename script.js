@@ -1,8 +1,10 @@
 // -------------------------------
 // GLOBALNE ZMIENNE I DANE
 // -------------------------------
-let config = null;        // wczytany JSON
-let userAnswers = [];     // tablica odpowiedzi { questionId, answerIndex, answerValue, answerData }
+let config = null;
+let userAnswers = [];
+let lastValueScoresMap = null;      // przechowuje Mapę wartości z {sum, maxPossible}
+let compassPanel = null;
 
 // Elementy DOM
 const questionsContainer = document.getElementById('questions-container');
@@ -15,7 +17,35 @@ const popup = document.getElementById('popup');
 const popupText = document.getElementById('popup-text');
 const closePopupBtn = document.getElementById('closePopup');
 
-// POMOCNICZE: popup
+// Kompas DOM
+const compassPanelDiv = document.getElementById('compass-panel');
+const canvas = document.getElementById('compassCanvas');
+const coordXSpan = document.getElementById('coordX');
+const coordYSpan = document.getElementById('coordY');
+const weightToggle = document.getElementById('weightModeToggle');
+
+// -------------------------------
+// DEFINICJE OSI KOMPASU (bez tekstu na samym rysunku)
+// -------------------------------
+const COMPASS_AXES = {
+  x: [
+    { left: "Własność kolektywna", right: "Własność prywatna", weight: 1 },
+    { left: "Planowanie", right: "Rynek", weight: 1 }
+  ],
+  y: [
+    { down: "Autonomia", up: "Heteronomia", weight: 5 },
+    { down: "Anarchia", up: "Etatyzm", weight: 5 },
+    { down: "Decentralizacja", up: "Centralizacja", weight: 1.25 },
+    { down: "Samoregulacja", up: "Regulacja instytucjonalna", weight: 1.25 },
+    { down: "Desakralizacja autorytetu", up: "Sakralizacja autorytetu", weight: 5 },
+    { down: "Prymat jednostki", up: "Prymat kolektywu", weight: 3 },
+    { down: "Permisywizm wobec odstępstwa", up: "Uniformizacja norm", weight: 3 }
+  ]
+};
+
+// -------------------------------
+// POPUP
+// -------------------------------
 function showPopup(message) {
   popupText.innerText = message;
   popup.classList.remove('hidden');
@@ -42,11 +72,17 @@ async function loadConfig() {
   }
 }
 
-// Inicjalizacja po danych
 function initApp() {
   renderQuestions();
   attachQuestionEvents();
   submitBtn.addEventListener('click', computeAndDisplayResults);
+  if (weightToggle) {
+    weightToggle.addEventListener('change', () => {
+      if (lastValueScoresMap) {
+        updateCompassFromScores(lastValueScoresMap);
+      }
+    });
+  }
 }
 
 // -------------------------------
@@ -59,13 +95,11 @@ function renderQuestions() {
     card.className = 'question-card';
     card.dataset.id = q.id;
 
-    // treść pytania
     const questionText = document.createElement('div');
     questionText.className = 'question-text';
     questionText.innerText = `${idx+1}. ${q.text}`;
     card.appendChild(questionText);
 
-    // przyciski rozwijania i komentarz
     const btnRow = document.createElement('div');
     const expandBtn = document.createElement('button');
     expandBtn.innerText = '📖 Rozwiń pytanie';
@@ -93,7 +127,6 @@ function renderQuestions() {
     card.appendChild(btnRow);
     card.appendChild(descriptionDiv);
 
-    // odpowiedzi
     const answersDiv = document.createElement('div');
     answersDiv.className = 'answers';
     q.answers.forEach((ans, ansIdx) => {
@@ -103,11 +136,9 @@ function renderQuestions() {
       ansEl.dataset.answerIdx = ansIdx;
       ansEl.dataset.value = ans.value;
       ansEl.addEventListener('click', () => {
-        // odznacz inne w tym pytaniu
         const siblings = answersDiv.querySelectorAll('.answer-option');
         siblings.forEach(sib => sib.classList.remove('selected'));
         ansEl.classList.add('selected');
-        // zapisz odpowiedź
         const existing = userAnswers.findIndex(a => a.questionId === q.id);
         const answerObj = {
           questionId: q.id,
@@ -115,11 +146,8 @@ function renderQuestions() {
           answerValue: ans.value,
           answerData: ans
         };
-        if (existing !== -1) {
-          userAnswers[existing] = answerObj;
-        } else {
-          userAnswers.push(answerObj);
-        }
+        if (existing !== -1) userAnswers[existing] = answerObj;
+        else userAnswers.push(answerObj);
       });
       answersDiv.appendChild(ansEl);
     });
@@ -128,19 +156,97 @@ function renderQuestions() {
   });
 }
 
-// dummy – bo attach już jest w renderze, ale zostawiam funkcję
 function attachQuestionEvents() {}
 
 // -------------------------------
-// ALGORYTM LICZENIA ZGODNOŚCI
+// OBLICZENIA WARTOŚCI (SUMY I MAX POSSIBLE)
 // -------------------------------
-function computeScores() {
-  // Inicjalizacja map dla ideologii, partii i wartości (wszystkie wartości zdefiniowane w pytaniach)
-  const ideologyScores = new Map(); // { name: { sum:0, maxPossible:0, questionsCount:0, agreements:0, disagreements:0 } }
-  const partyScores = new Map();
-  const valueScores = new Map(); // dla każdej wartości (w tym ukrytych)
+function computeValueScores() {
+  const valueScores = new Map(); // klucz: nazwa wartości, wartość: { sum: 0, maxPossible: 0 }
 
-  // Najpierw zbierz wszystkie możliwe nazwy z konfiguracji (ideologie, partie)
+  // Zbierz wszystkie nazwy wartości z pairsOfValues oraz hiddenValues
+  const allValueNames = new Set();
+  if (config.pairsOfValues) {
+    config.pairsOfValues.forEach(pair => {
+      allValueNames.add(pair.left);
+      allValueNames.add(pair.right);
+    });
+  }
+  if (config.hiddenValues) {
+    config.hiddenValues.forEach(v => allValueNames.add(v));
+  }
+  // Dodatkowo wartości z odpowiedzi (dla bezpieczeństwa)
+  config.questions.forEach(q => {
+    q.answers.forEach(ans => {
+      (ans.values_for || []).forEach(v => allValueNames.add(v));
+      (ans.values_against || []).forEach(v => allValueNames.add(v));
+    });
+  });
+
+  allValueNames.forEach(v => {
+    valueScores.set(v, { sum: 0, maxPossible: 0 });
+  });
+
+  // Oblicz maxPossible dla każdej wartości: ile maksymalnie +1.5 można zdobyć z pytań, gdzie dana wartość występuje (w for lub against z odpowiedzią dającą +1.5)
+  // Dla każdego pytania i każdej wartości: maksymalny wkład dodatni to 1.5 (gdy użytkownik wybierze odpowiedź najbardziej wspierającą).
+  for (let [valName, data] of valueScores.entries()) {
+    let maxTotal = 0;
+    for (let q of config.questions) {
+      let maxForThisQuestion = 0;
+      for (let ans of q.answers) {
+        let contribution = 0;
+        if (ans.values_for && ans.values_for.includes(valName)) {
+          contribution = Math.max(contribution, ans.value);
+        }
+        if (ans.values_against && ans.values_against.includes(valName)) {
+          contribution = Math.max(contribution, -ans.value); // przeciwne daje odwrotność
+        }
+        if (Math.abs(contribution) > Math.abs(maxForThisQuestion)) {
+          maxForThisQuestion = contribution;
+        }
+      }
+      if (maxForThisQuestion > 0) maxTotal += maxForThisQuestion;
+      else if (maxForThisQuestion < 0) maxTotal += 0; // nie liczymy ujemnego maksimum
+      else {
+        // sprawdź czy w ogóle występuje: jeśli występuje w jakiejkolwiek odpowiedzi (nawet zero?) to i tak max 1.5 można by uzyskać poprzez inną odpowiedź?
+        let appears = false;
+        for (let ans of q.answers) {
+          if ((ans.values_for && ans.values_for.includes(valName)) || (ans.values_against && ans.values_against.includes(valName))) {
+            appears = true;
+            break;
+          }
+        }
+        if (appears) maxTotal += 1.5;
+      }
+    }
+    data.maxPossible = maxTotal;
+  }
+
+  // Oblicz sumy na podstawie odpowiedzi użytkownika
+  userAnswers.forEach(ans => {
+    const answer = ans.answerData;
+    const weight = ans.answerValue;
+    if (weight === 0) return;
+    (answer.values_for || []).forEach(val => {
+      const rec = valueScores.get(val);
+      if (rec) rec.sum += weight;
+    });
+    (answer.values_against || []).forEach(val => {
+      const rec = valueScores.get(val);
+      if (rec) rec.sum -= weight;
+    });
+  });
+
+  return valueScores;
+}
+
+// -------------------------------
+// OBLICZENIA DLA IDEOLOGII, PARTII ORAZ PAR WARTOŚCI (oryginalne)
+// -------------------------------
+function computeIdeologyPartyAndPairs(valueScoresMap) {
+  // Ideologie i partie – pozostawiamy oryginalną logikę
+  const ideologyScores = new Map();
+  const partyScores = new Map();
   config.ideologies.forEach(ideo => {
     ideologyScores.set(ideo.name, { sum: 0, maxPossible: 0, questionsInvolved: 0, agreements: 0, disagreements: 0 });
   });
@@ -148,91 +254,48 @@ function computeScores() {
     partyScores.set(party.name, { sum: 0, maxPossible: 0, questionsInvolved: 0, agreements: 0, disagreements: 0 });
   });
 
-  // Dla wartości: wszystkie występujące w odpowiedziach (values_for, values_against) – zostaną dodane dynamicznie
-  // ale także pary wartości i hiddenValues – muszą istnieć, aby je pokazać.
-  // Zainicjuj wszystkie wartości z par oraz hidden
-  const allValueNames = new Set();
-  config.pairsOfValues.forEach(pair => {
-    allValueNames.add(pair.left);
-    allValueNames.add(pair.right);
-  });
-  config.hiddenValues.forEach(v => allValueNames.add(v));
-  // oraz dodaj wartości, które pojawiają się tylko w odpowiedziach (choć pewnie są w parach)
-  allValueNames.forEach(v => {
-    if (!valueScores.has(v)) valueScores.set(v, { sum: 0, maxPossible: 0, questionsInvolved: 0 });
-  });
-
-  // Dla każdej udzielonej odpowiedzi (pomijamy pominięte – wartość 0, ale i tak liczymy maxPossible tylko dla pytań, gdzie ideologia wystąpiła)
-  // Najpierw przejdź przez wszystkie pytania, aby dla każdej ideologii/partii/wartości obliczyć maxPossible (teoretyczny max)
-  // Uwaga: dla każdego pytania, jeśli ideologia występuje w którejkolwiek odpowiedzi (for lub against), to maksymalny wkład to 1.5 (wartość bezwzględna)
-  // Ale uprościmy: przy każdej odpowiedzi użytkownika dla danego pytania sprawdzamy, czy ideologia występuje w odpowiedzi (for/against),
-  // ale pytanie mogło mieć wiele odpowiedzi z różnymi powiązaniami. Dla maxPossible bierzemy pod uwagę, że w danym pytaniu maksymalny score to 1.5,
-  // niezależnie od tego, którą odpowiedź by wybrał.
-  // Aby to policzyć, dla każdego pytania i każdej ideologii/partii/wartości sprawdzamy, czy w OGÓLE występuje w którejś odpowiedzi (for lub against).
-  // Jeśli tak, to dodajemy do maxPossible 1.5.
-  // Jednocześnie dla faktycznej odpowiedzi liczymy sumę.
-
-  // Przygotuj mapy pytanie -> zbiory ideologii/partii/wartości występujących
   const questionIdeologies = new Map();
   const questionParties = new Map();
-  const questionValues = new Map();
-
   config.questions.forEach(q => {
     const ideoSet = new Set();
     const partySet = new Set();
-    const valueSet = new Set();
     q.answers.forEach(ans => {
       ans.ideologies_for?.forEach(i => ideoSet.add(i));
       ans.ideologies_against?.forEach(i => ideoSet.add(i));
       ans.parties_for?.forEach(p => partySet.add(p));
       ans.parties_against?.forEach(p => partySet.add(p));
-      ans.values_for?.forEach(v => valueSet.add(v));
-      ans.values_against?.forEach(v => valueSet.add(v));
     });
     questionIdeologies.set(q.id, ideoSet);
     questionParties.set(q.id, partySet);
-    questionValues.set(q.id, valueSet);
   });
 
-  // Dodaj maxPossible dla każdej ideologii
   for (let [ideoName, data] of ideologyScores.entries()) {
-    let max = 0;
+    let max = 0, involved = 0;
     for (let [qId, ideoSet] of questionIdeologies.entries()) {
       if (ideoSet.has(ideoName)) {
         max += 1.5;
-        data.questionsInvolved++;
+        involved++;
       }
     }
     data.maxPossible = max;
+    data.questionsInvolved = involved;
   }
   for (let [partyName, data] of partyScores.entries()) {
-    let max = 0;
+    let max = 0, involved = 0;
     for (let [qId, partySet] of questionParties.entries()) {
       if (partySet.has(partyName)) {
         max += 1.5;
-        data.questionsInvolved++;
+        involved++;
       }
     }
     data.maxPossible = max;
-  }
-  for (let [valueName, data] of valueScores.entries()) {
-    let max = 0;
-    for (let [qId, valueSet] of questionValues.entries()) {
-      if (valueSet.has(valueName)) {
-        max += 1.5;
-        data.questionsInvolved++;
-      }
-    }
-    data.maxPossible = max;
+    data.questionsInvolved = involved;
   }
 
-  // Teraz przelicz sumy na podstawie faktycznych odpowiedzi użytkownika
   userAnswers.forEach(ans => {
     const answer = ans.answerData;
-    const weight = ans.answerValue; // od -1.5 do 1.5
-    if (weight === 0) return; // pominięte – bez wpływu
-
-    // Ideologie
+    const weight = ans.answerValue;
+    if (weight === 0) return;
     (answer.ideologies_for || []).forEach(ideo => {
       const rec = ideologyScores.get(ideo);
       if (rec) {
@@ -244,13 +307,11 @@ function computeScores() {
     (answer.ideologies_against || []).forEach(ideo => {
       const rec = ideologyScores.get(ideo);
       if (rec) {
-        rec.sum -= weight;  // przeciwna odpowiedź: odwracamy znak
-        if (weight < 0) rec.agreements++;  // bo np. -1.5 -> -(-1.5)=+1.5 -> zgodność
+        rec.sum -= weight;
+        if (weight < 0) rec.agreements++;
         else if (weight > 0) rec.disagreements++;
       }
     });
-
-    // Partie
     (answer.parties_for || []).forEach(party => {
       const rec = partyScores.get(party);
       if (rec) {
@@ -267,27 +328,11 @@ function computeScores() {
         else if (weight > 0) rec.disagreements++;
       }
     });
-
-    // Wartości
-    (answer.values_for || []).forEach(val => {
-      const rec = valueScores.get(val);
-      if (rec) {
-        rec.sum += weight;
-      }
-    });
-    (answer.values_against || []).forEach(val => {
-      const rec = valueScores.get(val);
-      if (rec) {
-        rec.sum -= weight;
-      }
-    });
   });
 
-  // Przelicz na procent (0-100) dla każdego elementu
   function normalizeScore(rec) {
-    if (!rec || rec.maxPossible === 0) return 50; // neutralne
+    if (!rec || rec.maxPossible === 0) return 50;
     let raw = rec.sum;
-    // zakres -maxPossible .. +maxPossible
     let normalized = (raw + rec.maxPossible) / (2 * rec.maxPossible) * 100;
     return Math.min(100, Math.max(0, normalized));
   }
@@ -295,11 +340,8 @@ function computeScores() {
   const ideologyResults = [];
   for (let [name, rec] of ideologyScores.entries()) {
     ideologyResults.push({
-      name,
-      percent: normalizeScore(rec),
-      agreements: rec.agreements || 0,
-      disagreements: rec.disagreements || 0,
-      involved: rec.questionsInvolved,
+      name, percent: normalizeScore(rec), agreements: rec.agreements || 0,
+      disagreements: rec.disagreements || 0, involved: rec.questionsInvolved,
       description: config.ideologies.find(i => i.name === name)?.description || ''
     });
   }
@@ -308,55 +350,182 @@ function computeScores() {
   const partyResults = [];
   for (let [name, rec] of partyScores.entries()) {
     partyResults.push({
-      name,
-      percent: normalizeScore(rec),
-      agreements: rec.agreements || 0,
-      disagreements: rec.disagreements || 0,
-      involved: rec.questionsInvolved,
+      name, percent: normalizeScore(rec), agreements: rec.agreements || 0,
+      disagreements: rec.disagreements || 0, involved: rec.questionsInvolved,
       description: config.parties.find(p => p.name === name)?.description || ''
     });
   }
   partyResults.sort((a,b) => b.percent - a.percent);
 
-  // Wartości dla par – przygotuj mapę wyników wartości
+  // Pary wartości (oryginalne wyświetlanie)
   const valuePercentMap = new Map();
-  for (let [name, rec] of valueScores.entries()) {
-    valuePercentMap.set(name, normalizeScore(rec));
+  for (let [name, rec] of valueScoresMap.entries()) {
+    let percent = 50;
+    if (rec.maxPossible > 0) {
+      let raw = rec.sum;
+      percent = (raw + rec.maxPossible) / (2 * rec.maxPossible) * 100;
+      percent = Math.min(100, Math.max(0, percent));
+    }
+    valuePercentMap.set(name, percent);
   }
 
-  // Pary wartości
   const pairResults = [];
   for (let pair of config.pairsOfValues) {
     let leftScore = valuePercentMap.get(pair.left) ?? 50;
     let rightScore = valuePercentMap.get(pair.right) ?? 50;
-    // przeskaluj, żeby suma była 100
     let total = leftScore + rightScore;
-    if (total === 0) {
-      leftScore = 50; rightScore = 50;
-    } else {
-      leftScore = (leftScore / total) * 100;
-      rightScore = 100 - leftScore;
-    }
+    if (total === 0) { leftScore = 50; rightScore = 50; }
+    else { leftScore = (leftScore / total) * 100; rightScore = 100 - leftScore; }
     pairResults.push({
-      left: pair.left,
-      right: pair.right,
-      leftPercent: leftScore,
-      rightPercent: rightScore,
-      leftDef: pair.leftDef,
-      rightDef: pair.rightDef
+      left: pair.left, right: pair.right, leftPercent: leftScore, rightPercent: rightScore,
+      leftDef: pair.leftDef, rightDef: pair.rightDef
     });
   }
-
-  return { pairResults, ideologyResults, partyResults };
+  return { ideologyResults, partyResults, pairResults };
 }
 
 // -------------------------------
-// WYŚWIETLANIE WYNIKÓW
+// OBLICZANIE POZYCJI NA KOMPASIE
+// -------------------------------
+function computeCompassPosition(valueScoresMap, useWeights = true) {
+  let totalWeightedDiffX = 0, totalWeightedDiffY = 0;
+  let totalMaxX = 0, totalMaxY = 0;
+
+  // Oś X
+  for (let pair of COMPASS_AXES.x) {
+    const leftScore = valueScoresMap.get(pair.left);
+    const rightScore = valueScoresMap.get(pair.right);
+    if (!leftScore || !rightScore) continue;
+    const diff = (rightScore.sum - leftScore.sum);
+    const maxPossibleDiff = (rightScore.maxPossible + leftScore.maxPossible);
+    const w = useWeights ? pair.weight : 1;
+    totalWeightedDiffX += diff * w;
+    totalMaxX += maxPossibleDiff * w;
+  }
+
+  // Oś Y
+  for (let pair of COMPASS_AXES.y) {
+    const downScore = valueScoresMap.get(pair.down);
+    const upScore = valueScoresMap.get(pair.up);
+    if (!downScore || !upScore) continue;
+    const diff = (upScore.sum - downScore.sum);
+    const maxPossibleDiff = (upScore.maxPossible + downScore.maxPossible);
+    const w = useWeights ? pair.weight : 1;
+    totalWeightedDiffY += diff * w;
+    totalMaxY += maxPossibleDiff * w;
+  }
+
+  let coordX = 0, coordY = 0;
+  if (totalMaxX !== 0) coordX = (totalWeightedDiffX / totalMaxX) * 10;
+  if (totalMaxY !== 0) coordY = (totalWeightedDiffY / totalMaxY) * 10;
+  coordX = Math.min(10, Math.max(-10, coordX));
+  coordY = Math.min(10, Math.max(-10, coordY));
+  return { x: coordX, y: coordY };
+}
+
+// -------------------------------
+// RYSOWANIE KOMPASU (Canvas)
+// -------------------------------
+function drawCompass(x, y) {
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const w = canvas.width, h = canvas.height;
+  const centerX = w / 2, centerY = h / 2;
+  const range = 10;
+  const step = 2;
+  const pxPerUnit = Math.min(w, h) / (range * 2); // bo -10..10 to 20 jednostek
+
+  ctx.clearRect(0, 0, w, h);
+
+  // Rysowanie 4 ćwiartek (prostokąty)
+  // Prawa góra
+  ctx.fillStyle = '#0183BE';
+  ctx.fillRect(centerX, 0, w - centerX, centerY);
+  // Prawy dół
+  ctx.fillStyle = '#EDD500';
+  ctx.fillRect(centerX, centerY, w - centerX, h - centerY);
+  // Lewa góra
+  ctx.fillStyle = '#DD0000';
+  ctx.fillRect(0, 0, centerX, centerY);
+  // Lewy dół
+  ctx.fillStyle = '#202020';
+  ctx.fillRect(0, centerY, centerX, h - centerY);
+
+  // Siatka i osie (czarne, wyraźne)
+  ctx.save();
+  ctx.strokeStyle = '#000000';
+  ctx.lineWidth = 1.5;
+  ctx.fillStyle = '#000000';
+  ctx.font = '10px monospace';
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+
+  // linie poziome i pionowe (co step)
+  for (let i = -range; i <= range; i += step) {
+    const xPos = centerX + i * pxPerUnit;
+    const yPos = centerY - i * pxPerUnit;
+    // pionowe
+    ctx.beginPath();
+    ctx.moveTo(xPos, 0);
+    ctx.lineTo(xPos, h);
+    ctx.stroke();
+    // poziome
+    ctx.beginPath();
+    ctx.moveTo(0, yPos);
+    ctx.lineTo(w, yPos);
+    ctx.stroke();
+  }
+
+  // osie główne (grubsze)
+  ctx.beginPath();
+  ctx.moveTo(centerX, 0);
+  ctx.lineTo(centerX, h);
+  ctx.moveTo(0, centerY);
+  ctx.lineTo(w, centerY);
+  ctx.lineWidth = 2;
+  ctx.stroke();
+
+  // strzałki (opcjonalnie)
+  ctx.fillStyle = '#000';
+  // małe oznaczenia kreskowe na końcach (minimum)
+  
+  // Punkt użytkownika (bardzo mały, biały z czarną obwódką)
+  const pointX = centerX + x * pxPerUnit;
+  const pointY = centerY - y * pxPerUnit;
+  ctx.beginPath();
+  ctx.arc(pointX, pointY, 5, 0, 2 * Math.PI);
+  ctx.fillStyle = '#ffffff';
+  ctx.fill();
+  ctx.strokeStyle = '#000000';
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+  
+  ctx.restore();
+}
+
+// -------------------------------
+// AKTUALIZACJA KOMPASU Z ZAPISANYCH SCORES
+// -------------------------------
+function updateCompassFromScores(valueScoresMap) {
+  if (!valueScoresMap) return;
+  const useWeights = weightToggle ? weightToggle.checked : false;
+  const { x, y } = computeCompassPosition(valueScoresMap, useWeights);
+  coordXSpan.innerText = x.toFixed(2);
+  coordYSpan.innerText = y.toFixed(2);
+  drawCompass(x, y);
+}
+
+// -------------------------------
+// GŁÓWNA FUNKCJA WYŚWIETLANIA WYNIKÓW
 // -------------------------------
 function computeAndDisplayResults() {
-  const { pairResults, ideologyResults, partyResults } = computeScores();
+  if (!config) return;
+  const valueScoresMap = computeValueScores();
+  lastValueScoresMap = valueScoresMap;
 
-  // Wyświetl pary wartości
+  const { ideologyResults, partyResults, pairResults } = computeIdeologyPartyAndPairs(valueScoresMap);
+
+  // Wyświetlanie par wartości (oryginalne)
   valuesResults.innerHTML = '<h3>⚖️ Pary wartości (przeciąganie liny)</h3>';
   pairResults.forEach(pair => {
     const pairDiv = document.createElement('div');
@@ -371,7 +540,6 @@ function computeAndDisplayResults() {
         <span class="value-right" data-def="${pair.rightDef}">${pair.right}</span>
       </div>
     `;
-    // Dodanie kliknięcia do definicji
     const leftSpan = pairDiv.querySelector('.value-left');
     const rightSpan = pairDiv.querySelector('.value-right');
     leftSpan.addEventListener('click', () => showPopup(pair.leftDef));
@@ -379,8 +547,7 @@ function computeAndDisplayResults() {
     valuesResults.appendChild(pairDiv);
   });
 
-  // Ranking ideologii
-  ideologiesResults.innerHTML = '<h3>📊 Ranking ideologii (zgodność %)</h3><div style="margin-bottom:1rem;">Im wyższy procent, tym bardziej Twój profil jest zgodny z daną ideologią.</div>';
+  ideologiesResults.innerHTML = '<h3>📊 Ranking ideologii (zgodność %)</h3><div style="margin-bottom:1rem;">Im wyższy procent, tym bardziej Twoje poglądy są zgodne z daną ideologią.</div>';
   const ideoList = document.createElement('div');
   ideologyResults.forEach(ideo => {
     const item = document.createElement('div');
@@ -393,7 +560,6 @@ function computeAndDisplayResults() {
   });
   ideologiesResults.appendChild(ideoList);
 
-  // Ranking partii
   partiesResults.innerHTML = '<h3>🗳️ Ranking partii (zgodność %)</h3>';
   const partyList = document.createElement('div');
   partyResults.forEach(party => {
@@ -408,8 +574,21 @@ function computeAndDisplayResults() {
   partiesResults.appendChild(partyList);
 
   resultsDiv.style.display = 'block';
-  window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
+  compassPanelDiv.style.display = 'block';
+  
+  // Inicjalne rysowanie kompasu (tryb domyślny: unchecked = jednakowe wagi)
+  if (weightToggle) weightToggle.checked = false;
+  updateCompassFromScores(valueScoresMap);
+  
+  window.scrollTo({ top: compassPanelDiv.offsetTop - 20, behavior: 'smooth' });
 }
+
+// Obsługa zmiany rozmiaru okna – przerysowanie kompasu
+window.addEventListener('resize', () => {
+  if (lastValueScoresMap && compassPanelDiv.style.display !== 'none') {
+    updateCompassFromScores(lastValueScoresMap);
+  }
+});
 
 // Uruchom
 loadConfig();
