@@ -272,7 +272,7 @@
   },
   {
     "name": "Korwinizm-Sośnierzyzm",
-    "description": "Sośnierzyści widzą państwo jako zło konieczne ograniczone do wojska, policji, sądów i infrastruktury. Popierają pełną prywatyzację reszty sfer i traktowanie relacji prywatnych jako dobrowolnych kontraktów."
+    "description": "Sośnierzyści widzą państwo jako zło konieczne ograniczone do wojska, policji, sądów i dróg. Popierają pełną prywatyzację reszty sfer i traktowanie relacji prywatnych jako dobrowolnych kontraktów."
   },
   {
     "name": "Neolibertarianizm",
@@ -505,9 +505,9 @@
     { "name": "Razem", "description": "Razem – Socjalizm demokratyczny - Socjalizm fabiański - Socjalizm rynkowy - Socjaldemokracja - Feminizm - Ekologizm" },
     { "name": "KKP", "description": "Konfederacja Korony Polskiej – Alt-right - Abolutyzm klasyczny - Tradycjonalizm - Reakcjonizm - Nacjonalizm - Fundamentalizm religijny - Ordoliberalizm" },
     { "name": "Ruch Narodowy", "description": "Ruch Narodowy – Nacjonalizm - Narodowa demokracja - Tradycjonalizm - Narodowy konserwatyzm - Narodowy katolicyzm - Solidaryzm - Katolicka nauka społeczna - Konserwatyzm - Alt-lite - Narodowy agraryzm" },
-    { "name": "Nowa Nadzieja", "description": "Nowa Nadzieja – Konserwatywny liberalizm, Liberalny konserwatyzm, Monarchizm, Konserwatyzm, Nowa prawica, Katolicka nauka społeczna, Abolutyzm, Alt-lite, Autorytarny konserwatyzm, Korwinizm, Korwinizm-Mentzenizm, Narodowy agraryzm, Narodowy liberalizm, Paleokonserwatyzm, Tradycjonalizm" },
-    { "name": "PPS", "description": "Polska Partia Socjalistyczna – Socjalizm demokratyczny, Socjaldemokracja, Lewicowy nacjonalizm" },
-    { "name": "Zieloni", "description": "Zieloni – Ekologizm, Socjaldemokracja, Feminizm" }
+    { "name": "Nowa Nadzieja", "description": "Nowa Nadzieja – Konserwatywny liberalizm - Liberalny konserwatyzm - Monarchizm - Konserwatyzm - Nowa prawica - Katolicka nauka społeczna - Abolutyzm - Alt-lite - Autorytarny konserwatyzm - Korwinizm - Korwinizm-Mentzenizm - Narodowy agraryzm - Narodowy liberalizm - Paleokonserwatyzm - Tradycjonalizm" },
+    { "name": "PPS", "description": "Polska Partia Socjalistyczna – Socjalizm demokratyczny - Socjaldemokracja - Lewicowy nacjonalizm" },
+    { "name": "Zieloni", "description": "Zieloni – Ekologizm - Socjaldemokracja - Feminizm" }
   ],
 
   "questions": [
@@ -595,6 +595,16 @@
           "parties_against": []
         },
         {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": ["Indywidualizm", "Autonomia"],
@@ -613,21 +623,11 @@
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": []
-        },
-        {
-          "label": "Pomiń pytanie",
-          "value": 0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
         }
       ]
     },
         {
-"id": 3,
+      "id": 3,
       "text": "Wspólnoty i grupy społeczne mają wartość tylko o tyle, o ile służą dobru jednostek, które je tworzą",
       "description": "Placeholder",
       "answers": [
