@@ -1,3 +1,4 @@
+data.json
 {
   "pairsOfValues": [
     {
@@ -513,14 +514,14 @@
   "questions": [
     {
       "id": 1,
-      "text": "JP JP JP JP JP HWDP 100%",
+      "text": "Społeczeństwo nie posiada interesów ani woli niezależnych od interesów tworzących je indywidualnych jednostek",
       "description": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Autonomia", "Anarchia", "Decentralizacja", "Własność kolektywna"],
-          "values_against": ["Heteronomia", "Etatyzm", "Centralizacja"],
+          "values_for": ["Indywidualizm"],
+          "values_against": ["Kolektywizm"],
           "ideologies_for": ["Anarchokapitalizm"],
           "ideologies_against": ["Marksizm"],
           "parties_for": [],
@@ -577,8 +578,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Autonomia", "Anarchia", "Decentralizacja", "Własność kolektywna"],
-          "values_against": ["Heteronomia", "Etatyzm", "Centralizacja"],
+          "values_for": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -634,8 +635,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Autonomia", "Anarchia", "Decentralizacja", "Własność kolektywna"],
-          "values_against": ["Heteronomia", "Etatyzm", "Centralizacja"],
+          "values_for": ["Indywidualizm", "Autonomia"],
+          "values_against": ["Kolektywizm", "Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
