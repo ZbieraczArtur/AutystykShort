@@ -170,17 +170,17 @@
   ],
 
   "parties": [
-    { "name": "PiS", "description": "Prawo i Sprawiedliwość – konserwatyzm, solidaryzm, silne państwo." },
-    { "name": "KO", "description": "Koalicja Obywatelska – liberalno-konserwatywna, proeuropejska." },
-    { "name": "PSL", "description": "Polskie Stronnictwo Ludowe – agraryzm, chadecja, umiarkowanie." },
-    { "name": "Lewica", "description": "Nowa Lewica – socjaldemokracja, równość, świeckość." },
-    { "name": "Polska2050", "description": "Centrum, ekologia, demokracja deliberatywna." },
-    { "name": "Razem", "description": "Lewica radykalna, socjalizm demokratyczny, antykapitalizm." },
-    { "name": "KKP", "description": "Konfederacja Korony Polskiej – narodowy konserwatyzm." },
-    { "name": "Ruch Narodowy", "description": "Skrajna prawica, nacjonalizm, eurosceptycyzm." },
-    { "name": "Nowa Nadzieja", "description": "Libertarianizm, wolny rynek, minimalne państwo." },
-    { "name": "PPS", "description": "Polska Partia Socjalistyczna – socjalizm patriotyczny." },
-    { "name": "Zieloni", "description": "Ekologia, feminizm, progresywizm." }
+    { "name": "PiS", "description": "Prawo i Sprawiedliwość – Narodowy konserwatyzm - Solidaryzm społeczny - Konserwatyzm paternalistyczny - Kapitalizm państwowy - Agraryzm narodowy - Neokonserwatyzm - Alt-lite - Autorytarny konserwatyzm - Narodowy konserwatyzm - Ekokonserwatyzm - Narodowy katolicyzm" },
+    { "name": "KO", "description": "Koalicja Obywatelska – Socjalliberalizm - Demoliberalizm - Liberalny konserwatyzm - Społeczna gospodarka rynkowa - Chadecja - Trzecia droga - Liberalny nacjonalizm" },
+    { "name": "PSL", "description": "Polskie Stronnictwo Ludowe – Agraryzm - Chadecja - Liberalny konserwatyzm" },
+    { "name": "Nowa Lewica", "description": "Nowa Lewica – Socjaldemokracja - Socjalliberalizm - Ekologizm - Feminizm - Trzecia droga"},
+    { "name": "Polska2050", "description": "Polska 2050 Rzeczypospolitej Polskiej - Ekologizm - Socjalliberalizm - Socjaldemokracja - Trzecia droga" },
+    { "name": "Razem", "description": "Razem – Socjalizm demokratyczny - Socjalizm fabiański - Socjalizm rynkowy - Socjaldemokracja - Feminizm - Ekologizm" },
+    { "name": "KKP", "description": "Konfederacja Korony Polskiej – Alt-right - Abolutyzm klasyczny - Tradycjonalizm - Reakcjonizm - Nacjonalizm - Fundamentalizm religijny - Ordoliberalizm" },
+    { "name": "Ruch Narodowy", "description": "Ruch Narodowy – Nacjonalizm - Narodowa demokracja - Tradycjonalizm - Narodowy konserwatyzm - Narodowy katolicyzm - Solidaryzm - Katolicka nauka społeczna - Konserwatyzm - Alt-lite - Narodowy agraryzm" },
+    { "name": "Nowa Nadzieja", "description": "Nowa Nadzieja – Konserwatywny liberalizm - Liberalny konserwatyzm - Monarchizm - Konserwatyzm - Nowa prawica - Katolicka nauka społeczna - Abolutyzm - Alt-lite - Autorytarny konserwatyzm - Korwinizm - Korwinizm-Mentzenizm - Narodowy agraryzm - Narodowy liberalizm - Paleokonserwatyzm - Tradycjonalizm" },
+    { "name": "PPS", "description": "Polska Partia Socjalistyczna – Socjalizm demokratyczny - Socjaldemokracja - Lewicowy nacjonalizm" },
+    { "name": "Zieloni", "description": "Zieloni – Ekologizm - Socjaldemokracja - Feminizm" }
   ],
 
   "questions": [
