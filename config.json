@@ -1,0 +1,90 @@
+{
+  "valuePairs": [
+    {
+      "id": "wlasnosc",
+      "name": "Własność kolektywna ↔ własność prywatna",
+      "left": "Własność kolektywna",
+      "right": "Własność prywatna"
+    },
+    {
+      "id": "planowanie",
+      "name": "Planowanie ↔ rynek",
+      "left": "Planowanie",
+      "right": "Rynek"
+    },
+    {
+      "id": "regulacja",
+      "name": "Regulacja instytucjonalna ↔ samoregulacja",
+      "left": "Regulacja instytucjonalna",
+      "right": "Samoregulacja"
+    },
+    {
+      "id": "autonomia",
+      "name": "Autonomia ↔ heteronomia",
+      "left": "Autonomia",
+      "right": "Heteronomia"
+    },
+    {
+      "id": "etatyzm",
+      "name": "Etatyzm ↔ anarchia",
+      "left": "Etatyzm",
+      "right": "Anarchia"
+    }
+  ],
+  "ideologies": [
+    { "id": "liberalizm_klasyczny", "name": "Liberalizm klasyczny" },
+    { "id": "socjalliberalizm", "name": "Socjalliberalizm" },
+    { "id": "konserwatyzm_liberalny", "name": "Konserwatyzm liberalny" },
+    { "id": "socjalizm_demokratyczny", "name": "Socjalizm demokratyczny" },
+    { "id": "anarchokomunizm", "name": "Anarchokomunizm" }
+  ],
+  "parties": [
+    { "id": "pis", "name": "PiS" },
+    { "id": "ko", "name": "KO" },
+    { "id": "psl", "name": "PSL" },
+    { "id": "lewica", "name": "Lewica" },
+    { "id": "polska2050", "name": "Polska2050" },
+    { "id": "razem", "name": "Razem" },
+    { "id": "kkp", "name": "KKP" },
+    { "id": "ruch_narodowy", "name": "Ruch Narodowy" },
+    { "id": "nowa_nadzieja", "name": "Nowa Nadzieja" },
+    { "id": "pps", "name": "PPS" },
+    { "id": "zieloni", "name": "Zieloni" }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Instytucja własności prywatnej powinna zostać zniesiona.",
+      "description": "Chodzi o całkowite zniesienie prawa do prywatnego posiadania środków produkcji.",
+      "comment": "To klasyczna teza marksistowska.",
+      "answers": [
+        {
+          "label": "Zgadzam się",
+          "value": "agree",
+          "ideologies_for": ["socjalizm_demokratyczny", "anarchokomunizm"],
+          "ideologies_against": ["liberalizm_klasyczny", "socjalliberalizm", "konserwatyzm_liberalny"],
+          "parties_for": ["lewica", "razem"],
+          "parties_against": ["pis", "ko", "psl", "polska2050", "kkp", "ruch_narodowy", "nowa_nadzieja"],
+          "value_alignments": [
+            { "pairId": "wlasnosc", "side": "left" }
+          ]
+        },
+        {
+          "label": "Nie zgadzam się",
+          "value": "disagree",
+          "ideologies_for": ["liberalizm_klasyczny", "socjalliberalizm", "konserwatyzm_liberalny"],
+          "ideologies_against": ["socjalizm_demokratyczny", "anarchokomunizm"],
+          "parties_for": ["pis", "ko", "psl", "polska2050", "kkp", "ruch_narodowy", "nowa_nadzieja"],
+          "parties_against": ["lewica", "razem"],
+          "value_alignments": [
+            { "pairId": "wlasnosc", "side": "right" }
+          ]
+        },
+        {
+          "label": "Pomiń",
+          "value": "skip"
+        }
+      ]
+    }
+  ]
+}
