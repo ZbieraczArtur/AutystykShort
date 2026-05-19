@@ -497,7 +497,7 @@
   ],
 
   "parties": [
-    { "name": "PiS", "description": "Prawo i Sprawiedliwość – Narodowy konserwatyzm - Solidaryzm społeczny - Konserwatyzm paternalistyczny - Kapitalizm państwowy - Agraryzm narodowy - Neokonserwatyzm - Alt-lite - Autorytarny konserwatyzm - Narodowy konserwatyzm - Ekokonserwatyzm - Narodowy katolicyzm" },
+    { "name": "PiS", "description": "Prawo i Sprawiedliwość – Formacja reprezentuje nurt narodowego konserwatyzmu, łącząc tradycję republikańską z zasadami solidaryzmu społecznego. W gospodarce opowiada się za aktywną rolą państwa, dążąc do ochrony strategicznych sektorów, repolonizacji oraz wzmocnienia rodzimego kapitału. Program zakłada szeroką redystrybucję środków publicznych poprzez transfery socjalne wspierające rodziny i grupy mniej zamożne. W kwestiach ustrojowych formacja dąży do centralizacji procesów decyzyjnych oraz reform zwiększających sprawność instytucji i poddających wymiar sprawiedliwości większej kontroli suwerena. Światopoglądowo akcentuje ochronę tradycyjnego modelu rodziny, tożsamości narodowej i wartości chrześcijańskich jako fundamentów ładu moralnego. W polityce międzynarodowej priorytetem jest suwerenność państwa i asertywna obrona interesów narodowych w ramach koncepcji „Europy ojczyzn”." },
     { "name": "KO", "description": "Koalicja Obywatelska – Socjalliberalizm - Demoliberalizm - Liberalny konserwatyzm - Społeczna gospodarka rynkowa - Chadecja - Trzecia droga - Liberalny nacjonalizm" },
     { "name": "PSL", "description": "Polskie Stronnictwo Ludowe – Agraryzm - Chadecja - Liberalny konserwatyzm" },
     { "name": "Nowa Lewica", "description": "Nowa Lewica – Socjaldemokracja - Socjalliberalizm - Ekologizm - Feminizm - Trzecia droga"},
