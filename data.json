@@ -301,29 +301,28 @@
   "questions": [
     {
       "id": 1,
-      "text": "Instytucja własności prywatnej powinna zostać zniesiona.",
-      "description": "Chodzi o całkowite zniesienie prawa własności prywatnej środków produkcji (fabryki, ziemia, kapitał). Nie dotyczy własności osobistej.",
-      "comment": "Socjaliści często podkreślają różnicę między własnością osobistą a produkcyjną.",
+      "text": "Społeczeństwo nie posiada interesów ani woli niezależnych od interesów tworzących je indywidualnych jednostek",
+      "description": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Własność kolektywna", "Planowanie"],
-          "values_against": ["Własność prywatna", "Rynek"],
-          "ideologies_for": ["Socjalizm demokratyczny", "Anarchokomunizm"],
-          "ideologies_against": ["Liberalizm klasyczny", "Konserwatyzm liberalny"],
-          "parties_for": ["Razem", "Lewica", "PPS"],
-          "parties_against": ["PiS", "KO", "PSL", "Nowa Nadzieja", "Ruch Narodowy", "KKP", "Polska2050"]
+          "values_for": ["Indywidualizm"],
+          "values_against": ["Kolektywizm"],
+          "ideologies_for": ["Anarchokapitalizm"],
+          "ideologies_against": ["Marksizm"],
+          "parties_for": [],
+          "parties_against": ["PiS", "KO", "PSL", "Ruch Narodowy", "KKP", "Polska2050"]
         },
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Własność kolektywna", "Planowanie"],
-          "values_against": ["Własność prywatna"],
-          "ideologies_for": ["Socjalizm demokratyczny"],
-          "ideologies_against": ["Liberalizm klasyczny"],
-          "parties_for": ["Lewica", "Razem"],
-          "parties_against": ["Nowa Nadzieja"]
+          "values_for": ["Indywidualizm"],
+          "values_against": ["Kolektywizm"],
+          "ideologies_for": ["Anarchokapitalizm"],
+          "ideologies_against": ["Marksizm"],
+          "parties_for": [],
+          "parties_against": ["PiS", "KO", "PSL", "Ruch Narodowy", "KKP", "Polska2050"]
         },
         {
           "label": "Pomiń pytanie",
@@ -338,50 +337,50 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": ["Własność prywatna", "Rynek"],
-          "values_against": ["Własność kolektywna", "Planowanie"],
-          "ideologies_for": ["Liberalizm klasyczny", "Konserwatyzm liberalny"],
-          "ideologies_against": ["Socjalizm demokratyczny", "Anarchokomunizm"],
-          "parties_for": ["Nowa Nadzieja", "KO", "PiS", "PSL", "Polska2050"],
-          "parties_against": ["Razem", "Lewica", "PPS"]
+          "values_for": ["Kolektywizm"],
+          "values_against": ["Indywidualizm"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": ["Własność prywatna", "Rynek"],
-          "values_against": ["Własność kolektywna", "Planowanie"],
-          "ideologies_for": ["Liberalizm klasyczny", "Konserwatyzm liberalny"],
-          "ideologies_against": ["Socjalizm demokratyczny", "Anarchokomunizm"],
-          "parties_for": ["Nowa Nadzieja", "KO", "PiS", "PSL", "Polska2050", "Ruch Narodowy", "KKP"],
-          "parties_against": ["Razem", "Lewica", "PPS"]
+          "values_for": ["Kolektywizm"],
+          "values_against": ["Indywidualizm"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
         }
       ]
     },
     {
       "id": 2,
-      "text": "Granice państwowe powinny być w zasadzie otwarte dla wszystkich, którzy chcą pracować lub mieszkać.",
-      "description": "Chodzi o zniesienie kontroli imigracyjnej lub jej minimalizację.",
-      "comment": "Niektóre ideologie lewicowe wspierają swobodną migrację, prawicowe – kontrolę.",
+      "text": "Społeczeństwo, niczym żywy organizm, funkcjonuje jako spójna całość, w której każda część ma swoje miejsce i funkcję, przewyższając sumę indywidualnych interesów",
+      "description": "Placeholder",
+      "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Minimalizacja granic", "Kosmopolityzm"],
-          "values_against": ["Kontrola granic", "Partykularyzm narodowy"],
-          "ideologies_for": ["Socjalizm demokratyczny", "Anarchokomunizm"],
-          "ideologies_against": ["Konserwatyzm liberalny"],
-          "parties_for": ["Razem", "Lewica", "Zieloni"],
-          "parties_against": ["PiS", "Ruch Narodowy", "KKP", "Nowa Nadzieja"]
+          "values_for": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
         },
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Kosmopolityzm"],
-          "values_against": ["Partykularyzm narodowy"],
-          "ideologies_for": ["Socjalliberalizm"],
+          "values_for": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia"],
+          "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["KO", "Polska2050"],
-          "parties_against": ["PiS", "Ruch Narodowy"]
+          "parties_for": [],
+          "parties_against": []
         },
         {
           "label": "Pomiń pytanie",
@@ -396,22 +395,79 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": ["Kontrola granic", "Partykularyzm narodowy"],
-          "values_against": ["Kosmopolityzm"],
-          "ideologies_for": ["Konserwatyzm liberalny"],
+          "values_for": ["Indywidualizm", "Autonomia"],
+          "values_against": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["PiS", "PSL", "Polska2050"],
-          "parties_against": ["Razem"]
+          "parties_for": [],
+          "parties_against": []
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": ["Kontrola granic", "Partykularyzm narodowy"],
-          "values_against": ["Minimalizacja granic", "Kosmopolityzm"],
-          "ideologies_for": ["Konserwatyzm liberalny"],
-          "ideologies_against": ["Socjalizm demokratyczny", "Anarchokomunizm"],
-          "parties_for": ["Ruch Narodowy", "KKP", "PiS", "Nowa Nadzieja"],
-          "parties_against": ["Razem", "Lewica", "Zieloni"]
+          "values_for": ["Indywidualizm", "Autonomia"],
+          "values_against": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 3,
+      "text": "Wspólnoty i grupy społeczne mają wartość tylko o tyle, o ile służą dobru jednostek, które je tworzą",
+      "description": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": ["Indywidualizm", "Autonomia"],
+          "values_against": ["Kolektywizm", "Heteronomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Indywidualizm", "Autonomia"],
+          "values_against": ["Kolektywizm", "Heteronomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": ["Kolektywizm", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": ["Kolektywizm", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
         }
       ]
     }
