@@ -1,0 +1,109 @@
+{
+  "valuePairs": [
+    { "leftId": "kolektywizm", "rightId": "prywatna", "leftLabel": "Własność kolektywna", "rightLabel": "Własność prywatna" },
+    { "leftId": "planowanie", "rightId": "rynek", "leftLabel": "Planowanie", "rightLabel": "Rynek" },
+    { "leftId": "regulacja", "rightId": "samoregulacja", "leftLabel": "Regulacja instytucjonalna", "rightLabel": "Samoregulacja" },
+    { "leftId": "autonomia", "rightId": "heteronomia", "leftLabel": "Autonomia", "rightLabel": "Heteronomia" },
+    { "leftId": "etatyzm", "rightId": "anarchia", "leftLabel": "Etatyzm", "rightLabel": "Anarchia" }
+  ],
+  "ideologies": [
+    { "id": "liberalizm_klasyczny", "name": "Liberalizm klasyczny" },
+    { "id": "socjalliberalizm", "name": "Socjalliberalizm" },
+    { "id": "konserwatyzm_liberalny", "name": "Konserwatyzm liberalny" },
+    { "id": "socjalizm_demokratyczny", "name": "Socjalizm demokratyczny" },
+    { "id": "anarchokomunizm", "name": "Anarchokomunizm" }
+  ],
+  "parties": [
+    { "id": "pis", "name": "PiS" },
+    { "id": "ko", "name": "KO" },
+    { "id": "psl", "name": "PSL" },
+    { "id": "lewica", "name": "Lewica" },
+    { "id": "polska2050", "name": "Polska2050" },
+    { "id": "razem", "name": "Razem" },
+    { "id": "kkp", "name": "KKP" },
+    { "id": "ruch_narodowy", "name": "Ruch Narodowy" },
+    { "id": "nowa_nadzieja", "name": "Nowa Nadzieja" },
+    { "id": "pps", "name": "PPS" },
+    { "id": "zieloni", "name": "Zieloni" }
+  ],
+  "questions": [
+    {
+      "id": "q1",
+      "text": "Instytucja własności prywatnej powinna zostać zniesiona.",
+      "description": "Chodzi o całkowite zniesienie prawa do prywatnej własności środków produkcji.",
+      "comment": "Klasyczne pytanie lewicowo‑prawicowe.",
+      "answers": [
+        {
+          "id": "q1_agree",
+          "label": "Zgadzam się",
+          "values": ["kolektywizm"],
+          "ideologies_for": ["socjalizm_demokratyczny", "anarchokomunizm"],
+          "ideologies_against": ["liberalizm_klasyczny", "socjalliberalizm", "konserwatyzm_liberalny"],
+          "parties_for": ["lewica", "razem"],
+          "parties_against": ["pis", "ko", "psl", "polska2050", "kkp", "ruch_narodowy", "nowa_nadzieja", "pps", "zieloni"]
+        },
+        {
+          "id": "q1_disagree",
+          "label": "Nie zgadzam się",
+          "values": ["prywatna"],
+          "ideologies_for": ["liberalizm_klasyczny", "socjalliberalizm", "konserwatyzm_liberalny"],
+          "ideologies_against": ["socjalizm_demokratyczny", "anarchokomunizm"],
+          "parties_for": ["pis", "ko", "psl", "polska2050", "kkp", "ruch_narodowy", "nowa_nadzieja", "pps", "zieloni"],
+          "parties_against": ["lewica", "razem"]
+        }
+      ]
+    },
+    {
+      "id": "q2",
+      "text": "Gospodarka powinna być centralnie planowana przez państwo.",
+      "description": "Państwo decyduje o produkcji, cenach i alokacji zasobów.",
+      "comment": "",
+      "answers": [
+        {
+          "id": "q2_agree",
+          "label": "Zgadzam się",
+          "values": ["planowanie"],
+          "ideologies_for": ["socjalizm_demokratyczny", "anarchokomunizm"],
+          "ideologies_against": ["liberalizm_klasyczny", "socjalliberalizm", "konserwatyzm_liberalny"],
+          "parties_for": ["lewica", "razem"],
+          "parties_against": ["pis", "ko", "psl", "polska2050", "kkp", "ruch_narodowy", "nowa_nadzieja", "pps", "zieloni"]
+        },
+        {
+          "id": "q2_disagree",
+          "label": "Nie zgadzam się",
+          "values": ["rynek"],
+          "ideologies_for": ["liberalizm_klasyczny", "socjalliberalizm", "konserwatyzm_liberalny"],
+          "ideologies_against": ["socjalizm_demokratyczny", "anarchokomunizm"],
+          "parties_for": ["pis", "ko", "psl", "polska2050", "kkp", "ruch_narodowy", "nowa_nadzieja", "pps", "zieloni"],
+          "parties_against": ["lewica", "razem"]
+        }
+      ]
+    },
+    {
+      "id": "q3",
+      "text": "Wolny rynek najlepiej reguluje potrzeby społeczne.",
+      "description": "",
+      "comment": "",
+      "answers": [
+        {
+          "id": "q3_agree",
+          "label": "Zgadzam się",
+          "values": ["rynek", "samoregulacja"],
+          "ideologies_for": ["liberalizm_klasyczny", "konserwatyzm_liberalny"],
+          "ideologies_against": ["socjalizm_demokratyczny", "socjalliberalizm", "anarchokomunizm"],
+          "parties_for": ["kkp", "nowa_nadzieja"],
+          "parties_against": ["lewica", "razem", "pis", "ko", "psl", "polska2050", "ruch_narodowy", "pps", "zieloni"]
+        },
+        {
+          "id": "q3_disagree",
+          "label": "Nie zgadzam się",
+          "values": ["planowanie", "regulacja"],
+          "ideologies_for": ["socjalizm_demokratyczny", "socjalliberalizm"],
+          "ideologies_against": ["liberalizm_klasyczny", "konserwatyzm_liberalny"],
+          "parties_for": ["lewica", "razem", "psl", "polska2050"],
+          "parties_against": ["kkp", "nowa_nadzieja", "pis", "ko", "ruch_narodowy", "pps", "zieloni"]
+        }
+      ]
+    }
+  ]
+}
