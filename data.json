@@ -627,7 +627,7 @@
       ]
     },
         {
-      "id": 3,
+"id": 3,
       "text": "Wspólnoty i grupy społeczne mają wartość tylko o tyle, o ile służą dobru jednostek, które je tworzą",
       "description": "Placeholder",
       "answers": [
@@ -652,6 +652,16 @@
           "parties_against": []
         },
         {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": ["Kolektywizm", "Heteronomia"],
@@ -666,73 +676,6 @@
           "value": -1.5,
           "values_for": ["Kolektywizm", "Heteronomia"],
           "values_against": ["Indywidualizm", "Autonomia"],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Pomiń pytanie",
-          "value": 0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        }
-      ]
-    },
-        {
-      "id": 4,
-      "text": "Indywidualna wolność jest pierwszorzędną wartością polityczną, nadrzędną wobec innych dóbr społecznych",
-      "description": "Placeholder",
-      "answers": [
-        {
-          "label": "Zdecydowanie zgadzam się",
-          "value": 1.5,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Częściowo zgadzam się",
-          "value": 1.0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Częściowo nie zgadzam się",
-          "value": -1.0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Zdecydowanie nie zgadzam się",
-          "value": -1.5,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Pomiń pytanie",
-          "value": 0,
-          "values_for": [],
-          "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
