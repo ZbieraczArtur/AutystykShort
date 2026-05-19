@@ -1,56 +1,48 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <title>Polityczny Test Ideologiczny</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <title>Polityczny test ideologiczny – zgodność poglądów</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Polityczny Test Ideologiczny</h1>
-            <p class="subtitle">Analiza zgodności poglądów z wartościami, ideologiami i partiami</p>
-        </header>
+  <div class="container">
+    <header>
+      <h1>🗳️ Polityczny test ideologiczny</h1>
+      <div class="disclaimer">
+        <p><strong>⚠️ Informacja przed testem</strong><br>
+        Niektóre tezy w tym teście mogą mieć ukryte presupozycje – zakładać istnienie państwa, własność prywatną, walkę klasową lub inny punkt wyjścia, z którym możesz się nie zgadzać. Inne mogą po prostu nie mieć sensu z perspektywy twojego światopoglądu. W takim przypadku użyj przycisku <strong>„Pomiń”</strong> – pominięcie pytania jest w pełni akceptowalne i nie wpłynie negatywnie na wynik. Wręcz przeciwnie: precyzyjniejszy wynik osiągniesz właśnie wtedy, gdy odpowiadasz wyłącznie na tezy, które cię dotyczą. Przy niektórych tezach pojawi się komunikat z podpowiedzią, kiedy warto pominąć, ale traktuj go jako sugestię, nie nakaz. Możesz pominąć dowolną tezę w dowolnym momencie.</p>
+      </div>
+    </header>
 
-        <!-- Modal z informacją przed testem -->
-        <div id="introModal" class="modal">
-            <div class="modal-content">
-                <span class="close-btn">&times;</span>
-                <h2>Witaj w teście</h2>
-                <p>Niektóre tezy w tym teście mogą mieć ukryte presupozycje - zakładać istnienie państwa, własność prywatną, walkę klasową lub inny punkt wyjścia, z którym możesz się nie zgadzać. Inne mogą po prostu nie mieć sensu z perspektywy twojego światopoglądu.</p>
-                <p>W takim przypadku użyj przycisku <strong>„Pomiń”</strong> – pominięcie pytania jest w pełni akceptowalne i nie wpłynie negatywnie na wynik. Wręcz przeciwnie: precyzyjniejszy wynik osiągniesz właśnie wtedy, gdy odpowiadasz wyłącznie na tezy, które cię dotyczą.</p>
-                <p>Przy niektórych tezach pojawi się komunikat z podpowiedzią, kiedy warto pominąć, ale traktuj go jako sugestię, nie nakaz. Możesz pominąć dowolną tezę w dowolnym momencie.</p>
-                <button id="startTestBtn" class="btn-primary">Rozpocznij test</button>
-            </div>
-        </div>
+    <div id="questions-container"></div>
 
-        <!-- Główna sekcja pytań (widoczna po starcie) -->
-        <div id="testSection" style="display: none;">
-            <div id="questionsContainer"></div>
-            <div class="submit-area">
-                <button id="submitBtn" class="btn-primary">Pokaż wyniki</button>
-            </div>
-        </div>
-
-        <!-- Sekcja wyników (początkowo ukryta) -->
-        <div id="resultsSection" style="display: none;">
-            <h2>Twoje wyniki</h2>
-            <div id="valuesResults"></div>
-            <div id="ideologiesResults"></div>
-            <div id="partiesResults"></div>
-            <button id="restartBtn" class="btn-secondary">Wykonaj test ponownie</button>
-        </div>
+    <div class="actions">
+      <button id="submitBtn" class="btn-submit">📊 Pokaż wyniki</button>
     </div>
 
-    <!-- Małe okienko definicji (modal) -->
-    <div id="definitionModal" class="modal small-modal">
-        <div class="modal-content">
-            <span class="close-def-btn">&times;</span>
-            <p id="definitionText"></p>
-        </div>
+    <div id="results-container" style="display: none;">
+      <hr>
+      <h2>Twoje wyniki</h2>
+      <div id="values-results"></div>
+      <div id="ideologies-results"></div>
+      <div id="parties-results"></div>
     </div>
 
-    <script src="app.js"></script>
+    <footer>
+      <p>Test oparty na analizie zgodności odpowiedzi z zestawem wartości, ideologii i partii.</p>
+    </footer>
+  </div>
+
+  <!-- Popup do definicji wartości / komentarzy -->
+  <div id="popup" class="popup hidden">
+    <div class="popup-content">
+      <p id="popup-text"></p>
+      <button id="closePopup">Zamknij</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
