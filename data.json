@@ -1041,7 +1041,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1051,7 +1051,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1062,7 +1062,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -1072,7 +1072,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -1099,7 +1099,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1109,7 +1109,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1120,7 +1120,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -1130,7 +1130,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -1158,7 +1158,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -1168,7 +1168,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -1177,7 +1177,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1187,7 +1187,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1215,7 +1215,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1225,7 +1225,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1236,7 +1236,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -1246,7 +1246,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -1263,8 +1263,7 @@
         {
       "id": 16,
       "text": "Przekonania i styl życia jednostki powinny być tolerowane przez innych, o ile nie powodują bezpośredniej szkody innym",
-      "description": "XXXXXX",
-      "comment": "Placeholder",
+      "description": "Ta teza zakłada, że granice wolności człowieka są wyznaczane wyłącznie przez bezpieczeństwo i prawa osób trzecich. W tym ujęciu każda osoba posiada suwerenne prawo do decydowania o własnym postępowaniu, poglądach i wyborach życiowych, dopóki nie wyrządzają one wymiernej krzywdy innym. Otoczenie i instytucje powinny zachowywać wyrozumiałość wobec odmienności, nawet jeśli jej nie aprobują, uznając sferę prywatną za obszar wolny od zewnętrznej ingerencji. Kluczowy jest tu brak przymusu w działaniach, które nie naruszają porządku publicznego ani nie ograniczają swobód pozostałych członków wspólnoty. Odpowiedzialność za skutki takich wyborów spoczywa na samej jednostce, a różnorodność stylów życia jest postrzegana jako zjawisko dopuszczalne i pożądane dla rozwoju społeczeństwa. O stopniu wolności decyduje w tej wizji wyłącznie brak narzuconych z zewnątrz barier krępujących zdolność do podejmowania suwerennych decyzji.",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -1389,7 +1388,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1399,7 +1398,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1410,7 +1409,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -1420,7 +1419,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -1437,8 +1436,7 @@
         {
       "id": 19,
       "text": "Moralność nie jest kwestią osobistego wyboru, ale wynika z ustalonych wartości i norm społecznych",
-      "description": "XXXXXX",
-      "comment": "Placeholder",
+      "description": "Teza ta sugeruje, że zasady etyczne nie są wynikiem indywidualnych preferencji każdego człowieka, lecz stanowią trwałe dziedzictwo wspólnoty. Moralność jest tu postrzegana jako system obiektywnych norm i wartości, które wykształciły się historycznie i stanowią fundament spójności społecznej. Zgodnie z tym ujęciem, stabilny ład wymaga istnienia wspólnego kompasu moralnego, który chroni społeczeństwo przed rozpadem i nieładem wynikającym ze sprzecznych wyborów jednostek. Osobiste przekonania powinny być zatem podporządkowane ustalonym obyczajom i tradycji, które pełnią funkcję spoiwa łączącego różne pokolenia. W tej wizji to tkanka społeczna, a nie autonomiczny rozum jednostki, jest właściwym źródłem wskazówek dotyczących tego, co jest słuszne, a co niewłaściwe. Próba uczynienia z moralności sfery osobistego wyboru jest tu postrzegana jako zagrożenie dla trwałości i jedności całego organizmu społecznego.",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -1447,7 +1445,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1457,7 +1455,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1468,7 +1466,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -1478,7 +1476,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -1495,7 +1493,7 @@
         {
       "id": 20,
       "text": "Normy moralne mogą być uzasadniane przez tradycję religijną",
-      "description": "XXXXXX",
+      "description": "Podejście to zakłada, że tradycja religijna stanowi wiarygodne i nadrzędne źródło zasad kierujących postępowaniem ludzi w sferze publicznej i prywatnej. Normy moralne nie są tu traktowane jako zmienne umowy społeczne, lecz jako trwałe prawdy wywodzące się z historycznych przekazów wiary i tekstów uznawanych za fundament tożsamości. Religia dostarcza w tej perspektywie gotowych wzorców zachowań i jasnego rozróżnienia między dobrem a złem, co ma zapewniać społeczeństwu stabilną strukturę etyczną. Uzasadnianie moralności przez religię ma na celu ochronę wspólnoty przed niepewnością i relatywizmem współczesnego świata. W tym ujęciu wartości te nie ograniczają się do sfery prywatnego kultu, lecz pełnią rolę fundamentu, na którym opiera się właściwy porządek społeczny. Tradycja religijna jest postrzegana jako skumulowana mądrość, która pozwala uniknąć błędów wynikających z polegania wyłącznie na zawodnym rozumie ludzkim.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -1505,7 +1503,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1515,7 +1513,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1526,7 +1524,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -1536,7 +1534,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -1553,7 +1551,7 @@
         {
       "id": 21,
       "text": "Państwo jest jedynym źródłem wartości moralnych i duchowych w społeczeństwie",
-      "description": "XXXXXX",
+      "description": "Teza ta głosi, że instytucja państwa nie jest jedynie narzędziem do zarządzania sprawami publicznymi, lecz nadrzędnym bytem etycznym, który definiuje cele narodu. W tym ujęciu to struktury państwowe nadają sens ludzkiemu działaniu, stanowiąc źródło autorytetu moralnego jednoczącego wszystkich obywateli. Poza ramami państwa dążenia jednostki są postrzegane jako pozbawione wyższego znaczenia, a jej tożsamość wywodzi się wyłącznie z przynależności do tej nadrzędnej całości. Państwo ucieleśnia tutaj wolę zbiorową, która bierze bezwzględne pierwszeństwo przed prywatnymi sądami czy sumieniem poszczególnych osób. Całe życie społeczne i osobiste powinno być podporządkowane dobru tej struktury, która wyznacza kanon dopuszczalnych postaw oraz ideałów, ku którym powinna dążyć wspólnota. W tej perspektywie sfera prywatna traci swoją niezależność na rzecz interesu ogólnopaństwowego, który jest uznawany za wartość najwyższą.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -1564,7 +1562,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -1574,7 +1572,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -1583,7 +1581,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1593,7 +1591,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1622,7 +1620,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -1632,7 +1630,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -1641,7 +1639,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1651,7 +1649,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1680,7 +1678,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -1690,7 +1688,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -1699,7 +1697,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1709,7 +1707,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
