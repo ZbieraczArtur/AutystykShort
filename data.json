@@ -415,6 +415,25 @@
           "parties_against": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja", "Ruch Narodowy", "KKP", "Polska2050"]
         },
         {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Indywidualizm"],
+          "values_against": ["Kolektywizm"],
+          "ideologies_for": ["Anarchokapitalizm"],
+          "ideologies_against": ["Marksizm"],
+          "parties_for": [],
+          "parties_against": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja", "Ruch Narodowy", "KKP", "Polska2050"]
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": ["Kolektywizm"],
+          "values_against": ["Indywidualizm"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja", "Ruch Narodowy", "KKP", "Polska2050"],
+          "parties_against": []
+        },
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
@@ -450,6 +469,26 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": ["Indywidualizm", "Autonomia"],
+          "values_against": ["Kolektywizm", "Hierarchiczność", "Heteronomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
           "parties_against": []
         },
         {
@@ -490,6 +529,26 @@
           "parties_against": ["PiS", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"]
         },
         {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Indywidualizm", "Autonomia"],
+          "values_against": ["Kolektywizm", "Heteronomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["KO"],
+          "parties_against": ["PiS", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"]
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": ["Kolektywizm", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["PiS", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"],
+          "parties_against": ["KO"]
+        },
+        {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": ["Kolektywizm", "Heteronomia"],
@@ -525,6 +584,26 @@
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["PiS", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"]
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": ["PiS", "PSL", "Nowa Lewica", "Razem"]
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["PiS", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"],
+          "parties_against": []
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -564,6 +643,26 @@
           "parties_against": ["PiS", "PSL", "Nowa Lewica", "Razem"]
         },
         {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["KO", "Nowa Nadzieja"],
+          "parties_against": ["PiS", "PSL", "Nowa Lewica", "Razem"]
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["PiS", "PSL", "Nowa Lewica", "Razem"],
+          "parties_against": ["Nowa Nadzieja"]
+        },
+        {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": [],
@@ -599,6 +698,26 @@
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"]
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"]
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"],
+          "parties_against": []
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -639,6 +758,26 @@
           "parties_against": ["Nowa Nadzieja"]
         },
         {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem"],
+          "parties_against": ["Nowa Nadzieja"]
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["Nowa Nadzieja"],
+          "parties_against": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem"]
+        },
+        {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": [],
@@ -676,6 +815,26 @@
           "parties_against": []
         },
         {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["PiS", "PSL", "Nowa Nadzieja", "KKP", "Ruch Narodowy"],
+          "parties_against": ["Nowa Lewica", "Razem"]
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["Nowa Lewica", "Razem"],
+          "parties_against": ["PiS", "PSL", "KKP", "Ruch Narodowy"]
+        },
+        {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": [],
@@ -711,6 +870,26 @@
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["KO", "Nowa Lewica", "Nowa Nadzieja"]
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": ["Faszyzm"],
+          "ideologies_against": [],
+          "parties_for": ["PiS", "PSL"],
+          "parties_against": ["KO", "Nowa Lewica", "Nowa Nadzieja"]
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": ["Faszyzm"],
+          "parties_for": ["KO", "Nowa Lewica", "Nowa Nadzieja"],
+          "parties_against": []
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
