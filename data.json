@@ -2660,7 +2660,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["PiS", "KPP"]
+          "parties_for": ["PiS", "KPP"],
           "parties_against": []
         },
         {
@@ -8329,7 +8329,6 @@
         }
       ]
     },
-    },
         {
       "id": 138,
       "text": "Podziały klasowe należy zmniejszyć za pomocą państwowej interwencji ekonomicznej i społecznej  ",
@@ -13749,7 +13748,7 @@
     },
         {
       "id": 230,
-      "text": "Państwo powinno ograniczać imigrację w celu zachowania jednolitości kulturowej",
+      "text": "Istnienie bogatych i biednych ludzi jest czymś akceptowalnym",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
