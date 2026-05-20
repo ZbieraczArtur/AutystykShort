@@ -132,7 +132,7 @@ function renderQuestions() {
 function attachQuestionEvents() {}
 
 // -------------------------------
-// ALGORYTM LICZENIA ZGODNOŚCI (NOWA WERSJA)
+// NOWA WERSJA ALGORYTMU LICZENIA ZGODNOŚCI
 // -------------------------------
 function computeScores() {
   const ideologyScores = new Map();
@@ -163,12 +163,13 @@ function computeScores() {
     if (weight === 0) continue; // pominięte
 
     const answer = ans.answerData;
+    const absWeight = Math.abs(weight);
 
     // ------ Ideologie ------
     for (const ideo of (answer.ideologies_for || [])) {
       const rec = ideologyScores.get(ideo);
       if (rec) {
-        rec.sum += weight;
+        rec.sum += absWeight;
         rec.maxPossible += 1.5;
         if (weight > 0) rec.agreements++;
         else if (weight < 0) rec.disagreements++;
@@ -177,9 +178,9 @@ function computeScores() {
     for (const ideo of (answer.ideologies_against || [])) {
       const rec = ideologyScores.get(ideo);
       if (rec) {
-        rec.sum -= weight;      // odwrócenie znaku
+        rec.sum -= absWeight;
         rec.maxPossible += 1.5;
-        if (weight < 0) rec.agreements++;   // np. -1.5 → +1.5
+        if (weight < 0) rec.agreements++;
         else if (weight > 0) rec.disagreements++;
       }
     }
@@ -188,7 +189,7 @@ function computeScores() {
     for (const party of (answer.parties_for || [])) {
       const rec = partyScores.get(party);
       if (rec) {
-        rec.sum += weight;
+        rec.sum += absWeight;
         rec.maxPossible += 1.5;
         if (weight > 0) rec.agreements++;
         else if (weight < 0) rec.disagreements++;
@@ -197,7 +198,7 @@ function computeScores() {
     for (const party of (answer.parties_against || [])) {
       const rec = partyScores.get(party);
       if (rec) {
-        rec.sum -= weight;
+        rec.sum -= absWeight;
         rec.maxPossible += 1.5;
         if (weight < 0) rec.agreements++;
         else if (weight > 0) rec.disagreements++;
@@ -208,14 +209,14 @@ function computeScores() {
     for (const val of (answer.values_for || [])) {
       const rec = valueScores.get(val);
       if (rec) {
-        rec.sum += weight;
+        rec.sum += absWeight;
         rec.maxPossible += 1.5;
       }
     }
     for (const val of (answer.values_against || [])) {
       const rec = valueScores.get(val);
       if (rec) {
-        rec.sum -= weight;
+        rec.sum -= absWeight;
         rec.maxPossible += 1.5;
       }
     }
@@ -228,7 +229,7 @@ function computeScores() {
     return Math.min(100, Math.max(0, normalized));
   }
 
-  // Wyniki
+  // Wyniki ideologii
   const ideologyResults = [];
   for (let [name, rec] of ideologyScores.entries()) {
     ideologyResults.push({
@@ -236,12 +237,13 @@ function computeScores() {
       percent: normalizeScore(rec),
       agreements: rec.agreements || 0,
       disagreements: rec.disagreements || 0,
-      involved: rec.maxPossible / 1.5, // liczba pytań, w których partia wystąpiła
+      involved: rec.maxPossible / 1.5,
       description: config.ideologies.find(i => i.name === name)?.description || ''
     });
   }
   ideologyResults.sort((a,b) => b.percent - a.percent);
 
+  // Wyniki partii
   const partyResults = [];
   for (let [name, rec] of partyScores.entries()) {
     partyResults.push({
