@@ -1745,7 +1745,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1783,8 +1783,7 @@
         {
       "id": 25,
       "text": "Tożsamość jednostki jest definiowana przede wszystkim przez jej wewnętrzne cechy, a nie przynależność do grup (np klasowej, rasowej, etnicznej, religijnej, seksualnej, czy rodzinnej)",
-      "description": "XXXXXX",
-      "comment": "Placeholder",
+      "description": "Ta teza zakłada, że każda osoba jest unikalnym bytem, którego tożsamość opiera się na wewnętrznych przymiotach, talentach i cechach charakteru, a nie na przynależności do jakiejkolwiek zbiorowości. W tym ujęciu jednostka posiada nadrzędne znaczenie moralne, a jej cele i interesy są pierwotne wobec żądań klasy, narodu czy rasy. Ludzie nie powinni być oceniani przez pryzmat kategorii grupowych, lecz wyłącznie jako odrębne osoby, co pozwala na pełną realizację ich indywidualnego potencjału. Taka perspektywa promuje wizję społeczeństwa jako zbioru samodzielnych podmiotów, które są właścicielami własnych zdolności i posiadają suwerenność nad swoim losem. Tożsamość jest tu więc traktowana jako konstrukt wewnętrzny, a nie wynik społecznego warunkowania czy pełnionej roli w strukturze zbiorowej.",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -1803,7 +1802,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1814,7 +1813,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -1824,7 +1823,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -1841,8 +1840,7 @@
         {
       "id": 26,
       "text": "Jednostka powinna przedkładać wymagania uznanego autorytetu i instytucji, do których należy (np kościół, rodzina czy korporacja zawodowa), nad własne indywidualne preferencje",
-      "description": "XXXXXX",
-      "comment": "Placeholder",
+      "description": "Podejście to opiera się na przekonaniu, że autorytet jest naturalnym wymogiem uporządkowanej egzystencji i zapewnia jednostkom niezbędne kierownictwo oraz poczucie bezpieczeństwa. Władza postrzegana jest tu jako korzystne zjawisko, które chroni ludzi przed ich własną niedoskonałością i skłonnością do ulegania antyspołecznym impulsom. Zgodnie z tą wizją wolność nie polega na nieskrępowanej realizacji osobistych chęci, lecz na ochoczej akceptacji obowiązków i dyscypliny narzucanej z góry przez instytucje dysponujące większym doświadczeniem i mądrością. Szacunek dla hierarchii i poleceń władzy jest uznawany za fundament stabilności, bez którego społeczeństwo pogrążyłoby się w chaosie. Oczekiwania autorytetu biorą więc pierwszeństwo przed subiektywnymi dążeniami osób rządzonych, co ma gwarantować trwałość ładu społecznego.",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -1851,7 +1849,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1861,7 +1859,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1872,7 +1870,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -1882,7 +1880,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -1909,7 +1907,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1919,7 +1917,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1930,7 +1928,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -1940,7 +1938,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -1957,7 +1955,7 @@
         {
       "id": 28,
       "text": "Tradycje społeczne i kulturowe są ważniejsze niż potrzeby i interesy pojedynczych jednostek",
-      "description": "XXXXXX",
+      "description": "Teza ta sugeruje, że odziedziczone zwyczaje i instytucje stanowią skumulowaną mądrość przeszłych pokoleń, która przeszła pomyślnie próbę czasu. Tradycja zapewnia ludziom poczucie zakorzenienia i tożsamości, stanowiąc spoiwo łączące przodków z żyjącymi i przyszłymi członkami wspólnoty. W tym ujęciu społeczeństwo jest organiczną całością, której delikatna tkanka nie powinna być naruszana przez chwilowe potrzeby czy żądania poszczególnych osób. Próby reformowania świata wbrew utrwalonym praktykom są postrzegane jako ryzykowne, gdyż mogą doprowadzić do destabilizacji struktur zapewniających bezpieczeństwo ogółowi. Zachowanie ciągłości historycznej i kulturowej narodu jest tu wartością nadrzędną, która legitymizuje ograniczenie indywidualnych dążeń na rzecz ochrony wspólnego dziedzictwa.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -1967,7 +1965,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1977,7 +1975,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -1988,7 +1986,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -1998,7 +1996,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2015,7 +2013,7 @@
         {
       "id": 29,
       "text": "Bezpieczeństwo zbiorowe i stabilność społeczna powinny mieć pierwszeństwo przed wolnością jednostki",
-      "description": "XXXXXX",
+      "description": "Teza ta zakłada, że utrzymanie spokoju publicznego i nienaruszalności struktur państwowych jest wartością priorytetową, której należy podporządkować swobody osobiste. W tym ujęciu wolność nie jest traktowana jako prawo absolutne, lecz jako obszar działania, który musi zostać ograniczony, gdy zagraża stabilności całego systemu. Przyjmuje się, że bez silnej władzy zdolnej do zaprowadzania ładu, egzystencja ludzi stałaby się niepewna i brutalna. Ochrona wspólnoty przed nieporządkiem i konfliktami wymaga od obywateli gotowości do zaakceptowania rygorystycznie egzekwowanego prawa oraz kontroli ze strony państwa. Interes zbiorowy, definiowany przez trwałość instytucji i bezpieczeństwo obywateli, bierze tu bezwzględne pierwszeństwo przed wolnością wyboru, która w warunkach niestabilności jest postrzegana jako destrukcyjna.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -2025,7 +2023,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2035,7 +2033,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2046,7 +2044,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2056,7 +2054,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2073,7 +2071,7 @@
         {
       "id": 30,
       "text": "Grupy społeczne, takie jak klasy, narody czy inne zbiorowości, powinny mieć pierwszeństwo przed indywidualnymi preferencjami obywateli w procesie politycznym",
-      "description": "XXXXXX",
+      "description": "Podejście to postrzega społeczeństwo jako złożony układ grup, takich jak klasy, rodziny czy wspólnoty zawodowe, które są właściwymi podmiotami działań politycznych. W tym ujęciu interesy jednostek są nierozerwalnie splecione z pomyślnością zbiorowości, do których należą, a odizolowana osoba nie posiada realnego znaczenia politycznego. Proces rządzenia powinien polegać na wyważaniu potrzeb tych grup i zapewnianiu ich harmonijnej współpracy w ramach całego organizmu społecznego. Zgodnie z tą wizją tożsamość człowieka jest kształtowana przez grupy społeczne, dlatego ich ochrona i reprezentacja są ważniejsze niż dbanie o atomistycznie rozumiane prawa jednostek. Decyzje publiczne powinny być oceniane przez pryzmat tego, jak służą trwałości i spójności tych naturalnych wspólnot, które stanowią o sile i zdrowiu całego systemu.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -2083,7 +2081,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2093,7 +2091,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2104,7 +2102,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2114,7 +2112,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2188,8 +2186,8 @@
     },
         {
       "id": 32,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
+      "text": "Objawienie religijne jest ważniejszym źródłem wiedzy o dobru i złu niż rozum ludzki",
+      "description": "Teza ta opiera się na przekonaniu, że zasady moralne mają charakter trwały i zostały przekazane ludzkości jako objawione słowo Boga. W tej perspektywie ludzki rozum jest uznawany za zawodny i zbyt ograniczony, by mógł samodzielnie wyznaczać standardy słusznego postępowania. Prawdziwa mądrość etyczna pochodzi z podporządkowania się boskim nakazom zawartym w tekstach świętych, które dostarczają gotowych wzorców zachowań dla jednostek i narodów. Poleganie wyłącznie na świeckiej logice i osobistych wyborach jest postrzegane jako droga do relatywizmu i zepsucia moralnego społeczeństwa. Zgodnie z tym ujęciem, życie społeczne i polityczne powinno być całkowicie zorganizowane wokół zasad religijnych, które jako jedyne oferują pewne i absolutne odpowiedzi na najważniejsze pytania ludzkości.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -2199,7 +2197,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2209,7 +2207,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2220,7 +2218,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2230,7 +2228,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2246,8 +2244,8 @@
     },
         {
       "id": 33,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
+      "text": "Doświadczenie i tradycja są bardziej wiarygodnymi wskazówkami niż abstrakcyjne idee o poprawie świata",
+      "description": "Teza ta zakłada, że najpewniejszym przewodnikiem w sprawach publicznych jest mądrość płynąca z historii i sprawdzone w praktyce instytucje. Abstrakcyjne zasady polityczne i teoretyczne projekty przebudowy świata są tu postrzegane z podejrzliwością jako zbyt proste i oderwane od rzeczywistej złożoności ludzkiego życia. Zgodnie z tym ujęciem, świat jest zbyt skomplikowany, by mógł zostać w pełni zrozumiany przez ludzki intelekt, dlatego należy unikać doktrynerstwa na rzecz ostrożnego, pragmatycznego podejścia. Postęp powinien być wynikiem powolnej ewolucji, która zachowuje wartościowe elementy przeszłości, a nie rewolucyjnych zmian opartych na niesprawdzonych wizjach. To utrwalone zwyczaje i historyczne doświadczenie wspólnoty stanowią najbardziej wiarygodną podstawę dla zachowania ładu i bezpieczeństwa w społeczeństwie.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -2257,7 +2255,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2267,7 +2265,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2278,7 +2276,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2288,7 +2286,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2304,7 +2302,7 @@
     },
         {
       "id": 34,
-      "text": "XXXXXXXXXX",
+      "text": "Tradycja może stanowić wystarczające uzasadnienie dla decyzji politycznych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -2315,7 +2313,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2325,7 +2323,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2336,7 +2334,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2346,7 +2344,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2362,7 +2360,7 @@
     },
         {
       "id": 35,
-      "text": "XXXXXXXXXX",
+      "text": "Struktury gospodarcze i warunki materialne są ważniejszym źródłem zmiany społecznej niż idee i przekonania moralne",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -2374,7 +2372,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -2384,7 +2382,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -2393,7 +2391,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2403,7 +2401,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2420,7 +2418,7 @@
     },
         {
       "id": 36,
-      "text": "XXXXXXXXXX",
+      "text": "Emocje i instynkty są bardziej wiarygodne niż racjonalna analiza i debata w życiu społecznym",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -2429,9 +2427,9 @@
           "value": 1.5,
           "values_for": [],
           "values_against": [],
-          "ideologies_for": [],
+          "ideologies_for": ["Faszyzm"],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["KKP"],
           "parties_against": []
         },
         {
@@ -2439,9 +2437,9 @@
           "value": 1.0,
           "values_for": [],
           "values_against": [],
-          "ideologies_for": [],
+          "ideologies_for": ["Faszyzm"],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["KKP"],
           "parties_against": []
         },
         {
@@ -2452,7 +2450,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["KKP"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2462,7 +2460,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["KKP"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2478,8 +2476,8 @@
     },
         {
       "id": 37,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
+      "text": "Źródłem legitymizacji władzy powinny być zasady uznawane za nadrzędne wobec woli większości",
+      "description": "Pomiń jeśli nie uznajesz legitymacji władzy",
       "comment": "Placeholder",
       "answers": [
         {
@@ -2499,7 +2497,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
