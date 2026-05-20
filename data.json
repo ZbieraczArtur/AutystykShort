@@ -13374,6 +13374,2327 @@
           "parties_against": []
         }
       ]
+    },
+        {
+      "id": 225,
+      "text": "Państwo powinno stosować cła i bariery handlowe wobec zagranicznych towarów i usług",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 226,
+      "text": "Państwo powinno wspierać rodzime firmy, nawet jeśli są mniej konkurencyjne niż zagraniczne",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+
+        {
+      "id": 227,
+      "text": "Imigracja do kraju powinna być co do zasady łatwo dostępna",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 228,
+      "text": "Państwo powinno ograniczać imigrację w celu zachowania jednolitości kulturowej",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 229,
+      "text": "Państwo powinno ograniczać napływ pracowników z zagranicy, aby chronić miejsca pracy obywateli",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 230,
+      "text": "Istnienie bogatych i biednych ludzi jest czymś akceptowalnym",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 231,
+      "text": "Imigracja zarobkowa jest problemem, który państwo powinno aktywnie zwalczać",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 232,
+      "text": "Każda grupa etniczna, kulturowa czy religijna ma naturalne prawo do autonomicznego organizowania się i wyrażania swojej tożsamości w ramach struktur politycznych",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 233,
+      "text": "Naród powinien dążyć do jedności kulturowej i językowej, nawet kosztem mniejszości",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 234,
+      "text": "Należy dążyć do zniesienia granic między narodami",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 235,
+      "text": "Człowiek ma moralny obowiązek chronić i zachowywać naturę",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 236,
+      "text": "Ludzkość nie powinna dążyć do kontrolowania ani podporządkowywania natury",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 237,
+      "text": "Ochrona natury powinna być priorytetem, nawet jeśli wymaga to ograniczenia ludzkich potrzeb i pragnień",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 238,
+      "text": "Przekonanie, że człowiek jest centrum świata, prowadzi do niszczenia relacji z naturą i powinno zostać porzucone",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 239,
+      "text": "Traktowanie natury jako zasobu do eksploatacji jest moralnie niedopuszczalne",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 240,
+      "text": "Zdrowie planety jest ważniejsze niż przetrwanie jakiegokolwiek konkretnego gatunku, w tym człowieka",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 241,
+      "text": "Ochrona różnorodności gatunków jest równie ważna co zaspokajanie ludzkich potrzeb",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 242,
+      "text": "Państwo powinno nakładać prawne ograniczenia na sposób, w jaki ludzie mogą traktować zwierzęta",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 243,
+      "text": "Społeczeństwo powinno przedkładać stabilność ekologiczną nad dynamiczny rozwój gospodarczy",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 244,
+      "text": "Automatyzacja produkcji jest korzystna dla społeczeństwa, nawet jeśli prowadzi do masowego bezrobocia",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 245,
+      "text": "Ludzkość powinna podchodzić sceptycznie do nowych technologii",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 246,
+      "text": "Rewolucja przemysłowa i industrializacja przyniosła więcej korzyści niż szkód dla ludzkości",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 247,
+      "text": "Rozwój materialny i techniczny to forma regresu intelektualnego i duchowego",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 248,
+      "text": "Należy porzucić lub zniszczyć technologię przemysłową lub rolniczą",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 249,
+      "text": "Wspólnoty powinny opierać się na lokalnych zasobach i odrzucić produkcję przekraczającą bezpośrednie potrzeby bytowe",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 250,
+      "text": "Postęp technologiczny powinien zostać zatrzymany i odwrócony, nawet za cenę znacznego obniżenia standardu życia",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 251,
+      "text": "System przemysłowy i technologiczny powinien zostać całkowicie obalony, a nie reformowany",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 252,
+      "text": "Nikt nie powinien być zmuszany do pracy w wojsku ani w żadnej innej organizacji siłą",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 253,
+      "text": "Każdy, lub prawie każdy obywatel powinien mieć prawny obowiązek obrony państwa w przypadku konfliktu zbrojnego",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 254,
+      "text": "Obowiązkowa służba wojskowa w czasie pokoju powinna dotyczyć wszystkich obywateli",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 255,
+      "text": "Wojsko powinno odgrywać kluczową rolę w kształtowaniu społeczeństwa i obronie wartości narodowych",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 256,
+      "text": "Stany Zjednoczone (lub inne mocarstwa zachodnie) mają moralną odpowiedzialność za promowanie demokracji i praw człowieka na całym świecie, nawet jeśli wymaga to interwencji zbrojnej",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 257,
+      "text": "Użycie siły militarnej jest zasadnym instrumentem polityki narodowej",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 258,
+      "text": "Żadne cele polityczne nie uzasadniają prowadzenia ofensywnych działań wojennych",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 259,
+      "text": "Spółdzielnie i kolektywne formy własności powinny być preferowaną formą organizacji produkcji",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 260,
+      "text": "Klasy społeczne są podstawowymi aktorami historii i kluczem do zrozumienia zmiany społecznej i politycznej",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 261,
+      "text": "W społeczeństwie istnieje realna walka klas, a nie tylko różnice w interesach ekonomicznych",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 262,
+      "text": "Naród powinien dążyć do stworzenia imperium i dominacji nad innymi terytoriami",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 263,
+      "text": "Obowiązkiem człowieka jest niekwestionowane posłuszeństwo wobec państwa",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 264,
+      "text": "Współczesna cywilizacja jest zepsuta i dekadencka, a powrót do prostego, wiejskiego życia jest konieczny dla odrodzenia narodu",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
     }
   ]
 }
