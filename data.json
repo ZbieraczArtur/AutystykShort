@@ -2419,7 +2419,7 @@
         {
       "id": 36,
       "text": "Emocje i instynkty są bardziej wiarygodne niż racjonalna analiza i debata w życiu społecznym",
-      "description": "XXXXXX",
+      "description": "Teza ta zakłada, że najgłębsze źródło ludzkiego działania i prawdy o świecie nie tkwi w logicznym rozumowaniu, lecz w sferze uczuć, woli i pierwotnych popędów. Racjonalna analiza oraz debata są postrzegane jako procesy jałowe, które tłumią naturalną energię życiową i osłabiają zdolność do zdecydowanego działania. Prawdziwe poznanie rzeczywistości następuje poprzez odwołanie się do duszy i instynktów, które są w stanie zjednoczyć wspólnotę wokół wspólnych mitów i symboli. W tym ujęciu intelektualizm jest formą dekadencji, a prymat przyznaje się „polityce woli”, gdzie liczy się pasja i gotowość do poświęceń. To instynktowne poczucie przynależności, a nie beznamiętna kalkulacja, powinno stanowić fundament życia społecznego i politycznego.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -2477,8 +2477,8 @@
         {
       "id": 37,
       "text": "Źródłem legitymizacji władzy powinny być zasady uznawane za nadrzędne wobec woli większości",
-      "description": "Pomiń jeśli nie uznajesz legitymacji władzy",
-      "comment": "Placeholder",
+      "description": "Podejście to opiera się na przekonaniu, że prawomocność władzy nie wynika z samej liczebności jej zwolenników, lecz z poszanowania fundamentalnych norm, które stoją ponad aktualnymi życzeniami większości. Takimi zasadami mogą być niezbywalne prawa jednostki, trwałe reguły konstytucyjne lub prawdy religijne. Głównym celem jest ochrona przed sytuacją, w której doraźna wola większości mogłaby doprowadzić do ucisku mniejszości lub naruszenia fundamentów ładu społecznego. Legitymizacja wymaga więc, aby działania rządu były ograniczone przez nadrzędne ramy prawne lub moralne, które zapewniają stabilność niezależnie od wyniku głosowania. Władza jest tu traktowana jako powiernictwo, którego granice wyznacza obiektywny i trwały system wartości.",
+      "comment": "Pomiń jeśli nie uznajesz legitymacji władzy",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -2488,6 +2488,64 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["PiS"],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["PiS"],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 38,
+      "text": "Demokratyczne procedury wyborcze są wystarczającym źródłem legitymizacji władzy politycznej",
+      "description": "Teza ta głosi, że jedynym uprawnionym źródłem władzy politycznej jest wyraźna i dobrowolna zgoda rządzonych, uzyskiwana w procesie wyborczym. System regularnych, wolnych i konkurencyjnych wyborów jest uznawany za mechanizm, który nadaje instytucjom mandat do działania w imieniu społeczeństwa. Legitymacja płynie tu „z dołu” – od obywateli, którzy traktowani są jako równe jednostki posiadające prawo do wyboru i rozliczania rządzących. W tym ujęciu państwo pełni rolę neutralnego arbitra, którego zadaniem jest zarządzanie sprawami publicznymi zgodnie z preferencjami większości. Procedury te gwarantują, że rząd pozostaje wrażliwy na potrzeby społeczne, a pokojowa zmiana ekipy rządzącej stanowi potwierdzenie słuszności całego ustroju.",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2533,67 +2591,9 @@
       ]
     },
         {
-      "id": 38,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
-      "comment": "Placeholder",
-      "answers": [
-        {
-          "label": "Zdecydowanie zgadzam się",
-          "value": 1.5,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Częściowo zgadzam się",
-          "value": 1.0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Częściowo nie zgadzam się",
-          "value": -1.0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Zdecydowanie nie zgadzam się",
-          "value": -1.5,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Pomiń pytanie",
-          "value": 0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        }
-      ]
-    },
-        {
       "id": 39,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
+      "text": "Władza polityczna czerpie swą legitymizację z woli Bożej",
+      "description": "Podejście to zakłada, że porządek polityczny na ziemi powinien być odzwierciedleniem boskiego planu, a jedynym źródłem prawowitej władzy jest wola Stwórcy. W tym ujęciu religia i polityka są nierozerwalnie związane, a struktury państwowe mają za zadanie wdrażać zasady wiary i święte prawo w życie społeczne. Władza nie jest wynikiem ludzkiego kontraktu, lecz manifestacją mądrości religijnej, co nakłada na rządzonych obowiązek posłuszeństwa wobec objawionych prawd. Instytucje publiczne są tu narzędziem odnowy moralnej i duchowej, służącym ochronie wspólnoty przed zepsuciem. Tak rozumiana legitymizacja ma charakter sakralny – o słuszności działań decyduje ich zgodność z doktryną religijną, a nie wola ludu czy procedury wyborcze.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -2603,8 +2603,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["KKP"],
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -2613,8 +2613,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["KKP"],
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -2623,8 +2623,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["PiS"],
+          "parties_against": ["KKP"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2633,8 +2633,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["PiS"],
+          "parties_against": ["KKP"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2650,9 +2650,8 @@
     },
         {
       "id": 40,
-      "text": "XXXXXXXXXX",
+      "text": "Aborcja jest zawsze moralnie niedopuszczalna",
       "description": "XXXXXX",
-      "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -2661,7 +2660,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS", "KKP"],
           "parties_against": []
         },
         {
@@ -2671,7 +2670,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS", "KPP"],
           "parties_against": []
         },
         {
@@ -2682,7 +2681,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS", "KPP"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2692,7 +2691,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS", "KPP"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2708,9 +2707,8 @@
     },
         {
       "id": 41,
-      "text": "XXXXXXXXXX",
+      "text": "Prawo do sprawowania najwyższej władzy powinno wynikać z dziedziczenia",
       "description": "XXXXXX",
-      "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -2719,8 +2717,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["KPP"],
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -2729,8 +2727,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["KPP"],
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -2739,8 +2737,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["PiS"],
+          "parties_against": ["KPP"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2749,8 +2747,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["PiS"],
+          "parties_against": ["KPP"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2766,9 +2764,8 @@
     },
         {
       "id": 42,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
-      "comment": "Placeholder",
+      "text": "Decyzje polityczne powinny być podejmowane przez kompetentne elity, a nie bezpośrednio przez ogół obywateli",
+      "description": "Teza ta opiera się na przekonaniu, że rzadzenie wymaga kompetencji, mądrości lub doświadczenia, które nie są równomiernie rozłożone w społeczeństwie. Zakłada się, że ogół obywateli może nie mieć pełnej świadomości swoich interesów, dlatego kluczowe decyzje powinny spoczywać w rękach przygotowanej mniejszości. Taka elita – czy to zdefiniowana przez mądrość ideologiczną, tradycyjną pozycję społeczną czy specjalistyczną wiedzę – pełni funkcję awangardy lub naturalnego przywództwa. Jej rola polega na wyznaczaniu kierunków rozwoju i interpretowaniu dobra wspólnego, które przewyższa sumę indywidualnych pragnień. Skuteczne zarządzanie państwem wymaga więc hierarchii, gdzie kompetentne kierownictwo zapewnia stabilność i porządek.",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -2777,7 +2774,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS","KPP"],
           "parties_against": []
         },
         {
@@ -2787,7 +2784,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS","KPP"],
           "parties_against": []
         },
         {
@@ -2798,7 +2795,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS","KPP"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2808,7 +2805,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS","KPP"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2824,8 +2821,8 @@
     },
         {
       "id": 43,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
+      "text": "Państwo powinno być zastąpiona federacją wolnych wspólnot, zarządzanych przez dobrowolne porozumienia i kontrakty",
+      "description": "Podejście to odrzuca koncepcję państwa jako przymusowej struktury na rzecz dobrowolnej organizacji społeczeństwa od podstaw. Według tej wizji właściwy porządek rodzi się spontanicznie dzięki naturalnej skłonności ludzi do współpracy i wzajemnej pomocy. Miejsce scentralizowanej władzy powinna zająć federacja niewielkich, samorządnych wspólnot, w których członkowie zarządzają sprawami poprzez bezpośrednie uczestnictwo i dobrowolne porozumienia",
       "comment": "Placeholder",
       "answers": [
         {
@@ -2836,7 +2833,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS","KPP"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -2846,7 +2843,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS","KPP"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -2855,7 +2852,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS","KPP"],
           "parties_against": []
         },
         {
@@ -2865,7 +2862,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS","KPP"],
           "parties_against": []
         },
         {
@@ -2882,9 +2879,9 @@
     },
         {
       "id": 44,
-      "text": "XXXXXXXXXX",
+      "text": "Władza państwa jest potrzebna tylko tymczasowo, dopóki społeczeństwo nie osiągnie pełnej równości",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń, jeśli nie uważasz, że należy dążyć do komunizmu",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -2940,7 +2937,7 @@
     },
         {
       "id": 45,
-      "text": "XXXXXXXXXX",
+      "text": "Instytucje państwowe strukturalnie służą interesom grup posiadających władzę ekonomiczną, a nie ogółu społeczeństwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -2952,7 +2949,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -2962,7 +2959,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -2971,7 +2968,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2981,7 +2978,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -2998,7 +2995,7 @@
     },
         {
       "id": 46,
-      "text": "XXXXXXXXXX",
+      "text": "Należy odrzucać wszelkie formy politycznego zaangażowania, takie jak uczestnictwo w wyborach i procedurach demokratycznych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3007,10 +3004,10 @@
           "value": 1.5,
           "values_for": [],
           "values_against": [],
-          "ideologies_for": [],
+          "ideologies_for": ["Agoryzm"],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3020,7 +3017,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3028,8 +3025,8 @@
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
+          "ideologies_against": ["Agoryzm"],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3038,8 +3035,8 @@
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
+          "ideologies_against": ["Agoryzm"],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3056,16 +3053,16 @@
     },
         {
       "id": 47,
-      "text": "XXXXXXXXXX",
+      "text": "Należy rozwijać wszelkie formy aktywności, które wymykają się ingerencji państwowej i jednocześnie nie inicjują przemocy",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń jeśli nie wykluczasz używania przemocy",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
           "values_for": [],
           "values_against": [],
-          "ideologies_for": [],
+          "ideologies_for": ["Agoryzm"],
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": []
@@ -3086,8 +3083,8 @@
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
+          "ideologies_against": ["Agoryzm"],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3096,8 +3093,8 @@
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
+          "ideologies_against": ["Agoryzm"],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3114,7 +3111,7 @@
     },
         {
       "id": 48,
-      "text": "XXXXXXXXXX",
+      "text": "Nikt nie ma żadnych moralnych lub politycznych zobowiązań wobec państwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3125,7 +3122,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3135,7 +3132,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3146,7 +3143,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -3156,7 +3153,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -3172,7 +3169,7 @@
     },
         {
       "id": 49,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo jest instytucją, która nieuchronnie prowadzi do nadużyć i tyranii",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3184,7 +3181,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3194,7 +3191,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3203,7 +3200,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3213,7 +3210,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3230,7 +3227,7 @@
     },
         {
       "id": 50,
-      "text": "XXXXXXXXXX",
+      "text": "Wolność jednostki jest niemożliwa do pogodzenia z jakąkolwiek formą władzy politycznej",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3242,7 +3239,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3252,7 +3249,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3261,7 +3258,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3271,7 +3268,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3288,7 +3285,7 @@
     },
         {
       "id": 51,
-      "text": "XXXXXXXXXX",
+      "text": "Wszystkie usługi świadczone przez rząd powinny być zastąpione przez oddolne inicjatywy społeczności lub prywatnych podmiotów",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3300,7 +3297,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3310,7 +3307,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3319,7 +3316,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3329,7 +3326,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3346,8 +3343,8 @@
     },
         {
       "id": 52,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
+      "text": "Głównym zadaniem państwa jest pełnienie roli arbitra, który rozdziela prawa i obowiązki między ludźmi",
+      "description": "Ta teza zakłada, że państwo funkcjonuje jako bezstronny sędzia utrzymujący porządek poprzez rozstrzyganie konfliktów między obywatelami. W tym ujęciu instytucje publiczne nie narzucają jednej wizji życia, lecz pilnują, by nikt nie naruszał wolności innych osób. Państwo rozdziela swobody i powinności jednostek, dbając o zrównoważenie roszczeń różnych grup na podstawie prawa. Rola władzy sprowadza się do bycia neutralnym rozjemcą, który egzekwuje umowy i gwarantuje przestrzeganie wspólnych norm. Takie podejście uznaje, że jednostki o odmiennych celach potrzebują zewnętrznego autorytetu do ochrony bezpieczeństwa oraz sprawiedliwego podziału społecznych praw i obowiązków.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -3358,7 +3355,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3368,7 +3365,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3377,7 +3374,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3387,7 +3384,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3404,7 +3401,7 @@
     },
         {
       "id": 53,
-      "text": "XXXXXXXXXX",
+      "text": "Podstawową funkcją państwa powinna być ochrona indywidualnych praw jednostki",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3416,7 +3413,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3426,7 +3423,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3435,7 +3432,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3445,7 +3442,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3462,7 +3459,7 @@
     },
         {
       "id": 54,
-      "text": "XXXXXXXXXX",
+      "text": "Rozwiązywanie problemów społecznych powinno opierać się głównie na inicjatywach obywatelskich i organizacjach pozarządowych, a nie na działaniach państwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3474,7 +3471,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3484,7 +3481,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3493,7 +3490,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3503,7 +3500,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3520,7 +3517,7 @@
     },
         {
       "id": 55,
-      "text": "XXXXXXXXXX",
+      "text": "Władza powinna być odpowiedzialna za zapewnienie usług społecznych, takich jak opieka zdrowotna, zakwaterowanie, emerytury oraz edukacja",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3578,7 +3575,7 @@
     },
         {
       "id": 56,
-      "text": "XXXXXXXXXX",
+      "text": "Na władzę należy patrzeć sceptycznie, nawet jeśli jej intencje wydają się życzliwe",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3636,7 +3633,7 @@
     },
         {
       "id": 57,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo jest najlepszym narzędziem do zarządzania gospodarką i społeczeństwem",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3694,7 +3691,7 @@
     },
         {
       "id": 58,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno być stale obecnym i aktywnym podmiotem na rynku",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3752,7 +3749,7 @@
     },
         {
       "id": 59,
-      "text": "XXXXXXXXXX",
+      "text": "Decyzje polityczne powinny być podejmowane bezpośrednio przez obywateli w głosowaniach, zamiast przez wybranych przedstawicieli",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3810,7 +3807,7 @@
     },
         {
       "id": 60,
-      "text": "XXXXXXXXXX",
+      "text": "Prawdziwa władza polityczna leży poza instytucjami parlamentarnymi i demokratyczne wybory nie dają obywatelom realnej kontroli nad decyzjami",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3868,7 +3865,7 @@
     },
         {
       "id": 61,
-      "text": "XXXXXXXXXX",
+      "text": "Każdy głos w procesie politycznym powinien mieć taką samą wartość",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3926,7 +3923,7 @@
     },
         {
       "id": 62,
-      "text": "XXXXXXXXXX",
+      "text": "Prawo głosu powinno być uzależnione od spełnienia określonych kryteriów kompetencyjnych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3984,7 +3981,7 @@
     },
         {
       "id": 63,
-      "text": "XXXXXXXXXX",
+      "text": "Władza wykonawcza powinna być ograniczana przez formalne mechanizmy instytucjonalne",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4042,7 +4039,7 @@
     },
         {
       "id": 64,
-      "text": "XXXXXXXXXX",
+      "text": "Żadna grupa społeczna ani polityczna nie powinna mieć możliwości zmiany zasad ustrojowych bez zgody opozycji",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4100,7 +4097,7 @@
     },
         {
       "id": 65,
-      "text": "XXXXXXXXXX",
+      "text": "Władza powinna być szeroko rozproszona między różne poziomy organizacyjne",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4158,7 +4155,7 @@
     },
         {
       "id": 66,
-      "text": "XXXXXXXXXX",
+      "text": "Organizacja polityczna powinna opierać się na małych, lokalnych i samowystarczalnych wspólnotach",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4216,7 +4213,7 @@
     },
         {
       "id": 67,
-      "text": "XXXXXXXXXX",
+      "text": "Kompetencje władzy centralnej powinny być ograniczone do funkcji koordynacyjnych między jednostkami regionalnymi i niższymi instancjami",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4274,7 +4271,7 @@
     },
         {
       "id": 68,
-      "text": "XXXXXXXXXX",
+      "text": "Instytucje centralne nie powinny realizować zadań, które mogą być wykonywane przez podmioty prywatne lub jednostki lokalne",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4332,7 +4329,7 @@
     },
         {
       "id": 69,
-      "text": "XXXXXXXXXX",
+      "text": "Mniejsze jednostki polityczne, takie jak miasta i gminy, powinny mieć szeroką autonomię od władzy centralnej",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4390,7 +4387,7 @@
     },
         {
       "id": 70,
-      "text": "XXXXXXXXXX",
+      "text": "Samorząd terytorialny powinien posiadać szerokie kompetencje w zakresie zaspokajania lokalnych potrzeb publicznych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4448,7 +4445,7 @@
     },
         {
       "id": 71,
-      "text": "XXXXXXXXXX",
+      "text": "Koncentracja władzy ustawodawczej, wykonawczej i sądowniczej w jednym podmiocie może być uzasadniona",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4506,7 +4503,7 @@
     },
         {
       "id": 72,
-      "text": "XXXXXXXXXX",
+      "text": "Władca powinien być zwolniony z odpowiedzialności przed jakimkolwiek organem prawnym",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4564,7 +4561,7 @@
     },
         {
       "id": 73,
-      "text": "XXXXXXXXXX",
+      "text": "Jedność społeczeństwa wymaga skoncentrowanego przywództwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4622,7 +4619,7 @@
     },
         {
       "id": 74,
-      "text": "XXXXXXXXXX",
+      "text": "Władza polityczna powinna być skupiona w rękach nielicznej grupy rządzących",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4680,7 +4677,7 @@
     },
         {
       "id": 75,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno nadzorować wszystkie dziedziny życia ludzi, zarówno społeczne, jak i gospodarcze",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4738,7 +4735,7 @@
     },
         {
       "id": 76,
-      "text": "XXXXXXXXXX",
+      "text": "Autorytet przywódcy powinien być niepodważalny, aby zapewnić skuteczne działanie państwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4796,7 +4793,7 @@
     },
         {
       "id": 77,
-      "text": "XXXXXXXXXX",
+      "text": "Społeczeństwo wymaga twardej dyscypliny narzuconej przez silne przywództwo, aby osiągnąć swój potencjał",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4854,7 +4851,7 @@
     },
         {
       "id": 78,
-      "text": "XXXXXXXXXX",
+      "text": "Wszystkie sektory i grupy gospodarcze powinny być zintegrowane w jednolitej strukturze kontrolowanej przez państwo",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4912,7 +4909,7 @@
     },
         {
       "id": 79,
-      "text": "XXXXXXXXXX",
+      "text": "Współczesne społeczeństwo powinno powrócić do zasad organizacji sprzed epoki industrialnej",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -4970,7 +4967,7 @@
     },
         {
       "id": 80,
-      "text": "XXXXXXXXXX",
+      "text": "Przemoc i przymus mogą być konieczne, by obalić istniejący porządek społeczny",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5028,7 +5025,7 @@
     },
         {
       "id": 81,
-      "text": "XXXXXXXXXX",
+      "text": "Rewolucja w jednym kraju jest możliwa i wystarczająca jako trwały cel polityczny, bez potrzeby rewolucji międzynarodowej",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5086,7 +5083,7 @@
     },
         {
       "id": 82,
-      "text": "XXXXXXXXXX",
+      "text": ""Porządek społeczny powinien być zmieniany wyłącznie stopniowo",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5144,7 +5141,7 @@
     },
         {
       "id": 83,
-      "text": "XXXXXXXXXX",
+      "text": "Zmiany społeczne i polityczne powinny następować wyłącznie drogą pokojową, bez użycia przemocy lub przymusu",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5202,9 +5199,9 @@
     },
         {
       "id": 84,
-      "text": "XXXXXXXXXX",
+      "text": "Socjalizm jest możliwy do zbudowania w ramach istniejących instytucji demokratycznych bez ich radykalnej przebudowy",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń, jeśli nie popierasz socjalizmu",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -5260,7 +5257,7 @@
     },
         {
       "id": 85,
-      "text": "XXXXXXXXXX",
+      "text": "Strajk generalny jest właściwą i pożądaną formą działania klasy pracującej w celu zmiany ustroju społecznego",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5318,7 +5315,7 @@
     },
         {
       "id": 86,
-      "text": "XXXXXXXXXX",
+      "text": "Partia polityczna powinna kierować społeczeństwem jako ideologiczna awangarda, narzucając kierunek zmian na podstawie swojej wiedzy, a nie woli wyborców",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5376,7 +5373,7 @@
     },
         {
       "id": 87,
-      "text": "XXXXXXXXXX",
+      "text": "Rewolucja wymaga zdyscyplinowanej i centralnie zorganizowanej partii",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5434,7 +5431,7 @@
     },
         {
       "id": 88,
-      "text": "XXXXXXXXXX",
+      "text": "Represje wobec ruchów secesyjnych i separatyzmów są uzasadnione w celu zachowania integralności państwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5492,7 +5489,7 @@
     },
         {
       "id": 89,
-      "text": "XXXXXXXXXX",
+      "text": "Jedna organizacja polityczna powinna dominować w kierowaniu społeczeństwem",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5550,7 +5547,7 @@
     },
         {
       "id": 90,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno dysponować tajnymi służbami bezpieczeństwa, które mogą działać poza normalną kontrolą demokratyczną",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5608,7 +5605,7 @@
     },
         {
       "id": 91,
-      "text": "XXXXXXXXXX",
+      "text": "Każda forma opozycji wobec głównej ideologii lub polityki państwowej powinna być ograniczona",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5666,7 +5663,7 @@
     },
         {
       "id": 92,
-      "text": "XXXXXXXXXX",
+      "text": "Stosowanie siły wobec opozycji i przeciwników politycznych jest akceptowalnym środkiem",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5724,7 +5721,7 @@
     },
         {
       "id": 93,
-      "text": "XXXXXXXXXX",
+      "text": "Każdy ma suwerenne prawo do własności tego, co sam wytworzy",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5782,7 +5779,7 @@
     },
         {
       "id": 94,
-      "text": "XXXXXXXXXX",
+      "text": "Prywatna własność jest koniecznością moralną i ekonomiczną, a nie jedynie narzędziem efektywności",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5840,7 +5837,7 @@
     },
         {
       "id": 95,
-      "text": "XXXXXXXXXX",
+      "text": "Własność powinna być rozumiana bardziej jako prawo do posiadania i użytkowania zasobów, które są aktywnie wykorzystywane przez jednostkę lub grupę",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5898,7 +5895,7 @@
     },
         {
       "id": 96,
-      "text": "XXXXXXXXXX",
+      "text": "Prawo własności powinno być absolutne: żaden podmiot, w tym państwo, niezależnie od sytuacji, nie ma prawa odebrać komuś jego własności bez jego dobrowolnej zgody",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -5956,7 +5953,7 @@
     },
         {
       "id": 97,
-      "text": "XXXXXXXXXX",
+      "text": "DO ZMIANY: Cały budżet państwa powinien być finansowany wyłącznie z jednego podatku nakładanego na wartość samej ziemi (z wyłączeniem wartości budynków i ulepszeń), aby przechwycić tzw „niezasłużony przyrost” wartości gruntu dla dobra wspólnego",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -6014,7 +6011,7 @@
     },
         {
       "id": 98,
-      "text": "XXXXXXXXXX",
+      "text": "Wzrost wartości ziemi spowodowany rozwojem infrastruktury publicznej powinien przypadać społeczności, a nie właścicielowi gruntu",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -6072,7 +6069,7 @@
     },
         {
       "id": 99,
-      "text": "XXXXXXXXXX",
+      "text": "Ziemia i zasoby naturalne nie powinny podlegać trwałemu wyłącznemu zawłaszczeniu przez jednostki",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -6130,7 +6127,7 @@
     },
         {
       "id": 100,
-      "text": "XXXXXXXXXX",
+      "text": "Zasoby naturalne kraju powinny być zarządzane przez państwo jako dobro wspólne, a nie prywatyzowane",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
