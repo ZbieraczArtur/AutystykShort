@@ -50,7 +50,7 @@ function initApp() {
 }
 
 // -------------------------------
-// RENDEROWANIE PYTAŃ
+// RENDEROWANIE PYTAŃ (z kolorami odpowiedzi)
 // -------------------------------
 function renderQuestions() {
   questionsContainer.innerHTML = '';
@@ -102,6 +102,21 @@ function renderQuestions() {
       ansEl.innerText = ans.label;
       ansEl.dataset.answerIdx = ansIdx;
       ansEl.dataset.value = ans.value;
+
+      // Dodanie klasy koloru w zależności od etykiety
+      const label = ans.label;
+      if (label.includes('Zdecydowanie zgadzam się')) {
+        ansEl.classList.add('answer-strong-agree');
+      } else if (label.includes('Częściowo zgadzam się')) {
+        ansEl.classList.add('answer-mild-agree');
+      } else if (label.includes('Częściowo nie zgadzam się')) {
+        ansEl.classList.add('answer-mild-disagree');
+      } else if (label.includes('Zdecydowanie nie zgadzam się')) {
+        ansEl.classList.add('answer-strong-disagree');
+      } else if (label.includes('Pomiń')) {
+        ansEl.classList.add('answer-skip');
+      }
+
       ansEl.addEventListener('click', () => {
         // odznacz inne w tym pytaniu
         const siblings = answersDiv.querySelectorAll('.answer-option');
