@@ -132,166 +132,103 @@ function renderQuestions() {
 function attachQuestionEvents() {}
 
 // -------------------------------
-// ALGORYTM LICZENIA ZGODNOŚCI
+// ALGORYTM LICZENIA ZGODNOŚCI (NOWA WERSJA)
 // -------------------------------
 function computeScores() {
-  // Inicjalizacja map dla ideologii, partii i wartości (wszystkie wartości zdefiniowane w pytaniach)
-  const ideologyScores = new Map(); // { name: { sum:0, maxPossible:0, questionsCount:0, agreements:0, disagreements:0 } }
+  const ideologyScores = new Map();
   const partyScores = new Map();
-  const valueScores = new Map(); // dla każdej wartości (w tym ukrytych)
+  const valueScores = new Map();
 
-  // Najpierw zbierz wszystkie możliwe nazwy z konfiguracji (ideologie, partie)
+  // Inicjalizacja
   config.ideologies.forEach(ideo => {
-    ideologyScores.set(ideo.name, { sum: 0, maxPossible: 0, questionsInvolved: 0, agreements: 0, disagreements: 0 });
+    ideologyScores.set(ideo.name, { sum: 0, maxPossible: 0, agreements: 0, disagreements: 0 });
   });
   config.parties.forEach(party => {
-    partyScores.set(party.name, { sum: 0, maxPossible: 0, questionsInvolved: 0, agreements: 0, disagreements: 0 });
+    partyScores.set(party.name, { sum: 0, maxPossible: 0, agreements: 0, disagreements: 0 });
   });
 
-  // Dla wartości: wszystkie występujące w odpowiedziach (values_for, values_against) – zostaną dodane dynamicznie
-  // ale także pary wartości i hiddenValues – muszą istnieć, aby je pokazać.
-  // Zainicjuj wszystkie wartości z par oraz hidden
   const allValueNames = new Set();
   config.pairsOfValues.forEach(pair => {
     allValueNames.add(pair.left);
     allValueNames.add(pair.right);
   });
   config.hiddenValues.forEach(v => allValueNames.add(v));
-  // oraz dodaj wartości, które pojawiają się tylko w odpowiedziach (choć pewnie są w parach)
   allValueNames.forEach(v => {
-    if (!valueScores.has(v)) valueScores.set(v, { sum: 0, maxPossible: 0, questionsInvolved: 0 });
+    valueScores.set(v, { sum: 0, maxPossible: 0, questionsInvolved: 0 });
   });
 
-  // Dla każdej udzielonej odpowiedzi (pomijamy pominięte – wartość 0, ale i tak liczymy maxPossible tylko dla pytań, gdzie ideologia wystąpiła)
-  // Najpierw przejdź przez wszystkie pytania, aby dla każdej ideologii/partii/wartości obliczyć maxPossible (teoretyczny max)
-  // Uwaga: dla każdego pytania, jeśli ideologia występuje w którejkolwiek odpowiedzi (for lub against), to maksymalny wkład to 1.5 (wartość bezwzględna)
-  // Ale uprościmy: przy każdej odpowiedzi użytkownika dla danego pytania sprawdzamy, czy ideologia występuje w odpowiedzi (for/against),
-  // ale pytanie mogło mieć wiele odpowiedzi z różnymi powiązaniami. Dla maxPossible bierzemy pod uwagę, że w danym pytaniu maksymalny score to 1.5,
-  // niezależnie od tego, którą odpowiedź by wybrał.
-  // Aby to policzyć, dla każdego pytania i każdej ideologii/partii/wartości sprawdzamy, czy w OGÓLE występuje w którejś odpowiedzi (for lub against).
-  // Jeśli tak, to dodajemy do maxPossible 1.5.
-  // Jednocześnie dla faktycznej odpowiedzi liczymy sumę.
+  // Dla każdej odpowiedzi użytkownika
+  for (const ans of userAnswers) {
+    const weight = ans.answerValue;
+    if (weight === 0) continue; // pominięte
 
-  // Przygotuj mapy pytanie -> zbiory ideologii/partii/wartości występujących
-  const questionIdeologies = new Map();
-  const questionParties = new Map();
-  const questionValues = new Map();
-
-  config.questions.forEach(q => {
-    const ideoSet = new Set();
-    const partySet = new Set();
-    const valueSet = new Set();
-    q.answers.forEach(ans => {
-      ans.ideologies_for?.forEach(i => ideoSet.add(i));
-      ans.ideologies_against?.forEach(i => ideoSet.add(i));
-      ans.parties_for?.forEach(p => partySet.add(p));
-      ans.parties_against?.forEach(p => partySet.add(p));
-      ans.values_for?.forEach(v => valueSet.add(v));
-      ans.values_against?.forEach(v => valueSet.add(v));
-    });
-    questionIdeologies.set(q.id, ideoSet);
-    questionParties.set(q.id, partySet);
-    questionValues.set(q.id, valueSet);
-  });
-
-  // Dodaj maxPossible dla każdej ideologii
-  for (let [ideoName, data] of ideologyScores.entries()) {
-    let max = 0;
-    for (let [qId, ideoSet] of questionIdeologies.entries()) {
-      if (ideoSet.has(ideoName)) {
-        max += 1.5;
-        data.questionsInvolved++;
-      }
-    }
-    data.maxPossible = max;
-  }
-  for (let [partyName, data] of partyScores.entries()) {
-    let max = 0;
-    for (let [qId, partySet] of questionParties.entries()) {
-      if (partySet.has(partyName)) {
-        max += 1.5;
-        data.questionsInvolved++;
-      }
-    }
-    data.maxPossible = max;
-  }
-  for (let [valueName, data] of valueScores.entries()) {
-    let max = 0;
-    for (let [qId, valueSet] of questionValues.entries()) {
-      if (valueSet.has(valueName)) {
-        max += 1.5;
-        data.questionsInvolved++;
-      }
-    }
-    data.maxPossible = max;
-  }
-
-  // Teraz przelicz sumy na podstawie faktycznych odpowiedzi użytkownika
-  userAnswers.forEach(ans => {
     const answer = ans.answerData;
-    const weight = ans.answerValue; // od -1.5 do 1.5
-    if (weight === 0) return; // pominięte – bez wpływu
 
-    // Ideologie
-    (answer.ideologies_for || []).forEach(ideo => {
+    // ------ Ideologie ------
+    for (const ideo of (answer.ideologies_for || [])) {
       const rec = ideologyScores.get(ideo);
       if (rec) {
         rec.sum += weight;
+        rec.maxPossible += 1.5;
         if (weight > 0) rec.agreements++;
         else if (weight < 0) rec.disagreements++;
       }
-    });
-    (answer.ideologies_against || []).forEach(ideo => {
+    }
+    for (const ideo of (answer.ideologies_against || [])) {
       const rec = ideologyScores.get(ideo);
       if (rec) {
-        rec.sum -= weight;  // przeciwna odpowiedź: odwracamy znak
-        if (weight < 0) rec.agreements++;  // bo np. -1.5 -> -(-1.5)=+1.5 -> zgodność
+        rec.sum -= weight;      // odwrócenie znaku
+        rec.maxPossible += 1.5;
+        if (weight < 0) rec.agreements++;   // np. -1.5 → +1.5
         else if (weight > 0) rec.disagreements++;
       }
-    });
+    }
 
-    // Partie
-    (answer.parties_for || []).forEach(party => {
+    // ------ Partie ------
+    for (const party of (answer.parties_for || [])) {
       const rec = partyScores.get(party);
       if (rec) {
         rec.sum += weight;
+        rec.maxPossible += 1.5;
         if (weight > 0) rec.agreements++;
         else if (weight < 0) rec.disagreements++;
       }
-    });
-    (answer.parties_against || []).forEach(party => {
+    }
+    for (const party of (answer.parties_against || [])) {
       const rec = partyScores.get(party);
       if (rec) {
         rec.sum -= weight;
+        rec.maxPossible += 1.5;
         if (weight < 0) rec.agreements++;
         else if (weight > 0) rec.disagreements++;
       }
-    });
+    }
 
-    // Wartości
-    (answer.values_for || []).forEach(val => {
+    // ------ Wartości ------
+    for (const val of (answer.values_for || [])) {
       const rec = valueScores.get(val);
       if (rec) {
         rec.sum += weight;
+        rec.maxPossible += 1.5;
       }
-    });
-    (answer.values_against || []).forEach(val => {
+    }
+    for (const val of (answer.values_against || [])) {
       const rec = valueScores.get(val);
       if (rec) {
         rec.sum -= weight;
+        rec.maxPossible += 1.5;
       }
-    });
-  });
+    }
+  }
 
-  // Przelicz na procent (0-100) dla każdego elementu
   function normalizeScore(rec) {
-    if (!rec || rec.maxPossible === 0) return 50; // neutralne
+    if (!rec || rec.maxPossible === 0) return 50;
     let raw = rec.sum;
-    // zakres -maxPossible .. +maxPossible
     let normalized = (raw + rec.maxPossible) / (2 * rec.maxPossible) * 100;
     return Math.min(100, Math.max(0, normalized));
   }
 
+  // Wyniki
   const ideologyResults = [];
   for (let [name, rec] of ideologyScores.entries()) {
     ideologyResults.push({
@@ -299,7 +236,7 @@ function computeScores() {
       percent: normalizeScore(rec),
       agreements: rec.agreements || 0,
       disagreements: rec.disagreements || 0,
-      involved: rec.questionsInvolved,
+      involved: rec.maxPossible / 1.5, // liczba pytań, w których partia wystąpiła
       description: config.ideologies.find(i => i.name === name)?.description || ''
     });
   }
@@ -312,24 +249,22 @@ function computeScores() {
       percent: normalizeScore(rec),
       agreements: rec.agreements || 0,
       disagreements: rec.disagreements || 0,
-      involved: rec.questionsInvolved,
+      involved: rec.maxPossible / 1.5,
       description: config.parties.find(p => p.name === name)?.description || ''
     });
   }
   partyResults.sort((a,b) => b.percent - a.percent);
 
-  // Wartości dla par – przygotuj mapę wyników wartości
+  // Wartości – analogicznie
   const valuePercentMap = new Map();
   for (let [name, rec] of valueScores.entries()) {
     valuePercentMap.set(name, normalizeScore(rec));
   }
 
-  // Pary wartości
   const pairResults = [];
   for (let pair of config.pairsOfValues) {
     let leftScore = valuePercentMap.get(pair.left) ?? 50;
     let rightScore = valuePercentMap.get(pair.right) ?? 50;
-    // przeskaluj, żeby suma była 100
     let total = leftScore + rightScore;
     if (total === 0) {
       leftScore = 50; rightScore = 50;
