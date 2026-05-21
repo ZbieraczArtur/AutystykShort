@@ -3427,7 +3427,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": [],fp
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -3527,7 +3527,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3537,7 +3537,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3548,7 +3548,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -3558,7 +3558,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -3586,7 +3586,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3596,7 +3596,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3605,7 +3605,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3615,7 +3615,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3643,7 +3643,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3653,7 +3653,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3664,7 +3664,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -3674,7 +3674,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -3701,7 +3701,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3711,7 +3711,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3722,7 +3722,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -3732,7 +3732,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -3760,7 +3760,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3770,7 +3770,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3779,7 +3779,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3789,7 +3789,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3818,7 +3818,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3828,7 +3828,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3866,7 +3866,7 @@
       "id": 61,
       "text": "Każdy głos w procesie politycznym powinien mieć taką samą wartość",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń jeśli nie popierasz systemu demokratycznego",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -3875,7 +3875,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3885,7 +3885,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3896,7 +3896,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -3906,7 +3906,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -3924,7 +3924,7 @@
       "id": 62,
       "text": "Prawo głosu powinno być uzależnione od spełnienia określonych kryteriów kompetencyjnych",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń jeśli nie popierasz systemu demokratycznego",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -3934,7 +3934,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3944,7 +3944,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3953,7 +3953,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3963,7 +3963,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -3982,7 +3982,7 @@
       "id": 63,
       "text": "Władza wykonawcza powinna być ograniczana przez formalne mechanizmy instytucjonalne",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń jeśli nie uznajesz autorytetu państwowego",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -4011,7 +4011,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4069,7 +4069,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4079,7 +4079,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4108,7 +4108,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -4118,7 +4118,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -4127,7 +4127,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4137,7 +4137,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4166,7 +4166,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -4176,7 +4176,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -4195,7 +4195,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4224,7 +4224,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -4234,7 +4234,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -4243,7 +4243,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4253,7 +4253,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4282,7 +4282,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -4311,7 +4311,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4340,7 +4340,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -4350,7 +4350,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -4359,7 +4359,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4369,7 +4369,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4571,7 +4571,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4581,7 +4581,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4592,7 +4592,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -4602,7 +4602,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -4697,7 +4697,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4852,7 +4852,6 @@
       "id": 78,
       "text": "Wszystkie sektory i grupy gospodarcze powinny być zintegrowane w jednolitej strukturze kontrolowanej przez państwo",
       "description": "XXXXXX",
-      "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -4862,7 +4861,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -4872,7 +4871,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -4881,7 +4880,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4891,7 +4890,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4910,7 +4909,6 @@
       "id": 79,
       "text": "Współczesne społeczeństwo powinno powrócić do zasad organizacji sprzed epoki industrialnej",
       "description": "XXXXXX",
-      "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -4920,7 +4918,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -4930,7 +4928,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -4939,7 +4937,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4949,7 +4947,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -4968,7 +4966,7 @@
       "id": 80,
       "text": "Przemoc i przymus mogą być konieczne, by obalić istniejący porządek społeczny",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń jeśli nie popierasz obalenia istniejącego porządku społecznego",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -5026,7 +5024,7 @@
       "id": 81,
       "text": "Rewolucja w jednym kraju jest możliwa i wystarczająca jako trwały cel polityczny, bez potrzeby rewolucji międzynarodowej",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń jeśli nie jest się socjalistą",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -5036,7 +5034,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -5046,7 +5044,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -5056,7 +5054,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -5066,7 +5064,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -5142,7 +5140,6 @@
       "id": 83,
       "text": "Zmiany społeczne i polityczne powinny następować wyłącznie drogą pokojową, bez użycia przemocy lub przymusu",
       "description": "XXXXXX",
-      "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -5151,7 +5148,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -5161,7 +5158,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -5172,7 +5169,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -5182,7 +5179,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -5210,7 +5207,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -5220,7 +5217,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -5230,7 +5227,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -5240,7 +5237,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -5258,7 +5255,7 @@
       "id": 85,
       "text": "Strajk generalny jest właściwą i pożądaną formą działania klasy pracującej w celu zmiany ustroju społecznego",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń, jeśli nie popierasz socjalizmu",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -5268,7 +5265,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -5278,7 +5275,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -5325,7 +5322,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -5335,7 +5332,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -5374,7 +5371,7 @@
       "id": 87,
       "text": "Rewolucja wymaga zdyscyplinowanej i centralnie zorganizowanej partii",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń jeśli nie jesteś rewolucjonistą",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -5384,7 +5381,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -5394,7 +5391,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -5404,7 +5401,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -5414,7 +5411,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
