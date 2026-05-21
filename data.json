@@ -7119,7 +7119,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7129,7 +7129,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7140,7 +7140,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7150,7 +7150,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7178,7 +7178,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7197,7 +7197,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7207,7 +7207,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7236,7 +7236,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7246,7 +7246,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -7255,7 +7255,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7265,7 +7265,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7293,7 +7293,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7303,7 +7303,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7314,7 +7314,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7324,7 +7324,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7352,7 +7352,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7362,7 +7362,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -7371,7 +7371,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7381,7 +7381,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7409,7 +7409,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7419,7 +7419,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7430,7 +7430,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7440,7 +7440,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7468,7 +7468,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7478,7 +7478,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -7487,7 +7487,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7497,7 +7497,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7526,7 +7526,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7536,7 +7536,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -7545,7 +7545,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7555,7 +7555,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7583,7 +7583,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7593,7 +7593,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7642,7 +7642,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7651,7 +7651,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7671,7 +7671,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7700,7 +7700,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7710,7 +7710,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -7719,7 +7719,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7729,7 +7729,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7757,7 +7757,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7767,7 +7767,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7778,7 +7778,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7788,7 +7788,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7804,7 +7804,7 @@
     },
         {
       "id": 129,
-      "text": "Prywatna przedsiębiorczość powinna być podporządkowana interesom narodowym",
+      "text": "Prywatna przedsiębiorczość powinna być podporządkowana interesom 𝗻𝗮𝗿𝗼𝗱𝗼𝘄𝘆𝗺",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -7815,7 +7815,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7825,7 +7825,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7836,7 +7836,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7846,7 +7846,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7873,7 +7873,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7883,7 +7883,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7894,7 +7894,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7904,7 +7904,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7931,7 +7931,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7941,7 +7941,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -7952,7 +7952,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7962,7 +7962,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7990,7 +7990,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8000,7 +8000,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8009,7 +8009,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8019,7 +8019,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8048,7 +8048,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8058,7 +8058,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8067,7 +8067,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8077,7 +8077,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8164,7 +8164,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8174,7 +8174,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8183,7 +8183,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8193,7 +8193,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8222,7 +8222,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8232,7 +8232,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8241,7 +8241,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8251,7 +8251,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8279,7 +8279,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8289,7 +8289,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8300,7 +8300,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8310,7 +8310,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8337,7 +8337,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8347,7 +8347,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8358,7 +8358,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8368,7 +8368,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8396,7 +8396,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8406,7 +8406,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8415,7 +8415,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8425,7 +8425,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8444,7 +8444,7 @@
       "id": 140,
       "text": "Publiczna pomoc społeczna powinna być dostępna wyłącznie dla osób, które nie mogą uzyskać wsparcia od rodziny ani instytucji prywatnych",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń jeśli całkowicie odrzucasz pomoc społeczną",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -8454,7 +8454,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8464,7 +8464,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["PiS"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8473,7 +8473,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8483,7 +8483,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
