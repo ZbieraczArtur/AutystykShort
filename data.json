@@ -67,7 +67,7 @@
       "rightDef": "Samoregulacja – zdolność rynku i społeczności do samoorganizacji."
     },
     {
-      "left": "Ograniczanie wymiany (protekcjonizm)",
+      "left": "Ograniczanie wymiany",
       "right": "Swobodna wymiana",
       "leftDef": "Protekcjonizm – cła, bariery handlowe i ochrona rodzimej gospodarki.",
       "rightDef": "Swobodna wymiana – wolny handel międzynarodowy bez sztucznych ograniczeń."
@@ -577,8 +577,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Autonomia", "Indywidualizm"],
+          "values_against": ["Kolektywizm", "Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -587,8 +587,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Autonomia", "Indywidualizm"],
+          "values_against": ["Kolektywizm", "Heteronomia"]
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -597,8 +597,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Heteronomia"],
+          "values_against": ["Autonomia", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["PiS", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"],
@@ -607,8 +607,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Heteronomia"],
+          "values_against": ["Autonomia", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["PiS", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"],
@@ -634,8 +634,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Autonomia", "Indywidualizm"],
+          "values_against": ["Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Nowa Nadzieja"],
@@ -645,8 +645,8 @@
           "label": "Częściowo zgadzam się",
           "value": 1.0,
           "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
+          "values_for": ["Autonomia", "Indywidualizm"],
+          "values_against": ["Heteronomia"],
           "ideologies_against": [],
           "parties_for": ["KO", "Nowa Nadzieja"],
           "parties_against": ["PiS", "PSL", "Nowa Lewica", "Razem"]
@@ -654,8 +654,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Heteronomia"],
+          "values_against": ["Autonomia", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["PiS", "PSL", "Nowa Lewica", "Razem"],
@@ -664,8 +664,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Heteronomia"],
+          "values_against": ["Autonomia", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["PiS", "PSL", "Nowa Lewica", "Razem"],
@@ -691,8 +691,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Autonomia", "Indywidualizm", "Samoregulacja", "Anarchia"],
+          "values_against": ["Kolektywizm", "Heteronomia", "Anty-hierarchiczność"],
           "ideologies_for": ["Anarchokapitalizm"],
           "ideologies_against": [],
           "parties_for": [],
@@ -701,8 +701,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Autonomia", "Indywidualizm", "Samoregulacja", "Anarchia"],
+          "values_against": ["Kolektywizm", "Heteronomia", "Anty-hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -711,8 +711,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Heteronomia", "Anty-hierarchiczność"],
+          "values_against": ["Autonomia", "Indywidualizm", "Samoregulacja", "Anarchia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"],
@@ -721,8 +721,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Heteronomia", "Anty-hierarchiczność"],
+          "values_against": ["Autonomia", "Indywidualizm", "Samoregulacja", "Anarchia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem", "Nowa Nadzieja"],
@@ -749,8 +749,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anty-hierarchiczność", "Kolektywizm"],
+          "values_against": ["Autonomia", "Samoregulacja", "Własność prywatna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem"],
@@ -759,8 +759,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anty-hierarchiczność", "Kolektywizm"],
+          "values_against": ["Autonomia", "Samoregulacja", "Własność prywatna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["PiS", "KO", "PSL", "Nowa Lewica", "Razem"],
@@ -769,8 +769,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Autonomia", "Samoregulacja", "Własność prywatna"],
+          "values_against": ["Anty-hierarchiczność", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Nowa Nadzieja"],
@@ -779,8 +779,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Autonomia", "Samoregulacja", "Własność prywatna"],
+          "values_against": ["Anty-hierarchiczność", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Nowa Nadzieja"],
@@ -806,8 +806,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Heteronomia", "Tradycjonalizm"],
+          "values_against": []
           "ideologies_for": [],
           "ideologies_against": ["Nowa Lewica", "Razem"],
           "parties_for": ["PiS", "PSL", "Nowa Nadzieja", "KKP", "Ruch Narodowy"],
@@ -816,7 +816,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Heteronomia", "Tradycjonalizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -827,7 +827,7 @@
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": [],
-          "values_against": [],
+          "values_against": ["Heteronomia", "Tradycjonalizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Nowa Lewica", "Razem"],
@@ -837,7 +837,7 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": [],
-          "values_against": [],
+          "values_against": ["Heteronomia", "Tradycjonalizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Nowa Lewica", "Razem"],
@@ -863,9 +863,9 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": ["Faszyzm"],
+          "values_for": ["Etatyzm", "Autokracja", "Centralizacja", "Heteronomia", "Hierarchiczność"],
+          "values_against": ["Anarchia", "Decentralizacja", "Autonomia", "Anty-autokracja"],
+          "ideologies_for": ["Faszyzm włoski"],
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["KO", "Nowa Lewica", "Nowa Nadzieja"]
@@ -873,9 +873,9 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": ["Faszyzm"],
+          "values_for": ["Etatyzm", "Autokracja", "Centralizacja", "Heteronomia", "Hierarchiczność"],
+          "values_against": ["Anarchia", "Decentralizacja", "Autonomia", "Anty-autokracja"],
+          "ideologies_for": ["Faszyzm włoski"],
           "ideologies_against": [],
           "parties_for": ["PiS", "PSL"],
           "parties_against": ["KO", "Nowa Lewica", "Nowa Nadzieja"]
@@ -883,20 +883,20 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anarchia", "Decentralizacja", "Autonomia", "Anty-autokracja"],
+          "values_against": ["Etatyzm", "Autokracja", "Centralizacja", "Heteronomia", "Hierarchiczność"],
           "ideologies_for": [],
-          "ideologies_against": ["Faszyzm"],
+          "ideologies_against": ["Faszyzm włoski"],
           "parties_for": ["KO", "Nowa Lewica", "Nowa Nadzieja"],
           "parties_against": []
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anarchia", "Decentralizacja", "Autonomia", "Anty-autokracja"],
+          "values_against": ["Etatyzm", "Autokracja", "Centralizacja", "Heteronomia", "Hierarchiczność"],
           "ideologies_for": [],
-          "ideologies_against": ["Faszyzm"],
+          "ideologies_against": ["Faszyzm włoski"],
           "parties_for": ["KO", "Nowa Lewica", "Nowa Nadzieja"],
           "parties_against": ["PiS", "PSL"]
         },
@@ -920,9 +920,9 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": ["Faszyzm"],
+          "values_for": ["Etatyzm", "Kolektywizm", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia", "Anarchia"],
+          "ideologies_for": ["Faszyzm włoski"],
           "ideologies_against": [],
           "parties_for": ["PiS", "PSL", "Nowa Nadzieja"],
           "parties_against": ["KO", "Nowa Lewica"]
@@ -930,9 +930,9 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": ["Faszyzm"],
+          "values_for": ["Etatyzm", "Kolektywizm", "Heteronomia"],
+          "values_against": ["Indywidualizm", "Autonomia", "Anarchia"],
+          "ideologies_for": ["Faszyzm włoski"],
           "ideologies_against": [],
           "parties_for": ["PiS", "PSL", "Nowa Nadzieja"],
           "parties_against": ["KO", "Nowa Lewica"]
@@ -940,20 +940,20 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Indywidualizm", "Autonomia", "Anarchia"],
+          "values_against": ["Indywidualizm", "Autonomia", "Anarchia"],
           "ideologies_for": [],
-          "ideologies_against": ["Faszyzm"],
+          "ideologies_against": ["Faszyzm włoski"],
           "parties_for": ["KO", "Nowa Lewica"],
           "parties_against": ["PiS", "PSL", "Nowa Nadzieja"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Indywidualizm", "Autonomia", "Anarchia"],
+          "values_against": ["Indywidualizm", "Autonomia", "Anarchia"],
           "ideologies_for": [],
-          "ideologies_against": ["Faszyzm"],
+          "ideologies_against": ["Faszyzm włoski"],
           "parties_for": ["KO", "Nowa Lewica"],
           "parties_against": ["PiS", "PSL"]
         },
