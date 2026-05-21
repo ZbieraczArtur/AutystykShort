@@ -2659,7 +2659,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["PiS", "KPP"],
+          "parties_for": ["PiS", "KKP"],
           "parties_against": []
         },
         {
@@ -2669,7 +2669,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["PiS", "KPP"],
+          "parties_for": ["PiS", "KKP"],
           "parties_against": []
         },
         {
@@ -2680,7 +2680,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["PiS", "KPP"]
+          "parties_against": ["PiS", "KKP"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2690,7 +2690,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["PiS", "KPP"]
+          "parties_against": ["PiS", "KKP"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2716,7 +2716,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["KPP"],
+          "parties_for": ["KKP"],
           "parties_against": ["PiS"]
         },
         {
@@ -2726,7 +2726,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["KPP"],
+          "parties_for": ["KKP"],
           "parties_against": ["PiS"]
         },
         {
@@ -2737,7 +2737,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["PiS"],
-          "parties_against": ["KPP"]
+          "parties_against": ["KKP"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2747,7 +2747,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["PiS"],
-          "parties_against": ["KPP"]
+          "parties_against": ["KKP"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2773,7 +2773,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["PiS","KPP"],
+          "parties_for": ["PiS","KKP"],
           "parties_against": []
         },
         {
@@ -2783,7 +2783,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["PiS","KPP"],
+          "parties_for": ["PiS","KKP"],
           "parties_against": []
         },
         {
@@ -2794,7 +2794,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["PiS","KPP"]
+          "parties_against": ["PiS","KKP"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2804,7 +2804,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["PiS","KPP"]
+          "parties_against": ["PiS","KKP"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2832,7 +2832,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["PiS","KPP"]
+          "parties_against": ["PiS","KKP"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -2842,7 +2842,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["PiS","KPP"]
+          "parties_against": ["PiS","KKP"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -2851,7 +2851,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["PiS","KPP"],
+          "parties_for": ["PiS","KKP"],
           "parties_against": []
         },
         {
@@ -2861,7 +2861,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["PiS","KPP"],
+          "parties_for": ["PiS","KKP"],
           "parties_against": []
         },
         {
@@ -3427,7 +3427,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],fp
+          "values_for": [],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -7804,7 +7804,7 @@
     },
         {
       "id": 129,
-      "text": "Prywatna przedsiębiorczość powinna być podporządkowana interesom narodowym",
+      "text": "Prywatna przedsiębiorczość powinna być podporządkowana interesom 𝗻𝗮𝗿𝗼𝗱𝗼𝘄𝘆𝗺",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -8521,7 +8521,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8531,7 +8531,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
@@ -8541,7 +8541,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
+          "parties_for": ["PiS"],
           "parties_against": []
         },
         {
