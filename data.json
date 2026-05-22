@@ -1673,8 +1673,8 @@
           "value": 1.5,
           "values_for": ["Indywidualizm", "Autonomia", "Prymat jednostki"],
           "values_against": ["Kolektywizm", "Heteronomia"],
-          "ideologies_for": []
-          "ideologies_against": []
+          "ideologies_for": [],
+          "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość"]
         },
@@ -2619,7 +2619,7 @@
           "value": -1.0,
           "values_for": ["Neutralność religijna", "Desakralizacja autorytetu"],
           "values_against": ["Instytucjonalna religia", "Heteronomia", "Autokracja", "Sakralizacja autorytetu"],
-          "ideologies_for": 
+          "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
           "parties_against": ["Konfederacja Korony Polskiej"]
@@ -3116,8 +3116,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anarchia", "Autonomia", "Desakralizacja autorytetu"],
+          "values_against": ["Etatyzm", "Heteronomia", "Kolektywizm", "Sakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3126,8 +3126,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anarchia", "Autonomia", "Desakralizacja autorytetu"],
+          "values_against": ["Etatyzm", "Heteronomia", "Kolektywizm", "Sakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3136,8 +3136,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Heteronomia", "Kolektywizm", "Sakralizacja autorytetu"],
+          "values_against": ["Anarchia", "Autonomia", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3146,8 +3146,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Heteronomia", "Kolektywizm", "Sakralizacja autorytetu"],
+          "values_against": ["Anarchia", "Autonomia", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3174,8 +3174,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anarchia", "Autonomia", "Sakralizacja autorytetu"],
+          "values_against": ["Etatyzm", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3184,8 +3184,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anarchia", "Autonomia", "Sakralizacja autorytetu"],
+          "values_against": ["Etatyzm", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3194,8 +3194,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Desakralizacja autorytetu"],
+          "values_against": ["Anarchia", "Autonomia", "Sakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3204,8 +3204,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Desakralizacja autorytetu"],
+          "values_against": ["Anarchia", "Autonomia", "Sakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3232,8 +3232,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anarchia", "Autonomia", "Desakralizacja autorytetu"],
+          "values_against": ["Etatyzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3242,8 +3242,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anarchia", "Autonomia", "Desakralizacja autorytetu"],
+          "values_against": ["Etatyzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3252,8 +3252,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm"],
+          "values_against": ["Anarchia", "Autonomia", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3262,8 +3262,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm"],
+          "values_against": ["Anarchia", "Autonomia", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3290,8 +3290,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anarchia", "Samoregulacja", "Desakralizacja autorytetu"],
+          "values_against": ["Etatyzm", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3300,8 +3300,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anarchia", "Samoregulacja", "Desakralizacja autorytetu"],
+          "values_against": ["Etatyzm", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3310,8 +3310,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Własność kolektywna"],
+          "values_against": ["Anarchia", "Samoregulacja", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3320,8 +3320,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Własność kolektywna"],
+          "values_against": ["Anarchia", "Samoregulacja", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3348,7 +3348,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Heteronomia"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -3358,7 +3358,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Heteronomia"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -3401,13 +3401,13 @@
       "id": 53,
       "text": "Podstawową funkcją państwa powinna być ochrona indywidualnych praw jednostki",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń jeśli odrzucasz istnienie państwa",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Indywidualizm", "Etatyzm", "Autonomia"],
+          "values_against": ["Kolektywizm","Etatyzm", "Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3416,8 +3416,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Indywidualizm", "Etatyzm", "Autonomia"],
+          "values_against": ["Kolektywizm","Etatyzm", "Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3429,7 +3429,7 @@
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Indywidualizm", "Etatyzm", "Autonomia"],
           "parties_for": ["Prawo i Sprawiedliwość"],
           "parties_against": []
         },
@@ -3439,7 +3439,7 @@
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Indywidualizm", "Etatyzm", "Autonomia"],
           "parties_for": ["Prawo i Sprawiedliwość"],
           "parties_against": []
         },
@@ -3464,8 +3464,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Decentralizacja", "Indywidualizm", "Anarchia"],
+          "values_against": ["Etatyzm", "Regulacja instytucjonalna", "Anty-hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3474,8 +3474,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Decentralizacja", "Indywidualizm", "Anarchia"],
+          "values_against": ["Etatyzm", "Regulacja instytucjonalna", "Anty-hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3484,8 +3484,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Anty-hierarchiczność"],
+          "values_against": ["Samoregulacja", "Decentralizacja", "Indywidualizm", "Anarchia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3494,8 +3494,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Anty-hierarchiczność"],
+          "values_against": ["Samoregulacja", "Decentralizacja", "Indywidualizm", "Anarchia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3517,13 +3517,13 @@
       "id": 55,
       "text": "Władza powinna być odpowiedzialna za zapewnienie usług społecznych, takich jak opieka zdrowotna, zakwaterowanie, emerytury oraz edukacja",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń, jeśli nie popierasz istnienia państwa",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Anty-hierarchiczność", "Kolektywizm", "Regulacja instytucjonalna"],
+          "values_against": ["Samoregulacja", "Rynek", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3532,8 +3532,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Anty-hierarchiczność", "Kolektywizm", "Regulacja instytucjonalna"],
+          "values_against": ["Samoregulacja", "Rynek", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3542,8 +3542,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Rynek", "Indywidualizm"],
+          "values_against": ["Etatyzm", "Anty-hierarchiczność", "Kolektywizm", "Regulacja instytucjonalna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3552,8 +3552,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Rynek", "Indywidualizm"],
+          "values_against": ["Etatyzm", "Anty-hierarchiczność", "Kolektywizm", "Regulacja instytucjonalna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -10016,9 +10016,9 @@
           "value": 1.5,
           "values_for": [],
           "values_against": [],
-          "ideologies_for": [],
+          "ideologies_for": ["Anarchokapitalizm", "Minarchizm"],
           "ideologies_against": [],
-          "parties_for": ["Anarchokapitalizm", "Minarchizm"],
+          "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość"]
         },
         {
@@ -10026,9 +10026,9 @@
           "value": 1.0,
           "values_for": [],
           "values_against": [],
-          "ideologies_for": [],
+          "ideologies_for": ["Anarchokapitalizm", "Minarchizm"]],
           "ideologies_against": [],
-          "parties_for": ["Anarchokapitalizm", "Minarchizm"],
+          "parties_for": [,
           "parties_against": ["Prawo i Sprawiedliwość"]
         },
         {
@@ -10037,9 +10037,9 @@
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Anarchokapitalizm", "Minarchizm"],
           "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": ["Anarchokapitalizm", "Minarchizm"]
+          "parties_against": []
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -10047,9 +10047,9 @@
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Anarchokapitalizm", "Minarchizm"],
           "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": ["Anarchokapitalizm", "Minarchizm"]
+          "parties_against": []
         },
         {
           "label": "Pomiń pytanie",
