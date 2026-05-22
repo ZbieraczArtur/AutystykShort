@@ -5404,8 +5404,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_against": ["Rewolucjonizm", "Centralizacja", "Autokracja"],
-          "ideologies_for": ["Rewolucjonizm", "Decentralizacja", "Anarchia"],
+          "values_for": ["Rewolucjonizm", "Centralizacja", "Autokracja"],
+          "values_against": ["Rewolucjonizm", "Decentralizacja", "Anarchia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
