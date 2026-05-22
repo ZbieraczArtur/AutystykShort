@@ -3927,8 +3927,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Hierarchiczność", "Autokracja"],
+          "values_against": ["Demokracja", "Anty-hierarchiczność", "Anty-autokracja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3937,8 +3937,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Hierarchiczność", "Autokracja"],
+          "values_against": ["Demokracja", "Anty-hierarchiczność", "Anty-autokracja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -3947,8 +3947,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Demokracja", "Anty-hierarchiczność", "Anty-autokracja"],
+          "values_against": ["Hierarchiczność", "Autokracja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3957,8 +3957,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Demokracja", "Anty-hierarchiczność", "Anty-autokracja"],
+          "values_against": ["Hierarchiczność", "Autokracja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -10025,7 +10025,7 @@
           "value": 1.0,
           "values_for": [],
           "values_against": [],
-          "ideologies_for": ["Anarchokapitalizm", "Minarchizm"]],
+          "ideologies_for": ["Anarchokapitalizm", "Minarchizm"],
           "ideologies_against": [],
           "parties_for": [,
           "parties_against": ["Prawo i Sprawiedliwość"]
