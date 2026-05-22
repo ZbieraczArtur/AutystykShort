@@ -2491,7 +2491,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Anty-demokracja", "Heteronomia", "Hierarchiczność", "Etatyzm", "Sakralizacja autorytetu"]
+          "values_for": ["Anty-demokracja", "Heteronomia", "Hierarchiczność", "Etatyzm", "Sakralizacja autorytetu"],
           "values_against": ["Demokracja", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -3000,7 +3000,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Anty-autokracja", "Anty-demokracja"],
+          "values_for": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Anty-autokracja", "Anty-demokracja", "Desakralizacja autorytetu"],
           "values_against": ["Gradualizm"],
           "ideologies_for": ["Agoryzm"],
           "ideologies_against": [],
@@ -3010,7 +3010,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Anty-autokracja", "Anty-demokracja"],
+          "values_for": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Anty-autokracja", "Anty-demokracja", "Desakralizacja autorytetu"],
           "values_against": ["Gradualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -3021,7 +3021,7 @@
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": ["Gradualizm"],
-          "values_against": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Anty-autokracja", "Anty-demokracja"],
+          "values_against": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Anty-autokracja", "Anty-demokracja", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": ["Agoryzm"],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3031,7 +3031,7 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": ["Gradualizm"],
-          "values_against": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Anty-autokracja", "Anty-demokracja"],
+          "values_against": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Anty-autokracja", "Anty-demokracja", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": ["Agoryzm"],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -3058,7 +3058,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Decentralizacja", "Anty-autokracja", "Unikanie przemocy", "Desakralizacja autorytetu"],
           "values_against": [],
           "ideologies_for": ["Agoryzm"],
           "ideologies_against": [],
@@ -3068,7 +3068,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Decentralizacja", "Anty-autokracja", "Unikanie przemocy", "Desakralizacja autorytetu"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
