@@ -588,7 +588,7 @@
           "label": "Częściowo zgadzam się",
           "value": 1.0,
           "values_for": ["Autonomia", "Indywidualizm"],
-          "values_against": ["Kolektywizm", "Heteronomia"]
+          "values_against": ["Kolektywizm", "Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -644,7 +644,6 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
           "values_for": ["Autonomia", "Indywidualizm"],
           "values_against": ["Heteronomia"],
           "ideologies_against": [],
@@ -807,7 +806,7 @@
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
           "values_for": ["Heteronomia", "Tradycjonalizm"],
-          "values_against": []
+          "values_against": [],
           "ideologies_for": [],
           "ideologies_against": ["Nowa Lewica", "Razem"],
           "parties_for": ["PiS", "PSL", "Nowa Nadzieja", "KKP", "Ruch Narodowy"],
