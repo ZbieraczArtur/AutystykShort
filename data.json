@@ -1673,8 +1673,8 @@
           "value": 1.5,
           "values_for": ["Indywidualizm", "Autonomia", "Prymat jednostki"],
           "values_against": ["Kolektywizm", "Heteronomia"],
-          "ideologies_for": 
-          "ideologies_against": 
+          "ideologies_for": []
+          "ideologies_against": []
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość"]
         },
@@ -1903,8 +1903,8 @@
           "value": 1.5,
           "values_for": ["Kolektywizm", "Heteronomia", "Etatyzm", "Prymat kolektywu"],
           "values_against": ["Indywidualizm", "Autonomia", "Anarchia", "Prymat jednostki"],
-          "ideologies_for": []
-          "ideologies_against": []
+          "ideologies_for": [],
+          "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
           "parties_against": []
         },
@@ -2307,8 +2307,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Tradycjonalizm"],
+          "values_against": ["Progresywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -2317,8 +2317,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Tradycjonalizm"],
+          "values_against": ["Progresywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -2327,8 +2327,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Progresywizm"],
+          "values_against": ["Tradycjonalizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -2337,8 +2337,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Progresywizm"],
+          "values_against": ["Tradycjonalizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -2365,9 +2365,9 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Kolektywizm"],
           "values_against": [],
-          "ideologies_for": [],
+          "ideologies_for": ["Marksizm klasyczny"],
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość"]
@@ -2375,9 +2375,9 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Kolektywizm"],
           "values_against": [],
-          "ideologies_for": [],
+          "ideologies_for": ["Marksizm klasyczny"],
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość"]
@@ -2386,9 +2386,9 @@
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": [],
-          "values_against": [],
+          "values_against": ["Kolektywizm"],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Marksizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość"],
           "parties_against": []
         },
@@ -2396,9 +2396,9 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": [],
-          "values_against": [],
+          "values_against": ["Kolektywizm"],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Marksizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość"],
           "parties_against": []
         },
@@ -2423,9 +2423,9 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm"],
           "values_against": [],
-          "ideologies_for": ["Faszyzm"],
+          "ideologies_for": ["Faszyzm włoski"],
           "ideologies_against": [],
           "parties_for": ["Konfederacja Korony Polskiej"],
           "parties_against": []
@@ -2433,9 +2433,9 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm"],
           "values_against": [],
-          "ideologies_for": ["Faszyzm"],
+          "ideologies_for": ["Faszyzm włoski"],
           "ideologies_against": [],
           "parties_for": ["Konfederacja Korony Polskiej"],
           "parties_against": []
@@ -2444,7 +2444,7 @@
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": [],
-          "values_against": [],
+          "values_against": ["Faszyzm włoski"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -2454,7 +2454,7 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": [],
-          "values_against": [],
+          "values_against": ["Faszyzm włoski"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -2481,8 +2481,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anty-demokracja", "Heteronomia", "Hierarchiczność", "Etatyzm"],
+          "values_against": ["Demokracja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -2491,8 +2491,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anty-demokracja", "Heteronomia", "Hierarchiczność", "Etatyzm"]
+          "values_against": ["Demokracja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -2501,7 +2501,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Demokracja", "Anty-hierarchiczność"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -2511,7 +2511,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Demokracja", "Anty-hierarchiczność"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -2539,8 +2539,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Demokracja"],
+          "values_against": ["Anty-demokracja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -2549,8 +2549,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Demokracja"],
+          "values_against": ["Anty-demokracja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość"],
@@ -2559,8 +2559,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anty-demokracja"],
+          "values_against": ["Demokracja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -2569,8 +2569,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anty-demokracja"],
+          "values_against": ["Demokracja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
