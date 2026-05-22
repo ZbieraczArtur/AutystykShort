@@ -1769,8 +1769,8 @@
         {
           "label": "Pomiń pytanie",
           "value": 0,
-          "values_for": ["Kolektywizm", "Własność kolektywna", "Anty-hierarchiczność"],
-          "values_against": ["Rynek", "Indywidualizm", "Własność prywatna", "Samoregulacja", "Hierarchiczność"],
+          "values_for": [],
+          "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
