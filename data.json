@@ -3339,49 +3339,48 @@
     },
         {
       "id": 52,
-      "text": "Głównym i najważniejszym zadaniem państwa jest pełnienie roli arbitra, który rozdziela prawa i obowiązki między ludźmi",
-      "description": "Ta teza zakłada, że państwo funkcjonuje jako bezstronny sędzia utrzymujący porządek poprzez rozstrzyganie konfliktów między obywatelami. W tym ujęciu instytucje publiczne nie narzucają jednej wizji życia, lecz pilnują, by nikt nie naruszał wolności innych osób. Państwo rozdziela swobody i powinności jednostek, dbając o zrównoważenie roszczeń różnych grup na podstawie prawa. Rola władzy sprowadza się do bycia neutralnym rozjemcą, który egzekwuje umowy i gwarantuje przestrzeganie wspólnych norm. Takie podejście uznaje, że jednostki o odmiennych celach potrzebują zewnętrznego autorytetu do ochrony bezpieczeństwa oraz sprawiedliwego podziału społecznych praw i obowiązków.",
-      "comment": "Pomiń, jeśli nie popierasz istnienia państwa",
+      "text": "Państwo posiada szczególny status moralny, który sprawia, że stosowany przez nie przymus jest bardziej uzasadniony niż identyczny przymus stosowany przez jednostki prywatne",
+      "description": "Teza ta odnosi się do koncepcji autorytetu politycznego, czyli szczególnej własności moralnej przypisywanej państwu. Zakłada ona, że rząd ma prawo stosować przymus w sytuacjach, w których identyczne działanie osoby prywatnej byłoby uznane za przestępstwo. Autorytet ten ma dwa aspekty: legitymację polityczną (prawo rządu do rządzenia) oraz zobowiązanie polityczne (obowiązek posłuszeństwa obywateli). Autorytet ten ma dwa aspekty: legitymację polityczną (prawo rządu do rządzenia) oraz zobowiązanie polityczne (obowiązek posłuszeństwa obywateli). Zgodnie z tym podejściem status etyczny czynu zmienia się zależnie od podmiotu, przyznając władzy przyzwolenie na działania niedozwolone dla osób prywatnych. Państwo posiada zatem unikalne uprawnienie do decydowania o sprawach wspólnych przy użyciu siły.",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Etatyzm", "Heteronomia"],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Heteronomia", "Kolektywizm"],
+          "values_against": ["Anarchia", "Autonomia", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość", "Partia Razem", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": []
         },
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Etatyzm", "Heteronomia"],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Heteronomia", "Kolektywizm"],
+          "values_against": ["Anarchia", "Autonomia", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość", "Partia Razem", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": []
         },
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anarchia", "Autonomia", "Indywidualizm"],
+          "values_against": ["Etatyzm", "Heteronomia", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość", "Partia Razem", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
-          "parties_against": []
+          "parties_for": [],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anarchia", "Autonomia", "Indywidualizm"],
+          "values_against": ["Etatyzm", "Heteronomia", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość", "Partia Razem", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
-          "parties_against": []
+          "parties_for": [],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
