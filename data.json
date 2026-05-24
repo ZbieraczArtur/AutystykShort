@@ -1920,7 +1920,7 @@
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": ["Indywidualizm", "Autonomia", "Anarchia", "Prymat jednostki"],
-          "values_against": ["Indywidualizm", "Autonomia", "Anarchia", "Prymat jednostki"],
+          "values_against": ["Kolektywizm", "Heteronomia", "Etatyzm", "Prymat kolektywu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -1930,7 +1930,7 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": ["Indywidualizm", "Autonomia", "Anarchia", "Prymat jednostki"],
-          "values_against": ["Indywidualizm", "Autonomia", "Anarchia", "Prymat jednostki"],
+          "values_against": ["Kolektywizm", "Heteronomia", "Etatyzm", "Prymat kolektywu"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -5943,7 +5943,7 @@
     },
         {
       "id": 97,
-      "text": "DO ZMIANY: Cały budżet państwa powinien być finansowany wyłącznie z jednego podatku nakładanego na wartość samej ziemi (z wyłączeniem wartości budynków i ulepszeń), aby przechwycić tzw „niezasłużony przyrost” wartości gruntu dla dobra wspólnego",
+      "text": "Cały budżet państwa powinien być finansowany wyłącznie z jednego podatku nakładanego na wartość samej ziemi",
       "description": "Finansowanie budżetu wyłącznie z podatku od wartości ziemi oznacza przeniesienie ciężaru z pracy i produkcji na samą lokalizację oraz zasoby naturalne. Wartość gruntu rośnie naturalnie wraz z rozwojem populacji i bliskością usług, co nazywa się „niezasłużonym przyrostem”, ponieważ właściciel zyskuje bez własnego wysiłku. Postulat ten zakłada, że skoro tę wartość stworzyło społeczeństwo, powinna ona nansować wspólne potrzeby. System ten ma zapobiegać spekulacji ziemią, wymuszając jej wykorzystanie zamiast bezczynnego czekania na wzrost cen. Państwo utrzymuje się z opłaty za korzystanie z ograniczonego zasobu, jakim jest przestrzeń, nie karząc obywateli za ich produktywność i przedsiębiorczość.",
       "comment": "Placeholder",
       "answers": [
