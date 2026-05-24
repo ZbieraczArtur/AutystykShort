@@ -2760,7 +2760,7 @@
     },
         {
       "id": 42,
-      "text": "Decyzje polityczne powinny być podejmowane przez kompetentne elity, a nie bezpośrednio przez ogół obywateli",
+      "text": "Decyzje polityczne powinny być podejmowane przez kompetentne elity, a nie przez ogół obywateli",
       "description": "Teza ta opiera się na przekonaniu, że rzadzenie wymaga kompetencji, mądrości lub doświadczenia, które nie są równomiernie rozłożone w społeczeństwie. Zakłada się, że ogół obywateli może nie mieć pełnej świadomości swoich interesów, dlatego kluczowe decyzje powinny spoczywać w rękach przygotowanej mniejszości. Taka elita – czy to zdefiniowana przez mądrość ideologiczną, tradycyjną pozycję społeczną czy specjalistyczną wiedzę – pełni funkcję awangardy lub naturalnego przywództwa. Jej rola polega na wyznaczaniu kierunków rozwoju i interpretowaniu dobra wspólnego, które przewyższa sumę indywidualnych pragnień. Skuteczne zarządzanie państwem wymaga więc hierarchii, gdzie kompetentne kierownictwo zapewnia stabilność i porządek.",
       "answers": [
         {
@@ -2770,8 +2770,8 @@
           "values_against": ["Autonomia", "Anty-hierarchiczność", "Anty-autokracja", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość","Konfederacja Korony Polskiej"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość","Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -2780,8 +2780,8 @@
           "values_against": ["Autonomia", "Anty-hierarchiczność", "Anty-autokracja", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość","Konfederacja Korony Polskiej"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość","Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -2790,8 +2790,8 @@
           "values_against": ["Hierarchiczność", "Anty-demokracja", "Autokracja", "Heteronomia", "Sakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość","Konfederacja Korony Polskiej"]
+          "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Prawo i Sprawiedliwość","Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2800,8 +2800,8 @@
           "values_against": ["Hierarchiczność", "Anty-demokracja", "Autokracja", "Heteronomia", "Sakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość","Konfederacja Korony Polskiej"]
+          "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Prawo i Sprawiedliwość","Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2829,7 +2829,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość","Konfederacja Korony Polskiej"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -2839,7 +2839,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość","Konfederacja Korony Polskiej"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -2848,7 +2848,7 @@
           "values_against": ["Autonomia", "Anarchia", "Decentralizacja", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość","Konfederacja Korony Polskiej"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej", "Polska Partia Socjalistyczna"],
           "parties_against": []
         },
         {
@@ -2858,7 +2858,7 @@
           "values_against": ["Autonomia", "Anarchia", "Decentralizacja", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość","Konfederacja Korony Polskiej"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej", "Polska Partia Socjalistyczna"],
           "parties_against": []
         },
         {
@@ -2887,7 +2887,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["Polska Partia Socjalistyczna", "Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -2897,7 +2897,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["Polska Partia Socjalistyczna", "Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -2907,7 +2907,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -2917,7 +2917,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
@@ -2933,29 +2933,29 @@
     },
         {
       "id": 45,
-      "text": "Instytucje państwowe strukturalnie służą interesom grup posiadających władzę ekonomiczną, a nie ogółu społeczeństwa",
+      "text": "Instytucje państwowe *inherentnie* służą interesom grup posiadających władzę ekonomiczną, a nie ogółu społeczeństwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Kolektywizm", "Anarchia", "Desakralizacja autorytetu"],
+          "values_for": ["Anarchia", "Desakralizacja autorytetu"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Kolektywizm", "Anarchia", "Desakralizacja autorytetu"],
+          "values_for": ["Anarchia", "Desakralizacja autorytetu"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -2964,7 +2964,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -2974,7 +2974,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3003,7 +3003,7 @@
           "ideologies_for": ["Agoryzm"],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3013,7 +3013,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3022,7 +3022,7 @@
           "values_against": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Anty-autokracja", "Anty-demokracja", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": ["Agoryzm"],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3032,7 +3032,7 @@
           "values_against": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Anty-autokracja", "Anty-demokracja", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": ["Agoryzm"],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3049,29 +3049,29 @@
     },
         {
       "id": 47,
-      "text": "Należy rozwijać wszelkie formy aktywności, które wymykają się ingerencji państwowej i jednocześnie nie inicjują przemocy",
+      "text": "Należy rozwijać alternatywne formy wymiany i organizacji społecznej działające poza kontrolą państwa (unikanie opodatkowania, handel nielegalnymi produktami)",
       "description": "XXXXXX",
       "comment": "Pomiń jeśli nie wykluczasz używania przemocy",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Decentralizacja", "Anty-autokracja", "Unikanie przemocy", "Desakralizacja autorytetu"],
+          "values_for": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Decentralizacja", "Anty-autokracja", "Desakralizacja autorytetu"],
           "values_against": [],
           "ideologies_for": ["Agoryzm"],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Decentralizacja", "Anty-autokracja", "Unikanie przemocy", "Desakralizacja autorytetu"],
+          "values_for": ["Anarchia", "Samoregulacja", "Autonomia", "Rewolucjonizm", "Decentralizacja", "Anty-autokracja", "Desakralizacja autorytetu"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": []
+          "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3080,7 +3080,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": ["Agoryzm"],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": [],
           "parties_against": []
         },
         {
@@ -3090,7 +3090,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": ["Agoryzm"],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3118,7 +3118,7 @@
           "values_against": ["Etatyzm", "Heteronomia", "Kolektywizm", "Sakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3128,7 +3128,7 @@
           "values_against": ["Etatyzm", "Heteronomia", "Kolektywizm", "Sakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3139,7 +3139,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -3149,7 +3149,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
@@ -3165,7 +3165,7 @@
     },
         {
       "id": 49,
-      "text": "Państwo jest instytucją, która nieuchronnie prowadzi do nadużyć i tyranii",
+      "text": "Państwo jest instytucją, która *nieuchronnie* prowadzi do nadużyć i tyranii",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -3177,7 +3177,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3187,7 +3187,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3196,7 +3196,7 @@
           "values_against": ["Anarchia", "Autonomia", "Sakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3206,7 +3206,7 @@
           "values_against": ["Anarchia", "Autonomia", "Sakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3235,7 +3235,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3245,7 +3245,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3254,7 +3254,7 @@
           "values_against": ["Anarchia", "Autonomia", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3264,7 +3264,7 @@
           "values_against": ["Anarchia", "Autonomia", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3293,7 +3293,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3303,7 +3303,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3312,7 +3312,7 @@
           "values_against": ["Anarchia", "Samoregulacja", "Desakralizacja autorytetu"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Partia Zieloni", "Polska Partia Socjalistyczna", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3339,9 +3339,9 @@
     },
         {
       "id": 52,
-      "text": "Głównym zadaniem państwa jest pełnienie roli arbitra, który rozdziela prawa i obowiązki między ludźmi",
+      "text": "Głównym i najważniejszym zadaniem państwa jest pełnienie roli arbitra, który rozdziela prawa i obowiązki między ludźmi",
       "description": "Ta teza zakłada, że państwo funkcjonuje jako bezstronny sędzia utrzymujący porządek poprzez rozstrzyganie konfliktów między obywatelami. W tym ujęciu instytucje publiczne nie narzucają jednej wizji życia, lecz pilnują, by nikt nie naruszał wolności innych osób. Państwo rozdziela swobody i powinności jednostek, dbając o zrównoważenie roszczeń różnych grup na podstawie prawa. Rola władzy sprowadza się do bycia neutralnym rozjemcą, który egzekwuje umowy i gwarantuje przestrzeganie wspólnych norm. Takie podejście uznaje, że jednostki o odmiennych celach potrzebują zewnętrznego autorytetu do ochrony bezpieczeństwa oraz sprawiedliwego podziału społecznych praw i obowiązków.",
-      "comment": "Placeholder",
+      "comment": "Pomiń, jeśli nie popierasz istnienia państwa",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -3351,7 +3351,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Partia Razem", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -3361,7 +3361,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Partia Razem", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3370,7 +3370,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Partia Razem", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3380,7 +3380,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Partia Razem", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -3398,7 +3398,7 @@
         {
       "id": 53,
       "text": "Podstawową i najistotniejszą funkcją państwa powinna być ochrona indywidualnych praw jednostki",
-      "description": "XXXXXX",
+      "description": "Teza ta zakłada, że państwo jest instrumentem powołanym wyłącznie w celu służenia potrzebom i interesom konkretnych osób. Jego najważniejszym zadaniem jest pełnienie roli neutralnego arbitra, który czuwa nad przestrzeganiem reguł współżycia społecznego i zapobiega wzajemnemu naruszaniu wolności przez obywateli. Zgodnie z tym ujęciem nadrzędnym celem struktur politycznych jest zabezpieczenie fundamentalnych praw, takich jak życie, własność oraz swoboda podejmowania decyzji, gdyż bez ich ochrony uporządkowana egzystencja byłaby niemożliwa. Państwo nie jest celem samym w sobie, a jego władza powinna być ograniczona do sfery niezbędnej dla zapewnienia bezpieczeństwa i egzekwowania umów. W tej wizji interes zbiorowy, stabilność czy tradycja nie stanowią wystarczającego uzasadnienia dla ingerencji w suwerenność jednostki, dopóki jej działanie nie szkodzi innym.",
       "comment": "Pomiń jeśli odrzucasz istnienie państwa",
       "answers": [
         {
