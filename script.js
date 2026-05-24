@@ -68,7 +68,7 @@ function renderQuestions() {
     // przyciski rozwijania i komentarz
     const btnRow = document.createElement('div');
     const expandBtn = document.createElement('button');
-    expandBtn.innerText = '📖 Rozwiń pytanie';
+    expandBtn.innerText = '📖 Rozwiń tezę';
     expandBtn.className = 'expand-btn';
     const descriptionDiv = document.createElement('div');
     descriptionDiv.className = 'description';
@@ -76,13 +76,13 @@ function renderQuestions() {
     expandBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       descriptionDiv.classList.toggle('visible');
-      expandBtn.innerText = descriptionDiv.classList.contains('visible') ? '📘 Zwiń' : '📖 Rozwiń pytanie';
+      expandBtn.innerText = descriptionDiv.classList.contains('visible') ? '📘 Zwiń tezę' : '📖 Rozwiń tezę';
     });
     btnRow.appendChild(expandBtn);
 
     if (q.comment) {
       const commentBtn = document.createElement('span');
-      commentBtn.innerText = '💬 komentarz twórcy';
+      commentBtn.innerText = '⚠️ Pomiń jeśli';
       commentBtn.className = 'comment-badge';
       commentBtn.addEventListener('click', (e) => {
         e.stopPropagation();
