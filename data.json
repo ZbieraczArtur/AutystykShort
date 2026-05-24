@@ -14876,48 +14876,48 @@
     },
         {
       "id": 251,
-      "text": "System przemysłowy i technologiczny powinien zostać całkowicie obalony, a nie reformowany",
+      "text": "Państwo powinno ograniczać dobrowolne praktyki sprzeczne z normami dominującej religii (np. antykoncepcję, rozwody lub seks pozamałżeński)",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Prymitywizm", "Rewolucjonizm"],
-          "values_against": ["Postęp technologiczny"],
+          "values_for": ["Heteronomia", "Etatyzm", "Tradycjonalizm", "Homogenizacja", "Instytucjonalna religia"],
+          "values_against": ["Autonomia", "Progresywizm", "Pluralizm kulturowy", "Neutralność religijna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": []
         },
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Prymitywizm", "Rewolucjonizm"],
-          "values_against": ["Postęp technologiczny"],
+          "values_for": ["Heteronomia", "Etatyzm", "Tradycjonalizm", "Homogenizacja", "Instytucjonalna religia"],
+          "values_against": ["Autonomia", "Progresywizm", "Pluralizm kulturowy", "Neutralność religijna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": []
         },
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": ["Postęp technologiczny"],
-          "values_against": ["Prymitywizm", "Rewolucjonizm"],
+          "values_for": ["Autonomia", "Progresywizm", "Pluralizm kulturowy", "Neutralność religijna"],
+          "values_against": ["Heteronomia", "Etatyzm", "Tradycjonalizm", "Homogenizacja", "Instytucjonalna religia"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": [],
           "parties_against": []
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": ["Postęp technologiczny"],
-          "values_against": ["Prymitywizm", "Rewolucjonizm"],
+          "values_for": ["Autonomia", "Progresywizm", "Pluralizm kulturowy", "Neutralność religijna"],
+          "values_against": ["Heteronomia", "Etatyzm", "Tradycjonalizm", "Homogenizacja", "Instytucjonalna religia"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": [],
           "parties_against": []
         },
         {
@@ -14934,7 +14934,7 @@
     },
         {
       "id": 252,
-      "text": "Nikt nie powinien być zmuszany do pracy w wojsku ani w żadnej innej organizacji siłą",
+      "text": "Nikt, w żadnych okolicznościach, nie powinien być zmuszany do pracy w wojsku ani w żadnej innej organizacji siłą",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
