@@ -5839,8 +5839,8 @@
           "values_against": ["Własność prywatna", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -5849,8 +5849,8 @@
           "values_against": ["Własność prywatna", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -5859,8 +5859,8 @@
           "values_against": ["Własność kolektywna", "Autonomia", "Anty-hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Polska Partia Socjalistyczna"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -5869,8 +5869,8 @@
           "values_against": ["Własność kolektywna", "Autonomia", "Anty-hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Polska Partia Socjalistyczna"]
         },
         {
           "label": "Pomiń pytanie",
@@ -5887,7 +5887,7 @@
         {
       "id": 96,
       "text": "Prawo własności powinno być absolutne: żaden podmiot, w tym państwo, niezależnie od sytuacji, nie ma prawa odebrać komuś jego własności bez jego dobrowolnej zgody",
-      "description": "XXXXXX",
+      "description": "Teza ta zakłada, że jednostka posiada wyłączne i niepodważalne prawo do dysponowania swoimi dobrami. Własność jest tu postrzegana jako nienaruszalna sfera autonomii, której nie wolno naruszyć nawet w sytuacjach nadzwyczajnych lub w imię dobra społecznego. Żadna instytucja ani osoba nie ma legitymacji do przymusowego odebrania, opodatkowania lub redystrybucji majątku bez dobrowolnej zgody właściciela. Każde działanie podjęte wbrew woli posiadacza, nawet jeśli służy celom publicznym, takim jak pomoc potrzebującym, jest traktowane jako nieuprawniona ingerencja w suwerenność jednostki. Fundamentem tej tezy jest wymóg, by wszelkie relacje i przekazywanie dóbr opierały się wyłącznie na dobrowolnych umowach stron.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -5895,10 +5895,10 @@
           "value": 1.5,
           "values_for": ["Własność prywatna", "Indywidualizm", "Autonomia"],
           "values_against": ["Własność kolektywna"],
-          "ideologies_for": [],
+          "ideologies_for": ["Anarchokapitalizm", "Minarchizm"],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Razem", "Nowa Nadzieja", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -5908,7 +5908,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Razem", "Nowa Nadzieja", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -5917,7 +5917,7 @@
           "values_against": ["Własność prywatna", "Indywidualizm", "Autonomia"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Razem", "Nowa Nadzieja", "Polska Partia Socjalistyczna", "Partia Zieloni"],
           "parties_against": []
         },
         {
@@ -5927,7 +5927,7 @@
           "values_against": ["Własność prywatna", "Indywidualizm", "Autonomia"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Razem", "Nowa Nadzieja", "Polska Partia Socjalistyczna", "Partia Zieloni"],
           "parties_against": []
         },
         {
@@ -5945,7 +5945,7 @@
         {
       "id": 97,
       "text": "DO ZMIANY: Cały budżet państwa powinien być finansowany wyłącznie z jednego podatku nakładanego na wartość samej ziemi (z wyłączeniem wartości budynków i ulepszeń), aby przechwycić tzw „niezasłużony przyrost” wartości gruntu dla dobra wspólnego",
-      "description": "XXXXXX",
+      "description": "Finansowanie budżetu wyłącznie z podatku od wartości ziemi oznacza przeniesienie ciężaru z pracy i produkcji na samą lokalizację oraz zasoby naturalne. Wartość gruntu rośnie naturalnie wraz z rozwojem populacji i bliskością usług, co nazywa się „niezasłużonym przyrostem”, ponieważ właściciel zyskuje bez własnego wysiłku. Postulat ten zakłada, że skoro tę wartość stworzyło społeczeństwo, powinna ona nansować wspólne potrzeby. System ten ma zapobiegać spekulacji ziemią, wymuszając jej wykorzystanie zamiast bezczynnego czekania na wzrost cen. Państwo utrzymuje się z opłaty za korzystanie z ograniczonego zasobu, jakim jest przestrzeń, nie karząc obywateli za ich produktywność i przedsiębiorczość.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -5956,7 +5956,7 @@
           "ideologies_for": ["Georgizm"],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -5966,7 +5966,7 @@
           "ideologies_for": ["Georgizm"],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -5975,7 +5975,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": ["Georgizm"],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -5985,7 +5985,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": ["Georgizm"],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -6003,7 +6003,7 @@
         {
       "id": 98,
       "text": "Wzrost wartości ziemi spowodowany rozwojem infrastruktury publicznej powinien przypadać społeczności, a nie właścicielowi gruntu",
-      "description": "XXXXXX",
+      "description": "Wartość działki w dużej mierze zależy od jej otoczenia. Gdy państwo buduje nową drogę, linię metra czy park, grunty w pobliżu stają się droższe. Teza ta zakłada, że ten konkretny wzrost wartości, wywołany publicznymi pieniędzmi, nie powinien stawać się prywatnym zyskiem właściciela. Zamiast tego, społeczność powinna odzyskać tę wartość poprzez opłatę, która sfinansuje koszty inwestycji lub inne potrzeby lokalne. Zapobiegać ma to sytuacji, w której inwestycje wszystkich obywateli służą głównie wzbogaceniu właścicieli nieruchomości, którzy nie wnieśli w ten proces własnego wkładu pracy.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -6013,8 +6013,8 @@
           "values_against": ["Własność prywatna", "Rynek", "Hierarchiczność", "Indywidualizm"],
           "ideologies_for": ["Georgizm"],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -6023,8 +6023,8 @@
           "values_against": ["Własność prywatna", "Rynek", "Hierarchiczność", "Indywidualizm"],
           "ideologies_for": ["Georgizm"],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -6033,7 +6033,7 @@
           "values_against": ["Anty-hierarchiczność", "Własność kolektywna", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": ["Georgizm"],
-          "parties_for": [],
+          "parties_for": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": []
         },
         {
@@ -6043,7 +6043,7 @@
           "values_against": ["Anty-hierarchiczność", "Własność kolektywna", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": ["Georgizm"],
-          "parties_for": [],
+          "parties_for": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": []
         },
         {
@@ -6061,7 +6061,7 @@
         {
       "id": 99,
       "text": "Ziemia i zasoby naturalne nie powinny podlegać trwałemu wyłącznemu zawłaszczeniu przez jednostki",
-      "description": "XXXXXX",
+      "description": "Ziemia i zasoby naturalne są elementami przyrody, których nikt nie wyprodukował, dlatego uznaje się je za wspólne dziedzictwo całej ludzkości. Teza ta odrzuca koncepcję własności absolutnej, w której jednostka może na zawsze zawłaszczyć fragment planety, blokując innym dostęp do zasobów niezbędnych do życia. Ma to zapobiega monopolizacji zasobów i chronić równe szanse wszystkich ludzi, w tym przyszłych pokoleń.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -6072,7 +6072,7 @@
           "ideologies_for": ["Georgizm"],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -6082,7 +6082,7 @@
           "ideologies_for": ["Georgizm"],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -6091,7 +6091,7 @@
           "values_against": ["Własność kolektywna", "Anty-hierarchiczność", "Ekocentryzm"],
           "ideologies_for": [],
           "ideologies_against": ["Georgizm"],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -6101,7 +6101,7 @@
           "values_against": ["Własność kolektywna", "Anty-hierarchiczność", "Ekocentryzm"],
           "ideologies_for": [],
           "ideologies_against": ["Georgizm"],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -6119,8 +6119,8 @@
         {
       "id": 100,
       "text": "Zasoby naturalne kraju powinny być zarządzane przez państwo jako dobro wspólne, a nie prywatyzowane",
-      "description": "XXXXXX",
-      "comment": "Placeholder",
+      "description": "Teza ta opiera się na przekonaniu, że zasoby przyrody – takie jak minerały, lasy czy woda – stanowią wspólny kapitał całego narodu i nie powinny podlegać wyłącznej kontroli prywatnych podmiotów. Zarządzanie nimi przez państwo ma gwarantować, że korzyści płynące z ich eksploatacji będą służyć interesom ogółu społeczeństwa, a nie generować zysk dla nielicznej grupy właścicieli. W tym ujęciu instytucje publiczne pełnią rolę powiernika, który dba o sprawiedliwy dostęp do dóbr i kontroluje tempo ich zużycia, zapobiegając nadmiernej eksploatacji dla krótkoterminowych celów rynkowych. Publiczny nadzór pozwala na prowadzenie długofalowej polityki, która bierze pod uwagę nie tylko bieżące potrzeby ekonomiczne, ale także ochronę środowiska i bezpieczeństwo przyszłych pokoleń.",
+      "comment": "Pomiń, jeśli nie zgadzasz się z żadną dostępną opcją",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -6129,7 +6129,7 @@
           "values_against": ["Własność prywatna", "Rynek", "Samoregulacja", "Prymat jednostki"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -6139,7 +6139,7 @@
           "values_against": ["Własność prywatna", "Rynek", "Samoregulacja", "Prymat jednostki"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -6150,7 +6150,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -6160,7 +6160,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
@@ -6177,7 +6177,7 @@
         {
       "id": 101,
       "text": "Wszelkie środki produkcji powinny być społeczenie posiadane",
-      "description": "XXXXXX",
+      "description": "Teza ta zakłada, że zasoby służące do wytwarzania dóbr, takie jak fabryki, maszyny, ziemia, surowce czy kapitał - powinny być majątkiem ogółu lub grup pracowników, a nie własnością prywatnych jednostek. W tym ujęciu bogactwo jest traktowane jako owoc wspólnego wysiłku wszystkich pracujących, więc sprawiedliwość wymaga, by korzyści z niego płynące służyły całej społeczności. Oznacza to, że decyzje o tym, co i w jaki sposób produkować, zapadają wspólnie, na przykład w drodze demokratycznego głosowania, a nie są narzucane przez indywidualnych właścicieli. Zbiorowa kontrola nad tym majątkiem ma na celu zapobieganie wyzyskowi oraz konfliktom społecznym wynikającym z dużych nierówności majątkowych. Zamiast dążenia do maksymalizacji indywidualnego zysku, system produkcji powinien skupiać się na bezpośrednim zaspokajaniu realnych potrzeb każdego człowieka. Wypracowane zyski oraz wytworzone dobra nie trafiają do kieszeni jednostek, lecz są dzielone między członków społeczeństwa lub przeznaczane na realizację wspólnych potrzeb. Własność społeczna może być realizowana zarówno przez zarządzanie państwowe, jak i oddolne formy współpracy, takie jak spółdzielnie pracy.",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -6186,8 +6186,8 @@
           "values_against": ["Indywidualizm", "Hierarchiczność", "Własność prywatna", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Polska Partia Socjalistyczna"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Zieloni"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -6196,8 +6196,8 @@
           "values_against": ["Indywidualizm", "Hierarchiczność", "Własność prywatna", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Polska Partia Socjalistyczna"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Zieloni"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -6206,8 +6206,8 @@
           "values_against": ["Kolektywizm", "Anty-hierarchiczność", "Demokracja", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Zieloni"],
+          "parties_against": ["Polska Partia Socjalistyczna"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -6216,8 +6216,8 @@
           "values_against": ["Kolektywizm", "Anty-hierarchiczność", "Demokracja", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Zieloni"],
+          "parties_against": ["Polska Partia Socjalistyczna"]
         },
         {
           "label": "Pomiń pytanie",
