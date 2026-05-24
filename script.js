@@ -27,6 +27,13 @@ popup.addEventListener('click', (e) => {
   if (e.target === popup) popup.classList.add('hidden');
 });
 
+// Dodanie zamykania popupu klawiszem ESC
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && !popup.classList.contains('hidden')) {
+    popup.classList.add('hidden');
+  }
+});
+
 // -------------------------------
 // WCZYTYWANIE KONFIGURACJI
 // -------------------------------
