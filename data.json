@@ -2204,7 +2204,7 @@
           "ideologies_for": ["Fundamentalizm religijny"],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
-          "parties_against": ["Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"
+          "parties_against": ["Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -3670,7 +3670,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Nowa Nadzieja", "Partia Zieloni"],
-          "parties_against": ["Prawo i Sprawiedliwość", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna"
+          "parties_against": ["Prawo i Sprawiedliwość", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Pomiń pytanie",
@@ -4451,8 +4451,8 @@
           "values_against": ["Anty-autokracja", "Decentralizacja", "Demokracja", "Ograniczenie władzy"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -4461,8 +4461,8 @@
           "values_against": ["Anty-autokracja", "Decentralizacja", "Demokracja", "Ograniczenie władzy"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -4471,8 +4471,8 @@
           "values_against": ["Autokracja", "Centralizacja", "Etatyzm", "Absolutyzm władzy"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -4481,8 +4481,8 @@
           "values_against": ["Autokracja", "Anty-demokracja", "Centralizacja", "Etatyzm", "Absolutyzm władzy"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7315,7 +7315,7 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_against": ["Planowanie", "Regulacja instytucjonalna", "Etatyzm"],
-          "ideologies_for": ["Rynek", "Samoregulacja", "Własność prywatna"],
+          "values_for": ["Rynek", "Samoregulacja", "Własność prywatna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
