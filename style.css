@@ -35,15 +35,20 @@ h1 {
   border-radius: 12px;
   font-size: 0.9rem;
   margin-top: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
 }
 
 .question-card {
   background: white;
-  border-radius: 20px;
+  border-radius: 24px;
   padding: 1.5rem;
   margin-bottom: 1.5rem;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.1);
-  transition: box-shadow 0.2s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: box-shadow 0.2s, transform 0.1s;
+}
+
+.question-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .question-text {
@@ -70,11 +75,13 @@ h1 {
 
 .description {
   margin: 0.75rem 0;
-  padding: 0.75rem;
+  padding: 0.9rem;
   background: #f8fafc;
-  border-radius: 12px;
+  border-radius: 16px;
   font-size: 0.9rem;
   display: none;
+  line-height: 1.5;
+  border-left: 3px solid #cbd5e1;
 }
 
 .description.visible {
@@ -106,12 +113,13 @@ h1 {
 .answer-option {
   flex: 1 0 auto;
   background: #f1f5f9;
-  border-radius: 40px;
-  padding: 0.5rem 1rem;
+  border-radius: 60px;
+  padding: 0.6rem 1rem;
   text-align: center;
   cursor: pointer;
   transition: all 0.15s;
   font-size: 0.85rem;
+  font-weight: 500;
   border: 1px solid transparent;
 }
 
@@ -140,25 +148,31 @@ h1 {
 /* Styl po najechaniu dla każdego koloru (ciemniejszy odcień) */
 .answer-strong-agree:hover {
   background-color: #1b5e20;
+  filter: brightness(0.95);
 }
 .answer-mild-agree:hover {
   background-color: #4caf50;
+  filter: brightness(0.95);
 }
 .answer-mild-disagree:hover {
   background-color: #e53935;
+  filter: brightness(0.95);
 }
 .answer-strong-disagree:hover {
   background-color: #b71c1c;
+  filter: brightness(0.95);
 }
 .answer-skip:hover {
   background-color: #757575;
+  filter: brightness(0.95);
 }
 
 .answer-option.selected {
   background: #3b82f6;
   color: white;
   border-color: #2563eb;
-  box-shadow: 0 2px 6px rgba(59,130,246,0.3);
+  box-shadow: 0 2px 8px rgba(59,130,246,0.4);
+  transform: scale(0.98);
 }
 
 .actions {
@@ -173,13 +187,15 @@ h1 {
   padding: 0.75rem 2rem;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 40px;
+  border-radius: 60px;
   cursor: pointer;
-  transition: background 0.2s;
+  transition: background 0.2s, transform 0.05s;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
 .btn-submit:hover {
   background: #0f172a;
+  transform: scale(1.02);
 }
 
 hr {
@@ -190,9 +206,10 @@ hr {
 
 .value-pair {
   background: #f8fafc;
-  border-radius: 16px;
+  border-radius: 20px;
   padding: 1rem;
   margin-bottom: 1rem;
+  transition: background 0.1s;
 }
 
 .value-bar-container {
@@ -204,17 +221,22 @@ hr {
 
 .value-left, .value-right {
   flex: 1;
-  font-weight: 500;
+  font-weight: 600;
   cursor: pointer;
   text-decoration: underline dotted;
   text-underline-offset: 4px;
+  transition: color 0.1s;
+}
+
+.value-left:hover, .value-right:hover {
+  color: #2563eb;
 }
 
 .value-bar {
   flex: 3;
   background: #e2e8f0;
-  border-radius: 20px;
-  height: 24px;
+  border-radius: 30px;
+  height: 28px;
   overflow: hidden;
   display: flex;
 }
@@ -223,9 +245,10 @@ hr {
   background: #3b82f6;
   height: 100%;
   color: white;
-  line-height: 24px;
-  padding-left: 8px;
-  font-size: 0.75rem;
+  line-height: 28px;
+  padding-left: 10px;
+  font-size: 0.8rem;
+  font-weight: 500;
   white-space: nowrap;
 }
 
@@ -233,44 +256,54 @@ hr {
   background: #ef4444;
   height: 100%;
   text-align: right;
-  padding-right: 8px;
+  padding-right: 10px;
   color: white;
-  font-size: 0.75rem;
-  line-height: 24px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 28px;
 }
 
 .ranking-item {
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  padding: 0.5rem 0;
+  padding: 0.7rem 0.5rem;
   border-bottom: 1px solid #e2e8f0;
+  transition: background 0.1s;
 }
 
 .rank-name {
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .rank-percent {
-  font-family: monospace;
-  font-weight: 600;
+  font-family: 'JetBrains Mono', monospace, system-ui;
+  font-weight: 700;
+  background: #eef2ff;
+  padding: 0.2rem 0.6rem;
+  border-radius: 40px;
+  font-size: 0.85rem;
 }
 
 .ideology-entry, .party-entry {
   cursor: pointer;
-  transition: background 0.1s;
+  transition: background 0.15s;
+  border-radius: 12px;
 }
 .ideology-entry:hover, .party-entry:hover {
   background: #f1f5f9;
+  padding-left: 0.5rem;
 }
 
+/* POPUP – najważniejsza poprawa: przewijanie długich opisów */
 .popup {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(2px);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -282,20 +315,35 @@ hr {
 .popup-content {
   background: white;
   padding: 1.5rem;
-  border-radius: 24px;
-  max-width: 400px;
-  width: 80%;
-  text-align: center;
-  box-shadow: 0 20px 35px rgba(0,0,0,0.2);
+  border-radius: 32px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 80vh;          /* ograniczenie wysokości */
+  overflow-y: auto;          /* przewijanie w pionie */
+  text-align: left;
+  box-shadow: 0 25px 40px rgba(0,0,0,0.25);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+.popup-content p {
+  white-space: pre-wrap;
+  word-break: break-word;
+  margin-bottom: 1rem;
 }
 #closePopup {
-  margin-top: 1rem;
+  display: block;
+  margin: 1rem auto 0 auto;
   background: #1e293b;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 40px;
+  padding: 0.6rem 1.2rem;
+  border-radius: 60px;
   cursor: pointer;
+  font-weight: 500;
+  transition: background 0.2s;
+}
+#closePopup:hover {
+  background: #0f172a;
 }
 
 footer {
@@ -303,8 +351,11 @@ footer {
   font-size: 0.75rem;
   margin-top: 3rem;
   color: #64748b;
+  border-top: 1px solid #e2e8f0;
+  padding-top: 1.5rem;
 }
 
+/* responsywność */
 @media (max-width: 640px) {
   .answers {
     flex-direction: column;
@@ -315,5 +366,17 @@ footer {
   .value-left, .value-right {
     flex: auto;
     width: 100%;
+    text-align: center;
+  }
+  .value-bar {
+    width: 100%;
+  }
+  .popup-content {
+    width: 95%;
+    padding: 1.2rem;
+  }
+  .rank-percent {
+    font-size: 0.75rem;
+    padding: 0.15rem 0.5rem;
   }
 }
