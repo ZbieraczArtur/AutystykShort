@@ -54,6 +54,46 @@ function initApp() {
   renderQuestions();
   attachQuestionEvents();
   submitBtn.addEventListener('click', computeAndDisplayResults);
+  initThemeToggle(); // inicjalizacja przełącznika trybu
+}
+
+// -------------------------------
+// PRZEŁĄCZNIK TRYBU JASNY/CIEMNY
+// -------------------------------
+function initThemeToggle() {
+  const toggleBtn = document.getElementById('theme-toggle');
+  const root = document.body;
+  // Sprawdź zapisany motyw lub preferencję systemową
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    root.classList.add('dark');
+    toggleBtn.textContent = '☀️';
+  } else if (savedTheme === 'light') {
+    root.classList.remove('dark');
+    toggleBtn.textContent = '🌙';
+  } else {
+    // Preferencja systemowa
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      root.classList.add('dark');
+      toggleBtn.textContent = '☀️';
+    } else {
+      root.classList.remove('dark');
+      toggleBtn.textContent = '🌙';
+    }
+  }
+
+  toggleBtn.addEventListener('click', () => {
+    if (root.classList.contains('dark')) {
+      root.classList.remove('dark');
+      toggleBtn.textContent = '🌙';
+      localStorage.setItem('theme', 'light');
+    } else {
+      root.classList.add('dark');
+      toggleBtn.textContent = '☀️';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
 }
 
 // -------------------------------
@@ -150,7 +190,6 @@ function renderQuestions() {
   });
 }
 
-// dummy – bo attach już jest w renderze, ale zostawiam funkcję
 function attachQuestionEvents() {}
 
 // -------------------------------
@@ -310,12 +349,78 @@ function computeScores() {
 }
 
 // -------------------------------
+// FUNKCJE POMOCNICZE DO RANKINGÓW Z PRZYCISKIEM ZWIJANIA
+// -------------------------------
+function createRankingSection(title, items, type) {
+  const section = document.createElement('div');
+  section.className = 'ranking-section';
+  const header = document.createElement('h3');
+  header.textContent = title;
+  section.appendChild(header);
+  
+  // Podpowiedź (jak w oryginale)
+  if (title.includes('Ideologii')) {
+    const info = document.createElement('div');
+    info.style.marginBottom = '1rem';
+    info.textContent = 'Im wyższy procent, tym bardziej Twój profil jest zgodny z daną ideologią.';
+    section.appendChild(info);
+  }
+  
+  const listContainer = document.createElement('div');
+  listContainer.className = 'ranking-list';
+  
+  // Tworzenie wszystkich elementów
+  const itemsElements = [];
+  items.forEach((item, idx) => {
+    const itemDiv = document.createElement('div');
+    itemDiv.className = `ranking-item ${type === 'ideology' ? 'ideology-entry' : 'party-entry'}`;
+    itemDiv.innerHTML = `<span class="rank-name">${item.name}</span><span class="rank-percent">${Math.round(item.percent)}%</span>`;
+    // Dodanie eventu popup (zachowanie oryginalne)
+    itemDiv.addEventListener('click', () => {
+      const desc = item.description || '';
+      showPopup(`${item.name}\n${desc}\n\nZgodnych odpowiedzi: ${item.agreements}\nSprzecznych: ${item.disagreements}\nPytania z stanowiskiem: ${item.involved}`);
+    });
+    itemsElements.push(itemDiv);
+    listContainer.appendChild(itemDiv);
+  });
+  
+  // Jeśli więcej niż 3, dodajemy przycisk i ukrywamy nadmiarowe
+  if (itemsElements.length > 3) {
+    // Ukryj elementy od indexu 3
+    for (let i = 3; i < itemsElements.length; i++) {
+      itemsElements[i].classList.add('hidden-rank-item');
+    }
+    const toggleBtn = document.createElement('button');
+    toggleBtn.textContent = 'Pokaż więcej';
+    toggleBtn.className = 'toggle-rank-btn';
+    let expanded = false;
+    toggleBtn.addEventListener('click', () => {
+      const hiddenItems = listContainer.querySelectorAll('.hidden-rank-item');
+      if (expanded) {
+        hiddenItems.forEach(el => el.classList.add('hidden-rank-item'));
+        toggleBtn.textContent = 'Pokaż więcej';
+      } else {
+        hiddenItems.forEach(el => el.classList.remove('hidden-rank-item'));
+        toggleBtn.textContent = 'Pokaż mniej';
+      }
+      expanded = !expanded;
+    });
+    section.appendChild(listContainer);
+    section.appendChild(toggleBtn);
+  } else {
+    section.appendChild(listContainer);
+  }
+  
+  return section;
+}
+
+// -------------------------------
 // WYŚWIETLANIE WYNIKÓW
 // -------------------------------
 function computeAndDisplayResults() {
   const { pairResults, ideologyResults, partyResults } = computeScores();
 
-  // Wyświetl pary wartości
+  // Wyświetl pary wartości (bez zmian)
   valuesResults.innerHTML = '<h3>⚖️ Pary wartości (przeciąganie liny)</h3>';
   pairResults.forEach(pair => {
     const pairDiv = document.createElement('div');
@@ -330,7 +435,6 @@ function computeAndDisplayResults() {
         <span class="value-right" data-def="${pair.rightDef}">${pair.right}</span>
       </div>
     `;
-    // Dodanie kliknięcia do definicji
     const leftSpan = pairDiv.querySelector('.value-left');
     const rightSpan = pairDiv.querySelector('.value-right');
     leftSpan.addEventListener('click', () => showPopup(pair.leftDef));
@@ -338,33 +442,15 @@ function computeAndDisplayResults() {
     valuesResults.appendChild(pairDiv);
   });
 
-  // Ranking ideologii
-  ideologiesResults.innerHTML = '<h3>📊 Ranking ideologii (zgodność %)</h3><div style="margin-bottom:1rem;">Im wyższy procent, tym bardziej Twój profil jest zgodny z daną ideologią.</div>';
-  const ideoList = document.createElement('div');
-  ideologyResults.forEach(ideo => {
-    const item = document.createElement('div');
-    item.className = 'ranking-item ideology-entry';
-    item.innerHTML = `<span class="rank-name">${ideo.name}</span><span class="rank-percent">${Math.round(ideo.percent)}%</span>`;
-    item.addEventListener('click', () => {
-      showPopup(`${ideo.name}\n${ideo.description}\n\nZgodnych odpowiedzi: ${ideo.agreements}\nSprzecznych: ${ideo.disagreements}\nPytania z stanowiskiem: ${ideo.involved}`);
-    });
-    ideoList.appendChild(item);
-  });
-  ideologiesResults.appendChild(ideoList);
-
-  // Ranking partii
-  partiesResults.innerHTML = '<h3>🗳️ Ranking partii (zgodność %)</h3>';
-  const partyList = document.createElement('div');
-  partyResults.forEach(party => {
-    const item = document.createElement('div');
-    item.className = 'ranking-item party-entry';
-    item.innerHTML = `<span class="rank-name">${party.name}</span><span class="rank-percent">${Math.round(party.percent)}%</span>`;
-    item.addEventListener('click', () => {
-      showPopup(`${party.name}\n${party.description}\n\nZgodnych odpowiedzi: ${party.agreements}\nSprzecznych: ${party.disagreements}\nPytania z stanowiskiem: ${party.involved}`);
-    });
-    partyList.appendChild(item);
-  });
-  partiesResults.appendChild(partyList);
+  // Ranking ideologii z przyciskiem rozwijania
+  ideologiesResults.innerHTML = '';
+  const ideoSection = createRankingSection('📊 Ranking ideologii (zgodność %)', ideologyResults, 'ideology');
+  ideologiesResults.appendChild(ideoSection);
+  
+  // Ranking partii z przyciskiem rozwijania
+  partiesResults.innerHTML = '';
+  const partySection = createRankingSection('🗳️ Ranking partii (zgodność %)', partyResults, 'party');
+  partiesResults.appendChild(partySection);
 
   resultsDiv.style.display = 'block';
   window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
