@@ -164,17 +164,21 @@ function computeScores() {
   const ideologyScores = new Map();
   const partyScores = new Map();
   const valueScores = new Map();
+
   config.ideologies.forEach(ideo => ideologyScores.set(ideo.name, { sum: 0, maxPossible: 0, agreements: 0, disagreements: 0 }));
   config.parties.forEach(party => partyScores.set(party.name, { sum: 0, maxPossible: 0, agreements: 0, disagreements: 0 }));
+
   const allValueNames = new Set();
   config.pairsOfValues.forEach(pair => { allValueNames.add(pair.left); allValueNames.add(pair.right); });
   config.hiddenValues.forEach(v => allValueNames.add(v));
   allValueNames.forEach(v => valueScores.set(v, { sum: 0, maxPossible: 0, questionsInvolved: 0 }));
+
   for (const ans of userAnswers) {
     const weight = ans.answerValue;
     if (weight === 0) continue;
     const answer = ans.answerData;
     const absWeight = Math.abs(weight);
+
     for (const ideo of (answer.ideologies_for || [])) {
       const rec = ideologyScores.get(ideo);
       if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; if (weight > 0) rec.agreements++; else rec.disagreements++; }
@@ -200,28 +204,55 @@ function computeScores() {
       if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; }
     }
   }
+
   const normalizeScore = (rec) => {
     if (!rec || rec.maxPossible === 0) return 50;
     const raw = rec.sum;
     return Math.min(100, Math.max(0, (raw + rec.maxPossible) / (2 * rec.maxPossible) * 100));
   };
+
   const ideologyResults = [];
   for (let [name, rec] of ideologyScores.entries()) ideologyResults.push({ name, percent: normalizeScore(rec), agreements: rec.agreements, disagreements: rec.disagreements, involved: rec.maxPossible / 1.5, description: config.ideologies.find(i => i.name === name)?.description || '' });
   ideologyResults.sort((a,b) => b.percent - a.percent);
+
   const partyResults = [];
   for (let [name, rec] of partyScores.entries()) partyResults.push({ name, percent: normalizeScore(rec), agreements: rec.agreements, disagreements: rec.disagreements, involved: rec.maxPossible / 1.5, description: config.parties.find(p => p.name === name)?.description || '' });
   partyResults.sort((a,b) => b.percent - a.percent);
-  const valuePercentMap = new Map();
-  for (let [name, rec] of valueScores.entries()) valuePercentMap.set(name, normalizeScore(rec));
+
+  // NOWE OBLICZANIE PAR WARTOŚCI – BEZPOŚREDNIO Z SUROWYCH SUM
   const pairResults = [];
   for (let pair of config.pairsOfValues) {
-    let leftScore = valuePercentMap.get(pair.left) ?? 50;
-    let rightScore = valuePercentMap.get(pair.right) ?? 50;
-    let total = leftScore + rightScore;
-    if (total === 0) { leftScore = 50; rightScore = 50; }
-    else { leftScore = (leftScore / total) * 100; rightScore = 100 - leftScore; }
-    pairResults.push({ left: pair.left, right: pair.right, leftPercent: leftScore, rightPercent: rightScore, leftDef: pair.leftDef, rightDef: pair.rightDef });
+    const recLeft = valueScores.get(pair.left);
+    const recRight = valueScores.get(pair.right);
+
+    const sumL = recLeft ? recLeft.sum : 0;
+    const maxL = recLeft ? recLeft.maxPossible : 0;
+    const sumR = recRight ? recRight.sum : 0;
+    const maxR = recRight ? recRight.maxPossible : 0;
+
+    const totalMax = maxL + maxR;
+    let leftPercent, rightPercent;
+
+    if (totalMax === 0) {
+      leftPercent = 50;
+      rightPercent = 50;
+    } else {
+      const net = sumL - sumR;               // różnica punktów (lewa – prawa)
+      leftPercent = (net + totalMax) / (2 * totalMax) * 100;
+      leftPercent = Math.min(100, Math.max(0, leftPercent));
+      rightPercent = 100 - leftPercent;
+    }
+
+    pairResults.push({
+      left: pair.left,
+      right: pair.right,
+      leftPercent: leftPercent,
+      rightPercent: rightPercent,
+      leftDef: pair.leftDef,
+      rightDef: pair.rightDef
+    });
   }
+
   return { pairResults, ideologyResults, partyResults };
 }
 
