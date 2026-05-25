@@ -115,7 +115,10 @@ h1 {
 }
 
 body.dark h1 {
-  background: linear-gradient(135deg, #cbd5e1, #94a3b8);
+  background: none;
+  color: #e2e8f0;
+  -webkit-background-clip: unset;
+  background-clip: unset;
 }
 
 .theme-toggle {
