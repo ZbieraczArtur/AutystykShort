@@ -1,4 +1,4 @@
-// script.js – POPRAWIONY (działająca lista symulacji)
+// script.js – POPRAWIONA WERSJA (symulacja działa prawidłowo)
 let config = null;
 let userAnswers = [];
 
@@ -50,7 +50,7 @@ async function loadConfig() {
     if (!response.ok) throw new Error('Nie udało się wczytać data.json');
     config = await response.json();
     initApp();
-    setupSimulation(); // <-- kluczowa zmiana: symulacja uruchamiana po załadowaniu configu
+    setupSimulation();
   } catch (err) {
     console.error(err);
     questionsContainer.innerHTML = '<p style="color:red;">Błąd ładowania konfiguracji. Sprawdź czy plik data.json istnieje i jest poprawny.</p>';
@@ -402,7 +402,8 @@ function syncUserAnswersFromDOM() {
     }
   });
   
-  window.userAnswers = newAnswers;
+  // POPRAWA: użycie lokalnej zmiennej userAnswers zamiast window.userAnswers
+  userAnswers = newAnswers;
   console.log('Przywrócono odpowiedzi użytkownika z GUI. Liczba odpowiedzi:', userAnswers.length);
 }
 
@@ -449,7 +450,9 @@ function simulateAnswers(selectedName) {
     });
   }
   
-  window.userAnswers = simulatedAnswers;
+  // POPRAWA: nadpisujemy globalną zmienną userAnswers (bez window.)
+  userAnswers = simulatedAnswers;
+  // Odświeżamy wyniki na podstawie nowych odpowiedzi
   computeAndDisplayResults();
   
   const { pairResults, ideologyResults, partyResults } = computeScores();
@@ -509,13 +512,11 @@ function setupSimulation() {
     simulationSelect.appendChild(ideologiesGroup);
   }
   
-  // Jeśli brak obu grup – dodaj informację
   if (!config.parties.length && !config.ideologies.length) {
     simulationSelect.innerHTML = '<option>Brak partii i ideologii w data.json</option>';
     return;
   }
   
-  // Domyślnie wybierz pierwszą partię (jeśli istnieje) lub pierwszą ideologię
   if (config.parties.length) simulationSelect.value = config.parties[0].name;
   else if (config.ideologies.length) simulationSelect.value = config.ideologies[0].name;
   
