@@ -1,4 +1,4 @@
-<!-- index.html – poprawiona wersja wizualna bez zmian mechaniki -->
+<!-- index.html – dodany panel symulacji pod disclaimer -->
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -24,6 +24,14 @@
         <p>W takich przypadkach śmiało użyj przycisku <strong>„Pomiń”</strong>. Pominięcie pytania jest w pełni akceptowalne i <strong>nie wpłynie negatywnie</strong> na wynik.</p>
         <p><strong>Wprost przeciwnie</strong> – im bardziej szczerze i tylko na pasujące Ci tezy odpowiesz, tym precyzyjniejszy będzie końcowy wynik.</p>
         <p>Przy niektórych tezach pojawi się dodatkowa podpowiedź, kiedy warto je pominąć. Traktuj ją jednak tylko jako sugestię, a nie nakaz. Możesz pominąć dowolną tezę w dowolnym momencie.</p>
+      </div>
+      <!-- NOWY PANEL SYMULACJI -->
+      <div class="simulation-panel">
+        <label for="simulateSelect">🎭 Symuluj odpowiedzi:</label>
+        <select id="simulateSelect"></select>
+        <button id="simulateBtn" class="simulate-btn">▶ Symuluj</button>
+        <button id="restoreBtn" class="restore-btn">↺ Przywróć moje odpowiedzi</button>
+        <small>Symulacja zastąpi tymczasowo Twoje odpowiedzi. Kliknij „Przywróć”, aby wrócić do własnych.</small>
       </div>
     </header>
 
