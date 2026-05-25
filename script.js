@@ -1,4 +1,4 @@
-// script.js – optymalizacje wizualne i płynności, bez zmian w logice
+// script.js – POPRAWIONY (działająca lista symulacji)
 let config = null;
 let userAnswers = [];
 
@@ -50,6 +50,7 @@ async function loadConfig() {
     if (!response.ok) throw new Error('Nie udało się wczytać data.json');
     config = await response.json();
     initApp();
+    setupSimulation(); // <-- kluczowa zmiana: symulacja uruchamiana po załadowaniu configu
   } catch (err) {
     console.error(err);
     questionsContainer.innerHTML = '<p style="color:red;">Błąd ładowania konfiguracji. Sprawdź czy plik data.json istnieje i jest poprawny.</p>';
@@ -219,7 +220,6 @@ function computeScores() {
   for (let [name, rec] of partyScores.entries()) partyResults.push({ name, percent: normalizeScore(rec), agreements: rec.agreements, disagreements: rec.disagreements, involved: rec.maxPossible / 1.5, description: config.parties.find(p => p.name === name)?.description || '' });
   partyResults.sort((a,b) => b.percent - a.percent);
 
-  // NOWE OBLICZANIE PAR WARTOŚCI – BEZPOŚREDNIO Z SUROWYCH SUM
   const pairResults = [];
   for (let pair of config.pairsOfValues) {
     const recLeft = valueScores.get(pair.left);
@@ -237,7 +237,7 @@ function computeScores() {
       leftPercent = 50;
       rightPercent = 50;
     } else {
-      const net = sumL - sumR;               // różnica punktów (lewa – prawa)
+      const net = sumL - sumR;
       leftPercent = (net + totalMax) / (2 * totalMax) * 100;
       leftPercent = Math.min(100, Math.max(0, leftPercent));
       rightPercent = 100 - leftPercent;
@@ -369,7 +369,6 @@ let simulationSelect = null;
 let simulateBtn = null;
 let restoreBtn = null;
 
-// Funkcja odczytująca aktualnie zaznaczone odpowiedzi z GUI i aktualizująca userAnswers
 function syncUserAnswersFromDOM() {
   const newAnswers = [];
   const questionCards = document.querySelectorAll('.question-card');
@@ -390,7 +389,6 @@ function syncUserAnswersFromDOM() {
         answerData: answerData
       });
     } else {
-      // Brak zaznaczonej odpowiedzi – traktujemy jako "Pomiń"
       const skipAnswer = questionConfig.answers.find(a => a.value === 0 && a.label.includes('Pomiń'));
       if (skipAnswer) {
         const ansIdx = questionConfig.answers.indexOf(skipAnswer);
@@ -408,24 +406,20 @@ function syncUserAnswersFromDOM() {
   console.log('Przywrócono odpowiedzi użytkownika z GUI. Liczba odpowiedzi:', userAnswers.length);
 }
 
-// Funkcja przywracająca oryginalne odpowiedzi użytkownika (z GUI)
 function restoreUserAnswers() {
   syncUserAnswersFromDOM();
   computeAndDisplayResults();
   console.log('✅ Przywrócono Twoje odpowiedzi i odświeżono wyniki.');
 }
 
-// Główna funkcja symulacji dla wybranej partii lub ideologii
 function simulateAnswers(selectedName) {
   console.log(`\n🎭 SYMULACJA DLA: ${selectedName}`);
   const simulatedAnswers = [];
   
-  // Dla każdego pytania
   for (const question of config.questions) {
     let bestAnswer = null;
     let bestAbsValue = -1;
     
-    // Szukamy odpowiedzi, która zawiera wybraną partię/ideologię w parties_for LUB ideologies_for
     for (const answer of question.answers) {
       const partiesFor = answer.parties_for || [];
       const ideologiesFor = answer.ideologies_for || [];
@@ -439,11 +433,9 @@ function simulateAnswers(selectedName) {
       }
     }
     
-    // Jeśli nie znaleziono odpowiedzi dla tej partii/ideologii – wybieramy "Pomiń pytanie"
     if (!bestAnswer) {
       bestAnswer = question.answers.find(a => a.value === 0 && a.label.includes('Pomiń'));
       if (!bestAnswer) {
-        // Zabezpieczenie: jeśli z jakiegoś powodu nie ma opcji pomiń, weź pierwszą odpowiedź (nie powinno się zdarzyć)
         bestAnswer = question.answers[0];
       }
     }
@@ -457,13 +449,9 @@ function simulateAnswers(selectedName) {
     });
   }
   
-  // Zastąpienie globalnych odpowiedzi symulowanymi
   window.userAnswers = simulatedAnswers;
-  
-  // Obliczenie i wyświetlenie wyników
   computeAndDisplayResults();
   
-  // Dodatkowe wypisanie wyników w konsoli w czytelnym formacie
   const { pairResults, ideologyResults, partyResults } = computeScores();
   console.log(`\n📊 WYNIKI SYMULACJI (${selectedName}):`);
   console.log('--- Pary wartości ---');
@@ -481,65 +469,68 @@ function simulateAnswers(selectedName) {
   console.log(`\n✅ Symulacja zakończona. Aby wrócić do swoich odpowiedzi, kliknij "Przywróć moje odpowiedzi".\n`);
 }
 
-// Inicjalizacja panelu symulacji: wypełnienie selecta, podpięcie przycisków
 function setupSimulation() {
   simulationSelect = document.getElementById('simulateSelect');
   simulateBtn = document.getElementById('simulateBtn');
   restoreBtn = document.getElementById('restoreBtn');
   
   if (!simulationSelect || !simulateBtn || !restoreBtn) return;
+  if (!config || !config.parties || !config.ideologies) {
+    console.warn('Brak danych partii lub ideologii w config');
+    simulationSelect.innerHTML = '<option>Brak danych do symulacji</option>';
+    return;
+  }
   
-  // Czyszczenie i wypełnianie opcji
   simulationSelect.innerHTML = '';
   
   // Grupa: Partie
-  const partiesGroup = document.createElement('optgroup');
-  partiesGroup.label = '🇵🇱 Partie polityczne';
-  config.parties.forEach(party => {
-    const option = document.createElement('option');
-    option.value = party.name;
-    option.textContent = party.name;
-    partiesGroup.appendChild(option);
-  });
-  simulationSelect.appendChild(partiesGroup);
+  if (config.parties.length) {
+    const partiesGroup = document.createElement('optgroup');
+    partiesGroup.label = '🇵🇱 Partie polityczne';
+    config.parties.forEach(party => {
+      const option = document.createElement('option');
+      option.value = party.name;
+      option.textContent = party.name;
+      partiesGroup.appendChild(option);
+    });
+    simulationSelect.appendChild(partiesGroup);
+  }
   
   // Grupa: Ideologie
-  const ideologiesGroup = document.createElement('optgroup');
-  ideologiesGroup.label = '💡 Ideologie';
-  config.ideologies.forEach(ideo => {
-    const option = document.createElement('option');
-    option.value = ideo.name;
-    option.textContent = ideo.name;
-    ideologiesGroup.appendChild(option);
-  });
-  simulationSelect.appendChild(ideologiesGroup);
+  if (config.ideologies.length) {
+    const ideologiesGroup = document.createElement('optgroup');
+    ideologiesGroup.label = '💡 Ideologie';
+    config.ideologies.forEach(ideo => {
+      const option = document.createElement('option');
+      option.value = ideo.name;
+      option.textContent = ideo.name;
+      ideologiesGroup.appendChild(option);
+    });
+    simulationSelect.appendChild(ideologiesGroup);
+  }
   
-  // Domyślnie wybierz pierwszą partię
+  // Jeśli brak obu grup – dodaj informację
+  if (!config.parties.length && !config.ideologies.length) {
+    simulationSelect.innerHTML = '<option>Brak partii i ideologii w data.json</option>';
+    return;
+  }
+  
+  // Domyślnie wybierz pierwszą partię (jeśli istnieje) lub pierwszą ideologię
   if (config.parties.length) simulationSelect.value = config.parties[0].name;
+  else if (config.ideologies.length) simulationSelect.value = config.ideologies[0].name;
   
-  // Obsługa przycisku symulacji
   simulateBtn.addEventListener('click', () => {
     const selected = simulationSelect.value;
-    if (selected) {
+    if (selected && selected !== 'Brak danych do symulacji') {
       simulateAnswers(selected);
     } else {
       alert('Wybierz partię lub ideologię z listy.');
     }
   });
   
-  // Obsługa przycisku przywracania odpowiedzi użytkownika
   restoreBtn.addEventListener('click', () => {
     restoreUserAnswers();
   });
 }
-
-// Nadpisujemy oryginalną funkcję initApp, aby dodać setupSimulation po renderowaniu
-const originalInitApp = initApp;
-window.initApp = function() {
-  originalInitApp();
-  setupSimulation();
-};
-// Zachowaj oryginalną referencję, ale wykonaj nową
-initApp = window.initApp;
 
 loadConfig();
