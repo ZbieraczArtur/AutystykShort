@@ -1,4 +1,4 @@
-/* ========== RESET & BAZA ========== */
+/* style.css – usunięto transition z body dla płynnego przełączania motywu */
 * {
   margin: 0;
   padding: 0;
@@ -80,7 +80,7 @@ body {
   line-height: 1.5;
   padding: 1.5rem;
   min-height: 100vh;
-  transition: background 0.3s ease, color 0.2s ease;
+  /* usunięto transition – eliminuje lag podczas przełączania motywu */
 }
 
 .container {
