@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#1e293b">
   <title>NeoAutystyk Short</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -10,25 +11,20 @@
   <div class="container">
     <header>
       <h1>🐻 NeoAutystyk Short</h1>
-<div class="disclaimer">
-  <p><strong>⚠️ Informacja przed testem</strong></p>
-  
-  <p>Niektóre tezy w tym teście mogą zawierać ukryte presupozycje – np. zakładać istnienie państwa, własność prywatną, walkę klasową lub inny punkt wyjścia, z którym możesz się nie zgadzać.</p>
-  
-  <p>Inne tezy mogą po prostu nie mieć sensu z perspektywy Twojego światopoglądu. </p>
-  
-  <p>W takich przypadkach śmiało użyj przycisku <strong>„Pomiń”</strong>. Pominięcie pytania jest w pełni akceptowalne i <strong>nie wpłynie negatywnie</strong> na wynik.</p>
-  
-  <p><strong>Wprost przeciwnie</strong> – im bardziej szczerze i tylko na pasujące Ci tezy odpowiesz, tym precyzyjniejszy będzie końcowy wynik.</p>
-  
-  <p>Przy niektórych tezach pojawi się dodatkowa podpowiedź, kiedy warto je pominąć. Traktuj ją jednak tylko jako sugestię, a nie nakaz. Możesz pominąć dowolną tezę w dowolnym momencie.</p>
-</div>
+      <div class="disclaimer">
+        <p><strong>⚠️ Informacja przed testem</strong></p>
+        <p>Niektóre tezy w tym teście mogą zawierać ukryte presupozycje – np. zakładać istnienie państwa, własność prywatną, walkę klasową lub inny punkt wyjścia, z którym możesz się nie zgadzać.</p>
+        <p>Inne tezy mogą po prostu nie mieć sensu z perspektywy Twojego światopoglądu.</p>
+        <p>W takich przypadkach śmiało użyj przycisku <strong>„Pomiń”</strong>. Pominięcie pytania jest w pełni akceptowalne i <strong>nie wpłynie negatywnie</strong> na wynik.</p>
+        <p><strong>Wprost przeciwnie</strong> – im bardziej szczerze i tylko na pasujące Ci tezy odpowiesz, tym precyzyjniejszy będzie końcowy wynik.</p>
+        <p>Przy niektórych tezach pojawi się dodatkowa podpowiedź, kiedy warto je pominąć. Traktuj ją jednak tylko jako sugestię, a nie nakaz. Możesz pominąć dowolną tezę w dowolnym momencie.</p>
+      </div>
     </header>
 
     <div id="questions-container"></div>
 
     <div class="actions">
-      <button id="submitBtn" class="btn-submit">📊 Pokaż wyniki</button>
+      <button id="submitBtn" class="btn-submit" aria-label="Pokaż wyniki testu">📊 Pokaż wyniki</button>
     </div>
 
     <div id="results-container" style="display: none;">
@@ -40,15 +36,15 @@
     </div>
 
     <footer>
-      <p>Wersja robocza, przed ponownym nadejściem Mypolitics <br> Autor: @CusterKnuckle </br> <br> https://x.com/CusterKnuckle </br> </p>
+      <p>Wersja robocza, przed ponownym nadejściem Mypolitics <br> Autor: @CusterKnuckle <br> <a href="https://x.com/CusterKnuckle" target="_blank" rel="noopener noreferrer">https://x.com/CusterKnuckle</a></p>
     </footer>
   </div>
 
   <!-- Popup do definicji wartości / komentarzy -->
-  <div id="popup" class="popup hidden">
-    <div class="popup-content">
+  <div id="popup" class="popup hidden" aria-hidden="true">
+    <div class="popup-content" role="dialog" aria-modal="true">
       <p id="popup-text"></p>
-      <button id="closePopup">Zamknij</button>
+      <button id="closePopup" aria-label="Zamknij">Zamknij</button>
     </div>
   </div>
 
