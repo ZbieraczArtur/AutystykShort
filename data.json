@@ -7402,7 +7402,7 @@
           "values_against": ["Rynek", "Własność prywatna", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -7412,7 +7412,7 @@
           "values_against": ["Rynek", "Własność prywatna", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -7423,7 +7423,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7433,7 +7433,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7460,8 +7460,8 @@
           "values_against": ["Planowanie", "Regulacja instytucjonalna", "Ograniczanie wymiany"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7470,8 +7470,8 @@
           "values_against": ["Planowanie", "Regulacja instytucjonalna", "Ograniczanie wymiany"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Koalicja Obywatelska", "Nowa Lewica", "Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -7480,8 +7480,8 @@
           "values_against": ["Planowanie", "Regulacja instytucjonalna", "Ograniczanie wymiany"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Koalicja Obywatelska", "Nowa Lewica", "Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7490,8 +7490,8 @@
           "values_against": ["Planowanie", "Regulacja instytucjonalna", "Ograniczanie wymiany"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7500,8 +7500,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         }
       ]
     },
