@@ -363,4 +363,183 @@ function computeAndDisplayResults() {
   window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
 }
 
+// ========== SYMULACJA ODPOWIEDZI PARTII / IDEOLOGII ==========
+
+let simulationSelect = null;
+let simulateBtn = null;
+let restoreBtn = null;
+
+// Funkcja odczytująca aktualnie zaznaczone odpowiedzi z GUI i aktualizująca userAnswers
+function syncUserAnswersFromDOM() {
+  const newAnswers = [];
+  const questionCards = document.querySelectorAll('.question-card');
+  
+  questionCards.forEach(card => {
+    const qid = parseInt(card.dataset.id);
+    const questionConfig = config.questions.find(q => q.id === qid);
+    if (!questionConfig) return;
+    
+    const selectedAnswer = card.querySelector('.answer-option.selected');
+    if (selectedAnswer) {
+      const ansIdx = parseInt(selectedAnswer.dataset.answerIdx);
+      const answerData = questionConfig.answers[ansIdx];
+      newAnswers.push({
+        questionId: qid,
+        answerIndex: ansIdx,
+        answerValue: answerData.value,
+        answerData: answerData
+      });
+    } else {
+      // Brak zaznaczonej odpowiedzi – traktujemy jako "Pomiń"
+      const skipAnswer = questionConfig.answers.find(a => a.value === 0 && a.label.includes('Pomiń'));
+      if (skipAnswer) {
+        const ansIdx = questionConfig.answers.indexOf(skipAnswer);
+        newAnswers.push({
+          questionId: qid,
+          answerIndex: ansIdx,
+          answerValue: 0,
+          answerData: skipAnswer
+        });
+      }
+    }
+  });
+  
+  window.userAnswers = newAnswers;
+  console.log('Przywrócono odpowiedzi użytkownika z GUI. Liczba odpowiedzi:', userAnswers.length);
+}
+
+// Funkcja przywracająca oryginalne odpowiedzi użytkownika (z GUI)
+function restoreUserAnswers() {
+  syncUserAnswersFromDOM();
+  computeAndDisplayResults();
+  console.log('✅ Przywrócono Twoje odpowiedzi i odświeżono wyniki.');
+}
+
+// Główna funkcja symulacji dla wybranej partii lub ideologii
+function simulateAnswers(selectedName) {
+  console.log(`\n🎭 SYMULACJA DLA: ${selectedName}`);
+  const simulatedAnswers = [];
+  
+  // Dla każdego pytania
+  for (const question of config.questions) {
+    let bestAnswer = null;
+    let bestAbsValue = -1;
+    
+    // Szukamy odpowiedzi, która zawiera wybraną partię/ideologię w parties_for LUB ideologies_for
+    for (const answer of question.answers) {
+      const partiesFor = answer.parties_for || [];
+      const ideologiesFor = answer.ideologies_for || [];
+      
+      if (partiesFor.includes(selectedName) || ideologiesFor.includes(selectedName)) {
+        const absVal = Math.abs(answer.value);
+        if (absVal > bestAbsValue) {
+          bestAbsValue = absVal;
+          bestAnswer = answer;
+        }
+      }
+    }
+    
+    // Jeśli nie znaleziono odpowiedzi dla tej partii/ideologii – wybieramy "Pomiń pytanie"
+    if (!bestAnswer) {
+      bestAnswer = question.answers.find(a => a.value === 0 && a.label.includes('Pomiń'));
+      if (!bestAnswer) {
+        // Zabezpieczenie: jeśli z jakiegoś powodu nie ma opcji pomiń, weź pierwszą odpowiedź (nie powinno się zdarzyć)
+        bestAnswer = question.answers[0];
+      }
+    }
+    
+    const answerIndex = question.answers.findIndex(a => a === bestAnswer);
+    simulatedAnswers.push({
+      questionId: question.id,
+      answerIndex: answerIndex,
+      answerValue: bestAnswer.value,
+      answerData: bestAnswer
+    });
+  }
+  
+  // Zastąpienie globalnych odpowiedzi symulowanymi
+  window.userAnswers = simulatedAnswers;
+  
+  // Obliczenie i wyświetlenie wyników
+  computeAndDisplayResults();
+  
+  // Dodatkowe wypisanie wyników w konsoli w czytelnym formacie
+  const { pairResults, ideologyResults, partyResults } = computeScores();
+  console.log(`\n📊 WYNIKI SYMULACJI (${selectedName}):`);
+  console.log('--- Pary wartości ---');
+  pairResults.forEach(p => {
+    console.log(`${p.left}: ${p.leftPercent.toFixed(1)}%  |  ${p.right}: ${p.rightPercent.toFixed(1)}%`);
+  });
+  console.log('\n--- Top 5 ideologii ---');
+  ideologyResults.slice(0,5).forEach(ideo => {
+    console.log(`${ideo.name}: ${ideo.percent.toFixed(1)}%`);
+  });
+  console.log('\n--- Top 5 partii ---');
+  partyResults.slice(0,5).forEach(party => {
+    console.log(`${party.name}: ${party.percent.toFixed(1)}%`);
+  });
+  console.log(`\n✅ Symulacja zakończona. Aby wrócić do swoich odpowiedzi, kliknij "Przywróć moje odpowiedzi".\n`);
+}
+
+// Inicjalizacja panelu symulacji: wypełnienie selecta, podpięcie przycisków
+function setupSimulation() {
+  simulationSelect = document.getElementById('simulateSelect');
+  simulateBtn = document.getElementById('simulateBtn');
+  restoreBtn = document.getElementById('restoreBtn');
+  
+  if (!simulationSelect || !simulateBtn || !restoreBtn) return;
+  
+  // Czyszczenie i wypełnianie opcji
+  simulationSelect.innerHTML = '';
+  
+  // Grupa: Partie
+  const partiesGroup = document.createElement('optgroup');
+  partiesGroup.label = '🇵🇱 Partie polityczne';
+  config.parties.forEach(party => {
+    const option = document.createElement('option');
+    option.value = party.name;
+    option.textContent = party.name;
+    partiesGroup.appendChild(option);
+  });
+  simulationSelect.appendChild(partiesGroup);
+  
+  // Grupa: Ideologie
+  const ideologiesGroup = document.createElement('optgroup');
+  ideologiesGroup.label = '💡 Ideologie';
+  config.ideologies.forEach(ideo => {
+    const option = document.createElement('option');
+    option.value = ideo.name;
+    option.textContent = ideo.name;
+    ideologiesGroup.appendChild(option);
+  });
+  simulationSelect.appendChild(ideologiesGroup);
+  
+  // Domyślnie wybierz pierwszą partię
+  if (config.parties.length) simulationSelect.value = config.parties[0].name;
+  
+  // Obsługa przycisku symulacji
+  simulateBtn.addEventListener('click', () => {
+    const selected = simulationSelect.value;
+    if (selected) {
+      simulateAnswers(selected);
+    } else {
+      alert('Wybierz partię lub ideologię z listy.');
+    }
+  });
+  
+  // Obsługa przycisku przywracania odpowiedzi użytkownika
+  restoreBtn.addEventListener('click', () => {
+    restoreUserAnswers();
+  });
+}
+
+// Nadpisujemy oryginalną funkcję initApp, aby dodać setupSimulation po renderowaniu
+const originalInitApp = initApp;
+window.initApp = function() {
+  originalInitApp();
+  setupSimulation();
+};
+// Zachowaj oryginalną referencję, ale wykonaj nową
+initApp = window.initApp;
+
 loadConfig();
