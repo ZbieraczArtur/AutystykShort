@@ -8376,7 +8376,7 @@
         {
       "id": 139,
       "text": "Pomoc finansowa ze strony państwa jest przywilejem, a nie prawem",
-      "description": "XXXXXX",
+      "description": "W tej wizji wsparcie materialne od państwa nie jest automatycznym uprawnieniem przysługującym każdemu obywatelowi z tytułu przynależności do wspólnoty. Pomoc ta jest postrzegana jako nadzwyczajna forma wsparcia, przyznawana przez organy publiczne tylko po spełnieniu bardzo konkretnych i często rygorystycznych warunków. Oznacza to, że jednostka nie może rościć sobie stałych pretensji do środków publicznych, jeśli nie wykaże się szczególną sytuacją kryzysową lub udokumentowaną niemożnością samodzielnego bytu. Głównym założeniem jest przekonanie, że odpowiedzialność za byt spoczywa na jednostce, a interwencja państwa jest dobrowolnym aktem pomocy, a nie stałym obowiązkiem.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -8434,7 +8434,7 @@
         {
       "id": 140,
       "text": "Publiczna pomoc społeczna powinna być dostępna wyłącznie dla osób, które nie mogą uzyskać wsparcia od rodziny ani instytucji prywatnych",
-      "description": "XXXXXX",
+      "description": "Zasada ta opiera się na hierarchii odpowiedzialności, w której państwo jest ostatnim ogniwem niosącym wsparcie. W pierwszej kolejności to jednostka, jej rodzina oraz wspólnota lokalna lub instytucje pozarządowe powinny zaspokajać potrzeby socjalne swoich członków. Publiczne instytucje pomocy społecznej wkraczają dopiero w momencie, gdy te naturalne i prywatne sieci wsparcia okazują się niewydolne lub zostają całkowicie wyczerpane. Pomoc publiczna ma tu charakter celowy i wąski, co pozwala na jej ograniczenie tylko do przypadków absolutnie koniecznych. Fundamentem tego podejścia jest przekonanie, że pomoc społeczna nie powinna zastępować osobistej i rodzinnej współodpowiedzialności obywateli.",
       "comment": "Pomiń jeśli całkowicie odrzucasz pomoc społeczną",
       "answers": [
         {
@@ -8550,7 +8550,7 @@
         {
       "id": 142,
       "text": "Reguły uprawniające do zasiłków muszą być surowe, aby nie zniechęcać do podejmowania pracy",
-      "description": "XXXXXX",
+      "description": "Zgodnie z tą tezą, system świadczeń musi być skonstruowany tak, by unikać tworzenia alternatywy dla zatrudnienia na rynku pracy. Surowe kryteria przyznawania pomocy mają na celu zminimalizowanie ryzyka, że obywatele wybiorą życie z zasiłków zamiast aktywnego poszukiwania pracy. Świadczenia powinny być utrzymywane na niskim poziomie, aby zachować motywacyjną funkcję płacy rynkowej i promować samodzielność ekonomiczną. Weryfikacja uprawnień obejmuje często badanie majątku, gotowości do podjęcia dowolnego zajęcia oraz kontrolę stylu życia beneficjenta. Takie restrykcyjne podejście ma chronić budżet państwa lub etykę pracy przed negatywnymi skutkami nadmiernej hojności socjalnej. Kluczowym celem polityki społecznej staje się tu dyscyplinowanie podaży pracy i wzmacnianie bodźców do rynkowej aktywności zawodowej.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -8608,7 +8608,7 @@
         {
       "id": 143,
       "text": "Zasiłki społeczne powinny być traktowane jako tymczasowe wsparcie, a nie długoterminowe rozwiązanie",
-      "description": "XXXXXX",
+      "description": "Koncepcja ta definiuje pomoc państwową jako krótkotrwały pomost mający ułatwić jednostce powrót do pełnej samodzielności po przejściowych trudnościach. Publiczne wsparcie finansowe nie powinno przeradzać się w stałe źródło dochodu, gdyż grozi to utrwaleniem postaw roszczeniowych i bierności zawodowej. Zamiast dożywotnich transferów, kładzie się nacisk na inwestycje w umiejętności obywatela, które pozwolą mu ponownie konkurować na rynku pracy. Pomoc kończy się lub ulega znacznemu ograniczeniu, gdy tylko minie bezpośrednia przyczyna kryzysu lub upłynie określony czas przeznaczony na adaptację. System dąży do tego, by nikt nie pozostawał klientem opieki społecznej dłużej niż to absolutnie niezbędne dla jego biologicznego przetrwania i aktywizacji. Głównym zadaniem państwa jest tu 'pomaganie w pomaganiu samemu sobie', przy jednoczesnym unikaniu budowania trwałej zależności obywatela od systemu.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -8666,7 +8666,7 @@
         {
       "id": 144,
       "text": "Dochód czerpany z posiadania, a nie pracy (Czynsze, odsetki od pożyczek, zyski z kapitału) to kradzież",
-      "description": "XXXXXX",
+      "description": ". Zgodnie z tym ujęciem, pobieranie czynszów, odsetek od pożyczek czy czerpanie zysków z inwestycji jest uznawane za przychód niepoparty realnym trudem, czyli tzw. dochód niezasłużony. Argumentuje się, że właściciel, który nie użytkuje zasobów osobiście, lecz udostępnia je innym za opłatą, przejmuje owoce cudzej pracy wyłącznie dzięki posiadanemu tytułowi prawnemu. Przychód z posiadania jest tu postrzegany jako mechanizm pozwalający na gromadzenie bogactwa osobom nieuczestniczącym bezpośrednio w produkcji, co w konsekwencji obciąża finansowo faktycznych wykonawców pracy.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -8850,8 +8850,8 @@
           "values_against": ["Hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8860,8 +8860,8 @@
           "values_against": ["Hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8870,8 +8870,8 @@
           "values_against": ["Anty-hierarchiczność", "Demokracja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8880,8 +8880,8 @@
           "values_against": ["Anty-hierarchiczność", "Demokracja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
