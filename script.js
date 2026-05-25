@@ -1,4 +1,4 @@
-// script.js – naprawiona funkcja zwijania list rankingowych
+// script.js – z kolorami dla par wartości i automatycznym kontrastem tekstu
 // -------------------------------
 // GLOBALNE ZMIENNE I DANE
 // -------------------------------
@@ -15,6 +15,60 @@ const partiesResults = document.getElementById('parties-results');
 const popup = document.getElementById('popup');
 const popupText = document.getElementById('popup-text');
 const closePopupBtn = document.getElementById('closePopup');
+
+// Mapowanie wartości na kolory (hex)
+const valueColors = {
+  "Autonomia": "#FECB1D",
+  "Heteronomia": "#73B0BE",
+  "Kolektywizm": "#73B0BE",
+  "Indywidualizm": "#FECB1D",
+  "Anty-hierarchiczność": "#FECB1D",
+  "Hierarchiczność": "#73B0BE",
+  "Anarchia": "#2F3944",
+  "Etatyzm": "#73B0BE",
+  "Decentralizacja": "#2F3944",
+  "Centralizacja": "#73B0BE",
+  "Ograniczenie władzy": "#2F3944",
+  "Absolutyzm władzy": "#73B0BE",
+  "Demokracja": "#2F3944",
+  "Anty-demokracja": "#73B0BE",
+  "Autokracja": "#2F3944",
+  "Anty-autokracja": "#73B0BE",
+  "Własność kolektywna": "#E44341",
+  "Własność prywatna": "#448A3A",
+  "Planowanie": "#E44341",
+  "Rynek": "#448A3A",
+  "Regulacja instytucjonalna": "#E44341",
+  "Samoregulacja": "#448A3A",
+  "Ograniczanie wymiany": "#E44341",
+  "Swobodna wymiana": "#448A3A",
+  "Minimalizacja granic": "#4C59CB",
+  "Kontrola granic": "#FFA219",
+  "Kosmopolityzm": "#4C59CB",
+  "Partykularyzm narodowy": "#FFA219",
+  "Interwencjonizm zagraniczny": "#4C59CB",
+  "Izolacjonizm": "#FFA219",
+  "Preferencja użycia siły": "#DD59C7",
+  "Unikanie przemocy": "#86D040",
+  "Rewolucja": "#DD59C7",
+  "Gradualizm": "#86D040",
+  "Progresywizm": "#DD59C7",
+  "Konserwatyzm": "#86D040",
+  "Pluralizm kulturowy": "#DD59C7",
+  "Homogenizacja": "#86D040",
+  "Neutralność religijna": "#DD59C7",
+  "Instytucjonalna religia": "#86D040",
+  "Włączanie": "#DD59C7",
+  "Wykluczenie": "#86D040",
+  "Egalitaryzm biologiczny": "#DD59C7",
+  "Suprematyzm biologiczny": "#86D040",
+  "Wolność ekspresji": "#FECB1D",
+  "Cenzura": "#73B0BE",
+  "Antropocentryzm": "#E57160",
+  "Ekocentryzm": "#14832A",
+  "Postęp technologiczny": "#E57160",
+  "Prymitywizm": "#14832A"
+};
 
 // POMOCNICZE: popup
 function showPopup(message) {
@@ -34,6 +88,16 @@ document.addEventListener('keydown', (e) => {
     popup.classList.add('hidden');
   }
 });
+
+// Funkcja określająca kolor tekstu (czarny/biały) na podstawie jasności tła
+function getContrastColor(hex) {
+  // konwersja hex na RGB
+  const r = parseInt(hex.slice(1,3), 16);
+  const g = parseInt(hex.slice(3,5), 16);
+  const b = parseInt(hex.slice(5,7), 16);
+  const brightness = (r * 0.299 + g * 0.587 + b * 0.114) / 255;
+  return brightness > 0.5 ? '#000000' : '#ffffff';
+}
 
 // -------------------------------
 // WCZYTYWANIE KONFIGURACJI
@@ -424,22 +488,27 @@ function createRankingSection(title, items, type) {
 }
 
 // -------------------------------
-// WYŚWIETLANIE WYNIKÓW
+// WYŚWIETLANIE WYNIKÓW (z kolorami dla par wartości)
 // -------------------------------
 function computeAndDisplayResults() {
   const { pairResults, ideologyResults, partyResults } = computeScores();
 
-  // Wyświetl pary wartości (bez zmian)
+  // Wyświetl pary wartości z dynamicznymi kolorami
   valuesResults.innerHTML = '<h3>⚖️ Pary wartości</h3>';
   pairResults.forEach(pair => {
+    const leftColor = valueColors[pair.left] || '#3b82f6';   // domyślny niebieski
+    const rightColor = valueColors[pair.right] || '#ef4444'; // domyślny czerwony
+    const leftTextColor = getContrastColor(leftColor);
+    const rightTextColor = getContrastColor(rightColor);
+    
     const pairDiv = document.createElement('div');
     pairDiv.className = 'value-pair';
     pairDiv.innerHTML = `
       <div class="value-bar-container">
         <span class="value-left" data-def="${pair.leftDef}">${pair.left}</span>
         <div class="value-bar">
-          <div class="bar-left" style="width: ${pair.leftPercent}%;">${Math.round(pair.leftPercent)}%</div>
-          <div class="bar-right" style="width: ${pair.rightPercent}%;">${Math.round(pair.rightPercent)}%</div>
+          <div class="bar-left" style="width: ${pair.leftPercent}%; background-color: ${leftColor}; color: ${leftTextColor};">${Math.round(pair.leftPercent)}%</div>
+          <div class="bar-right" style="width: ${pair.rightPercent}%; background-color: ${rightColor}; color: ${rightTextColor};">${Math.round(pair.rightPercent)}%</div>
         </div>
         <span class="value-right" data-def="${pair.rightDef}">${pair.right}</span>
       </div>
