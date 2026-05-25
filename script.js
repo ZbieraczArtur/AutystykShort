@@ -488,6 +488,49 @@ function createRankingSection(title, items, type) {
 }
 
 // -------------------------------
+// GENEROWANIE KODU BASE64 DO UDOSTĘPNIANIA
+// -------------------------------
+function generateShareCode(pairResults) {
+  // Tworzymy ciąg tekstowy: "Autonomia(40) - Heteronomia(60); Kolektywizm(85) - Indywidualizm(15); ..."
+  const resultsString = pairResults.map(pair => 
+    `${pair.left}(${Math.round(pair.leftPercent)}) - ${pair.right}(${Math.round(pair.rightPercent)})`
+  ).join('; ');
+  
+  // Kodowanie Base64 z obsługą polskich znaków
+  let base64 = '';
+  try {
+    base64 = btoa(unescape(encodeURIComponent(resultsString)));
+  } catch (e) {
+    console.error('Błąd kodowania Base64', e);
+    base64 = '';
+  }
+  
+  const container = document.createElement('div');
+  container.className = 'share-section';
+  container.innerHTML = `
+    <h3>🔗 Udostępnij swój wynik</h3>
+    <p>Skopiuj poniższy kod, aby zapisać lub udostępnić swoje wyniki:</p>
+    <textarea readonly class="share-code" rows="3">${base64}</textarea>
+    <button class="copy-btn">📋 Kopiuj kod</button>
+    <p class="share-link"><a href="https://zbieraczartur.github.io/NeoAutystyk-Kompas/" target="_blank" rel="noopener noreferrer">🌐 NeoAutystyk Kompas</a></p>
+  `;
+  
+  const copyBtn = container.querySelector('.copy-btn');
+  const textarea = container.querySelector('.share-code');
+  copyBtn.addEventListener('click', () => {
+    textarea.select();
+    navigator.clipboard.writeText(textarea.value).then(() => {
+      copyBtn.textContent = '✅ Skopiowano!';
+      setTimeout(() => { copyBtn.textContent = '📋 Kopiuj kod'; }, 2000);
+    }).catch(() => {
+      alert('Nie udało się skopiować. Możesz zaznaczyć kod ręcznie i skopiować.');
+    });
+  });
+  
+  return container;
+}
+
+// -------------------------------
 // WYŚWIETLANIE WYNIKÓW (z kolorami dla par wartości)
 // -------------------------------
 function computeAndDisplayResults() {
@@ -529,6 +572,13 @@ function computeAndDisplayResults() {
   partiesResults.innerHTML = '';
   const partySection = createRankingSection('🗳️ Ranking partii (zgodność %)', partyResults, 'party');
   partiesResults.appendChild(partySection);
+
+  // --- DODANIE SEKCJI UDOSTĘPNIANIA WYNIKÓW ---
+  const existingShare = resultsDiv.querySelector('.share-section');
+  if (existingShare) existingShare.remove();
+  const shareSection = generateShareCode(pairResults);
+  resultsDiv.appendChild(shareSection);
+  // --- KONIEC DODANIA ---
 
   resultsDiv.style.display = 'block';
   window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
