@@ -602,3 +602,55 @@ footer a:hover {
     font-size: 1.6rem;
   }
 }
+
+/* ========== NOWA SEKCJA UDOSTĘPNIANIA WYNIKÓW ========== */
+.share-section {
+  margin-top: 2rem;
+  padding: 1.2rem;
+  background: var(--card-bg);
+  border-radius: 28px;
+  border: 1px solid var(--card-border);
+  transition: all 0.2s;
+}
+.share-section h3 {
+  margin-top: 0;
+}
+.share-code {
+  width: 100%;
+  padding: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  background: var(--rank-percent-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--footer-border);
+  border-radius: 16px;
+  resize: vertical;
+  font-size: 0.85rem;
+  box-sizing: border-box;
+}
+.copy-btn {
+  background: var(--btn-bg);
+  border: none;
+  padding: 0.5rem 1.2rem;
+  border-radius: 40px;
+  cursor: pointer;
+  margin-top: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s;
+  color: var(--text-primary);
+}
+.copy-btn:hover {
+  background: var(--btn-hover);
+  transform: scale(0.97);
+}
+.share-link {
+  margin-top: 1rem;
+  text-align: center;
+}
+.share-link a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+.share-link a:hover {
+  text-decoration: underline;
+}
