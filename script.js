@@ -508,11 +508,11 @@ function generateShareCode(pairResults) {
   const container = document.createElement('div');
   container.className = 'share-section';
   container.innerHTML = `
-    <h3>🔗 Udostępnij swój wynik</h3>
-    <p>Skopiuj poniższy kod, aby zapisać lub udostępnić swoje wyniki:</p>
+    <h3>🔗 Sprawdź położenie na kompasie</h3>
+    <p>Skopiuj poniższy kod i wklej go na stronie z kompasem, by poznać swoje położenie:</p>
     <textarea readonly class="share-code" rows="3">${base64}</textarea>
     <button class="copy-btn">📋 Kopiuj kod</button>
-    <p class="share-link"><a href="https://zbieraczartur.github.io/NeoAutystyk-Kompas/" target="_blank" rel="noopener noreferrer">🌐 NeoAutystyk Kompas</a></p>
+    <p class="share-link"><a href="https://zbieraczartur.github.io/NeoAutystyk-Kompas/" target="_blank" rel="noopener noreferrer">🧭 NeoAutystyk Kompas</a></p>
   `;
   
   const copyBtn = container.querySelector('.copy-btn');
