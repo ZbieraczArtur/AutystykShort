@@ -19,11 +19,11 @@ const closePopupBtn = document.getElementById('closePopup');
 // Mapowanie wartości na kolory (hex)
 const valueColors = {
   "Autonomia": "#FECB1D",
-  "Heteronomia": "#73B0BE",
-  "Kolektywizm": "#73B0BE",
+  "Heteronomia": "#613B28",
+  "Kolektywizm": "#613B28",
   "Indywidualizm": "#FECB1D",
   "Anty-hierarchiczność": "#FECB1D",
-  "Hierarchiczność": "#73B0BE",
+  "Hierarchiczność": "#613B28",
   "Anarchia": "#2F3944",
   "Etatyzm": "#73B0BE",
   "Decentralizacja": "#2F3944",
@@ -63,7 +63,7 @@ const valueColors = {
   "Egalitaryzm biologiczny": "#DD59C7",
   "Suprematyzm biologiczny": "#86D040",
   "Wolność ekspresji": "#FECB1D",
-  "Cenzura": "#73B0BE",
+  "Cenzura": "#613B28",
   "Antropocentryzm": "#E57160",
   "Ekocentryzm": "#14832A",
   "Postęp technologiczny": "#E57160",
