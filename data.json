@@ -22,12 +22,12 @@
       "left": "Anarchia",
       "right": "Etatyzm",
       "leftDef": "Anarchia – brak przymusowej władzy państwowej, samoorganizacja społeczeństwa.",
-      "rightDef": "Etatyzm – silne państwo kontrolujące większość aspektów życia."
+      "rightDef": "Etatyzm – Przekonanie, że państwo jest najbardziej odpowiednim środkiem rozwiązywania problemów i gwarantowania rozwoju gospodarczego i społecznego."
     },
     {
       "left": "Decentralizacja",
       "right": "Centralizacja",
-      "leftDef": "Decentralizacja – rozproszenie władzy i decyzji na niższe szczeble.",
+      "leftDef": "Decentralizacja – Rozszerzenie autonomii lokalnej w wyniku przekazania kompetencji i obowiązków przez organy centralne.",
       "rightDef": "Centralizacja – koncentracja decyzji w centralnych organach państwa."
     },
     {
@@ -51,14 +51,14 @@
     {
       "left": "Własność kolektywna",
       "right": "Własność prywatna",
-      "leftDef": "Własność kolektywna – środki produkcji należą do społeczeństwa lub wspólnot.",
-      "rightDef": "Własność prywatna – prawo jednostki do posiadania i swobodnego dysponowania majątkiem."
+      "leftDef": "Własność kolektywna – System, w którym bogactwo i środki produkcji należą do całej wspólnoty, a nie do jednostek.",
+      "rightDef": "Własność prywatna – Prawo jednostki do posiadania i swobodnego dysponowania majątkiem."
     },
     {
       "left": "Planowanie",
       "right": "Rynek",
       "leftDef": "Planowanie – centralne lub demokratyczne planowanie gospodarki.",
-      "rightDef": "Rynek – spontaniczny porządek oparty na wolnej wymianie i cenach."
+      "rightDef": "System wymiany handlowej między nabywcami a sprzedawcami kontrolowany przez bezosobowe czynniki ekonomiczne: siły rynkowe."
     },
     {
       "left": "Regulacja instytucjonalna",
@@ -99,19 +99,19 @@
     {
       "left": "Rewolucja",
       "right": "Gradualizm",
-      "leftDef": "Rewolucja – gwałtowna, radykalna zmiana całego systemu.",
-      "rightDef": "Gradualizm – stopniowe, ewolucyjne reformy."
+      "leftDef": "Rewolucja – Fundamentalna lub nieodwracalna zmiana często przybierająca postać krótkotrwałego, aczkolwiek dramatycznego, okresu wrzenia; planowa zmiana.",
+      "rightDef": "Gradualizm – Poparcie stopniowych, sukcesywnych zmian stojące w opozycji zarówno do rewolucji, jak i reakcji; reforma to działania bądź strategie, mające zaradzić danemu problemowi."
     },
     {
       "left": "Progresywizm",
       "right": "Konserwatyzm",
-      "leftDef": "Progresywizm – ciągła zmiana, postęp i odrzucenie tradycji jako przestarzałej.",
+      "leftDef": "Progresywizm – Kroczenie naprzód oznaczające zazwyczaj poprawę sytuacji; przekonanie, że historię ludzkości charakteryzuje rozwój wiedzy oraz osiąganie coraz wyższych poziomów cywilizacyjnego rozwoju.",
       "rightDef": "Konserwatyzm – zachowanie tradycji, stabilność i ostrożność wobec zmian."
     },
     {
       "left": "Pluralizm kulturowy",
       "right": "Homogenizacja",
-      "leftDef": "Pluralizm kulturowy – akceptacja i ochrona różnorodności kulturowej.",
+      "leftDef": "Pluralizm kulturowy – Akceptacja i poszanowanie dla moralnej oraz kulturowej różnorodności w ramach jednego społeczeństwa. Opiera się na przekonaniu, że różne grupy mają prawo do zachowania własnych stylów życia i wartości.",
       "rightDef": "Homogenizacja – dążenie do kulturowej jednorodności narodu."
     },
     {
@@ -135,20 +135,20 @@
     {
       "left": "Wolność ekspresji",
       "right": "Cenzura",
-      "leftDef": "Wolność ekspresji – pełna swoboda wypowiedzi bez ograniczeń.",
-      "rightDef": "Cenzura – kontrolowanie i ograniczanie treści uznanych za szkodliwe."
+      "leftDef": "Wolność ekspresji – Swoboda jednostki, obejmująca absolutną swobodę opinii, myśli i sądu.",
+      "rightDef": "Cenzura – Systemowe ograniczanie wolności słowa, treści i dostępu do informacji."
     },
     {
       "left": "Antropocentryzm",
       "right": "Ekocentryzm",
-      "leftDef": "Antropocentryzm – człowiek jako centrum i najwyższa wartość.",
-      "rightDef": "Ekocentryzm – przyroda i ekosystemy mają wartość samoistną."
+      "leftDef": "Antropocentryzm – Przekonanie, że znaczenie ludzkich potrzeb i interesów jest nadrzędne pod względem moralnym i filozoficznym.",
+      "rightDef": "Ekocentryzm – Orientacja teoretyczna, która uznaje, że zachowanie równowagi ekologicznej jest ważniejsze niż realizacja celów ludzkich."
     },
     {
       "left": "Postęp technologiczny",
       "right": "Prymitywizm",
       "leftDef": "Postęp technologiczny – wiara w zbawienny charakter rozwoju technologicznego.",
-      "rightDef": "Prymitywizm – odrzucenie zaawansowanej technologii na rzecz prostszego życia."
+      "rightDef": "Prymitywizm – Perspektywa, która odrzuca przemysł i nowoczesną technologię na rzecz powrotu do natury i życia w małych, samowystarczalnych wspólnotach."
     }
   ],
 
