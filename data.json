@@ -8666,7 +8666,7 @@
         {
       "id": 144,
       "text": "Dochód czerpany z posiadania, a nie pracy (Czynsze, odsetki od pożyczek, zyski z kapitału) to kradzież",
-      "description": "XXXXXX",
+      "description": "Teza ta zakłada, że sam fakt dysponowania kapitałem nie jest uzasadnionym źródłem dochodu. Zgodnie z tym ujęciem, pobieranie czynszów, odsetek od pożyczek czy czerpanie zysków z inwestycji jest uznawane za przychód niepoparty realnym trudem, czyli tzw. dochód niezasłużony. Argumentuje się, że właściciel, który nie użytkuje zasobów osobiście, lecz udostępnia je innym za opłatą, przejmuje owoce cudzej pracy wyłącznie dzięki posiadanemu tytułowi prawnemu. Przychód z posiadania jest tu postrzegany jako mechanizm pozwalający na gromadzenie bogactwa osobom nieuczestniczącym bezpośrednio w produkcji, co w konsekwencji obciąża finansowo faktycznych wykonawców pracy.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -8734,8 +8734,8 @@
           "values_against": ["Własność prywatna", "Rynek", "Indywidualizm", "Hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8744,8 +8744,8 @@
           "values_against": ["Własność prywatna", "Rynek", "Indywidualizm", "Hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8754,8 +8754,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8764,8 +8764,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8792,8 +8792,8 @@
           "values_against": ["Własność prywatna", "Rynek", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8802,8 +8802,8 @@
           "values_against": ["Własność prywatna", "Rynek", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8812,8 +8812,8 @@
           "values_against": ["Kolektywizm", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8822,8 +8822,8 @@
           "values_against": ["Kolektywizm", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Pomiń pytanie",
