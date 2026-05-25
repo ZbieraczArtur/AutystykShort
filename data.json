@@ -7508,8 +7508,7 @@
         {
       "id": 124,
       "text": "Demokratyczne decyzje obywateli powinny mieć wpływ na to, co i ile produkuje się w gospodarce",
-      "description": "XXXXXX",
-      "comment": "Placeholder",
+      "description": "Teza ta zakłada, że procesy gospodarcze, w tym wybór wytwarzanych dóbr oraz ich ilość, nie powinny zależeć wyłącznie od mechanizmów rynkowych czy zysku prywatnych firm. W tym ujęciu to ogół społeczeństwa, poprzez procedury demokratyczne lub wspólnotowe porozumienia, współdecyduje o priorytetach produkcyjnych wspólnoty. Celem takiego podejścia jest bezpośrednie dostosowanie gospodarki do realnych potrzeb społecznych, a nie do gry popytu i podaży. System ten uznaje, że zasoby służące do wytwarzania bogactwa są dobrem wspólnym, podlegającym kontroli społeczeństwa. Dzięki temu decyzje o alokacji kapitału stają się elementem debaty publicznej, co ma gwarantować, że owoce trudu służą pomyślności wszystkich członków wspólnoty. Produkcja jest tu narzędziem realizacji celów zbiorowych, wyznaczanych w drodze partycypacji.",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -7518,8 +7517,8 @@
           "values_against": ["Hierarchiczność", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Polska Partia Socjalistyczna"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7528,8 +7527,8 @@
           "values_against": ["Hierarchiczność", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -7538,8 +7537,8 @@
           "values_against": ["Kolektywizm", "Anty-hierarchiczność", "Demokracja", "Planowanie"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7548,8 +7547,8 @@
           "values_against": ["Kolektywizm", "Anty-hierarchiczność", "Demokracja", "Planowanie"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Polska Partia Socjalistyczna"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7566,7 +7565,7 @@
         {
       "id": 125,
       "text": "Produkcja powinna być podporządkowana zaspokajaniu potrzeb, a nie maksymalizacji zysku",
-      "description": "XXXXXX",
+      "description": "Teza ta zakłada, że nadrzędnym celem gospodarki powinno być dostarczanie dóbr niezbędnych do życia, a nie generowanie nadwyżek finansowych dla właścicieli. W tym ujęciu priorytetem jest użyteczność produktów oraz ich rola w zaspokajaniu konkretnych wymagań społecznych, takich jak ochrona zdrowia czy schronienie. Zamiast kierować się wyłącznie rynkowym zyskiem, proces wytwórczy ma służyć wspieraniu ludzkiego potencjału i wzmacnianiu więzi wspólnotowych. Dążenie do zysku jest tu postrzegane jako potencjalna przyczyna marnotrawstwa, podczas gdy skupienie na potrzebach ma gwarantować sprawiedliwy podział efektów pracy. Takie podejście prezentuje gospodarkę jako narzędzie służące ludziom, w którym praca jest aktywnością dającą spełnienie, a nie jedynie towarem. Kładzie się tu nacisk na wspólny dobrobyt zamiast na indywidualne gromadzenie majątku.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -7576,8 +7575,8 @@
           "values_against": ["Indywidualizm", "Hierarchiczność", "Własność prywatna", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7586,8 +7585,8 @@
           "values_against": ["Indywidualizm", "Hierarchiczność", "Własność prywatna", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -7596,8 +7595,8 @@
           "values_against": ["Kolektywizm", "Anty-hierarchiczność", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7606,8 +7605,8 @@
           "values_against": ["Kolektywizm", "Anty-hierarchiczność", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7634,8 +7633,8 @@
           "values_against": ["Autonomia", "Indywidualizm", "Anarchia", "Decentralizacja", "Własność prywatna", "Rynek", "Samoregulacja", "Prywatność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7644,8 +7643,8 @@
           "values_against": ["Autonomia", "Indywidualizm", "Anarchia", "Decentralizacja", "Własność prywatna", "Rynek", "Samoregulacja", "Prywatność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -7654,8 +7653,8 @@
           "values_against": ["Heteronomia", "Etatyzm", "Centralizacja", "Autokracja", "Własność prywatna", "Planowanie", "Nadzór"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Polska Partia Socjalistyczna"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7664,8 +7663,8 @@
           "values_against": ["Heteronomia", "Etatyzm", "Centralizacja", "Autokracja", "Własność prywatna", "Planowanie", "Nadzór"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Polska Partia Socjalistyczna"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7682,7 +7681,7 @@
         {
       "id": 127,
       "text": "Większość lub całość produkcji gospodarczej powinna być planowana przez państwo",
-      "description": "XXXXXX",
+      "description": "Teza ta opiera się na przekonaniu, że gospodarka powinna być zarządzana przez centralny ośrodek decyzyjny, który racjonalnie rozdziela zasoby kraju. Zamiast polegać na spontanicznych procesach rynkowych, popycie i podaży, państwo opracowuje szczegółowe plany określające, jakie dobra i w jakiej ilości mają być wytwarzane. Celem takiego podejścia jest wyeliminowanie chaosu ekonomicznego, marnotrawstwa i niepewności, które mogą towarzyszyć wolnej konkurencji. Centralny nadzór nad produkcją ma pozwalać na bezpośrednie kierowanie kapitału w strategiczne sektory, kluczowe dla bezpieczeństwa i rozwoju zbiorowości. W tej wizji to przygotowani eksperci lub organy państwowe decydują o priorytetach, dążąc do zaspokojenia potrzeb ogółu oraz realizacji długofalowych celów społecznych, nieosiągalnych w systemie zdecentralizowanym.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -7693,7 +7692,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7703,7 +7702,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -7712,7 +7711,7 @@
           "values_against": ["Kolektywizm", "Etatyzm", "Centralizacja", "Autokracja", "Planowanie", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -7722,7 +7721,7 @@
           "values_against": ["Kolektywizm", "Etatyzm", "Centralizacja", "Autokracja", "Planowanie", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -7750,7 +7749,7 @@
           "values_against": ["Samoregulacja", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -7760,7 +7759,7 @@
           "values_against": ["Samoregulacja", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -7770,8 +7769,8 @@
           "values_against": ["Kolektywizm", "Etatyzm", "Planowanie", "Regulacja instytucjonalna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7780,8 +7779,8 @@
           "values_against": ["Kolektywizm", "Etatyzm", "Planowanie", "Regulacja instytucjonalna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7798,8 +7797,7 @@
         {
       "id": 129,
       "text": "Prywatna przedsiębiorczość powinna być podporządkowana interesom *narodowym*",
-      "description": "XXXXXX",
-      "comment": "Placeholder",
+      "description": "Ta teza zakłada, że działalność gospodarcza i zysk prywatny stanowią narzędzia służące wzmocnieniu i pomyślności całego narodu. W tym ujęciu przedsiębiorcy nie powinni kierować się wyłącznie własną korzyścią, lecz dbać o to, by ich działania przynosiły korzyści dla całego narodu.",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -7808,7 +7806,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -7818,7 +7816,7 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -7828,18 +7826,18 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Partia Zieloni"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
-          "label": "Zdecydowanie nie zgadzam się",
+          "label": "Zdecydowanie nie zgadzam się", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Polska 2050 Rzeczypospolitej Polskiej",
           "value": -1.5,
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Partia Zieloni"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7866,7 +7864,7 @@
           "values_against": ["Anarchia", "Autonomia", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Razem", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska Partia Socjalistyczna", "Partia Zieloni"],
           "parties_against": []
         },
         {
@@ -7876,7 +7874,7 @@
           "values_against": ["Anarchia", "Autonomia", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Razem", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska Partia Socjalistyczna", "Partia Zieloni"],
           "parties_against": []
         },
         {
@@ -7887,7 +7885,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Razem", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7897,7 +7895,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Razem", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7914,7 +7912,7 @@
         {
       "id": 131,
       "text": "Bogaci powinni płacić znacząco wyższe podatki nie z powodu efektywności, lecz ze względów moralnych",
-      "description": "XXXXXX",
+      "description": "Podejście to zakłada, że system podatkowy stanowi narzędzie realizacji sprawiedliwości społecznej i solidarności, a nie tylko sposób finansowania usług publicznych. Zgodnie z tą tezą posiadanie wielkiego majątku nakłada na jednostkę szczególny obowiązek moralny wobec osób słabszych i gorzej sytuowanych. Wyższe obciążenia dla najzamożniejszych są tu uzasadniane etyczną odpowiedzialnością za pomyślność całej wspólnoty, a nie wyłącznie potrzebą zwiększenia wydajności ekonomicznej. Bogactwo jest postrzegane jako owoc zbiorowego wysiłku, dlatego sprawiedliwy podział wymaga, by ci, którzy zyskali najwięcej, wnieśli większy wkład w pomoc potrzebującym. Priorytetem jest budowa spójnej kultury i wzajemnej troski, gdzie redystrybucja środków służy wyrównywaniu szans życiowych i łagodzeniu rażących nierówności materialnych.",
       "comment": "Pomiń, jeśli nie popierasz opodatkowania progresywnego",
       "answers": [
         {
@@ -7924,7 +7922,7 @@
           "values_against": ["Własność prywatna", "Indywidualizm", "Rynek", "Hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -7934,7 +7932,7 @@
           "values_against": ["Własność prywatna", "Indywidualizm", "Rynek", "Hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -7944,8 +7942,8 @@
           "values_against": ["Anty-hierarchiczność", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Koalicja Obywatelska"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -7954,8 +7952,8 @@
           "values_against": ["Anty-hierarchiczność", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Koalicja Obywatelska"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
@@ -7982,8 +7980,8 @@
           "values_against": ["Planowanie", "Etatyzm", "Regulacja instytucjonalna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -7992,8 +7990,8 @@
           "values_against": ["Planowanie", "Etatyzm", "Regulacja instytucjonalna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8002,8 +8000,8 @@
           "values_against": ["Rynek", "Samoregulacja", "Własność prywatna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8012,8 +8010,8 @@
           "values_against": ["Rynek", "Samoregulacja", "Własność prywatna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8041,7 +8039,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8051,7 +8049,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8060,7 +8058,7 @@
           "values_against": ["Anarchia", "Rynek", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -8070,7 +8068,7 @@
           "values_against": ["Anarchia", "Rynek", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
         {
@@ -8098,8 +8096,8 @@
           "values_against": ["Planowanie", "Etatyzm", "Anty-hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8108,8 +8106,8 @@
           "values_against": ["Planowanie", "Etatyzm", "Anty-hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8118,8 +8116,8 @@
           "values_against": ["Rynek", "Własność prywatna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8128,8 +8126,8 @@
           "values_against": ["Rynek", "Własność prywatna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8156,8 +8154,8 @@
           "values_against": ["Kontrola granic", "Ograniczanie wymiany", "Partykularyzm narodowy"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Koalicja Obywatelska", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8166,8 +8164,8 @@
           "values_against": ["Kontrola granic", "Ograniczanie wymiany", "Partykularyzm narodowy"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Koalicja Obywatelska", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8176,8 +8174,8 @@
           "values_against": ["Swobodna wymiana", "Minimalizacja granic", "Kosmopolityzm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Koalicja Obywatelska", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8186,8 +8184,8 @@
           "values_against": ["Swobodna wymiana", "Minimalizacja granic", "Kosmopolityzm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Koalicja Obywatelska", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8214,8 +8212,8 @@
           "values_against": ["Ograniczanie wymiany", "Partykularyzm narodowy", "Regulacja instytucjonalna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Koalicja Obywatelska", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8224,8 +8222,8 @@
           "values_against": ["Ograniczanie wymiany", "Partykularyzm narodowy", "Regulacja instytucjonalna"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Koalicja Obywatelska", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8234,8 +8232,8 @@
           "values_against": ["Swobodna wymiana", "Kosmopolityzm", "Rynek", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Koalicja Obywatelska", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8244,8 +8242,8 @@
           "values_against": ["Swobodna wymiana", "Kosmopolityzm", "Rynek", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Koalicja Obywatelska", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8272,8 +8270,8 @@
           "values_against": ["Własność prywatna", "Indywidualizm", "Rynek", "Autonomia"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8282,8 +8280,8 @@
           "values_against": ["Własność prywatna", "Indywidualizm", "Rynek", "Autonomia"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8292,8 +8290,8 @@
           "values_against": ["Anty-hierarchiczność", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8302,8 +8300,8 @@
           "values_against": ["Anty-hierarchiczność", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8319,8 +8317,8 @@
     },
         {
       "id": 138,
-      "text": "Podziały klasowe należy zmniejszyć za pomocą *państwowej* interwencji ekonomicznej i społecznej  ",
-      "description": "XXXXXX",
+      "text": "Podziały klasowe należy zmniejszyć za pomocą *państwowej* interwencji ekonomicznej i społecznej. . Interwencja ta polega na wykorzystaniu systemu podatkowego oraz wydatków publicznych do redystrybucji bogactwa narodowego, co ma zapobiegać nadmiernemu rozwarstwieniu majątkowemu. Celem takich działań jest zapewnienie, by szanse życiowe obywatela nie były zdeterminowane wyłącznie przez jego pochodzenie czy klasę społeczną, w której się urodził. Państwo występuje tu jako regulator naprawiający usterki wolnego rynku, takie jak strukturalna bieda czy nierówność szans. Działania te mają na celu budowanie spójności społecznej poprzez podnoszenie standardu życia grup o niższych dochodach do poziomu uznawanego za godny i powszechny. Władza polityczna staje się tu nadrzędna wobec procesów gospodarczych, dążąc do ukształtowania struktury społeczeństwa zgodnie z zasadami sprawiedliwości.",
+      "description": "Podejście to zakłada, że państwo ma prawo i obowiązek aktywnie korygować rezultaty mechanizmów rynkowych w celu realizacji dobra wspólnego",
       "comment": "Placeholder",
       "answers": [
         {
@@ -8330,8 +8328,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8340,8 +8338,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8350,8 +8348,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8360,8 +8358,8 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8388,8 +8386,8 @@
           "values_against": ["Etatyzm", "Kolektywizm", "Anty-hierarchiczność", "Własność kolektywna", "Planowanie"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8398,8 +8396,8 @@
           "values_against": ["Etatyzm", "Kolektywizm", "Anty-hierarchiczność", "Własność kolektywna", "Planowanie"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8408,8 +8406,8 @@
           "values_against": ["Samoregulacja", "Anarchia"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8418,8 +8416,8 @@
           "values_against": ["Samoregulacja", "Anarchia"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8446,8 +8444,8 @@
           "values_against": ["Anty-hierarchiczność", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8456,8 +8454,8 @@
           "values_against": ["Anty-hierarchiczność", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8466,8 +8464,8 @@
           "values_against": ["Samoregulacja", "Indywidualizm", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8476,8 +8474,8 @@
           "values_against": ["Samoregulacja", "Indywidualizm", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8504,8 +8502,8 @@
           "values_against": ["Indywidualizm", "Rynek", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
+          "parties_for": ["Partia Zieloni", "Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8514,8 +8512,8 @@
           "values_against": ["Indywidualizm", "Rynek", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Partia Zieloni", "Partia Razem", "Polska Partia Socjalistyczna"],
+          "parties_against": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8524,8 +8522,8 @@
           "values_against": ["Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Partia Zieloni", "Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8534,8 +8532,8 @@
           "values_against": ["Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Partia Zieloni", "Partia Razem", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8562,8 +8560,8 @@
           "values_against": ["Anty-hierarchiczność", "Kolektywizm", "Etatyzm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8572,8 +8570,8 @@
           "values_against": ["Anty-hierarchiczność", "Kolektywizm", "Etatyzm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8582,8 +8580,8 @@
           "values_against": ["Rynek", "Indywidualizm", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8592,8 +8590,8 @@
           "values_against": ["Rynek", "Indywidualizm", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8620,8 +8618,8 @@
           "values_against": ["Anty-hierarchiczność", "Etatyzm", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8630,8 +8628,8 @@
           "values_against": ["Anty-hierarchiczność", "Etatyzm", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8640,8 +8638,8 @@
           "values_against": ["Rynek", "Indywidualizm", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8650,8 +8648,8 @@
           "values_against": ["Rynek", "Indywidualizm", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
         {
           "label": "Pomiń pytanie",
@@ -8678,8 +8676,8 @@
           "values_against": ["Własność prywatna", "Rynek", "Indywidualizm", "Hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
@@ -8688,8 +8686,8 @@
           "values_against": ["Własność prywatna", "Rynek", "Indywidualizm", "Hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość"]
+          "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -8698,8 +8696,8 @@
           "values_against": ["Kolektywizm", "Własność kolektywna", "Anty-hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
@@ -8708,8 +8706,8 @@
           "values_against": ["Kolektywizm", "Własność kolektywna", "Anty-hierarchiczność"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość"],
-          "parties_against": []
+          "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
           "label": "Pomiń pytanie",
