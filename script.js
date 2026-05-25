@@ -1,3 +1,4 @@
+// script.js – naprawiona funkcja zwijania list rankingowych
 // -------------------------------
 // GLOBALNE ZMIENNE I DANE
 // -------------------------------
@@ -349,7 +350,7 @@ function computeScores() {
 }
 
 // -------------------------------
-// FUNKCJE POMOCNICZE DO RANKINGÓW Z PRZYCISKIEM ZWIJANIA
+// FUNKCJE POMOCNICZE DO RANKINGÓW Z PRZYCISKIEM ZWIJANIA (NAPRAWIONE)
 // -------------------------------
 function createRankingSection(title, items, type) {
   const section = document.createElement('div');
@@ -384,27 +385,35 @@ function createRankingSection(title, items, type) {
     listContainer.appendChild(itemDiv);
   });
   
-  // Jeśli więcej niż 3, dodajemy przycisk i ukrywamy nadmiarowe
+  // Jeśli więcej niż 3, dodajemy przycisk i początkowo ukrywamy nadmiarowe
   if (itemsElements.length > 3) {
-    // Ukryj elementy od indexu 3
+    // Ukryj elementy od indeksu 3 (pierwsze 3 pozostają widoczne)
     for (let i = 3; i < itemsElements.length; i++) {
       itemsElements[i].classList.add('hidden-rank-item');
     }
+    
     const toggleBtn = document.createElement('button');
     toggleBtn.textContent = 'Pokaż więcej';
     toggleBtn.className = 'toggle-rank-btn';
-    let expanded = false;
+    let expanded = false; // false = zwinięty (widoczne tylko 3)
+    
     toggleBtn.addEventListener('click', () => {
-      const hiddenItems = listContainer.querySelectorAll('.hidden-rank-item');
       if (expanded) {
-        hiddenItems.forEach(el => el.classList.add('hidden-rank-item'));
+        // Zwiń – ukryj elementy od 3 do końca
+        for (let i = 3; i < itemsElements.length; i++) {
+          itemsElements[i].classList.add('hidden-rank-item');
+        }
         toggleBtn.textContent = 'Pokaż więcej';
       } else {
-        hiddenItems.forEach(el => el.classList.remove('hidden-rank-item'));
+        // Rozwiń – pokaż wszystkie
+        for (let i = 3; i < itemsElements.length; i++) {
+          itemsElements[i].classList.remove('hidden-rank-item');
+        }
         toggleBtn.textContent = 'Pokaż mniej';
       }
       expanded = !expanded;
     });
+    
     section.appendChild(listContainer);
     section.appendChild(toggleBtn);
   } else {
@@ -442,12 +451,12 @@ function computeAndDisplayResults() {
     valuesResults.appendChild(pairDiv);
   });
 
-  // Ranking ideologii z przyciskiem rozwijania
+  // Ranking ideologii z przyciskiem rozwijania (naprawiony)
   ideologiesResults.innerHTML = '';
   const ideoSection = createRankingSection('📊 Ranking ideologii (zgodność %)', ideologyResults, 'ideology');
   ideologiesResults.appendChild(ideoSection);
   
-  // Ranking partii z przyciskiem rozwijania
+  // Ranking partii z przyciskiem rozwijania (naprawiony)
   partiesResults.innerHTML = '';
   const partySection = createRankingSection('🗳️ Ranking partii (zgodność %)', partyResults, 'party');
   partiesResults.appendChild(partySection);
