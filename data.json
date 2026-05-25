@@ -22,12 +22,12 @@
       "left": "Anarchia",
       "right": "Etatyzm",
       "leftDef": "Anarchia – brak przymusowej władzy państwowej, samoorganizacja społeczeństwa.",
-      "rightDef": "Etatyzm – Przekonanie, że państwo jest najbardziej odpowiednim środkiem rozwiązywania problemów i gwarantowania rozwoju gospodarczego i społecznego."
+      "rightDef": "Etatyzm – silne państwo kontrolujące większość aspektów życia."
     },
     {
       "left": "Decentralizacja",
       "right": "Centralizacja",
-      "leftDef": "Decentralizacja – Rozszerzenie autonomii lokalnej w wyniku przekazania kompetencji i obowiązków przez organy centralne",
+      "leftDef": "Decentralizacja – rozproszenie władzy i decyzji na niższe szczeble.",
       "rightDef": "Centralizacja – koncentracja decyzji w centralnych organach państwa."
     },
     {
@@ -51,14 +51,14 @@
     {
       "left": "Własność kolektywna",
       "right": "Własność prywatna",
-      "leftDef": "Własność kolektywna – System, w którym bogactwo i środki produkcji należą do całej wspólnoty, a nie do jednostek",
-      "rightDef": "Własność prywatna – Prawo jednostki do posiadania i swobodnego dysponowania majątkiem."
+      "leftDef": "Własność kolektywna – środki produkcji należą do społeczeństwa lub wspólnot.",
+      "rightDef": "Własność prywatna – prawo jednostki do posiadania i swobodnego dysponowania majątkiem."
     },
     {
       "left": "Planowanie",
       "right": "Rynek",
       "leftDef": "Planowanie – centralne lub demokratyczne planowanie gospodarki.",
-      "rightDef": "Rynek – System wymiany handlowej między nabywcami a sprzedawcami kontrolowany przez bezosobowe czynniki ekonomiczne: „siły rynkowe"."
+      "rightDef": "Rynek – spontaniczny porządek oparty na wolnej wymianie i cenach."
     },
     {
       "left": "Regulacja instytucjonalna",
@@ -99,19 +99,19 @@
     {
       "left": "Rewolucja",
       "right": "Gradualizm",
-      "leftDef": "Rewolucja – Fundamentalna lub nieodwracalna zmiana często przybierająca postać krótkotrwałego, aczkolwiek dramatycznego, okresu wrzenia; planowa zmiana.",
-      "rightDef": "Gradualizm – Poparcie stopniowych, sukcesywnych zmian stojące w opozycji zarówno do rewolucji, jak i reakcji; reforma to działania bądź strategie, mające zaradzić danemu problemowi."
+      "leftDef": "Rewolucja – gwałtowna, radykalna zmiana całego systemu.",
+      "rightDef": "Gradualizm – stopniowe, ewolucyjne reformy."
     },
     {
       "left": "Progresywizm",
       "right": "Konserwatyzm",
-      "leftDef": "Progresywizm – Kroczenie naprzód oznaczające zazwyczaj poprawę sytuacji; przekonanie, że historię ludzkości charakteryzuje rozwój wiedzy oraz osiąganie coraz wyższych poziomów cywilizacyjnego rozwoju",
+      "leftDef": "Progresywizm – ciągła zmiana, postęp i odrzucenie tradycji jako przestarzałej.",
       "rightDef": "Konserwatyzm – zachowanie tradycji, stabilność i ostrożność wobec zmian."
     },
     {
       "left": "Pluralizm kulturowy",
       "right": "Homogenizacja",
-      "leftDef": "Pluralizm kulturowy – Akceptacja i poszanowanie dla moralnej oraz kulturowej różnorodności w ramach jednego społeczeństwa. Opiera się na przekonaniu, że różne grupy mają prawo do zachowania własnych stylów życia i wartości",
+      "leftDef": "Pluralizm kulturowy – akceptacja i ochrona różnorodności kulturowej.",
       "rightDef": "Homogenizacja – dążenie do kulturowej jednorodności narodu."
     },
     {
@@ -135,20 +135,20 @@
     {
       "left": "Wolność ekspresji",
       "right": "Cenzura",
-      "leftDef": "Wolność ekspresji – Swoboda jednostki, obejmująca utną swobodę opinii, myśli i sądu",
-      "rightDef": "Cenzura – Systemowe ograniczanie wolności słowa, treści i dostępu do informacji"
+      "leftDef": "Wolność ekspresji – pełna swoboda wypowiedzi bez ograniczeń.",
+      "rightDef": "Cenzura – kontrolowanie i ograniczanie treści uznanych za szkodliwe."
     },
     {
       "left": "Antropocentryzm",
       "right": "Ekocentryzm",
-      "leftDef": "Antropocentryzm – Przekonanie, że znaczenie ludzkich potrzeb i interesów jest nadrzędne pod względem moralnym i filozoficznym; przeciwieństwo ekocentryzmu",
-      "rightDef": "Ekocentryzm – Orientacja teoretyczna, która uznaje, że zachowanie równowagi ekologicznej jest ważniejsze niż realizacja celów ludzkich."
+      "leftDef": "Antropocentryzm – człowiek jako centrum i najwyższa wartość.",
+      "rightDef": "Ekocentryzm – przyroda i ekosystemy mają wartość samoistną."
     },
     {
       "left": "Postęp technologiczny",
       "right": "Prymitywizm",
       "leftDef": "Postęp technologiczny – wiara w zbawienny charakter rozwoju technologicznego.",
-      "rightDef": "Prymitywizm – Perspektywa, która odrzuca przemysł i nowoczesną technologię na rzecz powrotu do natury i życia w małych, samowystarczalnych wspólnotach"
+      "rightDef": "Prymitywizm – odrzucenie zaawansowanej technologii na rzecz prostszego życia."
     }
   ],
 
@@ -164,7 +164,7 @@
   "ideologies": [
 {
     "name": "Absolutyzm klasyczny",
-    "description": "test"
+    "description": "Zwolennicy absolutyzmu klasycznego wierzą, że fundamentem stabilnego państwa jest niepodzielna, absolutna suwerenność monarchy z mandatu Bożego. Władca jako namiestnik Boga jest legibus solutus, gwarantem porządku i bezpieczeństwa. Popierają scentralizowaną władzę z profesjonalną biurokracją i armią, merkantylizm, unifikację prawa oraz hierarchię i posłuszeństwo. Dobro wspólne utożsamiają z wielkością państwa. Przedstawiciele: Jean Bodin, Ludwik XIV, Bossuet, Thomas Hobbes."
   },
   {
     "name": "Absolutyzm oświecony",
@@ -1920,7 +1920,7 @@
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": ["Indywidualizm", "Autonomia", "Anarchia", "Prymat jednostki"],
-          "values_against": ["Kolektywizm", "Heteronomia", "Etatyzm", "Prymat kolektywu"],
+          "values_against": ["Indywidualizm", "Autonomia", "Anarchia", "Prymat jednostki"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -1930,7 +1930,7 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": ["Indywidualizm", "Autonomia", "Anarchia", "Prymat jednostki"],
-          "values_against": ["Kolektywizm", "Heteronomia", "Etatyzm", "Prymat kolektywu"],
+          "values_against": ["Indywidualizm", "Autonomia", "Anarchia", "Prymat jednostki"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -5943,7 +5943,7 @@
     },
         {
       "id": 97,
-      "text": "Cały budżet państwa powinien być finansowany wyłącznie z jednego podatku nakładanego na wartość samej ziemi",
+      "text": "DO ZMIANY: Cały budżet państwa powinien być finansowany wyłącznie z jednego podatku nakładanego na wartość samej ziemi (z wyłączeniem wartości budynków i ulepszeń), aby przechwycić tzw „niezasłużony przyrost” wartości gruntu dla dobra wspólnego",
       "description": "Finansowanie budżetu wyłącznie z podatku od wartości ziemi oznacza przeniesienie ciężaru z pracy i produkcji na samą lokalizację oraz zasoby naturalne. Wartość gruntu rośnie naturalnie wraz z rozwojem populacji i bliskością usług, co nazywa się „niezasłużonym przyrostem”, ponieważ właściciel zyskuje bez własnego wysiłku. Postulat ten zakłada, że skoro tę wartość stworzyło społeczeństwo, powinna ona nansować wspólne potrzeby. System ten ma zapobiegać spekulacji ziemią, wymuszając jej wykorzystanie zamiast bezczynnego czekania na wzrost cen. Państwo utrzymuje się z opłaty za korzystanie z ograniczonego zasobu, jakim jest przestrzeń, nie karząc obywateli za ich produktywność i przedsiębiorczość.",
       "comment": "Placeholder",
       "answers": [
