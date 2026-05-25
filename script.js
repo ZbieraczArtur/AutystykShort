@@ -379,7 +379,7 @@ function createRankingSection(title, items, type) {
     // Dodanie eventu popup (zachowanie oryginalne)
     itemDiv.addEventListener('click', () => {
       const desc = item.description || '';
-      showPopup(`${item.name}\n${desc}\n\nZgodnych odpowiedzi: ${item.agreements}\nSprzecznych: ${item.disagreements}\nPytania z stanowiskiem: ${item.involved}`);
+      showPopup(`${item.name}\n${desc}`);
     });
     itemsElements.push(itemDiv);
     listContainer.appendChild(itemDiv);
