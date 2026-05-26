@@ -348,13 +348,20 @@ function createRankingSection(title, items, type) {
   return section;
 }
 
+// POPRAWIENIE: link kompasu z klasą compass-link
 function generateShareCode(pairResults) {
   const resultsString = pairResults.map(pair => `${pair.left}(${Math.round(pair.leftPercent)}) - ${pair.right}(${Math.round(pair.rightPercent)})`).join('; ');
   let base64 = '';
   try { base64 = btoa(unescape(encodeURIComponent(resultsString))); } catch(e) { console.error(e); base64 = ''; }
   const container = document.createElement('div');
   container.className = 'share-section';
-  container.innerHTML = `<h3>🔗 Sprawdź położenie na kompasie</h3><p>Skopiuj poniższy kod i wklej go na stronie z kompasem, by poznać swoje położenie:</p><textarea readonly class="share-code" rows="3">${base64}</textarea><button class="copy-btn">📋 Kopiuj kod</button><p class="share-link"><a href="https://zbieraczartur.github.io/NeoAutystyk-Kompas/" target="_blank" rel="noopener noreferrer">🧭 NeoAutystyk Kompas</a></p>`;
+  container.innerHTML = `<h3>🔗 Sprawdź położenie na kompasie</h3>
+    <p>Skopiuj poniższy kod i wklej go na stronie z kompasem, by poznać swoje położenie:</p>
+    <textarea readonly class="share-code" rows="3">${base64}</textarea>
+    <button class="copy-btn">📋 Kopiuj kod</button>
+    <p class="share-link">
+      <a href="https://zbieraczartur.github.io/NeoAutystyk-Kompas/" target="_blank" rel="noopener noreferrer" class="compass-link">🧭 NeoAutystyk Kompas</a>
+    </p>`;
   const copyBtn = container.querySelector('.copy-btn');
   const textarea = container.querySelector('.share-code');
   copyBtn.addEventListener('click', () => {
@@ -447,7 +454,6 @@ function syncUserAnswersFromDOM() {
     }
   });
   
-  // POPRAWA: użycie lokalnej zmiennej userAnswers zamiast window.userAnswers
   userAnswers = newAnswers;
   console.log('Przywrócono odpowiedzi użytkownika z GUI. Liczba odpowiedzi:', userAnswers.length);
 }
@@ -495,9 +501,7 @@ function simulateAnswers(selectedName) {
     });
   }
   
-  // POPRAWA: nadpisujemy globalną zmienną userAnswers (bez window.)
   userAnswers = simulatedAnswers;
-  // Odświeżamy wyniki na podstawie nowych odpowiedzi
   computeAndDisplayResults();
   
   const { pairResults, ideologyResults, partyResults } = computeScores();
@@ -531,7 +535,6 @@ function setupSimulation() {
   
   simulationSelect.innerHTML = '';
   
-  // Grupa: Partie
   if (config.parties.length) {
     const partiesGroup = document.createElement('optgroup');
     partiesGroup.label = '🇵🇱 Partie polityczne';
@@ -544,7 +547,6 @@ function setupSimulation() {
     simulationSelect.appendChild(partiesGroup);
   }
   
-  // Grupa: Ideologie
   if (config.ideologies.length) {
     const ideologiesGroup = document.createElement('optgroup');
     ideologiesGroup.label = '💡 Ideologie';
