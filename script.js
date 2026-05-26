@@ -65,8 +65,12 @@ const valueColors = {
   "Prymitywizm": "#14832A", 
   "Desakralizacja autorytetu": "#73B0BE", 
   "Sakralizacja autorytetu": "#2F3944",
-  "Różnorodność norm": "#73B0BE",
-  "Uniformizacja norm": "#2F3944"
+  "Różnorodność norm": "#2F3944",
+  "Uniformizacja norm": "#73B0BE",
+  "Kontraktualizm": "#FECB1D",
+  "Organicyzm": "#613B28",
+  "Dobrowolność wspólnoty": "#FECB1D",
+  "Obowiązkowość wspólnoty": "#613B28"
 };
 
 function showPopup(message) {
