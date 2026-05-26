@@ -1024,7 +1024,7 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": ["Heteronomia", "Absolutyzm władzy"],
-          "values_against": ["Autonomia", "Indywidualizm", "Ograniczenie władzy", "Dobrowolność wspólnoty"]
+          "values_against": ["Autonomia", "Indywidualizm", "Ograniczenie władzy", "Dobrowolność wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Nowa Nadzieja"],
