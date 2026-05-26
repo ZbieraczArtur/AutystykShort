@@ -14,7 +14,7 @@ const closePopupBtn = document.getElementById('closePopup');
 
 const valueColors = {
   "Autonomia": "#FECB1D", "Heteronomia": "#613B28", "Kolektywizm": "#613B28", "Indywidualizm": "#FECB1D",
-  "Anty-hierarchiczność": "#FECB1D", "Hierarchiczność": "#613B28", "Anarchia": "#2F3944", "Etatyzm": "#73B0BE",
+  "Anty-hierarchiczność": "#FECB1D", "Hierarchiczność": "#613B28", "Samoorganizacja": "#2F3944", "Etatyzm": "#73B0BE",
   "Decentralizacja": "#2F3944", "Centralizacja": "#73B0BE", "Ograniczenie władzy": "#2F3944", "Absolutyzm władzy": "#73B0BE",
   "Demokracja": "#2F3944", "Anty-demokracja": "#73B0BE", "Autokracja": "#2F3944", "Anty-autokracja": "#73B0BE",
   "Własność kolektywna": "#E44341", "Własność prywatna": "#448A3A", "Planowanie": "#E44341", "Rynek": "#448A3A",
