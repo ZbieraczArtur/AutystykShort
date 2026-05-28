@@ -11133,7 +11133,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": ["Tradycjonalizm", "Hierarchiczność", "Heteronomia", "Uniformizacja norm",
+          "values_for": ["Tradycjonalizm", "Hierarchiczność", "Heteronomia", "Uniformizacja norm"],
           "values_against": ["Progresywizm", "Egalitaryzm", "Autonomia", "Różnorodność norm"],
           "ideologies_for": [],
           "ideologies_against": [],
