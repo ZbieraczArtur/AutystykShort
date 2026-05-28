@@ -1037,7 +1037,7 @@
     },
         {
       "id": 12,
-      "text": "Władza publiczna powinna ograniczać działania jednostek, które naruszają ich własną godność, nawet jeśli są one dobrowolne,",
+      "text": "Władza publiczna powinna ograniczać działania jednostek, które naruszają ich własną godność, nawet jeśli są one dobrowolne",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -6784,7 +6784,7 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
-          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Partia Razem", "Nowa Lewica", "Polska Partia Socjalistyczna"]
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Nowa Lewica", "Polska Partia Socjalistyczna"]
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -6793,7 +6793,7 @@
           "values_against": ["Rynek", "Swobodna wymiana"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Partia Razem", "Nowa Lewica", "Polska Partia Socjalistyczna"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Nowa Lewica", "Polska Partia Socjalistyczna"],
           "parties_against": []
         },
         {
@@ -6803,7 +6803,7 @@
           "values_against": ["Rynek", "Swobodna wymiana"],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Partia Razem", "Nowa Lewica", "Polska Partia Socjalistyczna"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Nowa Lewica", "Polska Partia Socjalistyczna"],
           "parties_against": []
         },
         {
