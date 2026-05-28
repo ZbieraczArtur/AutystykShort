@@ -1807,7 +1807,7 @@
           "values_for": ["Indywidualizm", "Egalitaryzm", "Autonomia", "Kontraktualizm"],
           "values_against": ["Kolektywizm", "Organicyzm"],
           "ideologies_for": [],
-          "ideologies_against": ["Koalicja Obywatelska"],
+          "parties_for": ["Koalicja Obywatelska"],
           "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Nowa Nadzieja", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
         {
