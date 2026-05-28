@@ -11598,7 +11598,7 @@
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": ["Neutralność religijna", "Prywatność", "Autonomia"],
-          "values_against": ["Instytucjonalna religia", "Heteronomia"], "Uniformizacja norm",
+          "values_against": ["Instytucjonalna religia", "Heteronomia", "Uniformizacja norm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
