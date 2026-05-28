@@ -12756,7 +12756,7 @@
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": ["Kontraktualizm", "Dobrowolność wspólnoty", "Indywidualizm"],
-          "values_against": ["Partykularyzm narodowy", "Tradycjonalizm", "Etatyzm", "Heteronomia", "Rewolucjonizm", "Sakralizacja autorytetu", "Organicyzm", "Obowiązkowość wspólnoty", "Kolektywizm"]
+          "values_against": ["Partykularyzm narodowy", "Tradycjonalizm", "Etatyzm", "Heteronomia", "Rewolucjonizm", "Sakralizacja autorytetu", "Organicyzm", "Obowiązkowość wspólnoty", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
@@ -12766,7 +12766,7 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": ["Kontraktualizm", "Dobrowolność wspólnoty", "Indywidualizm"],
-          "values_against": ["Partykularyzm narodowy", "Tradycjonalizm", "Etatyzm", "Heteronomia", "Rewolucjonizm", "Sakralizacja autorytetu", "Organicyzm", "Obowiązkowość wspólnoty", "Kolektywizm"]
+          "values_against": ["Partykularyzm narodowy", "Tradycjonalizm", "Etatyzm", "Heteronomia", "Rewolucjonizm", "Sakralizacja autorytetu", "Organicyzm", "Obowiązkowość wspólnoty", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
