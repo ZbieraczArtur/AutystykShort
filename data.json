@@ -9891,7 +9891,7 @@
     },
         {
       "id": 165,
-      "text": "Rząd *nie* powinien ograniczać prawa jednostek do posiadania i noszenia broni",
+      "text": "Broń palna powinna być dostępna dla ogółu społeczeństwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -13542,7 +13542,7 @@
       "id": 228,
       "text": "Państwo powinno ograniczać imigrację w *celu zachowania jednolitości kulturowej*",
       "description": "XXXXXX",
-      "comment": "Pomiń, jeśli popierasz ograniczenie imigracji z innych powodów",
+      "comment": "Pomiń, jeśli popierasz ograniczenie imigracji, ale z innych powodów",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -15684,7 +15684,7 @@
     },
     {
       "id": 265,
-      "text": "XXXXXXXXXX",
+      "text": "Wolność jednostki nie powinna mieć absolutnie żadnych granic",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -15742,7 +15742,7 @@
     },
     {
       "id": 266,
-      "text": "XXXXXXXXXX",
+      "text": "Różnorodność stylów życia wymaga aktywnego wsparcia instytucjonalnego",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -15800,7 +15800,7 @@
     },
     {
       "id": 267,
-      "text": "XXXXXXXXXX",
+      "text": "Interwencja w celu zwiększenia możliwości jednostek i wyrównywania szans jest uzasadniona",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -15858,7 +15858,7 @@
     },
     {
       "id": 268,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo lub społeczeństwo powinny umożliwiać ludziom dążenie do własnego rozumienia dobrego życia, bez promowania jednej wizji dobra",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -15916,7 +15916,7 @@
     },
     {
       "id": 269,
-      "text": "XXXXXXXXXX",
+      "text": "Władza powinna kształtować zachowania obywateli za pomocą środków pośrednich (zachęty podatkowe, edukacja publiczna, kampanie społeczne)",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -15974,7 +15974,7 @@
     },
     {
       "id": 270,
-      "text": "XXXXXXXXXX",
+      "text": "Porządek społeczny nie wymaga wspólnych wartości religijnych ani odwołania do tradycji",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16032,8 +16032,8 @@
     },
     {
       "id": 271,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
+      "text": "Pojęcia takie jak 'ludzkość', 'moralność', 'sprawiedliwość' czy 'prawo' nie mają rzeczywistego bytu, a są wytworami wyobraźni, którym ludzie zbyt często podporządkowują swoje działania.",
+      "description": "Teza ta zakłada, że pojęcia takie jak ludzkość, moralność czy prawo to jedynie abstrakcyjne idee, które nie istnieją w świecie fizycznym jako konkretne przedmioty. Zamiast kierować się bezpośrednim doświadczeniem, ludzie często podporządkowują swe działania tym wyobrażonym ideałom, które ograniczają ich niezależność. W tym ujęciu sprawiedliwość czy prawo nie stanowią obiektywnych bytów, lecz są pojęciowymi narzędziami służącymi do narzucania zewnętrznych norm postępowania. Problem pojawia się w momencie, gdy owe myślowe konstrukty zaczynają panować nad człowiekiem, zamiast być przez niego traktowane jako zwykła własność. Ostatecznie uświęcanie tych pojęć prowadzi do utraty autonomii na rzecz nierzeczywistych wyobrażeń, które biorą górę nad konkretną jednostką.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -16090,7 +16090,7 @@
     },
     {
       "id": 272,
-      "text": "XXXXXXXXXX",
+      "text": "Społeczeństwo powinno gloryfikować potęgę i siłę jako najwyższe wartości",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16148,7 +16148,7 @@
     },
     {
       "id": 273,
-      "text": "XXXXXXXXXX",
+      "text": "Wszystkie istoty ludzkie niezależnie od rasy, wyznania, pochodzenia społecznego i narodowości rodzą się równe w tym sensie, że każda posiada taką samą wartość moralną",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16206,7 +16206,7 @@
     },
     {
       "id": 274,
-      "text": "XXXXXXXXXX",
+      "text": "Moralnym obowiązkiem jednostki jest dążenie do własnego szczęścia, a nie poświęcanie się dla innych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16264,7 +16264,7 @@
     },
     {
       "id": 275,
-      "text": "XXXXXXXXXX",
+      "text": "Autorytet instytucji takich jak rodzina, kościół czy wspólnota lokalna jest koniecznym warunkiem wolnego społeczeństwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16322,7 +16322,7 @@
     },
     {
       "id": 276,
-      "text": "XXXXXXXXXX",
+      "text": "Działanie zbiorowe ma wyższą wartość moralną niż działanie indywidualne",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16380,7 +16380,7 @@
     },
     {
       "id": 277,
-      "text": "XXXXXXXXXX",
+      "text": "Solidarność społeczna jest ważniejsza niż indywidualna wolność",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16438,7 +16438,7 @@
     },
     {
       "id": 278,
-      "text": "XXXXXXXXXX",
+      "text": "Właściwe działanie jednostki lub państwa to takie, które przynosi największe całkowite korzyści po dodaniu zysków i strat wszystkich osób, których ono dotyczy",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16496,7 +16496,7 @@
     },
     {
       "id": 279,
-      "text": "XXXXXXXXXX",
+      "text": "Walka jest naturalnym i nieuniknionym elementem życia społecznego, jak i międzynarodowego",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16554,7 +16554,7 @@
 },
     {
       "id": 280,
-      "text": "XXXXXXXXXX",
+      "text": "Każdy akt sprzeciwu wobec monarchy jest grzechem przeciwko Bogu",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16612,7 +16612,7 @@
     },
     {
       "id": 281,
-      "text": "XXXXXXXXXX",
+      "text": "Kościół lub instytucja religijna powinna sankcjonować władzę polityczną, nadając jej moralną legitymizację",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16670,7 +16670,7 @@
     },
     {
       "id": 282,
-      "text": "XXXXXXXXXX",
+      "text": "Kościół lub instytucja religijna powinna sankcjonować władzę polityczną, nadając jej moralną legitymizację",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16728,7 +16728,7 @@
     },
     {
       "id": 283,
-      "text": "XXXXXXXXXX",
+      "text": "W sytuacjach kryzysowych decyzje powinny być podejmowane przez niewielką grupę ekspertów, nie przez mechanizmy rozproszone",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16786,7 +16786,7 @@
     },
     {
       "id": 284,
-      "text": "XXXXXXXXXX",
+      "text": "Rządzący mają obowiązek reformować społeczeństwo nawet wbrew aktualnym życzeniom obywateli, jeśli służy to ich długoterminowemu dobru",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16844,7 +16844,7 @@
     },
     {
       "id": 285,
-      "text": "XXXXXXXXXX",
+      "text": "Każdy człowiek powinien mieć prawo do rezygnacji z korzystania z usług państwowych, w tym ochrony policji",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16902,7 +16902,7 @@
     },
       {
       "id": 286,
-      "text": "XXXXXXXXXX",
+      "text": "Angażowanie się państwa w cokolwiek ponad utrzymanie porządku wewnętrznego, egzekwowanie umów i ochrony społeczeństwa przed atakiem z zewnątrzczy jest nieuzasadnione",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -16960,7 +16960,7 @@
     },
     {
       "id": 287,
-      "text": "XXXXXXXXXX",
+      "text": "Demokracja nie powinna ograniczać się jedynie do głosowania, ale obejmować aktywny udział obywateli w codziennym zarządzaniu sprawami publicznymi",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17018,7 +17018,7 @@
     },
     {
       "id": 288,
-      "text": "XXXXXXXXXX",
+      "text": "Demokracja powinna opierać się na lokalnych zgromadzeniach i radach, a nie na scentralizowanych instytucjach państwowych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17076,7 +17076,7 @@
     },
     {
       "id": 289,
-      "text": "XXXXXXXXXX",
+      "text": "Decyzje większości powinny podlegać ograniczeniom chroniącym prawa mniejszości",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17134,7 +17134,7 @@
     },
     {
       "id": 290,
-      "text": "XXXXXXXXXX",
+      "text": "Demokracja jest jedynie narzędziem, a nie wartością nadrzędną",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17192,7 +17192,7 @@
     },
     {
       "id": 291,
-      "text": "XXXXXXXXXX",
+      "text": "Centralna kodyfikacja prawa przez państwo jest koniecznym warunkiem sprawiedliwości prawnej",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17250,7 +17250,7 @@
     },
     {
       "id": 292,
-      "text": "XXXXXXXXXX",
+      "text": "Jednostki regionalne powinny móc samodzielnie ustanawiać prawo w sprawach, które dotyczą wyłącznie ich mieszkańców",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17308,7 +17308,7 @@
     },
     {
       "id": 293,
-      "text": "XXXXXXXXXX",
+      "text": "Kompetencje w zakresie ustalania podatków i ceł powinny przede wszystkim należeć do władz regionalnych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17366,7 +17366,7 @@
 },
     {
       "id": 294,
-      "text": "XXXXXXXXXX",
+      "text": "Każda społeczność powinna mieć prawo do samodzielnego ustalania zasad, według których chce żyć",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17424,7 +17424,7 @@
     },
     {
       "id": 295,
-      "text": "XXXXXXXXXX",
+      "text": "Władza sądownicza powinna należeć do władcy lub jego mianowanych przedstawicieli, nie do niezależnych trybunałów",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17482,7 +17482,7 @@
     },
     {
       "id": 296,
-      "text": "XXXXXXXXXX",
+      "text": "Najwyższy urząd w strukturze władzy powinien być sprawowany dożywotnio",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17540,7 +17540,7 @@
     },
     {
       "id": 297,
-      "text": "XXXXXXXXXX",
+      "text": "Władza wykonawcza powinna posiadać szerokie uprawnienia do samodzielnych decyzji, bez konieczności uzyskiwania zgody innych organów",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17598,7 +17598,7 @@
     },
     {
       "id": 298,
-      "text": "XXXXXXXXXX",
+      "text": "Związki zawodowe i organizacje pracodawców powinny współuczestniczyć w kształtowaniu polityki społeczno-gospodarczej",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17656,7 +17656,7 @@
     },
     {
       "id": 299,
-      "text": "XXXXXXXXXX",
+      "text": "W wybranych sektorach gospodarki państwo może zawierać długoterminowe porozumienia z dominującymi przedsiębiorstwami w celu koordynacji ich działań",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17714,7 +17714,7 @@
     },
         {
       "id": 300,
-      "text": "XXXXXXXXXX",
+      "text": "Nowe idee i reformy powinny być wdrażane tylko wtedy, gdy są zgodne z istniejącymi tradycjami",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17772,7 +17772,7 @@
     },
     {
       "id": 301,
-      "text": "XXXXXXXXXX",
+      "text": "Grupy zamieszkujące określone terytorium powinny mieć prawo do secesji od istniejącego państwa, jeśli chcą tego ich mieszkańcy",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17830,7 +17830,7 @@
     },
     {
       "id": 302,
-      "text": "XXXXXXXXXX",
+      "text": "System rządów powinien dopuszczać konkurencję między odmiennymi programami politycznymi i ideami",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17888,7 +17888,7 @@
     },
     {
       "id": 303,
-      "text": "XXXXXXXXXX",
+      "text": "Dziedziczenie majątku jest moralnym prawem jednostki i sprawiedliwą formą przekazywania własności",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -17946,7 +17946,7 @@
     },
     {
       "id": 304,
-      "text": "XXXXXXXXXX",
+      "text": "Sytuacja ekonomiczna jednostki (np głód, ubóstwo) nigdy nie może stanowić moralnego usprawiedliwienia dla przywłaszczenia cudzej własności",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18004,7 +18004,7 @@
     },
     {
       "id": 305,
-      "text": "XXXXXXXXXX",
+      "text": "Posiadanie czegoś na własność wiąże się z obowiązkami wobec wspólnoty, a nie tylko prawami właściciela",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18062,7 +18062,7 @@
     },
     {
       "id": 306,
-      "text": "XXXXXXXXXX",
+      "text": "Własność prywatna obywateli powinna być chroniona przez państwo, lecz ostateczna decyzja o jej losie należy do suwerena",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18120,7 +18120,7 @@
     },
     {
       "id": 307,
-      "text": "XXXXXXXXXX",
+      "text": "Prywatna własność posesji i nieruchomości powinna zostać zlikwidowana na rzecz wspólnej własności ludu",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18178,7 +18178,7 @@
     },
     {
       "id": 308,
-      "text": "XXXXXXXXXX",
+      "text": "Ziemia oraz wszystkie narzędzia pracy powinny stać się wspólną własnością, dostępną dla każdego bez wyjątku",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18236,7 +18236,7 @@
     },
     {
       "id": 309,
-      "text": "XXXXXXXXXX",
+      "text": "Należy całkowicie odrzucić system rynkowy",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18294,7 +18294,7 @@
     },
     {
       "id": 310,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo nie powinno wspierać finansowo nierentownych sektorów gospodarki  ",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18352,7 +18352,7 @@
     },
     {
       "id": 311,
-      "text": "XXXXXXXXXX",
+      "text": "Usługi publiczne (np edukacja, transport, poczta) powinny być otwarte na konkurencję ze strony podmiotów prywatnych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18410,7 +18410,7 @@
     },
     {
       "id": 312,
-      "text": "XXXXXXXXXX",
+      "text": "Służba w instytucjach publicznych powinna wiązać się z większą stabilnością zatrudnienia i świadczeniami niż praca w sektorze prywatnym",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18468,7 +18468,7 @@
     },
     {
       "id": 313,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno finansować inwestycje w sferach, w których prywatne podmioty nie mają motywacji do działania (np infrastruktura, nauka, kultura)",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18526,7 +18526,7 @@
     },
     {
       "id": 314,
-      "text": "XXXXXXXXXX",
+      "text": "W uchylaniu się od płacenia podatków nie ma niczego moralnie złego",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18584,7 +18584,7 @@
     },
     {
       "id": 315,
-      "text": "XXXXXXXXXX",
+      "text": "Globalizacja powinna być regulowana w taki sposób, aby chronić standardy pracy i systemy socjalne państw rozwiniętych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18642,7 +18642,7 @@
     },
     {
       "id": 316,
-      "text": "XXXXXXXXXX",
+      "text": "Rząd powinien koncentrować się na produkcji dóbr przemysłowych z lokalnych surowców, nawet jeśli alternatywy z zagranicy mogą być tańsze lub bardziej dostępne",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18700,7 +18700,7 @@
     },
     {
       "id": 317,
-      "text": "XXXXXXXXXX",
+      "text": "Gospodarka powinna być zorganizowana przede wszystkim wokół zaspokajania potrzeb wewnętrznych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18758,7 +18758,7 @@
     },
     {
       "id": 318,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo musi zapewniać minimum socjalne poprzez system transferów pieniężnych (np zasiłki, negatywny podatek dochodowy)",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18816,7 +18816,7 @@
     },
     {
       "id": 319,
-      "text": "XXXXXXXXXX",
+      "text": "System świadczeń nie powinien umożliwiać utrzymania poziomu standardu życia bez uczestnictwa w produkcji dóbr lub usług",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18874,7 +18874,7 @@
     },
     {
       "id": 320,
-      "text": "XXXXXXXXXX",
+      "text": "Zabezpieczenie przed ryzykami życiowymi jest obowiązkiem jednostki, a nie państwa czy społeczeństwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18932,7 +18932,7 @@
     },
     {
       "id": 321,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno zapewniać powszechne ubezpieczenia społeczne (emerytura, zdrowie) w taki sposób, by rynek prywatny nie mógł oferować lepszych alternatyw dla zamożnych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -18990,7 +18990,7 @@
     },
     {
       "id": 322,
-      "text": "XXXXXXXXXX",
+      "text": "Społeczeństwo powinno dążyć do ograniczenia wyspecjalizowanego podziału pracy",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19048,7 +19048,7 @@
     },
     {
       "id": 323,
-      "text": "XXXXXXXXXX",
+      "text": "Przepisy dotyczące płacy minimalnej powinny zostać zniesione",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19106,7 +19106,7 @@
     },
     {
       "id": 324,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno aktywnie dążyć do pełnego zatrudnienia, nawet jeśli wymaga to bezpośredniego kreowania miejsc pracy",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19164,7 +19164,7 @@
     },
     {
       "id": 325,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno ustalać minimalne standardy warunków pracy",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19222,7 +19222,7 @@
     },
     {
       "id": 326,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno dążyć do maksymalizacji standardów pracy i praw pracowniczych, wykraczające poza minimalne zabezpieczenie pracownika",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19280,7 +19280,7 @@
     },
     {
       "id": 327,
-      "text": "XXXXXXXXXX",
+      "text": "Pracownicy powinni mieć instytucjonalnie zagwarantowany wpływ na decyzje produkcyjne w każdym przedsiębiorstwie, nawet jeśli wymagałoby to ograniczenia wyłącznej decyzyjności właściciela",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19338,7 +19338,7 @@
     },
     {
       "id": 328,
-      "text": "XXXXXXXXXX",
+      "text": "Ruch związkowy powinien być niezależny od wpływów rządu",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19396,7 +19396,7 @@
     },
     {
       "id": 329,
-      "text": "XXXXXXXXXX",
+      "text": "Organizacje pracownicze powinny być kontrolowane przez państwo, aby zapewnić jedność społeczną",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19454,7 +19454,7 @@
     },
     {
       "id": 330,
-      "text": "XXXXXXXXXX",
+      "text": "Związki zawodowe powinny stanowić zaczątek nowej organizacji społeczeństwa, w której robotnicy sami zarządzają produkcją",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19512,7 +19512,7 @@
     },
     {
       "id": 331,
-      "text": "XXXXXXXXXX",
+      "text": "Rolnictwo powinno zajmować uprzywilejowaną pozycję w polityce gospodarczej państwa względem przemysłu i usług",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19570,7 +19570,7 @@
     },
     {
       "id": 332,
-      "text": "XXXXXXXXXX",
+      "text": "Samodzielne, rodzinne gospodarstwo rolne jest lepszą formą organizacji produkcji niż wielka farma przemysłowa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19628,7 +19628,7 @@
     },
     {
       "id": 333,
-      "text": "XXXXXXXXXX",
+      "text": "Stabilność dostaw żywności jest zbyt ważna, by można ją było pozostawić wyłącznie mechanizmom rynkowym",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19686,7 +19686,7 @@
     },
     {
       "id": 334,
-      "text": "XXXXXXXXXX",
+      "text": "Polityka gospodarcza powinna chronić małe i średnie gospodarstwa rolne przed presją ze strony wielkich korporacji agrobiznesu",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19744,7 +19744,7 @@
     },
     {
       "id": 335,
-      "text": "XXXXXXXXXX",
+      "text": "Rolnicy i chłopi są ważniejszym fundamentem narodu niż klasa robotnicza czy inteligencja miejska",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19802,7 +19802,7 @@
     },
     {
       "id": 336,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno mieć prawo usuwania treści, które uzna za fałszywe lub wprowadzające w błąd",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19860,7 +19860,7 @@
     },
     {
       "id": 337,
-      "text": "XXXXXXXXXX",
+      "text": "Zasady polityczne powinny obowiązywać niezależnie od oczekiwań większości w danym czasie",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19918,7 +19918,7 @@
     },
     {
       "id": 338,
-      "text": "XXXXXXXXXX",
+      "text": "Opór wobec prawnie ustanowionej władzy jest nieuprawniony, nawet gdy władza działa niesprawiedliwie",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -19976,8 +19976,8 @@
     },
     {
       "id": 339,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
+      "text": "Prawo obowiązuje jednostkę tylko o tyle, o ile nie jest w stanie go naruszyć bez konsekwencji",
+      "description": "Teza ta zakłada, że prawo nie jest obiektywnym zobowiązaniem moralnym, lecz przejawem siły. Z tej perspektywy obowiązywalność norm prawnych zależy od realnej możliwości ich egzekwowania oraz braku zdolności jednostki do ich naruszenia bez kary. Jeśli ktoś posiada wystarczającą moc, by działać wbrew przepisom i uniknąć sankcji, prawo traci dla niego swą praktyczną moc wiążącą. System prawny jest tu postrzegany jako zbiór zewnętrznych barier, które respektuje się jedynie z konieczności lub lęku przed odwetem, a nie z wewnętrznego przekonania. System prawny jest tu postrzegany jako zbiór zewnętrznych barier, które respektuje się jedynie z konieczności lub lęku przed odwetem, a nie z wewnętrznego przekonania. Posłuszeństwo staje się kalkulacją ryzyka, gdzie jedynym realnym ograniczeniem działania jest brak siły do zmierzenia się z konsekwencjami złamania zasad.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -20034,7 +20034,7 @@
     },
     {
       "id": 340,
-      "text": "XXXXXXXXXX",
+      "text": "W sytuacji zagrożenia państwa organ władzy wykonawczej powinien mieć prawo czasowo zawiesić obowiązywanie norm konstytucyjnych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20092,7 +20092,7 @@
     },
     {
       "id": 341,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno przywrócić dziedziczne tytuły szlacheckie jako element porządku społecznego",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20150,7 +20150,7 @@
     },
     {
       "id": 342,
-      "text": "XXXXXXXXXX",
+      "text": "Społeczeństwo powinno mieć formalnie określoną strukturę hierarchiczną z różnymi zakresami uprawnień dla poszczególnych warstw",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20208,7 +20208,7 @@
     },
     {
       "id": 343,
-      "text": "XXXXXXXXXX",
+      "text": "Długotrwałe funkcjonowanie instytucji jest wystarczającym powodem, by je utrzymywać",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20266,7 +20266,7 @@
     },
     {
       "id": 344,
-      "text": "XXXXXXXXXX",
+      "text": "Zmiany kulturowe i obyczajowe mogą zasługiwać na akceptację nawet wtedy, gdy stoją w sprzeczności z tradycyjnymi normami",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20324,7 +20324,7 @@
     },
     {
       "id": 345,
-      "text": "XXXXXXXXXX",
+      "text": "Wolność bez zakorzenienia w tradycyjnych wartościach prowadzi do chaosu",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20382,7 +20382,7 @@
     },
     {
       "id": 346,
-      "text": "XXXXXXXXXX",
+      "text": "Urbanizacja i rozrost miast są czymś negatywnym",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20440,7 +20440,7 @@
     },
     {
       "id": 347,
-      "text": "XXXXXXXXXX",
+      "text": "Małżeństwo jest konstrukcją społeczną, którą należy stopniowo wycofywać",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20498,7 +20498,7 @@
     },
     {
       "id": 348,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno redystrybuować dochód w celu wsparcia osób wychowujących dzieci",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20556,7 +20556,7 @@
     },
     {
       "id": 349,
-      "text": "XXXXXXXXXX",
+      "text": "Rodzina powinna być uprzywilejowanym podmiotem polityki społecznej państwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20614,9 +20614,9 @@
 },
     {
       "id": 350,
-      "text": "XXXXXXXXXX",
+      "text": "Równość między kobietami a mężczyznami wymaga zniesienia kapitalizmu jako systemu ekonomicznego",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń, jeśli uważasz, że nie należy dążyć do równości płci",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -20672,9 +20672,9 @@
     },
     {
       "id": 351,
-      "text": "XXXXXXXXXX",
+      "text": "Dla osiągnięcia pełnej równości płci potrzebne są głębokie, szybkie zmiany struktury społecznej, nawet jeśli oznacza to silną ingerencję instytucji publicznych",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń, jeśli uważasz, że nie należy dążyć do równości płci",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -20730,7 +20730,7 @@
     },
     {
       "id": 352,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno promować tradycyjny podział ról, zachęcając kobiety do wypełniania obowiązków macierzyńskich poprzez odpowiednie świadczenia rodzinne",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20788,7 +20788,7 @@
     },
     {
       "id": 353,
-      "text": "XXXXXXXXXX",
+      "text": "Prawo nie powinno różnicować związków intymnych ze względu na płeć lub liczbę partnerów",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20846,7 +20846,7 @@
     },
     {
       "id": 354,
-      "text": "XXXXXXXXXX",
+      "text": "Społeczeństwo powinno traktować związki homoseksualne lub poliamoryczne tak samo jak monogamiczne heteroseksualne",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20904,7 +20904,7 @@
     },
     {
       "id": 355,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno zwalczać instytucje religijne",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -20962,7 +20962,7 @@
     },
     {
       "id": 356,
-      "text": "XXXXXXXXXX",
+      "text": "Pluralizm moralny i wolność wyboru stylu życia stanowią zagrożenie dla spójności społeczeństwa, prowadząc do zaniku jednoczących norm etycznych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21020,7 +21020,7 @@
     },
     {
       "id": 357,
-      "text": "XXXXXXXXXX",
+      "text": "Prawo powinno być zgodne z wartościami moralnymi uznawanymi przez większość społeczeństwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21078,7 +21078,7 @@
     },
     {
       "id": 358,
-      "text": "XXXXXXXXXX",
+      "text": "Interwencja państwa jest uzasadniona, gdy mechanizmy rynkowe prowadzą do degradacji społecznej lub moralnej",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21136,7 +21136,7 @@
     },
     {
       "id": 359,
-      "text": "XXXXXXXXXX",
+      "text": "Jednostki mają społeczną odpowiedzialność za troskę o innych, zwłaszcza tych, którzy nie mogą sami o siebie zadbać",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21194,7 +21194,7 @@
     },
     {
       "id": 360,
-      "text": "XXXXXXXXXX",
+      "text": "Każdy człowiek ma wobec społeczeństwa pewien rodzaj długu, wynikający z samego faktu życia we wspólnocie",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21252,7 +21252,7 @@
     },
     {
       "id": 361,
-      "text": "XXXXXXXXXX",
+      "text": "Solidarność jest najważniejszym czynnikiem spajającym społeczeństwo",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21310,7 +21310,7 @@
     },
     {
       "id": 362,
-      "text": "XXXXXXXXXX",
+      "text": "Instytucje kultury (teatry, muzea, szkoły artystyczne) powinny być być finansowane ze środków publicznych niezależnie od popytu rynkowego",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21368,7 +21368,7 @@
     },
     {
       "id": 363,
-      "text": "XXXXXXXXXX",
+      "text": "Granice państwa powinny pokrywać się z granicami narodowości",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21426,7 +21426,7 @@
     },
     {
       "id": 364,
-      "text": "XXXXXXXXXX",
+      "text": "Suwerenność narodu powinna być nadrzędną zasadą w stosunkach międzynarodowych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21484,7 +21484,7 @@
     },
     {
       "id": 365,
-      "text": "XXXXXXXXXX",
+      "text": "Państwo powinno aktywnie wzmacniać poczucie dumy narodowej wśród obywateli",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21542,7 +21542,7 @@
     },
     {
       "id": 366,
-      "text": "XXXXXXXXXX",
+      "text": "Tożsamość narodowa i religijna są ze sobą nierozerwalnie powiązane",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21600,7 +21600,7 @@
     },
     {
       "id": 367,
-      "text": "XXXXXXXXXX",
+      "text": "Walka i rywalizacja między narodami lub rasami jest siłą napędową historii i należy ją zaakceptować jako naturalną",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21658,7 +21658,7 @@
     },
     {
       "id": 368,
-      "text": "XXXXXXXXXX",
+      "text": "Jeśli ktoś chce pracować i przestrzega lokalnego prawa, powinien mieć możliwość osiedlenia się i pracy w dowolnym kraju",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21716,7 +21716,7 @@
     },
     {
       "id": 369,
-      "text": "XXXXXXXXXX",
+      "text": "*Emigracja* z kraju nie powinna być regulowana lub utrudniana przez państwo",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21774,7 +21774,7 @@
     },
     {
       "id": 370,
-      "text": "XXXXXXXXXX",
+      "text": "Mniejszości etniczne powinny asymilować się z kulturą społeczeństwa gospodarza",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21832,7 +21832,7 @@
     },
     {
       "id": 371,
-      "text": "XXXXXXXXXX",
+      "text": "Przynależność narodowa nie tworzy szczególnych obowiązków wobec innych ludzi",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21890,7 +21890,7 @@
     },
     {
       "id": 372,
-      "text": "XXXXXXXXXX",
+      "text": "Należy dążyć do zaniku narodów jako jednostek politycznych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21948,7 +21948,7 @@
     },
     {
       "id": 373,
-      "text": "XXXXXXXXXX",
+      "text": "To, co naturalne, ma większą wartość niż to, co stworzone przez człowieka",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -22006,7 +22006,7 @@
     },
     {
       "id": 374,
-      "text": "XXXXXXXXXX",
+      "text": "Natura nie ma żadnej inherentnej wartości",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -22064,7 +22064,7 @@
     },
     {
       "id": 375,
-      "text": "XXXXXXXXXX",
+      "text": "Wszystkie żywe istoty powinny mieć taki sam status moralny jak ludzie",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -22122,7 +22122,7 @@
     },
     {
       "id": 376,
-      "text": "XXXXXXXXXX",
+      "text": "Wzrost produkcji materialnej nie powinien być celem gospodarki",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -22180,7 +22180,7 @@
     },
     {
       "id": 377,
-      "text": "XXXXXXXXXX",
+      "text": "Jednostka powinna mieć prawo do dowolnego modyfikowania własnego ciała za pomocą technologii (implanty, protezy, biologia syntetyczna), nawet jeśli prowadzi to do trwałej utraty zdolności uznawanych za 'ludzkie'",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -22238,7 +22238,7 @@
     },
     {
       "id": 378,
-      "text": "XXXXXXXXXX",
+      "text": "Świadome dążenie do przekraczania naturalnych ograniczeń własnego organizmu (siły, inteligencji, długości życia) jest moralnie neutralne lub pozytywne",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -22296,7 +22296,7 @@
     },
     {
       "id": 379,
-      "text": "XXXXXXXXXX",
+      "text": "System sprawiedliwości nie może być zmonopolizowany przez państwo",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -22354,7 +22354,7 @@
     },
     {
       "id": 380,
-      "text": "XXXXXXXXXX",
+      "text": "Dezercja lub zdrada stanu powinna być surowo karana",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -22412,7 +22412,7 @@
     },
     {
       "id": 381,
-      "text": "XXXXXXXXXX",
+      "text": "Rozwój sektora wojskowego powinien być jednym z głównych celów polityki państwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -22470,7 +22470,7 @@
     },
     {
       "id": 382,
-      "text": "XXXXXXXXXX",
+      "text": "Militaryzacja społeczeństwa i rozbudowa armii są wartościami, które należy promować niezależnie od ich konsekwencji ekonomicznych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -22528,123 +22528,7 @@
     },
     {
       "id": 383,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
-      "comment": "Placeholder",
-      "answers": [
-        {
-          "label": "Zdecydowanie zgadzam się",
-          "value": 1.5,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Częściowo zgadzam się",
-          "value": 1.0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Częściowo nie zgadzam się",
-          "value": -1.0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Zdecydowanie nie zgadzam się",
-          "value": -1.5,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Pomiń pytanie",
-          "value": 0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        }
-      ]
-    },
-    {
-      "id": 384,
-      "text": "XXXXXXXXXX",
-      "description": "XXXXXX",
-      "comment": "Placeholder",
-      "answers": [
-        {
-          "label": "Zdecydowanie zgadzam się",
-          "value": 1.5,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Częściowo zgadzam się",
-          "value": 1.0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Częściowo nie zgadzam się",
-          "value": -1.0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Zdecydowanie nie zgadzam się",
-          "value": -1.5,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Pomiń pytanie",
-          "value": 0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        }
-      ]
-    },
-    {
-      "id": 385,
-      "text": "XXXXXXXXXX",
+      "text": "Młodzież powinna być zachęcana przez państwo do aktywnego uczestnictwa w strukturach wojskowych lub paramilitarnych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
