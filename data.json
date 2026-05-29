@@ -17894,8 +17894,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Własność prywatna", "Indywidualizm", "Elitaryzm"],
+          "values_against": ["Egalitaryzm", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -17904,8 +17904,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Własność prywatna", "Indywidualizm", "Elitaryzm"],
+          "values_against": ["Egalitaryzm", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -17914,8 +17914,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Egalitaryzm", "Własność kolektywna"],
+          "values_against": ["Własność prywatna", "Indywidualizm", "Elitaryzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -17924,8 +17924,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Egalitaryzm", "Własność kolektywna"],
+          "values_against": ["Własność prywatna", "Indywidualizm", "Elitaryzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -17952,8 +17952,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Własność prywatna", "Indywidualizm", "Elitaryzm"],
+          "values_against": ["Egalitaryzm", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -17962,8 +17962,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Własność prywatna", "Indywidualizm", "Elitaryzm"],
+          "values_against": ["Egalitaryzm", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -17972,8 +17972,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Egalitaryzm", "Kolektywizm"],
+          "values_against": ["Własność prywatna", "Indywidualizm", "Elitaryzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -17982,8 +17982,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Egalitaryzm", "Kolektywizm"],
+          "values_against": ["Własność prywatna", "Indywidualizm", "Elitaryzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18010,8 +18010,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Heteronomia", "Organicyzm", "Obowiązkowość wspólnoty"],
+          "values_against": ["Indywidualizm", "Autonomia", "Własność prywatna", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18020,8 +18020,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Heteronomia", "Organicyzm", "Obowiązkowość wspólnoty"],
+          "values_against": ["Indywidualizm", "Autonomia", "Własność prywatna", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18030,8 +18030,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Indywidualizm", "Autonomia", "Własność prywatna", "Kontraktualizm", "Dobrowolność wspólnoty"],
+          "values_against": ["Kolektywizm", "Heteronomia", "Organicyzm", "Obowiązkowość wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18040,8 +18040,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Indywidualizm", "Autonomia", "Własność prywatna", "Kontraktualizm", "Dobrowolność wspólnoty"],
+          "values_against": ["Kolektywizm", "Heteronomia", "Organicyzm", "Obowiązkowość wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18063,13 +18063,13 @@
       "id": 306,
       "text": "Własność prywatna obywateli powinna być chroniona przez państwo, lecz ostateczna decyzja o jej losie należy do suwerena",
       "description": "XXXXXX",
-      "comment": "Placeholder",
+      "comment": "Pomiń, jeśli nie popierasz istnienia państwa lub odrzucasz własność prywatną",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Elitaryzm", "Etatyzm", "Autokracja", "Centralizacja", "Heteronomia", "Absolutyzm władzy"],
+          "values_against": ["Autonomia", "Własność prywatna", "Ograniczenie władzy", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18078,8 +18078,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Elitaryzm", "Etatyzm", "Autokracja", "Centralizacja", "Heteronomia", "Absolutyzm władzy"],
+          "values_against": ["Autonomia", "Własność prywatna", "Ograniczenie władzy", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18088,8 +18088,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Autonomia", "Własność prywatna", "Ograniczenie władzy", "Indywidualizm"],
+          "values_against": ["Elitaryzm", "Etatyzm", "Autokracja", "Centralizacja", "Heteronomia", "Absolutyzm władzy"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18098,8 +18098,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Autonomia", "Własność prywatna", "Ograniczenie władzy", "Indywidualizm"],
+          "values_against": ["Elitaryzm", "Etatyzm", "Autokracja", "Centralizacja", "Heteronomia", "Absolutyzm władzy"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18126,8 +18126,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Własność kolektywna", "Kolektywizm", "Autonomia", "Minimalizacja granic"],
+          "values_against": ["Własność prywatna", "Indywidualizm", "Kontrola granic", "Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18136,8 +18136,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Własność kolektywna", "Kolektywizm", "Autonomia", "Minimalizacja granic"],
+          "values_against": ["Własność prywatna", "Indywidualizm", "Kontrola granic", "Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18146,8 +18146,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Własność prywatna", "Indywidualizm", "Kontrola granic", "Heteronomia"],
+          "values_against": ["Własność kolektywna", "Kolektywizm", "Autonomia", "Minimalizacja granic"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18156,8 +18156,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Własność prywatna", "Indywidualizm", "Kontrola granic", "Heteronomia"],
+          "values_against": ["Własność kolektywna", "Kolektywizm", "Autonomia", "Minimalizacja granic"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18184,7 +18184,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Kolektywizm", "Egalitaryzm", "Własność kolektywna", "Minimalizacja granic", "Autonomia"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -18194,8 +18194,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Egalitaryzm", "Własność kolektywna", "Minimalizacja granic", "Autonomia"],
+          "values_against": ["Indywidualizm", "Elitaryzm", "Własność prywatna", "Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18204,8 +18204,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Indywidualizm", "Elitaryzm", "Własność prywatna", "Heteronomia"],
+          "values_against": ["Kolektywizm", "Egalitaryzm", "Własność kolektywna", "Minimalizacja granic", "Autonomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18214,8 +18214,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Indywidualizm", "Elitaryzm", "Własność prywatna", "Heteronomia"],
+          "values_against": ["Kolektywizm", "Egalitaryzm", "Własność kolektywna", "Minimalizacja granic", "Autonomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18242,8 +18242,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Własność kolektywna", "Planowanie"],
+          "values_against": ["Rynek", "Swobodna wymiana"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18252,8 +18252,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Własność kolektywna", "Planowanie"],
+          "values_against": ["Rynek", "Swobodna wymiana"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18262,8 +18262,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Swobodna wymiana"],
+          "values_against": ["Kolektywizm", "Własność kolektywna", "Planowanie"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18272,8 +18272,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Swobodna wymiana"],
+          "values_against": ["Kolektywizm", "Własność kolektywna", "Planowanie"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18300,8 +18300,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Samoregulacja", "Własność prywatna"],
+          "values_against": ["Planowanie", "Etatyzm", "Ograniczanie wymiany"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18310,8 +18310,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Planowanie", "Etatyzm", "Ograniczanie wymiany"],
+          "values_against": ["Rynek", "Samoregulacja", "Własność prywatna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18320,8 +18320,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Samoregulacja", "Własność prywatna"],
+          "values_against": ["Planowanie", "Etatyzm", "Ograniczanie wymiany"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18330,8 +18330,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Planowanie", "Etatyzm", "Ograniczanie wymiany"],
+          "values_against": ["Rynek", "Samoregulacja", "Własność prywatna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18358,8 +18358,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Samoregulacja", "Własność prywatna"],
+          "values_against": ["Planowanie", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18368,8 +18368,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Samoregulacja", "Własność prywatna"],
+          "values_against": ["Planowanie", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18378,8 +18378,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Planowanie", "Własność kolektywna"],
+          "values_against": ["Rynek", "Samoregulacja", "Własność prywatna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18388,8 +18388,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Planowanie", "Własność kolektywna"],
+          "values_against": ["Rynek", "Samoregulacja", "Własność prywatna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18416,8 +18416,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Kolektywizm"],
+          "values_against": ["Rynek", "Samoregulacja", "Egalitaryzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18426,8 +18426,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Kolektywizm"],
+          "values_against": ["Rynek", "Samoregulacja", "Egalitaryzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18436,8 +18436,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Samoregulacja", "Egalitaryzm"],
+          "values_against": ["Etatyzm", "Regulacja instytucjonalna", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18446,8 +18446,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Samoregulacja", "Egalitaryzm"],
+          "values_against": ["Etatyzm", "Regulacja instytucjonalna", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18474,8 +18474,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Planowanie"],
+          "values_against": ["Samoregulacja", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18484,8 +18484,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Planowanie"],
+          "values_against": ["Samoregulacja", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18494,8 +18494,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Rynek"],
+          "values_against": ["Etatyzm", "Regulacja instytucjonalna", "Planowanie"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18504,8 +18504,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Rynek"],
+          "values_against": ["Etatyzm", "Regulacja instytucjonalna", "Planowanie"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18532,8 +18532,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoorganizacja", "Autonomia", "Samoregulacja", "Dobrowolność wspólnoty"],
+          "values_against": ["Etatyzm", "Obowiązkowość wspólnoty", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18542,8 +18542,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoorganizacja", "Autonomia", "Samoregulacja", "Dobrowolność wspólnoty"],
+          "values_against": ["Etatyzm", "Obowiązkowość wspólnoty", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18552,8 +18552,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Obowiązkowość wspólnoty", "Kolektywizm"],
+          "values_against": ["Samoorganizacja", "Autonomia", "Samoregulacja", "Dobrowolność wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18562,8 +18562,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Obowiązkowość wspólnoty", "Kolektywizm"],
+          "values_against": ["Samoorganizacja", "Autonomia", "Samoregulacja", "Dobrowolność wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18590,7 +18590,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Regulacja instytucjonalna", "Ograniczanie wymiany", "Etatyzm", "Egalitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -18600,7 +18600,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Regulacja instytucjonalna", "Ograniczanie wymiany", "Etatyzm", "Egalitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -18611,7 +18611,7 @@
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": [],
-          "values_against": [],
+          "values_against": ["Regulacja instytucjonalna", "Ograniczanie wymiany", "Etatyzm", "Egalitaryzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18621,7 +18621,7 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": [],
-          "values_against": [],
+          "values_against": ["Regulacja instytucjonalna", "Ograniczanie wymiany", "Etatyzm", "Egalitaryzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18648,8 +18648,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Ograniczanie wymiany", "Etatyzm", "Partykularyzm narodowy", "Planowanie", "Izolacjonizm", "Organicyzm", "Obowiązkowość wspólnoty"],
+          "values_against": ["Swobodna wymiana", "Kosmopolityzm", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18658,8 +18658,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Ograniczanie wymiany", "Etatyzm", "Partykularyzm narodowy", "Planowanie", "Izolacjonizm", "Organicyzm", "Obowiązkowość wspólnoty"],
+          "values_against": ["Swobodna wymiana", "Kosmopolityzm", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18668,8 +18668,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Swobodna wymiana", "Kosmopolityzm", "Kontraktualizm", "Dobrowolność wspólnoty"],
+          "values_against": ["Ograniczanie wymiany", "Etatyzm", "Partykularyzm narodowy", "Planowanie", "Izolacjonizm", "Organicyzm", "Obowiązkowość wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18678,8 +18678,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Swobodna wymiana", "Kosmopolityzm", "Kontraktualizm", "Dobrowolność wspólnoty"],
+          "values_against": ["Ograniczanie wymiany", "Etatyzm", "Partykularyzm narodowy", "Planowanie", "Izolacjonizm", "Organicyzm", "Obowiązkowość wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18706,8 +18706,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Izolacjonizm", "Planowanie", "Ograniczanie wymiany"],
+          "values_against": ["Rynek", "Swobodna wymiana", "Kosmopolityzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18716,8 +18716,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Izolacjonizm", "Planowanie", "Ograniczanie wymiany"],
+          "values_against": ["Rynek", "Swobodna wymiana", "Kosmopolityzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18726,8 +18726,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Swobodna wymiana", "Kosmopolityzm"],
+          "values_against": ["Izolacjonizm", "Planowanie", "Ograniczanie wymiany"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18736,8 +18736,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Swobodna wymiana", "Kosmopolityzm"],
+          "values_against": ["Izolacjonizm", "Planowanie", "Ograniczanie wymiany"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18764,8 +18764,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Egalitaryzm", "Regulacja instytucjonalna"],
+          "values_against": ["Samoregulacja", "Indywidualizm", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18774,8 +18774,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Egalitaryzm", "Regulacja instytucjonalna"],
+          "values_against": ["Samoregulacja", "Indywidualizm", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18784,8 +18784,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Indywidualizm"],
+          "values_against": ["Etatyzm", "Egalitaryzm", "Regulacja instytucjonalna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18794,8 +18794,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Indywidualizm"],
+          "values_against": ["Etatyzm", "Egalitaryzm", "Regulacja instytucjonalna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18822,8 +18822,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Indywidualizm", "Samoregulacja"],
+          "values_against": ["Egalitaryzm", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18832,8 +18832,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Indywidualizm", "Samoregulacja"],
+          "values_against": ["Egalitaryzm", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18842,8 +18842,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Egalitaryzm", "Kolektywizm"],
+          "values_against": ["Rynek", "Indywidualizm", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18852,8 +18852,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Egalitaryzm", "Kolektywizm"],
+          "values_against": ["Rynek", "Indywidualizm", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18880,8 +18880,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Indywidualizm", "Samoregulacja", "Rynek"],
+          "values_against": ["Kolektywizm", "Egalitaryzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18890,8 +18890,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Indywidualizm", "Samoregulacja", "Rynek"],
+          "values_against": ["Kolektywizm", "Egalitaryzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18900,8 +18900,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Egalitaryzm"],
+          "values_against": ["Indywidualizm", "Samoregulacja", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18910,8 +18910,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Egalitaryzm"],
+          "values_against": ["Indywidualizm", "Samoregulacja", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18938,8 +18938,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Planowanie", "Egalitaryzm", "Własność kolektywna", "Obowiązkowość wspólnoty", "Kolektywizm"],
+          "values_against": ["Samoregulacja", "Dobrowolność wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18948,8 +18948,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Planowanie", "Egalitaryzm", "Własność kolektywna", "Obowiązkowość wspólnoty", "Kolektywizm"],
+          "values_against": ["Samoregulacja", "Dobrowolność wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18958,8 +18958,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Dobrowolność wspólnoty"],
+          "values_against": ["Etatyzm", "Planowanie", "Egalitaryzm", "Własność kolektywna", "Obowiązkowość wspólnoty", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18968,8 +18968,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Dobrowolność wspólnoty"],
+          "values_against": ["Etatyzm", "Planowanie", "Egalitaryzm", "Własność kolektywna", "Obowiązkowość wspólnoty", "Kolektywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -18996,7 +18996,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Kolektywizm", "Własność kolektywna"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19006,8 +19006,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Własność kolektywna"],
+          "values_against": ["Rynek", "Postęp technologiczny", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19016,8 +19016,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Kolektywizm", "Własność kolektywna"],
+          "values_against": ["Rynek", "Postęp technologiczny", "Indywidualizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19026,8 +19026,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Postęp technologiczny", "Indywidualizm"],
+          "values_against": ["Kolektywizm", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19036,8 +19036,8 @@
         {
           "label": "Pomiń pytanie",
           "value": 0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Postęp technologiczny", "Indywidualizm"],
+          "values_against": ["Kolektywizm", "Własność kolektywna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19054,8 +19054,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Rynek"],
+          "values_against": ["Regulacja instytucjonalna", "Etatyzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19064,8 +19064,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Rynek"],
+          "values_against": ["Regulacja instytucjonalna", "Etatyzm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19074,8 +19074,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Regulacja instytucjonalna", "Etatyzm"],
+          "values_against": ["Samoregulacja", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19084,8 +19084,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Regulacja instytucjonalna", "Etatyzm"],
+          "values_against": ["Samoregulacja", "Rynek"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19112,8 +19112,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Planowanie", "Regulacja instytucjonalna"],
+          "values_against": ["Rynek", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19122,8 +19122,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Planowanie", "Regulacja instytucjonalna"],
+          "values_against": ["Rynek", "Samoregulacja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19132,8 +19132,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Samoregulacja"],
+          "values_against": ["Etatyzm", "Planowanie", "Regulacja instytucjonalna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19142,8 +19142,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Rynek", "Samoregulacja"],
+          "values_against": ["Etatyzm", "Planowanie", "Regulacja instytucjonalna"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19170,8 +19170,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Regulacja instytucjonalna", "Etatyzm", "Egalitaryzm", "Heteronomia"],
+          "values_against": ["Samoregulacja", "Rynek", "Autonomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19180,8 +19180,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Regulacja instytucjonalna", "Etatyzm", "Egalitaryzm", "Heteronomia"],
+          "values_against": ["Samoregulacja", "Rynek", "Autonomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19190,8 +19190,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Rynek", "Autonomia"],
+          "values_against": ["Regulacja instytucjonalna", "Etatyzm", "Egalitaryzm", "Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19200,8 +19200,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Samoregulacja", "Rynek", "Autonomia"],
+          "values_against": ["Regulacja instytucjonalna", "Etatyzm", "Egalitaryzm", "Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19228,8 +19228,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Egalitaryzm"],
+          "values_against": ["Samoregulacja", "Samoorganizacja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19238,8 +19238,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Egalitaryzm"],
+          "values_against": ["Samoregulacja", "Samoorganizacja"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19248,7 +19248,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Samoregulacja", "Samoorganizacja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19258,7 +19258,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Samoregulacja", "Samoorganizacja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19286,7 +19286,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Kolektywizm", "Własność kolektywna", "Egalitaryzm", "Etatyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19296,7 +19296,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Kolektywizm", "Własność kolektywna", "Egalitaryzm", "Etatyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19306,7 +19306,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Własność prywatna", "Samoregulacja", "Indywidualizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19316,7 +19316,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Własność prywatna", "Samoregulacja", "Indywidualizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19344,7 +19344,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Autonomia", "Samoregulacja", "Samoorganizacja", "Decentralizacja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19354,7 +19354,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Autonomia", "Samoregulacja", "Samoorganizacja", "Decentralizacja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19364,7 +19364,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Autokracja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19374,7 +19374,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Autokracja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19402,7 +19402,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Centralizacja", "Heteronomia", "Absolutyzm władzy", "Uniformizacja norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19412,7 +19412,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Centralizacja", "Heteronomia", "Absolutyzm władzy", "Uniformizacja norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19422,7 +19422,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Autonomia", "Samoregulacja", "Decentralizacja", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19432,7 +19432,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Autonomia", "Samoregulacja", "Decentralizacja", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19460,7 +19460,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Kolektywizm", "Własność kolektywna", "Samoorganizacja", "Rewolucja", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19470,7 +19470,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Kolektywizm", "Własność kolektywna", "Samoorganizacja", "Rewolucja", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19518,7 +19518,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Partykularyzm narodowy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19528,7 +19528,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Partykularyzm narodowy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19539,7 +19539,7 @@
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": [],
-          "values_against": [],
+          "values_against": ["Etatyzm", "Regulacja instytucjonalna", "Partykularyzm narodowy"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19549,7 +19549,7 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": [],
-          "values_against": [],
+          "values_against": ["Etatyzm", "Regulacja instytucjonalna", "Partykularyzm narodowy"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19576,8 +19576,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Decentralizacja", "Prymitywizm"],
+          "values_against": ["Postęp technologiczny"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19586,8 +19586,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Decentralizacja", "Prymitywizm"],
+          "values_against": ["Postęp technologiczny"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19596,7 +19596,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Postęp technologiczny"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19606,7 +19606,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Postęp technologiczny"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19634,7 +19634,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Planowanie", "Regulacja instytucjonalna", "Ograniczanie wymiany"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19644,7 +19644,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Planowanie", "Regulacja instytucjonalna", "Ograniczanie wymiany"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19654,7 +19654,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Rynek", "Samoregulacja", "Swobodna wymiana"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19664,7 +19664,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Rynek", "Samoregulacja", "Swobodna wymiana"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19692,7 +19692,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Ograniczanie wymiany", "Egalitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19702,7 +19702,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Ograniczanie wymiany", "Egalitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19712,7 +19712,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Rynek", "Samoregulacja", "Swobodna wymiana"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19722,7 +19722,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Rynek", "Samoregulacja", "Swobodna wymiana"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19750,7 +19750,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Egalitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19760,7 +19760,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Egalitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19808,7 +19808,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Cenzura", "Etatyzm", "Regulacja instytucjonalna", "Nadzór", "Heteronomia", "Absolutyzm władzy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19818,7 +19818,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Cenzura", "Etatyzm", "Regulacja instytucjonalna", "Nadzór", "Heteronomia", "Absolutyzm władzy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19828,7 +19828,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Wolność ekspresji", "Samoorganizacja", "Autonomia", "Ograniczenie władzy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19838,7 +19838,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Wolność ekspresji", "Samoorganizacja", "Autonomia", "Ograniczenie władzy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19866,8 +19866,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anty-demokracja", "Elitaryzm", "Ograniczenie władzy"],
+          "values_against": ["Demokracja", "Progresywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19876,8 +19876,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Anty-demokracja", "Elitaryzm", "Ograniczenie władzy"],
+          "values_against": ["Demokracja", "Progresywizm"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19886,7 +19886,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Demokracja", "Progresywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19896,7 +19896,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Demokracja", "Progresywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19924,8 +19924,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Heteronomia", "Elitaryzm", "Etatyzm", "Autokracja", "Tradycjonalizm", "Absolutyzm władzy", "Obowiązkowość wspólnoty"],
+          "values_against": ["Autonomia", "Samoorganizacja", "Ograniczenie władzy", "Dobrowolność wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19934,8 +19934,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Heteronomia", "Elitaryzm", "Etatyzm", "Autokracja", "Tradycjonalizm", "Absolutyzm władzy", "Obowiązkowość wspólnoty"],
+          "values_against": ["Autonomia", "Samoorganizacja", "Ograniczenie władzy", "Dobrowolność wspólnoty"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19944,7 +19944,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Autonomia", "Samoorganizacja", "Ograniczenie władzy", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19954,7 +19954,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Autonomia", "Samoorganizacja", "Ograniczenie władzy", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -19982,8 +19982,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Autonomia", "Samoorganizacja", "Desakralizacja autorytetu", "Indywidualizm"],
+          "values_against": ["Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -19992,8 +19992,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Autonomia", "Samoorganizacja", "Desakralizacja autorytetu", "Indywidualizm"],
+          "values_against": ["Heteronomia"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -20002,7 +20002,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Heteronomia"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20012,7 +20012,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Heteronomia"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20040,7 +20040,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Autokracja", "Etatyzm", "Centralizacja", "Heteronomia", "Absolutyzm władzy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20050,7 +20050,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Autokracja", "Etatyzm", "Centralizacja", "Heteronomia", "Absolutyzm władzy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20060,7 +20060,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Anty-Autokracja", "Autonomia", "Ograniczenie władzy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20070,7 +20070,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Anty-Autokracja", "Autonomia", "Ograniczenie władzy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20098,7 +20098,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Elitaryzm", "Autokracja", "Sakralizacja autorytetu", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20108,7 +20108,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Elitaryzm", "Autokracja", "Sakralizacja autorytetu", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20118,7 +20118,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Egalitaryzm", "Anty-Autokracja", "Progresywizm", "Egalitaryzm biologiczny", "Desakralizacja autorytetu", "Kontraktualizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20128,7 +20128,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Egalitaryzm", "Anty-Autokracja", "Progresywizm", "Egalitaryzm biologiczny", "Desakralizacja autorytetu", "Kontraktualizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20156,7 +20156,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Elitaryzm", "Tradycjonalizm", "Heteronomia", "Autokracja", "Organicyzm", "Sakralizacja autorytetu", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20166,7 +20166,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Elitaryzm", "Tradycjonalizm", "Heteronomia", "Autokracja", "Organicyzm", "Sakralizacja autorytetu", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20176,7 +20176,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Egalitaryzm", "Autonomia", "Anty-Autokracja", "Kontraktualizm", "Desakralizacja autorytetu", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20186,7 +20186,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Egalitaryzm", "Autonomia", "Anty-Autokracja", "Kontraktualizm", "Desakralizacja autorytetu", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20214,7 +20214,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Gradualizm", "Sakralizacja autorytetu"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20224,7 +20224,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Gradualizm", "Sakralizacja autorytetu"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20234,7 +20234,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Progresywizm", "Rewolucja", "Desakralizacja autorytetu"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20244,7 +20244,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Progresywizm", "Rewolucja", "Desakralizacja autorytetu"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20272,7 +20272,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Progresywizm", "Pluralizm kulturowy", "Autonomia", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20282,7 +20282,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Progresywizm", "Pluralizm kulturowy", "Autonomia", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20292,7 +20292,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Heteronomia", "Homogenizacja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20302,7 +20302,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Heteronomia", "Homogenizacja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20330,7 +20330,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Kolektywizm", "Autonomia"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20340,7 +20340,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Kolektywizm", "Autonomia"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20350,7 +20350,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Indywidualizm", "Progresywizm", "Autonomia", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20360,7 +20360,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Indywidualizm", "Progresywizm", "Autonomia", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20388,7 +20388,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Prymitywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20398,7 +20398,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Prymitywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20408,7 +20408,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Progresywizm", "Postęp technologiczny"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20418,7 +20418,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Progresywizm", "Postęp technologiczny"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20446,7 +20446,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Progresywizm", "Egalitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20456,7 +20456,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Progresywizm", "Egalitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20466,7 +20466,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20476,7 +20476,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20504,7 +20504,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Egalitaryzm", "Kolektywizm", "Tradycjonalizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20514,7 +20514,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Egalitaryzm", "Kolektywizm", "Tradycjonalizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20562,7 +20562,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Kolektywizm", "Etatyzm", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20572,7 +20572,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Kolektywizm", "Etatyzm", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20620,7 +20620,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Rewolucja", "Progresywizm", "Kolektywizm", "Własność kolektywna"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20630,7 +20630,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Rewolucja", "Progresywizm", "Kolektywizm", "Własność kolektywna"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20640,7 +20640,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Własność prywatna", "Indywidualizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20650,7 +20650,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Własność prywatna", "Indywidualizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20678,7 +20678,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Rewolucja", "Egalitaryzm", "Etatyzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20688,7 +20688,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Rewolucja", "Egalitaryzm", "Etatyzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20698,7 +20698,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Gradualizm", "Samoregulacja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20708,7 +20708,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Gradualizm", "Samoregulacja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20736,7 +20736,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Etatyzm", "Heteronomia", "Wykluczenie", "Uniformizacja norm", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20746,7 +20746,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Tradycjonalizm", "Etatyzm", "Heteronomia", "Wykluczenie", "Uniformizacja norm", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20756,7 +20756,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Egalitaryzm", "Włączanie", "Autonomia", "Progresywizm", "Kontraktualizm", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20766,7 +20766,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Egalitaryzm", "Włączanie", "Autonomia", "Progresywizm", "Kontraktualizm", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20794,7 +20794,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Autonomia", "Pluralizm kulturowy", "Włączanie", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20804,7 +20804,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Autonomia", "Pluralizm kulturowy", "Włączanie", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20814,7 +20814,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Heteronomia", "Etatyzm", "Wykluczenie", "Tradycjonalizm", "Uniformizacja norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20824,7 +20824,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Heteronomia", "Etatyzm", "Wykluczenie", "Tradycjonalizm", "Uniformizacja norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20852,8 +20852,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Pluralizm kulturowy", "Włączanie", "Autonomia"],
+          "values_against": ["Heteronomia", "Tradycjonalizm", "Wykluczanie"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -20862,8 +20862,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
-          "values_against": [],
+          "values_for": ["Pluralizm kulturowy", "Włączanie", "Autonomia"],
+          "values_against": ["Heteronomia", "Tradycjonalizm", "Wykluczanie"],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": [],
@@ -20872,7 +20872,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Heteronomia", "Tradycjonalizm", "Wykluczanie"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20882,7 +20882,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Heteronomia", "Tradycjonalizm", "Wykluczanie"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20910,7 +20910,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Neutralność religijna", "Etatyzm", "Heteronomia", "Homogenizacja", "Wykluczenie", "Uniformizacja norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20920,7 +20920,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Neutralność religijna", "Etatyzm", "Heteronomia", "Homogenizacja", "Wykluczenie", "Uniformizacja norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20968,7 +20968,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Homogenizacja", "Tradycjonalizm", "Heteronomia"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20978,7 +20978,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Homogenizacja", "Tradycjonalizm", "Heteronomia"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20988,7 +20988,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Pluralizm kulturowy", "Autonomia", "Progresywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -20998,7 +20998,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Pluralizm kulturowy", "Autonomia", "Progresywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21026,7 +21026,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Demokracja", "Heteronomia", "Homogenizacja", "Uniformizacja norm", "Obowiązkowość wspólnoty", "Kolektywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21036,7 +21036,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Demokracja", "Heteronomia", "Homogenizacja", "Uniformizacja norm", "Obowiązkowość wspólnoty", "Kolektywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21084,7 +21084,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Heteronomia", "Regulacja instytucjonalna", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21094,7 +21094,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Heteronomia", "Regulacja instytucjonalna", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21104,7 +21104,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Rynek", "Autonomia", "Samoregulacja", "Wolność ekspresji", "Pluralizm kulturowy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21114,7 +21114,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Rynek", "Autonomia", "Samoregulacja", "Wolność ekspresji", "Pluralizm kulturowy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21142,7 +21142,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Kolektywizm", "Heteronomia", "Egalitaryzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21152,7 +21152,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Kolektywizm", "Heteronomia", "Egalitaryzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21162,7 +21162,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Indywidualizm", "Samoregulacja", "Autonomia", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21172,7 +21172,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Indywidualizm", "Samoregulacja", "Autonomia", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21200,7 +21200,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Kolektywizm", "Heteronomia", "Organicyzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21210,7 +21210,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Kolektywizm", "Heteronomia", "Organicyzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21220,7 +21220,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Indywidualizm", "Autonomia", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21230,7 +21230,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Indywidualizm", "Autonomia", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21258,7 +21258,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Kolektywizm", "Egalitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21268,7 +21268,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Kolektywizm", "Egalitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21278,7 +21278,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Indywidualizm", "Elitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21288,7 +21288,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Indywidualizm", "Elitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21316,7 +21316,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Planowanie"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21326,7 +21326,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Planowanie"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21336,7 +21336,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Rynek", "Samoregulacja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21346,7 +21346,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Rynek", "Samoregulacja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21374,7 +21374,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Partykularyzm narodowy", "Etatyzm", "Kontrola granic", "Homogenizacja", "Organicyzm", "Uniformizacja norm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21384,7 +21384,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Partykularyzm narodowy", "Etatyzm", "Kontrola granic", "Homogenizacja", "Organicyzm", "Uniformizacja norm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21394,7 +21394,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Kosmopolityzm", "Pluralizm kulturowy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21404,7 +21404,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Kosmopolityzm", "Pluralizm kulturowy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21432,7 +21432,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Partykularyzm narodowy", "Izolacjonizm", "Organicyzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21442,7 +21442,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Partykularyzm narodowy", "Izolacjonizm", "Organicyzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21452,7 +21452,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Kosmopolityzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21462,7 +21462,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Kosmopolityzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21490,7 +21490,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Partykularyzm narodowy", "Homogenizacja", "Uniformizacja norm", "Organicyzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21500,7 +21500,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Partykularyzm narodowy", "Homogenizacja", "Uniformizacja norm", "Organicyzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21510,7 +21510,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Autonomia", "Pluralizm kulturowy", "Kontraktualizm", "Różnorodność norm", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21520,7 +21520,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Autonomia", "Pluralizm kulturowy", "Kontraktualizm", "Różnorodność norm", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21548,7 +21548,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Partykularyzm narodowy", "Neutralność religijna", "Homogenizacja", "Uniformizacja norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21558,7 +21558,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Partykularyzm narodowy", "Neutralność religijna", "Homogenizacja", "Uniformizacja norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21568,7 +21568,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Neutralność religijna", "Pluralizm kulturowy", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21578,7 +21578,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Neutralność religijna", "Pluralizm kulturowy", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21606,7 +21606,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Suprematyzm biologiczny", "Preferencja użycia siły", "Partykularyzm narodowy", "Elitaryzm", "Organicyzm", "Obowiązkowość wspólnoty", "Kolektywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21616,7 +21616,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Suprematyzm biologiczny", "Preferencja użycia siły", "Partykularyzm narodowy", "Elitaryzm", "Organicyzm", "Obowiązkowość wspólnoty", "Kolektywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21626,7 +21626,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Egalitaryzm", "Egalitaryzm biologiczny", "Unikanie przemocy", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21636,7 +21636,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Egalitaryzm", "Egalitaryzm biologiczny", "Unikanie przemocy", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21664,7 +21664,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Minimalizacja granic", "Kosmopolityzm", "Swobodna wymiana", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21674,7 +21674,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Minimalizacja granic", "Kosmopolityzm", "Swobodna wymiana", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21684,7 +21684,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Kontrola granic", "Partykularyzm narodowy", "Ograniczanie wymiany", "Organicyzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21694,7 +21694,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Kontrola granic", "Partykularyzm narodowy", "Ograniczanie wymiany", "Organicyzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21722,7 +21722,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Minimalizacja granic", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21732,7 +21732,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Minimalizacja granic", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21742,7 +21742,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Kontrola granic", "Etatyzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21752,7 +21752,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Kontrola granic", "Etatyzm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21780,7 +21780,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Homogenizacja", "Partykularyzm narodowy", "Wykluczenie", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21790,7 +21790,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Homogenizacja", "Partykularyzm narodowy", "Wykluczenie", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21800,7 +21800,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Pluralizm kulturowy", "Autonomia", "Włączanie", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21810,7 +21810,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Pluralizm kulturowy", "Autonomia", "Włączanie", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21838,7 +21838,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Kosmopolityzm", "Indywidualizm", "Autonomia", "Dobrowolność wspólnoty", "Kontraktualizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21848,7 +21848,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Kosmopolityzm", "Indywidualizm", "Autonomia", "Dobrowolność wspólnoty", "Kontraktualizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21858,7 +21858,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Partykularyzm narodowy", "Kolektywizm", "Heteronomia", "Obowiązkowość wspólnoty", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21868,7 +21868,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Partykularyzm narodowy", "Kolektywizm", "Heteronomia", "Obowiązkowość wspólnoty", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21896,7 +21896,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Kosmopolityzm", "Dobrowolność wspólnoty", "Kontraktualizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21906,7 +21906,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Kosmopolityzm", "Dobrowolność wspólnoty", "Kontraktualizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21916,7 +21916,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Partykularyzm narodowy", "Kolektywizm", "Obowiązkowość wspólnoty", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21926,7 +21926,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Partykularyzm narodowy", "Kolektywizm", "Obowiązkowość wspólnoty", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21954,7 +21954,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Ekocentryzm", "Prymitywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21964,7 +21964,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Ekocentryzm", "Prymitywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21974,7 +21974,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Antropocentryzm", "Postęp technologiczny"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -21984,7 +21984,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Antropocentryzm", "Postęp technologiczny"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22012,7 +22012,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Antropocentryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22022,7 +22022,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Antropocentryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22032,7 +22032,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Ekocentryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22042,7 +22042,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Ekocentryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22070,7 +22070,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Ekocentryzm", "Egalitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22080,7 +22080,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Ekocentryzm", "Egalitaryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22090,7 +22090,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Antropocentryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22100,7 +22100,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Antropocentryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22128,7 +22128,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Ekocentryzm", "Prymitywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22138,7 +22138,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Ekocentryzm", "Prymitywizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22148,7 +22148,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Antropocentryzm", "Postęp technologiczny"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22158,7 +22158,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Antropocentryzm", "Postęp technologiczny"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22186,7 +22186,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Postęp technologiczny", "Różnorodność norm", "Pluralizm kulturowy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22196,7 +22196,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Postęp technologiczny", "Różnorodność norm", "Pluralizm kulturowy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22206,7 +22206,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Prymitywizm", "Uniformizacja norm", "Homogenizacja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22216,7 +22216,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Prymitywizm", "Uniformizacja norm", "Homogenizacja"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22244,7 +22244,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Postęp technologiczny", "Antropocentryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22254,7 +22254,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Postęp technologiczny", "Antropocentryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22264,7 +22264,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Prymitywizm", "Ekocentryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22274,7 +22274,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Prymitywizm", "Ekocentryzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22302,7 +22302,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Samoorganizacja", "Samoregulacja", "Decentralizacja", "Ograniczenie władzy", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22312,7 +22312,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Samoorganizacja", "Samoregulacja", "Decentralizacja", "Ograniczenie władzy", "Różnorodność norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22322,7 +22322,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Centralizacja", "Absolutyzm władzy", "Uniformizacja norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22332,7 +22332,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Centralizacja", "Absolutyzm władzy", "Uniformizacja norm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22360,7 +22360,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Preferencja użycia siły", "Heteronomia", "Autokracja", "Obowiązkowość wspólnoty", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22370,7 +22370,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Preferencja użycia siły", "Heteronomia", "Autokracja", "Obowiązkowość wspólnoty", "Organicyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22380,7 +22380,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Autonomia", "Samoorganizacja", "Indywidualizm", "Dobrowolność wspólnoty", "Kontraktualizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22390,7 +22390,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Autonomia", "Samoorganizacja", "Indywidualizm", "Dobrowolność wspólnoty", "Kontraktualizm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22418,7 +22418,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Preferencja użycia siły", "Etatyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22428,7 +22428,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Preferencja użycia siły", "Etatyzm"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22438,7 +22438,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Unikanie przemocy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22448,7 +22448,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Unikanie przemocy"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22476,7 +22476,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Preferencja użycia siły", "Etatyzm", "Elitaryzm", "Heteronomia", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22486,7 +22486,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Preferencja użycia siły", "Etatyzm", "Elitaryzm", "Heteronomia", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22496,7 +22496,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Unikanie przemocy", "Autonomia", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22506,7 +22506,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Unikanie przemocy", "Autonomia", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22534,7 +22534,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Heteronomia", "Preferencja użycia siły", "Organicyzm", "Uniformizacja norm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22544,7 +22544,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": [],
+          "values_for": ["Etatyzm", "Heteronomia", "Preferencja użycia siły", "Organicyzm", "Uniformizacja norm", "Obowiązkowość wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22554,7 +22554,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Autonomia", "Unikanie przemocy", "Kontraktualizm", "Różnorodność norm", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
@@ -22564,7 +22564,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": [],
+          "values_for": ["Autonomia", "Unikanie przemocy", "Kontraktualizm", "Różnorodność norm", "Dobrowolność wspólnoty"],
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
