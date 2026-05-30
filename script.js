@@ -1,6 +1,7 @@
-// script.js – POPRAWIONA WERSJA (symulacja działa prawidłowo)
+// script.js – dodany przełącznik trybów (pełne profilowanie / afirmacyjny)
 let config = null;
 let userAnswers = [];
+let currentScoringMode = 'full';   // 'full' lub 'affirmative'
 
 const questionsContainer = document.getElementById('questions-container');
 const submitBtn = document.getElementById('submitBtn');
@@ -96,6 +97,7 @@ async function loadConfig() {
     config = await response.json();
     initApp();
     setupSimulation();
+    setupModeSelector();
   } catch (err) {
     console.error(err);
     questionsContainer.innerHTML = '<p style="color:red;">Błąd ładowania konfiguracji. Sprawdź czy plik data.json istnieje i jest poprawny.</p>';
@@ -206,7 +208,8 @@ function renderQuestions() {
 
 function attachQuestionEvents() {}
 
-function computeScores() {
+// ========== NOWA FUNKCJA OBLICZAJĄCA WYNIKI Z UWZGLĘDNIENIEM TRYBU ==========
+function computeScores(mode = currentScoringMode) {
   const ideologyScores = new Map();
   const partyScores = new Map();
   const valueScores = new Map();
@@ -225,29 +228,65 @@ function computeScores() {
     const answer = ans.answerData;
     const absWeight = Math.abs(weight);
 
-    for (const ideo of (answer.ideologies_for || [])) {
-      const rec = ideologyScores.get(ideo);
-      if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; if (weight > 0) rec.agreements++; else rec.disagreements++; }
+    // ---- IDEOLOGIES ----
+    if (mode === 'full') {
+      // Pełne profilowanie: zarówno _for jak i _against
+      for (const ideo of (answer.ideologies_for || [])) {
+        const rec = ideologyScores.get(ideo);
+        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; if (weight > 0) rec.agreements++; else rec.disagreements++; }
+      }
+      for (const ideo of (answer.ideologies_against || [])) {
+        const rec = ideologyScores.get(ideo);
+        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; if (weight < 0) rec.agreements++; else rec.disagreements++; }
+      }
+    } else { // tryb afirmacyjny – tylko _for i tylko gdy weight > 0
+      if (weight > 0) {
+        for (const ideo of (answer.ideologies_for || [])) {
+          const rec = ideologyScores.get(ideo);
+          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; rec.agreements++; }
+        }
+      }
+      // całkowicie ignorujemy ideologies_against
     }
-    for (const ideo of (answer.ideologies_against || [])) {
-      const rec = ideologyScores.get(ideo);
-      if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; if (weight < 0) rec.agreements++; else rec.disagreements++; }
+
+    // ---- PARTIES ----
+    if (mode === 'full') {
+      for (const party of (answer.parties_for || [])) {
+        const rec = partyScores.get(party);
+        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; if (weight > 0) rec.agreements++; else rec.disagreements++; }
+      }
+      for (const party of (answer.parties_against || [])) {
+        const rec = partyScores.get(party);
+        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; if (weight < 0) rec.agreements++; else rec.disagreements++; }
+      }
+    } else {
+      if (weight > 0) {
+        for (const party of (answer.parties_for || [])) {
+          const rec = partyScores.get(party);
+          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; rec.agreements++; }
+        }
+      }
+      // ignorujemy parties_against
     }
-    for (const party of (answer.parties_for || [])) {
-      const rec = partyScores.get(party);
-      if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; if (weight > 0) rec.agreements++; else rec.disagreements++; }
-    }
-    for (const party of (answer.parties_against || [])) {
-      const rec = partyScores.get(party);
-      if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; if (weight < 0) rec.agreements++; else rec.disagreements++; }
-    }
-    for (const val of (answer.values_for || [])) {
-      const rec = valueScores.get(val);
-      if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
-    }
-    for (const val of (answer.values_against || [])) {
-      const rec = valueScores.get(val);
-      if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; }
+
+    // ---- VALUES ----
+    if (mode === 'full') {
+      for (const val of (answer.values_for || [])) {
+        const rec = valueScores.get(val);
+        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
+      }
+      for (const val of (answer.values_against || [])) {
+        const rec = valueScores.get(val);
+        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; }
+      }
+    } else {
+      if (weight > 0) {
+        for (const val of (answer.values_for || [])) {
+          const rec = valueScores.get(val);
+          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
+        }
+      }
+      // ignorujemy values_against
     }
   }
 
@@ -269,15 +308,12 @@ function computeScores() {
   for (let pair of config.pairsOfValues) {
     const recLeft = valueScores.get(pair.left);
     const recRight = valueScores.get(pair.right);
-
     const sumL = recLeft ? recLeft.sum : 0;
     const maxL = recLeft ? recLeft.maxPossible : 0;
     const sumR = recRight ? recRight.sum : 0;
     const maxR = recRight ? recRight.maxPossible : 0;
-
     const totalMax = maxL + maxR;
     let leftPercent, rightPercent;
-
     if (totalMax === 0) {
       leftPercent = 50;
       rightPercent = 50;
@@ -287,7 +323,6 @@ function computeScores() {
       leftPercent = Math.min(100, Math.max(0, leftPercent));
       rightPercent = 100 - leftPercent;
     }
-
     pairResults.push({
       left: pair.left,
       right: pair.right,
@@ -348,7 +383,6 @@ function createRankingSection(title, items, type) {
   return section;
 }
 
-// POPRAWIENIE: link kompasu z klasą compass-link
 function generateShareCode(pairResults) {
   const resultsString = pairResults.map(pair => `${pair.left}(${Math.round(pair.leftPercent)}) - ${pair.right}(${Math.round(pair.rightPercent)})`).join('; ');
   let base64 = '';
@@ -374,21 +408,8 @@ function generateShareCode(pairResults) {
   return container;
 }
 
-function throttle(func, limit) {
-  let inThrottle;
-  return function() {
-    const args = arguments;
-    const context = this;
-    if (!inThrottle) {
-      func.apply(context, args);
-      inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
-    }
-  };
-}
-
 function computeAndDisplayResults() {
-  const { pairResults, ideologyResults, partyResults } = computeScores();
+  const { pairResults, ideologyResults, partyResults } = computeScores(currentScoringMode);
   valuesResults.innerHTML = '<h3>⚖️ Pary wartości</h3>';
   pairResults.forEach(pair => {
     const leftColor = valueColors[pair.left] || '#3b82f6';
@@ -415,8 +436,7 @@ function computeAndDisplayResults() {
   window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
 }
 
-// ========== SYMULACJA ODPOWIEDZI PARTII / IDEOLOGII ==========
-
+// ========== SYMULACJA ODPOWIEDZI ==========
 let simulationSelect = null;
 let simulateBtn = null;
 let restoreBtn = null;
@@ -504,7 +524,7 @@ function simulateAnswers(selectedName) {
   userAnswers = simulatedAnswers;
   computeAndDisplayResults();
   
-  const { pairResults, ideologyResults, partyResults } = computeScores();
+  const { pairResults, ideologyResults, partyResults } = computeScores(currentScoringMode);
   console.log(`\n📊 WYNIKI SYMULACJI (${selectedName}):`);
   console.log('--- Pary wartości ---');
   pairResults.forEach(p => {
@@ -578,6 +598,44 @@ function setupSimulation() {
   
   restoreBtn.addEventListener('click', () => {
     restoreUserAnswers();
+  });
+}
+
+// ========== NOWA FUNKCJA DO TRYBÓW LICZENIA ==========
+function setupModeSelector() {
+  const radios = document.querySelectorAll('input[name="scoringMode"]');
+  const helpBtn = document.getElementById('modeHelpBtn');
+  
+  // Wczytaj zapisany tryb
+  const savedMode = localStorage.getItem('scoringMode');
+  if (savedMode === 'affirmative') {
+    currentScoringMode = 'affirmative';
+    document.querySelector('input[value="affirmative"]').checked = true;
+  } else {
+    currentScoringMode = 'full';
+    document.querySelector('input[value="full"]').checked = true;
+  }
+  
+  // Obsługa zmiany trybu
+  radios.forEach(radio => {
+    radio.addEventListener('change', (e) => {
+      if (e.target.checked) {
+        currentScoringMode = e.target.value;
+        localStorage.setItem('scoringMode', currentScoringMode);
+        // Jeśli wyniki są widoczne – przelicz i odśwież
+        if (resultsDiv.style.display !== 'none') {
+          computeAndDisplayResults();
+        }
+      }
+    });
+  });
+  
+  // Pomoc
+  helpBtn.addEventListener('click', () => {
+    showPopup(
+      '🧠 Tryb pełnego profilowania\nUwzględnia zarówno poglądy popierane, jak i odrzucane. Niezgoda z daną tezą może przybliżać do innych ideologii, partii lub wartości.\n\n' +
+      '✅ Tryb afirmacyjny\nUwzględnia wyłącznie poglądy aktywnie popierane. Niezgoda z tezą nie powoduje automatycznego przybliżenia do stanowiska przeciwnego.'
+    );
   });
 }
 
