@@ -334,6 +334,57 @@ body.dark h1 {
   background: linear-gradient(90deg, transparent, var(--footer-border), transparent);
 }
 
+/* Przełącznik trybów (tryb liczenia) */
+.mode-selector {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  background: var(--card-bg);
+  padding: 0.8rem 1.5rem;
+  border-radius: 60px;
+  margin-bottom: 1.8rem;
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(4px);
+}
+.mode-selector span {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.mode-selector label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: color 0.15s;
+}
+.mode-selector label:hover {
+  color: var(--link-color);
+}
+.mode-selector input[type="radio"] {
+  accent-color: var(--link-color);
+  width: 1rem;
+  height: 1rem;
+  margin: 0;
+}
+.help-btn {
+  background: var(--btn-bg);
+  border: none;
+  width: 28px;
+  height: 28px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.15s;
+  color: var(--text-primary);
+}
+.help-btn:hover {
+  background: var(--btn-hover);
+  transform: scale(0.92);
+}
+
 .value-pair {
   background: var(--card-bg);
   backdrop-filter: blur(4px);
@@ -347,6 +398,7 @@ body.dark h1 {
 .value-pair:hover {
   background: var(--card-bg-hover);
   box-shadow: var(--shadow-sm);
+  transform: translateX(4px);
 }
 
 .value-bar-container {
@@ -415,11 +467,13 @@ body.dark h1 {
   transition: all 0.15s;
   margin: 0 -0.2rem;
   border-radius: 28px;
+  cursor: pointer;
 }
 
 .ranking-item:hover {
   background: var(--ranking-hover);
   padding-left: 1.2rem;
+  transform: scale(1.01);
 }
 
 .rank-name {
@@ -618,6 +672,11 @@ footer a:hover {
   }
   h1 {
     font-size: 1.8rem;
+  }
+  .mode-selector {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
   }
 }
 
