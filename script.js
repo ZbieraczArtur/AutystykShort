@@ -1,4 +1,4 @@
-// script.js – w pełni działający import/eksport odpowiedzi
+// script.js – dodany przełącznik trybów (pełne profilowanie / afirmacyjny)
 let config = null;
 let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
@@ -98,7 +98,6 @@ async function loadConfig() {
     initApp();
     setupSimulation();
     setupModeSelector();
-    setupImport();      // <-- import odpowiedzi
   } catch (err) {
     console.error(err);
     questionsContainer.innerHTML = '<p style="color:red;">Błąd ładowania konfiguracji. Sprawdź czy plik data.json istnieje i jest poprawny.</p>';
@@ -209,7 +208,7 @@ function renderQuestions() {
 
 function attachQuestionEvents() {}
 
-// ========== OBLICZANIE WYNIKÓW Z UWZGLĘDNIENIEM TRYBU ==========
+// ========== NOWA FUNKCJA OBLICZAJĄCA WYNIKI Z UWZGLĘDNIENIEM TRYBU ==========
 function computeScores(mode = currentScoringMode) {
   const ideologyScores = new Map();
   const partyScores = new Map();
@@ -231,6 +230,7 @@ function computeScores(mode = currentScoringMode) {
 
     // ---- IDEOLOGIES ----
     if (mode === 'full') {
+      // Pełne profilowanie: zarówno _for jak i _against
       for (const ideo of (answer.ideologies_for || [])) {
         const rec = ideologyScores.get(ideo);
         if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; if (weight > 0) rec.agreements++; else rec.disagreements++; }
@@ -239,13 +239,14 @@ function computeScores(mode = currentScoringMode) {
         const rec = ideologyScores.get(ideo);
         if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; if (weight < 0) rec.agreements++; else rec.disagreements++; }
       }
-    } else {
+    } else { // tryb afirmacyjny – tylko _for i tylko gdy weight > 0
       if (weight > 0) {
         for (const ideo of (answer.ideologies_for || [])) {
           const rec = ideologyScores.get(ideo);
           if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; rec.agreements++; }
         }
       }
+      // całkowicie ignorujemy ideologies_against
     }
 
     // ---- PARTIES ----
@@ -265,6 +266,7 @@ function computeScores(mode = currentScoringMode) {
           if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; rec.agreements++; }
         }
       }
+      // ignorujemy parties_against
     }
 
     // ---- VALUES ----
@@ -284,6 +286,7 @@ function computeScores(mode = currentScoringMode) {
           if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
         }
       }
+      // ignorujemy values_against
     }
   }
 
@@ -405,61 +408,6 @@ function generateShareCode(pairResults) {
   return container;
 }
 
-// ========== EKSPORT ODPOWIEDZI ==========
-function generateAnswersExportSection() {
-  const now = new Date();
-  const formattedDate = now.toLocaleString('pl-PL', {
-    year: 'numeric',
-    month: '2-digit',
-    day: '2-digit',
-    hour: '2-digit',
-    minute: '2-digit',
-    second: '2-digit'
-  });
-  
-  let exportText = `Data wykonania testu: ${formattedDate}\n\n`;
-  
-  config.questions.forEach((q, idx) => {
-    const answerObj = userAnswers.find(a => a.questionId === q.id);
-    let answerLabel = 'Brak odpowiedzi';
-    if (answerObj && answerObj.answerData && answerObj.answerData.label) {
-      answerLabel = answerObj.answerData.label;
-    } else if (answerObj && answerObj.answerValue === 0) {
-      answerLabel = 'Pominięte';
-    }
-    exportText += `${idx+1}. ${q.text}\n- ${answerLabel}\n\n`;
-  });
-  
-  const container = document.createElement('div');
-  container.className = 'export-answers-section';
-  container.innerHTML = `
-    <h3>📋 Eksport twoich odpowiedzi</h3>
-    <p>Skopiuj poniższy kod, aby zapisać lub udostępnić swoje odpowiedzi:</p>
-    <textarea readonly class="export-code" rows="10">${escapeHtml(exportText)}</textarea>
-    <button class="copy-export-btn">📋 Kopiuj kod</button>
-  `;
-  
-  const copyBtn = container.querySelector('.copy-export-btn');
-  const textarea = container.querySelector('.export-code');
-  copyBtn.addEventListener('click', () => {
-    textarea.select();
-    navigator.clipboard.writeText(textarea.value).then(() => {
-      copyBtn.textContent = '✅ Skopiowano!';
-      setTimeout(() => { copyBtn.textContent = '📋 Kopiuj kod'; }, 2000);
-    }).catch(() => alert('Nie udało się skopiować. Możesz zaznaczyć kod ręcznie.'));
-  });
-  return container;
-}
-
-function escapeHtml(str) {
-  return str.replace(/[&<>]/g, function(m) {
-    if (m === '&') return '&amp;';
-    if (m === '<') return '&lt;';
-    if (m === '>') return '&gt;';
-    return m;
-  });
-}
-
 function computeAndDisplayResults() {
   const { pairResults, ideologyResults, partyResults } = computeScores(currentScoringMode);
   valuesResults.innerHTML = '<h3>⚖️ Pary wartości</h3>';
@@ -481,20 +429,14 @@ function computeAndDisplayResults() {
   ideologiesResults.appendChild(createRankingSection('📊 Ranking ideologii (zgodność %)', ideologyResults, 'ideology'));
   partiesResults.innerHTML = '';
   partiesResults.appendChild(createRankingSection('🗳️ Ranking partii (zgodność %)', partyResults, 'party'));
-  
   const existingShare = resultsDiv.querySelector('.share-section');
   if (existingShare) existingShare.remove();
   resultsDiv.appendChild(generateShareCode(pairResults));
-  
-  const existingExport = resultsDiv.querySelector('.export-answers-section');
-  if (existingExport) existingExport.remove();
-  resultsDiv.appendChild(generateAnswersExportSection());
-  
   resultsDiv.style.display = 'block';
   window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
 }
 
-// ========== SYMULACJA ==========
+// ========== SYMULACJA ODPOWIEDZI ==========
 let simulationSelect = null;
 let simulateBtn = null;
 let restoreBtn = null;
@@ -659,11 +601,12 @@ function setupSimulation() {
   });
 }
 
-// ========== TRYBY LICZENIA ==========
+// ========== NOWA FUNKCJA DO TRYBÓW LICZENIA ==========
 function setupModeSelector() {
   const radios = document.querySelectorAll('input[name="scoringMode"]');
   const helpBtn = document.getElementById('modeHelpBtn');
   
+  // Wczytaj zapisany tryb
   const savedMode = localStorage.getItem('scoringMode');
   if (savedMode === 'affirmative') {
     currentScoringMode = 'affirmative';
@@ -673,11 +616,13 @@ function setupModeSelector() {
     document.querySelector('input[value="full"]').checked = true;
   }
   
+  // Obsługa zmiany trybu
   radios.forEach(radio => {
     radio.addEventListener('change', (e) => {
       if (e.target.checked) {
         currentScoringMode = e.target.value;
         localStorage.setItem('scoringMode', currentScoringMode);
+        // Jeśli wyniki są widoczne – przelicz i odśwież
         if (resultsDiv.style.display !== 'none') {
           computeAndDisplayResults();
         }
@@ -685,127 +630,13 @@ function setupModeSelector() {
     });
   });
   
+  // Pomoc
   helpBtn.addEventListener('click', () => {
     showPopup(
       '🧠 Tryb pełnego profilowania\nUwzględnia zarówno poglądy popierane, jak i odrzucane. Niezgoda z daną tezą może przybliżać do innych ideologii, partii lub wartości.\n\n' +
       '✅ Tryb afirmacyjny\nUwzględnia wyłącznie poglądy aktywnie popierane. Niezgoda z tezą nie powoduje automatycznego przybliżenia do stanowiska przeciwnego.'
     );
   });
-}
-
-// ========== IMPORT ODPOWIEDZI (POPRAWIONY) ==========
-function setupImport() {
-  const importBtn = document.getElementById('importBtn');
-  const importTextarea = document.getElementById('importAnswers');
-
-  if (!importBtn || !importTextarea) return;
-
-  importBtn.addEventListener('click', () => {
-    const rawText = importTextarea.value.trim();
-    if (!rawText) {
-      alert('Wklej kod eksportu w pole tekstowe.');
-      return;
-    }
-
-    const importedMap = parseImport(rawText);
-    if (importedMap.size === 0) {
-      alert('Nie udało się odczytać żadnej odpowiedzi. Upewnij się, że wklejasz prawidłowy kod (z numerami pytań i myślnikami).');
-      return;
-    }
-
-    applyImportedAnswers(importedMap);
-    computeAndDisplayResults();
-    alert(`Zaimportowano ${importedMap.size} odpowiedzi. Możesz je teraz zmieniać ręcznie.`);
-  });
-}
-
-// Poprawiona funkcja parsująca – bardziej odporna na puste linie i różne formaty
-function parseImport(text) {
-  const lines = text.split(/\r?\n/);
-  const result = new Map();
-  let currentNumber = null;
-
-  for (let i = 0; i < lines.length; i++) {
-    let line = lines[i].trim();
-    if (line === '') continue;
-
-    // Sprawdź, czy linia zawiera numer pytania (na początku)
-    const matchNum = line.match(/^(\d+)\./);
-    if (matchNum) {
-      currentNumber = parseInt(matchNum[1], 10);
-      // Nie resetujemy od razu – czekamy na odpowiedź w kolejnych liniach
-      continue;
-    }
-
-    // Jeśli mamy zapamiętany numer i linia zaczyna się od myślnika
-    if (currentNumber !== null && line.startsWith('-')) {
-      let answer = line.substring(1).trim(); // odcinamy myślnik i spację
-      if (answer === 'Pominięte') answer = 'Pomiń pytanie';
-      result.set(currentNumber, answer);
-      currentNumber = null; // reset – czekamy na następny numer
-    }
-  }
-  return result;
-}
-
-function applyImportedAnswers(answersMap) {
-  const questionCards = document.querySelectorAll('.question-card');
-
-  questionCards.forEach((card, idx) => {
-    const qid = parseInt(card.dataset.id);
-    const questionConfig = config.questions.find(q => q.id === qid);
-    if (!questionConfig) return;
-
-    const questionNumber = idx + 1;  // kolejność wg wyświetlania
-    const expectedLabel = answersMap.get(questionNumber);
-    const answerOptions = card.querySelectorAll('.answer-option');
-    let matched = false;
-
-    // Odznacz wszystkie przyciski (będziemy zaznaczać tylko pasujące)
-    answerOptions.forEach(opt => opt.classList.remove('selected'));
-
-    if (expectedLabel) {
-      // Szukamy przycisku z etykietą dokładnie taką jak w imporcie
-      for (let opt of answerOptions) {
-        const optLabel = opt.innerText.trim();
-        if (optLabel === expectedLabel) {
-          opt.classList.add('selected');
-          matched = true;
-          // Aktualizujemy userAnswers
-          const ansIdx = parseInt(opt.dataset.answerIdx);
-          const answerData = questionConfig.answers[ansIdx];
-          const existing = userAnswers.findIndex(a => a.questionId === qid);
-          const answerObj = {
-            questionId: qid,
-            answerIndex: ansIdx,
-            answerValue: answerData.value,
-            answerData: answerData
-          };
-          if (existing !== -1) userAnswers[existing] = answerObj;
-          else userAnswers.push(answerObj);
-          break;
-        }
-      }
-      if (!matched) {
-        console.warn(`Nie znaleziono przycisku z etykietą "${expectedLabel}" dla pytania ${questionNumber}`);
-      }
-    } else {
-      // Brak odpowiedzi w imporcie – usuwamy istniejącą odpowiedź dla tego pytania
-      const existingIdx = userAnswers.findIndex(a => a.questionId === qid);
-      if (existingIdx !== -1) userAnswers.splice(existingIdx, 1);
-    }
-  });
-
-  // Usuwanie ewentualnych duplikatów (zabezpieczenie)
-  const unique = [];
-  const seen = new Set();
-  for (const ans of userAnswers) {
-    if (!seen.has(ans.questionId)) {
-      seen.add(ans.questionId);
-      unique.push(ans);
-    }
-  }
-  userAnswers = unique;
 }
 
 loadConfig();
