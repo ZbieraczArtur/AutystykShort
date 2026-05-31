@@ -449,7 +449,7 @@
           "values_for": ["Kolektywizm", "Organicyzm"],
           "values_against": ["Indywidualizm", "Kontraktualizm"],
           "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja"],
-          "ideologies_against": ["Liberalizm klasyczny"]
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Nowa Nadzieja", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
         },
