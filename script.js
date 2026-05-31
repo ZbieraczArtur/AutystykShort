@@ -1,4 +1,4 @@
-// script.js – dodany przełącznik trybów (pełne profilowanie / afirmacyjny)
+// script.js – dodany przełącznik trybów (pełne profilowanie / afirmacyjny) + IMPORT/EXPORT odpowiedzi
 let config = null;
 let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
@@ -98,6 +98,7 @@ async function loadConfig() {
     initApp();
     setupSimulation();
     setupModeSelector();
+    setupImportExport(); // nowa inicjalizacja importu/eksportu
   } catch (err) {
     console.error(err);
     questionsContainer.innerHTML = '<p style="color:red;">Błąd ładowania konfiguracji. Sprawdź czy plik data.json istnieje i jest poprawny.</p>';
@@ -204,11 +205,180 @@ function renderQuestions() {
     card.appendChild(answersDiv);
     questionsContainer.appendChild(card);
   });
+  // po wyrenderowaniu – przywróć odpowiedzi z userAnswers (jeśli istnieją)
+  updateDOMSelections();
 }
 
 function attachQuestionEvents() {}
 
-// ========== NOWA FUNKCJA OBLICZAJĄCA WYNIKI Z UWZGLĘDNIENIEM TRYBU ==========
+// ========== AKTUALIZACJA ZAZNACZEŃ W DOM NA PODSTAWIE userAnswers ==========
+function updateDOMSelections() {
+  if (!config) return;
+  // wyczyść wszystkie zaznaczenia
+  document.querySelectorAll('.answer-option').forEach(opt => opt.classList.remove('selected'));
+  for (const ans of userAnswers) {
+    const card = document.querySelector(`.question-card[data-id='${ans.questionId}']`);
+    if (!card) continue;
+    const targetOption = card.querySelector(`.answer-option[data-answer-index='${ans.answerIndex}']`);
+    if (targetOption) targetOption.classList.add('selected');
+  }
+}
+
+// ========== EKSPORT ODPOWIEDZI ==========
+function getCurrentDateTime() {
+  const now = new Date();
+  const YYYY = now.getFullYear();
+  const MM = String(now.getMonth() + 1).padStart(2, '0');
+  const DD = String(now.getDate()).padStart(2, '0');
+  const HH = String(now.getHours()).padStart(2, '0');
+  const MMmin = String(now.getMinutes()).padStart(2, '0');
+  return `${YYYY}-${MM}-${DD} ${HH}:${MMmin}`;
+}
+
+function generateExportCode() {
+  if (!config) return '';
+  const dateStr = getCurrentDateTime();
+  let output = `Data wykonania testu: ${dateStr}\n\n`;
+  for (let i = 0; i < config.questions.length; i++) {
+    const q = config.questions[i];
+    const userAns = userAnswers.find(a => a.questionId === q.id);
+    let answerText = 'Brak odpowiedzi';
+    if (userAns && userAns.answerData) {
+      answerText = userAns.answerData.label;
+    } else if (userAns && userAns.answerValue === 0) {
+      // fallback: jeśli answerData brak, ale pominięte
+      answerText = 'Pomiń';
+    }
+    // format: "1. Treść tezy [id:123]: (odpowiedź);"
+    output += `${i+1}. ${q.text} [id:${q.id}]: (${answerText});\n`;
+  }
+  return output;
+}
+
+function createExportSection() {
+  const exportDiv = document.createElement('div');
+  exportDiv.id = 'export-answers-section';
+  exportDiv.className = 'export-answers-section';
+  exportDiv.innerHTML = `
+    <h3>📋 Eksport Twoich odpowiedzi</h3>
+    <p>Skopiuj poniższy kod, aby zapisać lub przenieść swoje odpowiedzi do innego urządzenia.</p>
+    <textarea id="exportCodeArea" class="export-code" rows="5" readonly></textarea>
+    <button id="copyExportBtn" class="copy-export-btn">📋 Kopiuj kod eksportu</button>
+  `;
+  const textarea = exportDiv.querySelector('#exportCodeArea');
+  textarea.value = generateExportCode();
+  const copyBtn = exportDiv.querySelector('#copyExportBtn');
+  copyBtn.addEventListener('click', () => {
+    textarea.select();
+    navigator.clipboard.writeText(textarea.value).then(() => {
+      copyBtn.textContent = '✅ Skopiowano!';
+      setTimeout(() => { copyBtn.textContent = '📋 Kopiuj kod eksportu'; }, 2000);
+    }).catch(() => showPopup('Nie udało się skopiować. Zaznacz kod ręcznie.'));
+  });
+  return exportDiv;
+}
+
+function refreshExportSection() {
+  const existingExport = document.getElementById('export-answers-section');
+  if (existingExport) existingExport.remove();
+  if (resultsDiv.style.display !== 'none') {
+    const newExport = createExportSection();
+    // wstaw za share-section lub na koniec resultsDiv
+    const shareSection = resultsDiv.querySelector('.share-section');
+    if (shareSection) shareSection.insertAdjacentElement('afterend', newExport);
+    else resultsDiv.appendChild(newExport);
+  }
+}
+
+// ========== IMPORT ODPOWIEDZI ==========
+function importAnswersFromExportCode(rawCode) {
+  if (!config) return false;
+  const lines = rawCode.split(/\r?\n/);
+  const newAnswers = [];
+  let matchedCount = 0;
+  for (const line of lines) {
+    // Format: "1. Treść tezy [id:123]: (Odpowiedź);"
+    const match = line.match(/^\d+\.\s*(.+?)\s*\[id:(\d+)\]:\s*\((.*?)\);?$/);
+    if (!match) continue;
+    const questionId = parseInt(match[2], 10);
+    const answerText = match[3].trim();
+    if (answerText === 'Brak odpowiedzi') continue;
+    
+    const question = config.questions.find(q => q.id === questionId);
+    if (!question) continue;
+    
+    // znajdź odpowiedź o pasującym labelu
+    let matchedAnswer = null;
+    let matchedIndex = -1;
+    for (let idx = 0; idx < question.answers.length; idx++) {
+      const ans = question.answers[idx];
+      if (ans.label === answerText) {
+        matchedAnswer = ans;
+        matchedIndex = idx;
+        break;
+      }
+    }
+    if (!matchedAnswer && answerText === 'Pomiń') {
+      // próba dopasowania do odpowiedzi typu "Pomiń"
+      for (let idx = 0; idx < question.answers.length; idx++) {
+        const ans = question.answers[idx];
+        if (ans.value === 0 && ans.label.includes('Pomiń')) {
+          matchedAnswer = ans;
+          matchedIndex = idx;
+          break;
+        }
+      }
+    }
+    if (matchedAnswer) {
+      newAnswers.push({
+        questionId: question.id,
+        answerIndex: matchedIndex,
+        answerValue: matchedAnswer.value,
+        answerData: matchedAnswer
+      });
+      matchedCount++;
+    }
+  }
+  if (matchedCount === 0) {
+    showPopup('Nie znaleziono żadnych prawidłowych odpowiedzi w kodzie. Upewnij się, że wklejasz poprawny kod eksportu.');
+    return false;
+  }
+  // zastąp userAnswers nowymi, zachowując tylko zaimportowane odpowiedzi (pozostałe pytania pozostaną bez odpowiedzi)
+  userAnswers = newAnswers;
+  // zaktualizuj GUI
+  updateDOMSelections();
+  // jeśli wyniki są widoczne – przelicz i odśwież
+  if (resultsDiv.style.display !== 'none') {
+    computeAndDisplayResults();
+  } else {
+    // nawet jeśli nie widoczne, warto by wyniki były gotowe po kliknięciu "pokaż wyniki"
+    // ale nie zmuszamy – wystarczy zapamiętanie odpowiedzi
+    showPopup(`Zaimportowano ${matchedCount} odpowiedzi. Kliknij "Pokaż wyniki", aby zobaczyć zaktualizowany profil.`);
+  }
+  return true;
+}
+
+function setupImportExport() {
+  const importBtn = document.getElementById('importBtn');
+  const importTextarea = document.getElementById('importCodeArea');
+  if (importBtn && importTextarea) {
+    importBtn.addEventListener('click', () => {
+      const code = importTextarea.value.trim();
+      if (!code) {
+        showPopup('Wklej kod eksportu w pole powyżej.');
+        return;
+      }
+      const success = importAnswersFromExportCode(code);
+      if (success) {
+        importTextarea.value = ''; // wyczyść pole po udanym imporcie
+        // przewiń do pytań, aby użytkownik mógł edytować
+        questionsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  }
+}
+
+// ========== OBLICZANIE WYNIKÓW (istniejące, nienaruszone) ==========
 function computeScores(mode = currentScoringMode) {
   const ideologyScores = new Map();
   const partyScores = new Map();
@@ -228,9 +398,8 @@ function computeScores(mode = currentScoringMode) {
     const answer = ans.answerData;
     const absWeight = Math.abs(weight);
 
-    // ---- IDEOLOGIES ----
+    // IDEOLOGIES
     if (mode === 'full') {
-      // Pełne profilowanie: zarówno _for jak i _against
       for (const ideo of (answer.ideologies_for || [])) {
         const rec = ideologyScores.get(ideo);
         if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; if (weight > 0) rec.agreements++; else rec.disagreements++; }
@@ -239,17 +408,16 @@ function computeScores(mode = currentScoringMode) {
         const rec = ideologyScores.get(ideo);
         if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; if (weight < 0) rec.agreements++; else rec.disagreements++; }
       }
-    } else { // tryb afirmacyjny – tylko _for i tylko gdy weight > 0
+    } else {
       if (weight > 0) {
         for (const ideo of (answer.ideologies_for || [])) {
           const rec = ideologyScores.get(ideo);
           if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; rec.agreements++; }
         }
       }
-      // całkowicie ignorujemy ideologies_against
     }
 
-    // ---- PARTIES ----
+    // PARTIES
     if (mode === 'full') {
       for (const party of (answer.parties_for || [])) {
         const rec = partyScores.get(party);
@@ -266,10 +434,9 @@ function computeScores(mode = currentScoringMode) {
           if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; rec.agreements++; }
         }
       }
-      // ignorujemy parties_against
     }
 
-    // ---- VALUES ----
+    // VALUES
     if (mode === 'full') {
       for (const val of (answer.values_for || [])) {
         const rec = valueScores.get(val);
@@ -286,7 +453,6 @@ function computeScores(mode = currentScoringMode) {
           if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
         }
       }
-      // ignorujemy values_against
     }
   }
 
@@ -432,11 +598,13 @@ function computeAndDisplayResults() {
   const existingShare = resultsDiv.querySelector('.share-section');
   if (existingShare) existingShare.remove();
   resultsDiv.appendChild(generateShareCode(pairResults));
+  // dodaj sekcję eksportu odpowiedzi
+  refreshExportSection();
   resultsDiv.style.display = 'block';
   window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
 }
 
-// ========== SYMULACJA ODPOWIEDZI ==========
+// ========== SYMULACJA ODPOWIEDZI (zaktualizowana o aktualizację DOM) ==========
 let simulationSelect = null;
 let simulateBtn = null;
 let restoreBtn = null;
@@ -444,12 +612,10 @@ let restoreBtn = null;
 function syncUserAnswersFromDOM() {
   const newAnswers = [];
   const questionCards = document.querySelectorAll('.question-card');
-  
   questionCards.forEach(card => {
     const qid = parseInt(card.dataset.id);
     const questionConfig = config.questions.find(q => q.id === qid);
     if (!questionConfig) return;
-    
     const selectedAnswer = card.querySelector('.answer-option.selected');
     if (selectedAnswer) {
       const ansIdx = parseInt(selectedAnswer.dataset.answerIdx);
@@ -473,29 +639,23 @@ function syncUserAnswersFromDOM() {
       }
     }
   });
-  
   userAnswers = newAnswers;
-  console.log('Przywrócono odpowiedzi użytkownika z GUI. Liczba odpowiedzi:', userAnswers.length);
 }
 
 function restoreUserAnswers() {
   syncUserAnswersFromDOM();
   computeAndDisplayResults();
-  console.log('✅ Przywrócono Twoje odpowiedzi i odświeżono wyniki.');
+  showPopup('Przywrócono Twoje odpowiedzi i odświeżono wyniki.');
 }
 
 function simulateAnswers(selectedName) {
-  console.log(`\n🎭 SYMULACJA DLA: ${selectedName}`);
   const simulatedAnswers = [];
-  
   for (const question of config.questions) {
     let bestAnswer = null;
     let bestAbsValue = -1;
-    
     for (const answer of question.answers) {
       const partiesFor = answer.parties_for || [];
       const ideologiesFor = answer.ideologies_for || [];
-      
       if (partiesFor.includes(selectedName) || ideologiesFor.includes(selectedName)) {
         const absVal = Math.abs(answer.value);
         if (absVal > bestAbsValue) {
@@ -504,14 +664,10 @@ function simulateAnswers(selectedName) {
         }
       }
     }
-    
     if (!bestAnswer) {
       bestAnswer = question.answers.find(a => a.value === 0 && a.label.includes('Pomiń'));
-      if (!bestAnswer) {
-        bestAnswer = question.answers[0];
-      }
+      if (!bestAnswer) bestAnswer = question.answers[0];
     }
-    
     const answerIndex = question.answers.findIndex(a => a === bestAnswer);
     simulatedAnswers.push({
       questionId: question.id,
@@ -520,41 +676,18 @@ function simulateAnswers(selectedName) {
       answerData: bestAnswer
     });
   }
-  
   userAnswers = simulatedAnswers;
+  updateDOMSelections();
   computeAndDisplayResults();
-  
-  const { pairResults, ideologyResults, partyResults } = computeScores(currentScoringMode);
-  console.log(`\n📊 WYNIKI SYMULACJI (${selectedName}):`);
-  console.log('--- Pary wartości ---');
-  pairResults.forEach(p => {
-    console.log(`${p.left}: ${p.leftPercent.toFixed(1)}%  |  ${p.right}: ${p.rightPercent.toFixed(1)}%`);
-  });
-  console.log('\n--- Top 5 ideologii ---');
-  ideologyResults.slice(0,5).forEach(ideo => {
-    console.log(`${ideo.name}: ${ideo.percent.toFixed(1)}%`);
-  });
-  console.log('\n--- Top 5 partii ---');
-  partyResults.slice(0,5).forEach(party => {
-    console.log(`${party.name}: ${party.percent.toFixed(1)}%`);
-  });
-  console.log(`\n✅ Symulacja zakończona. Aby wrócić do swoich odpowiedzi, kliknij "Przywróć moje odpowiedzi".\n`);
 }
 
 function setupSimulation() {
   simulationSelect = document.getElementById('simulateSelect');
   simulateBtn = document.getElementById('simulateBtn');
   restoreBtn = document.getElementById('restoreBtn');
-  
   if (!simulationSelect || !simulateBtn || !restoreBtn) return;
-  if (!config || !config.parties || !config.ideologies) {
-    console.warn('Brak danych partii lub ideologii w config');
-    simulationSelect.innerHTML = '<option>Brak danych do symulacji</option>';
-    return;
-  }
-  
+  if (!config || !config.parties || !config.ideologies) return;
   simulationSelect.innerHTML = '';
-  
   if (config.parties.length) {
     const partiesGroup = document.createElement('optgroup');
     partiesGroup.label = '🇵🇱 Partie polityczne';
@@ -566,7 +699,6 @@ function setupSimulation() {
     });
     simulationSelect.appendChild(partiesGroup);
   }
-  
   if (config.ideologies.length) {
     const ideologiesGroup = document.createElement('optgroup');
     ideologiesGroup.label = '💡 Ideologie';
@@ -578,35 +710,19 @@ function setupSimulation() {
     });
     simulationSelect.appendChild(ideologiesGroup);
   }
-  
-  if (!config.parties.length && !config.ideologies.length) {
-    simulationSelect.innerHTML = '<option>Brak partii i ideologii w data.json</option>';
-    return;
-  }
-  
   if (config.parties.length) simulationSelect.value = config.parties[0].name;
   else if (config.ideologies.length) simulationSelect.value = config.ideologies[0].name;
-  
   simulateBtn.addEventListener('click', () => {
     const selected = simulationSelect.value;
-    if (selected && selected !== 'Brak danych do symulacji') {
-      simulateAnswers(selected);
-    } else {
-      alert('Wybierz partię lub ideologię z listy.');
-    }
+    if (selected) simulateAnswers(selected);
+    else alert('Wybierz partię lub ideologię.');
   });
-  
-  restoreBtn.addEventListener('click', () => {
-    restoreUserAnswers();
-  });
+  restoreBtn.addEventListener('click', restoreUserAnswers);
 }
 
-// ========== NOWA FUNKCJA DO TRYBÓW LICZENIA ==========
 function setupModeSelector() {
   const radios = document.querySelectorAll('input[name="scoringMode"]');
   const helpBtn = document.getElementById('modeHelpBtn');
-  
-  // Wczytaj zapisany tryb
   const savedMode = localStorage.getItem('scoringMode');
   if (savedMode === 'affirmative') {
     currentScoringMode = 'affirmative';
@@ -615,27 +731,17 @@ function setupModeSelector() {
     currentScoringMode = 'full';
     document.querySelector('input[value="full"]').checked = true;
   }
-  
-  // Obsługa zmiany trybu
   radios.forEach(radio => {
     radio.addEventListener('change', (e) => {
       if (e.target.checked) {
         currentScoringMode = e.target.value;
         localStorage.setItem('scoringMode', currentScoringMode);
-        // Jeśli wyniki są widoczne – przelicz i odśwież
-        if (resultsDiv.style.display !== 'none') {
-          computeAndDisplayResults();
-        }
+        if (resultsDiv.style.display !== 'none') computeAndDisplayResults();
       }
     });
   });
-  
-  // Pomoc
   helpBtn.addEventListener('click', () => {
-    showPopup(
-      '🧠 Tryb pełnego profilowania\nUwzględnia zarówno poglądy popierane, jak i odrzucane. Niezgoda z daną tezą może przybliżać do innych ideologii, partii lub wartości.\n\n' +
-      '✅ Tryb afirmacyjny\nUwzględnia wyłącznie poglądy aktywnie popierane. Niezgoda z tezą nie powoduje automatycznego przybliżenia do stanowiska przeciwnego.'
-    );
+    showPopup('🧠 Tryb pełnego profilowania\nUwzględnia zarówno poglądy popierane, jak i odrzucane.\n\n✅ Tryb afirmacyjny\nUwzględnia wyłącznie poglądy aktywnie popierane.');
   });
 }
 
