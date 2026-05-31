@@ -1,4 +1,4 @@
-// script.js – dodany przełącznik trybów (pełne profilowanie / afirmacyjny) + IMPORT/EXPORT odpowiedzi
+// script.js – poprawiona zgodność atrybutów danych dla importu/eksportu
 let config = null;
 let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
@@ -98,7 +98,7 @@ async function loadConfig() {
     initApp();
     setupSimulation();
     setupModeSelector();
-    setupImportExport(); // nowa inicjalizacja importu/eksportu
+    setupImportExport();
   } catch (err) {
     console.error(err);
     questionsContainer.innerHTML = '<p style="color:red;">Błąd ładowania konfiguracji. Sprawdź czy plik data.json istnieje i jest poprawny.</p>';
@@ -178,7 +178,7 @@ function renderQuestions() {
       const ansEl = document.createElement('div');
       ansEl.className = 'answer-option';
       ansEl.innerText = ans.label;
-      ansEl.dataset.answerIdx = ansIdx;
+      ansEl.dataset.answerIndex = ansIdx;   // POPRAWA: zmienione z answerIdx na answerIndex
       ansEl.dataset.value = ans.value;
       const label = ans.label;
       if (label.includes('Zdecydowanie zgadzam się')) ansEl.classList.add('answer-strong-agree');
@@ -205,16 +205,13 @@ function renderQuestions() {
     card.appendChild(answersDiv);
     questionsContainer.appendChild(card);
   });
-  // po wyrenderowaniu – przywróć odpowiedzi z userAnswers (jeśli istnieją)
   updateDOMSelections();
 }
 
 function attachQuestionEvents() {}
 
-// ========== AKTUALIZACJA ZAZNACZEŃ W DOM NA PODSTAWIE userAnswers ==========
 function updateDOMSelections() {
   if (!config) return;
-  // wyczyść wszystkie zaznaczenia
   document.querySelectorAll('.answer-option').forEach(opt => opt.classList.remove('selected'));
   for (const ans of userAnswers) {
     const card = document.querySelector(`.question-card[data-id='${ans.questionId}']`);
@@ -224,7 +221,6 @@ function updateDOMSelections() {
   }
 }
 
-// ========== EKSPORT ODPOWIEDZI ==========
 function getCurrentDateTime() {
   const now = new Date();
   const YYYY = now.getFullYear();
@@ -246,10 +242,8 @@ function generateExportCode() {
     if (userAns && userAns.answerData) {
       answerText = userAns.answerData.label;
     } else if (userAns && userAns.answerValue === 0) {
-      // fallback: jeśli answerData brak, ale pominięte
       answerText = 'Pomiń';
     }
-    // format: "1. Treść tezy [id:123]: (odpowiedź);"
     output += `${i+1}. ${q.text} [id:${q.id}]: (${answerText});\n`;
   }
   return output;
@@ -281,21 +275,18 @@ function createExportSection() {
 function refreshExportSection() {
   const existingExport = document.getElementById('export-answers-section');
   if (existingExport) existingExport.remove();
-  // Zawsze dodajemy sekcję – zakładamy, że kontener wyników jest widoczny (lub zaraz będzie)
   const newExport = createExportSection();
   const shareSection = resultsDiv.querySelector('.share-section');
   if (shareSection) shareSection.insertAdjacentElement('afterend', newExport);
   else resultsDiv.appendChild(newExport);
 }
 
-// ========== IMPORT ODPOWIEDZI ==========
 function importAnswersFromExportCode(rawCode) {
   if (!config) return false;
   const lines = rawCode.split(/\r?\n/);
   const newAnswers = [];
   let matchedCount = 0;
   for (const line of lines) {
-    // Format: "1. Treść tezy [id:123]: (Odpowiedź);"
     const match = line.match(/^\d+\.\s*(.+?)\s*\[id:(\d+)\]:\s*\((.*?)\);?$/);
     if (!match) continue;
     const questionId = parseInt(match[2], 10);
@@ -305,7 +296,6 @@ function importAnswersFromExportCode(rawCode) {
     const question = config.questions.find(q => q.id === questionId);
     if (!question) continue;
     
-    // znajdź odpowiedź o pasującym labelu
     let matchedAnswer = null;
     let matchedIndex = -1;
     for (let idx = 0; idx < question.answers.length; idx++) {
@@ -317,7 +307,6 @@ function importAnswersFromExportCode(rawCode) {
       }
     }
     if (!matchedAnswer && answerText === 'Pomiń') {
-      // próba dopasowania do odpowiedzi typu "Pomiń"
       for (let idx = 0; idx < question.answers.length; idx++) {
         const ans = question.answers[idx];
         if (ans.value === 0 && ans.label.includes('Pomiń')) {
@@ -341,16 +330,11 @@ function importAnswersFromExportCode(rawCode) {
     showPopup('Nie znaleziono żadnych prawidłowych odpowiedzi w kodzie. Upewnij się, że wklejasz poprawny kod eksportu.');
     return false;
   }
-  // zastąp userAnswers nowymi, zachowując tylko zaimportowane odpowiedzi (pozostałe pytania pozostaną bez odpowiedzi)
   userAnswers = newAnswers;
-  // zaktualizuj GUI
   updateDOMSelections();
-  // jeśli wyniki są widoczne – przelicz i odśwież
   if (resultsDiv.style.display !== 'none') {
     computeAndDisplayResults();
   } else {
-    // nawet jeśli nie widoczne, warto by wyniki były gotowe po kliknięciu "pokaż wyniki"
-    // ale nie zmuszamy – wystarczy zapamiętanie odpowiedzi
     showPopup(`Zaimportowano ${matchedCount} odpowiedzi. Kliknij "Pokaż wyniki", aby zobaczyć zaktualizowany profil.`);
   }
   return true;
@@ -368,15 +352,13 @@ function setupImportExport() {
       }
       const success = importAnswersFromExportCode(code);
       if (success) {
-        importTextarea.value = ''; // wyczyść pole po udanym imporcie
-        // przewiń do pytań, aby użytkownik mógł edytować
+        importTextarea.value = '';
         questionsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
   }
 }
 
-// ========== OBLICZANIE WYNIKÓW (istniejące, nienaruszone) ==========
 function computeScores(mode = currentScoringMode) {
   const ideologyScores = new Map();
   const partyScores = new Map();
@@ -396,7 +378,6 @@ function computeScores(mode = currentScoringMode) {
     const answer = ans.answerData;
     const absWeight = Math.abs(weight);
 
-    // IDEOLOGIES
     if (mode === 'full') {
       for (const ideo of (answer.ideologies_for || [])) {
         const rec = ideologyScores.get(ideo);
@@ -415,7 +396,6 @@ function computeScores(mode = currentScoringMode) {
       }
     }
 
-    // PARTIES
     if (mode === 'full') {
       for (const party of (answer.parties_for || [])) {
         const rec = partyScores.get(party);
@@ -434,7 +414,6 @@ function computeScores(mode = currentScoringMode) {
       }
     }
 
-    // VALUES
     if (mode === 'full') {
       for (const val of (answer.values_for || [])) {
         const rec = valueScores.get(val);
@@ -596,15 +575,11 @@ function computeAndDisplayResults() {
   const existingShare = resultsDiv.querySelector('.share-section');
   if (existingShare) existingShare.remove();
   resultsDiv.appendChild(generateShareCode(pairResults));
-  
-  // *** POPRAWKA: najpierw pokaż kontener wyników, potem dodaj eksport ***
   resultsDiv.style.display = 'block';
-  refreshExportSection();   // teraz sekcja eksportu zostanie dodana, bo kontener jest widoczny
-  
+  refreshExportSection();
   window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
 }
 
-// ========== SYMULACJA ODPOWIEDZI (zaktualizowana o aktualizację DOM) ==========
 let simulationSelect = null;
 let simulateBtn = null;
 let restoreBtn = null;
@@ -618,7 +593,7 @@ function syncUserAnswersFromDOM() {
     if (!questionConfig) return;
     const selectedAnswer = card.querySelector('.answer-option.selected');
     if (selectedAnswer) {
-      const ansIdx = parseInt(selectedAnswer.dataset.answerIdx);
+      const ansIdx = parseInt(selectedAnswer.dataset.answerIndex); // POPRAWA: answerIndex
       const answerData = questionConfig.answers[ansIdx];
       newAnswers.push({
         questionId: qid,
@@ -738,7 +713,6 @@ function setupModeSelector() {
         localStorage.setItem('scoringMode', currentScoringMode);
         if (resultsDiv.style.display !== 'none') {
           computeAndDisplayResults();
-          // Po przeliczeniu wyników eksport jest już odświeżany wewnątrz computeAndDisplayResults
         }
       }
     });
