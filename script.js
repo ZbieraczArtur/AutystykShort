@@ -1,4 +1,4 @@
-// script.js – dodana funkcja importu odpowiedzi (parseImport, applyImport, setupImport)
+// script.js – w pełni działający import/eksport odpowiedzi
 let config = null;
 let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
@@ -98,7 +98,7 @@ async function loadConfig() {
     initApp();
     setupSimulation();
     setupModeSelector();
-    setupImport();      // <-- dodane ustawienie importu
+    setupImport();      // <-- import odpowiedzi
   } catch (err) {
     console.error(err);
     questionsContainer.innerHTML = '<p style="color:red;">Błąd ładowania konfiguracji. Sprawdź czy plik data.json istnieje i jest poprawny.</p>';
@@ -209,7 +209,7 @@ function renderQuestions() {
 
 function attachQuestionEvents() {}
 
-// ========== NOWA FUNKCJA OBLICZAJĄCA WYNIKI Z UWZGLĘDNIENIEM TRYBU ==========
+// ========== OBLICZANIE WYNIKÓW Z UWZGLĘDNIENIEM TRYBU ==========
 function computeScores(mode = currentScoringMode) {
   const ideologyScores = new Map();
   const partyScores = new Map();
@@ -405,7 +405,7 @@ function generateShareCode(pairResults) {
   return container;
 }
 
-// ========== NOWA FUNKCJA GENERUJĄCA EKSPORT ODPOWIEDZI ==========
+// ========== EKSPORT ODPOWIEDZI ==========
 function generateAnswersExportSection() {
   const now = new Date();
   const formattedDate = now.toLocaleString('pl-PL', {
@@ -486,7 +486,6 @@ function computeAndDisplayResults() {
   if (existingShare) existingShare.remove();
   resultsDiv.appendChild(generateShareCode(pairResults));
   
-  // Dodanie eksportu odpowiedzi – usuń starą sekcję jeśli istnieje
   const existingExport = resultsDiv.querySelector('.export-answers-section');
   if (existingExport) existingExport.remove();
   resultsDiv.appendChild(generateAnswersExportSection());
@@ -495,7 +494,7 @@ function computeAndDisplayResults() {
   window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
 }
 
-// ========== SYMULACJA ODPOWIEDZI ==========
+// ========== SYMULACJA ==========
 let simulationSelect = null;
 let simulateBtn = null;
 let restoreBtn = null;
@@ -660,7 +659,7 @@ function setupSimulation() {
   });
 }
 
-// ========== NOWA FUNKCJA DO TRYBÓW LICZENIA ==========
+// ========== TRYBY LICZENIA ==========
 function setupModeSelector() {
   const radios = document.querySelectorAll('input[name="scoringMode"]');
   const helpBtn = document.getElementById('modeHelpBtn');
@@ -694,7 +693,7 @@ function setupModeSelector() {
   });
 }
 
-// ========== NOWA FUNKCJA IMPORTU ODPOWIEDZI ==========
+// ========== IMPORT ODPOWIEDZI (POPRAWIONY) ==========
 function setupImport() {
   const importBtn = document.getElementById('importBtn');
   const importTextarea = document.getElementById('importAnswers');
@@ -709,58 +708,47 @@ function setupImport() {
     }
 
     const importedMap = parseImport(rawText);
-    if (Object.keys(importedMap).length === 0) {
+    if (importedMap.size === 0) {
       alert('Nie udało się odczytać żadnej odpowiedzi. Upewnij się, że wklejasz prawidłowy kod (z numerami pytań i myślnikami).');
       return;
     }
 
     applyImportedAnswers(importedMap);
     computeAndDisplayResults();
-    alert('Zaimportowano odpowiedzi. Możesz je teraz zmieniać ręcznie.');
+    alert(`Zaimportowano ${importedMap.size} odpowiedzi. Możesz je teraz zmieniać ręcznie.`);
   });
 }
 
+// Poprawiona funkcja parsująca – bardziej odporna na puste linie i różne formaty
 function parseImport(text) {
-  // Oczekiwany format:
-  // Data wykonania testu: ...
-  // 1. Treść pytania
-  // - Odpowiedź
-  // 2. ...
-  // - Odpowiedź
   const lines = text.split(/\r?\n/);
-  const result = new Map(); // key: questionNumber (1-indexed), value: answerLabel (np. "Zdecydowanie zgadzam się" lub "Pominięte")
-  let currentQuestionNumber = null;
+  const result = new Map();
+  let currentNumber = null;
 
   for (let i = 0; i < lines.length; i++) {
     let line = lines[i].trim();
     if (line === '') continue;
 
-    // Sprawdź czy linia zaczyna się od numeru pytania (np. "1. Treść...")
-    const questionMatch = line.match(/^(\d+)\.\s+(.+)$/);
-    if (questionMatch) {
-      currentQuestionNumber = parseInt(questionMatch[1], 10);
-      // nie przechowujemy treści, tylko czekamy na następną linię z odpowiedzią
+    // Sprawdź, czy linia zawiera numer pytania (na początku)
+    const matchNum = line.match(/^(\d+)\./);
+    if (matchNum) {
+      currentNumber = parseInt(matchNum[1], 10);
+      // Nie resetujemy od razu – czekamy na odpowiedź w kolejnych liniach
       continue;
     }
 
-    // Sprawdź czy linia zaczyna się od myślnika i spacji (odpowiedź)
-    if (currentQuestionNumber !== null && line.startsWith('-')) {
-      let answerLabel = line.substring(1).trim(); // usuwamy myślnik i spację
-      // Zamieniamy "Pominięte" na wewnętrzną etykietę przycisku "Pomiń pytanie"
-      if (answerLabel === 'Pominięte') {
-        answerLabel = 'Pomiń pytanie';  // zakładamy, że taki label istnieje w data.json
-      }
-      result.set(currentQuestionNumber, answerLabel);
-      currentQuestionNumber = null; // reset, czekamy na kolejny numer
+    // Jeśli mamy zapamiętany numer i linia zaczyna się od myślnika
+    if (currentNumber !== null && line.startsWith('-')) {
+      let answer = line.substring(1).trim(); // odcinamy myślnik i spację
+      if (answer === 'Pominięte') answer = 'Pomiń pytanie';
+      result.set(currentNumber, answer);
+      currentNumber = null; // reset – czekamy na następny numer
     }
   }
-
   return result;
 }
 
 function applyImportedAnswers(answersMap) {
-  // Dla każdego pytania w config, jeśli istnieje odpowiedź w mapie, znajdź odpowiedni przycisk i zaznacz
-  // Jeśli nie ma, usuń zaznaczenie (jeśli było)
   const questionCards = document.querySelectorAll('.question-card');
 
   questionCards.forEach((card, idx) => {
@@ -768,58 +756,47 @@ function applyImportedAnswers(answersMap) {
     const questionConfig = config.questions.find(q => q.id === qid);
     if (!questionConfig) return;
 
-    // Znajdź numer pytania (kolejność w config, ale user może mieć inny numer? Używamy indeksu +1)
-    // Ponieważ import używa numerów 1..N zgodnie z kolejnością wyświetlania, a config.questions ma tę samą kolejność
-    const questionNumber = idx + 1;
+    const questionNumber = idx + 1;  // kolejność wg wyświetlania
     const expectedLabel = answersMap.get(questionNumber);
-
     const answerOptions = card.querySelectorAll('.answer-option');
     let matched = false;
 
-    answerOptions.forEach(opt => {
-      const optLabel = opt.innerText.trim();
-      if (expectedLabel && optLabel === expectedLabel) {
-        // Zaznacz ten przycisk
-        opt.classList.add('selected');
-        matched = true;
-        // Zaktualizuj userAnswers
-        const ansIdx = parseInt(opt.dataset.answerIdx);
-        const answerData = questionConfig.answers[ansIdx];
-        const existing = userAnswers.findIndex(a => a.questionId === qid);
-        const answerObj = {
-          questionId: qid,
-          answerIndex: ansIdx,
-          answerValue: answerData.value,
-          answerData: answerData
-        };
-        if (existing !== -1) userAnswers[existing] = answerObj;
-        else userAnswers.push(answerObj);
-      } else {
-        // Odznacz wszystkie inne
-        opt.classList.remove('selected');
-        // Jeśli to był wcześniej zaznaczony, a teraz go nie ma w imporcie, usuwamy z userAnswers
-        if (opt.classList.contains('selected')) { // to już nie będzie true, bo usunęliśmy
-          // ale lepiej sprawdzić w userAnswers i usunąć jeśli nie ma w mapie
+    // Odznacz wszystkie przyciski (będziemy zaznaczać tylko pasujące)
+    answerOptions.forEach(opt => opt.classList.remove('selected'));
+
+    if (expectedLabel) {
+      // Szukamy przycisku z etykietą dokładnie taką jak w imporcie
+      for (let opt of answerOptions) {
+        const optLabel = opt.innerText.trim();
+        if (optLabel === expectedLabel) {
+          opt.classList.add('selected');
+          matched = true;
+          // Aktualizujemy userAnswers
+          const ansIdx = parseInt(opt.dataset.answerIdx);
+          const answerData = questionConfig.answers[ansIdx];
+          const existing = userAnswers.findIndex(a => a.questionId === qid);
+          const answerObj = {
+            questionId: qid,
+            answerIndex: ansIdx,
+            answerValue: answerData.value,
+            answerData: answerData
+          };
+          if (existing !== -1) userAnswers[existing] = answerObj;
+          else userAnswers.push(answerObj);
+          break;
         }
       }
-    });
-
-    if (!matched && expectedLabel) {
-      console.warn(`Nie znaleziono przycisku z etykietą "${expectedLabel}" dla pytania ${questionNumber}`);
-    }
-
-    // Jeśli nie ma odpowiedzi w imporcie (expectedLabel undefined) – nie robimy nic, pozostawiamy bez zaznaczenia
-    // Ale musimy upewnić się, że userAnswers nie zawiera odpowiedzi dla tego pytania, jeśli nie ma w mapie
-    if (!expectedLabel) {
-      const existingIdx = userAnswers.findIndex(a => a.questionId === qid);
-      if (existingIdx !== -1) {
-        userAnswers.splice(existingIdx, 1);
+      if (!matched) {
+        console.warn(`Nie znaleziono przycisku z etykietą "${expectedLabel}" dla pytania ${questionNumber}`);
       }
-      // Odznacz wszystkie przyciski (już są odznaczone przez powyższą pętlę)
+    } else {
+      // Brak odpowiedzi w imporcie – usuwamy istniejącą odpowiedź dla tego pytania
+      const existingIdx = userAnswers.findIndex(a => a.questionId === qid);
+      if (existingIdx !== -1) userAnswers.splice(existingIdx, 1);
     }
   });
 
-  // Dodatkowo upewnij się, że userAnswers nie zawiera duplikatów
+  // Usuwanie ewentualnych duplikatów (zabezpieczenie)
   const unique = [];
   const seen = new Set();
   for (const ans of userAnswers) {
