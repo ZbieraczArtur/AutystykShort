@@ -1,4 +1,4 @@
-// script.js – dodana funkcja generateAnswersExportSection i jej wywołanie w computeAndDisplayResults
+// script.js – dodana funkcja importu odpowiedzi (parseImport, applyImport, setupImport)
 let config = null;
 let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
@@ -98,6 +98,7 @@ async function loadConfig() {
     initApp();
     setupSimulation();
     setupModeSelector();
+    setupImport();      // <-- dodane ustawienie importu
   } catch (err) {
     console.error(err);
     questionsContainer.innerHTML = '<p style="color:red;">Błąd ładowania konfiguracji. Sprawdź czy plik data.json istnieje i jest poprawny.</p>';
@@ -691,6 +692,143 @@ function setupModeSelector() {
       '✅ Tryb afirmacyjny\nUwzględnia wyłącznie poglądy aktywnie popierane. Niezgoda z tezą nie powoduje automatycznego przybliżenia do stanowiska przeciwnego.'
     );
   });
+}
+
+// ========== NOWA FUNKCJA IMPORTU ODPOWIEDZI ==========
+function setupImport() {
+  const importBtn = document.getElementById('importBtn');
+  const importTextarea = document.getElementById('importAnswers');
+
+  if (!importBtn || !importTextarea) return;
+
+  importBtn.addEventListener('click', () => {
+    const rawText = importTextarea.value.trim();
+    if (!rawText) {
+      alert('Wklej kod eksportu w pole tekstowe.');
+      return;
+    }
+
+    const importedMap = parseImport(rawText);
+    if (Object.keys(importedMap).length === 0) {
+      alert('Nie udało się odczytać żadnej odpowiedzi. Upewnij się, że wklejasz prawidłowy kod (z numerami pytań i myślnikami).');
+      return;
+    }
+
+    applyImportedAnswers(importedMap);
+    computeAndDisplayResults();
+    alert('Zaimportowano odpowiedzi. Możesz je teraz zmieniać ręcznie.');
+  });
+}
+
+function parseImport(text) {
+  // Oczekiwany format:
+  // Data wykonania testu: ...
+  // 1. Treść pytania
+  // - Odpowiedź
+  // 2. ...
+  // - Odpowiedź
+  const lines = text.split(/\r?\n/);
+  const result = new Map(); // key: questionNumber (1-indexed), value: answerLabel (np. "Zdecydowanie zgadzam się" lub "Pominięte")
+  let currentQuestionNumber = null;
+
+  for (let i = 0; i < lines.length; i++) {
+    let line = lines[i].trim();
+    if (line === '') continue;
+
+    // Sprawdź czy linia zaczyna się od numeru pytania (np. "1. Treść...")
+    const questionMatch = line.match(/^(\d+)\.\s+(.+)$/);
+    if (questionMatch) {
+      currentQuestionNumber = parseInt(questionMatch[1], 10);
+      // nie przechowujemy treści, tylko czekamy na następną linię z odpowiedzią
+      continue;
+    }
+
+    // Sprawdź czy linia zaczyna się od myślnika i spacji (odpowiedź)
+    if (currentQuestionNumber !== null && line.startsWith('-')) {
+      let answerLabel = line.substring(1).trim(); // usuwamy myślnik i spację
+      // Zamieniamy "Pominięte" na wewnętrzną etykietę przycisku "Pomiń pytanie"
+      if (answerLabel === 'Pominięte') {
+        answerLabel = 'Pomiń pytanie';  // zakładamy, że taki label istnieje w data.json
+      }
+      result.set(currentQuestionNumber, answerLabel);
+      currentQuestionNumber = null; // reset, czekamy na kolejny numer
+    }
+  }
+
+  return result;
+}
+
+function applyImportedAnswers(answersMap) {
+  // Dla każdego pytania w config, jeśli istnieje odpowiedź w mapie, znajdź odpowiedni przycisk i zaznacz
+  // Jeśli nie ma, usuń zaznaczenie (jeśli było)
+  const questionCards = document.querySelectorAll('.question-card');
+
+  questionCards.forEach((card, idx) => {
+    const qid = parseInt(card.dataset.id);
+    const questionConfig = config.questions.find(q => q.id === qid);
+    if (!questionConfig) return;
+
+    // Znajdź numer pytania (kolejność w config, ale user może mieć inny numer? Używamy indeksu +1)
+    // Ponieważ import używa numerów 1..N zgodnie z kolejnością wyświetlania, a config.questions ma tę samą kolejność
+    const questionNumber = idx + 1;
+    const expectedLabel = answersMap.get(questionNumber);
+
+    const answerOptions = card.querySelectorAll('.answer-option');
+    let matched = false;
+
+    answerOptions.forEach(opt => {
+      const optLabel = opt.innerText.trim();
+      if (expectedLabel && optLabel === expectedLabel) {
+        // Zaznacz ten przycisk
+        opt.classList.add('selected');
+        matched = true;
+        // Zaktualizuj userAnswers
+        const ansIdx = parseInt(opt.dataset.answerIdx);
+        const answerData = questionConfig.answers[ansIdx];
+        const existing = userAnswers.findIndex(a => a.questionId === qid);
+        const answerObj = {
+          questionId: qid,
+          answerIndex: ansIdx,
+          answerValue: answerData.value,
+          answerData: answerData
+        };
+        if (existing !== -1) userAnswers[existing] = answerObj;
+        else userAnswers.push(answerObj);
+      } else {
+        // Odznacz wszystkie inne
+        opt.classList.remove('selected');
+        // Jeśli to był wcześniej zaznaczony, a teraz go nie ma w imporcie, usuwamy z userAnswers
+        if (opt.classList.contains('selected')) { // to już nie będzie true, bo usunęliśmy
+          // ale lepiej sprawdzić w userAnswers i usunąć jeśli nie ma w mapie
+        }
+      }
+    });
+
+    if (!matched && expectedLabel) {
+      console.warn(`Nie znaleziono przycisku z etykietą "${expectedLabel}" dla pytania ${questionNumber}`);
+    }
+
+    // Jeśli nie ma odpowiedzi w imporcie (expectedLabel undefined) – nie robimy nic, pozostawiamy bez zaznaczenia
+    // Ale musimy upewnić się, że userAnswers nie zawiera odpowiedzi dla tego pytania, jeśli nie ma w mapie
+    if (!expectedLabel) {
+      const existingIdx = userAnswers.findIndex(a => a.questionId === qid);
+      if (existingIdx !== -1) {
+        userAnswers.splice(existingIdx, 1);
+      }
+      // Odznacz wszystkie przyciski (już są odznaczone przez powyższą pętlę)
+    }
+  });
+
+  // Dodatkowo upewnij się, że userAnswers nie zawiera duplikatów
+  const unique = [];
+  const seen = new Set();
+  for (const ans of userAnswers) {
+    if (!seen.has(ans.questionId)) {
+      seen.add(ans.questionId);
+      unique.push(ans);
+    }
+  }
+  userAnswers = unique;
 }
 
 loadConfig();
