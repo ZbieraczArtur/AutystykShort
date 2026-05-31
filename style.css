@@ -749,7 +749,7 @@ footer a:hover {
   }
 }
 
-/* ========== PANEL IMPORTU ODPOWIEDZI (POPRAWIONY) ========== */
+/* ========== PANEL IMPORTU ODPOWIEDZI ========== */
 .import-panel {
   background: var(--card-bg);
   backdrop-filter: blur(8px);
@@ -838,7 +838,7 @@ footer a:hover {
   }
 }
 
-/* ========== SEKCJA EKSPORTU ODPOWIEDZI (POPRAWIONA) ========== */
+/* ========== SEKCJA EKSPORTU ODPOWIEDZI ========== */
 .export-answers-section {
   margin-top: 2rem;
   padding: 1.2rem 1.8rem;
