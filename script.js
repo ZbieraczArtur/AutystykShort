@@ -1,4 +1,4 @@
-// script.js – dodany przełącznik trybów (pełne profilowanie / afirmacyjny)
+// script.js – dodana funkcja generateAnswersExportSection i jej wywołanie w computeAndDisplayResults
 let config = null;
 let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
@@ -230,7 +230,6 @@ function computeScores(mode = currentScoringMode) {
 
     // ---- IDEOLOGIES ----
     if (mode === 'full') {
-      // Pełne profilowanie: zarówno _for jak i _against
       for (const ideo of (answer.ideologies_for || [])) {
         const rec = ideologyScores.get(ideo);
         if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; if (weight > 0) rec.agreements++; else rec.disagreements++; }
@@ -239,14 +238,13 @@ function computeScores(mode = currentScoringMode) {
         const rec = ideologyScores.get(ideo);
         if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; if (weight < 0) rec.agreements++; else rec.disagreements++; }
       }
-    } else { // tryb afirmacyjny – tylko _for i tylko gdy weight > 0
+    } else {
       if (weight > 0) {
         for (const ideo of (answer.ideologies_for || [])) {
           const rec = ideologyScores.get(ideo);
           if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; rec.agreements++; }
         }
       }
-      // całkowicie ignorujemy ideologies_against
     }
 
     // ---- PARTIES ----
@@ -266,7 +264,6 @@ function computeScores(mode = currentScoringMode) {
           if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; rec.agreements++; }
         }
       }
-      // ignorujemy parties_against
     }
 
     // ---- VALUES ----
@@ -286,7 +283,6 @@ function computeScores(mode = currentScoringMode) {
           if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
         }
       }
-      // ignorujemy values_against
     }
   }
 
@@ -408,6 +404,61 @@ function generateShareCode(pairResults) {
   return container;
 }
 
+// ========== NOWA FUNKCJA GENERUJĄCA EKSPORT ODPOWIEDZI ==========
+function generateAnswersExportSection() {
+  const now = new Date();
+  const formattedDate = now.toLocaleString('pl-PL', {
+    year: 'numeric',
+    month: '2-digit',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit'
+  });
+  
+  let exportText = `Data wykonania testu: ${formattedDate}\n\n`;
+  
+  config.questions.forEach((q, idx) => {
+    const answerObj = userAnswers.find(a => a.questionId === q.id);
+    let answerLabel = 'Brak odpowiedzi';
+    if (answerObj && answerObj.answerData && answerObj.answerData.label) {
+      answerLabel = answerObj.answerData.label;
+    } else if (answerObj && answerObj.answerValue === 0) {
+      answerLabel = 'Pominięte';
+    }
+    exportText += `${idx+1}. ${q.text}\n- ${answerLabel}\n\n`;
+  });
+  
+  const container = document.createElement('div');
+  container.className = 'export-answers-section';
+  container.innerHTML = `
+    <h3>📋 Eksport twoich odpowiedzi</h3>
+    <p>Skopiuj poniższy kod, aby zapisać lub udostępnić swoje odpowiedzi:</p>
+    <textarea readonly class="export-code" rows="10">${escapeHtml(exportText)}</textarea>
+    <button class="copy-export-btn">📋 Kopiuj kod</button>
+  `;
+  
+  const copyBtn = container.querySelector('.copy-export-btn');
+  const textarea = container.querySelector('.export-code');
+  copyBtn.addEventListener('click', () => {
+    textarea.select();
+    navigator.clipboard.writeText(textarea.value).then(() => {
+      copyBtn.textContent = '✅ Skopiowano!';
+      setTimeout(() => { copyBtn.textContent = '📋 Kopiuj kod'; }, 2000);
+    }).catch(() => alert('Nie udało się skopiować. Możesz zaznaczyć kod ręcznie.'));
+  });
+  return container;
+}
+
+function escapeHtml(str) {
+  return str.replace(/[&<>]/g, function(m) {
+    if (m === '&') return '&amp;';
+    if (m === '<') return '&lt;';
+    if (m === '>') return '&gt;';
+    return m;
+  });
+}
+
 function computeAndDisplayResults() {
   const { pairResults, ideologyResults, partyResults } = computeScores(currentScoringMode);
   valuesResults.innerHTML = '<h3>⚖️ Pary wartości</h3>';
@@ -429,9 +480,16 @@ function computeAndDisplayResults() {
   ideologiesResults.appendChild(createRankingSection('📊 Ranking ideologii (zgodność %)', ideologyResults, 'ideology'));
   partiesResults.innerHTML = '';
   partiesResults.appendChild(createRankingSection('🗳️ Ranking partii (zgodność %)', partyResults, 'party'));
+  
   const existingShare = resultsDiv.querySelector('.share-section');
   if (existingShare) existingShare.remove();
   resultsDiv.appendChild(generateShareCode(pairResults));
+  
+  // Dodanie eksportu odpowiedzi – usuń starą sekcję jeśli istnieje
+  const existingExport = resultsDiv.querySelector('.export-answers-section');
+  if (existingExport) existingExport.remove();
+  resultsDiv.appendChild(generateAnswersExportSection());
+  
   resultsDiv.style.display = 'block';
   window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
 }
@@ -606,7 +664,6 @@ function setupModeSelector() {
   const radios = document.querySelectorAll('input[name="scoringMode"]');
   const helpBtn = document.getElementById('modeHelpBtn');
   
-  // Wczytaj zapisany tryb
   const savedMode = localStorage.getItem('scoringMode');
   if (savedMode === 'affirmative') {
     currentScoringMode = 'affirmative';
@@ -616,13 +673,11 @@ function setupModeSelector() {
     document.querySelector('input[value="full"]').checked = true;
   }
   
-  // Obsługa zmiany trybu
   radios.forEach(radio => {
     radio.addEventListener('change', (e) => {
       if (e.target.checked) {
         currentScoringMode = e.target.value;
         localStorage.setItem('scoringMode', currentScoringMode);
-        // Jeśli wyniki są widoczne – przelicz i odśwież
         if (resultsDiv.style.display !== 'none') {
           computeAndDisplayResults();
         }
@@ -630,7 +685,6 @@ function setupModeSelector() {
     });
   });
   
-  // Pomoc
   helpBtn.addEventListener('click', () => {
     showPopup(
       '🧠 Tryb pełnego profilowania\nUwzględnia zarówno poglądy popierane, jak i odrzucane. Niezgoda z daną tezą może przybliżać do innych ideologii, partii lub wartości.\n\n' +
