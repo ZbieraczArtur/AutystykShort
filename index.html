@@ -1,4 +1,4 @@
-<!-- index.html – poprawiony panel importu i eksportu (wizualnie) -->
+<!-- index.html – przełącznik trybu przeniesiony do wyników -->
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -17,15 +17,6 @@
         <h1>🐻 NeoAutystyk Short</h1>
         <button id="theme-toggle" class="theme-toggle" aria-label="Przełącz tryb jasny/ciemny">🌙</button>
       </div>
-
-      <!-- PANEL IMPORTU ODPOWIEDZI (poprawiony wizualnie) -->
-      <div class="import-panel">
-        <label for="importAnswers">📥 Importuj swoje odpowiedzi:</label>
-        <textarea id="importAnswers" rows="3" placeholder="Wklej tutaj kod skopiowany z sekcji eksportu..."></textarea>
-        <button id="importBtn" class="import-btn">📂 Importuj</button>
-        <small>Wklej kod wygenerowany wcześniej przez test. Odpowiedzi zostaną zaznaczone, a wyniki odświeżone. Nowe pytania pozostaną bez odpowiedzi.</small>
-      </div>
-
       <div class="disclaimer">
         <p><strong>⚠️ Informacja przed testem</strong></p>
         <p>Niektóre tezy w tym teście mogą zawierać ukryte presupozycje – np. zakładać istnienie państwa, własności prywatnej, walki klasowej lub inny punkt wyjścia, z którym możesz się nie zgadzać.</p>
@@ -55,6 +46,7 @@
 
     <div id="results-container" style="display: none;">
       <hr>
+      <!-- PRZEŁĄCZNIK TRYBÓW – teraz w wynikach -->
       <div class="mode-selector">
         <span>🔧 Tryb liczenia:</span>
         <label>
@@ -76,6 +68,7 @@
     </footer>
   </div>
 
+  <!-- Popup do definicji wartości / komentarzy -->
   <div id="popup" class="popup hidden" aria-hidden="true">
     <div class="popup-content" role="dialog" aria-modal="true">
       <p id="popup-text"></p>
