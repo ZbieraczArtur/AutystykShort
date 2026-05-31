@@ -281,13 +281,11 @@ function createExportSection() {
 function refreshExportSection() {
   const existingExport = document.getElementById('export-answers-section');
   if (existingExport) existingExport.remove();
-  if (resultsDiv.style.display !== 'none') {
-    const newExport = createExportSection();
-    // wstaw za share-section lub na koniec resultsDiv
-    const shareSection = resultsDiv.querySelector('.share-section');
-    if (shareSection) shareSection.insertAdjacentElement('afterend', newExport);
-    else resultsDiv.appendChild(newExport);
-  }
+  // Zawsze dodajemy sekcję – zakładamy, że kontener wyników jest widoczny (lub zaraz będzie)
+  const newExport = createExportSection();
+  const shareSection = resultsDiv.querySelector('.share-section');
+  if (shareSection) shareSection.insertAdjacentElement('afterend', newExport);
+  else resultsDiv.appendChild(newExport);
 }
 
 // ========== IMPORT ODPOWIEDZI ==========
@@ -598,9 +596,11 @@ function computeAndDisplayResults() {
   const existingShare = resultsDiv.querySelector('.share-section');
   if (existingShare) existingShare.remove();
   resultsDiv.appendChild(generateShareCode(pairResults));
-  // dodaj sekcję eksportu odpowiedzi
-  refreshExportSection();
+  
+  // *** POPRAWKA: najpierw pokaż kontener wyników, potem dodaj eksport ***
   resultsDiv.style.display = 'block';
+  refreshExportSection();   // teraz sekcja eksportu zostanie dodana, bo kontener jest widoczny
+  
   window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
 }
 
@@ -736,7 +736,10 @@ function setupModeSelector() {
       if (e.target.checked) {
         currentScoringMode = e.target.value;
         localStorage.setItem('scoringMode', currentScoringMode);
-        if (resultsDiv.style.display !== 'none') computeAndDisplayResults();
+        if (resultsDiv.style.display !== 'none') {
+          computeAndDisplayResults();
+          // Po przeliczeniu wyników eksport jest już odświeżany wewnątrz computeAndDisplayResults
+        }
       }
     });
   });
