@@ -636,9 +636,21 @@ function computeAndDisplayResults() {
       const rightTextColor = getContrastColor(rightColor);
       const pairDiv = document.createElement('div');
       pairDiv.className = 'value-pair';
-      pairDiv.innerHTML = `<div class="value-bar-container"><span class="value-left" data-def="${pair.leftDef}">${pair.left}</span><div class="value-bar"><div class="bar-left" style="width: ${pair.leftPercent}%; background-color: ${leftColor}; color: ${leftTextColor};">${Math.round(pair.leftPercent)}%</div><div class="bar-right" style="width: ${pair.rightPercent}%; background-color: ${rightColor}; color: ${rightTextColor};">${Math.round(pair.rightPercent)}%</div></div><span class="value-right" data-def="${pair.rightDef}">${pair.right}</span></div>`;
-      const leftSpan = pairDiv.querySelector('.value-left');
-      const rightSpan = pairDiv.querySelector('.value-right');
+      
+      // Zmieniona struktura HTML dla lepszego wyświetlania etykiet
+      pairDiv.innerHTML = `
+        <div class="value-bar-container-new">
+          <span class="value-left-new" data-def="${pair.leftDef}">${pair.left}</span>
+          <div class="value-bar-new">
+            <div class="bar-left-new" style="width: ${pair.leftPercent}%; background-color: ${leftColor}; color: ${leftTextColor};">${Math.round(pair.leftPercent)}%</div>
+            <div class="bar-right-new" style="width: ${pair.rightPercent}%; background-color: ${rightColor}; color: ${rightTextColor};">${Math.round(pair.rightPercent)}%</div>
+          </div>
+          <span class="value-right-new" data-def="${pair.rightDef}">${pair.right}</span>
+        </div>
+      `;
+      
+      const leftSpan = pairDiv.querySelector('.value-left-new');
+      const rightSpan = pairDiv.querySelector('.value-right-new');
       leftSpan.addEventListener('click', () => showPopup(pair.leftDef));
       rightSpan.addEventListener('click', () => showPopup(pair.rightDef));
       categoryDiv.appendChild(pairDiv);
@@ -647,10 +659,12 @@ function computeAndDisplayResults() {
   }
   valuesResults.appendChild(gridContainer);
   
+  // Wyczyść i wypełnij rankingi
   ideologiesResults.innerHTML = '';
-  ideologiesResults.appendChild(createRankingSection('📊 Ranking ideologii (zgodność %)', ideologyResults, 'ideology'));
   partiesResults.innerHTML = '';
+  ideologiesResults.appendChild(createRankingSection('📊 Ranking ideologii (zgodność %)', ideologyResults, 'ideology'));
   partiesResults.appendChild(createRankingSection('🗳️ Ranking partii (zgodność %)', partyResults, 'party'));
+  
   const existingShare = resultsDiv.querySelector('.share-section');
   if (existingShare) existingShare.remove();
   resultsDiv.appendChild(generateShareCode(pairResults));
