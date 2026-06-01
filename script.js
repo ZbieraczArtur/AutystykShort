@@ -33,7 +33,7 @@ const partyLogoMap = new Map([
   ['Polska Partia Socjalistyczna', 'Polska_Partia_Socjalistyczna.png'],
   ['Polskie Stronnictwo Ludowe', 'Polskie_Stronnictwo_Ludowe.jpg'],
   ['Prawo i Sprawiedliwość', 'Prawo_i_Sprawiedliwosc.svg'],
-  ['Razem', 'Razem.png'],
+  ['Razem', 'Partia_Razem.png'],
   ['Ruch Narodowy', 'Ruch_Narodowy.svg']
 ]);
 
