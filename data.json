@@ -6602,7 +6602,7 @@
           "values_for": ["Egalitaryzm", "Samoorganizacja", "Decentralizacja", "Demokracja", "Anty-autokracja", "Własność kolektywna", "Samoregulacja"],
           "values_against": ["Kolektywizm", "Heteronomia", "Decentralizacja", "Centralizacja", "Autokracja", "Własność kolektywna", "Planowanie"],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Zieloni", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -6612,7 +6612,7 @@
           "values_for": ["Egalitaryzm", "Samoorganizacja", "Decentralizacja", "Demokracja", "Anty-autokracja", "Własność kolektywna", "Samoregulacja"],
           "values_against": ["Kolektywizm", "Heteronomia", "Decentralizacja", "Centralizacja", "Autokracja", "Własność kolektywna", "Planowanie"],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Zieloni", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -6622,7 +6622,7 @@
           "values_for": ["Kolektywizm", "Heteronomia", "Decentralizacja", "Centralizacja", "Autokracja", "Własność kolektywna", "Planowanie"],
           "values_against": ["Egalitaryzm", "Samoorganizacja", "Decentralizacja", "Demokracja", "Anty-autokracja", "Własność kolektywna", "Samoregulacja"],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Zieloni", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -6632,7 +6632,7 @@
           "values_for": ["Kolektywizm", "Heteronomia", "Decentralizacja", "Centralizacja", "Autokracja", "Własność kolektywna", "Planowanie"],
           "values_against": ["Egalitaryzm", "Samoorganizacja", "Decentralizacja", "Demokracja", "Anty-autokracja", "Własność kolektywna", "Samoregulacja"],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Zieloni", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -6659,7 +6659,7 @@
           "values_for": ["Kolektywizm", "Egalitaryzm", "Własność kolektywna"],
           "values_against": ["Indywidualizm", "Hierarchiczność", "Własność prywatna"],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny"],
           "parties_for": ["Partia Razem", "Polska Partia Socjalistyczna"],
           "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -6668,8 +6668,8 @@
           "value": 1.0,
           "values_for": ["Kolektywizm", "Egalitaryzm", "Własność kolektywna"],
           "values_against": ["Indywidualizm", "Hierarchiczność", "Własność prywatna"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Partia Razem", "Polska Partia Socjalistyczna"],
           "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -6678,7 +6678,7 @@
           "value": -1.0,
           "values_for": ["Indywidualizm", "Hierarchiczność", "Własność prywatna"],
           "values_against": ["Kolektywizm", "Egalitaryzm", "Własność kolektywna"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm"],
           "ideologies_against": [],
           "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Partia Razem", "Polska Partia Socjalistyczna"]
@@ -6688,7 +6688,7 @@
           "value": -1.5,
           "values_for": ["Indywidualizm", "Hierarchiczność", "Własność prywatna"],
           "values_against": ["Kolektywizm", "Egalitaryzm", "Własność kolektywna"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Partia Razem", "Polska Partia Socjalistyczna"]
@@ -6717,7 +6717,7 @@
           "values_for": ["Kolektywizm", "Egalitaryzm", "Własność kolektywna", "Planowanie"],
           "values_against": ["Hierarchiczność", "Rynek", "Własność prywatna"],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny"],
           "parties_for": ["Polska Partia Socjalistyczna"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -6726,8 +6726,8 @@
           "value": 1.0,
           "values_for": ["Kolektywizm", "Egalitaryzm", "Własność kolektywna", "Planowanie"],
           "values_against": ["Hierarchiczność", "Rynek", "Własność prywatna"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjaldemokracja"],
+          "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny"],
           "parties_for": ["Polska Partia Socjalistyczna"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -6736,7 +6736,7 @@
           "value": -1.0,
           "values_for": ["Hierarchiczność", "Rynek", "Własność prywatna"],
           "values_against": ["Kolektywizm", "Egalitaryzm", "Własność kolektywna", "Planowanie"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjaldemokracja"],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Polska Partia Socjalistyczna"]
@@ -6746,7 +6746,7 @@
           "value": -1.5,
           "values_for": ["Hierarchiczność", "Rynek", "Własność prywatna"],
           "values_against": ["Kolektywizm", "Egalitaryzm", "Własność kolektywna", "Planowanie"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Polska Partia Socjalistyczna"]
@@ -6774,7 +6774,7 @@
           "value": 1.5,
           "values_for": ["Rynek", "Swobodna wymiana"],
           "values_against": ["Regulacja instytucjonalna", "Planowanie"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Nowa Lewica", "Polska Partia Socjalistyczna"]
@@ -6784,7 +6784,7 @@
           "value": 1.0,
           "values_for": ["Rynek", "Swobodna wymiana"],
           "values_against": ["Regulacja instytucjonalna", "Planowanie"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjaldemokracja"],
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Nowa Lewica", "Polska Partia Socjalistyczna"]
@@ -6794,7 +6794,7 @@
           "value": -1.0,
           "values_for": ["Regulacja instytucjonalna", "Planowanie"],
           "values_against": ["Rynek", "Swobodna wymiana"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjaldemokracja"],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Nowa Lewica", "Polska Partia Socjalistyczna"],
           "parties_against": []
@@ -6832,7 +6832,7 @@
           "value": 1.5,
           "values_for": ["Rynek", "Samoregulacja", "Własność prywatna"],
           "values_against": ["Planowanie", "Regulacja instytucjonalna", "Etatyzm"],
-          "ideologies_for": [],
+          "ideologies_for": ["Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Koalicja Obywatelska", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -6852,8 +6852,8 @@
           "value": -1.0,
           "values_for": ["Planowanie", "Regulacja instytucjonalna", "Etatyzm"],
           "values_against": ["Rynek", "Samoregulacja", "Własność prywatna"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Koalicja Obywatelska", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
@@ -6862,8 +6862,8 @@
           "value": -1.5,
           "values_for": ["Planowanie", "Regulacja instytucjonalna", "Etatyzm"],
           "values_against": ["Rynek", "Samoregulacja", "Własność prywatna"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Koalicja Obywatelska", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
@@ -6890,7 +6890,7 @@
           "value": 1.5,
           "values_for": ["Rynek", "Samoregulacja", "Indywidualizm", "Kontraktualizm"],
           "values_against": ["Planowanie", "Własność kolektywna"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["Polska Partia Socjalistyczna"]
@@ -6900,7 +6900,7 @@
           "value": 1.0,
           "values_for": ["Rynek", "Samoregulacja", "Indywidualizm", "Kontraktualizm"],
           "values_against": ["Planowanie", "Własność kolektywna"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["Polska Partia Socjalistyczna"]
@@ -6910,8 +6910,8 @@
           "value": -1.0,
           "values_for": ["Planowanie", "Własność kolektywna"],
           "values_against": ["Rynek", "Samoregulacja", "Indywidualizm"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjaldemokracja"],
+          "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny"],
           "parties_for": ["Polska Partia Socjalistyczna"],
           "parties_against": []
         },
@@ -6921,7 +6921,7 @@
           "values_for": ["Planowanie", "Własność kolektywna"],
           "values_against": ["Rynek", "Samoregulacja", "Indywidualizm"],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny"],
           "parties_for": ["Polska Partia Socjalistyczna"],
           "parties_against": []
         },
@@ -6948,7 +6948,7 @@
           "value": 1.5,
           "values_for": ["Rynek", "Indywidualizm", "Postęp technologiczny"],
           "values_against": ["Planowanie", "Własność kolektywna"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
@@ -6958,7 +6958,7 @@
           "value": 1.0,
           "values_for": ["Rynek", "Indywidualizm", "Postęp technologiczny"],
           "values_against": ["Planowanie", "Własność kolektywna"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjaldemokracja"],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": []
@@ -6968,7 +6968,7 @@
           "value": -1.0,
           "values_for": ["Planowanie", "Własność kolektywna"],
           "values_against": ["Rynek", "Indywidualizm", "Postęp technologiczny"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -6978,7 +6978,7 @@
           "value": -1.5,
           "values_for": ["Planowanie", "Własność kolektywna"],
           "values_against": ["Rynek", "Indywidualizm", "Postęp technologiczny"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -7006,7 +7006,7 @@
           "value": 1.5,
           "values_for": ["Rynek", "Samoregulacja", "Własność prywatna"],
           "values_against": ["Etatyzm", "Planowanie", "Regulacja instytucjonalna"],
-          "ideologies_for": [],
+          "ideologies_for": ["Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -7016,7 +7016,7 @@
           "value": 1.0,
           "values_for": ["Rynek", "Samoregulacja", "Własność prywatna"],
           "values_against": ["Etatyzm", "Planowanie", "Regulacja instytucjonalna"],
-          "ideologies_for": [],
+          "ideologies_for": ["Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -7027,7 +7027,7 @@
           "values_for": ["Etatyzm", "Planowanie", "Regulacja instytucjonalna"],
           "values_against": ["Rynek", "Samoregulacja", "Własność prywatna"],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
@@ -7036,8 +7036,8 @@
           "value": -1.5,
           "values_for": ["Etatyzm", "Planowanie", "Regulacja instytucjonalna"],
           "values_against": ["Rynek", "Samoregulacja", "Własność prywatna"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
@@ -7064,8 +7064,8 @@
           "value": 1.5,
           "values_for": ["Autonomia", "Samoregulacja", "Rynek"],
           "values_against": ["Regulacja instytucjonalna", "Etatyzm", "Heteronomia"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Liberalizm klasyczny"],
+          "ideologies_against": ["Socjaldemokracja"],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -7074,8 +7074,8 @@
           "value": 1.0,
           "values_for": ["Autonomia", "Samoregulacja", "Rynek"],
           "values_against": ["Regulacja instytucjonalna", "Etatyzm", "Heteronomia"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm"],
+          "ideologies_against": ["Socjaldemokracja"],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -7084,8 +7084,8 @@
           "value": -1.0,
           "values_for": ["Regulacja instytucjonalna", "Etatyzm", "Heteronomia"],
           "values_against": ["Autonomia", "Samoregulacja", "Rynek"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
@@ -7094,8 +7094,8 @@
           "value": -1.5,
           "values_for": ["Regulacja instytucjonalna", "Etatyzm", "Heteronomia"],
           "values_against": ["Autonomia", "Samoregulacja", "Rynek"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
@@ -7122,8 +7122,8 @@
           "value": 1.5,
           "values_for": ["Regulacja instytucjonalna", "Etatyzm", "Egalitaryzm", "Heteronomia"],
           "values_against": ["Samoregulacja", "Rynek", "Autonomia", "Kontraktualizm"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Nowa Nadzieja"]
         },
@@ -7132,8 +7132,8 @@
           "value": 1.0,
           "values_for": ["Regulacja instytucjonalna", "Etatyzm", "Egalitaryzm", "Heteronomia"],
           "values_against": ["Samoregulacja", "Rynek", "Autonomia", "Kontraktualizm"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Nowa Nadzieja"]
         },
@@ -7142,8 +7142,8 @@
           "value": -1.0,
           "values_for": ["Samoregulacja", "Rynek", "Autonomia", "Kontraktualizm"],
           "values_against": ["Regulacja instytucjonalna", "Etatyzm", "Egalitaryzm", "Heteronomia"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Liberalizm klasyczny"],
+          "ideologies_against": ["Socjaldemokracja"],
           "parties_for": ["Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -7152,8 +7152,8 @@
           "value": -1.5,
           "values_for": ["Samoregulacja", "Rynek", "Autonomia", "Kontraktualizm"],
           "values_against": ["Regulacja instytucjonalna", "Etatyzm", "Egalitaryzm", "Heteronomia"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Liberalizm klasyczny"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja"],
           "parties_for": ["Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -7180,8 +7180,8 @@
           "value": 1.5,
           "values_for": ["Samoregulacja", "Rynek", "Autonomia"],
           "values_against": ["Regulacja instytucjonalna", "Etatyzm"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Liberalizm klasyczny"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja"],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -7190,7 +7190,7 @@
           "value": 1.0,
           "values_for": ["Samoregulacja", "Rynek", "Autonomia"],
           "values_against": ["Regulacja instytucjonalna", "Etatyzm"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": ["Koalicja Obywatelska", "Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -7200,8 +7200,8 @@
           "value": -1.0,
           "values_for": ["Regulacja instytucjonalna", "Etatyzm"],
           "values_against": ["Samoregulacja", "Rynek", "Autonomia"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
@@ -7210,8 +7210,8 @@
           "value": -1.5,
           "values_for": ["Regulacja instytucjonalna", "Etatyzm"],
           "values_against": ["Samoregulacja", "Rynek", "Autonomia"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
@@ -7238,8 +7238,8 @@
           "value": 1.5,
           "values_for": ["Autonomia", "Własność prywatna", "Rynek", "Samoregulacja"],
           "values_against": ["Planowanie", "Własność kolektywna"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Liberalizm klasyczny"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja"],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -7248,8 +7248,8 @@
           "value": 1.0,
           "values_for": ["Autonomia", "Własność prywatna", "Rynek", "Samoregulacja"],
           "values_against": ["Planowanie", "Własność kolektywna"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Liberalizm klasyczny"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja"],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -7258,7 +7258,7 @@
           "value": -1.0,
           "values_for": ["Planowanie", "Własność kolektywna"],
           "values_against": ["Autonomia", "Własność prywatna", "Rynek", "Samoregulacja"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm"],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
@@ -7268,7 +7268,7 @@
           "value": -1.5,
           "values_for": ["Planowanie", "Własność kolektywna"],
           "values_against": ["Autonomia", "Własność prywatna", "Rynek", "Samoregulacja"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja"],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
@@ -7296,8 +7296,8 @@
           "value": 1.5,
           "values_for": ["Planowanie", "Regulacja instytucjonalna", "Etatyzm"],
           "values_against": ["Rynek", "Samoregulacja", "Własność prywatna"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjaldemokracja"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
@@ -7306,18 +7306,18 @@
           "value": 1.0,
           "values_for": ["Planowanie", "Regulacja instytucjonalna", "Etatyzm"],
           "values_against": ["Rynek", "Samoregulacja", "Własność prywatna"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": [],
+          "values_for": ["Rynek", "Samoregulacja", "Własność prywatna"],
           "values_against": ["Planowanie", "Regulacja instytucjonalna", "Etatyzm"],
-          "ideologies_for": ["Rynek", "Samoregulacja", "Własność prywatna"],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm"],
+          "ideologies_against": ["Socjaldemokracja"],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość"]
         },
@@ -7326,8 +7326,8 @@
           "value": -1.5,
           "values_against": ["Planowanie", "Regulacja instytucjonalna", "Etatyzm"],
           "values_for": ["Rynek", "Samoregulacja", "Własność prywatna"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Liberalizm klasyczny"],
+          "ideologies_against": ["Socjaldemokracja"],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość"]
         },
@@ -7354,7 +7354,7 @@
           "value": 1.5,
           "values_for": ["Rynek", "Samoregulacja", "Anty-autokracja"],
           "values_against": ["Planowanie", "Ograniczanie wymiany", "Etatyzm"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny"],
           "ideologies_against": [],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja", "Partia Razem", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Polska Partia Socjalistyczna"]
@@ -7364,7 +7364,7 @@
           "value": 1.0,
           "values_for": ["Rynek", "Samoregulacja", "Anty-autokracja"],
           "values_against": ["Planowanie", "Ograniczanie wymiany", "Etatyzm"],
-          "ideologies_for": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja"],
           "ideologies_against": [],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja", "Partia Razem", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Polska Partia Socjalistyczna"]
@@ -7374,8 +7374,8 @@
           "value": -1.0,
           "values_for": ["Planowanie", "Ograniczanie wymiany", "Etatyzm"],
           "values_against": ["Rynek", "Samoregulacja", "Anty-autokracja"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjaldemokracja"],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Polska Partia Socjalistyczna"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja", "Partia Razem", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -7385,7 +7385,7 @@
           "values_for": ["Planowanie", "Ograniczanie wymiany", "Etatyzm"],
           "values_against": ["Rynek", "Samoregulacja", "Anty-autokracja"],
           "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_against": ["Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Polska Partia Socjalistyczna"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja", "Partia Razem", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
