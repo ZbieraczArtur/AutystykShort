@@ -1,7 +1,8 @@
-// script.js – poprawiona zgodność atrybutów danych dla importu/eksportu + grupowanie kategorii w 2 kolumnach
+// script.js – z dodanymi logotypami partii (ranking, popup, symulacja)
 let config = null;
 let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
+let simulatedPartyName = null;      // przechowuje nazwę partii symulowanej (lub null)
 
 const questionsContainer = document.getElementById('questions-container');
 const submitBtn = document.getElementById('submitBtn');
@@ -12,6 +13,40 @@ const partiesResults = document.getElementById('parties-results');
 const popup = document.getElementById('popup');
 const popupText = document.getElementById('popup-text');
 const closePopupBtn = document.getElementById('closePopup');
+
+// ======================= MAPOWANIE PARTII -> LOGO =======================
+// Ścieżka do folderu z logotypami (względna – możesz zmienić)
+const LOGO_BASE_PATH = 'images/Partie/';
+
+// Mapowanie: nazwa partii (z config.parties) -> nazwa pliku
+// Uwzględniono wszystkie podane przez Ciebie pliki
+const partyLogoMap = new Map([
+  ['Zieloni', 'Partia_Zieloni.jpg'],
+  ['Partia Zieloni', 'Partia_Zieloni.jpg'],          // wariant
+  ['Koalicja Obywatelska', 'Koalicja_Obywatelska.png'],
+  ['Konfederacja', 'Konfederacja_Korony_Polskiej.webp'],
+  ['Konfederacja Korony Polskiej', 'Konfederacja_Korony_Polskiej.webp'],
+  ['Nowa Lewica', 'Nowa_Lewica.jpg'],
+  ['Nowa Nadzieja', 'Nowa_Nadzieja.jpg'],
+  ['Polska 2050', 'Polska_2050_Rzeczypospolitej_Polskiej.png'],
+  ['Polska 2050 Rzeczypospolitej Polskiej', 'Polska_2050_Rzeczypospolitej_Polskiej.png'],
+  ['Polska Partia Socjalistyczna', 'Polska_Partia_Socjalistyczna.png'],
+  ['Polskie Stronnictwo Ludowe', 'Polskie_Stronnictwo_Ludowe.jpg'],
+  ['Prawo i Sprawiedliwość', 'Prawo_i_Sprawiedliwosc.svg'],
+  ['Razem', 'Razem.png'],
+  ['Ruch Narodowy', 'Ruch_Narodowy.svg']
+]);
+
+// Pomocnicza funkcja pobierająca URL logo dla nazwy partii
+function getPartyLogoUrl(partyName) {
+  const fileName = partyLogoMap.get(partyName);
+  if (fileName) {
+    return LOGO_BASE_PATH + fileName;
+  }
+  console.warn(`Brak logo dla partii: ${partyName}`);
+  return null;
+}
+// ========================================================================
 
 // Mapowanie par wartości na kategorie (na podstawie lewej wartości)
 const categoryMapping = {
@@ -123,9 +158,37 @@ const valueColors = {
 };
 
 function showPopup(message) {
+  // Usuwamy ewentualne logo z popupa (żeby nie wisiało przy zwykłych opisach)
+  const existingLogo = popup.querySelector('.popup-logo-img');
+  if (existingLogo) existingLogo.remove();
   popupText.innerText = message;
   popup.classList.remove('hidden');
 }
+
+// Nowa funkcja do wyświetlania popupa z logo partii (większe logo)
+function showPartyPopup(partyName, description) {
+  // Usuwamy stare logo
+  const existingLogo = popup.querySelector('.popup-logo-img');
+  if (existingLogo) existingLogo.remove();
+
+  // Pobieramy URL logo
+  const logoUrl = getPartyLogoUrl(partyName);
+  if (logoUrl) {
+    const logoImg = document.createElement('img');
+    logoImg.src = logoUrl;
+    logoImg.alt = `Logo ${partyName}`;
+    logoImg.className = 'popup-logo-img';
+    logoImg.style.cssText = 'display: block; max-width: 120px; max-height: 120px; margin: 0 auto 16px auto; object-fit: contain;';
+    // Wstawiamy przed tekstem
+    const popupContent = popup.querySelector('.popup-content');
+    popupContent.insertBefore(logoImg, popupText);
+  }
+
+  // Treść popupa: nazwa + opis
+  popupText.innerText = `${partyName}\n\n${description || 'Brak opisu.'}`;
+  popup.classList.remove('hidden');
+}
+
 closePopupBtn.addEventListener('click', () => popup.classList.add('hidden'));
 popup.addEventListener('click', (e) => { if (e.target === popup) popup.classList.add('hidden'); });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && !popup.classList.contains('hidden')) popup.classList.add('hidden'); });
@@ -527,6 +590,7 @@ function computeScores(mode = currentScoringMode) {
   return { pairResults, ideologyResults, partyResults };
 }
 
+// ZMODYFIKOWANA funkcja createRankingSection – dodaje małe logo dla partii
 function createRankingSection(title, items, type) {
   const section = document.createElement('div');
   section.className = 'ranking-section';
@@ -545,8 +609,43 @@ function createRankingSection(title, items, type) {
   items.forEach((item, idx) => {
     const itemDiv = document.createElement('div');
     itemDiv.className = `ranking-item ${type === 'ideology' ? 'ideology-entry' : 'party-entry'}`;
-    itemDiv.innerHTML = `<span class="rank-name">${item.name}</span><span class="rank-percent">${Math.round(item.percent)}%</span>`;
-    itemDiv.addEventListener('click', () => showPopup(`${item.name}\n${item.description || ''}`));
+
+    // Dla partii dodajemy małe logo
+    if (type === 'party') {
+      const logoUrl = getPartyLogoUrl(item.name);
+      if (logoUrl) {
+        const img = document.createElement('img');
+        img.src = logoUrl;
+        img.alt = `Logo ${item.name}`;
+        img.className = 'party-logo-small';
+        img.style.width = '28px';
+        img.style.height = '28px';
+        img.style.objectFit = 'contain';
+        img.style.marginRight = '10px';
+        img.style.verticalAlign = 'middle';
+        itemDiv.appendChild(img);
+      }
+      const nameSpan = document.createElement('span');
+      nameSpan.className = 'rank-name';
+      nameSpan.textContent = item.name;
+      itemDiv.appendChild(nameSpan);
+    } else {
+      // Dla ideologii – tylko nazwa
+      itemDiv.innerHTML = `<span class="rank-name">${item.name}</span>`;
+    }
+
+    const percentSpan = document.createElement('span');
+    percentSpan.className = 'rank-percent';
+    percentSpan.textContent = `${Math.round(item.percent)}%`;
+    itemDiv.appendChild(percentSpan);
+
+    // Obsługa kliknięcia – dla partii używamy osobnego popupa z logo
+    if (type === 'party') {
+      itemDiv.addEventListener('click', () => showPartyPopup(item.name, item.description || ''));
+    } else {
+      itemDiv.addEventListener('click', () => showPopup(`${item.name}\n${item.description || ''}`));
+    }
+
     itemsElements.push(itemDiv);
     listContainer.appendChild(itemDiv);
   });
@@ -599,28 +698,23 @@ function generateShareCode(pairResults) {
   return container;
 }
 
+// ZMODYFIKOWANA funkcja computeAndDisplayResults – dodaje banner symulacji
 function computeAndDisplayResults() {
   const { pairResults, ideologyResults, partyResults } = computeScores(currentScoringMode);
-  
-  // Grupowanie wyników par wartości według kategorii
-  const groups = new Map(); // categoryId -> { name, pairs: [] }
+
+  // Grupowanie par wartości (bez zmian)
+  const groups = new Map();
   for (const pair of pairResults) {
     const catId = categoryMapping[pair.left];
-    if (!catId) continue; // zabezpieczenie
-    if (!groups.has(catId)) {
-      groups.set(catId, { name: categoryNames[catId], pairs: [] });
-    }
+    if (!catId) continue;
+    if (!groups.has(catId)) groups.set(catId, { name: categoryNames[catId], pairs: [] });
     groups.get(catId).pairs.push(pair);
   }
-  
-  // Sortowanie kategorii po ID
-  const sortedGroups = Array.from(groups.entries()).sort((a,b) => a[0] - b[0]);
-  
-  // Tworzenie kontenera grid 2 kolumny
+  const sortedGroups = Array.from(groups.entries()).sort((a, b) => a[0] - b[0]);
+
   valuesResults.innerHTML = '<h3>⚖️ Pary wartości</h3>';
   const gridContainer = document.createElement('div');
   gridContainer.className = 'values-categories-grid';
-  
   for (const [catId, group] of sortedGroups) {
     const categoryDiv = document.createElement('div');
     categoryDiv.className = 'value-category-block';
@@ -628,7 +722,6 @@ function computeAndDisplayResults() {
     catHeader.className = 'category-header';
     catHeader.textContent = group.name;
     categoryDiv.appendChild(catHeader);
-    
     for (const pair of group.pairs) {
       const leftColor = valueColors[pair.left] || '#3b82f6';
       const rightColor = valueColors[pair.right] || '#ef4444';
@@ -636,8 +729,6 @@ function computeAndDisplayResults() {
       const rightTextColor = getContrastColor(rightColor);
       const pairDiv = document.createElement('div');
       pairDiv.className = 'value-pair';
-      
-      // Zmieniona struktura HTML dla lepszego wyświetlania etykiet
       pairDiv.innerHTML = `
         <div class="value-bar-container-new">
           <span class="value-left-new" data-def="${pair.leftDef}">${pair.left}</span>
@@ -648,7 +739,6 @@ function computeAndDisplayResults() {
           <span class="value-right-new" data-def="${pair.rightDef}">${pair.right}</span>
         </div>
       `;
-      
       const leftSpan = pairDiv.querySelector('.value-left-new');
       const rightSpan = pairDiv.querySelector('.value-right-new');
       leftSpan.addEventListener('click', () => showPopup(pair.leftDef));
@@ -658,13 +748,42 @@ function computeAndDisplayResults() {
     gridContainer.appendChild(categoryDiv);
   }
   valuesResults.appendChild(gridContainer);
-  
-  // Wyczyść i wypełnij rankingi
+
+  // Wyczyść poprzednie rankingi
   ideologiesResults.innerHTML = '';
   partiesResults.innerHTML = '';
+
+  // DODANIE BANNERA SYMULACJI (jeśli symulujemy partię)
+  const existingBanner = resultsDiv.querySelector('.simulation-banner');
+  if (existingBanner) existingBanner.remove();
+  if (simulatedPartyName) {
+    const banner = document.createElement('div');
+    banner.className = 'simulation-banner';
+    const logoUrl = getPartyLogoUrl(simulatedPartyName);
+    let logoHtml = '';
+    if (logoUrl) {
+      logoHtml = `<img src="${logoUrl}" alt="Logo ${simulatedPartyName}" class="simulation-banner-logo">`;
+    }
+    banner.innerHTML = `
+      ${logoHtml}
+      <div class="simulation-banner-text">
+        🎭 Symulujesz partię: <strong>${simulatedPartyName}</strong><br>
+        <small>Wyniki poniżej są tymczasowe. Kliknij „Przywróć moje odpowiedzi”, aby wrócić do własnych.</small>
+      </div>
+    `;
+    // Wstawiamy przed kontenerem rankingów
+    const ideologiesPartiesContainer = document.querySelector('.ideologies-parties-container');
+    if (ideologiesPartiesContainer) {
+      ideologiesPartiesContainer.parentNode.insertBefore(banner, ideologiesPartiesContainer);
+    } else {
+      partiesResults.parentNode.insertBefore(banner, partiesResults);
+    }
+  }
+
+  // Dodajemy rankingi (z logo wewnątrz dla partii)
   ideologiesResults.appendChild(createRankingSection('📊 Ranking ideologii', ideologyResults, 'ideology'));
   partiesResults.appendChild(createRankingSection('🗳️ Ranking partii', partyResults, 'party'));
-  
+
   const existingShare = resultsDiv.querySelector('.share-section');
   if (existingShare) existingShare.remove();
   resultsDiv.appendChild(generateShareCode(pairResults));
@@ -712,11 +831,22 @@ function syncUserAnswersFromDOM() {
 
 function restoreUserAnswers() {
   syncUserAnswersFromDOM();
+  simulatedPartyName = null;   // wyczyszczenie flagi symulacji
   computeAndDisplayResults();
   showPopup('Przywrócono Twoje odpowiedzi i odświeżono wyniki.');
 }
 
+// ZMODYFIKOWANA funkcja simulateAnswers – zapamiętuje nazwę symulowanej partii
 function simulateAnswers(selectedName) {
+  // Sprawdzamy, czy wybrana opcja to partia (na podstawie mapy logo)
+  const isParty = partyLogoMap.has(selectedName) || 
+                  (config.parties && config.parties.some(p => p.name === selectedName));
+  if (isParty) {
+    simulatedPartyName = selectedName;
+  } else {
+    simulatedPartyName = null; // symulujemy ideologię – nie pokazujemy bannera
+  }
+
   const simulatedAnswers = [];
   for (const question of config.questions) {
     let bestAnswer = null;
