@@ -695,32 +695,60 @@ footer a:hover {
   text-align: center;
 }
 
-/* Responsywność – na wąskich ekranach jedna kolumna */
+/* ========== RESPONSYWNOŚĆ – ZMIANY TYLKO DLA TELEFONÓW ========== */
+/* Dla ekranów o szerokości do 780px (tablety i telefony) */
 @media (max-width: 780px) {
   .values-categories-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;   /* jedna kolumna kart */
     gap: 1rem;
   }
   .ideologies-parties-container {
-    grid-template-columns: 1fr; /* Rankingi jeden pod drugim na małych ekranach */
+    grid-template-columns: 1fr;   /* rankingi jeden pod drugim */
     gap: 1rem;
   }
+
+  /* Nowy układ wierszowy dla każdej pary wartości na telefonie */
   .value-bar-container-new {
-    flex-direction: column;
-    align-items: stretch;
+    flex-direction: row;          /* przywracamy układ poziomy */
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.5rem;
   }
   .value-left-new, .value-right-new {
-    flex-basis: auto;
-    text-align: center;
+    flex: 0 0 90px;              /* stała, węższa szerokość etykiet */
+    text-align: left;
+    font-size: 0.8rem;
   }
   .value-right-new {
-    text-align: center;
+    text-align: right;
   }
   .value-bar-new {
-    width: 100%;
+    flex: 2;
+    min-width: 120px;            /* zapewnia miejsce na pasek */
+  }
+  .bar-left-new, .bar-right-new {
+    font-size: 0.7rem;           /* mniejsza czcionka, aby % się zmieścił */
+    padding: 0 5px;
+    line-height: 36px;           /* dostosowanie do wysokości */
   }
 }
 
+/* Dla bardzo małych telefonów (poniżej 480px) */
+@media (max-width: 480px) {
+  .value-left-new, .value-right-new {
+    flex: 0 0 70px;
+    font-size: 0.7rem;
+  }
+  .value-bar-new {
+    min-width: 100px;
+  }
+  .bar-left-new, .bar-right-new {
+    font-size: 0.65rem;
+    padding: 0 3px;
+  }
+}
+
+/* Ogólne responsywność dla wąskich ekranów (nie zmienia układu wyników) */
 @media (max-width: 720px) {
   body {
     padding: 1rem;
