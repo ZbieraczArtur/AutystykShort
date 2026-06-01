@@ -1,4 +1,4 @@
-/* style.css – nowoczesny, płynny, estetyczny wygląd + grid dla kategorii wartości */
+/* style.css – nowoczesny, płynny, estetyczny wygląd + grid dla kategorii wartości + rankingi obok siebie */
 * {
   margin: 0;
   padding: 0;
@@ -427,39 +427,37 @@ body.dark h1 {
   color: var(--text-primary);
 }
 
-.value-pair {
-  margin-bottom: 1rem;
-  padding: 0.5rem 0;
-  transition: all 0.2s;
-}
-
-.value-pair:hover {
-  transform: translateX(4px);
-}
-
-.value-bar-container {
+/* NOWY STYL DLA PAR WARTOŚCI – POPRAWA NACHODZENIA */
+.value-bar-container-new {
   display: flex;
   align-items: center;
   gap: 0.8rem;
   flex-wrap: wrap;
+  margin-bottom: 1rem;
 }
 
-.value-left, .value-right {
-  flex: 1;
+.value-left-new, .value-right-new {
+  flex: 0 0 120px; /* Stała szerokość dla etykiet */
   font-weight: 700;
   cursor: pointer;
   text-decoration: underline dotted;
   text-underline-offset: 6px;
   transition: color 0.15s;
   font-size: 0.9rem;
-  min-width: 80px;
+  word-wrap: break-word; /* Zawijanie długich nazw */
+  word-break: break-word;
+  color: var(--text-primary);
 }
 
-.value-left:hover, .value-right:hover {
+.value-right-new {
+  text-align: right;
+}
+
+.value-left-new:hover, .value-right-new:hover {
   color: var(--link-color);
 }
 
-.value-bar {
+.value-bar-new {
   flex: 3;
   background: var(--value-bar-bg);
   border-radius: 60px;
@@ -467,9 +465,10 @@ body.dark h1 {
   overflow: hidden;
   display: flex;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+  min-width: 150px; /* Zapewnia miejsce na pasek */
 }
 
-.bar-left, .bar-right {
+.bar-left-new, .bar-right-new {
   height: 100%;
   line-height: 38px;
   padding: 0 10px;
@@ -479,16 +478,17 @@ body.dark h1 {
   transition: width 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
 }
 
-.bar-left {
+.bar-left-new {
   text-align: left;
 }
-.bar-right {
+.bar-right-new {
   text-align: right;
 }
 
 /* Rankingi */
 .ranking-section {
-  margin-bottom: 2.2rem;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
 .ranking-list {
@@ -557,6 +557,14 @@ h3 {
 
 .hidden-rank-item {
   display: none;
+}
+
+/* NOWY KONTENER DLA RANKINGÓW OBOK SIEBIE */
+.ideologies-parties-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 /* Popup */
@@ -693,6 +701,24 @@ footer a:hover {
     grid-template-columns: 1fr;
     gap: 1rem;
   }
+  .ideologies-parties-container {
+    grid-template-columns: 1fr; /* Rankingi jeden pod drugim na małych ekranach */
+    gap: 1rem;
+  }
+  .value-bar-container-new {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .value-left-new, .value-right-new {
+    flex-basis: auto;
+    text-align: center;
+  }
+  .value-right-new {
+    text-align: center;
+  }
+  .value-bar-new {
+    width: 100%;
+  }
 }
 
 @media (max-width: 720px) {
@@ -707,16 +733,6 @@ footer a:hover {
   }
   .answer-option {
     text-align: center;
-  }
-  .value-bar-container {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .value-left, .value-right {
-    text-align: center;
-  }
-  .value-bar {
-    width: 100%;
   }
   h1 {
     font-size: 1.8rem;
