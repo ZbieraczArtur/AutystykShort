@@ -617,7 +617,7 @@ function computeAndDisplayResults() {
   const sortedGroups = Array.from(groups.entries()).sort((a,b) => a[0] - b[0]);
   
   // Tworzenie kontenera grid 2 kolumny
-  valuesResults.innerHTML = '<h3>⚖️ Pary wartości (kategorie w dwóch kolumnach)</h3>';
+  valuesResults.innerHTML = '<h3>⚖️ Pary wartości</h3>';
   const gridContainer = document.createElement('div');
   gridContainer.className = 'values-categories-grid';
   
@@ -662,8 +662,8 @@ function computeAndDisplayResults() {
   // Wyczyść i wypełnij rankingi
   ideologiesResults.innerHTML = '';
   partiesResults.innerHTML = '';
-  ideologiesResults.appendChild(createRankingSection('📊 Ranking ideologii (zgodność %)', ideologyResults, 'ideology'));
-  partiesResults.appendChild(createRankingSection('🗳️ Ranking partii (zgodność %)', partyResults, 'party'));
+  ideologiesResults.appendChild(createRankingSection('📊 Ranking ideologii', ideologyResults, 'ideology'));
+  partiesResults.appendChild(createRankingSection('🗳️ Ranking partii', partyResults, 'party'));
   
   const existingShare = resultsDiv.querySelector('.share-section');
   if (existingShare) existingShare.remove();
