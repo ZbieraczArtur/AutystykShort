@@ -392,7 +392,7 @@ body.dark h1 {
   transform: scale(0.92);
 }
 
-/* Kategorie – grid 2 kolumny */
+/* Kategorie – grid 2 kolumny (domyślnie dla komputerów) */
 .values-categories-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -410,7 +410,6 @@ body.dark h1 {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   break-inside: avoid;
   page-break-inside: avoid;
-  overflow-x: hidden; /* zapobiega wyciekaniu */
 }
 
 .value-category-block:hover {
@@ -428,7 +427,7 @@ body.dark h1 {
   color: var(--text-primary);
 }
 
-/* NOWY STYL DLA PAR WARTOŚCI – POPRAWA NACHODZENIA */
+/* Styl dla par wartości – wersja desktop (flex) */
 .value-bar-container-new {
   display: flex;
   align-items: center;
@@ -438,14 +437,14 @@ body.dark h1 {
 }
 
 .value-left-new, .value-right-new {
-  flex: 0 0 120px; /* Stała szerokość dla etykiet */
+  flex: 0 0 120px;
   font-weight: 700;
   cursor: pointer;
   text-decoration: underline dotted;
   text-underline-offset: 6px;
   transition: color 0.15s;
   font-size: 0.9rem;
-  word-wrap: break-word; /* Zawijanie długich nazw */
+  word-wrap: break-word;
   word-break: break-word;
   color: var(--text-primary);
 }
@@ -466,7 +465,7 @@ body.dark h1 {
   overflow: hidden;
   display: flex;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-  min-width: 150px; /* Zapewnia miejsce na pasek */
+  min-width: 150px;
 }
 
 .bar-left-new, .bar-right-new {
@@ -696,47 +695,48 @@ footer a:hover {
   text-align: center;
 }
 
-/* ========== RESPONSYWNOŚĆ – ZMIANY TYLKO DLA TELEFONÓW ========== */
+/* ========== RESPONSYWNOŚĆ – WERSJA MOBILNA (ZMIANY TYLKO DLA TELEFONÓW) ========== */
 @media (max-width: 780px) {
-  /* Kategorie: 2 kolumny, mniejsze odstępy */
+  /* Kategorie: 2 kolumny, mniejsze karty (bardziej kwadratowe) */
   .values-categories-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.6rem;
+    gap: 0.75rem;
   }
   .value-category-block {
-    padding: 0.8rem 0.5rem;
-    overflow-x: visible; /* aby nie przycinać */
+    padding: 0.7rem 0.5rem;
+    border-radius: 24px;
   }
   .category-header {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     margin-bottom: 0.6rem;
-    word-break: break-word;
-    hyphens: auto;
+    padding-bottom: 0.3rem;
   }
 
-  /* Pary wartości – układ poziomy, elastyczne etykiety */
+  /* Każda para wartości – użyjemy GRID zamiast flex, aby paski były równe */
   .value-bar-container-new {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    gap: 0.3rem;
+    display: grid;
+    grid-template-columns: minmax(65px, auto) 1fr minmax(65px, auto);
+    gap: 0.4rem;
+    align-items: center;
     margin-bottom: 0.7rem;
   }
   .value-left-new, .value-right-new {
-    flex: 0 1 auto;  /* pozwala na zawijanie */
-    max-width: 70px;
+    flex: none; /* anuluj flex */
     font-size: 0.7rem;
     line-height: 1.3;
     text-align: left;
-    word-break: break-word;
-    hyphens: auto;
-    white-space: normal;  /* zawijanie tekstu */
+    word-break: normal;      /* nie łam w środku słowa */
+    overflow-wrap: break-word; /* ale pozwól na zawijanie całych słów */
+    hyphens: none;           /* wyłącz dzielenie wyrazów */
+    white-space: normal;
+    text-decoration: underline dotted;
   }
   .value-right-new {
     text-align: right;
   }
   .value-bar-new {
-    flex: 1 1 auto;
-    min-width: 80px;
+    width: 100%;
+    min-width: 0;   /* pozwala na ściskanie */
     height: 32px;
   }
   .bar-left-new, .bar-right-new {
@@ -753,14 +753,14 @@ footer a:hover {
   }
 }
 
-/* Dla bardzo małych telefonów (poniżej 550px) – jeszcze mniejsze etykiety */
-@media (max-width: 550px) {
-  .value-left-new, .value-right-new {
-    max-width: 60px;
-    font-size: 0.65rem;
+/* Dla bardzo małych telefonów (poniżej 480px) – jeszcze mniejsze marginesy i czcionki */
+@media (max-width: 480px) {
+  .value-bar-container-new {
+    grid-template-columns: minmax(55px, auto) 1fr minmax(55px, auto);
+    gap: 0.3rem;
   }
-  .value-bar-new {
-    min-width: 70px;
+  .value-left-new, .value-right-new {
+    font-size: 0.65rem;
   }
   .bar-left-new, .bar-right-new {
     font-size: 0.6rem;
