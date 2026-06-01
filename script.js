@@ -1,4 +1,4 @@
-// script.js – poprawiona zgodność atrybutów danych dla importu/eksportu
+// script.js – poprawiona zgodność atrybutów danych dla importu/eksportu + grupowanie kategorii w 2 kolumnach
 let config = null;
 let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
@@ -12,6 +12,54 @@ const partiesResults = document.getElementById('parties-results');
 const popup = document.getElementById('popup');
 const popupText = document.getElementById('popup-text');
 const closePopupBtn = document.getElementById('closePopup');
+
+// Mapowanie par wartości na kategorie (na podstawie lewej wartości)
+const categoryMapping = {
+  // Kategoria 1
+  "Autonomia": 1,
+  "Indywidualizm": 1,
+  "Kontraktualizm": 1,
+  "Dobrowolność wspólnoty": 1,
+  "Egalitaryzm": 1,
+  "Wolność ekspresji": 1,
+  // Kategoria 2
+  "Samoorganizacja": 2,
+  "Decentralizacja": 2,
+  "Ograniczenie władzy": 2,
+  "Sakralizacja autorytetu": 2,
+  "Różnorodność norm": 2,
+  "Demokracja": 2,
+  "Autokracja": 2,
+  // Kategoria 3
+  "Własność kolektywna": 3,
+  "Planowanie": 3,
+  "Regulacja instytucjonalna": 3,
+  "Ograniczanie wymiany": 3,
+  // Kategoria 4
+  "Minimalizacja granic": 4,
+  "Kosmopolityzm": 4,
+  "Interwencjonizm zagraniczny": 4,
+  // Kategoria 5
+  "Preferencja użycia siły": 5,
+  "Rewolucja": 5,
+  "Progresywizm": 5,
+  "Pluralizm kulturowy": 5,
+  "Neutralność religijna": 5,
+  "Włączanie": 5,
+  "Egalitaryzm biologiczny": 5,
+  // Kategoria 6
+  "Antropocentryzm": 6,
+  "Postęp technologiczny": 6
+};
+
+const categoryNames = {
+  1: "⚖️ Społeczeństwo i jednostka",
+  2: "🏛️ Władza i ustrój",
+  3: "💰 Ekonomia",
+  4: "🌍 Globalizacja i granice",
+  5: "🌱 Kultura i zmiana społeczna",
+  6: "🌿 Środowisko i technologia"
+};
 
 const valueColors = {
   "Autonomia": "#FECB1D",
@@ -178,7 +226,7 @@ function renderQuestions() {
       const ansEl = document.createElement('div');
       ansEl.className = 'answer-option';
       ansEl.innerText = ans.label;
-      ansEl.dataset.answerIndex = ansIdx;   // POPRAWA: zmienione z answerIdx na answerIndex
+      ansEl.dataset.answerIndex = ansIdx;
       ansEl.dataset.value = ans.value;
       const label = ans.label;
       if (label.includes('Zdecydowanie zgadzam się')) ansEl.classList.add('answer-strong-agree');
@@ -553,21 +601,52 @@ function generateShareCode(pairResults) {
 
 function computeAndDisplayResults() {
   const { pairResults, ideologyResults, partyResults } = computeScores(currentScoringMode);
-  valuesResults.innerHTML = '<h3>⚖️ Pary wartości</h3>';
-  pairResults.forEach(pair => {
-    const leftColor = valueColors[pair.left] || '#3b82f6';
-    const rightColor = valueColors[pair.right] || '#ef4444';
-    const leftTextColor = getContrastColor(leftColor);
-    const rightTextColor = getContrastColor(rightColor);
-    const pairDiv = document.createElement('div');
-    pairDiv.className = 'value-pair';
-    pairDiv.innerHTML = `<div class="value-bar-container"><span class="value-left" data-def="${pair.leftDef}">${pair.left}</span><div class="value-bar"><div class="bar-left" style="width: ${pair.leftPercent}%; background-color: ${leftColor}; color: ${leftTextColor};">${Math.round(pair.leftPercent)}%</div><div class="bar-right" style="width: ${pair.rightPercent}%; background-color: ${rightColor}; color: ${rightTextColor};">${Math.round(pair.rightPercent)}%</div></div><span class="value-right" data-def="${pair.rightDef}">${pair.right}</span></div>`;
-    const leftSpan = pairDiv.querySelector('.value-left');
-    const rightSpan = pairDiv.querySelector('.value-right');
-    leftSpan.addEventListener('click', () => showPopup(pair.leftDef));
-    rightSpan.addEventListener('click', () => showPopup(pair.rightDef));
-    valuesResults.appendChild(pairDiv);
-  });
+  
+  // Grupowanie wyników par wartości według kategorii
+  const groups = new Map(); // categoryId -> { name, pairs: [] }
+  for (const pair of pairResults) {
+    const catId = categoryMapping[pair.left];
+    if (!catId) continue; // zabezpieczenie
+    if (!groups.has(catId)) {
+      groups.set(catId, { name: categoryNames[catId], pairs: [] });
+    }
+    groups.get(catId).pairs.push(pair);
+  }
+  
+  // Sortowanie kategorii po ID
+  const sortedGroups = Array.from(groups.entries()).sort((a,b) => a[0] - b[0]);
+  
+  // Tworzenie kontenera grid 2 kolumny
+  valuesResults.innerHTML = '<h3>⚖️ Pary wartości (kategorie w dwóch kolumnach)</h3>';
+  const gridContainer = document.createElement('div');
+  gridContainer.className = 'values-categories-grid';
+  
+  for (const [catId, group] of sortedGroups) {
+    const categoryDiv = document.createElement('div');
+    categoryDiv.className = 'value-category-block';
+    const catHeader = document.createElement('h4');
+    catHeader.className = 'category-header';
+    catHeader.textContent = group.name;
+    categoryDiv.appendChild(catHeader);
+    
+    for (const pair of group.pairs) {
+      const leftColor = valueColors[pair.left] || '#3b82f6';
+      const rightColor = valueColors[pair.right] || '#ef4444';
+      const leftTextColor = getContrastColor(leftColor);
+      const rightTextColor = getContrastColor(rightColor);
+      const pairDiv = document.createElement('div');
+      pairDiv.className = 'value-pair';
+      pairDiv.innerHTML = `<div class="value-bar-container"><span class="value-left" data-def="${pair.leftDef}">${pair.left}</span><div class="value-bar"><div class="bar-left" style="width: ${pair.leftPercent}%; background-color: ${leftColor}; color: ${leftTextColor};">${Math.round(pair.leftPercent)}%</div><div class="bar-right" style="width: ${pair.rightPercent}%; background-color: ${rightColor}; color: ${rightTextColor};">${Math.round(pair.rightPercent)}%</div></div><span class="value-right" data-def="${pair.rightDef}">${pair.right}</span></div>`;
+      const leftSpan = pairDiv.querySelector('.value-left');
+      const rightSpan = pairDiv.querySelector('.value-right');
+      leftSpan.addEventListener('click', () => showPopup(pair.leftDef));
+      rightSpan.addEventListener('click', () => showPopup(pair.rightDef));
+      categoryDiv.appendChild(pairDiv);
+    }
+    gridContainer.appendChild(categoryDiv);
+  }
+  valuesResults.appendChild(gridContainer);
+  
   ideologiesResults.innerHTML = '';
   ideologiesResults.appendChild(createRankingSection('📊 Ranking ideologii (zgodność %)', ideologyResults, 'ideology'));
   partiesResults.innerHTML = '';
@@ -593,7 +672,7 @@ function syncUserAnswersFromDOM() {
     if (!questionConfig) return;
     const selectedAnswer = card.querySelector('.answer-option.selected');
     if (selectedAnswer) {
-      const ansIdx = parseInt(selectedAnswer.dataset.answerIndex); // POPRAWA: answerIndex
+      const ansIdx = parseInt(selectedAnswer.dataset.answerIndex);
       const answerData = questionConfig.answers[ansIdx];
       newAnswers.push({
         questionId: qid,
