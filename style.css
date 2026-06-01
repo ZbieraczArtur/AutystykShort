@@ -698,53 +698,69 @@ footer a:hover {
 /* ========== RESPONSYWNOŚĆ – ZMIANY TYLKO DLA TELEFONÓW ========== */
 /* Dla ekranów o szerokości do 780px (tablety i telefony) */
 @media (max-width: 780px) {
+  /* Kategorie: DALEJ 2 KOLUMNY, ale mniejszy odstęp i mniejsze paddingi */
   .values-categories-grid {
-    grid-template-columns: 1fr;   /* jedna kolumna kart */
-    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
   }
-  .ideologies-parties-container {
-    grid-template-columns: 1fr;   /* rankingi jeden pod drugim */
-    gap: 1rem;
+  .value-category-block {
+    padding: 0.8rem 0.6rem;
+  }
+  .category-header {
+    font-size: 1rem;
+    margin-bottom: 0.7rem;
   }
 
-  /* Nowy układ wierszowy dla każdej pary wartości na telefonie */
+  /* Pary wartości – układ poziomy (lewa, pasek, prawa) */
   .value-bar-container-new {
-    flex-direction: row;          /* przywracamy układ poziomy */
+    flex-direction: row;
     flex-wrap: nowrap;
-    align-items: center;
-    gap: 0.5rem;
+    gap: 0.4rem;
+    margin-bottom: 0.8rem;
   }
   .value-left-new, .value-right-new {
-    flex: 0 0 90px;              /* stała, węższa szerokość etykiet */
+    flex: 0 0 auto;
+    max-width: 70px;
+    font-size: 0.7rem;
+    line-height: 1.3;
     text-align: left;
-    font-size: 0.8rem;
+    word-break: break-word;
+    hyphens: auto;  /* zapobiega brzydkiemu łamaniu */
   }
   .value-right-new {
     text-align: right;
   }
   .value-bar-new {
-    flex: 2;
-    min-width: 120px;            /* zapewnia miejsce na pasek */
+    flex: 1;
+    min-width: 80px;
+    height: 32px;
   }
   .bar-left-new, .bar-right-new {
-    font-size: 0.7rem;           /* mniejsza czcionka, aby % się zmieścił */
-    padding: 0 5px;
-    line-height: 36px;           /* dostosowanie do wysokości */
+    line-height: 32px;
+    font-size: 0.65rem;
+    padding: 0 4px;
+    white-space: nowrap;
+  }
+
+  /* Rankingi – jedna kolumna */
+  .ideologies-parties-container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
   }
 }
 
-/* Dla bardzo małych telefonów (poniżej 480px) */
-@media (max-width: 480px) {
+/* Dla bardzo małych telefonów (poniżej 550px) – jeszcze mniejsze etykiety */
+@media (max-width: 550px) {
   .value-left-new, .value-right-new {
-    flex: 0 0 70px;
-    font-size: 0.7rem;
+    max-width: 60px;
+    font-size: 0.65rem;
   }
   .value-bar-new {
-    min-width: 100px;
+    min-width: 70px;
   }
   .bar-left-new, .bar-right-new {
-    font-size: 0.65rem;
-    padding: 0 3px;
+    font-size: 0.6rem;
+    padding: 0 2px;
   }
 }
 
