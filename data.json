@@ -3823,7 +3823,7 @@
           "values_for": ["Anty-demokracja", "Rewolucjonizm"],
           "values_against": ["Demokracja", "Gradualizm"],
           "ideologies_for": [],
-          "ideologies_against": "Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": ["Konfederacja Korony Polskiej"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
