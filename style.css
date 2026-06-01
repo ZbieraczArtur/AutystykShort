@@ -1,4 +1,4 @@
-/* style.css – nowoczesny, płynny, estetyczny wygląd + grid dla kategorii wartości + rankingi obok siebie */
+/* style.css – wersja desktopowa, bez zmian dla wyników na telefonie */
 * {
   margin: 0;
   padding: 0;
@@ -392,7 +392,7 @@ body.dark h1 {
   transform: scale(0.92);
 }
 
-/* Kategorie – grid 2 kolumny (domyślnie dla komputerów) */
+/* Kategorie – grid 2 kolumny – zawsze 2 kolumny (desktop) */
 .values-categories-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -427,7 +427,7 @@ body.dark h1 {
   color: var(--text-primary);
 }
 
-/* Styl dla par wartości – wersja desktop (flex) */
+/* Pary wartości – flex poziomy (desktop) */
 .value-bar-container-new {
   display: flex;
   align-items: center;
@@ -437,7 +437,7 @@ body.dark h1 {
 }
 
 .value-left-new, .value-right-new {
-  flex: 0 0 120px;
+  flex: 0 0 120px; /* stała szerokość etykiet */
   font-weight: 700;
   cursor: pointer;
   text-decoration: underline dotted;
@@ -559,7 +559,7 @@ h3 {
   display: none;
 }
 
-/* NOWY KONTENER DLA RANKINGÓW OBOK SIEBIE */
+/* Rankingi obok siebie – 2 kolumny */
 .ideologies-parties-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -695,80 +695,7 @@ footer a:hover {
   text-align: center;
 }
 
-/* ========== RESPONSYWNOŚĆ – WERSJA MOBILNA (ZMIANY TYLKO DLA TELEFONÓW) ========== */
-@media (max-width: 780px) {
-  /* Kategorie: 2 kolumny, mniejsze karty (bardziej kwadratowe) */
-  .values-categories-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 0.75rem;
-  }
-  .value-category-block {
-    padding: 0.7rem 0.5rem;
-    border-radius: 24px;
-  }
-  .category-header {
-    font-size: 0.85rem;
-    margin-bottom: 0.6rem;
-    padding-bottom: 0.3rem;
-  }
-
-  /* Każda para wartości – użyjemy GRID zamiast flex, aby paski były równe */
-  .value-bar-container-new {
-    display: grid;
-    grid-template-columns: minmax(65px, auto) 1fr minmax(65px, auto);
-    gap: 0.4rem;
-    align-items: center;
-    margin-bottom: 0.7rem;
-  }
-  .value-left-new, .value-right-new {
-    flex: none; /* anuluj flex */
-    font-size: 0.7rem;
-    line-height: 1.3;
-    text-align: left;
-    word-break: normal;      /* nie łam w środku słowa */
-    overflow-wrap: break-word; /* ale pozwól na zawijanie całych słów */
-    hyphens: none;           /* wyłącz dzielenie wyrazów */
-    white-space: normal;
-    text-decoration: underline dotted;
-  }
-  .value-right-new {
-    text-align: right;
-  }
-  .value-bar-new {
-    width: 100%;
-    min-width: 0;   /* pozwala na ściskanie */
-    height: 32px;
-  }
-  .bar-left-new, .bar-right-new {
-    line-height: 32px;
-    font-size: 0.65rem;
-    padding: 0 4px;
-    white-space: nowrap;
-  }
-
-  /* Rankingi – jedna kolumna */
-  .ideologies-parties-container {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-}
-
-/* Dla bardzo małych telefonów (poniżej 480px) – jeszcze mniejsze marginesy i czcionki */
-@media (max-width: 480px) {
-  .value-bar-container-new {
-    grid-template-columns: minmax(55px, auto) 1fr minmax(55px, auto);
-    gap: 0.3rem;
-  }
-  .value-left-new, .value-right-new {
-    font-size: 0.65rem;
-  }
-  .bar-left-new, .bar-right-new {
-    font-size: 0.6rem;
-    padding: 0 2px;
-  }
-}
-
-/* Ogólne responsywność dla wąskich ekranów (nie zmienia układu wyników) */
+/* Ogólne responsywność dla pytań i paneli – NIE DOTYKA WYNIKÓW */
 @media (max-width: 720px) {
   body {
     padding: 1rem;
@@ -789,6 +716,21 @@ footer a:hover {
     flex-direction: column;
     align-items: stretch;
     text-align: center;
+  }
+  .simulation-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .simulation-panel small {
+    margin-left: 0;
+    text-align: center;
+  }
+  .import-panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .import-panel textarea {
+    width: 100%;
   }
 }
 
@@ -836,17 +778,6 @@ footer a:hover {
   color: var(--footer-color);
   margin-left: auto;
   font-style: italic;
-}
-
-@media (max-width: 720px) {
-  .simulation-panel {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .simulation-panel small {
-    margin-left: 0;
-    text-align: center;
-  }
 }
 
 /* ========== PANEL IMPORTU ODPOWIEDZI ========== */
@@ -926,16 +857,6 @@ footer a:hover {
   flex: 1;
   min-width: 180px;
   font-style: italic;
-}
-
-@media (max-width: 720px) {
-  .import-panel {
-    flex-direction: column;
-    align-items: stretch;
-  }
-  .import-panel textarea {
-    width: 100%;
-  }
 }
 
 /* ========== SEKCJA EKSPORTU ODPOWIEDZI ========== */
