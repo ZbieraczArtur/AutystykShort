@@ -392,7 +392,7 @@ body.dark h1 {
   transform: scale(0.92);
 }
 
-/* Kategorie – grid 2 kolumny (domyślnie) */
+/* Kategorie – grid 2 kolumny */
 .values-categories-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -427,7 +427,7 @@ body.dark h1 {
   color: var(--text-primary);
 }
 
-/* NOWY STYL DLA PAR WARTOŚCI – POPRAWA NACHODZENIA (tekst procentów zawsze widoczny) */
+/* NOWY STYL DLA PAR WARTOŚCI – POPRAWA NACHODZENIA */
 .value-bar-container-new {
   display: flex;
   align-items: center;
@@ -437,14 +437,14 @@ body.dark h1 {
 }
 
 .value-left-new, .value-right-new {
-  flex: 0 0 120px;
+  flex: 0 0 120px; /* Stała szerokość dla etykiet */
   font-weight: 700;
   cursor: pointer;
   text-decoration: underline dotted;
   text-underline-offset: 6px;
   transition: color 0.15s;
   font-size: 0.9rem;
-  word-wrap: break-word;
+  word-wrap: break-word; /* Zawijanie długich nazw */
   word-break: break-word;
   color: var(--text-primary);
 }
@@ -462,11 +462,10 @@ body.dark h1 {
   background: var(--value-bar-bg);
   border-radius: 60px;
   height: 38px;
-  overflow: visible;      /* ZMIANA: umożliwia wystawanie tekstu poza pasek */
+  overflow: hidden;
   display: flex;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-  min-width: 150px;
-  position: relative;
+  min-width: 150px; /* Zapewnia miejsce na pasek */
 }
 
 .bar-left-new, .bar-right-new {
@@ -477,9 +476,6 @@ body.dark h1 {
   font-weight: 700;
   white-space: nowrap;
   transition: width 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.2);
-  position: relative;     /* ZMIANA: pozwala na wyświetlanie tekstu ponad overflow */
-  z-index: 2;
-  text-shadow: 0 0 2px rgba(0,0,0,0.3); /* niewielki cień dla czytelności */
 }
 
 .bar-left-new {
@@ -699,15 +695,14 @@ footer a:hover {
   text-align: center;
 }
 
-/* ========== RESPONSYWNOŚĆ (TELEFONY) ========== */
-/* Dla ekranów poniżej 780px – dwie kolumny (zamiast jednej) */
+/* Responsywność – na wąskich ekranach jedna kolumna */
 @media (max-width: 780px) {
   .values-categories-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 kolumny na telefonach */
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
   .ideologies-parties-container {
-    grid-template-columns: repeat(2, 1fr); /* rankingi również w 2 kolumnach */
+    grid-template-columns: 1fr; /* Rankingi jeden pod drugim na małych ekranach */
     gap: 1rem;
   }
   .value-bar-container-new {
@@ -723,16 +718,6 @@ footer a:hover {
   }
   .value-bar-new {
     width: 100%;
-  }
-}
-
-/* Dla bardzo małych ekranów (poniżej 480px) – jedna kolumna (zapobiega zbyt ciasnemu układowi) */
-@media (max-width: 480px) {
-  .values-categories-grid {
-    grid-template-columns: 1fr;
-  }
-  .ideologies-parties-container {
-    grid-template-columns: 1fr;
   }
 }
 
