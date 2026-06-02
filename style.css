@@ -444,7 +444,7 @@ body.dark h1 {
   text-underline-offset: 6px;
   transition: color 0.15s;
   font-size: 0.9rem;
-  word-wrap: break-word; /* Zawijanie długich nazw */
+  word-wrap: break-word;
   word-break: break-word;
   color: var(--text-primary);
 }
@@ -465,7 +465,7 @@ body.dark h1 {
   overflow: hidden;
   display: flex;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-  min-width: 150px; /* Zapewnia miejsce na pasek */
+  min-width: 150px;
 }
 
 .bar-left-new, .bar-right-new {
@@ -494,9 +494,9 @@ body.dark h1 {
 /* NOWE STYLE DLA LISTY RANKINGOWEJ – przewijanie */
 .ranking-list {
   margin-top: 0.8rem;
-  max-height: 400px;      /* stała wysokość okienka */
-  overflow-y: auto;       /* pasek przewijania */
-  padding-right: 0.5rem;  /* miejsce na pasek */
+  max-height: 400px;
+  overflow-y: auto;
+  padding-right: 0.5rem;
 }
 
 .ranking-item {
@@ -783,7 +783,7 @@ footer a:hover {
     gap: 1rem;
   }
   .ideologies-parties-container {
-    grid-template-columns: 1fr; /* Rankingi jeden pod drugim na małych ekranach */
+    grid-template-columns: 1fr;
     gap: 1rem;
   }
   .value-bar-container-new {
