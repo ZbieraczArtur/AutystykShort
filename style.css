@@ -582,6 +582,21 @@ h3 {
   transform: scale(1.05);
 }
 
+/* NOWA KLASA .ranking-logo-small (do użytu zarówno dla partii jak i ideologii) */
+.ranking-logo-small {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  margin-right: 10px;
+  vertical-align: middle;
+  border-radius: 6px;
+  background-color: rgba(255,255,255,0.1);
+  transition: transform 0.1s ease;
+}
+.ranking-item:hover .ranking-logo-small {
+  transform: scale(1.05);
+}
+
 /* Baner symulacji partii */
 .simulation-banner {
   display: flex;
