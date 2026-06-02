@@ -119,7 +119,7 @@ const ideologyLogoMap = new Map([
   ['Socjalizm liberalny', 'Socjalizm_liberalny.png'],
   ['Socjalizm rynkowy', 'Socjalizm_rynkowy.png'],
   ['Socjalliberalizm', 'Socjalliberalizm.png'],
-  ['Sosnierzyzm', 'Sosnierzyzm.png'],
+  ['Sośnierzyzm', 'Sosnierzyzm.png'],
   ['Stalinizm', 'Stalinizm.svg'],
   ['Strasseryzm', 'Strasseryzm.png'],
   ['Tradycjonalizm integralny', 'Tradycjonalizm_integralny.png'],
