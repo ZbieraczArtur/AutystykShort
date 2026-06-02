@@ -2,7 +2,7 @@
 let config = null;
 let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
-let simulatedPartyName = null;      // przechowuje nazwę partii symulowanej (lub null)
+let simulatedEntity = null;         // { type: 'party'|'ideology', name: string }
 
 const questionsContainer = document.getElementById('questions-container');
 const submitBtn = document.getElementById('submitBtn');
@@ -15,14 +15,11 @@ const popupText = document.getElementById('popup-text');
 const closePopupBtn = document.getElementById('closePopup');
 
 // ======================= MAPOWANIE PARTII -> LOGO =======================
-// Ścieżka do folderu z logotypami (względna – możesz zmienić)
 const LOGO_BASE_PATH = 'images/Partie/';
 
-// Mapowanie: nazwa partii (z config.parties) -> nazwa pliku
-// Uwzględniono wszystkie podane przez Ciebie pliki
 const partyLogoMap = new Map([
   ['Zieloni', 'Partia_Zieloni.jpg'],
-  ['Partia Zieloni', 'Partia_Zieloni.jpg'],          // wariant
+  ['Partia Zieloni', 'Partia_Zieloni.jpg'],
   ['Koalicja Obywatelska', 'Koalicja_Obywatelska.png'],
   ['Konfederacja', 'Konfederacja_Korony_Polskiej.webp'],
   ['Konfederacja Korony Polskiej', 'Konfederacja_Korony_Polskiej.webp'],
@@ -37,134 +34,103 @@ const partyLogoMap = new Map([
   ['Ruch Narodowy', 'Ruch_Narodowy.svg']
 ]);
 
-// Pomocnicza funkcja pobierająca URL logo dla nazwy partii
 function getPartyLogoUrl(partyName) {
   const fileName = partyLogoMap.get(partyName);
-  if (fileName) {
-    return LOGO_BASE_PATH + fileName;
-  }
+  if (fileName) return LOGO_BASE_PATH + fileName;
   console.warn(`Brak logo dla partii: ${partyName}`);
   return null;
 }
-// ========================================================================
 
 // ======================= MAPOWANIE IDEOLOGII -> LOGO =======================
 const IDEOLOGY_LOGO_BASE_PATH = 'images/Ideologie/';
 
-// Lista plików z logami ideologii (na podstawie podanej przez autora)
-const ideologyFiles = [
-  'Absolutyzm_klasyczny.png',
-  'Absolutyzm_oswiecony.png',
-  'Agoryzm.png',
-  'Agraryzm.png',
-  'Anarchofeminizm.png',
-  'Anarchoindywidualizm.png',
-  'Anarchokapitalizm.svg',
-  'Anarchokolektywizm.webp',
-  'Anarchokomunizm.png',
-  'Anarchoprymitywizm.png',
-  'Anarchosyndykalizm.png',
-  'Chrzescijańska_demokracja.png',
-  'De_Leonizm.png',
-  'Demokratyczny_konfederalizm.png',
-  'Dystrybucjonizm.png',
-  'Egoizm.png',
-  'Egokomunizm.png',
-  'Ekoanarchizm.png',
-  'Ekologizm_prawicowy.jpg',
-  'Ekosocjalizm.png',
-  'Eurokomunizm.png',
-  'Faszyzm.png',
-  'Feminizm_liberalny.png',
-  'Feminizm_radykalny.svg',
-  'Feminizm_socjalistyczny.png',
-  'Fundamentalizm_religijny.png',
-  'Georgizm.svg',
-  'Gleboka_ekologia.svg',
-  'Green_Liberalism.png',
-  'Hoppeanism.png',
-  'Komunizm_rad.png',
-  'Konserwatywny_liberalizm.png',
-  'Konserwatyzm_autorytarny.png',
-  'Konserwatyzm_ewolucyjny.png',
-  'Konserwatyzm_jednego_narodu.jpg',
-  'Konserwatyzm_paternalistyczny.png',
-  'Korwinizm.png',
-  'Leninizm.png',
-  'Lewicowy_anarchizm_rynkowy.png',
-  'Liberalizm_klasyczny.png',
-  'Liberalizm_perfekcjonistyczny.png',
-  'Liberalny_konserwatyzm.png',
-  'Libertarianizm_konsekwencjalistyczny.png',
-  'Libertarianski_municypalizm.png',
-  'Liechtensteinizm.png',
-  'Luksemburgizm.png',
-  'Marksizm_klasyczny.png',
-  'Minarchizm.png',
-  'Mutualizm.png',
-  'Nacjonalizm_ekspansjonistyczny.svg',
-  'Nacjonalizm_konserwatywny.svg',
-  'Nacjonalizm_lewicowy.svg',
-  'Nacjonalizm_liberalny.png',
-  'Narodowa_Demokracja.png',
-  'Narodowy_anarchizm.png',
-  'Narodowy_bolszewizm.png',
-  'Narodowy_komunizm.png',
-  'Narodowy_liberalizm.svg',
-  'Nazizm.png',
-  'Neokonserwatyzm.png',
-  'Neolibertarianizm.svg',
-  'Neoluddyzm.png',
-  'Neorepublikanizm.svg',
-  'Ordoliberalizm.png',
-  'Paleokonserwatyzm.png',
-  'Paleolibertarianizm.png',
-  'Randyzm.png',
-  'Socjaldemokracja.png',
-  'Socjalizm_chrzescijanski.png',
-  'Socjalizm_demokratyczny.png',
-  'Socjalizm_fabianski.png',
-  'Socjalizm_liberalny.png',
-  'Socjalizm_rynkowy.png',
-  'Socjalliberalizm.png',
-  'Sosnierzyzm.png',
-  'Stalinizm.svg',
-  'Strasseryzm.png',
-  'Tradycjonalizm_integralny.png',
-  'Trockizm.svg',
-  'Trzecia_droga.svg',
-  'Nacjonalizm_obywatelski.svg'
-];
+const ideologyLogoMap = new Map([
+  ['Absolutyzm klasyczny', 'Absolutyzm_klasyczny.png'],
+  ['Absolutyzm oświecony', 'Absolutyzm_oswiecony.png'],
+  ['Agoryzm', 'Agoryzm.png'],
+  ['Agraryzm', 'Agraryzm.png'],
+  ['Anarchofeminizm', 'Anarchofeminizm.png'],
+  ['Anarchoindywidualizm', 'Anarchoindywidualizm.png'],
+  ['Anarchokapitalizm', 'Anarchokapitalizm.svg'],
+  ['Anarchokolektywizm', 'Anarchokolektywizm.webp'],
+  ['Anarchokomunizm', 'Anarchokomunizm.png'],
+  ['Anarchoprymitywizm', 'Anarchoprymitywizm.png'],
+  ['Anarchosyndykalizm', 'Anarchosyndykalizm.png'],
+  ['Chrześcijańska demokracja', 'Chrzescijanska_demokracja.png'],
+  ['De Leonizm', 'De_Leonizm.png'],
+  ['Demokratyczny konfederalizm', 'Demokratyczny_konfederalizm.png'],
+  ['Dystrybucjonizm', 'Dystrybucjonizm.png'],
+  ['Egoizm', 'Egoizm.png'],
+  ['Egokomunizm', 'Egokomunizm.png'],
+  ['Ekoanarchizm', 'Ekoanarchizm.png'],
+  ['Ekologizm prawicowy', 'Ekologizm_prawicowy.jpg'],
+  ['Ekosocjalizm', 'Ekosocjalizm.png'],
+  ['Eurokomunizm', 'Eurokomunizm.png'],
+  ['Faszyzm', 'Faszyzm.png'],
+  ['Feminizm liberalny', 'Feminizm_liberalny.png'],
+  ['Feminizm radykalny', 'Feminizm_radykalny.svg'],
+  ['Feminizm socjalistyczny', 'Feminizm_socjalistyczny.png'],
+  ['Fundamentalizm religijny', 'Fundamentalizm_religijny.png'],
+  ['Georgizm', 'Georgizm.svg'],
+  ['Głęboka ekologia', 'Gleboka_ekologia.svg'],
+  ['Green liberalism', 'Green_Liberalism.png'],
+  ['Hoppeanism', 'Hoppeanism.png'],
+  ['Komunizm rad', 'Komunizm_rad.png'],
+  ['Konserwatywny liberalizm', 'Konserwatywny_liberalizm.png'],
+  ['Konserwatyzm autorytarny', 'Konserwatyzm_autorytarny.png'],
+  ['Konserwatyzm ewolucyjny', 'Konserwatyzm_ewolucyjny.png'],
+  ['Konserwatyzm jednego narodu', 'Konserwatyzm_jednego_narodu.jpg'],
+  ['Konserwatyzm paternalistyczny', 'Konserwatyzm_paternalistyczny.png'],
+  ['Korwinizm', 'Korwinizm.png'],
+  ['Leninizm', 'Leninizm.png'],
+  ['Lewicowy anarchizm rynkowy', 'Lewicowy_anarchizm_rynkowy.png'],
+  ['Liberalizm klasyczny', 'Liberalizm_klasyczny.png'],
+  ['Liberalizm perfekcjonistyczny', 'Liberalizm_perfekcjonistyczny.png'],
+  ['Liberalny konserwatyzm', 'Liberalny_konserwatyzm.png'],
+  ['Libertarianizm konsekwencjalistyczny', 'Libertarianizm_konsekwencjalistyczny.png'],
+  ['Libertarianski municypalizm', 'Libertarianski_municypalizm.png'],
+  ['Liechtensteinizm', 'Liechtensteinizm.png'],
+  ['Luksemburgizm', 'Luksemburgizm.png'],
+  ['Marksizm klasyczny', 'Marksizm_klasyczny.png'],
+  ['Minarchizm', 'Minarchizm.png'],
+  ['Mutualizm', 'Mutualizm.png'],
+  ['Nacjonalizm ekspansjonistyczny', 'Nacjonalizm_ekspansjonistyczny.svg'],
+  ['Nacjonalizm konserwatywny', 'Nacjonalizm_konserwatywny.svg'],
+  ['Nacjonalizm lewicowy', 'Nacjonalizm_lewicowy.svg'],
+  ['Nacjonalizm liberalny', 'Nacjonalizm_liberalny.png'],
+  ['Narodowa Demokracja', 'Narodowa_Demokracja.png'],
+  ['Narodowy anarchizm', 'Narodowy_anarchizm.png'],
+  ['Narodowy bolszewizm', 'Narodowy_bolszewizm.png'],
+  ['Narodowy komunizm', 'Narodowy_komunizm.png'],
+  ['Narodowy liberalizm', 'Narodowy_liberalizm.svg'],
+  ['Nazizm', 'Nazizm.png'],
+  ['Neokonserwatyzm', 'Neokonserwatyzm.png'],
+  ['Neolibertarianizm', 'Neolibertarianizm.svg'],
+  ['Neoluddyzm', 'Neoluddyzm.png'],
+  ['Neorepublikanizm', 'Neorepublikanizm.svg'],
+  ['Ordoliberalizm', 'Ordoliberalizm.png'],
+  ['Paleokonserwatyzm', 'Paleokonserwatyzm.png'],
+  ['Paleolibertarianizm', 'Paleolibertarianizm.png'],
+  ['Randyzm', 'Randyzm.png'],
+  ['Socjaldemokracja', 'Socjaldemokracja.png'],
+  ['Socjalizm chrześcijański', 'Socjalizm_chrzescijanski.png'],
+  ['Socjalizm demokratyczny', 'Socjalizm_demokratyczny.png'],
+  ['Socjalizm fabiański', 'Socjalizm_fabianski.png'],
+  ['Socjalizm liberalny', 'Socjalizm_liberalny.png'],
+  ['Socjalizm rynkowy', 'Socjalizm_rynkowy.png'],
+  ['Socjalliberalizm', 'Socjalliberalizm.png'],
+  ['Sosnierzyzm', 'Sosnierzyzm.png'],
+  ['Stalinizm', 'Stalinizm.svg'],
+  ['Strasseryzm', 'Strasseryzm.png'],
+  ['Tradycjonalizm integralny', 'Tradycjonalizm_integralny.png'],
+  ['Trockizm', 'Trockizm.svg'],
+  ['Trzecia droga', 'Trzecia_droga.svg'],
+  ['Nacjonalizm obywatelski', 'Nacjonalizm_obywatelski.svg']
+]);
 
-// Tworzymy mapę: nazwa ideologii (spacje zamiast podkreślników) -> nazwa pliku
-const ideologyLogoMap = new Map();
-for (const file of ideologyFiles) {
-  // Odcinamy rozszerzenie
-  const baseName = file.replace(/\.[^/.]+$/, '');
-  // Zamieniamy podkreślniki na spacje
-  let ideologyName = baseName.replace(/_/g, ' ');
-  // Specjalny przypadek dla "Chrzescijańska_demokracja" – zachowujemy oryginalną pisownię (bez 'e' w "Chrzescijańska")
-  // Wszystkie inne przechodzą przez prostą zamianę.
-  ideologyLogoMap.set(ideologyName, file);
-}
-// Dodatkowo, na wypadek gdyby w configu nazwy zawierały oryginalne podkreślniki – dodajemy też wariant z podkreślnikami
-for (const file of ideologyFiles) {
-  const baseName = file.replace(/\.[^/.]+$/, '');
-  ideologyLogoMap.set(baseName, file);
-}
-
-// Pomocnicza funkcja pobierająca URL logo dla nazwy ideologii
 function getIdeologyLogoUrl(ideologyName) {
-  // Próba bezpośredniego odczytu z mapy
-  let fileName = ideologyLogoMap.get(ideologyName);
-  if (!fileName) {
-    // Próba konwersji spacji na podkreślniki (dla nazw z configu)
-    const withUnderscores = ideologyName.replace(/ /g, '_');
-    fileName = ideologyLogoMap.get(withUnderscores);
-  }
-  if (fileName) {
-    return IDEOLOGY_LOGO_BASE_PATH + fileName;
-  }
+  const fileName = ideologyLogoMap.get(ideologyName);
+  if (fileName) return IDEOLOGY_LOGO_BASE_PATH + fileName;
   console.warn(`Brak logo dla ideologii: ${ideologyName}`);
   return null;
 }
@@ -172,41 +138,15 @@ function getIdeologyLogoUrl(ideologyName) {
 
 // Mapowanie par wartości na kategorie (na podstawie lewej wartości)
 const categoryMapping = {
-  // Kategoria 1
-  "Autonomia": 1,
-  "Indywidualizm": 1,
-  "Kontraktualizm": 1,
-  "Dobrowolność wspólnoty": 1,
-  "Egalitaryzm": 1,
-  "Wolność ekspresji": 1,
-  // Kategoria 2
-  "Samoorganizacja": 2,
-  "Decentralizacja": 2,
-  "Ograniczenie władzy": 2,
-  "Sakralizacja autorytetu": 2,
-  "Różnorodność norm": 2,
-  "Demokracja": 2,
-  "Autokracja": 2,
-  // Kategoria 3
-  "Własność kolektywna": 3,
-  "Planowanie": 3,
-  "Regulacja instytucjonalna": 3,
-  "Ograniczanie wymiany": 3,
-  // Kategoria 4
-  "Minimalizacja granic": 4,
-  "Kosmopolityzm": 4,
-  "Interwencjonizm zagraniczny": 4,
-  // Kategoria 5
-  "Preferencja użycia siły": 5,
-  "Rewolucja": 5,
-  "Progresywizm": 5,
-  "Pluralizm kulturowy": 5,
-  "Neutralność religijna": 5,
-  "Włączanie": 5,
-  "Egalitaryzm biologiczny": 5,
-  // Kategoria 6
-  "Antropocentryzm": 6,
-  "Postęp technologiczny": 6
+  "Autonomia": 1, "Indywidualizm": 1, "Kontraktualizm": 1, "Dobrowolność wspólnoty": 1,
+  "Egalitaryzm": 1, "Wolność ekspresji": 1,
+  "Samoorganizacja": 2, "Decentralizacja": 2, "Ograniczenie władzy": 2, "Sakralizacja autorytetu": 2,
+  "Różnorodność norm": 2, "Demokracja": 2, "Autokracja": 2,
+  "Własność kolektywna": 3, "Planowanie": 3, "Regulacja instytucjonalna": 3, "Ograniczanie wymiany": 3,
+  "Minimalizacja granic": 4, "Kosmopolityzm": 4, "Interwencjonizm zagraniczny": 4,
+  "Preferencja użycia siły": 5, "Rewolucja": 5, "Progresywizm": 5, "Pluralizm kulturowy": 5,
+  "Neutralność religijna": 5, "Włączanie": 5, "Egalitaryzm biologiczny": 5,
+  "Antropocentryzm": 6, "Postęp technologiczny": 6
 };
 
 const categoryNames = {
@@ -219,81 +159,34 @@ const categoryNames = {
 };
 
 const valueColors = {
-  "Autonomia": "#FECB1D",
-  "Heteronomia": "#613B28", 
-  "Kolektywizm": "#613B28", 
-  "Indywidualizm": "#FECB1D",
-  "Egalitaryzm": "#FECB1D", 
-  "Hierarchiczność": "#613B28", 
-  "Samoorganizacja": "#2F3944", 
-  "Etatyzm": "#73B0BE",
-  "Decentralizacja": "#2F3944", 
-  "Centralizacja": "#73B0BE", 
-  "Ograniczenie władzy": "#2F3944", 
-  "Absolutyzm władzy": "#73B0BE",
-  "Demokracja": "#2F3944", 
-  "Anty-demokracja": "#73B0BE", 
-  "Autokracja": "#2F3944", 
-  "Anty-autokracja": "#73B0BE",
-  "Własność kolektywna": "#E44341", 
-  "Własność prywatna": "#448A3A", 
-  "Planowanie": "#E44341", 
-  "Rynek": "#448A3A",
-  "Regulacja instytucjonalna": "#E44341", 
-  "Samoregulacja": "#448A3A", 
-  "Ograniczanie wymiany": "#E44341", 
-  "Swobodna wymiana": "#448A3A",
-  "Minimalizacja granic": "#4C59CB", 
-  "Kontrola granic": "#FFA219", 
-  "Kosmopolityzm": "#4C59CB", 
-  "Partykularyzm narodowy": "#FFA219",
-  "Interwencjonizm zagraniczny": "#4C59CB", 
-  "Izolacjonizm": "#FFA219", 
-  "Preferencja użycia siły": "#DD59C7", 
-  "Unikanie przemocy": "#86D040",
-  "Rewolucja": "#DD59C7", 
-  "Gradualizm": "#86D040", 
-  "Progresywizm": "#DD59C7", 
-  "Konserwatyzm": "#86D040",
-  "Pluralizm kulturowy": "#DD59C7", 
-  "Homogenizacja": "#86D040", 
-  "Neutralność religijna": "#DD59C7", 
-  "Instytucjonalna religia": "#86D040",
-  "Włączanie": "#DD59C7", 
-  "Wykluczenie": "#86D040", 
-  "Egalitaryzm biologiczny": "#DD59C7", 
-  "Suprematyzm biologiczny": "#86D040",
-  "Wolność ekspresji": "#FECB1D", 
-  "Cenzura": "#613B28", 
-  "Antropocentryzm": "#E57160", 
-  "Ekocentryzm": "#14832A",
-  "Postęp technologiczny": "#E57160", 
-  "Prymitywizm": "#14832A", 
-  "Desakralizacja autorytetu": "#73B0BE", 
-  "Sakralizacja autorytetu": "#2F3944",
-  "Różnorodność norm": "#2F3944",
-  "Uniformizacja norm": "#73B0BE",
-  "Kontraktualizm": "#FECB1D",
-  "Organicyzm": "#613B28",
-  "Dobrowolność wspólnoty": "#FECB1D",
-  "Obowiązkowość wspólnoty": "#613B28"
+  "Autonomia": "#FECB1D", "Heteronomia": "#613B28", "Kolektywizm": "#613B28", "Indywidualizm": "#FECB1D",
+  "Egalitaryzm": "#FECB1D", "Hierarchiczność": "#613B28", "Samoorganizacja": "#2F3944", "Etatyzm": "#73B0BE",
+  "Decentralizacja": "#2F3944", "Centralizacja": "#73B0BE", "Ograniczenie władzy": "#2F3944", "Absolutyzm władzy": "#73B0BE",
+  "Demokracja": "#2F3944", "Anty-demokracja": "#73B0BE", "Autokracja": "#2F3944", "Anty-autokracja": "#73B0BE",
+  "Własność kolektywna": "#E44341", "Własność prywatna": "#448A3A", "Planowanie": "#E44341", "Rynek": "#448A3A",
+  "Regulacja instytucjonalna": "#E44341", "Samoregulacja": "#448A3A", "Ograniczanie wymiany": "#E44341", "Swobodna wymiana": "#448A3A",
+  "Minimalizacja granic": "#4C59CB", "Kontrola granic": "#FFA219", "Kosmopolityzm": "#4C59CB", "Partykularyzm narodowy": "#FFA219",
+  "Interwencjonizm zagraniczny": "#4C59CB", "Izolacjonizm": "#FFA219", "Preferencja użycia siły": "#DD59C7", "Unikanie przemocy": "#86D040",
+  "Rewolucja": "#DD59C7", "Gradualizm": "#86D040", "Progresywizm": "#DD59C7", "Konserwatyzm": "#86D040",
+  "Pluralizm kulturowy": "#DD59C7", "Homogenizacja": "#86D040", "Neutralność religijna": "#DD59C7", "Instytucjonalna religia": "#86D040",
+  "Włączanie": "#DD59C7", "Wykluczenie": "#86D040", "Egalitaryzm biologiczny": "#DD59C7", "Suprematyzm biologiczny": "#86D040",
+  "Wolność ekspresji": "#FECB1D", "Cenzura": "#613B28", "Antropocentryzm": "#E57160", "Ekocentryzm": "#14832A",
+  "Postęp technologiczny": "#E57160", "Prymitywizm": "#14832A", "Desakralizacja autorytetu": "#73B0BE", "Sakralizacja autorytetu": "#2F3944",
+  "Różnorodność norm": "#2F3944", "Uniformizacja norm": "#73B0BE", "Kontraktualizm": "#FECB1D", "Organicyzm": "#613B28",
+  "Dobrowolność wspólnoty": "#FECB1D", "Obowiązkowość wspólnoty": "#613B28"
 };
 
 function showPopup(message) {
-  // Usuwamy ewentualne logo z popupa (żeby nie wisiało przy zwykłych opisach)
   const existingLogo = popup.querySelector('.popup-logo-img');
   if (existingLogo) existingLogo.remove();
   popupText.innerText = message;
   popup.classList.remove('hidden');
 }
 
-// Funkcja do wyświetlania popupa z logo partii (większe logo)
 function showPartyPopup(partyName, description) {
-  // Usuwamy stare logo
   const existingLogo = popup.querySelector('.popup-logo-img');
   if (existingLogo) existingLogo.remove();
 
-  // Pobieramy URL logo
   const logoUrl = getPartyLogoUrl(partyName);
   if (logoUrl) {
     const logoImg = document.createElement('img');
@@ -301,23 +194,17 @@ function showPartyPopup(partyName, description) {
     logoImg.alt = `Logo ${partyName}`;
     logoImg.className = 'popup-logo-img';
     logoImg.style.cssText = 'display: block; max-width: 120px; max-height: 120px; margin: 0 auto 16px auto; object-fit: contain;';
-    // Wstawiamy przed tekstem
     const popupContent = popup.querySelector('.popup-content');
     popupContent.insertBefore(logoImg, popupText);
   }
-
-  // Treść popupa: nazwa + opis
   popupText.innerText = `${partyName}\n\n${description || 'Brak opisu.'}`;
   popup.classList.remove('hidden');
 }
 
-// Funkcja do wyświetlania popupa z logo ideologii (większe logo)
 function showIdeologyPopup(ideologyName, description) {
-  // Usuwamy stare logo
   const existingLogo = popup.querySelector('.popup-logo-img');
   if (existingLogo) existingLogo.remove();
 
-  // Pobieramy URL logo
   const logoUrl = getIdeologyLogoUrl(ideologyName);
   if (logoUrl) {
     const logoImg = document.createElement('img');
@@ -325,12 +212,9 @@ function showIdeologyPopup(ideologyName, description) {
     logoImg.alt = `Logo ${ideologyName}`;
     logoImg.className = 'popup-logo-img';
     logoImg.style.cssText = 'display: block; max-width: 120px; max-height: 120px; margin: 0 auto 16px auto; object-fit: contain;';
-    // Wstawiamy przed tekstem
     const popupContent = popup.querySelector('.popup-content');
     popupContent.insertBefore(logoImg, popupText);
   }
-
-  // Treść popupa: nazwa + opis
   popupText.innerText = `${ideologyName}\n\n${description || 'Brak opisu.'}`;
   popup.classList.remove('hidden');
 }
@@ -736,7 +620,6 @@ function computeScores(mode = currentScoringMode) {
   return { pairResults, ideologyResults, partyResults };
 }
 
-// Funkcja createRankingSection – dodaje małe logo dla partii i ideologii
 function createRankingSection(title, items, type) {
   const section = document.createElement('div');
   section.className = 'ranking-section';
@@ -756,7 +639,7 @@ function createRankingSection(title, items, type) {
     const itemDiv = document.createElement('div');
     itemDiv.className = `ranking-item ${type === 'ideology' ? 'ideology-entry' : 'party-entry'}`;
 
-    // Dla partii i ideologii dodajemy małe logo (jeśli istnieje)
+    // Dodanie małego logo – dla partii i ideologii
     if (type === 'party') {
       const logoUrl = getPartyLogoUrl(item.name);
       if (logoUrl) {
@@ -781,7 +664,7 @@ function createRankingSection(title, items, type) {
         const img = document.createElement('img');
         img.src = logoUrl;
         img.alt = `Logo ${item.name}`;
-        img.className = 'party-logo-small'; // ta sama klasa CSS co dla partii
+        img.className = 'ideology-logo-small';
         img.style.width = '28px';
         img.style.height = '28px';
         img.style.objectFit = 'contain';
@@ -794,7 +677,6 @@ function createRankingSection(title, items, type) {
       nameSpan.textContent = item.name;
       itemDiv.appendChild(nameSpan);
     } else {
-      // Dla innego typu (nie powinno się zdarzyć) – tylko nazwa
       itemDiv.innerHTML = `<span class="rank-name">${item.name}</span>`;
     }
 
@@ -803,7 +685,7 @@ function createRankingSection(title, items, type) {
     percentSpan.textContent = `${Math.round(item.percent)}%`;
     itemDiv.appendChild(percentSpan);
 
-    // Obsługa kliknięcia – dla partii i ideologii używamy osobnych popupów z logo
+    // Obsługa kliknięcia – osobne funkcje dla partii i ideologii
     if (type === 'party') {
       itemDiv.addEventListener('click', () => showPartyPopup(item.name, item.description || ''));
     } else if (type === 'ideology') {
@@ -864,11 +746,10 @@ function generateShareCode(pairResults) {
   return container;
 }
 
-// Funkcja computeAndDisplayResults – dodaje banner symulacji
 function computeAndDisplayResults() {
   const { pairResults, ideologyResults, partyResults } = computeScores(currentScoringMode);
 
-  // Grupowanie par wartości (bez zmian)
+  // Grupowanie par wartości
   const groups = new Map();
   for (const pair of pairResults) {
     const catId = categoryMapping[pair.left];
@@ -915,29 +796,35 @@ function computeAndDisplayResults() {
   }
   valuesResults.appendChild(gridContainer);
 
-  // Wyczyść poprzednie rankingi
   ideologiesResults.innerHTML = '';
   partiesResults.innerHTML = '';
 
-  // DODANIE BANNERA SYMULACJI (jeśli symulujemy partię)
+  // BANNER SYMULACJI (dla partii lub ideologii)
   const existingBanner = resultsDiv.querySelector('.simulation-banner');
   if (existingBanner) existingBanner.remove();
-  if (simulatedPartyName) {
+  if (simulatedEntity) {
     const banner = document.createElement('div');
     banner.className = 'simulation-banner';
-    const logoUrl = getPartyLogoUrl(simulatedPartyName);
+    let logoUrl = null;
+    let entityTypeLabel = '';
+    if (simulatedEntity.type === 'party') {
+      logoUrl = getPartyLogoUrl(simulatedEntity.name);
+      entityTypeLabel = 'partię';
+    } else if (simulatedEntity.type === 'ideology') {
+      logoUrl = getIdeologyLogoUrl(simulatedEntity.name);
+      entityTypeLabel = 'ideologię';
+    }
     let logoHtml = '';
     if (logoUrl) {
-      logoHtml = `<img src="${logoUrl}" alt="Logo ${simulatedPartyName}" class="simulation-banner-logo">`;
+      logoHtml = `<img src="${logoUrl}" alt="Logo ${simulatedEntity.name}" class="simulation-banner-logo">`;
     }
     banner.innerHTML = `
       ${logoHtml}
       <div class="simulation-banner-text">
-        🎭 Symulujesz partię: <strong>${simulatedPartyName}</strong><br>
+        🎭 Symulujesz ${entityTypeLabel}: <strong>${simulatedEntity.name}</strong><br>
         <small>Wyniki poniżej są tymczasowe. Kliknij „Przywróć moje odpowiedzi”, aby wrócić do własnych.</small>
       </div>
     `;
-    // Wstawiamy przed kontenerem rankingów
     const ideologiesPartiesContainer = document.querySelector('.ideologies-parties-container');
     if (ideologiesPartiesContainer) {
       ideologiesPartiesContainer.parentNode.insertBefore(banner, ideologiesPartiesContainer);
@@ -946,7 +833,6 @@ function computeAndDisplayResults() {
     }
   }
 
-  // Dodajemy rankingi (z logo wewnątrz dla partii i ideologii)
   ideologiesResults.appendChild(createRankingSection('📊 Ranking ideologii', ideologyResults, 'ideology'));
   partiesResults.appendChild(createRankingSection('🗳️ Ranking partii', partyResults, 'party'));
 
@@ -997,20 +883,21 @@ function syncUserAnswersFromDOM() {
 
 function restoreUserAnswers() {
   syncUserAnswersFromDOM();
-  simulatedPartyName = null;   // wyczyszczenie flagi symulacji
+  simulatedEntity = null;
   computeAndDisplayResults();
   showPopup('Przywrócono Twoje odpowiedzi i odświeżono wyniki.');
 }
 
-// ZMODYFIKOWANA funkcja simulateAnswers – zapamiętuje nazwę symulowanej partii
 function simulateAnswers(selectedName) {
-  // Sprawdzamy, czy wybrana opcja to partia (na podstawie mapy logo)
-  const isParty = partyLogoMap.has(selectedName) || 
-                  (config.parties && config.parties.some(p => p.name === selectedName));
+  // Określamy typ symulowanego bytu
+  const isParty = config.parties.some(p => p.name === selectedName);
+  const isIdeology = config.ideologies.some(i => i.name === selectedName);
   if (isParty) {
-    simulatedPartyName = selectedName;
+    simulatedEntity = { type: 'party', name: selectedName };
+  } else if (isIdeology) {
+    simulatedEntity = { type: 'ideology', name: selectedName };
   } else {
-    simulatedPartyName = null; // symulujemy ideologię – nie pokazujemy bannera
+    simulatedEntity = null;
   }
 
   const simulatedAnswers = [];
