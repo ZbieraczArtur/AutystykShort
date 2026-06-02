@@ -491,8 +491,12 @@ body.dark h1 {
   width: 100%;
 }
 
+/* NOWE STYLE DLA LISTY RANKINGOWEJ – przewijanie */
 .ranking-list {
   margin-top: 0.8rem;
+  max-height: 400px;      /* stała wysokość okienka */
+  overflow-y: auto;       /* pasek przewijania */
+  padding-right: 0.5rem;  /* miejsce na pasek */
 }
 
 .ranking-item {
@@ -536,6 +540,7 @@ h3 {
   letter-spacing: -0.3px;
 }
 
+/* Przycisk rozwijania został usunięty – nie używany, ale klasa może pozostać bez efektu */
 .toggle-rank-btn {
   background: var(--btn-bg);
   border: none;
