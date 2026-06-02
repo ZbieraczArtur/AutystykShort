@@ -98,7 +98,7 @@ const ideologyLogoMap = new Map([
   ['Nacjonalizm konserwatywny', 'Nacjonalizm_konserwatywny.svg'],
   ['Nacjonalizm lewicowy', 'Nacjonalizm_lewicowy.svg'],
   ['Nacjonalizm liberalny', 'Nacjonalizm_liberalny.png'],
-  ['Narodowa demokracja', 'Narodowa_Demokracja.png'],
+  ['Narodowa demokracja', 'Narodowa_demokracja.png'],
   ['Narodowy anarchizm', 'Narodowy_anarchizm.png'],
   ['Narodowy bolszewizm', 'Narodowy_bolszewizm.png'],
   ['Narodowy komunizm', 'Narodowy_komunizm.png'],
