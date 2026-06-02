@@ -620,6 +620,9 @@ function computeScores(mode = currentScoringMode) {
   return { pairResults, ideologyResults, partyResults };
 }
 
+// ========== ZMODYFIKOWANA FUNKCJA createRankingSection ==========
+// Usunięto przycisk "Pokaż więcej" i ukrywanie wpisów – wszystkie elementy są zawsze widoczne,
+// a przewijanie zapewnia CSS (max-height + overflow-y na .ranking-list)
 function createRankingSection(title, items, type) {
   const section = document.createElement('div');
   section.className = 'ranking-section';
@@ -634,12 +637,11 @@ function createRankingSection(title, items, type) {
   }
   const listContainer = document.createElement('div');
   listContainer.className = 'ranking-list';
-  const itemsElements = [];
+  
   items.forEach((item, idx) => {
     const itemDiv = document.createElement('div');
     itemDiv.className = `ranking-item ${type === 'ideology' ? 'ideology-entry' : 'party-entry'}`;
 
-    // Dodanie małego logo – dla partii i ideologii
     if (type === 'party') {
       const logoUrl = getPartyLogoUrl(item.name);
       if (logoUrl) {
@@ -685,7 +687,6 @@ function createRankingSection(title, items, type) {
     percentSpan.textContent = `${Math.round(item.percent)}%`;
     itemDiv.appendChild(percentSpan);
 
-    // Obsługa kliknięcia – osobne funkcje dla partii i ideologii
     if (type === 'party') {
       itemDiv.addEventListener('click', () => showPartyPopup(item.name, item.description || ''));
     } else if (type === 'ideology') {
@@ -694,30 +695,10 @@ function createRankingSection(title, items, type) {
       itemDiv.addEventListener('click', () => showPopup(`${item.name}\n${item.description || ''}`));
     }
 
-    itemsElements.push(itemDiv);
     listContainer.appendChild(itemDiv);
   });
-  if (itemsElements.length > 3) {
-    for (let i = 3; i < itemsElements.length; i++) itemsElements[i].classList.add('hidden-rank-item');
-    const toggleBtn = document.createElement('button');
-    toggleBtn.textContent = 'Pokaż więcej';
-    toggleBtn.className = 'toggle-rank-btn';
-    let expanded = false;
-    toggleBtn.addEventListener('click', () => {
-      if (expanded) {
-        for (let i = 3; i < itemsElements.length; i++) itemsElements[i].classList.add('hidden-rank-item');
-        toggleBtn.textContent = 'Pokaż więcej';
-      } else {
-        for (let i = 3; i < itemsElements.length; i++) itemsElements[i].classList.remove('hidden-rank-item');
-        toggleBtn.textContent = 'Pokaż mniej';
-      }
-      expanded = !expanded;
-    });
-    section.appendChild(listContainer);
-    section.appendChild(toggleBtn);
-  } else {
-    section.appendChild(listContainer);
-  }
+  
+  section.appendChild(listContainer);
   return section;
 }
 
