@@ -88,7 +88,7 @@ const ideologyLogoMap = new Map([
   ['Liberalizm perfekcjonistyczny', 'Liberalizm_perfekcjonistyczny.png'],
   ['Liberalny konserwatyzm', 'Liberalny_konserwatyzm.png'],
   ['Libertarianizm konsekwencjalistyczny', 'Libertarianizm_konsekwencjalistyczny.png'],
-  ['Libertarianski municypalizm', 'Libertarianski_municypalizm.png'],
+  ['Libertariański municypalizm', 'Libertarianski_municypalizm.png'],
   ['Liechtensteinizm', 'Liechtensteinizm.png'],
   ['Luksemburgizm', 'Luksemburgizm.png'],
   ['Marksizm klasyczny', 'Marksizm_klasyczny.png'],
