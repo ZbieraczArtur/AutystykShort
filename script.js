@@ -1,4 +1,4 @@
-// script.js – z dodanymi logotypami partii (ranking, popup, symulacja)
+// script.js – z dodanymi logotypami partii i ideologii (ranking, popup, symulacja)
 let config = null;
 let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
@@ -44,6 +44,128 @@ function getPartyLogoUrl(partyName) {
     return LOGO_BASE_PATH + fileName;
   }
   console.warn(`Brak logo dla partii: ${partyName}`);
+  return null;
+}
+// ========================================================================
+
+// ======================= MAPOWANIE IDEOLOGII -> LOGO =======================
+const IDEOLOGY_LOGO_BASE_PATH = 'images/Ideologie/';
+
+// Lista plików z logami ideologii (na podstawie podanej przez autora)
+const ideologyFiles = [
+  'Absolutyzm_klasyczny.png',
+  'Absolutyzm_oswiecony.png',
+  'Agoryzm.png',
+  'Agraryzm.png',
+  'Anarchofeminizm.png',
+  'Anarchoindywidualizm.png',
+  'Anarchokapitalizm.svg',
+  'Anarchokolektywizm.webp',
+  'Anarchokomunizm.png',
+  'Anarchoprymitywizm.png',
+  'Anarchosyndykalizm.png',
+  'Chrzescijańska_demokracja.png',
+  'De_Leonizm.png',
+  'Demokratyczny_konfederalizm.png',
+  'Dystrybucjonizm.png',
+  'Egoizm.png',
+  'Egokomunizm.png',
+  'Ekoanarchizm.png',
+  'Ekologizm_prawicowy.jpg',
+  'Ekosocjalizm.png',
+  'Eurokomunizm.png',
+  'Faszyzm.png',
+  'Feminizm_liberalny.png',
+  'Feminizm_radykalny.svg',
+  'Feminizm_socjalistyczny.png',
+  'Fundamentalizm_religijny.png',
+  'Georgizm.svg',
+  'Gleboka_ekologia.svg',
+  'Green_Liberalism.png',
+  'Hoppeanism.png',
+  'Komunizm_rad.png',
+  'Konserwatywny_liberalizm.png',
+  'Konserwatyzm_autorytarny.png',
+  'Konserwatyzm_ewolucyjny.png',
+  'Konserwatyzm_jednego_narodu.jpg',
+  'Konserwatyzm_paternalistyczny.png',
+  'Korwinizm.png',
+  'Leninizm.png',
+  'Lewicowy_anarchizm_rynkowy.png',
+  'Liberalizm_klasyczny.png',
+  'Liberalizm_perfekcjonistyczny.png',
+  'Liberalny_konserwatyzm.png',
+  'Libertarianizm_konsekwencjalistyczny.png',
+  'Libertarianski_municypalizm.png',
+  'Liechtensteinizm.png',
+  'Luksemburgizm.png',
+  'Marksizm_klasyczny.png',
+  'Minarchizm.png',
+  'Mutualizm.png',
+  'Nacjonalizm_ekspansjonistyczny.svg',
+  'Nacjonalizm_konserwatywny.svg',
+  'Nacjonalizm_lewicowy.svg',
+  'Nacjonalizm_liberalny.png',
+  'Narodowa_Demokracja.png',
+  'Narodowy_anarchizm.png',
+  'Narodowy_bolszewizm.png',
+  'Narodowy_komunizm.png',
+  'Narodowy_liberalizm.svg',
+  'Nazizm.png',
+  'Neokonserwatyzm.png',
+  'Neolibertarianizm.svg',
+  'Neoluddyzm.png',
+  'Neorepublikanizm.svg',
+  'Ordoliberalizm.png',
+  'Paleokonserwatyzm.png',
+  'Paleolibertarianizm.png',
+  'Randyzm.png',
+  'Socjaldemokracja.png',
+  'Socjalizm_chrzescijanski.png',
+  'Socjalizm_demokratyczny.png',
+  'Socjalizm_fabianski.png',
+  'Socjalizm_liberalny.png',
+  'Socjalizm_rynkowy.png',
+  'Socjalliberalizm.png',
+  'Sosnierzyzm.png',
+  'Stalinizm.svg',
+  'Strasseryzm.png',
+  'Tradycjonalizm_integralny.png',
+  'Trockizm.svg',
+  'Trzecia_droga.svg',
+  'Nacjonalizm_obywatelski.svg'
+];
+
+// Tworzymy mapę: nazwa ideologii (spacje zamiast podkreślników) -> nazwa pliku
+const ideologyLogoMap = new Map();
+for (const file of ideologyFiles) {
+  // Odcinamy rozszerzenie
+  const baseName = file.replace(/\.[^/.]+$/, '');
+  // Zamieniamy podkreślniki na spacje
+  let ideologyName = baseName.replace(/_/g, ' ');
+  // Specjalny przypadek dla "Chrzescijańska_demokracja" – zachowujemy oryginalną pisownię (bez 'e' w "Chrzescijańska")
+  // Wszystkie inne przechodzą przez prostą zamianę.
+  ideologyLogoMap.set(ideologyName, file);
+}
+// Dodatkowo, na wypadek gdyby w configu nazwy zawierały oryginalne podkreślniki – dodajemy też wariant z podkreślnikami
+for (const file of ideologyFiles) {
+  const baseName = file.replace(/\.[^/.]+$/, '');
+  ideologyLogoMap.set(baseName, file);
+}
+
+// Pomocnicza funkcja pobierająca URL logo dla nazwy ideologii
+function getIdeologyLogoUrl(ideologyName) {
+  // Próba bezpośredniego odczytu z mapy
+  let fileName = ideologyLogoMap.get(ideologyName);
+  if (!fileName) {
+    // Próba konwersji spacji na podkreślniki (dla nazw z configu)
+    const withUnderscores = ideologyName.replace(/ /g, '_');
+    fileName = ideologyLogoMap.get(withUnderscores);
+  }
+  if (fileName) {
+    return IDEOLOGY_LOGO_BASE_PATH + fileName;
+  }
+  console.warn(`Brak logo dla ideologii: ${ideologyName}`);
   return null;
 }
 // ========================================================================
@@ -165,7 +287,7 @@ function showPopup(message) {
   popup.classList.remove('hidden');
 }
 
-// Nowa funkcja do wyświetlania popupa z logo partii (większe logo)
+// Funkcja do wyświetlania popupa z logo partii (większe logo)
 function showPartyPopup(partyName, description) {
   // Usuwamy stare logo
   const existingLogo = popup.querySelector('.popup-logo-img');
@@ -186,6 +308,30 @@ function showPartyPopup(partyName, description) {
 
   // Treść popupa: nazwa + opis
   popupText.innerText = `${partyName}\n\n${description || 'Brak opisu.'}`;
+  popup.classList.remove('hidden');
+}
+
+// Funkcja do wyświetlania popupa z logo ideologii (większe logo)
+function showIdeologyPopup(ideologyName, description) {
+  // Usuwamy stare logo
+  const existingLogo = popup.querySelector('.popup-logo-img');
+  if (existingLogo) existingLogo.remove();
+
+  // Pobieramy URL logo
+  const logoUrl = getIdeologyLogoUrl(ideologyName);
+  if (logoUrl) {
+    const logoImg = document.createElement('img');
+    logoImg.src = logoUrl;
+    logoImg.alt = `Logo ${ideologyName}`;
+    logoImg.className = 'popup-logo-img';
+    logoImg.style.cssText = 'display: block; max-width: 120px; max-height: 120px; margin: 0 auto 16px auto; object-fit: contain;';
+    // Wstawiamy przed tekstem
+    const popupContent = popup.querySelector('.popup-content');
+    popupContent.insertBefore(logoImg, popupText);
+  }
+
+  // Treść popupa: nazwa + opis
+  popupText.innerText = `${ideologyName}\n\n${description || 'Brak opisu.'}`;
   popup.classList.remove('hidden');
 }
 
@@ -590,7 +736,7 @@ function computeScores(mode = currentScoringMode) {
   return { pairResults, ideologyResults, partyResults };
 }
 
-// ZMODYFIKOWANA funkcja createRankingSection – dodaje małe logo dla partii
+// Funkcja createRankingSection – dodaje małe logo dla partii i ideologii
 function createRankingSection(title, items, type) {
   const section = document.createElement('div');
   section.className = 'ranking-section';
@@ -610,7 +756,7 @@ function createRankingSection(title, items, type) {
     const itemDiv = document.createElement('div');
     itemDiv.className = `ranking-item ${type === 'ideology' ? 'ideology-entry' : 'party-entry'}`;
 
-    // Dla partii dodajemy małe logo
+    // Dla partii i ideologii dodajemy małe logo (jeśli istnieje)
     if (type === 'party') {
       const logoUrl = getPartyLogoUrl(item.name);
       if (logoUrl) {
@@ -629,8 +775,26 @@ function createRankingSection(title, items, type) {
       nameSpan.className = 'rank-name';
       nameSpan.textContent = item.name;
       itemDiv.appendChild(nameSpan);
+    } else if (type === 'ideology') {
+      const logoUrl = getIdeologyLogoUrl(item.name);
+      if (logoUrl) {
+        const img = document.createElement('img');
+        img.src = logoUrl;
+        img.alt = `Logo ${item.name}`;
+        img.className = 'party-logo-small'; // ta sama klasa CSS co dla partii
+        img.style.width = '28px';
+        img.style.height = '28px';
+        img.style.objectFit = 'contain';
+        img.style.marginRight = '10px';
+        img.style.verticalAlign = 'middle';
+        itemDiv.appendChild(img);
+      }
+      const nameSpan = document.createElement('span');
+      nameSpan.className = 'rank-name';
+      nameSpan.textContent = item.name;
+      itemDiv.appendChild(nameSpan);
     } else {
-      // Dla ideologii – tylko nazwa
+      // Dla innego typu (nie powinno się zdarzyć) – tylko nazwa
       itemDiv.innerHTML = `<span class="rank-name">${item.name}</span>`;
     }
 
@@ -639,9 +803,11 @@ function createRankingSection(title, items, type) {
     percentSpan.textContent = `${Math.round(item.percent)}%`;
     itemDiv.appendChild(percentSpan);
 
-    // Obsługa kliknięcia – dla partii używamy osobnego popupa z logo
+    // Obsługa kliknięcia – dla partii i ideologii używamy osobnych popupów z logo
     if (type === 'party') {
       itemDiv.addEventListener('click', () => showPartyPopup(item.name, item.description || ''));
+    } else if (type === 'ideology') {
+      itemDiv.addEventListener('click', () => showIdeologyPopup(item.name, item.description || ''));
     } else {
       itemDiv.addEventListener('click', () => showPopup(`${item.name}\n${item.description || ''}`));
     }
@@ -698,7 +864,7 @@ function generateShareCode(pairResults) {
   return container;
 }
 
-// ZMODYFIKOWANA funkcja computeAndDisplayResults – dodaje banner symulacji
+// Funkcja computeAndDisplayResults – dodaje banner symulacji
 function computeAndDisplayResults() {
   const { pairResults, ideologyResults, partyResults } = computeScores(currentScoringMode);
 
@@ -780,7 +946,7 @@ function computeAndDisplayResults() {
     }
   }
 
-  // Dodajemy rankingi (z logo wewnątrz dla partii)
+  // Dodajemy rankingi (z logo wewnątrz dla partii i ideologii)
   ideologiesResults.appendChild(createRankingSection('📊 Ranking ideologii', ideologyResults, 'ideology'));
   partiesResults.appendChild(createRankingSection('🗳️ Ranking partii', partyResults, 'party'));
 
