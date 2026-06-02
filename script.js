@@ -73,7 +73,7 @@ const ideologyLogoMap = new Map([
   ['Fundamentalizm religijny', 'Fundamentalizm_religijny.png'],
   ['Georgizm', 'Georgizm.svg'],
   ['Głęboka ekologia', 'Gleboka_ekologia.svg'],
-  ['Green liberalism', 'Green_Liberalism.png'],
+  ['Zielony liberalizm', 'Zielony_liberalizm.png'],
   ['Hoppeanism', 'Hoppeanism.png'],
   ['Komunizm rad', 'Komunizm_rad.png'],
   ['Konserwatywny liberalizm', 'Konserwatywny_liberalizm.png'],
