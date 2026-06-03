@@ -126,6 +126,7 @@ const ideologyLogoMap = new Map([
   ['Trockizm', 'Trockizm.svg'],
   ['Trzecia droga', 'Trzecia_droga.svg'],
   ['Nacjonalizm obywatelski', 'Nacjonalizm_obywatelski.svg']
+  ['Hoppeanizm', 'Hoppeanizm.png']
 ]);
 
 function getIdeologyLogoUrl(ideologyName) {
