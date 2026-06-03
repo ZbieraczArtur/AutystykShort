@@ -13460,49 +13460,49 @@
     },
         {
       "id": 225,
-      "text": "Państwo powinno stosować cła i bariery handlowe wobec zagranicznych towarów i usług",
+      "text": "Państwo nie powinno stosować ceł i barier handlowych wobec zagranicznych towarów i usług",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Ograniczanie wymiany", "Etatyzm"],
-          "values_against": ["Swobodna wymiana", "Rynek", "Kontraktualizm"],
-          "ideologies_for": [],
+          "values_against": ["Ograniczanie wymiany", "Etatyzm"],
+          "values_for": ["Swobodna wymiana", "Rynek", "Kontraktualizm"],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
-          "parties_against": ["Koalicja Obywatelska"]
+          "ideologies_for": [],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_for": ["Koalicja Obywatelska"]
         },
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Ograniczanie wymiany", "Etatyzm"],
-          "values_against": ["Swobodna wymiana", "Rynek", "Kontraktualizm"],
-          "ideologies_for": [],
+          "values_against": ["Ograniczanie wymiany", "Etatyzm"],
+          "values_for": ["Swobodna wymiana", "Rynek", "Kontraktualizm"],
           "ideologies_against": [],
-          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
-          "parties_against": ["Koalicja Obywatelska"]
+          "ideologies_for": [],
+          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_for": ["Koalicja Obywatelska"]
         },
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": ["Swobodna wymiana", "Rynek", "Kontraktualizm"],
-          "values_against": ["Ograniczanie wymiany", "Etatyzm"],
-          "ideologies_for": [],
+          "values_against": ["Swobodna wymiana", "Rynek", "Kontraktualizm"],
+          "values_for": ["Ograniczanie wymiany", "Etatyzm"],
           "ideologies_against": [],
-          "parties_for": ["Koalicja Obywatelska"],
-          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
+          "ideologies_for": [],
+          "parties_against": ["Koalicja Obywatelska"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": ["Swobodna wymiana", "Rynek", "Kontraktualizm"],
-          "values_against": ["Ograniczanie wymiany", "Etatyzm"],
-          "ideologies_for": [],
+          "values_against": ["Swobodna wymiana", "Rynek", "Kontraktualizm"],
+          "values_for": ["Ograniczanie wymiany", "Etatyzm"],
           "ideologies_against": [],
-          "parties_for": ["Koalicja Obywatelska"],
-          "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
+          "ideologies_for": [],
+          "parties_against": ["Koalicja Obywatelska"],
+          "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Pomiń pytanie",
