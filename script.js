@@ -622,8 +622,6 @@ function computeScores(mode = currentScoringMode) {
 }
 
 // ========== ZMODYFIKOWANA FUNKCJA createRankingSection ==========
-// Usunięto przycisk "Pokaż więcej" i ukrywanie wpisów – wszystkie elementy są zawsze widoczne,
-// a przewijanie zapewnia CSS (max-height + overflow-y na .ranking-list)
 function createRankingSection(title, items, type) {
   const section = document.createElement('div');
   section.className = 'ranking-section';
@@ -770,6 +768,11 @@ function computeAndDisplayResults() {
       `;
       const leftSpan = pairDiv.querySelector('.value-left-new');
       const rightSpan = pairDiv.querySelector('.value-right-new');
+      
+      // === DODANIE KOLORU HOVER (z valueColors) ===
+      leftSpan.style.setProperty('--hover-color', leftColor);
+      rightSpan.style.setProperty('--hover-color', rightColor);
+      
       leftSpan.addEventListener('click', () => showPopup(pair.leftDef));
       rightSpan.addEventListener('click', () => showPopup(pair.rightDef));
       categoryDiv.appendChild(pairDiv);
@@ -871,7 +874,6 @@ function restoreUserAnswers() {
 }
 
 function simulateAnswers(selectedName) {
-  // Określamy typ symulowanego bytu
   const isParty = config.parties.some(p => p.name === selectedName);
   const isIdeology = config.ideologies.some(i => i.name === selectedName);
   if (isParty) {
