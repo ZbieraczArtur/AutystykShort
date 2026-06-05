@@ -14,9 +14,15 @@
     <header>
       <div class="header-top">
         <h1>🐻 NeoAutystyk Short</h1>
-        <button id="theme-toggle" class="theme-toggle" aria-label="Przełącz tryb jasny/ciemny">🌙</button>
+        <div class="header-controls">
+          <select id="language-select" class="language-select" aria-label="Wybierz język">
+            <option value="pl">🇵🇱 Polski</option>
+            <option value="en">🇬🇧 English</option>
+          </select>
+          <button id="theme-toggle" class="theme-toggle" aria-label="Przełącz tryb jasny/ciemny">🌙</button>
+        </div>
       </div>
-      <div class="disclaimer">
+      <div class="disclaimer" id="disclaimer">
         <p><strong>⚠️ Informacja przed testem</strong></p>
         <p>Niektóre tezy w tym teście mogą zawierać ukryte presupozycje – np. zakładać istnienie państwa, własności prywatnej, walki klasowej lub inny punkt wyjścia, z którym możesz się nie zgadzać.</p>
         <p>Inne tezy mogą po prostu nie mieć sensu z perspektywy Twojego światopoglądu.</p>
@@ -27,19 +33,19 @@
 
       <!-- PANEL IMPORTU ODPOWIEDZI (widoczny na górze) -->
       <div class="import-panel">
-        <label>📂 Import odpowiedzi</label>
+        <label id="importLabel">📂 Import odpowiedzi</label>
         <textarea id="importCodeArea" rows="2" placeholder="Wklej tutaj kod wyeksportowany z testu..."></textarea>
         <button id="importBtn" class="import-action-btn">📥 Importuj i odtwórz</button>
-        <small>Wklej kod wygenerowany po poprzednim ukończeniu testu. Wszystkie odpowiedzi zostaną przywrócone, a wyniki przeliczone.</small>
+        <small id="importInfo">Wklej kod wygenerowany po poprzednim ukończeniu testu. Wszystkie odpowiedzi zostaną przywrócone, a wyniki przeliczone.</small>
       </div>
 
       <!-- PANEL SYMULACJI -->
       <div class="simulation-panel">
-        <label for="simulateSelect">🎭 Symuluj odpowiedzi:</label>
+        <label for="simulateSelect" id="simulateLabel">🎭 Symuluj odpowiedzi:</label>
         <select id="simulateSelect"></select>
         <button id="simulateBtn" class="simulate-btn">▶ Symuluj</button>
         <button id="restoreBtn" class="restore-btn">↺ Przywróć moje odpowiedzi</button>
-        <small>Symulacja zastąpi tymczasowo Twoje odpowiedzi. Kliknij „Przywróć”, aby wrócić do własnych.</small>
+        <small id="simulateInfo">Symulacja zastąpi tymczasowo Twoje odpowiedzi. Kliknij „Przywróć”, aby wrócić do własnych.</small>
       </div>
     </header>
 
@@ -55,16 +61,16 @@
       <hr>
       <!-- PRZEŁĄCZNIK TRYBÓW – teraz w wynikach -->
       <div class="mode-selector">
-        <span>🔧 Tryb liczenia:</span>
+        <span id="modeLabel">🔧 Tryb liczenia:</span>
         <label>
-          <input type="radio" name="scoringMode" value="full" checked> Tryb pełnego profilowania
+          <input type="radio" name="scoringMode" value="full" checked> <span id="modeFullLabel">Tryb pełnego profilowania</span>
         </label>
         <label>
-          <input type="radio" name="scoringMode" value="affirmative"> Tryb afirmacyjny
+          <input type="radio" name="scoringMode" value="affirmative"> <span id="modeAffirmativeLabel">Tryb afirmacyjny</span>
         </label>
         <button id="modeHelpBtn" class="help-btn" aria-label="Pomoc">?</button>
       </div>
-      <h2>Twoje wyniki</h2>
+      <h2 id="resultsTitle">Twoje wyniki</h2>
       <div id="values-results"></div>
       
       <!-- NOWY KONTENER NA RANKINGI OBOK SIEBIE -->
