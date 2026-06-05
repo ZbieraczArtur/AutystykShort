@@ -2295,8 +2295,8 @@
           "value": 1.5,
           "values_for": ["Tradycjonalizm"],
           "values_against": ["Progresywizm", "Neutralność religijna"],
-          "ideologies_for": ["Fundamentalizm religijny"],
-          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
+          "ideologies_for": ["Nacjonalizm konserwatywny"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Marksizm klasyczny", "Głęboka ekologia"],
           "parties_for": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": ["Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -2305,8 +2305,8 @@
           "value": 1.0,
           "values_for": ["Tradycjonalizm"],
           "values_against": ["Progresywizm", "Neutralność religijna"],
-          "ideologies_for": ["Fundamentalizm religijny"],
-          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
+          "ideologies_for": ["Faszyzm", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Marksizm klasyczny", "Głęboka ekologia"],
           "parties_for": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": ["Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -2315,8 +2315,8 @@
           "value": -1.0,
           "values_for": ["Progresywizm", "Neutralność religijna"],
           "values_against": ["Tradycjonalizm"],
-          "ideologies_for": [],
-          "ideologies_against": ["Fundamentalizm religijny"],
+          "ideologies_for": ["Faszyzm", "Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "ideologies_against": [],
           "parties_for": ["Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
@@ -2325,7 +2325,7 @@
           "value": -1.5,
           "values_for": ["Progresywizm", "Neutralność religijna"],
           "values_against": ["Tradycjonalizm"],
-          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Marksizm klasyczny", "Głęboka ekologia"],
           "ideologies_against": ["Fundamentalizm religijny"],
           "parties_for": ["Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
@@ -2344,7 +2344,7 @@
     },
         {
       "id": 33,
-      "text": "Doświadczenie i tradycja są bardziej wiarygodnymi wskazówkami niż abstrakcyjne idee o poprawie świata",
+      "text": "Doświadczenie i mądrość historii są bardziej wiarygodnymi wskazówkami niż abstrakcyjne idee o poprawie świata",
       "description": "Teza ta zakłada, że najpewniejszym przewodnikiem w sprawach publicznych jest mądrość płynąca z historii i sprawdzone w praktyce instytucje. Abstrakcyjne zasady polityczne i teoretyczne projekty przebudowy świata są tu postrzegane z podejrzliwością jako zbyt proste i oderwane od rzeczywistej złożoności ludzkiego życia. Zgodnie z tym ujęciem, świat jest zbyt skomplikowany, by mógł zostać w pełni zrozumiany przez ludzki intelekt, dlatego należy unikać doktrynerstwa na rzecz ostrożnego, pragmatycznego podejścia. Postęp powinien być wynikiem powolnej ewolucji, która zachowuje wartościowe elementy przeszłości, a nie rewolucyjnych zmian opartych na niesprawdzonych wizjach. To utrwalone zwyczaje i historyczne doświadczenie wspólnoty stanowią najbardziej wiarygodną podstawę dla zachowania ładu i bezpieczeństwa w społeczeństwie.",
       "comment": "Placeholder",
       "answers": [
@@ -2354,7 +2354,7 @@
           "values_for": ["Tradycjonalizm"],
           "values_against": ["Progresywizm"],
           "ideologies_for": ["Socjaldemokracja"],
-          "ideologies_against": [],
+          "ideologies_against": ["Nacjonalizm konserwatywny", "Marksizm klasyczny", "Faszyzm", "Głęboka ekologia"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -2363,7 +2363,7 @@
           "value": 1.0,
           "values_for": ["Tradycjonalizm"],
           "values_against": ["Progresywizm"],
-          "ideologies_for": ["Socjaldemokracja", "Liberalizm klasyczny"],
+          "ideologies_for": ["Socjaldemokracja", "Liberalizm klasyczny", "Marksizm klasyczny", "Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -2373,7 +2373,7 @@
           "value": -1.0,
           "values_for": ["Progresywizm"],
           "values_against": ["Tradycjonalizm"],
-          "ideologies_for": ["Liberalizm klasyczny"],
+          "ideologies_for": ["Liberalizm klasyczny", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "ideologies_against": [],
           "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
@@ -2384,7 +2384,7 @@
           "values_for": ["Progresywizm"],
           "values_against": ["Tradycjonalizm"],
           "ideologies_for": ["Socjalliberalizm"],
-          "ideologies_against": [],
+          "ideologies_against": ["Nacjonalizm konserwatywny", "Marksizm klasyczny", "Faszyzm", "Głęboka ekologia"],
           "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
@@ -2411,7 +2411,7 @@
           "value": 1.5,
           "values_for": ["Tradycjonalizm"],
           "values_against": ["Progresywizm"],
-          "ideologies_for": [],
+          "ideologies_for": ["Nacjonalizm konserwatywny", "Faszyzm"],
           "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -2421,7 +2421,7 @@
           "value": 1.0,
           "values_for": ["Tradycjonalizm"],
           "values_against": ["Progresywizm"],
-          "ideologies_for": [],
+          "ideologies_for": ["Nacjonalizm konserwatywny", "Faszyzm", "Nacjonalizm liberalny"],
           "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -2431,8 +2431,8 @@
           "value": -1.0,
           "values_for": ["Progresywizm"],
           "values_against": ["Tradycjonalizm"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "ideologies_against": ["Nacjonalizm konserwatywny", "Faszyzm"],
           "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
@@ -2441,8 +2441,8 @@
           "value": -1.5,
           "values_for": ["Progresywizm"],
           "values_against": ["Tradycjonalizm"],
-          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Marksizm klasyczny", "Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "ideologies_against": ["Nacjonalizm konserwatywny", "Faszyzm"],
           "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
@@ -2461,7 +2461,7 @@
         {
       "id": 35,
       "text": "Struktury gospodarcze i warunki materialne są ważniejszym źródłem zmiany społecznej niż idee i przekonania moralne",
-      "description": "XXXXXX",
+      "description": "Teza ta zakłada, że rzeczywistym fundamentem rozwoju każdego społeczeństwa jest sposób wytwarzania dóbr oraz materialne warunki życia, a nie same idee. Zgodnie z tym podejściem, to proces produkcji materialnej i podział bogactwa kształtują instytucje państwowe, systemy prawne oraz dominujące przekonania religijne czy filozoficzne. Zmiany w strukturze gospodarczej, wywołane na przykład postępem techniki, uznawane są za główną przyczynę rewolucji i głębokich przeobrażeń ustrojowych. Idee i normy moralne nie są tu traktowane jako siły niezależne, lecz jako odzwierciedlenie rzeczywistości ekonomicznej; gdy zmienia się baza materialna, ludzie z czasem dostosowują do niej swoje poglądy i wartości. W tej perspektywie to byt społeczny kształtuje ludzką świadomość.",
       "comment": "Placeholder",
       "answers": [
         {
@@ -2489,7 +2489,7 @@
           "value": -1.0,
           "values_for": [],
           "values_against": ["Kolektywizm"],
-          "ideologies_for": ["Socjaldemokracja"],
+          "ideologies_for": ["Socjaldemokracja", "Nacjonalizm konserwatywny"],
           "ideologies_against": ["Marksizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni"],
           "parties_against": []
@@ -2499,7 +2499,7 @@
           "value": -1.5,
           "values_for": [],
           "values_against": ["Kolektywizm"],
-          "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny"],
+          "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny", "Nacjonalizm konserwatywny", "Faszyzm", "Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "ideologies_against": ["Marksizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Zieloni"],
           "parties_against": []
@@ -2527,7 +2527,7 @@
           "value": 1.5,
           "values_for": ["Tradycjonalizm"],
           "values_against": [],
-          "ideologies_for": ["Faszyzm"],
+          "ideologies_for": ["Faszyzm", "Głęboka ekologia"],
           "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": ["Konfederacja Korony Polskiej"],
           "parties_against": ["Koalicja Obywatelska", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -2537,7 +2537,7 @@
           "value": 1.0,
           "values_for": ["Tradycjonalizm"],
           "values_against": [],
-          "ideologies_for": ["Faszyzm"],
+          "ideologies_for": ["Faszyzm", "Nacjonalizm konserwatywny", "Głęboka ekologia"],
           "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": ["Konfederacja Korony Polskiej"],
           "parties_against": ["Koalicja Obywatelska", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -2547,7 +2547,7 @@
           "value": -1.0,
           "values_for": [],
           "values_against": [],
-          "ideologies_for": [],
+          "ideologies_for": ["Nacjonalizm konserwatywny", "Marksizm klasyczny", "Nacjonalizm liberalny"],
           "ideologies_against": ["Faszyzm"],
           "parties_for": ["Koalicja Obywatelska", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej"]
@@ -2557,7 +2557,7 @@
           "value": -1.5,
           "values_for": [],
           "values_against": [],
-          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Marksizm klasyczny", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "ideologies_against": ["Faszyzm"],
           "parties_for": ["Koalicja Obywatelska", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej"]
@@ -2585,8 +2585,8 @@
           "value": 1.5,
           "values_for": ["Anty-demokracja", "Heteronomia", "Hierarchiczność", "Etatyzm", "Sakralizacja autorytetu"],
           "values_against": ["Demokracja", "Desakralizacja autorytetu", "Kontraktualizm"],
-          "ideologies_for": [],
-          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
+          "ideologies_for": ["Marksizm klasyczny", "Faszyzm"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Nacjonalizm konserwatywny", "Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": []
         },
@@ -2595,8 +2595,8 @@
           "value": 1.0,
           "values_for": ["Anty-demokracja", "Heteronomia", "Hierarchiczność", "Etatyzm", "Sakralizacja autorytetu"],
           "values_against": ["Demokracja", "Desakralizacja autorytetu", "Kontraktualizm"],
-          "ideologies_for": [],
-          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
+          "ideologies_for": ["Marksizm klasyczny"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Nacjonalizm konserwatywny", "Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "parties_for": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": []
         },
@@ -2605,8 +2605,8 @@
           "value": -1.0,
           "values_for": ["Demokracja", "Egalitaryzm", "Desakralizacja autorytetu", "Kontraktualizm"],
           "values_against": ["Anty-demokracja", "Hierarchiczność"],
-          "ideologies_for": [],
-          "ideologies_against": [],
+          "ideologies_for": ["Nacjonalizm konserwatywny", "Marksizm klasyczny"],
+          "ideologies_against": ["Faszyzm"],
           "parties_for": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": []
         },
@@ -2615,8 +2615,8 @@
           "value": -1.5,
           "values_for": ["Demokracja", "Egalitaryzm", "Desakralizacja autorytetu", "Kontraktualizm"],
           "values_against": ["Anty-demokracja", "Hierarchiczność"],
-          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Nacjonalizm konserwatywny", "Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "ideologies_against": ["Marksizm klasyczny", "Faszyzm"],
           "parties_for": [],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
@@ -2643,8 +2643,8 @@
           "value": 1.5,
           "values_for": ["Demokracja", "Kontraktualizm", "Desakralizacja autorytetu"],
           "values_against": ["Anty-demokracja"],
-          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "ideologies_against": ["Faszyzm"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
@@ -2653,8 +2653,8 @@
           "value": 1.0,
           "values_for": ["Demokracja", "Kontraktualizm", "Desakralizacja autorytetu"],
           "values_against": ["Anty-demokracja"],
-          "ideologies_for": ["Liberalizm klasyczny"],
-          "ideologies_against": [],
+          "ideologies_for": ["Liberalizm klasyczny", "Głęboka ekologia", "Ordoliberalizm"],
+          "ideologies_against": ["Faszyzm"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"]
         },
@@ -2663,8 +2663,8 @@
           "value": -1.0,
           "values_for": ["Anty-demokracja"],
           "values_against": ["Demokracja"],
-          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja"],
-          "ideologies_against": [],
+          "ideologies_for": ["Marksizm klasyczny", "Głęboka ekologia"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja"],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -2673,8 +2673,8 @@
           "value": -1.5,
           "values_for": ["Anty-demokracja"],
           "values_against": ["Demokracja"],
-          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
-          "ideologies_against": [],
+          "ideologies_for": ["Marksizm klasyczny", "Faszyzm"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja"],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -2701,7 +2701,7 @@
           "value": 1.5,
           "values_for": ["Instytucjonalna religia", "Heteronomia", "Autokracja", "Sakralizacja autorytetu", "Uniformizacja norm"],
           "values_against": ["Neutralność religijna", "Desakralizacja autorytetu"],
-          "ideologies_for": [],
+          "ideologies_for": ["Nacjonalizm konserwatywny", "Faszyzm", "Nacjonalizm liberalny"],
           "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -2711,7 +2711,7 @@
           "value": 1.0,
           "values_for": ["Instytucjonalna religia", "Heteronomia", "Autokracja", "Sakralizacja autorytetu", "Uniformizacja norm"],
           "values_against": ["Neutralność religijna", "Desakralizacja autorytetu"],
-          "ideologies_for": [],
+          "ideologies_for": ["Nacjonalizm konserwatywny", "Faszyzm", "Nacjonalizm liberalny"],
           "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
@@ -2721,7 +2721,7 @@
           "value": -1.0,
           "values_for": ["Neutralność religijna", "Desakralizacja autorytetu"],
           "values_against": ["Instytucjonalna religia", "Heteronomia", "Autokracja", "Sakralizacja autorytetu"],
-          "ideologies_for": [],
+          "ideologies_for": ["Ordoliberalizm"],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
@@ -2731,8 +2731,8 @@
           "value": -1.5,
           "values_for": ["Neutralność religijna", "Desakralizacja autorytetu"],
           "values_against": ["Instytucjonalna religia", "Heteronomia", "Autokracja", "Sakralizacja autorytetu"],
-          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
-          "ideologies_against": [],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Marksizm klasyczny", "Głęboka ekologia", "Ordoliberalizm"],
+          "ideologies_against": ["Nacjonalizm konserwatywny", "Nacjonalizm liberalny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
@@ -2758,8 +2758,8 @@
           "value": 1.5,
           "values_for": ["Heteronomia", "Tradycjonalizm"],
           "values_against": ["Autonomia", "Progresywizm"],
-          "ideologies_for": [],
-          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja"],
+          "ideologies_for": ["Nacjonalizm konserwatywny", "Faszyzm"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Marksizm klasyczny", "Głęboka ekologia"],
           "parties_for": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -2768,8 +2768,8 @@
           "value": 1.0,
           "values_for": ["Heteronomia", "Tradycjonalizm"],
           "values_against": ["Autonomia", "Progresywizm"],
-          "ideologies_for": [],
-          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja"],
+          "ideologies_for": ["Nacjonalizm konserwatywny", "Faszyzm", "Ordoliberalizm"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Marksizm klasyczny", "Głęboka ekologia"],
           "parties_for": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
@@ -2778,8 +2778,8 @@
           "value": -1.0,
           "values_for": ["Autonomia", "Progresywizm"],
           "values_against": ["Heteronomia", "Tradycjonalizm"],
-          "ideologies_for": [],
-          "ideologies_against": ["Liberalizm klasyczny"],
+          "ideologies_for": ["Ordoliberalizm"],
+          "ideologies_against": ["Nacjonalizm konserwatywny", "Faszyzm"],
           "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
@@ -2788,8 +2788,8 @@
           "value": -1.5,
           "values_for": ["Autonomia", "Progresywizm"],
           "values_against": ["Heteronomia", "Tradycjonalizm"],
-          "ideologies_for": [],
-          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
+          "ideologies_for": ["Marksizm klasyczny", "Głęboka ekologia", "Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
+          "ideologies_against": ["Nacjonalizm konserwatywny", "Faszyzm"],
           "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
           "parties_against": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
         },
