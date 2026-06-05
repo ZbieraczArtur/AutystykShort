@@ -1,5 +1,8 @@
-// script.js – z dodanymi logotypami partii i ideologii (ranking, popup, symulacja)
+// script.js – z dodanymi logotypami partii i ideologii (ranking, popup, symulacja) + obsługa języka
 let config = null;
+let configBase = null;      // oryginalne dane z data.json (wartości, mapowania)
+let translations = null;    // aktualne tłumaczenia (teksty)
+let currentLanguage = 'pl';
 let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
 let simulatedEntity = null;         // { type: 'party'|'ideology', name: string }
@@ -16,7 +19,6 @@ const closePopupBtn = document.getElementById('closePopup');
 
 // ======================= MAPOWANIE PARTII -> LOGO =======================
 const LOGO_BASE_PATH = 'images/Partie/';
-
 const partyLogoMap = new Map([
   ['Zieloni', 'Partia_Zieloni.jpg'],
   ['Partia Zieloni', 'Partia_Zieloni.jpg'],
@@ -43,7 +45,6 @@ function getPartyLogoUrl(partyName) {
 
 // ======================= MAPOWANIE IDEOLOGII -> LOGO =======================
 const IDEOLOGY_LOGO_BASE_PATH = 'images/Ideologie/';
-
 const ideologyLogoMap = new Map([
   ['Absolutyzm klasyczny', 'Absolutyzm_klasyczny.png'],
   ['Absolutyzm oświecony', 'Absolutyzm_oswiecony.png'],
@@ -232,18 +233,189 @@ function getContrastColor(hex) {
   return brightness > 0.5 ? '#000000' : '#ffffff';
 }
 
+// ======================= OBSŁUGA JĘZYKA =======================
+async function loadTranslations(lang) {
+  if (lang === 'pl') {
+    // Dla polskiego nie ładujemy zewnętrznego pliku – używamy danych z configBase
+    translations = null;
+    return;
+  }
+  try {
+    const response = await fetch(`translations_${lang}.json`);
+    if (!response.ok) throw new Error(`Nie udało się wczytać tłumaczeń dla ${lang}`);
+    translations = await response.json();
+  } catch (err) {
+    console.error(err);
+    translations = null;
+    showPopup(`Błąd ładowania tłumaczeń dla języka ${lang}. Pozostaję przy polskim.`);
+    return false;
+  }
+  return true;
+}
+
+function applyTranslationsToConfig() {
+  if (!configBase) return;
+  // głęboka kopia configBase
+  config = JSON.parse(JSON.stringify(configBase));
+  if (!translations) return; // brak tłumaczeń – zostawiamy polskie
+
+  // Tłumaczenie par wartości
+  if (translations.pairsOfValues) {
+    for (let i = 0; i < config.pairsOfValues.length; i++) {
+      const pair = config.pairsOfValues[i];
+      const transPair = translations.pairsOfValues.find(p => p.left === pair.left && p.right === pair.right);
+      if (transPair) {
+        pair.left = transPair.left;
+        pair.right = transPair.right;
+        pair.leftDef = transPair.leftDef;
+        pair.rightDef = transPair.rightDef;
+      }
+    }
+  }
+
+  // Tłumaczenie ideologii
+  if (translations.ideologies) {
+    for (let i = 0; i < config.ideologies.length; i++) {
+      const ideo = config.ideologies[i];
+      const transIdeo = translations.ideologies.find(t => t.name === ideo.name);
+      if (transIdeo) {
+        ideo.name = transIdeo.name;
+        ideo.description = transIdeo.description;
+      }
+    }
+  }
+
+  // Tłumaczenie partii
+  if (translations.parties) {
+    for (let i = 0; i < config.parties.length; i++) {
+      const party = config.parties[i];
+      const transParty = translations.parties.find(t => t.name === party.name);
+      if (transParty) {
+        party.name = transParty.name;
+        party.description = transParty.description;
+      }
+    }
+  }
+
+  // Tłumaczenie pytań i odpowiedzi
+  if (translations.questions) {
+    for (let i = 0; i < config.questions.length; i++) {
+      const q = config.questions[i];
+      const transQ = translations.questions.find(t => t.id === q.id);
+      if (transQ) {
+        q.text = transQ.text;
+        q.description = transQ.description;
+        if (transQ.answers) {
+          for (let j = 0; j < q.answers.length; j++) {
+            if (transQ.answers[j] && transQ.answers[j].label) {
+              q.answers[j].label = transQ.answers[j].label;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+function updateUITexts() {
+  if (!translations || !translations.ui) return;
+  const ui = translations.ui;
+  // Aktualizacja tekstów w elementach (jeśli istnieją)
+  if (ui.disclaimerTitle) {
+    const disclaimer = document.getElementById('disclaimer');
+    if (disclaimer) {
+      const strong = disclaimer.querySelector('strong');
+      if (strong) strong.textContent = ui.disclaimerTitle;
+    }
+  }
+  if (ui.disclaimerText) {
+    const disclaimer = document.getElementById('disclaimer');
+    if (disclaimer) {
+      const paragraphs = disclaimer.querySelectorAll('p');
+      if (paragraphs.length > 1) paragraphs[1].innerHTML = ui.disclaimerText;
+      if (paragraphs.length > 2) paragraphs[2].innerHTML = ui.disclaimerText2;
+      if (paragraphs.length > 3) paragraphs[3].innerHTML = ui.disclaimerText3;
+    }
+  }
+  const importLabel = document.getElementById('importLabel');
+  if (importLabel && ui.importLabel) importLabel.textContent = ui.importLabel;
+  const importCodeArea = document.getElementById('importCodeArea');
+  if (importCodeArea && ui.importPlaceholder) importCodeArea.placeholder = ui.importPlaceholder;
+  const importBtn = document.getElementById('importBtn');
+  if (importBtn && ui.importBtn) importBtn.textContent = ui.importBtn;
+  const importInfo = document.getElementById('importInfo');
+  if (importInfo && ui.importInfo) importInfo.textContent = ui.importInfo;
+  const simulateLabel = document.getElementById('simulateLabel');
+  if (simulateLabel && ui.simulateLabel) simulateLabel.textContent = ui.simulateLabel;
+  const simulateBtn = document.getElementById('simulateBtn');
+  if (simulateBtn && ui.simulateBtn) simulateBtn.textContent = ui.simulateBtn;
+  const restoreBtn = document.getElementById('restoreBtn');
+  if (restoreBtn && ui.restoreBtn) restoreBtn.textContent = ui.restoreBtn;
+  const simulateInfo = document.getElementById('simulateInfo');
+  if (simulateInfo && ui.simulateInfo) simulateInfo.textContent = ui.simulateInfo;
+  const submitBtnElem = document.getElementById('submitBtn');
+  if (submitBtnElem && ui.submitBtn) submitBtnElem.textContent = ui.submitBtn;
+  const modeLabel = document.getElementById('modeLabel');
+  if (modeLabel && ui.modeLabel) modeLabel.textContent = ui.modeLabel;
+  const modeFullLabel = document.getElementById('modeFullLabel');
+  if (modeFullLabel && ui.modeFullLabel) modeFullLabel.textContent = ui.modeFullLabel;
+  const modeAffirmativeLabel = document.getElementById('modeAffirmativeLabel');
+  if (modeAffirmativeLabel && ui.modeAffirmativeLabel) modeAffirmativeLabel.textContent = ui.modeAffirmativeLabel;
+  const resultsTitle = document.getElementById('resultsTitle');
+  if (resultsTitle && ui.resultsTitle) resultsTitle.textContent = ui.resultsTitle;
+  const closePopupBtnElem = document.getElementById('closePopup');
+  if (closePopupBtnElem && ui.closePopup) closePopupBtnElem.textContent = ui.closePopup;
+}
+
+async function setLanguage(lang) {
+  if (lang === currentLanguage) return;
+  const success = await loadTranslations(lang);
+  if (success === false && lang !== 'pl') return;
+  currentLanguage = lang;
+  applyTranslationsToConfig();
+  updateUITexts();
+  // Ponowne renderowanie pytań (jeśli istnieją)
+  if (questionsContainer.children.length > 0) {
+    renderQuestions();
+    attachQuestionEvents();
+    // Przywróć zaznaczenia odpowiedzi
+    updateDOMSelections();
+  }
+  // Jeśli wyniki są widoczne – przelicz i wyświetl od nowa
+  if (resultsDiv.style.display !== 'none') {
+    computeAndDisplayResults();
+  }
+}
+
+// ======================= KONFIGURACJA =======================
 async function loadConfig() {
   try {
     const response = await fetch('data.json');
     if (!response.ok) throw new Error('Nie udało się wczytać data.json');
-    config = await response.json();
+    configBase = await response.json();
+    // Domyślnie ładujemy język polski (nie ładujemy pliku tłumaczeń, bo dane są po polsku)
+    config = JSON.parse(JSON.stringify(configBase));
+    translations = null; // dla polskiego brak zewnętrznych tłumaczeń
+    currentLanguage = 'pl';
+    updateUITexts(); // ustawi polskie teksty z domyślnych (ale możemy też załadować plik translations_pl.json – opcjonalnie)
     initApp();
     setupSimulation();
     setupModeSelector();
     setupImportExport();
+    setupLanguageSelector();
   } catch (err) {
     console.error(err);
     questionsContainer.innerHTML = '<p style="color:red;">Błąd ładowania konfiguracji. Sprawdź czy plik data.json istnieje i jest poprawny.</p>';
+  }
+}
+
+function setupLanguageSelector() {
+  const langSelect = document.getElementById('language-select');
+  if (langSelect) {
+    langSelect.value = currentLanguage;
+    langSelect.addEventListener('change', (e) => {
+      setLanguage(e.target.value);
+    });
   }
 }
 
@@ -291,20 +463,20 @@ function renderQuestions() {
     card.appendChild(questionText);
     const btnRow = document.createElement('div');
     const expandBtn = document.createElement('button');
-    expandBtn.innerText = '📖 Rozwiń tezę';
+    expandBtn.innerText = translations?.ui?.expandBtn || '📖 Rozwiń tezę';
     expandBtn.className = 'expand-btn';
     const descriptionDiv = document.createElement('div');
     descriptionDiv.className = 'description';
-    descriptionDiv.innerText = q.description || 'Brak dodatkowego opisu.';
+    descriptionDiv.innerText = q.description || (translations?.ui?.noDescription || 'Brak dodatkowego opisu.');
     expandBtn.addEventListener('click', (e) => {
       e.stopPropagation();
       descriptionDiv.classList.toggle('visible');
-      expandBtn.innerText = descriptionDiv.classList.contains('visible') ? '📘 Zwiń tezę' : '📖 Rozwiń tezę';
+      expandBtn.innerText = descriptionDiv.classList.contains('visible') ? (translations?.ui?.collapseBtn || '📘 Zwiń tezę') : (translations?.ui?.expandBtn || '📖 Rozwiń tezę');
     });
     btnRow.appendChild(expandBtn);
     if (q.comment) {
       const commentBtn = document.createElement('span');
-      commentBtn.innerText = '⚠️ Pomiń jeśli';
+      commentBtn.innerText = translations?.ui?.skipIfBadge || '⚠️ Pomiń jeśli';
       commentBtn.className = 'comment-badge';
       commentBtn.addEventListener('click', (e) => {
         e.stopPropagation();
@@ -323,11 +495,11 @@ function renderQuestions() {
       ansEl.dataset.answerIndex = ansIdx;
       ansEl.dataset.value = ans.value;
       const label = ans.label;
-      if (label.includes('Zdecydowanie zgadzam się')) ansEl.classList.add('answer-strong-agree');
-      else if (label.includes('Częściowo zgadzam się')) ansEl.classList.add('answer-mild-agree');
-      else if (label.includes('Częściowo nie zgadzam się')) ansEl.classList.add('answer-mild-disagree');
-      else if (label.includes('Zdecydowanie nie zgadzam się')) ansEl.classList.add('answer-strong-disagree');
-      else if (label.includes('Pomiń')) ansEl.classList.add('answer-skip');
+      if (label.includes('Zdecydowanie zgadzam się') || label.includes('Strongly agree')) ansEl.classList.add('answer-strong-agree');
+      else if (label.includes('Częściowo zgadzam się') || label.includes('Somewhat agree')) ansEl.classList.add('answer-mild-agree');
+      else if (label.includes('Częściowo nie zgadzam się') || label.includes('Somewhat disagree')) ansEl.classList.add('answer-mild-disagree');
+      else if (label.includes('Zdecydowanie nie zgadzam się') || label.includes('Strongly disagree')) ansEl.classList.add('answer-strong-disagree');
+      else if (label.includes('Pomiń') || label.includes('Skip')) ansEl.classList.add('answer-skip');
       ansEl.addEventListener('click', () => {
         const siblings = answersDiv.querySelectorAll('.answer-option');
         siblings.forEach(sib => sib.classList.remove('selected'));
@@ -395,11 +567,14 @@ function createExportSection() {
   const exportDiv = document.createElement('div');
   exportDiv.id = 'export-answers-section';
   exportDiv.className = 'export-answers-section';
+  const exportTitle = translations?.ui?.exportTitle || '📋 Eksport Twoich odpowiedzi';
+  const exportDesc = translations?.ui?.exportDesc || 'Skopiuj poniższy kod, aby zapisać lub przenieść swoje odpowiedzi do innego urządzenia.';
+  const copyBtnText = translations?.ui?.copyExportBtn || '📋 Kopiuj kod eksportu';
   exportDiv.innerHTML = `
-    <h3>📋 Eksport Twoich odpowiedzi</h3>
-    <p>Skopiuj poniższy kod, aby zapisać lub przenieść swoje odpowiedzi do innego urządzenia.</p>
+    <h3>${exportTitle}</h3>
+    <p>${exportDesc}</p>
     <textarea id="exportCodeArea" class="export-code" rows="5" readonly></textarea>
-    <button id="copyExportBtn" class="copy-export-btn">📋 Kopiuj kod eksportu</button>
+    <button id="copyExportBtn" class="copy-export-btn">${copyBtnText}</button>
   `;
   const textarea = exportDiv.querySelector('#exportCodeArea');
   textarea.value = generateExportCode();
@@ -407,9 +582,9 @@ function createExportSection() {
   copyBtn.addEventListener('click', () => {
     textarea.select();
     navigator.clipboard.writeText(textarea.value).then(() => {
-      copyBtn.textContent = '✅ Skopiowano!';
-      setTimeout(() => { copyBtn.textContent = '📋 Kopiuj kod eksportu'; }, 2000);
-    }).catch(() => showPopup('Nie udało się skopiować. Zaznacz kod ręcznie.'));
+      copyBtn.textContent = '✅ ' + (translations?.ui?.copied || 'Skopiowano!');
+      setTimeout(() => { copyBtn.textContent = copyBtnText; }, 2000);
+    }).catch(() => showPopup(translations?.ui?.copyError || 'Nie udało się skopiować. Zaznacz kod ręcznie.'));
   });
   return exportDiv;
 }
@@ -448,10 +623,10 @@ function importAnswersFromExportCode(rawCode) {
         break;
       }
     }
-    if (!matchedAnswer && answerText === 'Pomiń') {
+    if (!matchedAnswer && (answerText === 'Pomiń' || answerText === 'Skip')) {
       for (let idx = 0; idx < question.answers.length; idx++) {
         const ans = question.answers[idx];
-        if (ans.value === 0 && ans.label.includes('Pomiń')) {
+        if (ans.value === 0 && (ans.label.includes('Pomiń') || ans.label.includes('Skip'))) {
           matchedAnswer = ans;
           matchedIndex = idx;
           break;
@@ -469,7 +644,7 @@ function importAnswersFromExportCode(rawCode) {
     }
   }
   if (matchedCount === 0) {
-    showPopup('Nie znaleziono żadnych prawidłowych odpowiedzi w kodzie. Upewnij się, że wklejasz poprawny kod eksportu.');
+    showPopup(translations?.ui?.importNoAnswers || 'Nie znaleziono żadnych prawidłowych odpowiedzi w kodzie. Upewnij się, że wklejasz poprawny kod eksportu.');
     return false;
   }
   userAnswers = newAnswers;
@@ -477,7 +652,7 @@ function importAnswersFromExportCode(rawCode) {
   if (resultsDiv.style.display !== 'none') {
     computeAndDisplayResults();
   } else {
-    showPopup(`Zaimportowano ${matchedCount} odpowiedzi. Kliknij "Pokaż wyniki", aby zobaczyć zaktualizowany profil.`);
+    showPopup(`${translations?.ui?.importSuccess || `Zaimportowano ${matchedCount} odpowiedzi.`} ${translations?.ui?.clickShowResults || 'Kliknij "Pokaż wyniki", aby zobaczyć zaktualizowany profil.'}`);
   }
   return true;
 }
@@ -489,7 +664,7 @@ function setupImportExport() {
     importBtn.addEventListener('click', () => {
       const code = importTextarea.value.trim();
       if (!code) {
-        showPopup('Wklej kod eksportu w pole powyżej.');
+        showPopup(translations?.ui?.pasteCode || 'Wklej kod eksportu w pole powyżej.');
         return;
       }
       const success = importAnswersFromExportCode(code);
@@ -628,10 +803,10 @@ function createRankingSection(title, items, type) {
   const header = document.createElement('h3');
   header.textContent = title;
   section.appendChild(header);
-  if (title.includes('Ideologii')) {
+  if (title.includes('Ideologii') || title.includes('Ideologies')) {
     const info = document.createElement('div');
     info.style.marginBottom = '1rem';
-    info.textContent = 'Im wyższy procent, tym bardziej Twój profil jest zgodny z daną ideologią.';
+    info.textContent = translations?.ui?.rankingInfo || 'Im wyższy procent, tym bardziej Twój profil jest zgodny z daną ideologią.';
     section.appendChild(info);
   }
   const listContainer = document.createElement('div');
@@ -707,20 +882,24 @@ function generateShareCode(pairResults) {
   try { base64 = btoa(unescape(encodeURIComponent(resultsString))); } catch(e) { console.error(e); base64 = ''; }
   const container = document.createElement('div');
   container.className = 'share-section';
-  container.innerHTML = `<h3>🔗 Sprawdź położenie na kompasie</h3>
-    <p>Skopiuj poniższy kod i wklej go na stronie z kompasem, by poznać swoje położenie:</p>
+  const shareTitle = translations?.ui?.shareTitle || '🔗 Sprawdź położenie na kompasie';
+  const shareDesc = translations?.ui?.shareDesc || 'Skopiuj poniższy kod i wklej go na stronie z kompasem, by poznać swoje położenie:';
+  const copyBtnText = translations?.ui?.copyShareBtn || '📋 Kopiuj kod';
+  const compassLinkText = translations?.ui?.compassLink || '🧭 NeoAutystyk Kompas';
+  container.innerHTML = `<h3>${shareTitle}</h3>
+    <p>${shareDesc}</p>
     <textarea readonly class="share-code" rows="3">${base64}</textarea>
-    <button class="copy-btn">📋 Kopiuj kod</button>
+    <button class="copy-btn">${copyBtnText}</button>
     <p class="share-link">
-      <a href="https://zbieraczartur.github.io/NeoAutystyk-Kompas/" target="_blank" rel="noopener noreferrer" class="compass-link">🧭 NeoAutystyk Kompas</a>
+      <a href="https://zbieraczartur.github.io/NeoAutystyk-Kompas/" target="_blank" rel="noopener noreferrer" class="compass-link">${compassLinkText}</a>
     </p>`;
   const copyBtn = container.querySelector('.copy-btn');
   const textarea = container.querySelector('.share-code');
   copyBtn.addEventListener('click', () => {
     textarea.select();
     navigator.clipboard.writeText(textarea.value).then(() => {
-      copyBtn.textContent = '✅ Skopiowano!';
-      setTimeout(() => { copyBtn.textContent = '📋 Kopiuj kod'; }, 2000);
+      copyBtn.textContent = '✅ ' + (translations?.ui?.copied || 'Skopiowano!');
+      setTimeout(() => { copyBtn.textContent = copyBtnText; }, 2000);
     }).catch(() => alert('Nie udało się skopiować. Możesz zaznaczyć kod ręcznie.'));
   });
   return container;
@@ -739,7 +918,8 @@ function computeAndDisplayResults() {
   }
   const sortedGroups = Array.from(groups.entries()).sort((a, b) => a[0] - b[0]);
 
-  valuesResults.innerHTML = '<h3>⚖️ Pary wartości</h3>';
+  const valuesHeader = translations?.ui?.valuesHeader || '⚖️ Pary wartości';
+  valuesResults.innerHTML = `<h3>${valuesHeader}</h3>`;
   const gridContainer = document.createElement('div');
   gridContainer.className = 'values-categories-grid';
   for (const [catId, group] of sortedGroups) {
@@ -769,7 +949,6 @@ function computeAndDisplayResults() {
       const leftSpan = pairDiv.querySelector('.value-left-new');
       const rightSpan = pairDiv.querySelector('.value-right-new');
       
-      // === DODANIE KOLORU HOVER (z valueColors) ===
       leftSpan.style.setProperty('--hover-color', leftColor);
       rightSpan.style.setProperty('--hover-color', rightColor);
       
@@ -794,10 +973,10 @@ function computeAndDisplayResults() {
     let entityTypeLabel = '';
     if (simulatedEntity.type === 'party') {
       logoUrl = getPartyLogoUrl(simulatedEntity.name);
-      entityTypeLabel = 'partię';
+      entityTypeLabel = translations?.ui?.simulatingParty || 'partię';
     } else if (simulatedEntity.type === 'ideology') {
       logoUrl = getIdeologyLogoUrl(simulatedEntity.name);
-      entityTypeLabel = 'ideologię';
+      entityTypeLabel = translations?.ui?.simulatingIdeology || 'ideologię';
     }
     let logoHtml = '';
     if (logoUrl) {
@@ -806,8 +985,8 @@ function computeAndDisplayResults() {
     banner.innerHTML = `
       ${logoHtml}
       <div class="simulation-banner-text">
-        🎭 Symulujesz ${entityTypeLabel}: <strong>${simulatedEntity.name}</strong><br>
-        <small>Wyniki poniżej są tymczasowe. Kliknij „Przywróć moje odpowiedzi”, aby wrócić do własnych.</small>
+        🎭 ${translations?.ui?.simulating || 'Symulujesz'} ${entityTypeLabel}: <strong>${simulatedEntity.name}</strong><br>
+        <small>${translations?.ui?.simulationNote || 'Wyniki poniżej są tymczasowe. Kliknij „Przywróć moje odpowiedzi”, aby wrócić do własnych.'}</small>
       </div>
     `;
     const ideologiesPartiesContainer = document.querySelector('.ideologies-parties-container');
@@ -818,8 +997,10 @@ function computeAndDisplayResults() {
     }
   }
 
-  ideologiesResults.appendChild(createRankingSection('📊 Ranking ideologii', ideologyResults, 'ideology'));
-  partiesResults.appendChild(createRankingSection('🗳️ Ranking partii', partyResults, 'party'));
+  const ideologiesTitle = translations?.ui?.rankingIdeologies || '📊 Ranking ideologii';
+  const partiesTitle = translations?.ui?.rankingParties || '🗳️ Ranking partii';
+  ideologiesResults.appendChild(createRankingSection(ideologiesTitle, ideologyResults, 'ideology'));
+  partiesResults.appendChild(createRankingSection(partiesTitle, partyResults, 'party'));
 
   const existingShare = resultsDiv.querySelector('.share-section');
   if (existingShare) existingShare.remove();
@@ -851,7 +1032,7 @@ function syncUserAnswersFromDOM() {
         answerData: answerData
       });
     } else {
-      const skipAnswer = questionConfig.answers.find(a => a.value === 0 && a.label.includes('Pomiń'));
+      const skipAnswer = questionConfig.answers.find(a => a.value === 0 && (a.label.includes('Pomiń') || a.label.includes('Skip')));
       if (skipAnswer) {
         const ansIdx = questionConfig.answers.indexOf(skipAnswer);
         newAnswers.push({
@@ -870,7 +1051,7 @@ function restoreUserAnswers() {
   syncUserAnswersFromDOM();
   simulatedEntity = null;
   computeAndDisplayResults();
-  showPopup('Przywrócono Twoje odpowiedzi i odświeżono wyniki.');
+  showPopup(translations?.ui?.restored || 'Przywrócono Twoje odpowiedzi i odświeżono wyniki.');
 }
 
 function simulateAnswers(selectedName) {
@@ -900,7 +1081,7 @@ function simulateAnswers(selectedName) {
       }
     }
     if (!bestAnswer) {
-      bestAnswer = question.answers.find(a => a.value === 0 && a.label.includes('Pomiń'));
+      bestAnswer = question.answers.find(a => a.value === 0 && (a.label.includes('Pomiń') || a.label.includes('Skip')));
       if (!bestAnswer) bestAnswer = question.answers[0];
     }
     const answerIndex = question.answers.findIndex(a => a === bestAnswer);
@@ -925,7 +1106,7 @@ function setupSimulation() {
   simulationSelect.innerHTML = '';
   if (config.parties.length) {
     const partiesGroup = document.createElement('optgroup');
-    partiesGroup.label = '🇵🇱 Partie polityczne';
+    partiesGroup.label = translations?.ui?.partiesGroup || '🇵🇱 Partie polityczne';
     config.parties.forEach(party => {
       const option = document.createElement('option');
       option.value = party.name;
@@ -936,7 +1117,7 @@ function setupSimulation() {
   }
   if (config.ideologies.length) {
     const ideologiesGroup = document.createElement('optgroup');
-    ideologiesGroup.label = '💡 Ideologie';
+    ideologiesGroup.label = translations?.ui?.ideologiesGroup || '💡 Ideologie';
     config.ideologies.forEach(ideo => {
       const option = document.createElement('option');
       option.value = ideo.name;
@@ -950,7 +1131,7 @@ function setupSimulation() {
   simulateBtn.addEventListener('click', () => {
     const selected = simulationSelect.value;
     if (selected) simulateAnswers(selected);
-    else alert('Wybierz partię lub ideologię.');
+    else alert(translations?.ui?.selectEntity || 'Wybierz partię lub ideologię.');
   });
   restoreBtn.addEventListener('click', restoreUserAnswers);
 }
@@ -978,7 +1159,8 @@ function setupModeSelector() {
     });
   });
   helpBtn.addEventListener('click', () => {
-    showPopup('🧠 Tryb pełnego profilowania\nUwzględnia zarówno poglądy popierane, jak i odrzucane.\n\n✅ Tryb afirmacyjny\nUwzględnia wyłącznie poglądy aktywnie popierane.');
+    const helpText = translations?.ui?.modeHelpText || '🧠 Tryb pełnego profilowania\nUwzględnia zarówno poglądy popierane, jak i odrzucane.\n\n✅ Tryb afirmacyjny\nUwzględnia wyłącznie poglądy aktywnie popierane.';
+    showPopup(helpText);
   });
 }
 
