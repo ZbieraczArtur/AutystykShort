@@ -533,16 +533,16 @@
   ],
   "parties": [
     {
-      "name": "Prawo i Sprawiedliwość",
-      "description": "Prawo i Sprawiedliwość is represented in this test as a political party profile defined by the original data.json mappings. This English file preserves the same identifier and provides an English display description for the party ranking popup."
+      "name": "Law and Justice",
+      "description": "Law and Justice is represented in this test as a political party profile defined by the original data.json mappings. This English file preserves the same identifier and provides an English display description for the party ranking popup."
     },
     {
       "name": "Civic Coalition",
       "description": "Civic Coalition is represented in this test as a political party profile defined by the original data.json mappings. This English file preserves the same identifier and provides an English display description for the party ranking popup."
     },
     {
-      "name": "Polish People?s Party",
-      "description": "Polish People?s Party is represented in this test as a political party profile defined by the original data.json mappings. This English file preserves the same identifier and provides an English display description for the party ranking popup."
+      "name": "Polish People's Party",
+      "description": "Polish People's Party is represented in this test as a political party profile defined by the original data.json mappings. This English file preserves the same identifier and provides an English display description for the party ranking popup."
     },
     {
       "name": "New Left",
