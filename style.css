@@ -442,7 +442,7 @@ body.dark h1 {
   cursor: pointer;
   text-decoration: underline dotted;
   text-underline-offset: 6px;
-  transition: color 0.15s;
+  transition: all 0.2s ease;
   font-size: 0.9rem;
   word-wrap: break-word;
   word-break: break-word;
@@ -453,8 +453,12 @@ body.dark h1 {
   text-align: right;
 }
 
+/* ===== ZMODYFIKOWANY HOVER – KOLOR Z PASKA + ULEPSZENIA ===== */
 .value-left-new:hover, .value-right-new:hover {
-  color: var(--link-color);
+  color: var(--hover-color, var(--link-color));
+  text-shadow: 0 0 6px currentColor;
+  transform: scale(1.02);
+  transition: all 0.2s cubic-bezier(0.2, 0.9, 0.4, 1.2);
 }
 
 .value-bar-new {
