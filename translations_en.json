@@ -43,11 +43,11 @@
     "modeHelpText": "?? Full profiling mode\nTakes into account both supported and opposed views.\n\n? Affirmative mode\nTakes into account only actively supported views.",
     "expandBtn": "?? Expand thesis",
     "collapseBtn": "?? Collapse thesis",
-    "skipIfBadge": "?? Skip if",
+    "skipIfBadge": "⚠️ Skip if",
     "noDescription": "No additional description.",
     "closePopup": "Close",
-    "partiesGroup": "???? Political parties",
-    "ideologiesGroup": "?? Ideologies"
+    "partiesGroup": "🗳️ Political parties",
+    "ideologiesGroup": "💡 Ideologies"
   },
   "pairsOfValues": [
     {
@@ -69,20 +69,20 @@
       "rightDef": "The view that society is a real organism, a superior entity with interests higher than those of individuals."
     },
     {
-      "left": "Dobrowolność wspólnoty",
-      "right": "Obowiązkowość wspólnoty",
+      "left": "Voluntary community",
+      "right": "Mandatory community",
       "leftDef": "Wspólnota istnieje przez zgodę, jednostki mogą odejść lub nieuczestniczyć",
       "rightDef": "Jednostka ma obowiązki wobec całości, nie może się wyłączyć, Naród/państwo/rasa/klasa są nadrzędne"
     },
     {
-      "left": "Egalitaryzm",
-      "right": "Hierarchiczność",
+      "left": "Egalitarianism",
+      "right": "Hierarchy",
       "leftDef": "Egalitaryzm – sprzeciw wobec struktur władzy i hierarchii.",
       "rightDef": "Hierarchiczność – akceptacja naturalnych lub koniecznych struktur władzy."
     },
     {
-      "left": "Wolność ekspresji",
-      "right": "Cenzura",
+      "left": "Freedom of expression",
+      "right": "Censorship",
       "leftDef": "Wolność ekspresji – Swoboda jednostki, obejmująca absolutną swobodę opinii, myśli i sądu.",
       "rightDef": "Cenzura – Systemowe ograniczanie wolności słowa, treści i dostępu do informacji."
     },
@@ -99,8 +99,8 @@
       "rightDef": "Concentration of decision-making in the central organs of the state."
     },
     {
-      "left": "Ograniczenie władzy",
-      "right": "Absolutyzm władzy",
+      "left": "Limitation of authority",
+      "right": "Absolute authority",
       "leftDef": "Ograniczenie władzy – kontrola, podział i mechanizmy hamujące rządzących.",
       "rightDef": "Absolutyzm władzy – nieograniczona, suwerenna władza."
     },
@@ -111,8 +111,8 @@
       "rightDef": "Institutions are treated instrumentally; authority has no sacred status and may be continuously questioned."
     },
     {
-      "left": "Różnorodność norm",
-      "right": "Uniformizacja norm",
+      "left": "Diversity of standards",
+      "right": "Standardisation of standards",
       "leftDef": "dopuszcza współistnienie różnych modeli życia",
       "rightDef": "społeczeństwo powinno działać według jednej nadrzędnej zasady. Np: rasa, klasa, religia, naród, partia, cywilizacja."
     },
@@ -129,8 +129,8 @@
       "rightDef": "Opposition to concentrated and uncontrolled power."
     },
     {
-      "left": "Własność kolektywna",
-      "right": "Własność prywatna",
+      "left": "Collective ownership",
+      "right": "Private property",
       "leftDef": "Własność kolektywna – System, w którym bogactwo i środki produkcji należą do całej wspólnoty, a nie do jednostek.",
       "rightDef": "Własność prywatna – Prawo jednostki do posiadania i swobodnego dysponowania majątkiem."
     },
@@ -171,8 +171,8 @@
       "rightDef": "Non-involvement and focus on one?s own internal affairs."
     },
     {
-      "left": "Preferencja użycia siły",
-      "right": "Unikanie przemocy",
+      "left": "Preference to use force",
+      "right": "Avoiding violence",
       "leftDef": "Preferencja użycia siły – akceptacja wojska, policji i siłowego rozwiązywania konfliktów.",
       "rightDef": "Unikanie przemocy – dążenie do pokojowych rozwiązań i odrzucanie przemocy."
     },
@@ -195,14 +195,14 @@
       "rightDef": "The pursuit of cultural uniformity within the nation."
     },
     {
-      "left": "Neutralność religijna",
-      "right": "Instytucjonalna religia",
+      "left": "Religious neutrality",
+      "right": "Institutional religion",
       "leftDef": "Neutralność religijna – świeckie państwo, rozdział Kościoła od państwa.",
       "rightDef": "Instytucjonalna religia – państwo wspiera lub utożsamia się z dominującą religią."
     },
     {
-      "left": "Włączanie",
-      "right": "Wykluczenie",
+      "left": "Inclusion",
+      "right": "Exclusion",
       "leftDef": "Włączanie – integracja różnych grup i polityka otwartości.",
       "rightDef": "Wykluczenie – marginalizacja lub izolacja grup uznanych za niepożądane."
     },
@@ -219,8 +219,8 @@
       "rightDef": "A view that maintaining ecological balance is more important than pursuing human goals."
     },
     {
-      "left": "Postęp technologiczny",
-      "right": "Prymitywizm",
+      "left": "Technological progress",
+      "right": "Primitivism",
       "leftDef": "Postęp technologiczny – wiara w zbawienny charakter rozwoju technologicznego.",
       "rightDef": "Prymitywizm – Perspektywa, która odrzuca przemysł i nowoczesną technologię na rzecz powrotu do natury i życia w małych, samowystarczalnych wspólnotach."
     }
@@ -581,7 +581,7 @@
     {
       "id": 1,
       "text": "Society has no interests or will of its own that are independent of the interests of the individuals who comprise it",
-      "description": "Ta teza zakłada, że pojęcie „społeczeństwo” jest jedynie nazwą dla zbioru konkretnych osób, a nie samodzielnym bytem o własnych potrzebach. Zgodnie z tym ujęciem, nie istnieje coś takiego jak „dobro wspólne”, które byłoby oddzielone od dążeń poszczególnych ludzi lub od nich niezależne. Wszelkie decyzje podejmowane w sferze publicznej powinny być zatem oceniane wyłącznie przez pryzmat tego, w jakim stopniu służą one interesom i prawom konkretnych jednostek. Wspólnota nie posiada własnego „rozumu” ani „woli”, dlatego nie może dążyć do celów, które nie są sumą pragnień tworzących ją ludzi. Odpowiedzialność i sprawczość spoczywają zawsze na człowieku, a struktury społeczne są jedynie dobrowolnymi układami ułatwiającymi realizację osobistych planów i celów życiowych.",
+      "description": "This thesis posits that the concept of ‘society’ is merely a label for a collection of specific individuals, rather than an independent entity with its own needs. According to this view, there is no such thing as a ‘common good’ that is separate from or independent of the aspirations of individual people. All decisions taken in the public sphere should therefore be assessed solely in terms of the extent to which they serve the interests and rights of specific individuals. The community has no ‘reason’ or ‘will’ of its own, and therefore cannot pursue goals that are not the sum of the desires of the people who make it up. Responsibility and agency always rest with the individual, whilst social structures are merely voluntary arrangements facilitating the realisation of personal plans and life goals.",
       "answers": [
         {
           "label": "Strongly agree"
@@ -602,7 +602,7 @@
     },
     {
       "id": 2,
-      "text": "Społeczeństwo, niczym żywy organizm, funkcjonuje jako spójna całość, w której każda część ma swoje miejsce i funkcję, przewyższając sumę indywidualnych interesów",
+      "text": "Society, like a living organism, functions as a coherent whole in which every part has its place and function, transcending the sum of individual interests",
       "description": "Podejście to postrzega społeczeństwo jako żywą i nierozerwalną całość, której trwałość zależy od harmonijnej współpracy wszystkich jej elementów. W tym ujęciu wspólnota nie jest jedynie sumą osób, lecz złożonym układem, w którym każda instytucja, rodzina czy grupa pełni określoną, niezbędną funkcję dla zachowania zdrowia całego systemu. Dobro całości jest tu wartością nadrzędną, ponieważ uważa się, że tylko stabilne i spójne otoczenie społeczne umożliwia jednostkom właściwe funkcjonowanie. Interesy poszczególnych części są nierozerwalnie splecione z pomyślnością ogółu, a ich znaczenie wynika z roli, jaką odgrywają w ramach całości. Stabilność takiego układu opiera się na wzajemnych powiązaniach, które sprawiają, że społeczeństwo posiada własną dynamikę i cele wykraczające poza sumę dążeń jednostek.",
       "answers": [
         {
@@ -624,7 +624,7 @@
     },
     {
       "id": 3,
-      "text": "Wspólnoty i grupy społeczne mają wartość tylko o tyle, o ile służą dobru jednostek, które je tworzą",
+      "text": "Communities and social groups are only valuable insofar as they serve the good of the individuals who make them up",
       "description": "Placeholder",
       "answers": [
         {
@@ -646,7 +646,7 @@
     },
     {
       "id": 4,
-      "text": "Indywidualna wolność jest pierwszorzędną wartością polityczną, nadrzędną wobec innych dóbr społecznych",
+      "text": "Individual liberty is a primary political value, taking priority over other social values",
       "description": "Teza ta zakłada, że prawo każdego człowieka do samodzielnego decydowania o własnym losie, sposobie życia i wyznawanych wartościach powinno być chronione w pierwszej kolejności. W tym ujęciu interesy społeczeństwa jako całości, tradycja, stabilność państwowa czy bezpieczeństwo zbiorowe nie stanowią wystarczającego powodu, by ograniczać swobodę osoby, która swoim działaniem nie narusza bezpośrednio praw innych ludzi. Każdy dorosły człowiek jest uznawany za najlepiej wiedzącego, co służy jego dobru, dlatego instytucje publiczne powinny powstrzymywać się od ingerowania w sferę prywatną, dopóki nie dochodzi do wyrządzenia wymiernej krzywdy osobom trzecim. Odpowiedzialność za skutki własnych wyborów spoczywa na osobie podejmującej decyzję, a nie na wspólnocie",
       "answers": [
         {
@@ -668,7 +668,7 @@
     },
     {
       "id": 5,
-      "text": "Wolność należy rozumieć jako brak przymusu ze strony zewnętrznych podmiotów, które uniemożliwiają jednostce podejmowanie decyzji i działanie zgodnie z własną wolą",
+      "text": "Liberty should be understood as the absence of coercion by external entities that prevent an individual from making decisions and acting in accordance with their own will",
       "description": "Teza ta definiuje wolność jako obszar, w którym człowiek może działać bez przeszkód stawianych przez inne osoby, instytucje czy państwo. W tym ujęciu bycie wolnym oznacza przede wszystkim brak zewnętrznych barier, takich jak przymus fizyczny, groźba kary czy restrykcje prawne, które uniemożliwiałyby jednostce realizację jej własnych zamierzeń. Kluczowym elementem jest tutaj uznanie suwerenności osoby nad jej własnym losem, ciałem i umysłem, co pozwala na samodzielne wyznaczanie celów życiowych zgodnie z osobistymi przekonaniami. Tak rozumiana wolność zakłada istnienie wyraźnej sfery prywatnej, która powinna pozostać wolna od ingerencji zewnętrznych podmiotów. Przymus jest tu postrzegany jako negatywne zjawisko, ponieważ tłumi on właściwą człowiekowi naturę i czyni go zależnym od woli innych. Koncepcja ta skupia się na pytaniu, czy i w jakim zakresie inne podmioty powstrzymują jednostkę przed działaniem, a nie na tym, jakie zasoby czy umiejętności posiada ona do osiągnięcia swoich celów. W rezultacie, o stopniu wolności decyduje wyłącznie brak narzuconych z zewnątrz ograniczeń, które krępowałyby zdolność do podejmowania suwerennych decyzji",
       "answers": [
         {
@@ -690,7 +690,7 @@
     },
     {
       "id": 6,
-      "text": "Żadna jednostka ani grupa nie ma prawa zmuszać kogokolwiek do działania na rzecz innych, nawet jeśli ci inni znajdują się w potrzebie lub cel pomocy wydaje się szlachetny",
+      "text": "No individual or group has the right to force anyone to act on behalf of others, even if those others are in need or the cause of the aid appears to be a noble one",
       "description": "No additional description.",
       "answers": [
         {
@@ -712,7 +712,7 @@
     },
     {
       "id": 7,
-      "text": "Wolność jednostki nie ogranicza się do braku przymusu, lecz wymaga zapewnienia jednostce zasobów, które umożliwiają jej realizację własnych celów",
+      "text": "Individual freedom is not limited to the absence of coercion, but requires that individuals be provided with the resources that enable them to pursue their own goals",
       "description": "Teza ta zakłada, że wolność to nie tylko brak przymusu, ale realna zdolność do kierowania własnym życiem. Bycie wolnym wymaga posiadania zasobów, takich jak wykształcenie, ochrona zdrowia czy bezpieczeństwo ekonomiczne, bez których jednostka nie może faktycznie korzystać ze swoich formalnych praw. Zgodnie z tym ujęciem przeszkody materialne – na przykład bieda – ograniczają suwerenność człowieka w podobnym stopniu co zakazy ustawowe. Zamiast ograniczać rolę otoczenia do samej nieingerencji, koncepcja ta kładzie nacisk na aktywne wspieranie rozwoju ludzkiego potencjału. Wolność jest tu rozumiana jako zdolność do samorealizacji, co wymaga dbania o wyrównywanie szans startowych, aby każdy mógł faktycznie dążyć do realizacji wybranych przez siebie celów życiowych. ",
       "comment": "Placeholder",
       "answers": [
