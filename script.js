@@ -17,6 +17,16 @@ const popup = document.getElementById('popup');
 const popupText = document.getElementById('popup-text');
 const closePopupBtn = document.getElementById('closePopup');
 
+// ======================= FUNKCJA OBLICZAJĄCA ODZNAKI (DO ROZBUDOWY) =======================
+// Na razie zwraca pustą tablicę – możesz dodać własne warunki w oparciu o wyniki par wartości.
+function computeBadges() {
+  // Przykładowa implementacja (później możesz zastąpić):
+  // const badges = [];
+  // if (warunek) badges.push('Monarchizm');
+  // return badges;
+  return [];
+}
+
 // ======================= MAPOWANIE PARTII -> LOGO =======================
 const LOGO_BASE_PATH = 'images/Partie/';
 const partyLogoMap = new Map([
