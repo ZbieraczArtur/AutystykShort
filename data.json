@@ -519,8 +519,8 @@
 
      {
       "id": 0,
-      "text": "Rozwiązując ten test możesz odpowiedzieć na dwa sposoby:",
-      "description": "bla bla bla",
+      "text": "Rozwiązując ten test możesz odpowiedzieć na conajmniej dwa sposoby:",
+      "description": "Wybór między podejściem filozoficznym a politycznym polega na rozróżnieniu wizji świata idealnego od realnych możliwości działania w obecnym systemie. Podejście filozoficzne odnosi się do sądów normatywnych – określa, jaki porządek społeczny byłby najdoskonalszy, gdyby nie istniały ograniczenia takie jak aktualne prawo, uwarunkowania historyczne czy brak poparcia społecznego. To Twoja ostateczna meta ideowa, określająca docelowy kształt społeczeństwa. Z kolei podejście polityczne skupia się na pragmatyzmie i realiach „tu i teraz”. Wybierając tę opcję, wskazujesz, jakie konkretne zmiany programowe są możliwe do wdrożenia przy uwzględnieniu obecnych instytucji i nastrojów publicznych. Jest to wybór najlepszego możliwego kompromisu, przy uznaniu, że polityka to sztuka możliwości, a rzeczywistość rzadko pozwala na bezpośrednią realizację czystej teorii.",
       "answers": [
         {
           "label": "Filozoficznie - jak wyglądałby według Ciebie idealny porządek społeczny",
