@@ -67,7 +67,7 @@ const ideologyLogoMap = new Map([
   ['Anarchokomunizm', 'Anarchokomunizm.svg'],
   ['Anarchoprymitywizm', 'Anarchoprymitywizm.png'],
   ['Anarchosyndykalizm', 'Anarchosyndykalizm.png'],
-  ['Chrześcijańska demokracja', 'Chrzescijanska_demokracja.png'],
+  ['Chrześcijańska demokracja', 'Chrzescijańska_demokracja.png'],
   ['De Leonizm', 'De_Leonizm.png'],
   ['Demokratyczny konfederalizm', 'Demokratyczny_konfederalizm.png'],
   ['Dystrybucjonizm', 'Dystrybucjonizm.png'],
