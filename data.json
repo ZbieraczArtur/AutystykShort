@@ -9543,7 +9543,7 @@
           "value": 1.0,
           "values_for": ["Wolność ekspresji", "Autonomia", "Różnorodność norm"],
           "values_against": ["Heteronomia", "Regulacja instytucjonalna", "Wykluczenie", "Uniformizacja norm"],
-          "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny", , "Ordoliberalizm"],
+          "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny", "Ordoliberalizm"],
           "ideologies_against": ["Socjaldemokracja", "Nacjonalizm konserwatywny", "Faszyzm", "Marksizm klasyczny", "Nacjonalizm liberalny"],
           "parties_for": ["Konfederacja Korony Polskiej", "Nowa Nadzieja"],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Ruch Narodowy", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
