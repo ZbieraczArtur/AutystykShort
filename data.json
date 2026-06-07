@@ -519,12 +519,12 @@
 
      {
       "id": 0,
-      "text": "Test",
-      "description": "Ta teza zakłada, że pojęcie „społeczeństwo” jest jedynie nazwą dla zbioru konkretnych osób, a nie samodzielnym bytem o własnych potrzebach. Zgodnie z tym ujęciem, nie istnieje coś takiego jak „dobro wspólne”, które byłoby oddzielone od dążeń poszczególnych ludzi lub od nich niezależne. Wszelkie decyzje podejmowane w sferze publicznej powinny być zatem oceniane wyłącznie przez pryzmat tego, w jakim stopniu służą one interesom i prawom konkretnych jednostek. Wspólnota nie posiada własnego „rozumu” ani „woli”, dlatego nie może dążyć do celów, które nie są sumą pragnień tworzących ją ludzi. Odpowiedzialność i sprawczość spoczywają zawsze na człowieku, a struktury społeczne są jedynie dobrowolnymi układami ułatwiającymi realizację osobistych planów i celów życiowych.",
+      "text": "Rozwiązując ten test możesz odpowiedzieć na dwa sposoby:",
+      "description": "bla bla bla",
       "answers": [
         {
-          "label": "Zdecydowanie zgadzam się",
-          "value": 1.5,
+          "label": "Filozoficznie - jak wyglądałby według Ciebie idealny porządek społeczny",
+          "value": 0,
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
@@ -533,28 +533,8 @@
           "parties_against": []
         },
         {
-          "label": "Częściowo zgadzam się",
-          "value": 1.0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Częściowo nie zgadzam się",
-          "value": -1.0,
-          "values_for": [],
-          "values_against": [],
-          "ideologies_for": [],
-          "ideologies_against": [],
-          "parties_for": [],
-          "parties_against": []
-        },
-        {
-          "label": "Zdecydowanie nie zgadzam się",
-          "value": -1.5,
+          "label": "Politycznie - co Twoim zdaniem powinno się wprowadzać tutaj i teraz, biorąc pod uwagę realia polityczne",
+          "value": 0,
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
