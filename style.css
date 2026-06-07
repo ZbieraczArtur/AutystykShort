@@ -1075,3 +1075,56 @@ body.dark .compass-link:hover {
 .share-link {
   text-align: center;
 }
+
+/* ========== ODZNAKI (BADGES) ========== */
+.badges-section {
+  background: var(--card-bg);
+  backdrop-filter: blur(8px);
+  border-radius: 40px;
+  padding: 1rem 1.8rem;
+  margin: 2rem 0 1.5rem;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-md);
+}
+
+.badges-section h3 {
+  font-size: 1.4rem;
+  margin: 0 0 1rem 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badges-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.badge-item {
+  background: linear-gradient(135deg, #f5b042, #f28c28);
+  color: #1e1e2f;
+  padding: 0.4rem 1.2rem;
+  border-radius: 60px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: default;
+}
+
+body.dark .badge-item {
+  background: linear-gradient(135deg, #ffb347, #ff8c00);
+  color: #0f172a;
+}
+
+.badge-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.no-badges {
+  font-style: italic;
+  color: var(--footer-color);
+  margin: 0.5rem 0;
+}
