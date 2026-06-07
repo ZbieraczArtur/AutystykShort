@@ -796,6 +796,81 @@ function computeScores(mode = currentScoringMode) {
   return { pairResults, ideologyResults, partyResults };
 }
 
+// ========== NOWA FUNKCJA: OBLICZANIE ODZNAK ==========
+function computeBadges() {
+  if (!config) return [];
+  // Zbuduj mapę odpowiedzi: questionId -> answerValue
+  const answerMap = new Map();
+  for (const ans of userAnswers) {
+    if (ans.answerValue !== 0) { // pominięte nie liczą się
+      answerMap.set(ans.questionId, ans.answerValue);
+    }
+  }
+
+  // Funkcja pomocnicza do sprawdzenia czy wszystkie pytania mają wymaganą wartość (>= threshold)
+  const checkAll = (requirements) => {
+    for (const [qid, requiredValue] of requirements) {
+      const val = answerMap.get(qid);
+      if (val === undefined || val < requiredValue) return false;
+    }
+    return true;
+  };
+
+  const badges = [];
+
+  // Monarchizm: silne poparcie dla dziedziczenia władzy i boskiej legitymizacji
+  if (checkAll([[41, 1.5], [39, 1.5]])) badges.push("Monarchizm");
+
+  // Anarchizm: odrzucenie państwa na rzecz wolnych wspólnot, nieangażowanie polityczne
+  if (checkAll([[43, 1.5], [46, 1.5], [49, 1.5]])) badges.push("Anarchizm");
+
+  // Technokracja: rządy ekspertów w kryzysie i elit kompetentnych
+  if (checkAll([[42, 1.5], [283, 1.5]])) badges.push("Technokracja");
+
+  // Oligarchia: akceptacja nierówności dochodowych i skupienia władzy w nielicznych rękach
+  if (checkAll([[22, 1.5], [74, 1.5]])) badges.push("Oligarchia");
+
+  // Państwo minimalne: ograniczenie funkcji państwa do niezbędnego minimum
+  if (checkAll([[51, 1.5], [286, 1.5], [115, 1.5]])) badges.push("Państwo minimalne");
+
+  // Państwo opiekuńcze: państwo odpowiedzialne za usługi socjalne, minimum socjalne, pełne zatrudnienie
+  if (checkAll([[55, 1.5], [318, 1.5], [324, 1.5]])) badges.push("Państwo opiekuńcze");
+
+  // Secesjonizm: prawo do odłączenia się od państwa
+  if (checkAll([[301, 1.5]])) badges.push("Secesjonizm");
+
+  // Agraryzm: rolnictwo uprzywilejowane, rodzinne gospodarstwa, chłopi fundamentem narodu
+  if (checkAll([[331, 1.5], [332, 1.5], [335, 1.5]])) badges.push("Agraryzm");
+
+  return badges;
+}
+
+function createBadgesSection(badges) {
+  const section = document.createElement('div');
+  section.className = 'badges-section';
+  const header = document.createElement('h3');
+  header.textContent = '🏅 Odznaki';
+  section.appendChild(header);
+  if (badges.length === 0) {
+    const none = document.createElement('p');
+    none.textContent = 'Nie zdobyto jeszcze żadnej odznaki. Odpowiadaj zdecydowanie na pytania pasujące do określonych światopoglądów.';
+    none.className = 'no-badges';
+    section.appendChild(none);
+  } else {
+    const badgesContainer = document.createElement('div');
+    badgesContainer.className = 'badges-list';
+    for (const badge of badges) {
+      const badgeEl = document.createElement('div');
+      badgeEl.className = 'badge-item';
+      // Dodanie prostego emoji symbolicznego (można później podmienić na ikonki)
+      badgeEl.textContent = badge;
+      badgesContainer.appendChild(badgeEl);
+    }
+    section.appendChild(badgesContainer);
+  }
+  return section;
+}
+
 // ========== ZMODYFIKOWANA FUNKCJA createRankingSection ==========
 function createRankingSection(title, items, type) {
   const section = document.createElement('div');
@@ -963,6 +1038,21 @@ function computeAndDisplayResults() {
   ideologiesResults.innerHTML = '';
   partiesResults.innerHTML = '';
 
+  // ---- DODANIE SEKCJI ODZNAK (pod osiami, nad rankingami) ----
+  const badges = computeBadges();
+  const existingBadgesSection = resultsDiv.querySelector('.badges-section');
+  if (existingBadgesSection) existingBadgesSection.remove();
+  const badgesSection = createBadgesSection(badges);
+  // Wstawiamy przed kontenerem rankingów
+  const ideologiesPartiesContainer = document.querySelector('.ideologies-parties-container');
+  if (ideologiesPartiesContainer) {
+    ideologiesPartiesContainer.parentNode.insertBefore(badgesSection, ideologiesPartiesContainer);
+  } else {
+    // jeżeli kontener nie istnieje (np. przy pierwszym uruchomieniu), wstawiamy po wartości
+    valuesResults.parentNode.insertBefore(badgesSection, valuesResults.nextSibling);
+  }
+  // ------------------------------------------------
+
   // BANNER SYMULACJI (dla partii lub ideologii)
   const existingBanner = resultsDiv.querySelector('.simulation-banner');
   if (existingBanner) existingBanner.remove();
@@ -989,7 +1079,6 @@ function computeAndDisplayResults() {
         <small>${translations?.ui?.simulationNote || 'Wyniki poniżej są tymczasowe. Kliknij „Przywróć moje odpowiedzi”, aby wrócić do własnych.'}</small>
       </div>
     `;
-    const ideologiesPartiesContainer = document.querySelector('.ideologies-parties-container');
     if (ideologiesPartiesContainer) {
       ideologiesPartiesContainer.parentNode.insertBefore(banner, ideologiesPartiesContainer);
     } else {
