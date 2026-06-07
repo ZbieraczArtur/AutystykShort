@@ -135,6 +135,7 @@ const ideologyLogoMap = new Map([
   ['Strasseryzm', 'Strasseryzm.png'],
   ['Tradycjonalizm integralny', 'Tradycjonalizm_integralny.png'],
   ['Trockizm', 'Trockizm.svg'],
+  ['Liberalizm utylitarny', 'Liberalizm_utylitarny.png'],
   ['Trzecia droga', 'Trzecia_droga.svg'],
   ['Nacjonalizm obywatelski', 'Nacjonalizm_obywatelski.svg'],
   ['Hoppeanizm', 'Hoppeanizm.png']
