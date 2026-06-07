@@ -57,7 +57,7 @@ const ideologyLogoMap = new Map([
   ['Anarchokomunizm', 'Anarchokomunizm.svg'],
   ['Anarchoprymitywizm', 'Anarchoprymitywizm.png'],
   ['Anarchosyndykalizm', 'Anarchosyndykalizm.png'],
-  ['Chrześcijańska demokracja', 'Chrzescijańska_demokracja.png'],
+  ['Chrześcijańska demokracja', 'Chrzescijanska_demokracja.png'],
   ['De Leonizm', 'De_Leonizm.png'],
   ['Demokratyczny konfederalizm', 'Demokratyczny_konfederalizm.png'],
   ['Dystrybucjonizm', 'Dystrybucjonizm.png'],
@@ -796,54 +796,20 @@ function computeScores(mode = currentScoringMode) {
   return { pairResults, ideologyResults, partyResults };
 }
 
-// ========== NOWA FUNKCJA: OBLICZANIE ODZNAK ==========
-function computeBadges() {
-  if (!config) return [];
-  // Zbuduj mapę odpowiedzi: questionId -> answerValue
-  const answerMap = new Map();
-  for (const ans of userAnswers) {
-    if (ans.answerValue !== 0) { // pominięte nie liczą się
-      answerMap.set(ans.questionId, ans.answerValue);
-    }
-  }
+// ========== ODZNAKI: DEFINICJE I ICH OPISY ==========
+const badgesDescriptions = {
+  "Monarchizm": "Poparcie dla dziedzicznej władzy, często legitymizowanej boskim prawem lub tradycją. Kładzie nacisk na stabilność, ciągłość i hierarchię.",
+  "Anarchizm": "Odrzucenie państwa i wszelkiej przymusowej władzy na rzecz dobrowolnych, zdecentralizowanych wspólnot i bezpośredniej demokracji.",
+  "Technokracja": "Przekonanie, że rządzić powinni eksperci i specjaliści, a decyzje polityczne powinny być oparte na danych naukowych i efektywności.",
+  "Oligarchia": "Akceptacja koncentracji władzy i bogactwa w rękach nielicznych, często usprawiedliwiana naturalnymi nierównościami lub efektywnością.",
+  "Państwo minimalne": "Postulat ograniczenia roli państwa wyłącznie do funkcji ochronnych (sądy, policja, wojsko), bez ingerencji w gospodarkę i życie prywatne.",
+  "Państwo opiekuńcze": "Model, w którym państwo zapewnia obywatelom bezpieczeństwo socjalne, dostęp do edukacji, ochrony zdrowia i redystrybucję dochodów.",
+  "Secesjonizm": "Prawo regionów lub grup etnicznych do pokojowego odłączenia się od istniejącego państwa i utworzenia własnej administracji.",
+  "Agraryzm": "Uznanie rolnictwa i wsi za fundament społeczeństwa, promowanie rodzinnych gospodarstw oraz tradycyjnego stylu życia."
+};
 
-  // Funkcja pomocnicza do sprawdzenia czy wszystkie pytania mają wymaganą wartość (>= threshold)
-  const checkAll = (requirements) => {
-    for (const [qid, requiredValue] of requirements) {
-      const val = answerMap.get(qid);
-      if (val === undefined || val < requiredValue) return false;
-    }
-    return true;
-  };
-
-  const badges = [];
-
-  // Monarchizm: silne poparcie dla dziedziczenia władzy i boskiej legitymizacji
-  if (checkAll([[41, 1.5], [39, 1.5]])) badges.push("Monarchizm");
-
-  // Anarchizm: odrzucenie państwa na rzecz wolnych wspólnot, nieangażowanie polityczne
-  if (checkAll([[43, 1.5], [46, 1.5], [49, 1.5]])) badges.push("Anarchizm");
-
-  // Technokracja: rządy ekspertów w kryzysie i elit kompetentnych
-  if (checkAll([[42, 1.5], [283, 1.5]])) badges.push("Technokracja");
-
-  // Oligarchia: akceptacja nierówności dochodowych i skupienia władzy w nielicznych rękach
-  if (checkAll([[22, 1.5], [74, 1.5]])) badges.push("Oligarchia");
-
-  // Państwo minimalne: ograniczenie funkcji państwa do niezbędnego minimum
-  if (checkAll([[51, 1.5], [286, 1.5], [115, 1.5]])) badges.push("Państwo minimalne");
-
-  // Państwo opiekuńcze: państwo odpowiedzialne za usługi socjalne, minimum socjalne, pełne zatrudnienie
-  if (checkAll([[55, 1.5], [318, 1.5], [324, 1.5]])) badges.push("Państwo opiekuńcze");
-
-  // Secesjonizm: prawo do odłączenia się od państwa
-  if (checkAll([[301, 1.5]])) badges.push("Secesjonizm");
-
-  // Agraryzm: rolnictwo uprzywilejowane, rodzinne gospodarstwa, chłopi fundamentem narodu
-  if (checkAll([[331, 1.5], [332, 1.5], [335, 1.5]])) badges.push("Agraryzm");
-
-  return badges;
-}
+// Ścieżka do obrazków odznak (użytkownik może umieścić pliki w tym katalogu)
+const BADGES_IMG_BASE_PATH = 'AutystykShort/images/Odznaki/';
 
 function createBadgesSection(badges) {
   const section = document.createElement('div');
@@ -862,8 +828,38 @@ function createBadgesSection(badges) {
     for (const badge of badges) {
       const badgeEl = document.createElement('div');
       badgeEl.className = 'badge-item';
-      // Dodanie prostego emoji symbolicznego (można później podmienić na ikonki)
-      badgeEl.textContent = badge;
+      
+      // Dodanie miniaturki ikony (jeśli istnieje)
+      const img = document.createElement('img');
+      img.alt = badge;
+      img.className = 'badge-icon';
+      // próba załadowania obrazka – najpierw .png, potem .jpg
+      const tryImage = (ext) => {
+        img.src = `${BADGES_IMG_BASE_PATH}${badge}${ext}`;
+        img.onerror = () => {
+          // jeśli nie udało się załadować, ukryj obrazek
+          img.style.display = 'none';
+        };
+        img.onload = () => {
+          img.style.display = 'inline-block';
+        };
+      };
+      tryImage('.png');
+      // małe opóźnienie, by sprawdzić, czy obrazek się załadował – uproszczone: dla uproszczenia najpierw próbujemy PNG, jeśli błąd to ukrywamy.
+      // Można by dodać obsługę .jpg, ale to tylko szczegół.
+      badgeEl.appendChild(img);
+      
+      const textSpan = document.createElement('span');
+      textSpan.textContent = badge;
+      badgeEl.appendChild(textSpan);
+      
+      // Kliknięcie pokazuje opis
+      badgeEl.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const description = badgesDescriptions[badge] || 'Brak szczegółowego opisu tej odznaki.';
+        showPopup(`🏅 ${badge}\n\n${description}`);
+      });
+      
       badgesContainer.appendChild(badgeEl);
     }
     section.appendChild(badgesContainer);
