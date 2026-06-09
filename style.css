@@ -101,10 +101,38 @@ body {
 .header-top {
   display: flex;
   justify-content: space-between;
-  align-items: baseline;
+  align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
   margin-bottom: 1.5rem;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.site-logo {
+  height: 48px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+  transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+.site-logo:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+}
+
+body.dark .site-logo {
+  filter: drop-shadow(0 0 3px rgba(255,255,255,0.4));
+  background-color: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  padding: 2px;
 }
 
 h1 {
@@ -725,6 +753,25 @@ footer {
   color: var(--footer-color);
   border-top: 1px solid var(--footer-border);
   padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.footer-logo {
+  height: 32px;
+  width: auto;
+  opacity: 0.7;
+  transition: opacity 0.2s ease, filter 0.2s ease;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+}
+
+body.dark .footer-logo {
+  filter: drop-shadow(0 0 2px rgba(255,255,255,0.3));
 }
 
 footer a {
@@ -837,6 +884,13 @@ body.dark .copy-btn:hover {
     flex-direction: column;
     align-items: stretch;
     text-align: center;
+  }
+  .logo-title {
+    justify-content: center;
+    width: 100%;
+  }
+  .site-logo {
+    height: 38px;
   }
 }
 
