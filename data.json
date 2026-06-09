@@ -15337,7 +15337,7 @@
           "values_for": ["Interwencjonizm zagraniczny", "Preferencja użycia siły", "Demokracja", "Kosmopolityzm"],
           "values_against": ["Izolacjonizm", "Unikanie przemocy"],
           "ideologies_for": ["Nacjonalizm liberalny"],
-          "ideologies_against": ["Marksizm klasyczny", "Faszyzm", "Nacjonalizm konserwatywny", "Głęboka ekologia",
+          "ideologies_against": ["Marksizm klasyczny", "Faszyzm", "Nacjonalizm konserwatywny", "Głęboka ekologia"],
           "parties_for": ["Prawo i Sprawiedliwość"],
           "parties_against": ["Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
