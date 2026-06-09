@@ -16901,7 +16901,7 @@
           "value": 1.0,
           "values_for": ["Autokracja", "Elitaryzm", "Centralizacja"],
           "values_against": ["Decentralizacja", "Anty-Autokracja"],
-          "ideologies_for": "Faszyzm", "Marksizm klasyczny"[],
+          "ideologies_for": ["Faszyzm", "Marksizm klasyczny"],
           "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny", "Nacjonalizm konserwatywny", "Głęboka ekologia", "Ordoliberalizm"],
           "parties_for": ["Nowa Nadzieja", "Konfederacja Korony Polskiej", "Ruch Narodowy"],
           "parties_against": []
