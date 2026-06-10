@@ -1,4 +1,90 @@
-// script.js – z dodanymi logotypami partii i ideologii (ranking, popup, symulacja) + obsługa języka
+// script.js – z dodanymi logotypami partii i ideologii (ranking, popup, symulacja) + obsługa języka + panel ręczny dla kompasu
+
+// ======================= POMOCNICZE FUNKCJE DO RĘCZNEGO PANELU =======================
+function getActivePairsForMode(mode, creativeCfg) {
+  if (mode === 'weighted') return corePairs.filter(p => !p.extra);
+  if (mode === 'equal') return corePairs.filter(p => !p.extra).map(p => ({ ...p, weight: 1 }));
+  if (mode === 'institutional') return corePairs.filter(p => p.institutional === true);
+  if (mode === 'creative') {
+    return creativeCfg.activePairs.map(cfg => {
+      const original = allCompassPairs.find(p => p.id === cfg.pairId);
+      if (!original) return null;
+      return { ...original, axis: cfg.axis, weight: cfg.weight };
+    }).filter(p => p !== null);
+  }
+  return [];
+}
+
+function buildValuesMapFromManual(pairs) {
+  const values = {};
+  for (const pair of pairs) {
+    const posInput = document.getElementById(`manual-pos-${pair.id}`);
+    const negInput = document.getElementById(`manual-neg-${pair.id}`);
+    const pos = posInput && posInput.value.trim() !== '' ? Number(posInput.value) : null;
+    const neg = negInput && negInput.value.trim() !== '' ? Number(negInput.value) : null;
+    if (pos !== null && neg !== null && !isNaN(pos) && !isNaN(neg)) {
+      values[pair.id] = { positive: Math.min(100, Math.max(0, pos)), negative: Math.min(100, Math.max(0, neg)) };
+    } else if (pos !== null && !isNaN(pos)) {
+      const p = Math.min(100, Math.max(0, pos));
+      values[pair.id] = { positive: p, negative: 100 - p };
+    } else if (neg !== null && !isNaN(neg)) {
+      const n = Math.min(100, Math.max(0, neg));
+      values[pair.id] = { positive: 100 - n, negative: n };
+    } else {
+      values[pair.id] = { positive: null, negative: null };
+    }
+  }
+  return values;
+}
+
+function renderManualForm(pairs, currentValuesMap) {
+  const container = document.getElementById('manual-pairs-container');
+  if (!container) return;
+  container.innerHTML = '';
+  for (const pair of pairs) {
+    const vals = currentValuesMap[pair.id] || { positive: null, negative: null };
+    const posVal = vals.positive !== null ? vals.positive : '';
+    const negVal = vals.negative !== null ? vals.negative : '';
+    const div = document.createElement('div');
+    div.className = 'manual-pair';
+    div.innerHTML = `
+      <label>${pair.negativeLabel} (lewo/dół)</label>
+      <input type="number" min="0" max="100" step="1" id="manual-neg-${pair.id}" value="${negVal}" placeholder="0–100">
+      <span class="versus">⇄</span>
+      <label>${pair.positiveLabel} (prawo/góra)</label>
+      <input type="number" min="0" max="100" step="1" id="manual-pos-${pair.id}" value="${posVal}" placeholder="0–100">
+    `;
+    container.appendChild(div);
+  }
+  // Dodajemy nasłuchiwanie synchronizacji
+  for (const pair of pairs) {
+    const posInput = document.getElementById(`manual-pos-${pair.id}`);
+    const negInput = document.getElementById(`manual-neg-${pair.id}`);
+    if (posInput && negInput) {
+      const sync = (source, target) => {
+        const raw = source.value.trim();
+        if (raw === '') {
+          target.value = '';
+          return;
+        }
+        let val = Number(raw);
+        if (!isNaN(val)) {
+          val = Math.min(100, Math.max(0, val));
+          source.value = val;
+          target.value = 100 - val;
+        } else {
+          source.value = '';
+          target.value = '';
+        }
+      };
+      posInput.addEventListener('input', () => sync(posInput, negInput));
+      negInput.addEventListener('input', () => sync(negInput, posInput));
+    }
+  }
+}
+
+// ======================= RESZTA KODU (zachowana oryginalna treść) =======================
+
 let config = null;
 let configBase = null;      // oryginalne dane z data.json (wartości, mapowania)
 let translations = null;    // aktualne tłumaczenia (teksty)
@@ -987,280 +1073,12 @@ function generateShareCode(pairResults) {
   return container;
 }
 
-function computeAndDisplayResults() {
-  const { pairResults, ideologyResults, partyResults } = computeScores(currentScoringMode);
-
-  // Grupowanie par wartości
-  const groups = new Map();
-  for (const pair of pairResults) {
-    const catId = categoryMapping[pair.left];
-    if (!catId) continue;
-    if (!groups.has(catId)) groups.set(catId, { name: categoryNames[catId], pairs: [] });
-    groups.get(catId).pairs.push(pair);
-  }
-  const sortedGroups = Array.from(groups.entries()).sort((a, b) => a[0] - b[0]);
-
-  const valuesHeader = translations?.ui?.valuesHeader || '⚖️ Pary wartości';
-  valuesResults.innerHTML = `<h3>${valuesHeader}</h3>`;
-  const gridContainer = document.createElement('div');
-  gridContainer.className = 'values-categories-grid';
-  for (const [catId, group] of sortedGroups) {
-    const categoryDiv = document.createElement('div');
-    categoryDiv.className = 'value-category-block';
-    const catHeader = document.createElement('h4');
-    catHeader.className = 'category-header';
-    catHeader.textContent = group.name;
-    categoryDiv.appendChild(catHeader);
-    for (const pair of group.pairs) {
-      const leftColor = valueColors[pair.left] || '#3b82f6';
-      const rightColor = valueColors[pair.right] || '#ef4444';
-      const leftTextColor = getContrastColor(leftColor);
-      const rightTextColor = getContrastColor(rightColor);
-      const pairDiv = document.createElement('div');
-      pairDiv.className = 'value-pair';
-      pairDiv.innerHTML = `
-        <div class="value-bar-container-new">
-          <span class="value-left-new" data-def="${pair.leftDef}">${pair.left}</span>
-          <div class="value-bar-new">
-            <div class="bar-left-new" style="width: ${pair.leftPercent}%; background-color: ${leftColor}; color: ${leftTextColor};">${Math.round(pair.leftPercent)}%</div>
-            <div class="bar-right-new" style="width: ${pair.rightPercent}%; background-color: ${rightColor}; color: ${rightTextColor};">${Math.round(pair.rightPercent)}%</div>
-          </div>
-          <span class="value-right-new" data-def="${pair.rightDef}">${pair.right}</span>
-        </div>
-      `;
-      const leftSpan = pairDiv.querySelector('.value-left-new');
-      const rightSpan = pairDiv.querySelector('.value-right-new');
-      
-      leftSpan.style.setProperty('--hover-color', leftColor);
-      rightSpan.style.setProperty('--hover-color', rightColor);
-      
-      leftSpan.addEventListener('click', () => showPopup(pair.leftDef));
-      rightSpan.addEventListener('click', () => showPopup(pair.rightDef));
-      categoryDiv.appendChild(pairDiv);
-    }
-    gridContainer.appendChild(categoryDiv);
-  }
-  valuesResults.appendChild(gridContainer);
-
-  ideologiesResults.innerHTML = '';
-  partiesResults.innerHTML = '';
-
-  // ---- DODANIE SEKCJI ODZNAK (pod osiami, nad rankingami) ----
-  const badges = computeBadges();
-  const existingBadgesSection = resultsDiv.querySelector('.badges-section');
-  if (existingBadgesSection) existingBadgesSection.remove();
-  const badgesSection = createBadgesSection(badges);
-  // Wstawiamy przed kontenerem rankingów
-  const ideologiesPartiesContainer = document.querySelector('.ideologies-parties-container');
-  if (ideologiesPartiesContainer) {
-    ideologiesPartiesContainer.parentNode.insertBefore(badgesSection, ideologiesPartiesContainer);
-  } else {
-    // jeżeli kontener nie istnieje (np. przy pierwszym uruchomieniu), wstawiamy po wartości
-    valuesResults.parentNode.insertBefore(badgesSection, valuesResults.nextSibling);
-  }
-  // ------------------------------------------------
-
-  // BANNER SYMULACJI (dla partii lub ideologii)
-  const existingBanner = resultsDiv.querySelector('.simulation-banner');
-  if (existingBanner) existingBanner.remove();
-  if (simulatedEntity) {
-    const banner = document.createElement('div');
-    banner.className = 'simulation-banner';
-    let logoUrl = null;
-    let entityTypeLabel = '';
-    if (simulatedEntity.type === 'party') {
-      logoUrl = getPartyLogoUrl(simulatedEntity.name);
-      entityTypeLabel = translations?.ui?.simulatingParty || 'partię';
-    } else if (simulatedEntity.type === 'ideology') {
-      logoUrl = getIdeologyLogoUrl(simulatedEntity.name);
-      entityTypeLabel = translations?.ui?.simulatingIdeology || 'ideologię';
-    }
-    let logoHtml = '';
-    if (logoUrl) {
-      logoHtml = `<img src="${logoUrl}" alt="Logo ${simulatedEntity.name}" class="simulation-banner-logo">`;
-    }
-    banner.innerHTML = `
-      ${logoHtml}
-      <div class="simulation-banner-text">
-        🎭 ${translations?.ui?.simulating || 'Symulujesz'} ${entityTypeLabel}: <strong>${simulatedEntity.name}</strong><br>
-        <small>${translations?.ui?.simulationNote || 'Wyniki poniżej są tymczasowe. Kliknij „Przywróć moje odpowiedzi”, aby wrócić do własnych.'}</small>
-      </div>
-    `;
-    if (ideologiesPartiesContainer) {
-      ideologiesPartiesContainer.parentNode.insertBefore(banner, ideologiesPartiesContainer);
-    } else {
-      partiesResults.parentNode.insertBefore(banner, partiesResults);
-    }
-  }
-
-  const ideologiesTitle = translations?.ui?.rankingIdeologies || '📊 Ranking ideologii';
-  const partiesTitle = translations?.ui?.rankingParties || '🗳️ Ranking partii';
-  ideologiesResults.appendChild(createRankingSection(ideologiesTitle, ideologyResults, 'ideology'));
-  partiesResults.appendChild(createRankingSection(partiesTitle, partyResults, 'party'));
-
-  const existingShare = resultsDiv.querySelector('.share-section');
-  if (existingShare) existingShare.remove();
-  resultsDiv.appendChild(generateShareCode(pairResults));
-  resultsDiv.style.display = 'block';
-  refreshExportSection();
-  window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
-}
-
-let simulationSelect = null;
-let simulateBtn = null;
-let restoreBtn = null;
-
-function syncUserAnswersFromDOM() {
-  const newAnswers = [];
-  const questionCards = document.querySelectorAll('.question-card');
-  questionCards.forEach(card => {
-    const qid = parseInt(card.dataset.id);
-    const questionConfig = config.questions.find(q => q.id === qid);
-    if (!questionConfig) return;
-    const selectedAnswer = card.querySelector('.answer-option.selected');
-    if (selectedAnswer) {
-      const ansIdx = parseInt(selectedAnswer.dataset.answerIndex);
-      const answerData = questionConfig.answers[ansIdx];
-      newAnswers.push({
-        questionId: qid,
-        answerIndex: ansIdx,
-        answerValue: answerData.value,
-        answerData: answerData
-      });
-    } else {
-      const skipAnswer = questionConfig.answers.find(a => a.value === 0 && (a.label.includes('Pomiń') || a.label.includes('Skip')));
-      if (skipAnswer) {
-        const ansIdx = questionConfig.answers.indexOf(skipAnswer);
-        newAnswers.push({
-          questionId: qid,
-          answerIndex: ansIdx,
-          answerValue: 0,
-          answerData: skipAnswer
-        });
-      }
-    }
-  });
-  userAnswers = newAnswers;
-}
-
-function restoreUserAnswers() {
-  syncUserAnswersFromDOM();
-  simulatedEntity = null;
-  computeAndDisplayResults();
-  showPopup(translations?.ui?.restored || 'Przywrócono Twoje odpowiedzi i odświeżono wyniki.');
-}
-
-function simulateAnswers(selectedName) {
-  const isParty = config.parties.some(p => p.name === selectedName);
-  const isIdeology = config.ideologies.some(i => i.name === selectedName);
-  if (isParty) {
-    simulatedEntity = { type: 'party', name: selectedName };
-  } else if (isIdeology) {
-    simulatedEntity = { type: 'ideology', name: selectedName };
-  } else {
-    simulatedEntity = null;
-  }
-
-  const simulatedAnswers = [];
-  for (const question of config.questions) {
-    let bestAnswer = null;
-    let bestAbsValue = -1;
-    for (const answer of question.answers) {
-      const partiesFor = answer.parties_for || [];
-      const ideologiesFor = answer.ideologies_for || [];
-      if (partiesFor.includes(selectedName) || ideologiesFor.includes(selectedName)) {
-        const absVal = Math.abs(answer.value);
-        if (absVal > bestAbsValue) {
-          bestAbsValue = absVal;
-          bestAnswer = answer;
-        }
-      }
-    }
-    if (!bestAnswer) {
-      bestAnswer = question.answers.find(a => a.value === 0 && (a.label.includes('Pomiń') || a.label.includes('Skip')));
-      if (!bestAnswer) bestAnswer = question.answers[0];
-    }
-    const answerIndex = question.answers.findIndex(a => a === bestAnswer);
-    simulatedAnswers.push({
-      questionId: question.id,
-      answerIndex: answerIndex,
-      answerValue: bestAnswer.value,
-      answerData: bestAnswer
-    });
-  }
-  userAnswers = simulatedAnswers;
-  updateDOMSelections();
-  computeAndDisplayResults();
-}
-
-function setupSimulation() {
-  simulationSelect = document.getElementById('simulateSelect');
-  simulateBtn = document.getElementById('simulateBtn');
-  restoreBtn = document.getElementById('restoreBtn');
-  if (!simulationSelect || !simulateBtn || !restoreBtn) return;
-  if (!config || !config.parties || !config.ideologies) return;
-  simulationSelect.innerHTML = '';
-  if (config.parties.length) {
-    const partiesGroup = document.createElement('optgroup');
-    partiesGroup.label = translations?.ui?.partiesGroup || '🇵🇱 Partie polityczne';
-    config.parties.forEach(party => {
-      const option = document.createElement('option');
-      option.value = party.name;
-      option.textContent = party.name;
-      partiesGroup.appendChild(option);
-    });
-    simulationSelect.appendChild(partiesGroup);
-  }
-  if (config.ideologies.length) {
-    const ideologiesGroup = document.createElement('optgroup');
-    ideologiesGroup.label = translations?.ui?.ideologiesGroup || '💡 Ideologie';
-    config.ideologies.forEach(ideo => {
-      const option = document.createElement('option');
-      option.value = ideo.name;
-      option.textContent = ideo.name;
-      ideologiesGroup.appendChild(option);
-    });
-    simulationSelect.appendChild(ideologiesGroup);
-  }
-  if (config.parties.length) simulationSelect.value = config.parties[0].name;
-  else if (config.ideologies.length) simulationSelect.value = config.ideologies[0].name;
-  simulateBtn.addEventListener('click', () => {
-    const selected = simulationSelect.value;
-    if (selected) simulateAnswers(selected);
-    else alert(translations?.ui?.selectEntity || 'Wybierz partię lub ideologię.');
-  });
-  restoreBtn.addEventListener('click', restoreUserAnswers);
-}
-
-function setupModeSelector() {
-  const radios = document.querySelectorAll('input[name="scoringMode"]');
-  const helpBtn = document.getElementById('modeHelpBtn');
-  const savedMode = localStorage.getItem('scoringMode');
-  if (savedMode === 'affirmative') {
-    currentScoringMode = 'affirmative';
-    document.querySelector('input[value="affirmative"]').checked = true;
-  } else {
-    currentScoringMode = 'full';
-    document.querySelector('input[value="full"]').checked = true;
-  }
-  radios.forEach(radio => {
-    radio.addEventListener('change', (e) => {
-      if (e.target.checked) {
-        currentScoringMode = e.target.value;
-        localStorage.setItem('scoringMode', currentScoringMode);
-        if (resultsDiv.style.display !== 'none') {
-          computeAndDisplayResults();
-        }
-      }
-    });
-  });
-  helpBtn.addEventListener('click', () => {
-    const helpText = translations?.ui?.modeHelpText || '🧠 Tryb pełnego profilowania\nUwzględnia zarówno poglądy popierane, jak i odrzucane.\n\n✅ Tryb afirmacyjny\nUwzględnia wyłącznie poglądy aktywnie popierane.';
-    showPopup(helpText);
-  });
-}
-
 // ======================= INTEGRACJA Z KOMPASEM =======================
+// Upewnij się, że pary z compass-core.js są dostępne globalnie
+const corePairs = window.corePairs || [];
+const extraPairs = window.extraPairs || [];
+const allCompassPairs = window.allCompassPairs || [...corePairs, ...extraPairs];
+
 let currentCompassMode = 'weighted';
 let currentCreativeConfig = {
   activePairs: [],
@@ -1518,21 +1336,49 @@ function initCompassAfterResults() {
   loadOverlays(false, false, window.compassInstance);
 }
 
-// Modyfikacja funkcji computeAndDisplayResults – dodanie budowania wartości kompasu i inicjalizacji
-const originalComputeAndDisplay = computeAndDisplayResults;
-computeAndDisplayResults = function() {
-  originalComputeAndDisplay();
-  const { pairResults } = computeScores(currentScoringMode);
-  compassUserValues = buildUserValuesMap(pairResults);
-  if (!window.compassInstance) {
-    initCompassAfterResults();
-  } else {
-    updateCompassDisplay();
-    const showParties = document.getElementById('toggle-parties')?.checked || false;
-    const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
-    loadOverlays(showParties, showIdeologies, window.compassInstance);
-  }
-};
+let manualPanelVisible = false;
+
+function setupManualPanelInModal() {
+  const toggleBtn = document.getElementById('toggle-manual-panel');
+  const manualPanel = document.getElementById('manual-panel');
+  const resetBtn = document.getElementById('reset-manual-to-test');
+  const applyBtn = document.getElementById('apply-manual-to-marker');
+  if (!toggleBtn || !manualPanel) return;
+
+  toggleBtn.addEventListener('click', () => {
+    if (manualPanel.style.display === 'none') {
+      manualPanel.style.display = 'block';
+      manualPanelVisible = true;
+      refreshManualPanel();
+    } else {
+      manualPanel.style.display = 'none';
+      manualPanelVisible = false;
+    }
+  });
+
+  resetBtn.addEventListener('click', () => {
+    if (!compassUserValues) return;
+    const pairs = getActivePairsForMode(currentCompassMode, currentCreativeConfig);
+    renderManualForm(pairs, compassUserValues);
+  });
+
+  applyBtn.addEventListener('click', () => {
+    const pairs = getActivePairsForMode(currentCompassMode, currentCreativeConfig);
+    const manualValuesMap = buildValuesMapFromManual(pairs);
+    const coords = computeCoordinatesFromValues(manualValuesMap, currentCompassMode, currentCreativeConfig);
+    if (window.modalCompassInstance) {
+      window.modalCompassInstance.updateMarker(coords.x, coords.y);
+      window.modalCompassInstance.updateActivePairs(coords.activePairsCount);
+    }
+  });
+}
+
+function refreshManualPanel() {
+  if (!manualPanelVisible) return;
+  const pairs = getActivePairsForMode(currentCompassMode, currentCreativeConfig);
+  const currentVals = compassUserValues || {};
+  renderManualForm(pairs, currentVals);
+}
 
 // Obsługa pełnoekranowego modala kompasu
 function initCompassModal() {
@@ -1540,6 +1386,7 @@ function initCompassModal() {
   const openBtn = document.getElementById('open-compass-modal');
   const closeBtn = document.getElementById('close-modal-btn');
   if (!modal || !openBtn) return;
+
   openBtn.addEventListener('click', () => {
     modal.classList.remove('hidden');
     if (!window.modalCompassInstance) {
@@ -1558,8 +1405,9 @@ function initCompassModal() {
             const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
             const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
             loadOverlays(showParties, showIdeologies, window.modalCompassInstance);
-            // Synchronizacja z głównym kompasem
             if (window.compassInstance && window.compassInstance.setMode) window.compassInstance.setMode(mode);
+            // Odśwież panel ręczny po zmianie trybu
+            if (manualPanelVisible) refreshManualPanel();
           },
           onCreativeConfigChange: (config) => {
             currentCreativeConfig = config;
@@ -1568,9 +1416,9 @@ function initCompassModal() {
             const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
             loadOverlays(showParties, showIdeologies, window.modalCompassInstance);
             if (window.compassInstance && window.compassInstance.setCreativeConfig) window.compassInstance.setCreativeConfig(config);
+            if (manualPanelVisible) refreshManualPanel();
           }
         });
-        // Przekaż wartości użytkownika
         if (compassUserValues) {
           const coords = computeCoordinatesFromValues(compassUserValues, currentCompassMode, currentCreativeConfig);
           window.modalCompassInstance.updateMarker(coords.x, coords.y);
@@ -1588,10 +1436,37 @@ function initCompassModal() {
           modalToggleIdeologies.addEventListener('change', updateModalOverlays);
           updateModalOverlays();
         }
-        // Konfiguracja kreatywna – przekażemy przez interfejs CompassUI
+        // Konfiguracja kreatywna
         if (window.modalCompassInstance.setCreativeConfigPanel) {
-          window.modalCompassInstance.setCreativeConfigPanel(document.getElementById('creative-config-area'), document.getElementById('modal-creative-pairs-list'), document.getElementById('modal-label-top'), document.getElementById('modal-label-bottom'), document.getElementById('modal-label-left'), document.getElementById('modal-label-right'), document.getElementById('modal-apply-labels'), document.getElementById('modal-apply-creative'));
+          window.modalCompassInstance.setCreativeConfigPanel(
+            document.getElementById('creative-config-area'),
+            document.getElementById('modal-creative-pairs-list'),
+            document.getElementById('modal-label-top'),
+            document.getElementById('modal-label-bottom'),
+            document.getElementById('modal-label-left'),
+            document.getElementById('modal-label-right'),
+            document.getElementById('modal-apply-labels'),
+            document.getElementById('modal-apply-creative')
+          );
         }
+        // ========== DODANIE OBSŁUGI SELECTA TRYBU W MODALU ==========
+        const modalModeSelect = document.getElementById('modal-compass-mode-select');
+        if (modalModeSelect) {
+          modalModeSelect.value = currentCompassMode;
+          modalModeSelect.addEventListener('change', (e) => {
+            const newMode = e.target.value;
+            currentCompassMode = newMode;
+            if (window.modalCompassInstance) window.modalCompassInstance.setMode(newMode);
+            if (window.compassInstance) window.compassInstance.setMode(newMode);
+            updateCompassDisplay();
+            const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
+            const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
+            loadOverlays(showParties, showIdeologies, window.modalCompassInstance);
+            if (manualPanelVisible) refreshManualPanel();
+          });
+        }
+        // ========== PANEL RĘCZNEGO WPROWADZANIA ==========
+        setupManualPanelInModal();
       }
     } else {
       // odświeżenie
@@ -1602,6 +1477,7 @@ function initCompassModal() {
       const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
       const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
       loadOverlays(showParties, showIdeologies, window.modalCompassInstance);
+      if (manualPanelVisible) refreshManualPanel();
     }
   });
   closeBtn.addEventListener('click', () => {
@@ -1611,6 +1487,22 @@ function initCompassModal() {
     if (e.target === modal) modal.classList.add('hidden');
   });
 }
+
+// Modyfikacja funkcji computeAndDisplayResults – dodanie budowania wartości kompasu i inicjalizacji
+const originalComputeAndDisplay = computeAndDisplayResults;
+computeAndDisplayResults = function() {
+  originalComputeAndDisplay();
+  const { pairResults } = computeScores(currentScoringMode);
+  compassUserValues = buildUserValuesMap(pairResults);
+  if (!window.compassInstance) {
+    initCompassAfterResults();
+  } else {
+    updateCompassDisplay();
+    const showParties = document.getElementById('toggle-parties')?.checked || false;
+    const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
+    loadOverlays(showParties, showIdeologies, window.compassInstance);
+  }
+};
 
 // Po załadowaniu configu, dodajemy dodatkowe inicjalizacje
 const originalLoadConfig = loadConfig;
