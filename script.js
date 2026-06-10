@@ -1260,4 +1260,449 @@ function setupModeSelector() {
   });
 }
 
+// ======================= INTEGRACJA Z KOMPASEM =======================
+let currentCompassMode = 'weighted';
+let currentCreativeConfig = {
+  activePairs: [],
+  labels: { top: "Heteronomia", bottom: "Autonomia", left: "Socjalizm", right: "Kapitalizm" }
+};
+let compassUserValues = null; // mapa wartości dla użytkownika
+
+// Funkcja do budowania mapy wartości dla użytkownika na podstawie pairResults
+function buildUserValuesMap(pairResults) {
+  const valuesMap = {};
+  // Używamy tych samych identyfikatorów par co w compass-core
+  const allCompassPairs = [...corePairs, ...extraPairs];
+  for (const pair of allCompassPairs) {
+    // Znajdź w pairResults parę pasującą (left/right)
+    const found = pairResults.find(p => p.left === pair.negativeLabel && p.right === pair.positiveLabel);
+    if (found) {
+      valuesMap[pair.id] = {
+        negative: found.leftPercent,
+        positive: found.rightPercent
+      };
+    } else {
+      // Szukaj odwrotnej kolejności
+      const foundReverse = pairResults.find(p => p.left === pair.positiveLabel && p.right === pair.negativeLabel);
+      if (foundReverse) {
+        valuesMap[pair.id] = {
+          negative: foundReverse.rightPercent,
+          positive: foundReverse.leftPercent
+        };
+      } else {
+        valuesMap[pair.id] = { negative: null, positive: null };
+      }
+    }
+  }
+  return valuesMap;
+}
+
+// Funkcja aktualizująca kompas w kontenerze głównym i w modalu
+function updateCompassDisplay() {
+  const valuesMap = compassUserValues;
+  if (!valuesMap) return;
+  const coords = computeCoordinatesFromValues(valuesMap, currentCompassMode, currentCreativeConfig);
+  if (window.compassInstance && window.compassInstance.updateMarker) {
+    window.compassInstance.updateMarker(coords.x, coords.y);
+    window.compassInstance.updateActivePairs(coords.activePairsCount);
+    window.compassInstance.updateModeLabel(currentCompassMode);
+  }
+  if (window.modalCompassInstance && window.modalCompassInstance.updateMarker) {
+    window.modalCompassInstance.updateMarker(coords.x, coords.y);
+    window.modalCompassInstance.updateActivePairs(coords.activePairsCount);
+    window.modalCompassInstance.updateModeLabel(currentCompassMode);
+  }
+  // Zapamiętaj współrzędne do ewentualnego użycia przy nakładkach
+  window.currentUserCoords = { x: coords.x, y: coords.y };
+}
+
+// Ładowanie nakładek (partie, ideologie)
+async function loadOverlays(showParties, showIdeologies, compassInstance) {
+  if (!compassInstance || !compassInstance.clearOverlays) return;
+  compassInstance.clearOverlays();
+  if (!config) return;
+  if (showParties && config.parties) {
+    for (const party of config.parties) {
+      const coords = await getEntityCoordinates(party.name, 'party');
+      if (coords) {
+        const logoUrl = getPartyLogoUrl(party.name);
+        compassInstance.addOverlay(logoUrl, coords.x, coords.y, 'party', party.name, party.description);
+      }
+    }
+  }
+  if (showIdeologies && config.ideologies) {
+    for (const ideology of config.ideologies) {
+      const coords = await getEntityCoordinates(ideology.name, 'ideology');
+      if (coords) {
+        const logoUrl = getIdeologyLogoUrl(ideology.name);
+        compassInstance.addOverlay(logoUrl, coords.x, coords.y, 'ideology', ideology.name, ideology.description);
+      }
+    }
+  }
+}
+
+// Obliczanie współrzędnych dla partii/ideologii (symulacja odpowiedzi)
+async function getEntityCoordinates(name, type) {
+  // Symulacja odpowiedzi dla danej entitiy (używamy trybu full)
+  const simulatedAnswers = [];
+  for (const question of config.questions) {
+    let bestAnswer = null;
+    let bestAbsValue = -1;
+    for (const answer of question.answers) {
+      const partiesFor = answer.parties_for || [];
+      const ideologiesFor = answer.ideologies_for || [];
+      if ((type === 'party' && partiesFor.includes(name)) || (type === 'ideology' && ideologiesFor.includes(name))) {
+        const absVal = Math.abs(answer.value);
+        if (absVal > bestAbsValue) {
+          bestAbsValue = absVal;
+          bestAnswer = answer;
+        }
+      }
+    }
+    if (!bestAnswer) {
+      bestAnswer = question.answers.find(a => a.value === 0 && (a.label.includes('Pomiń') || a.label.includes('Skip')));
+      if (!bestAnswer) bestAnswer = question.answers[0];
+    }
+    simulatedAnswers.push({
+      questionId: question.id,
+      answerIndex: question.answers.indexOf(bestAnswer),
+      answerValue: bestAnswer.value,
+      answerData: bestAnswer
+    });
+  }
+  // Oblicz pairResults dla tych odpowiedzi (tryb full)
+  const tmpScores = computeScoresForAnswers(simulatedAnswers, 'full');
+  const valuesMap = buildUserValuesMap(tmpScores.pairResults);
+  const coords = computeCoordinatesFromValues(valuesMap, currentCompassMode, currentCreativeConfig);
+  return { x: coords.x, y: coords.y };
+}
+
+// Pomocnicza funkcja do obliczania wyników dla podanych odpowiedzi i trybu
+function computeScoresForAnswers(answers, mode) {
+  const ideologyScores = new Map();
+  const partyScores = new Map();
+  const valueScores = new Map();
+
+  config.ideologies.forEach(ideo => ideologyScores.set(ideo.name, { sum: 0, maxPossible: 0 }));
+  config.parties.forEach(party => partyScores.set(party.name, { sum: 0, maxPossible: 0 }));
+
+  const allValueNames = new Set();
+  config.pairsOfValues.forEach(pair => { allValueNames.add(pair.left); allValueNames.add(pair.right); });
+  config.hiddenValues.forEach(v => allValueNames.add(v));
+  allValueNames.forEach(v => valueScores.set(v, { sum: 0, maxPossible: 0 }));
+
+  for (const ans of answers) {
+    const weight = ans.answerValue;
+    if (weight === 0) continue;
+    const answer = ans.answerData;
+    const absWeight = Math.abs(weight);
+
+    if (mode === 'full') {
+      for (const ideo of (answer.ideologies_for || [])) {
+        const rec = ideologyScores.get(ideo);
+        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
+      }
+      for (const ideo of (answer.ideologies_against || [])) {
+        const rec = ideologyScores.get(ideo);
+        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; }
+      }
+    } else {
+      if (weight > 0) {
+        for (const ideo of (answer.ideologies_for || [])) {
+          const rec = ideologyScores.get(ideo);
+          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
+        }
+      }
+    }
+    // analogicznie dla partii i wartości – uproszczone, bo potrzebujemy tylko pairResults
+    // Do pairResults potrzebujemy tylko wartości valueScores
+    if (mode === 'full') {
+      for (const val of (answer.values_for || [])) {
+        const rec = valueScores.get(val);
+        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
+      }
+      for (const val of (answer.values_against || [])) {
+        const rec = valueScores.get(val);
+        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; }
+      }
+    } else {
+      if (weight > 0) {
+        for (const val of (answer.values_for || [])) {
+          const rec = valueScores.get(val);
+          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
+        }
+      }
+    }
+  }
+
+  // Oblicz pairResults podobnie jak w computeScores
+  const pairResults = [];
+  for (let pair of config.pairsOfValues) {
+    const recLeft = valueScores.get(pair.left);
+    const recRight = valueScores.get(pair.right);
+    const sumL = recLeft ? recLeft.sum : 0;
+    const maxL = recLeft ? recLeft.maxPossible : 0;
+    const sumR = recRight ? recRight.sum : 0;
+    const maxR = recRight ? recRight.maxPossible : 0;
+    const totalMax = maxL + maxR;
+    let leftPercent, rightPercent;
+    if (totalMax === 0) {
+      leftPercent = 50;
+      rightPercent = 50;
+    } else {
+      const net = sumL - sumR;
+      leftPercent = (net + totalMax) / (2 * totalMax) * 100;
+      leftPercent = Math.min(100, Math.max(0, leftPercent));
+      rightPercent = 100 - leftPercent;
+    }
+    pairResults.push({
+      left: pair.left,
+      right: pair.right,
+      leftPercent: leftPercent,
+      rightPercent: rightPercent,
+    });
+  }
+  return { pairResults };
+}
+
+// Inicjalizacja kompasu po pokazaniu wyników
+function initCompassAfterResults() {
+  const container = document.getElementById('compass-container');
+  if (!container) return;
+  if (window.compassInstance && window.compassInstance.destroy) window.compassInstance.destroy();
+  window.compassInstance = new CompassUI(container, {
+    mode: currentCompassMode,
+    onModeChange: (mode) => {
+      currentCompassMode = mode;
+      if (mode === 'creative') {
+        // Wczytaj zapisaną konfigurację kreatywną
+        if (window.compassInstance.getCreativeConfig) {
+          currentCreativeConfig = window.compassInstance.getCreativeConfig();
+        }
+      }
+      updateCompassDisplay();
+      // Odśwież nakładki
+      const showParties = document.getElementById('toggle-parties')?.checked || false;
+      const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
+      loadOverlays(showParties, showIdeologies, window.compassInstance);
+    },
+    onCreativeConfigChange: (config) => {
+      currentCreativeConfig = config;
+      updateCompassDisplay();
+      const showParties = document.getElementById('toggle-parties')?.checked || false;
+      const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
+      loadOverlays(showParties, showIdeologies, window.compassInstance);
+    }
+  });
+  // Ustaw wartości użytkownika
+  if (compassUserValues) {
+    const coords = computeCoordinatesFromValues(compassUserValues, currentCompassMode, currentCreativeConfig);
+    window.compassInstance.updateMarker(coords.x, coords.y);
+    window.compassInstance.updateActivePairs(coords.activePairsCount);
+    window.compassInstance.updateModeLabel(currentCompassMode);
+  }
+  // Obsługa przełączników nakładek
+  const toggleParties = document.getElementById('toggle-parties');
+  const toggleIdeologies = document.getElementById('toggle-ideologies');
+  if (toggleParties) {
+    toggleParties.addEventListener('change', () => {
+      loadOverlays(toggleParties.checked, toggleIdeologies.checked, window.compassInstance);
+    });
+  }
+  if (toggleIdeologies) {
+    toggleIdeologies.addEventListener('change', () => {
+      loadOverlays(toggleParties.checked, toggleIdeologies.checked, window.compassInstance);
+    });
+  }
+  // Inicjalne załadowanie nakładek
+  loadOverlays(false, false, window.compassInstance);
+}
+
+// Modyfikacja funkcji computeAndDisplayResults – dodanie budowania wartości kompasu i inicjalizacji
+const originalComputeAndDisplay = computeAndDisplayResults;
+computeAndDisplayResults = function() {
+  originalComputeAndDisplay();
+  const { pairResults } = computeScores(currentScoringMode);
+  compassUserValues = buildUserValuesMap(pairResults);
+  if (!window.compassInstance) {
+    initCompassAfterResults();
+  } else {
+    updateCompassDisplay();
+    const showParties = document.getElementById('toggle-parties')?.checked || false;
+    const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
+    loadOverlays(showParties, showIdeologies, window.compassInstance);
+  }
+};
+
+// Obsługa pełnoekranowego modala kompasu
+function initCompassModal() {
+  const modal = document.getElementById('compass-modal');
+  const openBtn = document.getElementById('open-compass-modal');
+  const closeBtn = document.getElementById('close-modal-btn');
+  if (!modal || !openBtn) return;
+  openBtn.addEventListener('click', () => {
+    modal.classList.remove('hidden');
+    if (!window.modalCompassInstance) {
+      const modalContainer = document.getElementById('modal-compass-container');
+      if (modalContainer) {
+        window.modalCompassInstance = new CompassUI(modalContainer, {
+          mode: currentCompassMode,
+          onModeChange: (mode) => {
+            currentCompassMode = mode;
+            if (mode === 'creative') {
+              if (window.modalCompassInstance.getCreativeConfig) {
+                currentCreativeConfig = window.modalCompassInstance.getCreativeConfig();
+              }
+            }
+            updateCompassDisplay();
+            const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
+            const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
+            loadOverlays(showParties, showIdeologies, window.modalCompassInstance);
+            // Synchronizacja z głównym kompasem
+            if (window.compassInstance && window.compassInstance.setMode) window.compassInstance.setMode(mode);
+          },
+          onCreativeConfigChange: (config) => {
+            currentCreativeConfig = config;
+            updateCompassDisplay();
+            const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
+            const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
+            loadOverlays(showParties, showIdeologies, window.modalCompassInstance);
+            if (window.compassInstance && window.compassInstance.setCreativeConfig) window.compassInstance.setCreativeConfig(config);
+          }
+        });
+        // Przekaż wartości użytkownika
+        if (compassUserValues) {
+          const coords = computeCoordinatesFromValues(compassUserValues, currentCompassMode, currentCreativeConfig);
+          window.modalCompassInstance.updateMarker(coords.x, coords.y);
+          window.modalCompassInstance.updateActivePairs(coords.activePairsCount);
+          window.modalCompassInstance.updateModeLabel(currentCompassMode);
+        }
+        // Obsługa przełączników nakładek w modalu
+        const modalToggleParties = document.getElementById('modal-toggle-parties');
+        const modalToggleIdeologies = document.getElementById('modal-toggle-ideologies');
+        if (modalToggleParties && modalToggleIdeologies) {
+          const updateModalOverlays = () => {
+            loadOverlays(modalToggleParties.checked, modalToggleIdeologies.checked, window.modalCompassInstance);
+          };
+          modalToggleParties.addEventListener('change', updateModalOverlays);
+          modalToggleIdeologies.addEventListener('change', updateModalOverlays);
+          updateModalOverlays();
+        }
+        // Konfiguracja kreatywna – przekażemy przez interfejs CompassUI
+        if (window.modalCompassInstance.setCreativeConfigPanel) {
+          window.modalCompassInstance.setCreativeConfigPanel(document.getElementById('creative-config-area'), document.getElementById('modal-creative-pairs-list'), document.getElementById('modal-label-top'), document.getElementById('modal-label-bottom'), document.getElementById('modal-label-left'), document.getElementById('modal-label-right'), document.getElementById('modal-apply-labels'), document.getElementById('modal-apply-creative'));
+        }
+      }
+    } else {
+      // odświeżenie
+      const coords = computeCoordinatesFromValues(compassUserValues, currentCompassMode, currentCreativeConfig);
+      window.modalCompassInstance.updateMarker(coords.x, coords.y);
+      window.modalCompassInstance.updateActivePairs(coords.activePairsCount);
+      window.modalCompassInstance.updateModeLabel(currentCompassMode);
+      const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
+      const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
+      loadOverlays(showParties, showIdeologies, window.modalCompassInstance);
+    }
+  });
+  closeBtn.addEventListener('click', () => {
+    modal.classList.add('hidden');
+  });
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) modal.classList.add('hidden');
+  });
+}
+
+// Po załadowaniu configu, dodajemy dodatkowe inicjalizacje
+const originalLoadConfig = loadConfig;
+loadConfig = async function() {
+  await originalLoadConfig();
+  // Po załadowaniu configu, ustawiamy nasłuchiwanie na zmianę trybu kompasu
+  const compassModeSelect = document.getElementById('compass-mode-select');
+  if (compassModeSelect) {
+    compassModeSelect.addEventListener('change', (e) => {
+      currentCompassMode = e.target.value;
+      if (window.compassInstance && window.compassInstance.setMode) window.compassInstance.setMode(currentCompassMode);
+      if (window.modalCompassInstance && window.modalCompassInstance.setMode) window.modalCompassInstance.setMode(currentCompassMode);
+      updateCompassDisplay();
+      const showParties = document.getElementById('toggle-parties')?.checked || false;
+      const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
+      loadOverlays(showParties, showIdeologies, window.compassInstance);
+      if (window.modalCompassInstance) {
+        const modalShowParties = document.getElementById('modal-toggle-parties')?.checked || false;
+        const modalShowIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
+        loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance);
+      }
+    });
+    // ustawienie opisu trybu
+    const modeDesc = document.getElementById('compass-mode-desc');
+    if (modeDesc) {
+      const descriptions = {
+        weighted: 'Wagowy – uwzględnia domyślne wagi poszczególnych par.',
+        equal: 'Jednakowe wagi – każda para ma wagę 1.',
+        institutional: 'Instytucjonalny – tylko pary związane z instytucjami państwowymi.',
+        creative: 'Kreatywny – ręczny wybór par i wag.'
+      };
+      compassModeSelect.addEventListener('change', () => {
+        modeDesc.textContent = descriptions[compassModeSelect.value] || '';
+      });
+      modeDesc.textContent = descriptions[compassModeSelect.value];
+    }
+  }
+  initCompassModal();
+};
+
+// Przeładowanie funkcji symulacji, aby po symulacji odświeżyć kompas
+const originalSimulateAnswers = simulateAnswers;
+simulateAnswers = function(selectedName) {
+  originalSimulateAnswers(selectedName);
+  // Po symulacji odpowiedzi, przelicz wartości dla kompasu
+  const { pairResults } = computeScores(currentScoringMode);
+  compassUserValues = buildUserValuesMap(pairResults);
+  updateCompassDisplay();
+  const showParties = document.getElementById('toggle-parties')?.checked || false;
+  const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
+  loadOverlays(showParties, showIdeologies, window.compassInstance);
+  if (window.modalCompassInstance) {
+    const modalShowParties = document.getElementById('modal-toggle-parties')?.checked || false;
+    const modalShowIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
+    loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance);
+  }
+};
+
+const originalRestoreUserAnswers = restoreUserAnswers;
+restoreUserAnswers = function() {
+  originalRestoreUserAnswers();
+  const { pairResults } = computeScores(currentScoringMode);
+  compassUserValues = buildUserValuesMap(pairResults);
+  updateCompassDisplay();
+  const showParties = document.getElementById('toggle-parties')?.checked || false;
+  const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
+  loadOverlays(showParties, showIdeologies, window.compassInstance);
+  if (window.modalCompassInstance) {
+    const modalShowParties = document.getElementById('modal-toggle-parties')?.checked || false;
+    const modalShowIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
+    loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance);
+  }
+};
+
+// Dodatkowo, po imporcie odpowiedzi, też odświeżamy kompas
+const originalImportAnswers = importAnswersFromExportCode;
+importAnswersFromExportCode = function(rawCode) {
+  const success = originalImportAnswers(rawCode);
+  if (success) {
+    const { pairResults } = computeScores(currentScoringMode);
+    compassUserValues = buildUserValuesMap(pairResults);
+    updateCompassDisplay();
+    const showParties = document.getElementById('toggle-parties')?.checked || false;
+    const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
+    loadOverlays(showParties, showIdeologies, window.compassInstance);
+    if (window.modalCompassInstance) {
+      const modalShowParties = document.getElementById('modal-toggle-parties')?.checked || false;
+      const modalShowIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
+      loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance);
+    }
+  }
+  return success;
+};
+
 loadConfig();
