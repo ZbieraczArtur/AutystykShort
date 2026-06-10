@@ -1646,3 +1646,200 @@ body.dark .badge-item:hover {
 body.dark .compass-link {
   background: linear-gradient(135deg, #f59e0b, #38bdf8);
 }
+
+/* style.css – uzupełniony o style dla kompasu i modala */
+/* ... (dotychczasowa treść pozostaje bez zmian) ... */
+
+/* Dodatkowe style dla kompasu w wynikach */
+.compass-wrapper {
+  margin: 2rem 0;
+  padding: 1rem;
+  background: var(--card-bg);
+  border-radius: 32px;
+  border: 1px solid var(--card-border);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.compass-wrapper:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.compass-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  background: var(--card-bg);
+  border-radius: 28px;
+  padding: 0.8rem 1.2rem;
+}
+.compass-mode-selector {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.compass-mode-selector select {
+  padding: 0.4rem 0.8rem;
+  border-radius: 60px;
+  background: var(--btn-bg);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+}
+.overlay-controls {
+  display: flex;
+  gap: 1rem;
+}
+.overlay-controls label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  cursor: pointer;
+}
+.open-modal-btn {
+  background: var(--submit-bg);
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 60px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.open-modal-btn:hover {
+  transform: scale(0.96);
+}
+
+/* Modal pełnoekranowy */
+.compass-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.85);
+  backdrop-filter: blur(12px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeModal 0.2s ease;
+}
+.compass-modal.hidden {
+  display: none;
+}
+.compass-modal-content {
+  background: var(--card-bg);
+  width: 90%;
+  max-width: 1400px;
+  height: 90%;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+.compass-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--footer-border);
+}
+.compass-modal-header h2 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.close-modal-btn {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--text-primary);
+  line-height: 1;
+}
+.compass-modal-body {
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  padding: 1rem;
+  gap: 1rem;
+}
+.modal-compass {
+  flex: 2;
+  min-width: 0;
+}
+.modal-controls {
+  flex: 1;
+  background: var(--desc-bg);
+  border-radius: 28px;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.creative-config-area {
+  border-top: 1px solid var(--footer-border);
+  padding-top: 1rem;
+}
+.creative-label-edit {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.creative-label-edit input {
+  flex: 1;
+  min-width: 80px;
+  padding: 0.4rem;
+  border-radius: 28px;
+  border: 1px solid var(--card-border);
+  background: var(--btn-bg);
+}
+.creative-pairs-list {
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.creative-pair-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--creative-panel-bg);
+  padding: 0.4rem 0.8rem;
+  border-radius: 40px;
+}
+.creative-pair-row label {
+  flex: 2;
+  font-size: 0.8rem;
+}
+.creative-pair-row select, .creative-pair-row input {
+  width: auto;
+  padding: 0.2rem;
+}
+.primary-btn, .secondary-btn {
+  background: var(--submit-bg);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 60px;
+  color: white;
+  cursor: pointer;
+}
+.secondary-btn {
+  background: var(--btn-bg);
+  color: var(--text-primary);
+}
+@media (max-width: 768px) {
+  .compass-modal-body {
+    flex-direction: column;
+  }
+  .modal-compass {
+    min-height: 300px;
+  }
+}
