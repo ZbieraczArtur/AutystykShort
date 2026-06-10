@@ -73,3 +73,8 @@ function computeCoordinatesFromValues(valuesMap, mode, creativeConfig = { active
     activePairsCount: activeX + activeY
   };
 }
+
+// Udostępnienie globalne dla innych skryptów (script.js)
+window.corePairs = corePairs;
+window.extraPairs = extraPairs;
+window.allCompassPairs = [...corePairs, ...extraPairs];
