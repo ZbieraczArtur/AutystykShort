@@ -8,7 +8,6 @@
   <title>NeoAutystyk Short</title>
   <link rel="icon" type="image/svg+xml" href="images/ALogo.svg">
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="compass.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
@@ -79,14 +78,13 @@
       <h2 id="resultsTitle">Twoje wyniki</h2>
       <div id="values-results"></div>
       
-      <!-- NOWY KONTENER NA RANKINGI OBOK SIEBIE -->
-      <div class="ideologies-parties-container">
+      <!-- NOWY UKŁAD: rankingi + kompas w siatce 3 kolumn -->
+      <div class="results-grid">
         <div id="ideologies-results"></div>
         <div id="parties-results"></div>
+        <div id="compass-container" class="compass-wrapper"></div>
       </div>
 
-      <!-- KOMPAS POLITYCZNY -->
-      <div id="compass-container" class="compass-wrapper"></div>
       <div class="compass-controls">
         <div class="compass-mode-selector">
           <span>⚙️ Tryb obliczeń kompasu:</span>
@@ -143,6 +141,18 @@
             <label><input type="checkbox" id="modal-toggle-parties"> 🏛️ Partie polityczne</label>
             <label><input type="checkbox" id="modal-toggle-ideologies"> 💡 Ideologie</label>
           </div>
+          
+          <!-- NOWY PANEL RĘCZNEJ EDYCJI (zwijany) -->
+          <div class="manual-edit-panel">
+            <button id="toggle-manual-panel" class="secondary-btn">✏️ Ręczna edycja wyniku (rozwiń)</button>
+            <div id="manual-panel" style="display: none; margin-top: 1rem;">
+              <div id="manual-pairs-container" class="manual-pairs-container"></div>
+              <div class="manual-actions">
+                <button id="reset-manual-to-test" class="secondary-btn">Przywróć wyniki testu</button>
+              </div>
+            </div>
+          </div>
+
           <div id="creative-config-area" class="creative-config-area" style="display: none;">
             <h4>⚙️ Konfiguracja trybu kreatywnego</h4>
             <div class="creative-label-edit">
@@ -155,7 +165,6 @@
             <div id="modal-creative-pairs-list" class="creative-pairs-list"></div>
             <button id="modal-apply-creative" class="primary-btn">Zastosuj konfigurację kreatywną</button>
           </div>
-          <!-- NOWY PRZYCISK EKSPORTU KONFIGURACJI KREATYWNEJ -->
           <button id="export-creative-config" class="export-creative-btn" style="margin-top: 15px;">📤 Eksportuj konfigurację kreatywną</button>
         </div>
       </div>
