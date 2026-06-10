@@ -1,4 +1,90 @@
 /* style.css – nowoczesny, płynny, estetyczny wygląd + grid dla kategorii wartości + rankingi obok siebie */
+
+/* ========== NOWE REGUŁY (dodane) ========== */
+
+/* Ustawienie siatki wyników: rankingi + kompas obok siebie */
+.results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  margin: 2rem 0;
+  align-items: start;
+}
+
+/* Responsywność: na mniejszych ekranach kompas pod rankingami */
+@media (max-width: 1000px) {
+  .results-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .results-grid #compass-container {
+    grid-column: span 2;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 680px) {
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+  .results-grid #compass-container {
+    grid-column: auto;
+  }
+}
+
+/* Zmniejszenie logotypów na nakładkach kompasu (tryb domyślny) */
+.compass-overlay {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* Kompas w modalu – większy */
+.modal-compass .compass-frame {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.modal-compass .compass {
+  width: 100%;
+  min-height: 400px;
+  aspect-ratio: 1 / 1;
+}
+
+/* Panel ręcznej edycji w modalu */
+.manual-pairs-container {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+.manual-pair {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 0.8rem;
+  flex-wrap: wrap;
+  background: var(--card-bg);
+  padding: 0.6rem;
+  border-radius: 40px;
+}
+.manual-pair label {
+  flex: 1;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.manual-pair input {
+  width: 80px;
+  text-align: center;
+}
+.manual-pair .versus {
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.manual-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+/* ========== KONIEC NOWYCH REGUŁ ========== */
+
 * {
   margin: 0;
   padding: 0;
