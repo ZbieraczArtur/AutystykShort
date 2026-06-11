@@ -45,7 +45,7 @@ function computeCoordinatesFromValues(valuesMap, mode, creativeConfig = { active
     pairsToUse = creativeConfig.activePairs.map(cfg => {
       const original = allCompassPairs.find(p => p.id === cfg.pairId);
       if (!original) return null;
-      return { ...original, axis: cfg.axis, weight: cfg.weight };
+      return { ...original, axis: cfg.axis, weight: cfg.weight, direction: cfg.direction || 1 };
     }).filter(p => p !== null);
   }
   let sumX = 0, maxSumX = 0, activeX = 0;
@@ -53,7 +53,7 @@ function computeCoordinatesFromValues(valuesMap, mode, creativeConfig = { active
   for (const pair of pairsToUse) {
     const vals = valuesMap[pair.id];
     if (!vals || vals.negative === null || vals.positive === null) continue;
-    const diff = vals.positive - vals.negative;
+    const diff = (vals.positive - vals.negative) * (pair.direction || 1);
     const weightVal = pair.weight;
     if (pair.axis === 'x') {
       sumX += diff * weightVal;
@@ -78,8 +78,6 @@ function computeCoordinatesFromValues(valuesMap, mode, creativeConfig = { active
 window.corePairs = corePairs;
 window.extraPairs = extraPairs;
 window.allCompassPairs = [...corePairs, ...extraPairs];
-
-
 
 
 
