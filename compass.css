@@ -98,6 +98,16 @@
   transform: translate(-50%, -50%);
   transition: left 0.28s cubic-bezier(0.2, 0.9, 0.4, 1.1), top 0.28s cubic-bezier(0.2, 0.9, 0.4, 1.1);
   box-shadow: 0 0 0 2px rgba(0,0,0,0.2), 0 0 0 5px rgba(255,255,255,0.3);
+  animation: userMarkerPulse 1.8s ease-in-out infinite;
+}
+
+@keyframes userMarkerPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.18);
+  }
 }
 body:not(.dark) .marker {
   background: #ffffff;
@@ -202,4 +212,3 @@ body.dark .compass-overlay {
     gap: 0.35rem;
   }
 }
-
