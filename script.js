@@ -13,18 +13,54 @@ const resultsDiv = document.getElementById('results-container');
 const valuesResults = document.getElementById('values-results');
 const ideologiesResults = document.getElementById('ideologies-results');
 const partiesResults = document.getElementById('parties-results');
+const usersResults = document.getElementById('users-results');
 const popup = document.getElementById('popup');
 const popupText = document.getElementById('popup-text');
 const closePopupBtn = document.getElementById('closePopup');
 
+const DEFAULT_UI_TEXTS = {
+  pl: {
+    importLabel: 'Import odpowiedzi',
+    importPlaceholder: 'Wklej tutaj kod wyeksportowany z testu...',
+    importBtn: 'Importuj i odtworz',
+    importInfo: 'Wklej kod wygenerowany po poprzednim ukonczeniu testu. Wszystkie odpowiedzi zostana przywrocone, a wyniki przeliczone.',
+    simulateLabel: 'Symuluj odpowiedzi:',
+    simulateBtn: 'Symuluj',
+    restoreBtn: 'Przywroc moje odpowiedzi',
+    simulateInfo: 'Symulacja tymczasowo zastapi Twoje odpowiedzi.',
+    submitBtn: 'Pokaz wyniki',
+    modeLabel: 'Tryb liczenia:',
+    modeFullLabel: 'Tryb pelnego profilowania',
+    modeAffirmativeLabel: 'Tryb afirmacyjny',
+    resultsTitle: 'Twoje wyniki',
+    valuesHeader: 'Pary wartosci',
+    rankingIdeologies: 'Ranking ideologii',
+    rankingParties: 'Ranking partii',
+    rankingUsers: 'Ranking uzytkownikow',
+    rankingInfo: 'Im wyzszy procent, tym bardziej Twoj profil jest zgodny z dana pozycja.',
+    closePopup: 'Zamknij',
+    expandBtn: 'Rozwin teze',
+    collapseBtn: 'Zwin teze',
+    skipIfBadge: 'Pomin jesli',
+    noDescription: 'Brak dodatkowego opisu.'
+  }
+};
+
+function getLocalizedValue(value, fallback = '') {
+  if (!value) return fallback;
+  if (typeof value === 'string') return value;
+  return value[currentLanguage] || value.pl || value.en || fallback;
+}
 // ======================= FUNKCJA OBLICZAJĄCA ODZNAKI (DO ROZBUDOWY) =======================
 // Na razie zwraca pustą tablicę – możesz dodać własne warunki w oparciu o wyniki par wartości.
 function computeBadges() {
-  // Przykładowa implementacja (później możesz zastąpić):
-  // const badges = [];
-  // if (warunek) badges.push('Monarchizm');
-  // return badges;
-  return [];
+  const registry = window.BadgesRegistry;
+  if (!registry?.items) return [];
+  const firstAnswer = userAnswers.find(a => Number(a.questionId) === 1 && !a.noteOnly);
+  if (!firstAnswer || Number(firstAnswer.answerValue) === 0) return [];
+  return Object.values(registry.items).filter(badge =>
+    Number(badge.questionId) === 1 && Number(badge.answerValue) === Number(firstAnswer.answerValue)
+  );
 }
 
 // ======================= MAPOWANIE PARTII -> LOGO =======================
@@ -47,7 +83,8 @@ const partyLogoMap = new Map([
 ]);
 
 function getPartyLogoUrl(partyName) {
-  const fileName = partyLogoMap.get(partyName);
+  const logoKey = config?.parties?.find(p => p.name === partyName || p.key === partyName)?.key || partyName;
+  const fileName = partyLogoMap.get(logoKey);
   if (fileName) return LOGO_BASE_PATH + fileName;
   console.warn(`Brak logo dla partii: ${partyName}`);
   return null;
@@ -142,7 +179,8 @@ const ideologyLogoMap = new Map([
 ]);
 
 function getIdeologyLogoUrl(ideologyName) {
-  const fileName = ideologyLogoMap.get(ideologyName);
+  const logoKey = config?.ideologies?.find(i => i.name === ideologyName || i.key === ideologyName)?.key || ideologyName;
+  const fileName = ideologyLogoMap.get(logoKey);
   if (fileName) return IDEOLOGY_LOGO_BASE_PATH + fileName;
   console.warn(`Brak logo dla ideologii: ${ideologyName}`);
   return null;
@@ -266,71 +304,76 @@ async function loadTranslations(lang) {
 
 function applyTranslationsToConfig() {
   if (!configBase) return;
-  // głęboka kopia configBase
   config = JSON.parse(JSON.stringify(configBase));
-  if (!translations) return; // brak tłumaczeń – zostawiamy polskie
 
-  // Tłumaczenie par wartości
-  if (translations.pairsOfValues) {
-    for (let i = 0; i < config.pairsOfValues.length; i++) {
-      const pair = config.pairsOfValues[i];
-      const transPair = translations.pairsOfValues.find(p => p.left === pair.left && p.right === pair.right);
-      if (transPair) {
-        pair.left = transPair.left;
-        pair.right = transPair.right;
-        pair.leftDef = transPair.leftDef;
-        pair.rightDef = transPair.rightDef;
-      }
-    }
+  config.pairsOfValues?.forEach(pair => {
+    pair.leftKey = pair.left;
+    pair.rightKey = pair.right;
+  });
+  config.ideologies?.forEach(ideo => { ideo.key = ideo.name; });
+  config.parties?.forEach(party => { party.key = party.name; });
+
+  if (!translations) return;
+
+  const byIdOrIndex = (items, source, index, keyName = 'id') => {
+    if (!Array.isArray(items)) return null;
+    const sourceId = source?.[keyName] ?? source?.id;
+    return items.find(item => sourceId !== undefined && (item[keyName] === sourceId || item.id === sourceId)) || items[index] || null;
+  };
+
+  if (Array.isArray(translations.pairsOfValues)) {
+    config.pairsOfValues.forEach((pair, i) => {
+      const transPair = byIdOrIndex(translations.pairsOfValues, pair, i) ||
+        translations.pairsOfValues.find(p => p.leftKey === pair.leftKey || p.left === pair.leftKey || p.originalLeft === pair.leftKey);
+      if (!transPair) return;
+      pair.left = transPair.left || pair.left;
+      pair.right = transPair.right || pair.right;
+      pair.leftDef = transPair.leftDef || pair.leftDef;
+      pair.rightDef = transPair.rightDef || pair.rightDef;
+    });
   }
 
-  // Tłumaczenie ideologii
-  if (translations.ideologies) {
-    for (let i = 0; i < config.ideologies.length; i++) {
-      const ideo = config.ideologies[i];
-      const transIdeo = translations.ideologies.find(t => t.name === ideo.name);
-      if (transIdeo) {
-        ideo.name = transIdeo.name;
-        ideo.description = transIdeo.description;
-      }
-    }
+  if (Array.isArray(translations.ideologies)) {
+    config.ideologies.forEach((ideo, i) => {
+      const transIdeo = byIdOrIndex(translations.ideologies, ideo, i) ||
+        translations.ideologies.find(t => t.key === ideo.key || t.originalName === ideo.key || t.name === ideo.key);
+      if (!transIdeo) return;
+      ideo.name = transIdeo.displayName || transIdeo.name || ideo.name;
+      ideo.description = transIdeo.description || ideo.description;
+    });
   }
 
-  // Tłumaczenie partii
-  if (translations.parties) {
-    for (let i = 0; i < config.parties.length; i++) {
-      const party = config.parties[i];
-      const transParty = translations.parties.find(t => t.name === party.name);
-      if (transParty) {
-        party.name = transParty.name;
-        party.description = transParty.description;
-      }
-    }
+  if (Array.isArray(translations.parties)) {
+    config.parties.forEach((party, i) => {
+      const transParty = byIdOrIndex(translations.parties, party, i) ||
+        translations.parties.find(t => t.key === party.key || t.originalName === party.key || t.name === party.key);
+      if (!transParty) return;
+      party.name = transParty.displayName || transParty.name || party.name;
+      party.description = transParty.description || party.description;
+    });
   }
 
-  // Tłumaczenie pytań i odpowiedzi
-  if (translations.questions) {
-    for (let i = 0; i < config.questions.length; i++) {
-      const q = config.questions[i];
-      const transQ = translations.questions.find(t => t.id === q.id);
-      if (transQ) {
-        q.text = transQ.text;
-        q.description = transQ.description;
-        if (transQ.answers) {
-          for (let j = 0; j < q.answers.length; j++) {
-            if (transQ.answers[j] && transQ.answers[j].label) {
-              q.answers[j].label = transQ.answers[j].label;
-            }
-          }
-        }
+  if (Array.isArray(translations.questions)) {
+    config.questions.forEach((q, i) => {
+      const transQ = byIdOrIndex(translations.questions, q, i);
+      if (!transQ) return;
+      q.text = transQ.text || q.text;
+      q.description = transQ.description || q.description;
+      q.comment = transQ.comment || q.comment;
+      if (transQ.answers) {
+        q.answers.forEach((answer, j) => {
+          const transAnswer = Array.isArray(transQ.answers)
+            ? transQ.answers[j]
+            : transQ.answers[answer.id] || transQ.answers[String(j)];
+          if (transAnswer?.label) answer.label = transAnswer.label;
+        });
       }
-    }
+    });
   }
 }
 
 function updateUITexts() {
-  if (!translations || !translations.ui) return;
-  const ui = translations.ui;
+  const ui = translations?.ui || DEFAULT_UI_TEXTS.pl;
   // Aktualizacja tekstów w elementach (jeśli istnieją)
   if (ui.disclaimerTitle) {
     const disclaimer = document.getElementById('disclaimer');
@@ -692,11 +735,11 @@ function computeScores(mode = currentScoringMode) {
   const partyScores = new Map();
   const valueScores = new Map();
 
-  config.ideologies.forEach(ideo => ideologyScores.set(ideo.name, { sum: 0, maxPossible: 0, agreements: 0, disagreements: 0 }));
-  config.parties.forEach(party => partyScores.set(party.name, { sum: 0, maxPossible: 0, agreements: 0, disagreements: 0 }));
+  config.ideologies.forEach(ideo => ideologyScores.set(ideo.key || ideo.name, { sum: 0, maxPossible: 0, agreements: 0, disagreements: 0 }));
+  config.parties.forEach(party => partyScores.set(party.key || party.name, { sum: 0, maxPossible: 0, agreements: 0, disagreements: 0 }));
 
   const allValueNames = new Set();
-  config.pairsOfValues.forEach(pair => { allValueNames.add(pair.left); allValueNames.add(pair.right); });
+  config.pairsOfValues.forEach(pair => { allValueNames.add(pair.leftKey || pair.left); allValueNames.add(pair.rightKey || pair.right); });
   config.hiddenValues.forEach(v => allValueNames.add(v));
   allValueNames.forEach(v => valueScores.set(v, { sum: 0, maxPossible: 0, questionsInvolved: 0 }));
 
@@ -768,17 +811,23 @@ function computeScores(mode = currentScoringMode) {
   };
 
   const ideologyResults = [];
-  for (let [name, rec] of ideologyScores.entries()) ideologyResults.push({ name, percent: normalizeScore(rec), agreements: rec.agreements, disagreements: rec.disagreements, involved: rec.maxPossible / 1.5, description: config.ideologies.find(i => i.name === name)?.description || '' });
+  for (let [key, rec] of ideologyScores.entries()) {
+    const item = config.ideologies.find(i => (i.key || i.name) === key);
+    ideologyResults.push({ key, name: item?.name || key, percent: normalizeScore(rec), agreements: rec.agreements, disagreements: rec.disagreements, involved: rec.maxPossible / 1.5, description: item?.description || '' });
+  }
   ideologyResults.sort((a,b) => b.percent - a.percent);
 
   const partyResults = [];
-  for (let [name, rec] of partyScores.entries()) partyResults.push({ name, percent: normalizeScore(rec), agreements: rec.agreements, disagreements: rec.disagreements, involved: rec.maxPossible / 1.5, description: config.parties.find(p => p.name === name)?.description || '' });
+  for (let [key, rec] of partyScores.entries()) {
+    const item = config.parties.find(p => (p.key || p.name) === key);
+    partyResults.push({ key, name: item?.name || key, percent: normalizeScore(rec), agreements: rec.agreements, disagreements: rec.disagreements, involved: rec.maxPossible / 1.5, description: item?.description || '' });
+  }
   partyResults.sort((a,b) => b.percent - a.percent);
 
   const pairResults = [];
   for (let pair of config.pairsOfValues) {
-    const recLeft = valueScores.get(pair.left);
-    const recRight = valueScores.get(pair.right);
+    const recLeft = valueScores.get(pair.leftKey || pair.left);
+    const recRight = valueScores.get(pair.rightKey || pair.right);
     const sumL = recLeft ? recLeft.sum : 0;
     const maxL = recLeft ? recLeft.maxPossible : 0;
     const sumR = recRight ? recRight.sum : 0;
@@ -797,6 +846,8 @@ function computeScores(mode = currentScoringMode) {
     pairResults.push({
       left: pair.left,
       right: pair.right,
+      leftKey: pair.leftKey || pair.left,
+      rightKey: pair.rightKey || pair.right,
       leftPercent: leftPercent,
       rightPercent: rightPercent,
       leftDef: pair.leftDef,
@@ -825,56 +876,35 @@ const BADGES_IMG_BASE_PATH = 'AutystykShort/images/Odznaki/';
 function createBadgesSection(badges) {
   const section = document.createElement('div');
   section.className = 'badges-section';
+  const registryLabels = window.BadgesRegistry?.labels || {};
   const header = document.createElement('h3');
-  header.textContent = '🏅 Odznaki';
+  header.textContent = getLocalizedValue(registryLabels.title, translations?.ui?.badgesTitle || 'Odznaki');
   section.appendChild(header);
-  if (badges.length === 0) {
+
+  if (!badges.length) {
     const none = document.createElement('p');
-    none.textContent = 'Nie zdobyto jeszcze żadnej odznaki. Odpowiadaj zdecydowanie na pytania pasujące do określonych światopoglądów.';
+    none.textContent = getLocalizedValue(registryLabels.empty, translations?.ui?.noBadges || 'Nie zdobyto jeszcze zadnej odznaki.');
     none.className = 'no-badges';
     section.appendChild(none);
-  } else {
-    const badgesContainer = document.createElement('div');
-    badgesContainer.className = 'badges-list';
-    for (const badge of badges) {
-      const badgeEl = document.createElement('div');
-      badgeEl.className = 'badge-item';
-      
-      // Dodanie miniaturki ikony (jeśli istnieje)
-      const img = document.createElement('img');
-      img.alt = badge;
-      img.className = 'badge-icon';
-      // próba załadowania obrazka – najpierw .png, potem .jpg
-      const tryImage = (ext) => {
-        img.src = `${BADGES_IMG_BASE_PATH}${badge}${ext}`;
-        img.onerror = () => {
-          // jeśli nie udało się załadować, ukryj obrazek
-          img.style.display = 'none';
-        };
-        img.onload = () => {
-          img.style.display = 'inline-block';
-        };
-      };
-      tryImage('.png');
-      // małe opóźnienie, by sprawdzić, czy obrazek się załadował – uproszczone: dla uproszczenia najpierw próbujemy PNG, jeśli błąd to ukrywamy.
-      // Można by dodać obsługę .jpg, ale to tylko szczegół.
-      badgeEl.appendChild(img);
-      
-      const textSpan = document.createElement('span');
-      textSpan.textContent = badge;
-      badgeEl.appendChild(textSpan);
-      
-      // Kliknięcie pokazuje opis
-      badgeEl.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const description = badgesDescriptions[badge] || 'Brak szczegółowego opisu tej odznaki.';
-        showPopup(`🏅 ${badge}\n\n${description}`);
-      });
-      
-      badgesContainer.appendChild(badgeEl);
-    }
-    section.appendChild(badgesContainer);
+    return section;
   }
+
+  const badgesContainer = document.createElement('div');
+  badgesContainer.className = 'badges-list';
+  badges.forEach(badge => {
+    const badgeName = getLocalizedValue(badge.name, badge.id || 'Odznaka');
+    const badgeDescription = getLocalizedValue(badge.description, translations?.ui?.noDescription || 'Brak opisu.');
+    const badgeEl = document.createElement('button');
+    badgeEl.type = 'button';
+    badgeEl.className = 'badge-item';
+    badgeEl.innerHTML = `<span class="badge-mark">*</span><span>${badgeName}</span>`;
+    badgeEl.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showPopup(`${badgeName}\n\n${badgeDescription}`);
+    });
+    badgesContainer.appendChild(badgeEl);
+  });
+  section.appendChild(badgesContainer);
   return section;
 }
 
@@ -993,7 +1023,7 @@ function computeAndDisplayResults() {
   // Grupowanie par wartości
   const groups = new Map();
   for (const pair of pairResults) {
-    const catId = categoryMapping[pair.left];
+    const catId = categoryMapping[pair.leftKey || pair.left];
     if (!catId) continue;
     if (!groups.has(catId)) groups.set(catId, { name: categoryNames[catId], pairs: [] });
     groups.get(catId).pairs.push(pair);
@@ -1012,8 +1042,8 @@ function computeAndDisplayResults() {
     catHeader.textContent = group.name;
     categoryDiv.appendChild(catHeader);
     for (const pair of group.pairs) {
-      const leftColor = valueColors[pair.left] || '#3b82f6';
-      const rightColor = valueColors[pair.right] || '#ef4444';
+      const leftColor = valueColors[pair.leftKey || pair.left] || '#3b82f6';
+      const rightColor = valueColors[pair.rightKey || pair.right] || '#ef4444';
       const leftTextColor = getContrastColor(leftColor);
       const rightTextColor = getContrastColor(rightColor);
       const pairDiv = document.createElement('div');
@@ -1044,6 +1074,7 @@ function computeAndDisplayResults() {
 
   ideologiesResults.innerHTML = '';
   partiesResults.innerHTML = '';
+  if (usersResults) usersResults.innerHTML = '';
 
   // ---- DODANIE SEKCJI ODZNAK (pod osiami, nad rankingami) ----
   const badges = computeBadges();
@@ -1097,6 +1128,10 @@ function computeAndDisplayResults() {
   const partiesTitle = translations?.ui?.rankingParties || '🗳️ Ranking partii';
   ideologiesResults.appendChild(createRankingSection(ideologiesTitle, ideologyResults, 'ideology'));
   partiesResults.appendChild(createRankingSection(partiesTitle, partyResults, 'party'));
+  if (usersResults && typeof window.getUserRankingItems === 'function') {
+    const usersTitle = translations?.ui?.rankingUsers || 'Ranking użytkowników';
+    usersResults.appendChild(createRankingSection(usersTitle, window.getUserRankingItems(), 'user'));
+  }
 
   const existingShare = resultsDiv.querySelector('.share-section');
   if (existingShare) existingShare.remove();
@@ -1275,7 +1310,9 @@ function buildUserValuesMap(pairResults) {
   const allCompassPairs = [...corePairs, ...extraPairs];
   for (const pair of allCompassPairs) {
     // Znajdź w pairResults parę pasującą (left/right)
-    const found = pairResults.find(p => p.left === pair.negativeLabel && p.right === pair.positiveLabel);
+    const found = pairResults.find(p =>
+      (p.leftKey || p.left) === pair.negativeLabel && (p.rightKey || p.right) === pair.positiveLabel
+    );
     if (found) {
       valuesMap[pair.id] = {
         negative: found.leftPercent,
@@ -1283,7 +1320,9 @@ function buildUserValuesMap(pairResults) {
       };
     } else {
       // Szukaj odwrotnej kolejności
-      const foundReverse = pairResults.find(p => p.left === pair.positiveLabel && p.right === pair.negativeLabel);
+      const foundReverse = pairResults.find(p =>
+        (p.leftKey || p.left) === pair.positiveLabel && (p.rightKey || p.right) === pair.negativeLabel
+      );
       if (foundReverse) {
         valuesMap[pair.id] = {
           negative: foundReverse.rightPercent,
@@ -1323,7 +1362,7 @@ async function loadOverlays(showParties, showIdeologies, compassInstance) {
   if (!config) return;
   if (showParties && config.parties) {
     for (const party of config.parties) {
-      const coords = await getEntityCoordinates(party.name, 'party');
+      const coords = await getEntityCoordinates(party.key || party.name, 'party');
       if (coords) {
         const logoUrl = getPartyLogoUrl(party.name);
         compassInstance.addOverlay(logoUrl, coords.x, coords.y, 'party', party.name, party.description);
@@ -1332,7 +1371,7 @@ async function loadOverlays(showParties, showIdeologies, compassInstance) {
   }
   if (showIdeologies && config.ideologies) {
     for (const ideology of config.ideologies) {
-      const coords = await getEntityCoordinates(ideology.name, 'ideology');
+      const coords = await getEntityCoordinates(ideology.key || ideology.name, 'ideology');
       if (coords) {
         const logoUrl = getIdeologyLogoUrl(ideology.name);
         compassInstance.addOverlay(logoUrl, coords.x, coords.y, 'ideology', ideology.name, ideology.description);
@@ -1383,11 +1422,11 @@ function computeScoresForAnswers(answers, mode) {
   const partyScores = new Map();
   const valueScores = new Map();
 
-  config.ideologies.forEach(ideo => ideologyScores.set(ideo.name, { sum: 0, maxPossible: 0 }));
-  config.parties.forEach(party => partyScores.set(party.name, { sum: 0, maxPossible: 0 }));
+  config.ideologies.forEach(ideo => ideologyScores.set(ideo.key || ideo.name, { sum: 0, maxPossible: 0 }));
+  config.parties.forEach(party => partyScores.set(party.key || party.name, { sum: 0, maxPossible: 0 }));
 
   const allValueNames = new Set();
-  config.pairsOfValues.forEach(pair => { allValueNames.add(pair.left); allValueNames.add(pair.right); });
+  config.pairsOfValues.forEach(pair => { allValueNames.add(pair.leftKey || pair.left); allValueNames.add(pair.rightKey || pair.right); });
   config.hiddenValues.forEach(v => allValueNames.add(v));
   allValueNames.forEach(v => valueScores.set(v, { sum: 0, maxPossible: 0 }));
 
@@ -1438,8 +1477,8 @@ function computeScoresForAnswers(answers, mode) {
   // Oblicz pairResults podobnie jak w computeScores
   const pairResults = [];
   for (let pair of config.pairsOfValues) {
-    const recLeft = valueScores.get(pair.left);
-    const recRight = valueScores.get(pair.right);
+    const recLeft = valueScores.get(pair.leftKey || pair.left);
+    const recRight = valueScores.get(pair.rightKey || pair.right);
     const sumL = recLeft ? recLeft.sum : 0;
     const maxL = recLeft ? recLeft.maxPossible : 0;
     const sumR = recRight ? recRight.sum : 0;
@@ -1706,6 +1745,3 @@ importAnswersFromExportCode = function(rawCode) {
 };
 
 loadConfig();
-
-
-
