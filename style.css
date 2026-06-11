@@ -599,7 +599,7 @@ h3 {
 /* NOWY KONTENER DLA RANKINGÓW OBOK SIEBIE */
 .ideologies-parties-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
@@ -2182,9 +2182,114 @@ body.dark .manual-pair-row input {
     text-align: center;
   }
 
-  .friend-label {
+.friend-label {
     max-width: 88px;
     font-size: 0.68rem;
   }
 }
 
+/* === Final UI polish: readable modal compass, badges, and user comparisons === */
+.popup-content {
+  border-radius: 8px;
+  width: min(92vw, 560px);
+}
+
+.badge-item {
+  border: 0;
+  font: inherit;
+}
+
+.badge-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.55);
+  font-weight: 900;
+}
+
+.compass-modal-body {
+  overflow: hidden;
+}
+
+.modal-compass {
+  overflow: hidden;
+  align-content: start;
+}
+
+.modal-compass.compass-wrapper {
+  max-width: none;
+  margin: 0;
+}
+
+.modal-compass .compass-frame {
+  width: min(62vh, calc(100vw - 520px), 720px);
+  min-width: 320px;
+}
+
+.creative-pair-row {
+  display: grid;
+  grid-template-columns: minmax(180px, 1fr) auto minmax(130px, 0.8fr) 76px;
+  border-radius: 8px;
+}
+
+.creative-pair-row select,
+.creative-pair-row input {
+  min-height: 34px;
+  border-radius: 8px;
+}
+
+.friend-overall-match,
+.friend-answer-match {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--friend-color) 14%, transparent);
+  color: var(--text-primary);
+  padding: 0.16rem 0.48rem;
+  font-size: 0.76rem;
+  font-weight: 800;
+  margin-right: 0.35rem;
+}
+
+.friend-overall-match {
+  justify-content: space-between;
+  gap: 0.45rem;
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--friend-color);
+  border-radius: 8px;
+  margin-bottom: 0.45rem;
+  padding: 0.5rem 0.65rem;
+}
+
+#users-results .ranking-item::before {
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 999px;
+  background: var(--accent-green);
+  margin-right: 0.55rem;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 1100px) {
+  .ideologies-parties-container {
+    grid-template-columns: 1fr;
+  }
+
+  .modal-compass .compass-frame {
+    width: min(76vw, 58vh, 620px);
+    min-width: 0;
+  }
+}
+
+@media (max-width: 720px) {
+  .modal-compass .compass-frame {
+    width: min(88vw, 48vh, 460px);
+  }
+
+  .creative-pair-row {
+    grid-template-columns: 1fr;
+  }
+}
