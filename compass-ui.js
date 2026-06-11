@@ -168,7 +168,8 @@ class CompassUI {
             const id = cb.dataset.id;
             const axis = row.querySelector('.creative-axis-select').value;
             const weight = parseFloat(row.querySelector('.creative-weight-input').value);
-            if (!isNaN(weight)) active.push({ pairId: id, axis, weight });
+            const direction = parseInt(row.querySelector('.creative-direction-select').value, 10) || 1;
+            if (!isNaN(weight)) active.push({ pairId: id, axis, weight, direction });
           }
         });
         this.creativeConfig.activePairs = active;
@@ -187,6 +188,7 @@ class CompassUI {
       const isActive = !!existing;
       const axisVal = existing ? existing.axis : (pair.axis || 'x');
       const weightVal = existing ? existing.weight : pair.weight;
+      const directionVal = existing ? (existing.direction || 1) : 1;
       const row = document.createElement('div');
       row.className = 'creative-pair-row';
       row.innerHTML = `
@@ -198,20 +200,24 @@ class CompassUI {
           <option value="x" ${axisVal === 'x' ? 'selected' : ''}>Oś X</option>
           <option value="y" ${axisVal === 'y' ? 'selected' : ''}>Oś Y</option>
         </select>
+        <select class="creative-direction-select" data-id="${pair.id}" ${!isActive ? 'disabled' : ''}>
+          <option value="1" ${directionVal === 1 ? 'selected' : ''}>${pair.positiveLabel} -> +</option>
+          <option value="-1" ${directionVal === -1 ? 'selected' : ''}>${pair.negativeLabel} -> +</option>
+        </select>
         <input type="number" step="0.1" class="creative-weight-input" data-id="${pair.id}" value="${weightVal}" ${!isActive ? 'disabled' : ''} style="width: 70px;">
       `;
       const cb = row.querySelector('.creative-active-cb');
       const axisSel = row.querySelector('.creative-axis-select');
+      const directionSel = row.querySelector('.creative-direction-select');
       const weightInp = row.querySelector('.creative-weight-input');
       cb.addEventListener('change', (e) => {
         const checked = e.target.checked;
         axisSel.disabled = !checked;
+        directionSel.disabled = !checked;
         weightInp.disabled = !checked;
       });
       this.creativeListContainer.appendChild(row);
     }
   }
 }
-
-
 
