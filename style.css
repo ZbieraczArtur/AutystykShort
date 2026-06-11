@@ -1843,3 +1843,348 @@ body.dark .compass-link {
     min-height: 300px;
   }
 }
+
+
+
+
+/* === Modern layout and new comparison/manual-edit features === */
+.results-compass-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(280px, 1.1fr) minmax(260px, 0.9fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.compass-wrapper {
+  max-width: min(460px, 100%);
+  margin: 1.5rem auto;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: color-mix(in srgb, var(--card-bg) 88%, transparent);
+}
+
+#results-container > .compass-wrapper {
+  max-width: 380px;
+  padding: 1rem;
+}
+
+.answer-note-wrap {
+  margin-top: 1rem;
+  border-top: 1px solid var(--card-border);
+  padding-top: 0.9rem;
+}
+
+.answer-note-wrap label {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.45rem;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.answer-note {
+  width: 100%;
+  resize: vertical;
+  min-height: 76px;
+  border-radius: 8px;
+  border: 1px solid var(--card-border);
+  background: var(--input-bg, rgba(255,255,255,0.72));
+  color: var(--text-primary);
+  padding: 0.75rem 0.85rem;
+  font: inherit;
+}
+
+body.dark .answer-note {
+  background: rgba(15, 23, 42, 0.86);
+}
+
+.note-counter,
+.muted-small {
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.compass-modal-content {
+  width: min(96vw, 1500px);
+  height: min(94vh, 980px);
+  border-radius: 8px;
+}
+
+.compass-modal-body {
+  display: grid;
+  grid-template-columns: minmax(420px, 1fr) minmax(320px, 420px);
+  min-height: 0;
+}
+
+.modal-compass {
+  min-width: 0;
+  min-height: 0;
+  display: grid;
+  place-items: center;
+  overflow: auto;
+}
+
+.modal-compass .compass-frame {
+  width: min(74vh, 72vw, 820px);
+  max-width: 100%;
+}
+
+.modal-controls {
+  border-radius: 8px;
+  min-height: 0;
+}
+
+.modal-extra-panel {
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background: var(--card-bg);
+  padding: 0.85rem;
+}
+
+.modal-extra-panel > summary {
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--text-primary);
+}
+
+.friend-import-grid {
+  display: grid;
+  gap: 0.6rem;
+  margin-top: 0.8rem;
+}
+
+.friend-import-grid input,
+.friend-import-grid textarea,
+.manual-pair-row input {
+  width: 100%;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background: var(--input-bg, rgba(255,255,255,0.72));
+  color: var(--text-primary);
+  padding: 0.65rem;
+  font: inherit;
+}
+
+body.dark .friend-import-grid input,
+body.dark .friend-import-grid textarea,
+body.dark .manual-pair-row input {
+  background: rgba(15, 23, 42, 0.86);
+}
+
+.friends-list {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0.8rem 0;
+}
+
+.friend-list-item,
+.friend-answer-row,
+.my-answer-row {
+  border: 1px solid var(--card-border);
+  border-left: 4px solid var(--friend-color, var(--accent-sky));
+  border-radius: 8px;
+  background: color-mix(in srgb, var(--card-bg) 86%, transparent);
+  padding: 0.55rem 0.65rem;
+}
+
+.friend-list-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.7rem;
+  align-items: center;
+}
+
+.friend-list-item button {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.35rem 0.55rem;
+  cursor: pointer;
+}
+
+.friend-answer-comparison {
+  display: grid;
+  gap: 0.55rem;
+  max-height: 360px;
+  overflow: auto;
+  padding-right: 0.2rem;
+}
+
+.comparison-question {
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  background: var(--desc-bg);
+  padding: 0.65rem;
+}
+
+.comparison-question > summary {
+  cursor: pointer;
+  font-weight: 750;
+}
+
+.friend-answer-row,
+.my-answer-row {
+  margin-top: 0.55rem;
+}
+
+.friend-answer-name {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: var(--friend-color);
+  font-weight: 800;
+  margin-right: 0.4rem;
+}
+
+.friend-answer-name::before {
+  content: "";
+  width: 0.65rem;
+  height: 0.65rem;
+  border-radius: 999px;
+  background: var(--friend-color);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--friend-color) 22%, transparent);
+}
+
+.friend-note summary {
+  cursor: pointer;
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+}
+
+.manual-score-pairs {
+  display: grid;
+  gap: 0.65rem;
+  max-height: 380px;
+  overflow: auto;
+  margin-top: 0.8rem;
+  padding-right: 0.2rem;
+}
+
+.manual-pair-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: end;
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 0.65rem;
+  background: color-mix(in srgb, var(--card-bg) 84%, transparent);
+}
+
+.manual-pair-row label {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  color: var(--text-secondary);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+.manual-pair-row label span {
+  overflow-wrap: anywhere;
+}
+
+.manual-pair-separator {
+  padding-bottom: 0.65rem;
+  color: var(--text-secondary);
+  font-weight: 800;
+}
+
+.manual-score-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.friend-compass-marker {
+  position: absolute;
+  z-index: 12;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  gap: 0.28rem;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.28));
+}
+
+.friend-dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: var(--friend-color);
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.28);
+}
+
+.friend-label {
+  max-width: 120px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.92);
+  color: #0f172a;
+  border: 1px solid rgba(15, 23, 42, 0.18);
+  padding: 0.16rem 0.45rem;
+  font-size: 0.75rem;
+  font-weight: 800;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+@media (max-width: 980px) {
+  .compass-modal-body {
+    grid-template-columns: 1fr;
+    overflow: auto;
+  }
+
+  .modal-compass .compass-frame {
+    width: min(82vw, 64vh, 680px);
+  }
+}
+
+@media (max-width: 720px) {
+  #results-container > .compass-wrapper {
+    max-width: 300px;
+    padding: 0.75rem;
+  }
+
+  .answer-note-wrap label {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .compass-modal-content {
+    width: 100vw;
+    height: 100vh;
+    border-radius: 0;
+  }
+
+  .compass-modal-body {
+    padding: 0.75rem;
+  }
+
+  .modal-compass .compass-frame {
+    width: min(92vw, 54vh, 520px);
+  }
+
+  .manual-pair-row {
+    grid-template-columns: 1fr;
+  }
+
+  .manual-pair-separator {
+    padding: 0;
+    text-align: center;
+  }
+
+  .friend-label {
+    max-width: 88px;
+    font-size: 0.68rem;
+  }
+}
+
