@@ -2,10 +2,14 @@
   'use strict';
 
   const NOTE_LIMIT = 500;
-  const FRIEND_COLORS = ['#2563eb', '#16a34a', '#dc2626', '#9333ea', '#ea580c', '#0891b2', '#be123c', '#4f46e5'];
   const answerNotes = {};
   const friendProfiles = [];
   let manualCompassValues = null;
+
+  function getRandomFriendColor() {
+    const hue = Math.floor(Math.random() * 360);
+    return `hsl(${hue} 72% 44%)`;
+  }
 
   function escapeHtml(value) {
     return String(value || '').replace(/[&<>'"]/g, ch => ({
@@ -15,6 +19,48 @@
 
   function normalizeAnswerLabel(value) {
     return String(value || '').trim().toLowerCase().replace(/\s+/g, ' ');
+  }
+
+  function compareAnswersWithUser(answers) {
+    let compared = 0;
+    let score = 0;
+    answers.forEach(friendAnswer => {
+      if (!friendAnswer || friendAnswer.noteOnly) return;
+      const myAnswer = userAnswers.find(ans => ans.questionId === friendAnswer.questionId && !ans.noteOnly);
+      if (!myAnswer || !myAnswer.answerData || !friendAnswer.answerData) return;
+      compared++;
+      const distance = Math.abs(Number(myAnswer.answerValue) - Number(friendAnswer.answerValue));
+      score += Math.max(0, 1 - distance / 3);
+    });
+    return compared ? Math.round((score / compared) * 100) : 0;
+  }
+
+  function getConfiguredUserProfiles() {
+    const source = config?.users || config?.userRanking || config?.friends || [];
+    if (!Array.isArray(source)) return [];
+    return source.map((entry, index) => {
+      const rawCode = entry.code || entry.exportCode || entry.answersCode || entry.rawCode || '';
+      const name = entry.name || entry.label || `Uzytkownik ${index + 1}`;
+      const parsed = rawCode ? parseExportCode(rawCode).filter(row => !row.noteOnly && row.answerData) : [];
+      return parsed.length ? { name, answers: parsed, color: entry.color || getRandomFriendColor(), source: 'data' } : null;
+    }).filter(Boolean);
+  }
+
+  window.getUserRankingItems = function () {
+    const profiles = [...getConfiguredUserProfiles(), ...friendProfiles];
+    return profiles.map(profile => ({
+      name: profile.name,
+      percent: compareAnswersWithUser(profile.answers),
+      description: `Zgodnosc obliczona na podstawie wspolnych odpowiedzi.`
+    })).sort((a, b) => b.percent - a.percent);
+  };
+
+  function refreshUsersRanking() {
+    const container = document.getElementById('users-results');
+    if (!container || typeof createRankingSection !== 'function') return;
+    container.innerHTML = '';
+    const title = translations?.ui?.rankingUsers || 'Ranking użytkowników';
+    container.appendChild(createRankingSection(title, window.getUserRankingItems(), 'user'));
   }
 
   function getNote(questionId) {
@@ -340,7 +386,7 @@
     const scores = computeScoresForAnswers(parsed, currentScoringMode);
     const valuesMap = buildUserValuesMap(scores.pairResults);
     const coords = computeCoordinatesFromValues(valuesMap, currentCompassMode, currentCreativeConfig);
-    return { name, answers: parsed, valuesMap, coords, color: FRIEND_COLORS[friendProfiles.length % FRIEND_COLORS.length] };
+    return { name, answers: parsed, valuesMap, coords, color: getRandomFriendColor(), source: 'import' };
   }
 
   function refreshFriendCoordinates() {
@@ -369,20 +415,30 @@
     const container = document.getElementById('friend-answer-comparison');
     if (!container || !config) return;
     if (!friendProfiles.length) {
-      container.innerHTML = '<p class="muted-small">Zaimportowane odpowiedzi znajomych pojawią się tutaj.</p>';
+      container.innerHTML = '<p class="muted-small">Zaimportowane odpowiedzi znajomych pojawia sie tutaj.</p>';
       return;
     }
+    const overallHtml = friendProfiles.map(friend => `
+      <div class="friend-overall-match" style="--friend-color:${friend.color}">
+        <span class="friend-answer-name">${escapeHtml(friend.name)}</span>
+        <strong>${compareAnswersWithUser(friend.answers)}%</strong> zgodnosci z Toba
+      </div>
+    `).join('');
     const html = config.questions.map((question, index) => {
       const myAnswer = userAnswers.find(ans => ans.questionId === question.id && !ans.noteOnly);
       const myNote = getNote(question.id);
       const friendsHtml = friendProfiles.map(friend => {
         const fAnswer = findFriendAnswer(friend, question.id);
         const note = fAnswer?.note || '';
+        const singlePercent = fAnswer && myAnswer
+          ? Math.round(Math.max(0, 1 - Math.abs(Number(myAnswer.answerValue) - Number(fAnswer.answerValue)) / 3) * 100)
+          : null;
         return `
           <div class="friend-answer-row" style="--friend-color:${friend.color}">
             <span class="friend-answer-name">${escapeHtml(friend.name)}</span>
+            ${singlePercent === null ? '' : `<span class="friend-answer-match">${singlePercent}% zgodnosci</span>`}
             <span class="friend-answer-text">${escapeHtml(getAnswerText(fAnswer))}</span>
-            ${note ? `<details class="friend-note"><summary>Uzasadnienie</summary><p>${escapeHtml(note)}</p></details>` : ''}
+            ${note || myNote ? `<details class="friend-note"><summary>Uzasadnienia</summary>${myNote ? `<p><strong>Ty:</strong> ${escapeHtml(myNote)}</p>` : ''}${note ? `<p><strong>${escapeHtml(friend.name)}:</strong> ${escapeHtml(note)}</p>` : ''}</details>` : ''}
           </div>
         `;
       }).join('');
@@ -394,7 +450,7 @@
         </details>
       `;
     }).join('');
-    container.innerHTML = html;
+    container.innerHTML = overallHtml + html;
   }
 
   function renderFriendsList() {
@@ -416,6 +472,7 @@
         friendProfiles.splice(Number(btn.dataset.removeFriend), 1);
         renderFriendMarkers();
         renderFriendAnswerComparison();
+        refreshUsersRanking();
       });
     });
     renderFriendAnswerComparison();
@@ -570,6 +627,7 @@
       codeInput.value = '';
       renderFriendMarkers();
       renderFriendAnswerComparison();
+      refreshUsersRanking();
     });
 
     setupManualEditor();
@@ -649,6 +707,7 @@
     baseComputeAndDisplayResults();
     renderFriendMarkers();
     renderFriendAnswerComparison();
+    refreshUsersRanking();
   };
   computeAndDisplayResults = window.computeAndDisplayResults;
 
@@ -664,11 +723,6 @@
     }
   });
 })();
-
-
-
-
-
 
 
 
