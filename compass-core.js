@@ -78,3 +78,8 @@ function computeCoordinatesFromValues(valuesMap, mode, creativeConfig = { active
 window.corePairs = corePairs;
 window.extraPairs = extraPairs;
 window.allCompassPairs = [...corePairs, ...extraPairs];
+
+
+
+
+
