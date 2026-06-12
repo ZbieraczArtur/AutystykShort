@@ -528,7 +528,7 @@
       "answers": [
         {
           "label": "Filozoficznie",
-          "value": 0,
+          "value": 1.0,
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
@@ -538,7 +538,7 @@
         },
         {
           "label": "Politycznie",
-          "value": 0,
+          "value": -1.0,
           "values_for": [],
           "values_against": [],
           "ideologies_for": [],
