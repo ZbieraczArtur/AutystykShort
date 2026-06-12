@@ -12,8 +12,8 @@ window.BadgesRegistry = {
   items: {
     philosophical: {
       id: "philosophical",
-      questionId: 1,
-      answerValue: 1.5,
+      questionId: 0,
+      answerValue: 1.0,
       name: {
         pl: "Wykonywany filozoficznie",
         en: "Taken philosophically"
@@ -25,8 +25,8 @@ window.BadgesRegistry = {
     },
     political: {
       id: "political",
-      questionId: 1,
-      answerValue: -1.5,
+      questionId: 0,
+      answerValue: -1.0,
       name: {
         pl: "Wykonywany politycznie",
         en: "Taken politically"
