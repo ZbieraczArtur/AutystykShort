@@ -1133,11 +1133,25 @@ function computeAndDisplayResults() {
     usersResults.appendChild(createRankingSection(usersTitle, window.getUserRankingItems(), 'user'));
   }
 
-  const existingShare = resultsDiv.querySelector('.share-section');
-  if (existingShare) existingShare.remove();
-  resultsDiv.appendChild(generateShareCode(pairResults));
+  // ==================== ZMODYFIKOWANY FRAGMENT ====================
+  // USUNIĘTO sekcję "Sprawdź położenie na kompasie" (kod base64) – zgodnie z życzeniem
   resultsDiv.style.display = 'block';
   refreshExportSection();
+
+  // DODANIE informacji przy rankingu użytkowników
+  const usersResultsDiv = document.getElementById('users-results');
+  if (usersResultsDiv && !usersResultsDiv.querySelector('.ranking-info-note')) {
+    const infoDiv = document.createElement('div');
+    infoDiv.className = 'ranking-info-note';
+    infoDiv.style.marginTop = '0.8rem';
+    infoDiv.style.fontSize = '0.85rem';
+    infoDiv.style.fontStyle = 'italic';
+    infoDiv.style.color = 'var(--footer-color)';
+    infoDiv.innerHTML = '💡 Jeśli chcesz zostać dodany do rankingu użytkowników, wyślij swój kod eksportu (znajdziesz go poniżej) na adres: <a href="mailto:autystykx@gmail.com">autystykx@gmail.com</a>';
+    usersResultsDiv.appendChild(infoDiv);
+  }
+  // ================================================================
+
   window.scrollTo({ top: resultsDiv.offsetTop - 20, behavior: 'smooth' });
 }
 
