@@ -104,7 +104,7 @@ const ideologyLogoMap = new Map([
   ['Anarchokomunizm', 'Anarchokomunizm.svg'],
   ['Anarchoprymitywizm', 'Anarchoprymitywizm.png'],
   ['Anarchosyndykalizm', 'Anarchosyndykalizm.png'],
-  ['Chrześcijańska demokracja', 'Chrzescijańska_demokracja.png'],
+  ['Chrześcijańska demokracja', 'Chrzescijanska_demokracja.png'],
   ['De Leonizm', 'De_Leonizm.png'],
   ['Demokratyczny konfederalizm', 'Demokratyczny_konfederalizm.png'],
   ['Dystrybucjonizm', 'Dystrybucjonizm.png'],
@@ -1271,6 +1271,26 @@ function setupSimulation() {
     });
     simulationSelect.appendChild(ideologiesGroup);
   }
+
+  // DODANIE UŻYTKOWNIKÓW DO SYMULACJI
+  const usersGroup = document.createElement('optgroup');
+  usersGroup.label = translations?.ui?.usersGroup || '👤 Użytkownicy';
+  // Pobierz listę użytkowników z config.users lub domyślną
+  let userList = [];
+  if (config.users && Array.isArray(config.users)) {
+    userList = config.users;
+  } else {
+    // Domyślny użytkownik, jeśli brak w config
+    userList = [{ name: 'CusterKnuckle', description: 'Opis użytkownika – możesz go zmienić później.' }];
+  }
+  userList.forEach(user => {
+    const option = document.createElement('option');
+    option.value = user.name;
+    option.textContent = user.name;
+    usersGroup.appendChild(option);
+  });
+  simulationSelect.appendChild(usersGroup);
+
   if (config.parties.length) simulationSelect.value = config.parties[0].name;
   else if (config.ideologies.length) simulationSelect.value = config.ideologies[0].name;
   simulateBtn.addEventListener('click', () => {
