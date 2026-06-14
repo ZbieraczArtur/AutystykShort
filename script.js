@@ -7,6 +7,26 @@ let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
 let simulatedEntity = null;         // { type: 'party'|'ideology', name: string }
 
+// ======================= NOWE ZMIENNE GLOBALNE DLA KOMPASU =======================
+let currentScoringMethod = 'weighted';   // 'weighted' lub 'equal'
+let currentInterpretationMode = 'default'; // 'default', 'institutional', 'hierarchical', 'egalitarian', 'national', 'french_revolution', 'creative'
+let currentCreativeConfig = {
+  activePairs: [],
+  labels: { top: "Heteronomia", bottom: "Autonomia", left: "Socjalizm", right: "Kapitalizm" }
+};
+
+// Mapowanie etykiet osi dla trybów interpretacyjnych
+const axisLabelsMap = {
+  default: { top: "Autorytaryzm", bottom: "Wolność", left: "Socjalizm", right: "Kapitalizm" },
+  institutional: { top: "Autorytaryzm", bottom: "Wolność", left: "Socjalizm", right: "Kapitalizm" },
+  hierarchical: { top: "Heteronomia", bottom: "Autonomia", left: "Egalitaryzm", right: "Hierarchia" },
+  egalitarian: { top: "Przymus wyrównujący", bottom: "Dobrowolność", left: "Równość", right: "Nierówność" },
+  national: { top: "Heteronomia", bottom: "Autonomia", left: "Kosmopolityzm", right: "Partykularyzm narodowy" },
+  french_revolution: { top: "Autorytet", bottom: "Antyautorytet", left: "Rewolucjonizm", right: "Stary Porządek" },
+  creative: { top: "Heteronomia", bottom: "Autonomia", left: "Socjalizm", right: "Kapitalizm" }
+};
+// =================================================================================
+
 const questionsContainer = document.getElementById('questions-container');
 const submitBtn = document.getElementById('submitBtn');
 const resultsDiv = document.getElementById('results-container');
@@ -457,6 +477,8 @@ async function loadConfig() {
     setupModeSelector();
     setupImportExport();
     setupLanguageSelector();
+    // ======================= NOWE: nasłuchiwanie na zmianę metody i interpretacji =======================
+    setupCompassControls();
   } catch (err) {
     console.error(err);
     questionsContainer.innerHTML = '<p style="color:red;">Błąd ładowania konfiguracji. Sprawdź czy plik data.json istnieje i jest poprawny.</p>';
@@ -1381,11 +1403,6 @@ function setupModeSelector() {
 }
 
 // ======================= INTEGRACJA Z KOMPASEM =======================
-let currentCompassMode = 'weighted';
-let currentCreativeConfig = {
-  activePairs: [],
-  labels: { top: "Heteronomia", bottom: "Autonomia", left: "Socjalizm", right: "Kapitalizm" }
-};
 let compassUserValues = null; // mapa wartości dla użytkownika
 
 // Funkcja do budowania mapy wartości dla użytkownika na podstawie pairResults
@@ -1425,18 +1442,23 @@ function buildUserValuesMap(pairResults) {
 function updateCompassDisplay() {
   const valuesMap = compassUserValues;
   if (!valuesMap) return;
-  const coords = computeCoordinatesFromValues(valuesMap, currentCompassMode, currentCreativeConfig);
+  // Nowe wywołanie z dodatkowymi parametrami
+  const coords = computeCoordinatesFromValues(valuesMap, currentScoringMethod, currentInterpretationMode, currentCreativeConfig);
   if (window.compassInstance && window.compassInstance.updateMarker) {
     window.compassInstance.updateMarker(coords.x, coords.y);
     window.compassInstance.updateActivePairs(coords.activePairsCount);
-    window.compassInstance.updateModeLabel(currentCompassMode);
+    window.compassInstance.updateModeLabel(`${currentScoringMethod === 'weighted' ? 'Wagowa' : 'Jednakowe wagi'} / ${currentInterpretationMode}`);
+    // Aktualizacja etykiet osi
+    const labels = axisLabelsMap[currentInterpretationMode] || axisLabelsMap.default;
+    if (window.compassInstance.setLabels) window.compassInstance.setLabels(labels.top, labels.bottom, labels.left, labels.right);
   }
   if (window.modalCompassInstance && window.modalCompassInstance.updateMarker) {
     window.modalCompassInstance.updateMarker(coords.x, coords.y);
     window.modalCompassInstance.updateActivePairs(coords.activePairsCount);
-    window.modalCompassInstance.updateModeLabel(currentCompassMode);
+    window.modalCompassInstance.updateModeLabel(`${currentScoringMethod === 'weighted' ? 'Wagowa' : 'Jednakowe wagi'} / ${currentInterpretationMode}`);
+    const labels = axisLabelsMap[currentInterpretationMode] || axisLabelsMap.default;
+    if (window.modalCompassInstance.setLabels) window.modalCompassInstance.setLabels(labels.top, labels.bottom, labels.left, labels.right);
   }
-  // Zapamiętaj współrzędne do ewentualnego użycia przy nakładkach
   window.currentUserCoords = { x: coords.x, y: coords.y };
 }
 
@@ -1469,7 +1491,7 @@ async function loadOverlays(showParties, showIdeologies, compassInstance) {
       const coords = await getEntityCoordinates(user.name, 'user');
       if (coords) {
         const avatarUrl = user.avatar ? `images/IUsers/${user.avatar}` : null;
-        const logoUrl = avatarUrl || 'images/default-user.png'; // możesz zastąpić domyślną ikoną
+        const logoUrl = avatarUrl || 'images/default-user.png';
         compassInstance.addOverlay(logoUrl, coords.x, coords.y, 'user', user.name, user.description || '');
       }
     }
@@ -1485,7 +1507,7 @@ async function getEntityCoordinates(name, type) {
     if (!parsed.length) return { x: 0, y: 0 };
     const scores = computeScoresForAnswers(parsed, 'full');
     const valuesMap = buildUserValuesMap(scores.pairResults);
-    const coords = computeCoordinatesFromValues(valuesMap, currentCompassMode, currentCreativeConfig);
+    const coords = computeCoordinatesFromValues(valuesMap, currentScoringMethod, currentInterpretationMode, currentCreativeConfig);
     return { x: coords.x, y: coords.y };
   } else {
     // Symulacja odpowiedzi dla danej entitiy (partia/ideologia)
@@ -1518,7 +1540,7 @@ async function getEntityCoordinates(name, type) {
     // Oblicz pairResults dla tych odpowiedzi (tryb full)
     const tmpScores = computeScoresForAnswers(simulatedAnswers, 'full');
     const valuesMap = buildUserValuesMap(tmpScores.pairResults);
-    const coords = computeCoordinatesFromValues(valuesMap, currentCompassMode, currentCreativeConfig);
+    const coords = computeCoordinatesFromValues(valuesMap, currentScoringMethod, currentInterpretationMode, currentCreativeConfig);
     return { x: coords.x, y: coords.y };
   }
 }
@@ -1616,22 +1638,9 @@ function initCompassAfterResults() {
   const container = document.getElementById('compass-container');
   if (!container) return;
   if (window.compassInstance && window.compassInstance.destroy) window.compassInstance.destroy();
+  // Tworzymy instancję bez callbacków, bo zmiany są obsługiwane przez zewnętrzne selektory
   window.compassInstance = new CompassUI(container, {
-    mode: currentCompassMode,
-    onModeChange: (mode) => {
-      currentCompassMode = mode;
-      if (mode === 'creative') {
-        // Wczytaj zapisaną konfigurację kreatywną
-        if (window.compassInstance.getCreativeConfig) {
-          currentCreativeConfig = window.compassInstance.getCreativeConfig();
-        }
-      }
-      updateCompassDisplay();
-      // Odśwież nakładki
-      const showParties = document.getElementById('toggle-parties')?.checked || false;
-      const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
-      loadOverlays(showParties, showIdeologies, window.compassInstance);
-    },
+    mode: currentScoringMethod,
     onCreativeConfigChange: (config) => {
       currentCreativeConfig = config;
       updateCompassDisplay();
@@ -1642,10 +1651,12 @@ function initCompassAfterResults() {
   });
   // Ustaw wartości użytkownika
   if (compassUserValues) {
-    const coords = computeCoordinatesFromValues(compassUserValues, currentCompassMode, currentCreativeConfig);
+    const coords = computeCoordinatesFromValues(compassUserValues, currentScoringMethod, currentInterpretationMode, currentCreativeConfig);
     window.compassInstance.updateMarker(coords.x, coords.y);
     window.compassInstance.updateActivePairs(coords.activePairsCount);
-    window.compassInstance.updateModeLabel(currentCompassMode);
+    window.compassInstance.updateModeLabel(`${currentScoringMethod === 'weighted' ? 'Wagowa' : 'Jednakowe wagi'} / ${currentInterpretationMode}`);
+    const labels = axisLabelsMap[currentInterpretationMode] || axisLabelsMap.default;
+    if (window.compassInstance.setLabels) window.compassInstance.setLabels(labels.top, labels.bottom, labels.left, labels.right);
   }
   // Obsługa przełączników nakładek
   const toggleParties = document.getElementById('toggle-parties');
@@ -1692,21 +1703,7 @@ function initCompassModal() {
       const modalContainer = document.getElementById('modal-compass-container');
       if (modalContainer) {
         window.modalCompassInstance = new CompassUI(modalContainer, {
-          mode: currentCompassMode,
-          onModeChange: (mode) => {
-            currentCompassMode = mode;
-            if (mode === 'creative') {
-              if (window.modalCompassInstance.getCreativeConfig) {
-                currentCreativeConfig = window.modalCompassInstance.getCreativeConfig();
-              }
-            }
-            updateCompassDisplay();
-            const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
-            const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
-            loadOverlays(showParties, showIdeologies, window.modalCompassInstance);
-            // Synchronizacja z głównym kompasem
-            if (window.compassInstance && window.compassInstance.setMode) window.compassInstance.setMode(mode);
-          },
+          mode: currentScoringMethod,
           onCreativeConfigChange: (config) => {
             currentCreativeConfig = config;
             updateCompassDisplay();
@@ -1718,10 +1715,12 @@ function initCompassModal() {
         });
         // Przekaż wartości użytkownika
         if (compassUserValues) {
-          const coords = computeCoordinatesFromValues(compassUserValues, currentCompassMode, currentCreativeConfig);
+          const coords = computeCoordinatesFromValues(compassUserValues, currentScoringMethod, currentInterpretationMode, currentCreativeConfig);
           window.modalCompassInstance.updateMarker(coords.x, coords.y);
           window.modalCompassInstance.updateActivePairs(coords.activePairsCount);
-          window.modalCompassInstance.updateModeLabel(currentCompassMode);
+          window.modalCompassInstance.updateModeLabel(`${currentScoringMethod === 'weighted' ? 'Wagowa' : 'Jednakowe wagi'} / ${currentInterpretationMode}`);
+          const labels = axisLabelsMap[currentInterpretationMode] || axisLabelsMap.default;
+          if (window.modalCompassInstance.setLabels) window.modalCompassInstance.setLabels(labels.top, labels.bottom, labels.left, labels.right);
         }
         // Obsługa przełączników nakładek w modalu
         const modalToggleParties = document.getElementById('modal-toggle-parties');
@@ -1741,10 +1740,12 @@ function initCompassModal() {
       }
     } else {
       // odświeżenie
-      const coords = computeCoordinatesFromValues(compassUserValues, currentCompassMode, currentCreativeConfig);
+      const coords = computeCoordinatesFromValues(compassUserValues, currentScoringMethod, currentInterpretationMode, currentCreativeConfig);
       window.modalCompassInstance.updateMarker(coords.x, coords.y);
       window.modalCompassInstance.updateActivePairs(coords.activePairsCount);
-      window.modalCompassInstance.updateModeLabel(currentCompassMode);
+      window.modalCompassInstance.updateModeLabel(`${currentScoringMethod === 'weighted' ? 'Wagowa' : 'Jednakowe wagi'} / ${currentInterpretationMode}`);
+      const labels = axisLabelsMap[currentInterpretationMode] || axisLabelsMap.default;
+      if (window.modalCompassInstance.setLabels) window.modalCompassInstance.setLabels(labels.top, labels.bottom, labels.left, labels.right);
       const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
       const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
       loadOverlays(showParties, showIdeologies, window.modalCompassInstance);
@@ -1758,17 +1759,14 @@ function initCompassModal() {
   });
 }
 
-// Po załadowaniu configu, dodajemy dodatkowe inicjalizacje
-const originalLoadConfig = loadConfig;
-loadConfig = async function() {
-  await originalLoadConfig();
-  // Po załadowaniu configu, ustawiamy nasłuchiwanie na zmianę trybu kompasu
-  const compassModeSelect = document.getElementById('compass-mode-select');
-  if (compassModeSelect) {
-    compassModeSelect.addEventListener('change', (e) => {
-      currentCompassMode = e.target.value;
-      if (window.compassInstance && window.compassInstance.setMode) window.compassInstance.setMode(currentCompassMode);
-      if (window.modalCompassInstance && window.modalCompassInstance.setMode) window.modalCompassInstance.setMode(currentCompassMode);
+// Funkcja obsługująca nowe selektory (scoring method i interpretation mode)
+function setupCompassControls() {
+  const scoringSelect = document.getElementById('compass-scoring-method');
+  const interpretationSelect = document.getElementById('compass-interpretation-mode');
+  if (scoringSelect) {
+    scoringSelect.value = currentScoringMethod;
+    scoringSelect.addEventListener('change', (e) => {
+      currentScoringMethod = e.target.value;
       updateCompassDisplay();
       const showParties = document.getElementById('toggle-parties')?.checked || false;
       const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
@@ -1779,23 +1777,26 @@ loadConfig = async function() {
         loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance);
       }
     });
-    // ustawienie opisu trybu
-    const modeDesc = document.getElementById('compass-mode-desc');
-    if (modeDesc) {
-      const descriptions = {
-        weighted: 'Wagowy – uwzględnia domyślne wagi poszczególnych par.',
-        equal: 'Jednakowe wagi – każda para ma wagę 1.',
-        institutional: 'Instytucjonalny – tylko pary związane z instytucjami państwowymi.',
-        creative: 'Kreatywny – ręczny wybór par i wag.'
-      };
-      compassModeSelect.addEventListener('change', () => {
-        modeDesc.textContent = descriptions[compassModeSelect.value] || '';
-      });
-      modeDesc.textContent = descriptions[compassModeSelect.value];
-    }
   }
-  initCompassModal();
-};
+  if (interpretationSelect) {
+    interpretationSelect.value = currentInterpretationMode;
+    interpretationSelect.addEventListener('change', (e) => {
+      currentInterpretationMode = e.target.value;
+      if (currentInterpretationMode === 'creative') {
+        showPopup('Tryb Kreatywny wymaga konfiguracji w pełnoekranowym panelu kompasu. Kliknij przycisk "Otwórz pełnoekranowy panel kompasu".');
+      }
+      updateCompassDisplay();
+      const showParties = document.getElementById('toggle-parties')?.checked || false;
+      const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
+      loadOverlays(showParties, showIdeologies, window.compassInstance);
+      if (window.modalCompassInstance) {
+        const modalShowParties = document.getElementById('modal-toggle-parties')?.checked || false;
+        const modalShowIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
+        loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance);
+      }
+    });
+  }
+}
 
 // Przeładowanie funkcji symulacji, aby po symulacji odświeżyć kompas
 const originalSimulateAnswers = simulateAnswers;
