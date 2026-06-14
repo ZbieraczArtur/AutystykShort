@@ -90,21 +90,6 @@ function getPartyLogoUrl(partyName) {
   return null;
 }
 
-
-const USER_BASE_PATH = 'images/IUsers/';
-const userLogoMap = new Map([
-  ['CusterKnuckle', 'CusterKnuckle.jpg']
-]);
-
-function getUserLogoUrl(userName) {
-  const logoKey = config?.users?.find(p => p.name === userName || p.key === userName)?.key || userName;
-  const fileName = userLogoMap.get(logoKey);
-  if (fileName) return LOGO_BASE_PATH + fileName;
-  console.warn(`Brak logo dla partii: ${partyName}`);
-  return null;
-}
-
-
 // ======================= MAPOWANIE IDEOLOGII -> LOGO =======================
 const IDEOLOGY_LOGO_BASE_PATH = 'images/Ideologie/';
 const ideologyLogoMap = new Map([
