@@ -915,6 +915,23 @@ function createRankingSection(title, items, type) {
   const header = document.createElement('h3');
   header.textContent = title;
   section.appendChild(header);
+
+  // pulsująca ikona tylko dla rankingu użytkowników
+  if (title === (translations?.ui?.rankingUsers || 'Ranking użytkowników')) {
+    const pulseIcon = document.createElement('span');
+    pulseIcon.textContent = '❗';
+    pulseIcon.className = 'pulse-icon';
+    pulseIcon.style.marginLeft = '8px';
+    pulseIcon.style.cursor = 'pointer';
+    pulseIcon.style.fontSize = '1.2rem';
+    pulseIcon.style.display = 'inline-block';
+    pulseIcon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      showPopup('Jeśli chcesz zostać dodanym do publicznego rankingu to wyślij pod maila autystykx@gmail.com obowiązkowo swój nick i avatar i ewentualnie krótki opis, reklamę, linki do sociali czy cokolwiek zapragniesz.');
+    });
+    header.appendChild(pulseIcon);
+  }
+
   if (title.includes('Ideologii') || title.includes('Ideologies')) {
     const info = document.createElement('div');
     info.style.marginBottom = '1rem';
@@ -973,10 +990,28 @@ function createRankingSection(title, items, type) {
     percentSpan.textContent = `${Math.round(item.percent)}%`;
     itemDiv.appendChild(percentSpan);
 
+    // Zmodyfikowana obsługa kliknięcia
     if (type === 'party') {
       itemDiv.addEventListener('click', () => showPartyPopup(item.name, item.description || ''));
     } else if (type === 'ideology') {
       itemDiv.addEventListener('click', () => showIdeologyPopup(item.name, item.description || ''));
+    } else if (type === 'user') {
+      itemDiv.addEventListener('click', () => {
+        // pokaż zdjęcie jeśli istnieje
+        const avatarUrl = item.avatar ? `images/IUsers/${item.avatar}` : null;
+        if (avatarUrl) {
+          const existingLogo = popup.querySelector('.popup-logo-img');
+          if (existingLogo) existingLogo.remove();
+          const img = document.createElement('img');
+          img.src = avatarUrl;
+          img.alt = `Avatar ${item.name}`;
+          img.className = 'popup-logo-img';
+          img.style.cssText = 'display: block; max-width: 120px; max-height: 120px; margin: 0 auto 16px auto; object-fit: contain; border-radius: 50%;';
+          const popupContent = popup.querySelector('.popup-content');
+          popupContent.insertBefore(img, popupText);
+        }
+        showPopup(`${item.name}\n\n${item.description || 'Brak opisu.'}`);
+      });
     } else {
       itemDiv.addEventListener('click', () => showPopup(`${item.name}\n${item.description || ''}`));
     }
@@ -1207,6 +1242,22 @@ function simulateAnswers(selectedName) {
   } else if (isIdeology) {
     simulatedEntity = { type: 'ideology', name: selectedName };
   } else {
+    // symulacja użytkownika
+    const isUser = config.users && config.users.some(u => u.name === selectedName);
+    if (isUser) {
+      const user = config.users.find(u => u.name === selectedName);
+      if (user && user.exportCode) {
+        const parsed = parseExportCode(user.exportCode);
+        const userAnswerRows = parsed.filter(row => !row.noteOnly && row.answerData);
+        if (userAnswerRows.length) {
+          simulatedEntity = { type: 'user', name: selectedName };
+          userAnswers = userAnswerRows;
+          updateDOMSelections();
+          computeAndDisplayResults();
+          return;
+        }
+      }
+    }
     simulatedEntity = null;
   }
 
@@ -1389,8 +1440,9 @@ function updateCompassDisplay() {
   window.currentUserCoords = { x: coords.x, y: coords.y };
 }
 
-// Ładowanie nakładek (partie, ideologie)
+// Ładowanie nakładek (partie, ideologie, użytkownicy)
 async function loadOverlays(showParties, showIdeologies, compassInstance) {
+  const showUsers = document.getElementById('toggle-users')?.checked || false;
   if (!compassInstance || !compassInstance.clearOverlays) return;
   compassInstance.clearOverlays();
   if (!config) return;
@@ -1412,42 +1464,63 @@ async function loadOverlays(showParties, showIdeologies, compassInstance) {
       }
     }
   }
-}
-
-// Obliczanie współrzędnych dla partii/ideologii (symulacja odpowiedzi)
-async function getEntityCoordinates(name, type) {
-  // Symulacja odpowiedzi dla danej entitiy (używamy trybu full)
-  const simulatedAnswers = [];
-  for (const question of config.questions) {
-    let bestAnswer = null;
-    let bestAbsValue = -1;
-    for (const answer of question.answers) {
-      const partiesFor = answer.parties_for || [];
-      const ideologiesFor = answer.ideologies_for || [];
-      if ((type === 'party' && partiesFor.includes(name)) || (type === 'ideology' && ideologiesFor.includes(name))) {
-        const absVal = Math.abs(answer.value);
-        if (absVal > bestAbsValue) {
-          bestAbsValue = absVal;
-          bestAnswer = answer;
-        }
+  if (showUsers && config.users) {
+    for (const user of config.users) {
+      const coords = await getEntityCoordinates(user.name, 'user');
+      if (coords) {
+        const avatarUrl = user.avatar ? `images/IUsers/${user.avatar}` : null;
+        const logoUrl = avatarUrl || 'images/default-user.png'; // możesz zastąpić domyślną ikoną
+        compassInstance.addOverlay(logoUrl, coords.x, coords.y, 'user', user.name, user.description || '');
       }
     }
-    if (!bestAnswer) {
-      bestAnswer = question.answers.find(a => a.value === 0 && (a.label.includes('Pomiń') || a.label.includes('Skip')));
-      if (!bestAnswer) bestAnswer = question.answers[0];
-    }
-    simulatedAnswers.push({
-      questionId: question.id,
-      answerIndex: question.answers.indexOf(bestAnswer),
-      answerValue: bestAnswer.value,
-      answerData: bestAnswer
-    });
   }
-  // Oblicz pairResults dla tych odpowiedzi (tryb full)
-  const tmpScores = computeScoresForAnswers(simulatedAnswers, 'full');
-  const valuesMap = buildUserValuesMap(tmpScores.pairResults);
-  const coords = computeCoordinatesFromValues(valuesMap, currentCompassMode, currentCreativeConfig);
-  return { x: coords.x, y: coords.y };
+}
+
+// Obliczanie współrzędnych dla partii/ideologii/użytkownika
+async function getEntityCoordinates(name, type) {
+  if (type === 'user') {
+    const user = config.users.find(u => u.name === name);
+    if (!user || !user.exportCode) return { x: 0, y: 0 };
+    const parsed = parseExportCode(user.exportCode).filter(row => !row.noteOnly && row.answerData);
+    if (!parsed.length) return { x: 0, y: 0 };
+    const scores = computeScoresForAnswers(parsed, 'full');
+    const valuesMap = buildUserValuesMap(scores.pairResults);
+    const coords = computeCoordinatesFromValues(valuesMap, currentCompassMode, currentCreativeConfig);
+    return { x: coords.x, y: coords.y };
+  } else {
+    // Symulacja odpowiedzi dla danej entitiy (partia/ideologia)
+    const simulatedAnswers = [];
+    for (const question of config.questions) {
+      let bestAnswer = null;
+      let bestAbsValue = -1;
+      for (const answer of question.answers) {
+        const partiesFor = answer.parties_for || [];
+        const ideologiesFor = answer.ideologies_for || [];
+        if ((type === 'party' && partiesFor.includes(name)) || (type === 'ideology' && ideologiesFor.includes(name))) {
+          const absVal = Math.abs(answer.value);
+          if (absVal > bestAbsValue) {
+            bestAbsValue = absVal;
+            bestAnswer = answer;
+          }
+        }
+      }
+      if (!bestAnswer) {
+        bestAnswer = question.answers.find(a => a.value === 0 && (a.label.includes('Pomiń') || a.label.includes('Skip')));
+        if (!bestAnswer) bestAnswer = question.answers[0];
+      }
+      simulatedAnswers.push({
+        questionId: question.id,
+        answerIndex: question.answers.indexOf(bestAnswer),
+        answerValue: bestAnswer.value,
+        answerData: bestAnswer
+      });
+    }
+    // Oblicz pairResults dla tych odpowiedzi (tryb full)
+    const tmpScores = computeScoresForAnswers(simulatedAnswers, 'full');
+    const valuesMap = buildUserValuesMap(tmpScores.pairResults);
+    const coords = computeCoordinatesFromValues(valuesMap, currentCompassMode, currentCreativeConfig);
+    return { x: coords.x, y: coords.y };
+  }
 }
 
 // Pomocnicza funkcja do obliczania wyników dla podanych odpowiedzi i trybu
