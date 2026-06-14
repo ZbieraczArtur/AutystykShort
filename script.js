@@ -194,7 +194,7 @@ const categoryMapping = {
   "Samoorganizacja": 2, "Decentralizacja": 2, "Ograniczenie władzy": 2, "Sakralizacja autorytetu": 2,
   "Różnorodność norm": 2, "Demokracja": 2, "Autokracja": 2,
   "Własność kolektywna": 3, "Planowanie": 3, "Regulacja instytucjonalna": 3, "Ograniczanie wymiany": 3,
-  "Minimalizacja granic": 4, "Kosmopolityzm": 4, "Interwencjonizm zagraniczny": 4,
+  "Minimalizacja granic": 4, "Uniwersalizm humanistyczny": 4, "Interwencjonizm zagraniczny": 4,
   "Preferencja użycia siły": 5, "Rewolucja": 5, "Progresywizm": 5, "Pluralizm kulturowy": 5,
   "Neutralność religijna": 5, "Włączanie": 5, "Egalitaryzm biologiczny": 5,
   "Antropocentryzm": 6, "Postęp technologiczny": 6
@@ -216,7 +216,7 @@ const valueColors = {
   "Demokracja": "#2F3944", "Anty-demokracja": "#73B0BE", "Autokracja": "#2F3944", "Anty-autokracja": "#73B0BE",
   "Własność kolektywna": "#E44341", "Własność prywatna": "#448A3A", "Planowanie": "#E44341", "Rynek": "#448A3A",
   "Regulacja instytucjonalna": "#E44341", "Samoregulacja": "#448A3A", "Ograniczanie wymiany": "#E44341", "Swobodna wymiana": "#448A3A",
-  "Minimalizacja granic": "#4C59CB", "Kontrola granic": "#FFA219", "Kosmopolityzm": "#4C59CB", "Partykularyzm narodowy": "#FFA219",
+  "Minimalizacja granic": "#4C59CB", "Kontrola granic": "#FFA219", "Uniwersalizm humanistyczny": "#4C59CB", "Partykularyzm narodowy": "#FFA219",
   "Interwencjonizm zagraniczny": "#4C59CB", "Izolacjonizm": "#FFA219", "Preferencja użycia siły": "#DD59C7", "Unikanie przemocy": "#86D040",
   "Rewolucja": "#DD59C7", "Gradualizm": "#86D040", "Progresywizm": "#DD59C7", "Konserwatyzm": "#86D040",
   "Pluralizm kulturowy": "#DD59C7", "Homogenizacja": "#86D040", "Neutralność religijna": "#DD59C7", "Instytucjonalna religia": "#86D040",
