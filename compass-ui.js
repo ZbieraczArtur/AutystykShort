@@ -77,14 +77,15 @@ class CompassUI {
     if (this.activeSpan) this.activeSpan.innerText = count;
   }
 
-  updateModeLabel(mode) {
-    this.mode = mode;
-    if (this.modeLabelSpan) this.modeLabelSpan.innerText = this.getModeLabel();
+  // Ulepszona metoda – wyświetla pełną nazwę trybu (opis)
+  updateModeLabel(modeDescription) {
+    if (this.modeLabelSpan) this.modeLabelSpan.innerText = modeDescription;
   }
 
   setMode(mode) {
     this.mode = mode;
-    this.updateModeLabel(mode);
+    // Przekazujemy pełną nazwę trybu do wyświetlenia
+    this.updateModeLabel(this.getModeLabel());
     if (this.onModeChange) this.onModeChange(mode);
   }
 
@@ -92,6 +93,20 @@ class CompassUI {
     this.creativeConfig = config;
     this.updateLabels();
     if (this.onCreativeConfigChange) this.onCreativeConfigChange(config);
+  }
+
+  // Nowa metoda do dynamicznej zmiany etykiet osi
+  setLabels(top, bottom, left, right) {
+    const topEl = this.container.querySelector('#compassLabelTop');
+    const bottomEl = this.container.querySelector('#compassLabelBottom');
+    const leftEl = this.container.querySelector('#compassLabelLeft');
+    const rightEl = this.container.querySelector('#compassLabelRight');
+    if (topEl) topEl.innerText = top;
+    if (bottomEl) bottomEl.innerText = bottom;
+    if (leftEl) leftEl.innerText = left;
+    if (rightEl) rightEl.innerText = right;
+    // Zapisanie w creativeConfig dla spójności
+    this.creativeConfig.labels = { top, bottom, left, right };
   }
 
   addOverlay(logoUrl, x, y, type, name, description) {
@@ -220,4 +235,3 @@ class CompassUI {
     }
   }
 }
-
