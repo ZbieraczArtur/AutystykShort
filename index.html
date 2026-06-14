@@ -1,3 +1,4 @@
+<!-- index.html – zaktualizowany -->
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -89,24 +90,14 @@
       <div id="compass-container" class="compass-wrapper"></div>
       <div class="compass-controls">
         <div class="compass-mode-selector">
-          <span>⚙️ Metoda liczenia:</span>
-          <select id="compass-scoring-method">
-            <option value="weighted">⚖️ Wagowa</option>
+          <span>⚙️ Tryb obliczeń kompasu:</span>
+          <select id="compass-mode-select">
+            <option value="weighted">⚖️ Tryb wagowy</option>
             <option value="equal">📏 Jednakowe wagi</option>
+            <option value="institutional">🏛️ Tryb Instytucjonalny</option>
+            <option value="creative">✨ Tryb Kreatywny</option>
           </select>
-          <span style="margin-left: 1rem;">🧭 Tryb interpretacyjny:</span>
-          <select id="compass-interpretation-mode">
-            <option value="default">🏠 Domyślny</option>
-            <option value="institutional">🏛️ Instytucjonalny</option>
-            <option value="hierarchical">📊 Hierarchiczny</option>
-            <option value="egalitarian">⚖️ Egalitarny</option>
-            <option value="national">🌍 Narodowy</option>
-            <option value="french_revolution">⚜️ Rewolucji Francuskiej</option>
-            <option value="creative">✨ Kreatywny</option>
-          </select>
-          <div class="compass-mode-desc" id="compass-mode-desc">
-            Domyślny – używa standardowych par wartości z wagami lub bez.
-          </div>
+          <div class="compass-mode-desc" id="compass-mode-desc">Wagowy – uwzględnia domyślne wagi poszczególnych par.</div>
         </div>
         <div class="overlay-controls">
           <label><input type="checkbox" id="toggle-parties"> 🏛️ Partie polityczne</label>
@@ -142,20 +133,12 @@
         <div id="modal-compass-container" class="compass-wrapper modal-compass"></div>
         <div class="modal-controls">
           <div class="compass-mode-selector">
-            <span>⚙️ Metoda liczenia:</span>
-            <select id="modal-compass-scoring-method">
-              <option value="weighted">⚖️ Wagowa</option>
+            <span>⚙️ Tryb obliczeń:</span>
+            <select id="modal-compass-mode-select">
+              <option value="weighted">⚖️ Tryb wagowy</option>
               <option value="equal">📏 Jednakowe wagi</option>
-            </select>
-            <span style="margin-left: 1rem;">🧭 Tryb interpretacyjny:</span>
-            <select id="modal-compass-interpretation-mode">
-              <option value="default">🏠 Domyślny</option>
-              <option value="institutional">🏛️ Instytucjonalny</option>
-              <option value="hierarchical">📊 Hierarchiczny</option>
-              <option value="egalitarian">⚖️ Egalitarny</option>
-              <option value="national">🌍 Narodowy</option>
-              <option value="french_revolution">⚜️ Rewolucji Francuskiej</option>
-              <option value="creative">✨ Kreatywny</option>
+              <option value="institutional">🏛️ Tryb Instytucjonalny</option>
+              <option value="creative">✨ Tryb Kreatywny</option>
             </select>
           </div>
           <div class="overlay-controls">
@@ -187,3 +170,6 @@
   <script src="compass-enhancements.js"></script>
 </body>
 </html>
+
+
+
