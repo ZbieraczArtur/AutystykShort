@@ -57,10 +57,41 @@ function computeBadges() {
   const registry = window.BadgesRegistry;
   if (!registry?.items) return [];
   const badges = [];
+
+  const getAnswerValue = (questionId) => {
+    const answer = userAnswers.find(a => Number(a.questionId) === Number(questionId) && !a.noteOnly);
+    return answer ? Number(answer.answerValue) : null;
+  };
+
   for (const badge of Object.values(registry.items)) {
-    const answer = userAnswers.find(a => Number(a.questionId) === Number(badge.questionId) && !a.noteOnly);
-    if (answer && Number(answer.answerValue) === Number(badge.answerValue)) {
-      badges.push(badge);
+    // Stary format odznak: jeden warunek (questionId + answerValue)
+    if (badge.questionId !== undefined && badge.answerValue !== undefined) {
+      const answer = userAnswers.find(a => Number(a.questionId) === Number(badge.questionId) && !a.noteOnly);
+      if (answer && Number(answer.answerValue) === Number(badge.answerValue)) {
+        badges.push(badge);
+      }
+      continue;
+    }
+
+    // Nowy format odznak: wiele warunkow TAK/NIE - wszystkie musza byc spelnione
+    if (Array.isArray(badge.requiredYes) || Array.isArray(badge.requiredNo)) {
+      let allMatch = true;
+
+      for (const qid of (badge.requiredYes || [])) {
+        const val = getAnswerValue(qid);
+        if (val === null || val < 1.0) { allMatch = false; break; }
+      }
+
+      if (allMatch) {
+        for (const qid of (badge.requiredNo || [])) {
+          const val = getAnswerValue(qid);
+          if (val === null || val > -1.0) { allMatch = false; break; }
+        }
+      }
+
+      if (allMatch) {
+        badges.push(badge);
+      }
     }
   }
   return badges;
