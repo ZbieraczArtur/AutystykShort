@@ -56,11 +56,14 @@ function getLocalizedValue(value, fallback = '') {
 function computeBadges() {
   const registry = window.BadgesRegistry;
   if (!registry?.items) return [];
-  const firstAnswer = userAnswers.find(a => Number(a.questionId) === 1 && !a.noteOnly);
-  if (!firstAnswer || Number(firstAnswer.answerValue) === 0) return [];
-  return Object.values(registry.items).filter(badge =>
-    Number(badge.questionId) === 1 && Number(badge.answerValue) === Number(firstAnswer.answerValue)
-  );
+  const badges = [];
+  for (const badge of Object.values(registry.items)) {
+    const answer = userAnswers.find(a => Number(a.questionId) === Number(badge.questionId) && !a.noteOnly);
+    if (answer && Number(answer.answerValue) === Number(badge.answerValue)) {
+      badges.push(badge);
+    }
+  }
+  return badges;
 }
 
 // ======================= MAPOWANIE PARTII -> LOGO =======================
