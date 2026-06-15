@@ -46,24 +46,80 @@ const DEFAULT_UI_TEXTS = {
   }
 };
 
-function getLocalizedValue(value, fallback = '') {
-  if (!value) return fallback;
-  if (typeof value === 'string') return value;
-  return value[currentLanguage] || value.pl || value.en || fallback;
-}
-// ======================= FUNKCJA OBLICZAJĄCA ODZNAKI (DO ROZBUDOWY) =======================
-// Na razie zwraca pustą tablicę – możesz dodać własne warunki w oparciu o wyniki par wartości.
 function computeBadges() {
   const registry = window.BadgesRegistry;
   if (!registry?.items) return [];
-  const badges = [];
-  for (const badge of Object.values(registry.items)) {
-    const answer = userAnswers.find(a => Number(a.questionId) === Number(badge.questionId) && !a.noteOnly);
-    if (answer && Number(answer.answerValue) === Number(badge.answerValue)) {
-      badges.push(badge);
+
+  // Stwórz mapę odpowiedzi dla szybkiego dostępu
+  const answersMap = new Map();
+  for (const ans of userAnswers) {
+    if (!ans.noteOnly) {
+      answersMap.set(Number(ans.questionId), Number(ans.answerValue));
     }
   }
-  return badges;
+
+  const earnedBadges = [];
+
+  for (const badge of Object.values(registry.items)) {
+    const req = badge.requirements;
+    if (!req) continue; // pomiń, jeśli brak requirements (nie powinno się zdarzyć)
+
+    let meetsYes = true;
+    // Sprawdź warunki "yes" (wymagane odpowiedzi TAK)
+    if (req.yes && req.yes.length) {
+      for (const cond of req.yes) {
+        const answerValue = answersMap.get(cond.id);
+        if (answerValue === undefined) {
+          meetsYes = false;
+          break;
+        }
+        if (cond.exact !== undefined) {
+          if (answerValue !== cond.exact) {
+            meetsYes = false;
+            break;
+          }
+        } else if (cond.min !== undefined) {
+          if (answerValue < cond.min) {
+            meetsYes = false;
+            break;
+          }
+        } else {
+          // domyślnie: wymagana odpowiedź >= 1.0 (tak)
+          if (answerValue < 1.0) {
+            meetsYes = false;
+            break;
+          }
+        }
+      }
+    }
+
+    let meetsNo = true;
+    // Sprawdź warunki "no" (zakazane odpowiedzi NIE)
+    if (req.no && req.no.length) {
+      for (const cond of req.no) {
+        const answerValue = answersMap.get(cond.id);
+        if (answerValue === undefined) continue; // brak odpowiedzi – warunek niespełniony (nie ma zakazu)
+        if (cond.max !== undefined) {
+          if (answerValue <= cond.max) {
+            meetsNo = false;
+            break;
+          }
+        } else {
+          // domyślnie: zakazana odpowiedź <= -1.0 (nie)
+          if (answerValue <= -1.0) {
+            meetsNo = false;
+            break;
+          }
+        }
+      }
+    }
+
+    if (meetsYes && meetsNo) {
+      earnedBadges.push(badge);
+    }
+  }
+
+  return earnedBadges;
 }
 
 // ======================= MAPOWANIE PARTII -> LOGO =======================
