@@ -21,7 +21,7 @@ window.BadgesRegistry = {
         en: "Your first answer suggests you are taking the test mainly as a reflection on concepts and assumptions."
       },
       requirements: {
-        yes: [{ id: 0, exact: 1.0 }],
+        yes: [{ id: 0, min: 1.0 }],
         no: []
       }
     },
@@ -36,7 +36,7 @@ window.BadgesRegistry = {
         en: "Your first answer suggests you are taking the test mainly as a practical political position."
       },
       requirements: {
-        yes: [{ id: 0, exact: -1.0 }],
+        yes: [{ id: 0, max: -1.0 }],
         no: []
       }
     },
