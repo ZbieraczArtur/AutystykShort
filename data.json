@@ -1246,7 +1246,7 @@
     },
         {
       "id": 13,
-      "text": "Władza publiczna ma obowiązek aktywnie kształtować zachowania obywateli w celu *realizacji dobra wspólnego*",
+      "text": "Władza publiczna ma obowiązek aktywnie kształtować zachowania obywateli w celu realizacji dobra *wspólnego*",
       "description": "XXXXXX",
       "comment": "Pomiń, jeśli uważasz, że państwo powinno kształtować zachowania obywateli, jednak w innym celu ",
       "answers": [
@@ -1306,7 +1306,7 @@
       "id": 14,
       "text": "Wolność jednostki powinna być ograniczana tylko w celu zapobieżenia naruszenia wolności innych",
       "description": "Teza ta opiera się na przekonaniu, że każdy człowiek jest suwerennym panem własnego życia, ciała oraz umysłu. Zakłada ona, że jednostka powinna cieszyć się maksymalnym obszarem swobody, w którym może podejmować decyzje bez ingerencji ze strony innych osób czy państwa. Jedyną dopuszczalną granicą tej wolności jest sytuacja, w której działanie jednej osoby wyrządza realną szkodę komuś innemu lub bezpośrednio narusza jego prawo do analogicznej swobody. W tym ujęciu odróżnia się czynności dotyczące wyłącznie danej osoby od tych, które wpływają na otoczenie. Jeśli zachowanie nie krzywdzi osób trzecich, nie ma uzasadnienia dla stosowania przymusu, nawet jeśli jest ono uznawane za niemoralne lub szkodliwe dla samej jednostki. Wolność jest tu traktowana jako brak zewnętrznych barier, a rolą reguł społecznych jest jedynie pilnowanie, by autonomiczne wybory ludzi wzajemnie się nie wykluczały.",
-      "comment": "Pomiń jeśli uważasz, że wolność jednostki nie powinna mieć granic",
+      "comment": "Pomiń jeśli uważasz, że wolność jednostki nie powinna *żadnych* mieć granic",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
@@ -1389,8 +1389,8 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": ["Wolność ekspresji", "Autonomia", "Desakralizacja autorytetu", "Dobrowolność wspólnoty"],
-          "values_against": ["Cenzura", "Heteronomia", "Partykularyzm narodowy", "Etatyzm", "Sakralizacja autorytetu", "Organicyzm", "Obowiązkowość wspólnoty", "Uniformizacja norm"],
+          "values_for": ["Wolność ekspresji", "Autonomia", "Dobrowolność wspólnoty"],
+          "values_against": ["Cenzura", "Heteronomia", "Partykularyzm narodowy", "Etatyzm", "Organicyzm", "Obowiązkowość wspólnoty", "Uniformizacja norm"],
           "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "ideologies_against": ["Nacjonalizm konserwatywny", "Faszyzm"],
           "parties_for": [],
@@ -1399,8 +1399,8 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": ["Wolność ekspresji", "Autonomia", "Desakralizacja autorytetu", "Dobrowolność wspólnoty"],
-          "values_against": ["Cenzura", "Heteronomia", "Partykularyzm narodowy", "Etatyzm", "Sakralizacja autorytetu", "Organicyzm", "Obowiązkowość wspólnoty", "Uniformizacja norm"],
+          "values_for": ["Wolność ekspresji", "Autonomia", "Dobrowolność wspólnoty"],
+          "values_against": ["Cenzura", "Heteronomia", "Partykularyzm narodowy", "Etatyzm", "Organicyzm", "Obowiązkowość wspólnoty", "Uniformizacja norm"],
           "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny", "Marksizm klasyczny"],
           "ideologies_against": ["Nacjonalizm konserwatywny", "Faszyzm"],
           "parties_for": [],
@@ -1427,7 +1427,7 @@
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
           "values_for": ["Autonomia", "Pluralizm kulturowy", "Włączanie", "Indywidualizm", "Różnorodność norm", "Dobrowolność wspólnoty"],
-          "values_against": ["Heteronomia", "Homogenizacja", "Tradycjonalizm", "Uniformizacja norm", "Obowiązkowość wspólnoty"],
+          "values_against": ["Heteronomia", "Homogenizacja", "Uniformizacja norm", "Obowiązkowość wspólnoty"],
           "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny", "Socjaldemokracja", "Marksizm klasyczny", "Głęboka ekologia", "Nacjonalizm liberalny"],
           "ideologies_against": ["Nacjonalizm konserwatywny", "Faszyzm"],
           "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
@@ -1437,7 +1437,7 @@
           "label": "Częściowo zgadzam się",
           "value": 1.0,
           "values_for": ["Autonomia", "Pluralizm kulturowy", "Włączanie", "Indywidualizm", "Różnorodność norm", "Dobrowolność wspólnoty"],
-          "values_against": ["Heteronomia", "Homogenizacja", "Tradycjonalizm", "Uniformizacja norm", "Obowiązkowość wspólnoty"],
+          "values_against": ["Heteronomia", "Homogenizacja", "Uniformizacja norm", "Obowiązkowość wspólnoty"],
           "ideologies_for": ["Socjaldemokracja", "Marksizm klasyczny", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "ideologies_against": ["Nacjonalizm konserwatywny", "Faszyzm"],
           "parties_for": ["Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
@@ -1446,7 +1446,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": ["Heteronomia", "Homogenizacja", "Tradycjonalizm", "Uniformizacja norm", "Obowiązkowość wspólnoty"],
+          "values_for": ["Heteronomia", "Homogenizacja", "Uniformizacja norm", "Obowiązkowość wspólnoty"],
           "values_against": ["Autonomia", "Pluralizm kulturowy", "Włączanie", "Indywidualizm", "Różnorodność norm", "Dobrowolność wspólnoty"],
           "ideologies_for": ["Nacjonalizm konserwatywny", "Ordoliberalizm"],
           "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny", "Socjaldemokracja", "Marksizm klasyczny", "Głęboka ekologia", "Nacjonalizm liberalny"],
@@ -1456,7 +1456,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": ["Heteronomia", "Homogenizacja", "Tradycjonalizm", "Uniformizacja norm", "Obowiązkowość wspólnoty"],
+          "values_for": ["Heteronomia", "Homogenizacja", "Uniformizacja norm", "Obowiązkowość wspólnoty"],
           "values_against": ["Autonomia", "Pluralizm kulturowy", "Włączanie", "Indywidualizm", "Różnorodność norm", "Dobrowolność wspólnoty"],
           "ideologies_for": ["Nacjonalizm konserwatywny", "Faszyzm"],
           "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny", "Socjaldemokracja", "Marksizm klasyczny", "Głęboka ekologia", "Nacjonalizm liberalny"],
@@ -1504,7 +1504,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": ["Homogenizacja", "Heteronomia", "Tradycjonalizm", "Wykluczenie", "Uniformizacja norm"],
+          "values_for": ["Homogenizacja", "Heteronomia", "Wykluczenie", "Uniformizacja norm"],
           "values_against": ["Pluralizm kulturowy", "Włączanie", "Autonomia", "Różnorodność norm"],
           "ideologies_for": ["Nacjonalizm konserwatywny"],
           "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Marksizm klasyczny", "Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
@@ -1514,7 +1514,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": ["Homogenizacja", "Heteronomia", "Tradycjonalizm", "Wykluczenie", "Uniformizacja norm"],
+          "values_for": ["Homogenizacja", "Heteronomia", "Wykluczenie", "Uniformizacja norm"],
           "values_against": ["Pluralizm kulturowy", "Włączanie", "Autonomia", "Różnorodność norm"],
           "ideologies_for": ["Faszyzm"],
           "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Marksizm klasyczny", "Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
@@ -1537,12 +1537,11 @@
       "id": 18,
       "text": "Istnieją pewne przyrodzone prawa przysługujące jednostce niezależnie od decyzji jakiejkolwiek władzy",
       "description": "XXXXXX",
-      "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Autonomia", "Indywidualizm", "Desakralizacja autorytetu", "Ograniczenie władzy"],
+          "values_for": ["Autonomia", "Indywidualizm", "Uniwersalizm humanistyczny", "Desakralizacja autorytetu", "Ograniczenie władzy"],
           "values_against": ["Sakralizacja autorytetu", "Absolutyzm władzy"],
           "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Nacjonalizm konserwatywny", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "ideologies_against": ["Marksizm klasyczny", "Faszyzm"],
@@ -1552,7 +1551,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Autonomia", "Indywidualizm", "Desakralizacja autorytetu", "Ograniczenie władzy"],
+          "values_for": ["Autonomia", "Indywidualizm", "Uniwersalizm humanistyczny", "Desakralizacja autorytetu", "Ograniczenie władzy"],
           "values_against": ["Sakralizacja autorytetu", "Absolutyzm władzy"],
           "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny", "Nacjonalizm konserwatywny", "Ordoliberalizm"],
           "ideologies_against": ["Marksizm klasyczny", "Faszyzm"],
@@ -1595,7 +1594,8 @@
       "id": 19,
       "text": "Moralność nie jest kwestią osobistego wyboru, ale wynika z ustalonych wartości i norm społecznych",
       "description": "Teza ta sugeruje, że zasady etyczne nie są wynikiem indywidualnych preferencji każdego człowieka, lecz stanowią trwałe dziedzictwo wspólnoty. Moralność jest tu postrzegana jako system obiektywnych norm i wartości, które wykształciły się historycznie i stanowią fundament spójności społecznej. Zgodnie z tym ujęciem, stabilny ład wymaga istnienia wspólnego kompasu moralnego, który chroni społeczeństwo przed rozpadem i nieładem wynikającym ze sprzecznych wyborów jednostek. Osobiste przekonania powinny być zatem podporządkowane ustalonym obyczajom i tradycji, które pełnią funkcję spoiwa łączącego różne pokolenia. W tej wizji to tkanka społeczna, a nie autonomiczny rozum jednostki, jest właściwym źródłem wskazówek dotyczących tego, co jest słuszne, a co niewłaściwe. Próba uczynienia z moralności sfery osobistego wyboru jest tu postrzegana jako zagrożenie dla trwałości i jedności całego organizmu społecznego.",
-      "answers": [
+      "comment": "Pomiń, jeśli nie zgadzasz się z żadną z opcji",
+        "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
@@ -1657,8 +1657,8 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Tradycjonalizm", "Uniformizacja norm", "Sakralizacja autorytetu"],
-          "values_against": ["Neutralność religijna", "Progresywizm"],
+          "values_for": ["Tradycjonalizm", "Homogenizacja"],
+          "values_against": ["Neutralność religijna", "Progresywizm", "Pluralizm kulturowy"],
           "ideologies_for": ["Nacjonalizm konserwatywny", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
@@ -1667,8 +1667,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Tradycjonalizm"],
-          "values_against": ["Neutralność religijna", "Progresywizm"],
+          "values_for": ["Tradycjonalizm", "Homogenizacja"],
+          "values_against": ["Neutralność religijna", "Progresywizm", "Pluralizm kulturowy"],
           "ideologies_for": ["Faszyzm", "Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "ideologies_against": ["Socjaldemokracja", "Liberalizm klasyczny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
@@ -1678,7 +1678,7 @@
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": ["Neutralność religijna", "Progresywizm"],
-          "values_against": ["Tradycjonalizm", "Uniformizacja norm", "Sakralizacja autorytetu"],
+          "values_against": ["Tradycjonalizm", "Homogenizacja"],
           "ideologies_for": ["Socjaldemokracja", "Faszyzm", "Głęboka ekologia"],
           "ideologies_against": ["Nacjonalizm konserwatywny", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
@@ -1688,7 +1688,7 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": ["Neutralność religijna", "Progresywizm"],
-          "values_against": ["Tradycjonalizm"],
+          "values_against": ["Tradycjonalizm", "Homogenizacja"],
           "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Marksizm klasyczny", "Głęboka ekologia"],
           "ideologies_against": ["Nacjonalizm konserwatywny", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "parties_for": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
