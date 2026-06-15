@@ -143,7 +143,7 @@ window.BadgesRegistry = {
         pl: "Postawa odrzucająca wpływ religii na państwo i dążąca do ograniczenia lub zwalczania instytucji religijnych w sferze publicznej.",
         en: "A stance rejecting religion's influence on the state and seeking to limit or combat religious institutions in the public sphere."
       },
-      requiredYes: [355],
+      requiredYes: [356],
       requiredNo: [191, 196, 281, 192]
     },
 
