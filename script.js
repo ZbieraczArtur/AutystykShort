@@ -62,7 +62,7 @@ function computeBadges() {
 
   for (const badge of Object.values(registry.items)) {
     const req = badge.requirements;
-    if (!req) continue; // pomiń, jeśli brak requirements (nie powinno się zdarzyć)
+    if (!req) continue; // pomiń, jeśli brak requirements
 
     let meetsYes = true;
     // Sprawdź warunki "yes" (wymagane odpowiedzi TAK)
