@@ -21,19 +21,60 @@
     return String(value || '').trim().toLowerCase().replace(/\s+/g, ' ');
   }
 
+  // ======================= ZADANIE 4: NOWY ALGORYTM ZGODNOŚCI =======================
+  // Skala odpowiedzi (od najsilniejszej zgody do pominięcia)
+  // Wartości: 1.5, 0.5, -0.5, -1.5, 0
+  // Indeksy na skali: zdecydowanie zgadzam=0, częściowo zgadzam=1,
+  //                   częściowo nie zgadzam=2, zdecydowanie nie zgadzam=3, pomiń=null
+  const ANSWER_SCALE = [1.5, 0.5, -0.5, -1.5]; // pomiń (0) traktowany oddzielnie
+
+  function getScaleIndex(answerValue) {
+    const val = Number(answerValue);
+    for (let i = 0; i < ANSWER_SCALE.length; i++) {
+      if (Math.abs(ANSWER_SCALE[i] - val) < 0.01) return i;
+    }
+    return null; // pomiń lub nieznana wartość
+  }
+
+  // Punktacja za parę odpowiedzi na podstawie odległości na skali
+  // Zwraca wartość od -1.5 do +1.5
+  function pairScore(myValue, refValue) {
+    const myIdx = getScaleIndex(myValue);
+    const refIdx = getScaleIndex(refValue);
+    if (myIdx === null || refIdx === null) return 0; // pomiń = 0 pkt
+    const distance = Math.abs(myIdx - refIdx);
+    // distance 0 = +1.5, 1 = +0.5, 2 = -1.0, 3 = -1.5
+    const scoreMap = [1.5, 0.5, -1.0, -1.5];
+    return scoreMap[distance];
+  }
+
   function compareAnswersWithUser(answers) {
     let compared = 0;
     let score = 0;
+    const maxPerAnswer = 1.5; // maksymalna możliwa punktacja za jedno pytanie
+
     answers.forEach(friendAnswer => {
       if (!friendAnswer || friendAnswer.noteOnly) return;
       const myAnswer = userAnswers.find(ans => ans.questionId === friendAnswer.questionId && !ans.noteOnly);
       if (!myAnswer || !myAnswer.answerData || !friendAnswer.answerData) return;
+
+      const myVal = Number(myAnswer.answerValue);
+      const refVal = Number(friendAnswer.answerValue);
+
+      // Pomiń (0) po którejkolwiek stronie = nie licz tego pytania
+      if (myVal === 0 || refVal === 0) return;
+
       compared++;
-      const distance = Math.abs(Number(myAnswer.answerValue) - Number(friendAnswer.answerValue));
-      score += Math.max(0, 1 - distance / 3);
+      score += pairScore(myVal, refVal);
     });
-    return compared ? Math.round((score / compared) * 100) : 0;
+
+    if (compared === 0) return 0;
+    // Normalizacja: od -compared*1.5 do +compared*1.5 => 0%–100%
+    const minScore = compared * (-1.5);
+    const maxScore = compared * 1.5;
+    return Math.round(((score - minScore) / (maxScore - minScore)) * 100);
   }
+  // ==================================================================================
 
   function getConfiguredUserProfiles() {
     const source = config?.users || config?.userRanking || config?.friends || [];
@@ -42,18 +83,39 @@
       const rawCode = entry.code || entry.exportCode || entry.answersCode || entry.rawCode || '';
       const name = entry.name || entry.label || `Uzytkownik ${index + 1}`;
       const parsed = rawCode ? parseExportCode(rawCode).filter(row => !row.noteOnly && row.answerData) : [];
-      return parsed.length ? { name, answers: parsed, color: entry.color || getRandomFriendColor(), source: 'data' } : null;
+      return parsed.length ? {
+        name,
+        answers: parsed,
+        color: entry.color || getRandomFriendColor(),
+        source: 'data',
+        avatar: entry.avatar || null,
+        description: entry.description || ''
+      } : null;
     }).filter(Boolean);
+  }
+
+  // ======================= ZADANIE 1: POPUP UŻYTKOWNIKA =======================
+  // Zwraca dane użytkownika z data.json (avatar, description) po nazwie
+  function getUserDataByName(name) {
+    const source = config?.users || [];
+    return source.find(u => u.name === name) || null;
   }
 
   window.getUserRankingItems = function () {
     const profiles = [...getConfiguredUserProfiles(), ...friendProfiles];
-    return profiles.map(profile => ({
-      name: profile.name,
-      percent: compareAnswersWithUser(profile.answers),
-      description: `Zgodnosc obliczona na podstawie wspolnych odpowiedzi.`
-    })).sort((a, b) => b.percent - a.percent);
+    return profiles.map(profile => {
+      const userData = profile.source === 'data' ? getUserDataByName(profile.name) : null;
+      return {
+        name: profile.name,
+        percent: compareAnswersWithUser(profile.answers),
+        // Dla użytkowników z data.json – opis i avatar z danych; dla importowanych – stara wiadomość
+        description: userData ? (userData.description || '') : 'Zgodnosc obliczona na podstawie wspolnych odpowiedzi.',
+        avatar: userData ? (userData.avatar || null) : null,
+        isDataUser: !!userData
+      };
+    }).sort((a, b) => b.percent - a.percent);
   };
+  // ============================================================================
 
   function refreshUsersRanking() {
     const container = document.getElementById('users-results');
@@ -82,6 +144,7 @@
     return answerObj;
   }
 
+  // ======================= ZADANIE 3: parseExportCode – eksponowana globalnie =======================
   function parseExportCode(rawCode) {
     if (!config) return [];
     const lines = String(rawCode || '').split(/\r?\n/);
@@ -117,7 +180,7 @@
             break;
           }
         }
-        if (!matchedAnswer && (answerText === 'Pomiń' || answerText === 'Pomiń' || answerText === 'Skip')) {
+        if (!matchedAnswer && (answerText === 'Pomiń' || answerText === 'Skip')) {
           for (let idx = 0; idx < question.answers.length; idx++) {
             const ans = question.answers[idx];
             if (ans.value === 0 && (ans.label.includes('Pomi') || ans.label.includes('Skip'))) {
@@ -150,6 +213,10 @@
     }
     return parsed;
   }
+
+  // Eksponuj globalnie – naprawia błąd w script.js (simulateAnswers, getEntityCoordinates dla użytkowników)
+  window.parseExportCode = parseExportCode;
+  // ====================================================================================================
 
   function getAnswerText(answerObj) {
     if (!answerObj || !answerObj.answerData) return 'Brak odpowiedzi';
@@ -206,10 +273,10 @@
         ansEl.dataset.value = ans.value;
         const label = ans.label;
         if (label.includes('Zdecydowanie zgadzam') || label.includes('Strongly agree')) ansEl.classList.add('answer-strong-agree');
-        else if (label.includes('Częściowo zgadzam') || label.includes('Częściowo zgadzam') || label.includes('Somewhat agree')) ansEl.classList.add('answer-mild-agree');
-        else if (label.includes('Częściowo nie zgadzam') || label.includes('Częściowo nie zgadzam') || label.includes('Somewhat disagree')) ansEl.classList.add('answer-mild-disagree');
+        else if (label.includes('Częściowo zgadzam') || label.includes('Somewhat agree')) ansEl.classList.add('answer-mild-agree');
+        else if (label.includes('Częściowo nie zgadzam') || label.includes('Somewhat disagree')) ansEl.classList.add('answer-mild-disagree');
         else if (label.includes('Zdecydowanie nie zgadzam') || label.includes('Strongly disagree')) ansEl.classList.add('answer-strong-disagree');
-        else if (label.includes('Pomiń') || label.includes('Pomiń') || label.includes('Skip')) ansEl.classList.add('answer-skip');
+        else if (label.includes('Pomiń') || label.includes('Skip')) ansEl.classList.add('answer-skip');
         ansEl.addEventListener('click', () => {
           answersDiv.querySelectorAll('.answer-option').forEach(sib => sib.classList.remove('selected'));
           ansEl.classList.add('selected');
@@ -328,7 +395,19 @@
   };
   updateCompassDisplay = window.updateCompassDisplay;
 
+  // ======================= ZADANIE 2: NAKŁADKI UŻYTKOWNIKÓW NA KOMPAS =======================
   window.getEntityCoordinates = async function (name, type) {
+    if (type === 'user') {
+      const user = config?.users?.find(u => u.name === name);
+      if (!user || !user.exportCode) return { x: 0, y: 0 };
+      const parsed = parseExportCode(user.exportCode).filter(row => !row.noteOnly && row.answerData);
+      if (!parsed.length) return { x: 0, y: 0 };
+      const scores = computeScoresForAnswers(parsed, currentScoringMode);
+      const valuesMap = buildUserValuesMap(scores.pairResults);
+      const coords = computeCoordinatesFromValues(valuesMap, currentCompassMode, currentCreativeConfig);
+      return { x: coords.x, y: coords.y };
+    }
+    // partie i ideologie
     const simulatedAnswers = [];
     for (const question of config.questions) {
       let bestAnswer = null;
@@ -358,6 +437,46 @@
     return { x: coords.x, y: coords.y };
   };
   getEntityCoordinates = window.getEntityCoordinates;
+
+  // Rozszerz loadOverlays o obsługę użytkowników
+  const baseLoadOverlays = window.loadOverlays || loadOverlays;
+  window.loadOverlays = async function (showParties, showIdeologies, compassInstance) {
+    const showUsers = document.getElementById('toggle-users')?.checked ||
+                      document.getElementById('modal-toggle-users')?.checked || false;
+    if (!compassInstance || !compassInstance.clearOverlays) return;
+    compassInstance.clearOverlays();
+    if (!config) return;
+    if (showParties && config.parties) {
+      for (const party of config.parties) {
+        const coords = await window.getEntityCoordinates(party.key || party.name, 'party');
+        if (coords) {
+          const logoUrl = getPartyLogoUrl(party.name);
+          compassInstance.addOverlay(logoUrl, coords.x, coords.y, 'party', party.name, party.description);
+        }
+      }
+    }
+    if (showIdeologies && config.ideologies) {
+      for (const ideology of config.ideologies) {
+        const coords = await window.getEntityCoordinates(ideology.key || ideology.name, 'ideology');
+        if (coords) {
+          const logoUrl = getIdeologyLogoUrl(ideology.name);
+          compassInstance.addOverlay(logoUrl, coords.x, coords.y, 'ideology', ideology.name, ideology.description);
+        }
+      }
+    }
+    if (showUsers && config.users) {
+      for (const user of config.users) {
+        const coords = await window.getEntityCoordinates(user.name, 'user');
+        if (coords) {
+          const avatarUrl = user.avatar ? `images/IUsers/${user.avatar}` : null;
+          const logoUrl = avatarUrl || 'images/ALogo.svg';
+          compassInstance.addOverlay(logoUrl, coords.x, coords.y, 'user', user.name, user.description || '');
+        }
+      }
+    }
+  };
+  loadOverlays = window.loadOverlays;
+  // ========================================================================================
 
   if (typeof CompassUI !== 'undefined') {
     CompassUI.prototype.clearFriendMarkers = function () {
@@ -430,8 +549,10 @@
       const friendsHtml = friendProfiles.map(friend => {
         const fAnswer = findFriendAnswer(friend, question.id);
         const note = fAnswer?.note || '';
-        const singlePercent = fAnswer && myAnswer
-          ? Math.round(Math.max(0, 1 - Math.abs(Number(myAnswer.answerValue) - Number(fAnswer.answerValue)) / 3) * 100)
+        const myVal = myAnswer ? Number(myAnswer.answerValue) : null;
+        const fVal = fAnswer ? Number(fAnswer.answerValue) : null;
+        const singlePercent = (myVal !== null && fVal !== null && myVal !== 0 && fVal !== 0)
+          ? Math.round(((pairScore(myVal, fVal) + 1.5) / 3) * 100)
           : null;
         return `
           <div class="friend-answer-row" style="--friend-color:${friend.color}">
@@ -635,7 +756,6 @@
     renderFriendAnswerComparison();
   }
 
-
   function refreshVisibleOverlays() {
     const showParties = document.getElementById('toggle-parties')?.checked || false;
     const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
@@ -671,6 +791,16 @@
     });
   }
 
+  // Podpięcie toggle-users do odświeżania nakładek
+  function bindUserOverlayToggle() {
+    ['toggle-users', 'modal-toggle-users'].forEach(id => {
+      const toggle = document.getElementById(id);
+      if (!toggle || toggle.dataset.userOverlayBound === 'true') return;
+      toggle.dataset.userOverlayBound = 'true';
+      toggle.addEventListener('change', () => refreshVisibleOverlays());
+    });
+  }
+
   function bindModalEnhancementOpenHandler() {
     bindCompassModeSelectors();
     const openBtn = document.getElementById('open-compass-modal');
@@ -680,14 +810,17 @@
       setTimeout(() => {
         ensureModalEnhancementPanels();
         bindCompassModeSelectors();
+        bindUserOverlayToggle();
         applyCompassModeEverywhere(currentCompassMode || 'weighted');
       }, 0);
     });
   }
+
   const baseInitCompassModal = window.initCompassModal || initCompassModal;
   window.initCompassModal = function () {
     baseInitCompassModal();
     bindCompassModeSelectors();
+    bindUserOverlayToggle();
     const openBtn = document.getElementById('open-compass-modal');
     if (openBtn && openBtn.dataset.enhancedBound !== 'true') {
       openBtn.dataset.enhancedBound = 'true';
@@ -695,6 +828,7 @@
         setTimeout(() => {
           ensureModalEnhancementPanels();
           bindCompassModeSelectors();
+          bindUserOverlayToggle();
           applyCompassModeEverywhere(currentCompassMode || 'weighted');
         }, 0);
       });
@@ -708,10 +842,15 @@
     renderFriendMarkers();
     renderFriendAnswerComparison();
     refreshUsersRanking();
+    bindUserOverlayToggle();
   };
   computeAndDisplayResults = window.computeAndDisplayResults;
 
-  setTimeout(() => { bindCompassModeSelectors(); bindModalEnhancementOpenHandler(); }, 0);
+  setTimeout(() => {
+    bindCompassModeSelectors();
+    bindModalEnhancementOpenHandler();
+    bindUserOverlayToggle();
+  }, 0);
 
   document.addEventListener('change', (event) => {
     if (event.target && (event.target.id === 'modal-compass-mode-select' || event.target.id === 'compass-mode-select' || event.target.name === 'scoringMode')) {
@@ -723,7 +862,3 @@
     }
   });
 })();
-
-
-
-
