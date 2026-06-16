@@ -1228,7 +1228,7 @@ function computeAndDisplayResults() {
   ideologiesResults.appendChild(createRankingSection(ideologiesTitle, ideologyResults, 'ideology'));
   partiesResults.appendChild(createRankingSection(partiesTitle, partyResults, 'party'));
   if (usersResults && typeof window.getUserRankingItems === 'function') {
-    const usersTitle = translations?.ui?.rankingUsers || 'Ranking użytkowników';
+    const usersTitle = translations?.ui?.rankingUsers || '🐻 Ranking użytkowników';
     usersResults.appendChild(createRankingSection(usersTitle, window.getUserRankingItems(), 'user'));
   }
 
