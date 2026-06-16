@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const NOTE_LIMIT = 500;
+  const NOTE_LIMIT = 3000;
   const answerNotes = {};
   const friendProfiles = [];
   let manualCompassValues = null;
