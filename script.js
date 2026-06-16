@@ -1029,22 +1029,52 @@ function createRankingSection(title, items, type) {
       itemDiv.addEventListener('click', () => showPartyPopup(item.name, item.description || ''));
     } else if (type === 'ideology') {
       itemDiv.addEventListener('click', () => showIdeologyPopup(item.name, item.description || ''));
-    } else if (type === 'user') {
+} else if (type === 'user') {
       itemDiv.addEventListener('click', () => {
-        // pokaż zdjęcie jeśli istnieje
-        const avatarUrl = item.avatar ? `images/IUsers/${item.avatar}` : null;
-        if (avatarUrl) {
-          const existingLogo = popup.querySelector('.popup-logo-img');
-          if (existingLogo) existingLogo.remove();
-          const img = document.createElement('img');
-          img.src = avatarUrl;
-          img.alt = `Avatar ${item.name}`;
-          img.className = 'popup-logo-img';
-          img.style.cssText = 'display: block; max-width: 120px; max-height: 120px; margin: 0 auto 16px auto; object-fit: contain; border-radius: 50%;';
-          const popupContent = popup.querySelector('.popup-content');
-          popupContent.insertBefore(img, popupText);
+        const existingLogo = popup.querySelector('.popup-logo-img');
+        if (existingLogo) existingLogo.remove();
+
+        if (item.isDataUser) {
+          // Użytkownik z data.json – pełny popup z avatarem i opisem
+          if (item.avatar) {
+            const img = document.createElement('img');
+            img.src = `images/IUsers/${item.avatar}`;
+            img.alt = `Avatar ${item.name}`;
+            img.className = 'popup-logo-img';
+            img.style.cssText = 'display: block; max-width: 120px; max-height: 120px; margin: 0 auto 16px auto; object-fit: cover; border-radius: 50%;';
+            const popupContent = popup.querySelector('.popup-content');
+            popupContent.insertBefore(img, popupText);
+          }
+          // Obsługa linków w opisie
+          const description = item.description || 'Brak opisu.';
+          const urlRegex = /(https?:\/\/[^\s]+)/g;
+          if (urlRegex.test(description)) {
+            popupText.innerHTML = '';
+            const nameEl = document.createElement('strong');
+            nameEl.textContent = item.name;
+            popupText.appendChild(nameEl);
+            popupText.appendChild(document.createElement('br'));
+            popupText.appendChild(document.createElement('br'));
+            description.split(urlRegex).forEach(part => {
+              if (part.match(/^https?:\/\//)) {
+                const a = document.createElement('a');
+                a.href = part;
+                a.textContent = part;
+                a.target = '_blank';
+                a.rel = 'noopener noreferrer';
+                popupText.appendChild(a);
+              } else if (part) {
+                popupText.appendChild(document.createTextNode(part));
+              }
+            });
+          } else {
+            popupText.innerText = `${item.name}\n\n${description}`;
+          }
+          popup.classList.remove('hidden');
+        } else {
+          // Użytkownik zaimportowany ręcznie – stary tekst
+          showPopup(`${item.name}\n\nZgodnosc obliczona na podstawie wspolnych odpowiedzi.`);
         }
-        showPopup(`${item.name}\n\n${item.description || 'Brak opisu.'}`);
       });
     } else {
       itemDiv.addEventListener('click', () => showPopup(`${item.name}\n${item.description || ''}`));
