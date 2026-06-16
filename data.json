@@ -1882,15 +1882,15 @@
     },
         {
       "id": 24,
-      "text": "Dążenie do zysku ekonomicznego jest akceptowalną i wartościową motywacją człowieka)",
+      "text": "Dążenie do zysku ekonomicznego jest akceptowalną i wartościową motywacją człowieka",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Rynek", "Indywidualizm", "Własność prywatna", "Samoregulacja", "Hierarchiczność"],
-          "values_against": ["Kolektywizm", "Własność kolektywna", "Egalitaryzm"],
+          "values_for": ["Rynek", "Własność prywatna", "Samoregulacja", "Hierarchiczność"],
+          "values_against": ["Własność kolektywna", "Egalitaryzm"],
           "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny", "Ordoliberalizm"],
           "ideologies_against": ["Socjaldemokracja", "Marksizm klasyczny", "Faszyzm", "Głęboka ekologia", "Nacjonalizm liberalny"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
@@ -1899,8 +1899,8 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Rynek", "Indywidualizm", "Własność prywatna", "Samoregulacja", "Hierarchiczność"],
-          "values_against": ["Kolektywizm", "Własność kolektywna", "Egalitaryzm"],
+          "values_for": ["Rynek", "Własność prywatna", "Samoregulacja", "Hierarchiczność"],
+          "values_against": ["Własność kolektywna", "Egalitaryzm"],
           "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Nacjonalizm konserwatywny", "Ordoliberalizm", "Nacjonalizm liberalny"],
           "ideologies_against": ["Marksizm klasyczny", "Faszyzm", "Głęboka ekologia"],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej"],
@@ -1946,7 +1946,7 @@
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Indywidualizm", "Egalitaryzm", "Autonomia", "Kontraktualizm"],
+          "values_for": ["Indywidualizm", "Kontraktualizm"],
           "values_against": ["Kolektywizm", "Organicyzm"],
           "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny", "Ordoliberalizm"],
           "ideologies_against": ["Marksizm klasyczny", "Nacjonalizm konserwatywny", "Faszyzm", "Głęboka ekologia", "Nacjonalizm liberalny"],
@@ -1956,7 +1956,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Indywidualizm", "Egalitaryzm", "Autonomia", "Kontraktualizm"],
+          "values_for": ["Indywidualizm", "Kontraktualizm"],
           "values_against": ["Kolektywizm", "Organicyzm"],
           "ideologies_for": ["Socjaldemokracja"],
           "ideologies_against": ["Marksizm klasyczny", "Nacjonalizm konserwatywny", "Faszyzm", "Głęboka ekologia", "Nacjonalizm liberalny"],
@@ -1967,7 +1967,7 @@
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
           "values_for": ["Kolektywizm", "Organicyzm"],
-          "values_against": ["Indywidualizm", "Egalitaryzm", "Autonomia", "Kontraktualizm"],
+          "values_against": ["Indywidualizm", "Kontraktualizm"],
           "ideologies_for": ["Socjaldemokracja", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny"],
           "parties_for": [],
@@ -1977,7 +1977,7 @@
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": ["Kolektywizm", "Organicyzm"],
-          "values_against": ["Indywidualizm", "Egalitaryzm", "Autonomia", "Kontraktualizm"],
+          "values_against": ["Indywidualizm", "Kontraktualizm"],
           "ideologies_for": ["Marksizm klasyczny", "Nacjonalizm konserwatywny", "Faszyzm", "Głęboka ekologia", "Nacjonalizm liberalny"],
           "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny", "Ordoliberalizm"],
           "parties_for": [],
@@ -1997,7 +1997,7 @@
     },
         {
       "id": 26,
-      "text": "Jednostka powinna przedkładać wymagania uznanego autorytetu i instytucji, do których należy (np kościół, rodzina czy korporacja zawodowa), nad własne indywidualne preferencje",
+      "text": "Jednostka powinna przedkładać wymagania uznanego autorytetu i instytucji, do których należy (np. kościół, rodzina czy korporacja zawodowa), nad własne indywidualne preferencje",
       "description": "Podejście to opiera się na przekonaniu, że autorytet jest naturalnym wymogiem uporządkowanej egzystencji i zapewnia jednostkom niezbędne kierownictwo oraz poczucie bezpieczeństwa. Władza postrzegana jest tu jako korzystne zjawisko, które chroni ludzi przed ich własną niedoskonałością i skłonnością do ulegania antyspołecznym impulsom. Zgodnie z tą wizją wolność nie polega na nieskrępowanej realizacji osobistych chęci, lecz na ochoczej akceptacji obowiązków i dyscypliny narzucanej z góry przez instytucje dysponujące większym doświadczeniem i mądrością. Szacunek dla hierarchii i poleceń władzy jest uznawany za fundament stabilności, bez którego społeczeństwo pogrążyłoby się w chaosie. Oczekiwania autorytetu biorą więc pierwszeństwo przed subiektywnymi dążeniami osób rządzonych, co ma gwarantować trwałość ładu społecznego.",
       "answers": [
         {
@@ -2023,7 +2023,7 @@
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": ["Indywidualizm", "Obowiązkowość wspólnoty"],
+          "values_for": ["Indywidualizm", "Dobrowolność wspólnoty"],
           "values_against": ["Heteronomia", "Kolektywizm", "Tradycjonalizm", "Obowiązkowość wspólnoty"],
           "ideologies_for": ["Liberalizm klasyczny"],
           "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Nacjonalizm konserwatywny", "Faszyzm", "Ordoliberalizm"],
@@ -2033,7 +2033,7 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": ["Indywidualizm", "Obowiązkowość wspólnoty"],
+          "values_for": ["Indywidualizm", "Dobrowolność wspólnoty"],
           "values_against": ["Heteronomia", "Kolektywizm", "Tradycjonalizm", "Obowiązkowość wspólnoty"],
           "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Marksizm klasyczny", "Głęboka ekologia"],
           "ideologies_against": ["Nacjonalizm konserwatywny", "Faszyzm", "Ordoliberalizm"],
@@ -2122,7 +2122,7 @@
           "values_for": ["Tradycjonalizm", "Kolektywizm", "Heteronomia", "Organicyzm", "Obowiązkowość wspólnoty"],
           "values_against": ["Indywidualizm", "Samoorganizacja", "Autonomia", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "ideologies_for": ["Nacjonalizm konserwatywny", "Faszyzm", "Głęboka ekologia"],
-          "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny", "Socjaldemokracja", "Marksizm klasyczny"],
+          "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny", "Socjaldemokracja"],
           "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": ["Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"]
         },
@@ -2131,7 +2131,7 @@
           "value": 1.0,
           "values_for": ["Tradycjonalizm", "Kolektywizm", "Heteronomia", "Organicyzm", "Obowiązkowość wspólnoty"],
           "values_against": ["Indywidualizm", "Samoorganizacja", "Autonomia", "Kontraktualizm", "Dobrowolność wspólnoty"],
-          "ideologies_for": ["Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm", "Marksizm klasyczny"],
+          "ideologies_for": ["Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny", "Socjaldemokracja"],
           "parties_for": ["Prawo i Sprawiedliwość", "Polskie Stronnictwo Ludowe", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
           "parties_against": ["Koalicja Obywatelska", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
