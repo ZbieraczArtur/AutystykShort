@@ -1389,7 +1389,7 @@ function setupSimulation() {
 
   // DODANIE UŻYTKOWNIKÓW DO SYMULACJI
   const usersGroup = document.createElement('optgroup');
-  usersGroup.label = translations?.ui?.usersGroup || '👤 Użytkownicy';
+  usersGroup.label = translations?.ui?.usersGroup || '🐻 Użytkownicy';
   // Pobierz listę użytkowników z config.users lub domyślną
   let userList = [];
   if (config.users && Array.isArray(config.users)) {
