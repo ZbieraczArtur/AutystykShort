@@ -41,8 +41,8 @@ window.BadgesRegistry = {
       id: "monarchism",
       name: { pl: "Monarchizm", en: "Monarchism" },
       description: {
-        pl: "Poparcie dla dziedzicznej władzy, często legitymizowanej boskim prawem lub tradycją. Kładzie nacisk na stabilność, ciągłość i hierarchię.",
-        en: "Support for hereditary rule, often legitimized by divine right or tradition. Emphasizes stability, continuity, and hierarchy."
+        pl: "Doktryna polityczna uznająca monarchę (króla, cesarza, księcia itp.) za prawowitą głowę państwa. Może występować w różnych formach - od monarchii ceremonialnej po absolutną.",
+        en: "A political doctrine that recognises a monarch (king, emperor, prince, etc.) as the legitimate head of state. It can take various forms – ranging from a ceremonial monarchy to an absolute monarchy."
       },
       requiredYes: [41, 296, 37],
       requiredNo: []
@@ -52,10 +52,10 @@ window.BadgesRegistry = {
       id: "anarchism",
       name: { pl: "Anarchizm", en: "Anarchism" },
       description: {
-        pl: "Odrzucenie państwa i wszelkiej przymusowej władzy na rzecz dobrowolnych, zdecentralizowanych wspólnot i bezpośredniej demokracji.",
-        en: "Rejection of the state and all coercive authority in favor of voluntary, decentralized communities and direct democracy."
+        pl: "Nurt polityczny postulujący zniesienie państwa oraz innych hierarchicznych struktur władzy opartych na przymusie i zastąpienie ich dobrowolnymi formami organizacji społecznej.",
+        en: "A political ideology that advocates the abolition of the state and other hierarchical power structures based on coercion, and their replacement with voluntary forms of social organisation."
       },
-      requiredYes: [48, 49, 50, 174],
+      requiredYes: [48, 49, 50],
       requiredNo: [52, 57, 338]
     },
 
@@ -63,8 +63,8 @@ window.BadgesRegistry = {
       id: "technocracy",
       name: { pl: "Technokracja", en: "Technocracy" },
       description: {
-        pl: "Przekonanie, że rządzić powinni eksperci i specjaliści, a decyzje polityczne powinny być oparte na danych naukowych i efektywności.",
-        en: "The belief that experts and specialists should govern, and that political decisions should be based on scientific data and efficiency."
+        pl: "Koncepcja, według której decyzje publiczne powinny być podejmowane głównie przez ekspertów i specjalistów posiadających specjalistyczną wiedzę techniczną lub naukową.",
+        en: "The concept that public decisions should be taken primarily by experts and specialists with specialist technical or scientific knowledge."
       },
       requiredYes: [42, 283, 284],
       requiredNo: [59]
@@ -74,8 +74,8 @@ window.BadgesRegistry = {
       id: "oligarchy",
       name: { pl: "Oligarchia", en: "Oligarchy" },
       description: {
-        pl: "Akceptacja koncentracji władzy i bogactwa w rękach nielicznych, często usprawiedliwiana naturalnymi nierównościami lub efektywnością.",
-        en: "Acceptance of the concentration of power and wealth in the hands of a few, often justified by natural inequalities or efficiency."
+        pl: "System rządów, w którym władza polityczna jest skoncentrowana w rękach niewielkiej grupy ludzi, organizacji lub elit.",
+        en: "A system of governance where political power is concentrated in the control of a small group of people, an organisation or an elite."
       },
       requiredYes: [74, 169, 171, 37],
       requiredNo: [38, 61, 65]
@@ -85,8 +85,8 @@ window.BadgesRegistry = {
       id: "minimalState",
       name: { pl: "Państwo minimalne", en: "Minimal state" },
       description: {
-        pl: "Postulat ograniczenia roli państwa wyłącznie do funkcji ochronnych (sądy, policja, wojsko), bez ingerencji w gospodarkę i życie prywatne.",
-        en: "The postulate of limiting the state's role solely to protective functions (courts, police, military), without interference in the economy and private life."
+        pl: "Model państwa ograniczający swoje funkcje głównie do ochrony podstawowych praw jednostki, takich jak życie, wolność i własność, realizująca jedynie funkcje wojskowe, policyjne i sądownicze. Jego celem jest zapewnienie maksymalnej dostępnej wolności w ramach jasno określonej praworządności.",
+        en: "A model of the state that limits its functions primarily to the protection of fundamental individual rights, such as life, liberty and property, and which performs only military, police and judicial functions. Its aim is to ensure the maximum possible freedom within the framework of a clearly defined rule of law."
       },
       requiredYes: [53, 286, 116, 52],
       requiredNo: [55, 57, 58, 102, 50]
@@ -96,10 +96,10 @@ window.BadgesRegistry = {
       id: "welfareState",
       name: { pl: "Państwo opiekuńcze", en: "Welfare state" },
       description: {
-        pl: "Model, w którym państwo zapewnia obywatelom bezpieczeństwo socjalne, dostęp do edukacji, ochrony zdrowia i redystrybucję dochodów.",
-        en: "A model in which the state provides citizens with social security, access to education, healthcare, and income redistribution."
+        pl: "Model państwa, które przyjmuje na siebie odpowiedzialność za zapewnienie dobrobytu socjalnego swoim obywatelom. Działa jako mechanizm redystrybucji, oferując wsparcie w zakresie ochrony zdrowia, edukacji, mieszkalnictwa i zasiłków, dążąc do realizacji zasady równości szans.",
+        en: "A model of the state that takes responsibility for ensuring the social welfare of its citizens. It acts as a mechanism for redistribution, providing support in the areas of healthcare, education, housing and benefits, with the aim of realising the principle of equal opportunities."
       },
-      requiredYes: [55, 137, 318, 321],
+      requiredYes: [55, 137],
       requiredNo: [139, 140, 320]
     },
 
@@ -107,8 +107,8 @@ window.BadgesRegistry = {
       id: "secessionism",
       name: { pl: "Secesjonizm", en: "Secessionism" },
       description: {
-        pl: "Prawo regionów lub grup etnicznych do pokojowego odłączenia się od istniejącego państwa i utworzenia własnej administracji.",
-        en: "The right of regions or ethnic groups to peacefully separate from an existing state and form their own administration."
+        pl: "Dążenie konkretnej grupy lub regionu do formalnego odłączenia się od istniejącej formacji politycznej (państwa) w celu utworzenia własnego, niepodległego podmiotu.",
+        en: "The aspiration of a specific group or region to formally secede from an existing political entity (a state) in order to establish its own independent entity."
       },
       requiredYes: [301],
       requiredNo: [88, 364]
@@ -118,8 +118,8 @@ window.BadgesRegistry = {
       id: "agrarianism",
       name: { pl: "Agraryzm", en: "Agrarianism" },
       description: {
-        pl: "Uznanie rolnictwa i wsi za fundament społeczeństwa, promowanie rodzinnych gospodarstw oraz tradycyjnego stylu życia.",
-        en: "Recognition of agriculture and rural life as the foundation of society, promoting family farms and traditional ways of life."
+        pl: "Nurt podkreślający znaczenie rolnictwa, społeczności wiejskich i własności rolnej jako fundamentów życia społecznego i gospodarczego.",
+        en: "A movement emphasising the importance of agriculture, rural communities and agricultural ownership as the foundations of social and economic life."
       },
       requiredYes: [331, 332, 334, 335],
       requiredNo: []
@@ -129,8 +129,8 @@ window.BadgesRegistry = {
       id: "religiousState",
       name: { pl: "Państwo wyznaniowe", en: "Confessional state" },
       description: {
-        pl: "Model państwa, w którym religia stanowi podstawę prawa, polityki i życia publicznego, a władza kieruje się zasadami religijnymi.",
-        en: "A model of state in which religion forms the basis of law, politics, and public life, and authority is guided by religious principles."
+        pl: "System organizacji państwowej, w którym religia dyktuje zasady życia społecznego, gospodarczego i politycznego. W takim modelu prawo państwowe jest często zastępowane lub w pełni oparte na prawie objawionym, a religia nie jest ograniczona do sfery prywatnej.",
+        en: "A system of state organisation in which religion dictates the rules governing social, economic and political life. In such a model, state law is often superseded by, or based entirely on, revealed law, and religion is not confined to the private sphere."
       },
       requiredYes: [196, 197, 193, 194],
       requiredNo: [270, 201, 355]
@@ -140,8 +140,8 @@ window.BadgesRegistry = {
       id: "stateAtheism",
       name: { pl: "Ateizm państwowy", en: "State atheism" },
       description: {
-        pl: "Postawa odrzucająca wpływ religii na państwo i dążąca do ograniczenia lub zwalczania instytucji religijnych w sferze publicznej.",
-        en: "A stance rejecting religion's influence on the state and seeking to limit or combat religious institutions in the public sphere."
+        pl: "Polityka państwa polegająca na odrzuceniu i zwalczaniu instytucji religijnych, postrzegając religię jako źródło ucisku lub fałszywej świadomości",
+        en: "A state policy of rejecting and combating religious institutions, viewing religion as a source of oppression or false consciousness"
       },
       requiredYes: [356],
       requiredNo: [191, 196, 281, 192]
@@ -184,8 +184,8 @@ window.BadgesRegistry = {
       id: "reactionism",
       name: { pl: "Reakcjonizm", en: "Reactionism" },
       description: {
-        pl: "Przekonanie, że dawne porządki społeczno-gospodarcze i tradycje były lepszym fundamentem ładu, a zmiany powinny być oceniane przez ich zgodność z tradycją.",
-        en: "The belief that past socio-economic orders and traditions were a better foundation for order, and that changes should be judged by their conformity with tradition."
+        pl: "Postawa polityczna polegająca na gwałtownym oporze wobec zmian i pragnieniu powrotu do poprzedniego systemu (ancien régime)Opiera się na pesymistycznym przekonaniu, że historia ludzkości jest procesem upadku i degeneracji dawnego „złotego wieku”.",
+        en: "A political stance characterised by fierce resistance to change and a desire to return to the previous system (ancien régime). It is based on the pessimistic belief that the history of humanity is a process of decline and degeneration from a bygone ‘golden age’."
       },
       requiredYes: [176, 300, 177],
       requiredNo: [344]
@@ -195,7 +195,7 @@ window.BadgesRegistry = {
       id: "confederalism",
       name: { pl: "Konfederalizm", en: "Confederalism" },
       description: {
-        pl: "Model ustrojowy, w którym władza centralna ogranicza się do funkcji koordynacyjnych, a realna władza pozostaje w rękach jednostek regionalnych.",
+        pl: "Model organizacji politycznej, w którym suwerenne jednostki polityczne współpracują w ramach luźnego związku zachowując szeroką niezależność.",
         en: "A constitutional model in which central authority is limited to coordinating functions, while real power remains with regional units."
       },
       requiredYes: [67, 65, 293, 292],
@@ -206,8 +206,8 @@ window.BadgesRegistry = {
       id: "federalism",
       name: { pl: "Federalizm", en: "Federalism" },
       description: {
-        pl: "Model ustrojowy oparty na podziale władzy między rząd centralny a jednostki regionalne, posiadające szeroką autonomię w wielu dziedzinach.",
-        en: "A constitutional model based on the division of power between a central government and regional units possessing broad autonomy in many areas."
+        pl: "System organizacji państwa, w którym kompetencje są podzielone pomiędzy ośrodek centralny a jednostki składowe (stany, kantony), posiadające własne budżety i systemy prawne.",
+        en: "A system of state organisation in which powers are divided between the central government and constituent units (states, cantons), each of which has its own budget and legal system."
       },
       requiredYes: [65, 70, 69, 292],
       requiredNo: [67, 73]
@@ -217,8 +217,8 @@ window.BadgesRegistry = {
       id: "noTaxes",
       name: { pl: "Brak podatków", en: "No taxes" },
       description: {
-        pl: "Przekonanie, że unikanie płacenia podatków jest moralnie usprawiedliwione, a podatki nie są niezbędnym elementem funkcjonowania społeczeństwa.",
-        en: "The belief that avoiding taxes is morally justified, and that taxes are not a necessary element of a functioning society."
+        pl: "Koncepcja postrzegająca opodatkowanie jako formę kradzieży lub wyzysku dokonywanego przez państwo, której nie można uzasadnić.",
+        en: "The view that taxation is a form of theft or exploitation by the state that cannot be justified."
       },
       requiredYes: [314],
       requiredNo: [130, 55, 137]
@@ -239,8 +239,8 @@ window.BadgesRegistry = {
       id: "freeBanking",
       name: { pl: "Wolna bankowość", en: "Free banking" },
       description: {
-        pl: "Postulat zniesienia państwowego monopolu emisji pieniądza i pozwolenia na swobodną konkurencję walut oraz brak interwencji fiskalnej i monetarnej państwa.",
-        en: "The call to abolish the state monopoly on currency issuance and allow free competition between currencies, with no fiscal or monetary intervention by the state."
+        pl: "System finansowy pozbawiony centralnego nadzoru banku państwowego, w którym produkcja pieniądza i polityka kredytowa podlegają wyłącznie mechanizmom rynkowym.",
+        en: "A financial system without central supervision by a state-owned bank, in which money creation and credit policy are governed solely by market mechanisms."
       },
       requiredYes: [133, 132],
       requiredNo: [58]
@@ -250,8 +250,8 @@ window.BadgesRegistry = {
       id: "totalitarianism",
       name: { pl: "Totalitaryzm", en: "Totalitarianism" },
       description: {
-        pl: "System, w którym państwo kontroluje wszystkie dziedziny życia, opozycja i krytyka są zakazane, a władza jednej partii lub przywódcy jest niepodważalna.",
-        en: "A system in which the state controls all areas of life, opposition and criticism are banned, and the authority of a single party or leader is unquestionable."
+        pl: "Wszechogarniający system władzy, który dąży do całkowitej kontroli nad każdym aspektem życia społecznego i prywatnego. Likwiduje społeczeństwo obywatelskie i sferę prywatną, narzucając obywatelom jednolitą ideologię i wymagając bezwzględnego posłuszeństwa.",
+        en: "An all-encompassing system of power that seeks total control over every aspect of public and private life. It dismantles civil society and the private sphere, imposing a single ideology on citizens and demanding absolute obedience."
       },
       requiredYes: [75, 76, 91, 89, 160],
       requiredNo: [153, 302, 157]
@@ -261,8 +261,8 @@ window.BadgesRegistry = {
       id: "communitarianism",
       name: { pl: "Komunitaryzm", en: "Communitarianism" },
       description: {
-        pl: "Przekonanie, że społeczeństwo stanowi spójną całość ważniejszą niż suma indywidualnych interesów, a jednostka ma zobowiązania wobec wspólnoty.",
-        en: "The belief that society constitutes a coherent whole more important than the sum of individual interests, and that the individual has obligations toward the community."
+        pl: "Przekonanie, że jednostka nie jest bytem autonomicznym, lecz jest kształtowana przez wspólnotę, do której należy. W związku z tym jednostki są winne wspólnocie szacunek, a ich tożsamość jest nierozerwalnie związana z kontekstem społecznym i kulturowym.",
+        en: "The belief that the individual is not an autonomous being, but is shaped by the community to which they belong. Consequently, individuals owe respect to the community, and their identity is inextricably linked to their social and cultural context."
       },
       requiredYes: [2, 277, 360],
       requiredNo: [1, 4]
@@ -283,8 +283,8 @@ window.BadgesRegistry = {
       id: "degrowth",
       name: { pl: "Degrowth", en: "Degrowth" },
       description: {
-        pl: "Pogląd, że wzrost gospodarczy nie powinien być celem polityki, a społeczeństwo powinno priorytetowo traktować stabilność ekologiczną nad dynamiczny rozwój.",
-        en: "The view that economic growth should not be a policy goal, and that society should prioritize ecological stability over dynamic development."
+        pl: "Przekonanie o konieczności ograniczenia konsumpcji i wzrostu gospodarczego, postrzegane jako warunek ochrony klimatu i zasobów planety",
+        en: "The belief that consumption and economic growth must be curbed, seen as a prerequisite for protecting the climate and the planet’s resources."
       },
       requiredYes: [376, 243, 237],
       requiredNo: [114, 244]
@@ -294,8 +294,8 @@ window.BadgesRegistry = {
       id: "militarism",
       name: { pl: "Militaryzm", en: "Militarism" },
       description: {
-        pl: "Przekonanie, że rozwój i rozbudowa sił wojskowych powinny być priorytetem polityki państwa, a siła militarna jest uprawnionym narzędziem polityki.",
-        en: "The belief that the development and expansion of military forces should be a priority of state policy, and that military force is a legitimate political tool."
+        pl: "Dążenie do osiągania celów politycznych za pomocą środków zbrojnych oraz przenoszenie wzorców wojskowych (dyscypliny, hierarchii, lojalności) do życia cywilnego. Wojsko jest tu postrzegane jako wzorzec organizacji społecznej.",
+        en: "The pursuit of political objectives through military means and the transfer of military models (discipline, hierarchy, loyalty) to civilian life. The military is seen here as a model for social organisation."
       },
       requiredYes: [381, 382, 255, 257, 383],
       requiredNo: [252]
@@ -305,8 +305,8 @@ window.BadgesRegistry = {
       id: "multiPartySystem",
       name: { pl: "Wielopartyjność", en: "Multi-party system" },
       description: {
-        pl: "Poparcie dla systemu politycznego dopuszczającego swobodną konkurencję między różnymi partiami i programami politycznymi.",
-        en: "Support for a political system that allows free competition between different parties and political programs."
+        pl: "Pluralizm polityczny umożliwiający swobodne tworzenie i funkcjonowanie wielu ugrupowań konkurujących o wpływ na państwo w procesie wyborczym.",
+        en: "Political pluralism, which enables the free formation and operation of multiple groups competing for influence over the state through the electoral process."
       },
       requiredYes: [302, 38, 64],
       requiredNo: [89, 91, 86]
@@ -338,8 +338,8 @@ window.BadgesRegistry = {
       id: "corporatism",
       name: { pl: "Korporacjonizm", en: "Corporatism" },
       description: {
-        pl: "Model, w którym związki zawodowe, organizacje pracodawców i państwo współdziałają w ramach zintegrowanej struktury, a klasy społeczne współpracują dla dobra narodu.",
-        en: "A model in which trade unions, employer organizations, and the state cooperate within an integrated structure, and social classes work together for the good of the nation."
+        pl: "Model organizacji społeczeństwa i gospodarki oparty na współpracy zinstytucjonalizowanych grup zawodowych, gospodarczych lub społecznych uczestniczących w procesie decyzyjnym.",
+        en: "A model of social and economic organisation based on cooperation between institutionalised professional, economic or social groups involved in the decision-making process."
       },
       requiredYes: [298, 299, 78, 212],
       requiredNo: [261, 112]
@@ -349,8 +349,8 @@ window.BadgesRegistry = {
       id: "autarky",
       name: { pl: "Autarkia", en: "Autarky" },
       description: {
-        pl: "Model gospodarczy zorientowany na samowystarczalność, ograniczanie handlu zagranicznego i ochronę krajowych producentów przed konkurencją z zewnątrz.",
-        en: "An economic model oriented toward self-sufficiency, limiting foreign trade, and protecting domestic producers from outside competition."
+        pl: "Model gospodarczy zorientowany na dążenie do całkowitej samowystarczalności gospodarczej. . Oznacza to poleganie wyłącznie na własnych zasobach i energii oraz uniezależnienie się od handlu międzynarodowego i rynków światowych.",
+        en: "An economic model geared towards achieving complete economic self-sufficiency. This means relying solely on one’s own resources and energy, and becoming independent of international trade and global markets."
       },
       requiredYes: [316, 317, 222, 224],
       requiredNo: [135, 225]
@@ -371,7 +371,7 @@ window.BadgesRegistry = {
       id: "socializedProduction",
       name: { pl: "Uspołecznienie środków produkcji", en: "Socialization of the means of production" },
       description: {
-        pl: "Pogląd, że środki produkcji powinny być własnością społeczną lub wspólnotową, a nie prywatną, a spółdzielcze formy organizacji produkcji powinny być preferowane.",
+        pl: "Pogląd, że środki produkcji powinny być własnością społeczną lub wspólnotową, a nie prywatną, a kolektywne formy organizacji produkcji powinny być preferowane.",
         en: "The view that the means of production should be socially or collectively owned rather than private, with cooperative forms of production organization being preferred."
       },
       requiredYes: [101, 109, 259],
