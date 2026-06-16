@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  const NOTE_LIMIT = 3000;
+  const NOTE_LIMIT = 500;
   const answerNotes = {};
   const friendProfiles = [];
   let manualCompassValues = null;
@@ -134,7 +134,7 @@
 
   function setNote(questionId, value) {
     const key = String(questionId);
-    answerNotes[key] = String(value || '').slice(0, );
+    answerNotes[key] = String(value || '').slice(0, NOTE_LIMIT);
     const existing = userAnswers.find(a => a.questionId === Number(questionId));
     if (existing) existing.note = answerNotes[key];
   }
@@ -157,7 +157,7 @@
         const questionId = parseInt(noteMatch[1], 10);
         let noteText = noteMatch[2] || '';
         try { noteText = decodeURIComponent(noteText); } catch (err) {}
-        parsedNotes.set(questionId, noteText.slice(0, ));
+        parsedNotes.set(questionId, noteText.slice(0, NOTE_LIMIT));
       }
     }
 
@@ -297,16 +297,16 @@
       const noteWrap = document.createElement('div');
       noteWrap.className = 'answer-note-wrap';
       noteWrap.innerHTML = `
-        <label for="answer-note-${q.id}">Uzasadnienie odpowiedzi <span class="note-counter">0/${}</span></label>
-        <textarea id="answer-note-${q.id}" class="answer-note" maxlength="${}" rows="3" placeholder="Opcjonalnie doprecyzuj, jak rozumiesz tę odpowiedź."></textarea>
+        <label for="answer-note-${q.id}">Uzasadnienie odpowiedzi <span class="note-counter">0/${NOTE_LIMIT}</span></label>
+        <textarea id="answer-note-${q.id}" class="answer-note" maxlength="${NOTE_LIMIT}" rows="3" placeholder="Opcjonalnie doprecyzuj, jak rozumiesz tę odpowiedź."></textarea>
       `;
       const noteInput = noteWrap.querySelector('textarea');
       const counter = noteWrap.querySelector('.note-counter');
       noteInput.value = getNote(q.id);
-      counter.textContent = `${noteInput.value.length}/${}`;
+      counter.textContent = `${noteInput.value.length}/${NOTE_LIMIT}`;
       noteInput.addEventListener('input', () => {
         setNote(q.id, noteInput.value);
-        counter.textContent = `${noteInput.value.length}/${}`;
+        counter.textContent = `${noteInput.value.length}/${NOTE_LIMIT}`;
         renderFriendAnswerComparison();
         refreshExportSection?.();
       });
@@ -328,7 +328,7 @@
       const note = getNote(card.dataset.id);
       input.value = note;
       const counter = card.querySelector('.note-counter');
-      if (counter) counter.textContent = `${note.length}/${}`;
+      if (counter) counter.textContent = `${note.length}/${NOTE_LIMIT}`;
     });
   };
   updateDOMSelections = window.updateDOMSelections;
