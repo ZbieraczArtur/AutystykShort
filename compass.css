@@ -184,13 +184,14 @@ body.dark .marker {
 
 .compass-overlay.ideology {
   border-radius: 7px;
-  /* usuń outline i outline-offset – wywaliłem obie linie */
-  box-shadow: 0 0 0 1px rgba(0, 100, 255, 0.4), 0 4px 12px rgba(0,0,0,0.15);  /* ← niebieski cień zamiast ramki */
+  box-shadow: 0 0 0 1px rgba(0, 100, 255, 0.4), 0 4px 12px rgba(0,0,0,0.15);
+  background: transparent !important;
 }
 
 .compass-overlay.user {
-  border-radius: 50%;   /* albo 999px, żeby były okrągłe – może być tak jak partia */
-  box-shadow: 0 0 0 1px rgba(0, 200, 0, 0.4), 0 4px 12px rgba(0,0,0,0.15);  /* ← zielony cień */
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px rgba(0, 200, 0, 0.4), 0 4px 12px rgba(0,0,0,0.15);
+  background: transparent !important;
 }
 
 body.dark .compass-overlay {
