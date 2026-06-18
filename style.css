@@ -2115,12 +2115,13 @@ body.dark .manual-pair-row input {
 }
 
 .friend-dot {
-  width: 14px;
-  height: 14px;
+  width: 8px;         /* ← było 14px */
+  height: 8px;        /* ← było 14px */
   border-radius: 999px;
   background: var(--friend-color);
-  border: 2px solid #fff;
-  box-shadow: 0 0 0 2px rgba(15, 23, 42, 0.28);
+  border: 1.5px solid #fff;  /* ← cieńsza obwódka */
+  box-shadow: 0 0 0 1.5px rgba(15, 23, 42, 0.2);  /* ← mniejszy cień */
+  opacity: 0.7;       /* ← DODAJ tę linię – większa przezroczystość */
 }
 
 .friend-label {
