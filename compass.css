@@ -165,23 +165,32 @@ body.dark .marker {
 }
 
 .compass-overlay {
-  width: clamp(18px, 2.4vw, 28px) !important;
-  height: clamp(18px, 2.4vw, 28px) !important;
+  width: clamp(22px, 3vw, 32px) !important;   /* ← powiększone */
+  height: clamp(22px, 3vw, 32px) !important;  /* ← powiększone */
   padding: 3px;
-  border: 1px solid rgba(15, 23, 42, 0.24);
+  /* usuń border – wywaliłem całą linię */
   background: rgba(255,255,255,0.86);
-  box-shadow: 0 5px 14px rgba(15,23,42,0.22), 0 0 0 2px rgba(255,255,255,0.3);
+  /* usuń box-shadow – wywaliłem całą linię */
   backdrop-filter: blur(4px);
+  opacity: 0.6;   /* ← dodajemy przezroczystość */
 }
 
 .compass-overlay.party {
   border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.15);          /* ← cieńsza, bardziej przezroczysta ramka */
+  box-shadow: 0 0 0 1px rgba(255,255,255,0.5), 0 4px 12px rgba(0,0,0,0.15);  /* ← biała obwódka cieńsza (z 2px na 1px) */
+  opacity: 0.85;   /* ← partia ma być mniej przezroczysta, ale nadal widać pod spodem */
 }
 
 .compass-overlay.ideology {
   border-radius: 7px;
-  outline: 1px dashed rgba(15, 23, 42, 0.24);
-  outline-offset: 2px;
+  /* usuń outline i outline-offset – wywaliłem obie linie */
+  box-shadow: 0 0 0 1px rgba(0, 100, 255, 0.4), 0 4px 12px rgba(0,0,0,0.15);  /* ← niebieski cień zamiast ramki */
+}
+
+.compass-overlay.user {
+  border-radius: 50%;   /* albo 999px, żeby były okrągłe – może być tak jak partia */
+  box-shadow: 0 0 0 1px rgba(0, 200, 0, 0.4), 0 4px 12px rgba(0,0,0,0.15);  /* ← zielony cień */
 }
 
 body.dark .compass-overlay {
@@ -200,8 +209,8 @@ body.dark .compass-overlay {
   }
 
   .compass-overlay {
-    width: 18px !important;
-    height: 18px !important;
+    width: clamp(20px, 4vw, 26px) !important;
+    height: clamp(20px, 4vw, 26px) !important;
     padding: 2px;
   }
 
