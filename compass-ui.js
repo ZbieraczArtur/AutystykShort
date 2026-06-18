@@ -110,7 +110,6 @@ class CompassUI {
     overlay.style.height = '24px';
     overlay.style.objectFit = 'contain';
     overlay.style.transform = 'translate(-50%, -50%)';
-    overlay.style.opacity = '0.7';
     overlay.style.transition = 'opacity 0.2s';
     overlay.style.zIndex = '5';
     overlay.style.pointerEvents = 'auto';
