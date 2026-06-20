@@ -1,10 +1,12 @@
 // script.js – z dodanymi logotypami partii i ideologii (ranking, popup, symulacja) + obsługa języka
 let config = null;
 let configBase = null;      // oryginalne dane z data.json (wartości, mapowania)
+let politicalProfiles = null;
 let translations = null;    // aktualne tłumaczenia (teksty)
 let currentLanguage = 'pl';
 let userAnswers = [];
 let currentScoringMode = 'full';   // 'full' lub 'affirmative'
+let currentMatchingMode = 'modern'; // 'modern' lub 'legacy'
 let simulatedEntity = null;         // { type: 'party'|'ideology', name: string }
 
 const questionsContainer = document.getElementById('questions-container');
@@ -51,6 +53,163 @@ function getLocalizedValue(value, fallback = '') {
   if (typeof value === 'string') return value;
   return value[currentLanguage] || value.pl || value.en || fallback;
 }
+
+function normalizeProfileText(value) {
+  return String(value || '')
+    .normalize('NFD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/ł/g, 'l')
+    .replace(/Ł/g, 'L')
+    .trim()
+    .toLowerCase()
+    .replace(/\s+/g, ' ');
+}
+
+function getProfileCollection(type) {
+  const key = type === 'party' ? 'parties' : type === 'ideology' ? 'ideologies' : 'users';
+  return Array.isArray(politicalProfiles?.[key]) ? politicalProfiles[key] : [];
+}
+
+function getProfileByName(name, type) {
+  const normalized = normalizeProfileText(name);
+  return getProfileCollection(type).find(profile =>
+    normalizeProfileText(profile.name) === normalized ||
+    normalizeProfileText(profile.key) === normalized ||
+    normalizeProfileText(profile.id) === normalized
+  ) || null;
+}
+
+function getProfileLogoUrl(name, type) {
+  return getProfileByName(name, type)?.logo || '';
+}
+
+function getSkipAnswer(question) {
+  return question?.answers?.find(a => Number(a.value) === 0 && /pomi|skip/i.test(normalizeProfileText(a.label))) ||
+         question?.answers?.find(a => Number(a.value) === 0) ||
+         question?.answers?.[0] || null;
+}
+
+function splitReferenceAnswerLabels(rawText) {
+  const value = String(rawText || '').trim();
+  if (!value || /^brak odpowiedzi$/i.test(value)) return [];
+  return value.split(',').map(part => part.trim()).filter(Boolean);
+}
+
+function findAnswerByLabel(question, label) {
+  const normalized = normalizeProfileText(label);
+  if (!question || !normalized) return null;
+  if (normalized === 'pomin pytanie' || normalized === 'pomin' || normalized === 'skip') return getSkipAnswer(question);
+  return question.answers.find(answer => normalizeProfileText(answer.label) === normalized) || null;
+}
+
+function parseReferenceExportCode(rawCode) {
+  const answersByQuestion = new Map();
+  if (!config) return answersByQuestion;
+  const lines = String(rawCode || '').split(/\r?\n/);
+  for (const line of lines) {
+    const match = line.match(/^\s*\d+\.\s*.*?\[id:(\d+)\]:\s*\((.*?)\);?\s*$/);
+    if (!match) continue;
+    const questionId = Number(match[1]);
+    const question = config.questions.find(q => Number(q.id) === questionId);
+    if (!question) continue;
+    const allowed = splitReferenceAnswerLabels(match[2]).map(label => {
+      const normalized = normalizeProfileText(label);
+      if (normalized === 'neither') return { label, neither: true, value: null, answerData: null };
+      const answerData = findAnswerByLabel(question, label);
+      return answerData ? { label: answerData.label, value: Number(answerData.value), answerData } : null;
+    }).filter(Boolean);
+    answersByQuestion.set(questionId, allowed.length ? allowed : [{ value: 0, answerData: getSkipAnswer(question) }]);
+  }
+  return answersByQuestion;
+}
+
+function getScaleIndex(answerValue) {
+  const scale = [1.5, 0.5, -0.5, -1.5];
+  const val = Number(answerValue);
+  for (let i = 0; i < scale.length; i++) {
+    if (Math.abs(scale[i] - val) < 0.01) return i;
+  }
+  return null;
+}
+
+function profilePairScore(userValue, referenceAnswer) {
+  const myValue = Number(userValue);
+  if (!referenceAnswer || myValue === 0 || Number.isNaN(myValue)) return 0;
+  if (referenceAnswer.neither) return myValue === 0 ? 0 : -1.0;
+  const myIdx = getScaleIndex(myValue);
+  const refIdx = getScaleIndex(referenceAnswer.value);
+  if (myIdx === null || refIdx === null) return 0;
+  return [1.5, 0.5, -1.0, -1.5][Math.abs(myIdx - refIdx)] || 0;
+}
+
+function compareAnswersToReferenceProfile(answers, referenceProfile) {
+  const reference = parseReferenceExportCode(referenceProfile?.exportCode || '');
+  if (!reference.size || !Array.isArray(config?.questions)) return { percent: 0, score: 0, maxPossible: 0, compared: 0 };
+  const answersByQuestion = new Map((answers || []).filter(row => !row.noteOnly).map(row => [Number(row.questionId), row]));
+  let score = 0;
+  let maxPossible = 0;
+  let compared = 0;
+  for (const question of config.questions) {
+    const userAnswer = answersByQuestion.get(Number(question.id));
+    const allowed = reference.get(Number(question.id)) || [{ value: 0, answerData: getSkipAnswer(question) }];
+    const userValue = userAnswer ? Number(userAnswer.answerValue) : 0;
+    const best = Math.max(...allowed.map(ref => profilePairScore(userValue, ref)), 0);
+    score += best;
+    maxPossible += 1.5;
+    compared++;
+  }
+  const percent = maxPossible ? Math.round(((score + maxPossible) / (2 * maxPossible)) * 100) : 0;
+  return { percent: Math.min(100, Math.max(0, percent)), score, maxPossible, compared };
+}
+
+function getModernRanking(type) {
+  return getProfileCollection(type).map(profile => {
+    const match = compareAnswersToReferenceProfile(userAnswers, profile);
+    return {
+      key: profile.key || profile.id || profile.name,
+      name: profile.name,
+      percent: match.percent,
+      agreements: 0,
+      disagreements: 0,
+      involved: match.compared,
+      description: profile.description || '',
+      logo: profile.logo || '',
+      profile
+    };
+  }).sort((a, b) => b.percent - a.percent);
+}
+
+function buildMigratedProfilesFromConfig() {
+  const buildExportCode = (entityName, type) => {
+    const lines = [`Data wykonania testu: migracja legacy ${new Date().toISOString().slice(0, 10)}`, ''];
+    config.questions.forEach((question, index) => {
+      let best = null;
+      for (const answer of question.answers) {
+        const value = Number(answer.value);
+        if (value === 0) continue;
+        const forList = type === 'party' ? (answer.parties_for || []) : (answer.ideologies_for || []);
+        const againstList = type === 'party' ? (answer.parties_against || []) : (answer.ideologies_against || []);
+        if (forList.includes(entityName)) best = !best || Math.abs(value) > Math.abs(best) ? value : best;
+        if (againstList.includes(entityName)) best = !best || Math.abs(value) > Math.abs(best) ? -value : best;
+      }
+      const selected = best === null ? getSkipAnswer(question) : (question.answers.find(a => Math.abs(Number(a.value) - best) < 0.01) || getSkipAnswer(question));
+      lines.push(`${index + 1}. ${question.text} [id:${question.id}]: (${selected?.label || 'Pomiń pytanie'});`);
+    });
+    return `${lines.join('\n')}\n`;
+  };
+  return {
+    version: 2,
+    defaultMatchingMode: 'modern',
+    users: (config.users || []).map(user => ({ type: 'user', ...user, logo: user.logo || (user.avatar ? `images/IUsers/${user.avatar}` : ''), exportCode: user.exportCode || '' })),
+    parties: (config.parties || []).map(party => ({ type: 'party', ...party, logo: getPartyLogoUrl(party.name) || '', exportCode: buildExportCode(party.name, 'party') })),
+    ideologies: (config.ideologies || []).map(ideology => ({ type: 'ideology', ...ideology, logo: getIdeologyLogoUrl(ideology.name) || '', exportCode: buildExportCode(ideology.name, 'ideology') }))
+  };
+}
+
+window.getProfileCollection = getProfileCollection;
+window.getProfileByName = getProfileByName;
+window.compareAnswersToReferenceProfile = compareAnswersToReferenceProfile;
+window.parseReferenceExportCode = parseReferenceExportCode;
 // ======================= FUNKCJA OBLICZAJĄCA ODZNAKI (DO ROZBUDOWY) =======================
 // Na razie zwraca pustą tablicę – możesz dodać własne warunki w oparciu o wyniki par wartości.
 function computeBadges() {
@@ -117,6 +276,8 @@ const partyLogoMap = new Map([
 ]);
 
 function getPartyLogoUrl(partyName) {
+  const profileLogo = getProfileLogoUrl(partyName, 'party');
+  if (profileLogo) return profileLogo;
   const logoKey = config?.parties?.find(p => p.name === partyName || p.key === partyName)?.key || partyName;
   const fileName = partyLogoMap.get(logoKey);
   if (fileName) return LOGO_BASE_PATH + fileName;
@@ -213,6 +374,8 @@ const ideologyLogoMap = new Map([
 ]);
 
 function getIdeologyLogoUrl(ideologyName) {
+  const profileLogo = getProfileLogoUrl(ideologyName, 'ideology');
+  if (profileLogo) return profileLogo;
   const logoKey = config?.ideologies?.find(i => i.name === ideologyName || i.key === ideologyName)?.key || ideologyName;
   const fileName = ideologyLogoMap.get(logoKey);
   if (fileName) return IDEOLOGY_LOGO_BASE_PATH + fileName;
@@ -483,11 +646,21 @@ async function loadConfig() {
     configBase = await response.json();
     // Domyślnie ładujemy język polski (nie ładujemy pliku tłumaczeń, bo dane są po polsku)
     config = JSON.parse(JSON.stringify(configBase));
+    try {
+      const profilesResponse = await fetch('political_profiles.json');
+      if (profilesResponse.ok) politicalProfiles = await profilesResponse.json();
+    } catch (profilesErr) {
+      console.warn('Nie udało się wczytać political_profiles.json, używam migracji runtime.', profilesErr);
+    }
+    if (!politicalProfiles) politicalProfiles = buildMigratedProfilesFromConfig();
+    currentMatchingMode = localStorage.getItem('matchingMode') || politicalProfiles.defaultMatchingMode || 'modern';
+    if (!['modern', 'legacy'].includes(currentMatchingMode)) currentMatchingMode = 'modern';
     translations = null; // dla polskiego brak zewnętrznych tłumaczeń
     currentLanguage = 'pl';
     updateUITexts(); // ustawi polskie teksty z domyślnych (ale możemy też załadować plik translations_pl.json – opcjonalnie)
     initApp();
     setupSimulation();
+    setupMatchingModeSelector();
     setupModeSelector();
     setupImportExport();
     setupLanguageSelector();
@@ -783,7 +956,7 @@ function computeScores(mode = currentScoringMode) {
     const answer = ans.answerData;
     const absWeight = Math.abs(weight);
 
-    if (mode === 'full') {
+    if (currentMatchingMode === 'legacy' && mode === 'full') {
       for (const ideo of (answer.ideologies_for || [])) {
         const rec = ideologyScores.get(ideo);
         if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; if (weight > 0) rec.agreements++; else rec.disagreements++; }
@@ -792,7 +965,7 @@ function computeScores(mode = currentScoringMode) {
         const rec = ideologyScores.get(ideo);
         if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; if (weight < 0) rec.agreements++; else rec.disagreements++; }
       }
-    } else {
+    } else if (currentMatchingMode === 'legacy') {
       if (weight > 0) {
         for (const ideo of (answer.ideologies_for || [])) {
           const rec = ideologyScores.get(ideo);
@@ -801,7 +974,7 @@ function computeScores(mode = currentScoringMode) {
       }
     }
 
-    if (mode === 'full') {
+    if (currentMatchingMode === 'legacy' && mode === 'full') {
       for (const party of (answer.parties_for || [])) {
         const rec = partyScores.get(party);
         if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; if (weight > 0) rec.agreements++; else rec.disagreements++; }
@@ -810,7 +983,7 @@ function computeScores(mode = currentScoringMode) {
         const rec = partyScores.get(party);
         if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; if (weight < 0) rec.agreements++; else rec.disagreements++; }
       }
-    } else {
+    } else if (currentMatchingMode === 'legacy') {
       if (weight > 0) {
         for (const party of (answer.parties_for || [])) {
           const rec = partyScores.get(party);
@@ -889,6 +1062,14 @@ function computeScores(mode = currentScoringMode) {
     });
   }
 
+  if (currentMatchingMode === 'modern') {
+    return {
+      pairResults,
+      ideologyResults: getModernRanking('ideology'),
+      partyResults: getModernRanking('party')
+    };
+  }
+
   return { pairResults, ideologyResults, partyResults };
 }
 
@@ -905,7 +1086,7 @@ const badgesDescriptions = {
 };
 
 // Ścieżka do obrazków odznak (użytkownik może umieścić pliki w tym katalogu)
-const BADGES_IMG_BASE_PATH = 'AutystykShort/images/Odznaki/';
+const BADGES_IMG_BASE_PATH = window.BadgesRegistry?.imageBase || 'images/Odznaki/';
 
 function createBadgesSection(badges) {
   const section = document.createElement('div');
@@ -931,7 +1112,14 @@ function createBadgesSection(badges) {
     const badgeEl = document.createElement('button');
     badgeEl.type = 'button';
     badgeEl.className = 'badge-item';
-    badgeEl.innerHTML = `<span class="badge-mark">*</span><span>${badgeName}</span>`;
+    const iconUrl = badge.icon || badge.image || `${BADGES_IMG_BASE_PATH}${badge.id}.png`;
+    badgeEl.innerHTML = `<img class="badge-icon" src="${iconUrl}" alt=""><span class="badge-mark">*</span><span>${badgeName}</span>`;
+    const icon = badgeEl.querySelector('.badge-icon');
+    icon.addEventListener('load', () => {
+      icon.classList.add('loaded');
+      badgeEl.querySelector('.badge-mark')?.remove();
+    });
+    icon.addEventListener('error', () => icon.remove());
     badgeEl.addEventListener('click', (e) => {
       e.stopPropagation();
       showPopup(`${badgeName}\n\n${badgeDescription}`);
@@ -977,7 +1165,7 @@ function createRankingSection(title, items, type) {
   
   items.forEach((item, idx) => {
     const itemDiv = document.createElement('div');
-    itemDiv.className = `ranking-item ${type === 'ideology' ? 'ideology-entry' : 'party-entry'}`;
+    itemDiv.className = `ranking-item ${type === 'ideology' ? 'ideology-entry' : type === 'party' ? 'party-entry' : 'user-entry'}`;
 
     if (type === 'party') {
       const logoUrl = getPartyLogoUrl(item.name);
@@ -1015,8 +1203,28 @@ function createRankingSection(title, items, type) {
       nameSpan.className = 'rank-name';
       nameSpan.textContent = item.name;
       itemDiv.appendChild(nameSpan);
+    } else if (type === 'user') {
+      const logoUrl = item.logo || (item.avatar ? `images/IUsers/${item.avatar}` : '');
+      if (logoUrl && item.isDataUser) {
+        const img = document.createElement('img');
+        img.src = logoUrl;
+        img.alt = `Avatar ${item.name}`;
+        img.className = 'user-logo-small';
+        itemDiv.appendChild(img);
+      } else {
+        const dot = document.createElement('span');
+        dot.className = 'friend-dot ranking-friend-dot';
+        itemDiv.appendChild(dot);
+      }
+      const nameSpan = document.createElement('span');
+      nameSpan.className = 'rank-name';
+      nameSpan.textContent = item.name;
+      itemDiv.appendChild(nameSpan);
     } else {
-      itemDiv.innerHTML = `<span class="rank-name">${item.name}</span>`;
+      const nameSpan = document.createElement('span');
+      nameSpan.className = 'rank-name';
+      nameSpan.textContent = item.name;
+      itemDiv.appendChild(nameSpan);
     }
 
     const percentSpan = document.createElement('span');
@@ -1325,6 +1533,20 @@ function simulateAnswers(selectedName) {
     simulatedEntity = null;
   }
 
+  if (currentMatchingMode === 'modern' && (isParty || isIdeology)) {
+    const profileType = isParty ? 'party' : 'ideology';
+    const profile = getProfileByName(selectedName, profileType);
+    if (profile?.exportCode && typeof parseExportCode === 'function') {
+      const parsed = parseExportCode(profile.exportCode).filter(row => !row.noteOnly && row.answerData);
+      if (parsed.length) {
+        userAnswers = parsed;
+        updateDOMSelections();
+        computeAndDisplayResults();
+        return;
+      }
+    }
+  }
+
   const simulatedAnswers = [];
   for (const question of config.questions) {
     let bestAnswer = null;
@@ -1540,10 +1762,36 @@ async function loadOverlays(showParties, showIdeologies, compassInstance) {
   }
 }
 
+function setupMatchingModeSelector() {
+  const radios = document.querySelectorAll('input[name="matchingMode"]');
+  if (!radios.length) return;
+  radios.forEach(radio => {
+    radio.checked = radio.value === currentMatchingMode;
+    radio.addEventListener('change', (event) => {
+      currentMatchingMode = event.target.value === 'legacy' ? 'legacy' : 'modern';
+      localStorage.setItem('matchingMode', currentMatchingMode);
+      window.currentMatchingMode = currentMatchingMode;
+      if (resultsDiv.style.display !== 'none') computeAndDisplayResults();
+      if (typeof updateCompassDisplay === 'function') updateCompassDisplay();
+      const showParties = document.getElementById('toggle-parties')?.checked || false;
+      const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
+      if (typeof loadOverlays === 'function') {
+        loadOverlays(showParties, showIdeologies, window.compassInstance);
+        if (window.modalCompassInstance) {
+          const modalShowParties = document.getElementById('modal-toggle-parties')?.checked || false;
+          const modalShowIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
+          loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance);
+        }
+      }
+    });
+  });
+  window.currentMatchingMode = currentMatchingMode;
+}
+
 // Obliczanie współrzędnych dla partii/ideologii/użytkownika
 async function getEntityCoordinates(name, type) {
   if (type === 'user') {
-    const user = config.users.find(u => u.name === name);
+    const user = getProfileByName(name, 'user') || config.users.find(u => u.name === name);
     if (!user || !user.exportCode) return { x: 0, y: 0 };
     const parsed = parseExportCode(user.exportCode).filter(row => !row.noteOnly && row.answerData);
     if (!parsed.length) return { x: 0, y: 0 };
@@ -1552,6 +1800,18 @@ async function getEntityCoordinates(name, type) {
     const coords = computeCoordinatesFromValues(valuesMap, currentCompassMode, currentCreativeConfig);
     return { x: coords.x, y: coords.y };
   } else {
+    if (currentMatchingMode === 'modern') {
+      const profile = getProfileByName(name, type);
+      if (profile?.exportCode && typeof parseExportCode === 'function') {
+        const parsed = parseExportCode(profile.exportCode).filter(row => !row.noteOnly && row.answerData);
+        if (parsed.length) {
+          const scores = computeScoresForAnswers(parsed, currentScoringMode);
+          const valuesMap = buildUserValuesMap(scores.pairResults);
+          const coords = computeCoordinatesFromValues(valuesMap, currentCompassMode, currentCreativeConfig);
+          return { x: coords.x, y: coords.y };
+        }
+      }
+    }
     // Symulacja odpowiedzi dla danej entitiy (partia/ideologia)
     const simulatedAnswers = [];
     for (const question of config.questions) {
