@@ -865,15 +865,22 @@ function importAnswersFromExportCode(rawCode) {
   const newAnswers = [];
   let matchedCount = 0;
   for (const line of lines) {
-    const match = line.match(/^\d+\.\s*(.+?)\s*\[id:(\d+)\]:\s*\((.*?)\);?$/);
-    if (!match) continue;
-    const questionId = parseInt(match[2], 10);
-    const answerText = match[3].trim();
+    // Nowy format: [id:123]: (odpowiedź);
+    let match = line.match(/^\[id:(\d+)\]:\s*\((.*?)\);?$/);
+    let questionId, answerText;
+    if (match) {
+      questionId = parseInt(match[1], 10);
+      answerText = match[2].trim();
+    } else {
+      // Stary format: 1. treść [id:123]: (odpowiedź);
+      match = line.match(/^\d+\.\s*(.+?)\s*\[id:(\d+)\]:\s*\((.*?)\);?$/);
+      if (!match) continue;
+      questionId = parseInt(match[2], 10);
+      answerText = match[3].trim();
+    }
     if (answerText === 'Brak odpowiedzi') continue;
-    
     const question = config.questions.find(q => q.id === questionId);
     if (!question) continue;
-    
     let matchedAnswer = null;
     let matchedIndex = -1;
     for (let idx = 0; idx < question.answers.length; idx++) {
