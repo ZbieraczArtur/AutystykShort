@@ -634,6 +634,27 @@ h3 {
   transform: scale(1.05);
 }
 
+.user-logo-small {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 2px solid color-mix(in srgb, var(--accent-sky) 45%, transparent);
+  background: var(--card-bg);
+  flex: 0 0 auto;
+}
+
+.ranking-friend-dot {
+  margin-right: 10px;
+  flex: 0 0 auto;
+}
+
+.matching-mode-selector {
+  margin-top: 0.75rem;
+  border-color: color-mix(in srgb, var(--accent-sky) 45%, var(--card-border));
+}
+
 /* Baner symulacji partii */
 .simulation-banner {
   display: flex;
@@ -1601,12 +1622,12 @@ body.dark .badge-item:hover {
   width: 24px;
   height: 24px;
   object-fit: contain;
-  display: none; /* domyślnie ukryty, pokaże się jeśli obrazek się załaduje */
+  display: none;
   border-radius: 4px;
   background: rgba(255,255,255,0.2);
   padding: 2px;
 }
-.badge-icon[src]:not([src=""]) {
+.badge-icon.loaded {
   display: inline-block;
 }
 
