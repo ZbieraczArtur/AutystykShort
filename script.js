@@ -819,7 +819,7 @@ function generateExportCode() {
     } else if (userAns && userAns.answerValue === 0) {
       answerText = 'Pomiń';
     }
-    output += `${i+1}. ${q.text} [id:${q.id}]: (${answerText});\n`;
+    output += `[id:${q.id}]: (${answerText});\n`;
   }
   return output;
 }
