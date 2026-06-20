@@ -1,4 +1,5 @@
 window.BadgesRegistry = {
+  imageBase: "images/Odznaki/",
   labels: {
     title: {
       pl: "Odznaki",
