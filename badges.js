@@ -377,6 +377,600 @@ window.BadgesRegistry = {
       },
       requiredYes: [101, 109, 259],
       requiredNo: [94, 96, 149]
-    }
+    },
+
+    socialAtomism: {
+  id: "socialAtomism",
+  name: { pl: "Atomizm społeczny", en: "Social atomism" },
+  description: {
+    pl: "Pogląd, że społeczeństwo jest agregatem autonomicznych jednostek, a dobro wspólne jest sumą indywidualnych dóbr; jednostka ma pierwszeństwo przed grupą.",
+    en: "The view that society is an aggregate of autonomous individuals, and the common good is the sum of individual goods; the individual takes precedence over the group."
+  },
+  requiredYes: [1, 3, 25],
+  requiredNo: [2, 30, 205, 276]
+},
+
+antiRationalism: {
+  id: "antiRationalism",
+  name: { pl: "Antyracjonalizm", en: "Anti‑rationalism" },
+  description: {
+    pl: "Odrzucenie racjonalizmu, podkreślenie roli emocji, instynktów i tradycji w życiu społecznym i politycznym; sceptycyzm wobec abstrakcyjnych idei.",
+    en: "Rejection of rationalism, emphasis on emotions, instincts and tradition in social and political life; scepticism towards abstract ideas."
+  },
+  requiredYes: [33, 36],
+  requiredNo: [278]
+},
+
+authoritarianism: {
+  id: "authoritarianism",
+  name: { pl: "Autorytaryzm", en: "Authoritarianism" },
+  description: {
+    pl: "System władzy oparty na silnym przywództwie, koncentracji władzy i ograniczonej odpowiedzialności wobec obywateli; jedność i dyscyplina są nadrzędne.",
+    en: "A power system based on strong leadership, concentration of power and limited accountability to citizens; unity and discipline are paramount."
+  },
+  requiredYes: [37, 71, 73, 76, 77],
+  requiredNo: [38, 63, 64]
+},
+
+divineRight: {
+  id: "divineRight",
+  name: { pl: "Boskie prawo", en: "Divine right" },
+  description: {
+    pl: "Legitymizacja władzy politycznej przez wolę Bożą; monarcha lub władca odpowiada przed Bogiem, nie przed ludem; sprzeciw wobec monarchy jest grzechem.",
+    en: "Legitimisation of political power through divine will; the monarch or ruler answers to God, not to the people; opposition to the monarch is a sin."
+  },
+  requiredYes: [39, 280, 281, 37],
+  requiredNo: [38]
+},
+
+socialDarwinism: {
+  id: "socialDarwinism",
+  name: { pl: "Darwinizm społeczny", en: "Social Darwinism" },
+  description: {
+    pl: "Zastosowanie teorii ewolucji do społeczeństwa; naturalna selekcja, walka o byt, nierówności jako naturalne i korzystne; przeciwność redystrybucji.",
+    en: "Application of evolutionary theory to society; natural selection, struggle for existence, inequalities as natural and beneficial; opposition to redistribution."
+  },
+  requiredYes: [22, 230, 169, 279],
+  requiredNo: [137, 273, 267]
+},
+
+dictatorshipOfProletariat: {
+  id: "dictatorshipOfProletariat",
+  name: { pl: "Dyktatura proletariatu", en: "Dictatorship of the proletariat" },
+  description: {
+    pl: "Marksistowska koncepcja, w której proletariat sprawuje władzę polityczną poprzez partię rewolucyjną, aby zbudować społeczeństwo bezklasowe; odrzucenie reformizmu.",
+    en: "Marxist concept in which the proletariat exercises political power through a revolutionary party to build a classless society; rejection of reformism."
+  },
+  requiredYes: [260, 261, 87, 44, 152],
+  requiredNo: [84, 83]
+},
+
+egoism: {
+  id: "egoism",
+  name: { pl: "Egoizm", en: "Egoism" },
+  description: {
+    pl: "Przekonanie, że jednostka powinna dążyć do własnego szczęścia i interesu, a nie poświęcać się dla innych; indywidualna wolność jest najwyższą wartością.",
+    en: "The belief that the individual should pursue their own happiness and interest, rather than sacrificing themselves for others; individual freedom is the highest value."
+  },
+  requiredYes: [274, 4],
+  requiredNo: [277, 276, 360, 359]
+},
+
+differenceFeminism: {
+  id: "differenceFeminism",
+  name: { pl: "Feminizm różnicy", en: "Difference feminism" },
+  description: {
+    pl: "Nurt feministyczny podkreślający odrębność kobiet, wartość kobiecych cech i potrzebę zwalczania patriarchatu; sprzeciw wobec tradycyjnych ról płciowych i homofobii.",
+    en: "Feminist strand emphasising the distinctiveness of women, the value of feminine traits and the need to combat patriarchy; opposition to traditional gender roles and homophobia."
+  },
+  requiredYes: [183, 185],
+  requiredNo: [186, 189, 179, 190]
+},
+
+feudalism: {
+  id: "feudalism",
+  name: { pl: "Feudalizm", en: "Feudalism" },
+  description: {
+    pl: "System społeczno-polityczny oparty na hierarchii, dziedzicznych tytułach, autorytecie tradycji i lokalnej władzy; odrzucenie demokracji, kapitalizmu i industrializacji.",
+    en: "A socio-political system based on hierarchy, hereditary titles, traditional authority and local power; rejection of democracy, capitalism and industrialisation."
+  },
+  requiredYes: [169, 172, 176, 342, 341],
+  requiredNo: [114, 38, 246]
+},
+
+globalization: {
+  id: "globalization",
+  name: { pl: "Globalizacja", en: "Globalization" },
+  description: {
+    pl: "Poparcie dla swobodnego przepływu ludzi, kapitału i towarów przez granice; znoszenie granic narodowych; równe traktowanie zagranicznych przedsiębiorstw.",
+    en: "Support for the free movement of people, capital and goods across borders; abolition of national borders; equal treatment of foreign enterprises."
+  },
+  requiredYes: [135, 136, 234, 368],
+  requiredNo: [222, 223, 228, 316]
+},
+
+holism: {
+  id: "holism",
+  name: { pl: "Holizm", en: "Holism" },
+  description: {
+    pl: "Postrzeganie społeczeństwa jako organicznej całości, w której części służą całości; pierwszeństwo grup przed jednostkami; natura ma wartość samą w sobie.",
+    en: "Viewing society as an organic whole in which parts serve the whole; priority of groups over individuals; nature has intrinsic value."
+  },
+  requiredYes: [2, 30, 241],
+  requiredNo: [1, 3, 374]
+},
+
+imperialism: {
+  id: "imperialism",
+  name: { pl: "Imperializm", en: "Imperialism" },
+  description: {
+    pl: "Dążenie do ekspansji terytorialnej i dominacji militarnej; użycie siły jako instrumentu polityki; chwała zbrojna i podbój jako dowód wielkości.",
+    en: "Pursuit of territorial expansion and military dominance; use of force as an instrument of policy; military glory and conquest as proof of greatness."
+  },
+  requiredYes: [208, 257, 262, 209],
+  requiredNo: [258, 234]
+},
+
+industrialism: {
+  id: "industrialism",
+  name: { pl: "Industrializm", en: "Industrialism" },
+  description: {
+    pl: "Poparcie dla rewolucji przemysłowej, automatyzacji, innowacji i wzrostu materialnego; odrzucenie sceptycyzmu wobec technologii i dezurbanizacji.",
+    en: "Support for the Industrial Revolution, automation, innovation and material growth; rejection of scepticism towards technology and de-urbanisation."
+  },
+  requiredYes: [246, 114, 244],
+  requiredNo: [245, 247, 248, 346, 376]
+},
+
+internationalism: {
+  id: "internationalism",
+  name: { pl: "Internacjonalizm", en: "Internationalism" },
+  description: {
+    pl: "Dążenie do zniesienia granic i narodów; równość wszystkich ludzi; przynależność narodowa nie tworzy szczególnych obowiązków; przeciwność nacjonalizmowi.",
+    en: "Striving to abolish borders and nations; equality of all people; national belonging does not create special obligations; opposition to nationalism."
+  },
+  requiredYes: [234, 372, 273, 368, 371],
+  requiredNo: [206, 364, 207]
+},
+
+communism: {
+  id: "communism",
+  name: { pl: "Komunizm", en: "Communism" },
+  description: {
+    pl: "Dążenie do wspólnej własności środków produkcji, społeczeństwa bezklasowego i odrzucenia rynku; zasada „od każdego według zdolności, każdemu według potrzeb”.",
+    en: "Striving for common ownership of the means of production, a classless society and rejection of the market; principle 'from each according to ability, to each according to needs'."
+  },
+  requiredYes: [101, 110, 150, 152, 309, 307],
+  requiredNo: [94, 149]
+},
+
+constitutionalism: {
+  id: "constitutionalism",
+  name: { pl: "Konstytucjonalizm", en: "Constitutionalism" },
+  description: {
+    pl: "Ograniczanie władzy przez konstytucję i podział władzy; ochrona praw mniejszości; władza wykonawcza ograniczona przez instytucje; przeciwność koncentracji władzy.",
+    en: "Limiting power through a constitution and separation of powers; protection of minority rights; executive power limited by institutions; opposition to concentration of power."
+  },
+  requiredYes: [63, 64, 289, 337, 56],
+  requiredNo: [71, 37, 340]
+},
+
+laissezFaire: {
+  id: "laissezFaire",
+  name: { pl: "Leseferyzm", en: "Laissez‑faire" },
+  description: {
+    pl: "Zasada nieingerencji państwa w gospodarkę; mechanizmy rynkowe są efektywniejsze; odrzucenie interwencji państwa, redystrybucji i planowania.",
+    en: "The principle of non‑intervention by the state in the economy; market mechanisms are more efficient; rejection of state intervention, redistribution and planning."
+  },
+  requiredYes: [112, 116, 132],
+  requiredNo: [57, 58, 120, 137, 309]
+},
+
+majoritarianism: {
+  id: "majoritarianism",
+  name: { pl: "Majoryzacja", en: "Majoritarianism" },
+  description: {
+    pl: "Uznanie, że decyzje większości są legitymizowane demokratycznie; prawo powinno odzwierciedlać wartości większości; ograniczenia praw mniejszości są niepożądane.",
+    en: "Recognition that majority decisions are democratically legitimate; law should reflect the values of the majority; restrictions on minority rights are undesirable."
+  },
+  requiredYes: [38, 357],
+  requiredNo: [289, 337, 64]
+},
+
+mercantilism: {
+  id: "mercantilism",
+  name: { pl: "Merkantylizm", en: "Mercantilism" },
+  description: {
+    pl: "Polityka gospodarcza nastawiona na kontrolę handlu zagranicznego, ochronę rodzimej produkcji i akumulację bogactwa narodowego; ograniczenie importu i kapitału zagranicznego.",
+    en: "Economic policy oriented towards controlling foreign trade, protecting domestic production and accumulating national wealth; restricting imports and foreign capital."
+  },
+  requiredYes: [222, 223, 224, 226, 316, 317],
+  requiredNo: [135, 225, 136]
+},
+
+nonAggressionPrinciple: {
+  id: "nonAggressionPrinciple",
+  name: { pl: "Non‑aggression principle (NAP)", en: "Non‑aggression principle (NAP)" },
+  description: {
+    pl: "Zasada, że żadna jednostka ani grupa nie ma prawa inicjować użycia siły; jedynym dopuszczalnym użyciem siły jest samoobrona; prawa własności są nienaruszalne.",
+    en: "The principle that no individual or group has the right to initiate the use of force; the only permissible use of force is self‑defence; property rights are inviolable."
+  },
+  requiredYes: [6, 14, 93, 167, 285],
+  requiredNo: [13, 27]
+},
+
+patriarchalism: {
+  id: "patriarchalism",
+  name: { pl: "Patriarchalizm", en: "Patriarchalism" },
+  description: {
+    pl: "System społeczny, w którym mężczyźni sprawują dominującą pozycję w rodzinie i społeczeństwie; promowanie tradycyjnych ról płciowych i rodziny opartej na małżeństwie heteroseksualnym.",
+    en: "A social system in which men hold a dominant position in the family and society; promotion of traditional gender roles and family based on heterosexual marriage."
+  },
+  requiredYes: [178, 179, 352],
+  requiredNo: [183, 184, 186, 187, 188]
+},
+
+patriotism: {
+  id: "patriotism",
+  name: { pl: "Patriotyzm", en: "Patriotism" },
+  description: {
+    pl: "Przywiązanie do narodu i państwa narodowego; tożsamość narodowa jako kluczowa dla jedności; przeciwność globalizacji i znoszenia granic.",
+    en: "Attachment to the nation and the nation‑state; national identity as key to unity; opposition to globalisation and the abolition of borders."
+  },
+  requiredYes: [205, 206, 210],
+  requiredNo: [371, 372, 234]
+},
+
+pastoralism: {
+  id: "pastoralism",
+  name: { pl: "Pastoralizm", en: "Pastoralism" },
+  description: {
+    pl: "Ideał życia wiejskiego, powrót do prostoty i tradycyjnego rolnictwa; krytyka urbanizacji i industrializacji; samowystarczalność.",
+    en: "The ideal of rural life, a return to simplicity and traditional agriculture; criticism of urbanisation and industrialisation; self‑sufficiency."
+  },
+  requiredYes: [346, 264, 332],
+  requiredNo: [244]
+},
+
+nationState: {
+  id: "nationState",
+  name: { pl: "Państwo narodowe", en: "Nation state" },
+  description: {
+    pl: "Zasada, że państwo powinno odpowiadać narodowi; suwerenność narodowa jako nadrzędna; granice państwa powinny pokrywać się z granicami narodowości.",
+    en: "The principle that the state should correspond to the nation; national sovereignty as supreme; state borders should coincide with national boundaries."
+  },
+  requiredYes: [205, 206, 363, 364, 210],
+  requiredNo: [234, 372]
+},
+
+naturalLaw: {
+  id: "naturalLaw",
+  name: { pl: "Prawo naturalne", en: "Natural law" },
+  description: {
+    pl: "Przekonanie o istnieniu przyrodzonych praw jednostki, niezależnych od państwa; wszystkie istoty ludzkie są równe moralnie; odrzucenie pozytywizmu prawnego.",
+    en: "Belief in the existence of inherent individual rights, independent of the state; all human beings are morally equal; rejection of legal positivism."
+  },
+  requiredYes: [18, 273],
+  requiredNo: [21, 339]
+},
+
+racism: {
+  id: "racism",
+  name: { pl: "Rasizm", en: "Racism" },
+  description: {
+    pl: "Przekonanie o wyższości niektórych grup rasowych/etnicznych; sprzeciw wobec równości rasowej; ograniczenie imigracji i mieszania się grup.",
+    en: "Belief in the superiority of certain racial/ethnic groups; opposition to racial equality; restriction of immigration and mixing of groups."
+  },
+  requiredYes: [216, 218, 220, 221],
+  requiredNo: [273, 227]
+},
+
+rationalism: {
+  id: "rationalism",
+  name: { pl: "Racjonalizm", en: "Rationalism" },
+  description: {
+    pl: "Uznanie rozumu za główne źródło wiedzy i podstawę porządku społecznego; odrzucenie objawienia, tradycji i emocji jako wystarczających uzasadnień.",
+    en: "Recognition of reason as the main source of knowledge and basis of social order; rejection of revelation, tradition and emotions as sufficient justifications."
+  },
+  requiredYes: [270, 175],
+  requiredNo: [32, 33, 36, 34]
+},
+
+civilSociety: {
+  id: "civilSociety",
+  name: { pl: "Społeczeństwo obywatelskie", en: "Civil society" },
+  description: {
+    pl: "Przekonanie, że problemy społeczne powinny być rozwiązywane przez inicjatywy obywatelskie, a nie państwo; władza rozproszona; przeciwność etatyzmowi.",
+    en: "The belief that social problems should be solved through civic initiatives rather than the state; power distributed; opposition to statism."
+  },
+  requiredYes: [54, 65],
+  requiredNo: [57, 75, 89]
+},
+
+syndicalism: {
+  id: "syndicalism",
+  name: { pl: "Syndykalizm", en: "Syndicalism" },
+  description: {
+    pl: "Ruch robotniczy dążący do przejęcia kontroli nad środkami produkcji przez pracowników za pomocą związków zawodowych i strajków; odrzucenie partii politycznej i państwowej własności.",
+    en: "A labour movement aiming to take control of the means of production by workers through trade unions and strikes; rejection of political party and state ownership."
+  },
+  requiredYes: [85, 108, 330, 145, 146],
+  requiredNo: [86, 103]
+},
+
+theocracy: {
+  id: "theocracy",
+  name: { pl: "Teokracja", en: "Theocracy" },
+  description: {
+    pl: "System polityczny, w którym władza opiera się na religii, a prawo jest oparte na tekstach świętych; religia przenika wszystkie dziedziny życia; władza religijna nad polityczną.",
+    en: "A political system in which power is based on religion and law is based on sacred texts; religion permeates all areas of life; religious authority over political authority."
+  },
+  requiredYes: [193, 196, 197, 198, 194],
+  requiredNo: [270, 201, 38]
+},
+
+traditionalism: {
+  id: "traditionalism",
+  name: { pl: "Tradycjonalizm", en: "Traditionalism" },
+  description: {
+    pl: "Przywiązanie do tradycji, zwyczajów i instytucji przekazanych przez pokolenia; sceptycyzm wobec nowych idei; zmiany tylko zgodne z tradycją.",
+    en: "Attachment to traditions, customs and institutions handed down through generations; scepticism towards new ideas; changes only if compatible with tradition."
+  },
+  requiredYes: [33, 34, 177, 300, 343, 345],
+  requiredNo: [175, 344, 82]
+},
+
+socialContract: {
+  id: "socialContract",
+  name: { pl: "Umowa społeczna", en: "Social contract" },
+  description: {
+    pl: "Legitymizacja państwa przez zgodę rządzonych; państwo ma moralny status, ale władza pochodzi od ludu; odrzucenie boskiego prawa i anarchii.",
+    en: "Legitimisation of the state through the consent of the governed; the state has moral status, but power comes from the people; rejection of divine right and anarchy."
+  },
+  requiredYes: [38, 52],
+  requiredNo: [37, 39, 48]
+},
+
+utilitarianism: {
+  id: "utilitarianism",
+  name: { pl: "Utylitaryzm", en: "Utilitarianism" },
+  description: {
+    pl: "Ocena działań na podstawie ich skutków; dążenie do maksymalizacji ogólnego dobrostanu; odrzucenie norm opartych na religii czy tradycji.",
+    en: "Evaluation of actions based on their consequences; striving to maximise overall welfare; rejection of norms based on religion or tradition."
+  },
+  requiredYes: [278],
+  requiredNo: [32, 20, 19]
+},
+
+multiculturalism: {
+  id: "multiculturalism",
+  name: { pl: "Wielokulturowość", en: "Multiculturalism" },
+  description: {
+    pl: "Akceptacja i tolerancja dla różnorodności kulturowej, religijnej i światopoglądowej; sprzeciw wobec asymilacji i jednolitości kulturowej.",
+    en: "Acceptance and tolerance of cultural, religious and worldview diversity; opposition to assimilation and cultural uniformity."
+  },
+  requiredYes: [17, 16],
+  requiredNo: [228, 233, 370, 215]
+},
+
+freeTrade: {
+  id: "freeTrade",
+  name: { pl: "Wolny handel", en: "Free trade" },
+  description: {
+    pl: "Zniesienie ceł i barier handlowych; swobodny przepływ towarów i kapitału; równe traktowanie zagranicznych firm; przeciwność protekcjonizmowi.",
+    en: "Abolition of tariffs and trade barriers; free movement of goods and capital; equal treatment of foreign companies; opposition to protectionism."
+  },
+  requiredYes: [135, 225, 136],
+  requiredNo: [222, 224, 226, 315]
+},
+
+freeMarket: {
+  id: "freeMarket",
+  name: { pl: "Wolny rynek", en: "Free market" },
+  description: {
+    pl: "Gospodarka oparta na prywatnej własności, konkurencji i mechanizmach rynkowych; minimalna interwencja państwa; przeciwność planowaniu i kontroli cen.",
+    en: "An economy based on private property, competition and market mechanisms; minimal state intervention; opposition to planning and price controls."
+  },
+  requiredYes: [112, 114, 123, 121],
+  requiredNo: [103, 127, 120]
+},
+
+sustainableDevelopment: {
+  id: "sustainableDevelopment",
+  name: { pl: "Zrównoważony rozwój", en: "Sustainable development" },
+  description: {
+    pl: "Rozwój gospodarczy zgodny z ochroną środowiska dla przyszłych pokoleń; priorytet stabilności ekologicznej; natura ma wartość instrumentalną.",
+    en: "Economic development consistent with environmental protection for future generations; priority to ecological stability; nature has instrumental value."
+  },
+  requiredYes: [235, 243, 237],
+  requiredNo: [374]
+},
+
+ancienRegime: {
+  id: "ancienRegime",
+  name: { pl: "Ancien régime", en: "Ancien régime" },
+  description: {
+    pl: "Powrót do ustroju sprzed rewolucji; hierarchia społeczna, dziedziczne przywileje, autorytet tradycji; odrzucenie demokracji i indywidualizmu.",
+    en: "Return to the pre‑revolutionary order; social hierarchy, hereditary privileges, traditional authority; rejection of democracy and individualism."
+  },
+  requiredYes: [176, 341, 342, 41, 172, 79],
+  requiredNo: [38, 175]
+},
+
+directDemocracy: {
+  id: "directDemocracy",
+  name: { pl: "Demokracja bezpośrednia", en: "Direct democracy" },
+  description: {
+    pl: "Decyzje polityczne podejmowane bezpośrednio przez obywateli w głosowaniach; aktywny udział w zarządzaniu; odrzucenie rządów elit.",
+    en: "Political decisions taken directly by citizens in votes; active participation in governance; rejection of elite rule."
+  },
+  requiredYes: [59, 287],
+  requiredNo: [42, 62, 74]
+},
+
+deliberativeDemocracy: {
+  id: "deliberativeDemocracy",
+  name: { pl: "Demokracja deliberatywna", en: "Deliberative democracy" },
+  description: {
+    pl: "Demokracja oparta na debacie i refleksji; obywatele aktywnie uczestniczą w dyskusji; tolerancja i wolność słowa; odrzucenie głosowania bezpośredniego i cenzury.",
+    en: "Democracy based on debate and reflection; citizens actively participate in discussion; tolerance and freedom of speech; rejection of direct voting and censorship."
+  },
+  requiredYes: [287, 17, 154, 157],
+  requiredNo: [42, 59, 160]
+},
+
+liberalDemocracy: {
+  id: "liberalDemocracy",
+  name: { pl: "Demokracja liberalna", en: "Liberal democracy" },
+  description: {
+    pl: "Demokracja przedstawicielska z ochroną praw jednostki, podziałem władzy, prawami mniejszości i konkurencją polityczną; odrzucenie autorytaryzmu.",
+    en: "Representative democracy with protection of individual rights, separation of powers, minority rights and political competition; rejection of authoritarianism."
+  },
+  requiredYes: [38, 18, 63, 289, 302],
+  requiredNo: [37, 71, 86, 91]
+},
+
+radicalDemocracy: {
+  id: "radicalDemocracy",
+  name: { pl: "Demokracja radykalna", en: "Radical democracy" },
+  description: {
+    pl: "Demokracja partycypacyjna z szerokim rozproszeniem władzy i autonomią lokalną; odrzucenie elit i centralizacji.",
+    en: "Participatory democracy with broad dispersion of power and local autonomy; rejection of elites and centralisation."
+  },
+  requiredYes: [65, 287, 69],
+  requiredNo: [74, 67, 42]
+},
+
+representativeDemocracy: {
+  id: "representativeDemocracy",
+  name: { pl: "Demokracja reprezentacyjna", en: "Representative democracy" },
+  description: {
+    pl: "System, w którym obywatele wybierają przedstawicieli do podejmowania decyzji; równość głosów; konkurencja polityczna; odrzucenie demokracji bezpośredniej i rządów elit.",
+    en: "A system in which citizens elect representatives to make decisions; equality of votes; political competition; rejection of direct democracy and elite rule."
+  },
+  requiredYes: [38, 61, 302],
+  requiredNo: [59, 62, 42, 74]
+},
+
+deepEcology: {
+  id: "deepEcology",
+  name: { pl: "Ekologia głęboka", en: "Deep ecology" },
+  description: {
+    pl: "Biocentryzm, uznanie równej wartości wszystkich istot żywych; odrzucenie antropocentryzmu; priorytet stabilności ekologicznej nad rozwojem gospodarczym.",
+    en: "Biocentrism, recognition of equal value of all living beings; rejection of anthropocentrism; priority of ecological stability over economic development."
+  },
+  requiredYes: [236, 238, 239, 375, 243],
+  requiredNo: [374, 246]
+},
+
+shallowEcology: {
+  id: "shallowEcology",
+  name: { pl: "Ekologia płytka", en: "Shallow ecology" },
+  description: {
+    pl: "Antropocentryczna ochrona środowiska; ochrona natury dla dobra ludzi; odrzucenie biocentryzmu i uznania wartości przyrody samej w sobie.",
+    en: "Anthropocentric environmental protection; protection of nature for human benefit; rejection of biocentrism and intrinsic value of nature."
+  },
+  requiredYes: [235, 243, 237],
+  requiredNo: [238, 240, 374]
+},
+
+socialEcology: {
+  id: "socialEcology",
+  name: { pl: "Ekologia społeczna", en: "Social ecology" },
+  description: {
+    pl: "Połączenie ekologii z krytyką hierarchii społecznej; postuluje decentralizację, samorządność i wspólne zarządzanie zasobami; odrzucenie państwa i hierarchii.",
+    en: "Combination of ecology with critique of social hierarchy; advocates decentralisation, self‑governance and common resource management; rejection of state and hierarchy."
+  },
+  requiredYes: [235, 65, 108, 243],
+  requiredNo: [374, 169, 75]
+},
+
+capitalism: {
+  id: "capitalism",
+  name: { pl: "Kapitalizm", en: "Capitalism" },
+  description: {
+    pl: "System gospodarczy oparty na prywatnej własności, wolnej konkurencji i zysku; innowacje i wzrost; odrzucenie socjalizacji środków produkcji i planowania.",
+    en: "Economic system based on private property, free competition and profit; innovation and growth; rejection of socialisation of means of production and planning."
+  },
+  requiredYes: [94, 149, 114],
+  requiredNo: [101, 152, 309]
+},
+
+stateLegitimacy: {
+  id: "stateLegitimacy",
+  name: { pl: "Legitymacja państwa", en: "State legitimacy" },
+  description: {
+    pl: "Uznanie państwa za posiadające moralny autorytet do sprawowania władzy i stosowania przymusu; obywatele mają obowiązek posłuszeństwa; odrzucenie anarchii.",
+    en: "Recognition of the state as having moral authority to exercise power and apply coercion; citizens have a duty of obedience; rejection of anarchy."
+  },
+  requiredYes: [52],
+  requiredNo: [48, 314, 339]
+},
+
+dialecticalMaterialism: {
+  id: "dialecticalMaterialism",
+  name: { pl: "Materializm dialektyczny", en: "Dialectical materialism" },
+  description: {
+    pl: "Marksistowska koncepcja, że rozwój historyczny napędzany jest walką klas i zmianami materialnymi; odrzucenie praw naturalnych i religii.",
+    en: "Marxist concept that historical development is driven by class struggle and material changes; rejection of natural rights and religion."
+  },
+  requiredYes: [35, 260, 261, 150],
+  requiredNo: [32, 18]
+},
+
+historicalMaterialism: {
+  id: "historicalMaterialism",
+  name: { pl: "Materializm historyczny", en: "Historical materialism" },
+  description: {
+    pl: "Pogląd, że warunki materialne i struktury ekonomiczne są podstawą zmiany społecznej; historia jest procesem walki klas; odrzucenie idealizmu.",
+    en: "The view that material conditions and economic structures are the foundation of social change; history is a process of class struggle; rejection of idealism."
+  },
+  requiredYes: [35, 260, 261, 150],
+  requiredNo: [32, 33]
+},
+
+organicism: {
+  id: "organicism",
+  name: { pl: "Organicyzm", en: "Organicism" },
+  description: {
+    pl: "Postrzeganie społeczeństwa jako organizmu, w którym hierarchia i tradycja są naturalne; jednostka służy całości; odrzucenie atomizmu i egalitaryzmu.",
+    en: "Viewing society as an organism in which hierarchy and tradition are natural; the individual serves the whole; rejection of atomism and egalitarianism."
+  },
+  requiredYes: [2, 169, 170, 172, 205],
+  requiredNo: [1, 3, 174]
+},
+
+pacifism: {
+  id: "pacifism",
+  name: { pl: "Pacyfizm", en: "Pacifism" },
+  description: {
+    pl: "Sprzeciw wobec wojny i przemocy; zmiany społeczne wyłącznie pokojowe; odrzucenie militaryzmu i obowiązkowej służby wojskowej.",
+    en: "Opposition to war and violence; social change only through peaceful means; rejection of militarism and compulsory military service."
+  },
+  requiredYes: [258, 252, 83],
+  requiredNo: [257, 80, 195, 253]
+},
+
+constitutionalMonarchy: {
+  id: "constitutionalMonarchy",
+  name: { pl: "Monarchia konstytucyjna", en: "Constitutional monarchy" },
+  description: {
+    pl: "Monarchia, w której władza monarchy jest ograniczona konstytucją i parlamentem; dziedziczny monarcha pełni funkcję głowy państwa, ale rządzi parlament.",
+    en: "Monarchy in which the monarch's power is limited by a constitution and parliament; hereditary monarch serves as head of state, but parliament governs."
+  },
+  requiredYes: [41, 38, 63, 296, 289],
+  requiredNo: [37, 72, 71, 295]
+},
+
+europeanFederalism: {
+  id: "europeanFederalism",
+  name: { pl: "Federalizm europejski", en: "European federalism" },
+  description: {
+    pl: "Dążenie do zjednoczenia Europy w federację, zniesienie granic, swobodny przepływ; władza zdecentralizowana; odrzucenie suwerenności narodowej i nacjonalizmu.",
+    en: "Aim to unite Europe into a federation, abolish borders, free movement; decentralised power; rejection of national sovereignty and nationalism."
+  },
+  requiredYes: [234, 135, 65, 368, 67],
+  requiredNo: [364, 206, 228, 363]
+    }    
   }
 };
