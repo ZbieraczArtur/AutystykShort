@@ -971,6 +971,301 @@ europeanFederalism: {
   },
   requiredYes: [234, 135, 65, 368, 67],
   requiredNo: [364, 206, 228, 363]
-    }    
+    },
+
+  hunterGatherer: {
+    id: "hunterGatherer",
+    name: {
+      pl: "Społeczeństwo zbieracko-łowieckie",
+      en: "Hunter-gatherer society"
+    },
+    description: {
+      pl: "Postuluje powrót do trybu życia opartego na zbieractwie i łowiectwie, odrzucając rolnictwo i przemysł na rzecz małych, samowystarczalnych wspólnot.",
+      en: "Advocates a return to a hunter-gatherer lifestyle, rejecting agriculture and industry in favour of small, self-sufficient communities."
+    },
+    requiredYes: [66, 99, 248, 249, 322, 376],
+    requiredNo: [94, 246, 331]
+  },
+
+  guildSystem: {
+    id: "guildSystem",
+    name: {
+      pl: "System cechowy",
+      en: "Guild system"
+    },
+    description: {
+      pl: "System organizacji społeczno-gospodarczej oparty na cechach rzemieślniczych, hierarchii i tradycji, z regulacją rynku przez korporacje zawodowe.",
+      en: "A socio-economic system based on craft guilds, hierarchy and tradition, with market regulation by professional corporations."
+    },
+    requiredYes: [26, 106, 169, 172, 176, 298],
+    requiredNo: [101, 112, 115]
+  },
+
+  centrism: {
+    id: "centrism",
+    name: {
+      pl: "Centryzm",
+      en: "Centrism"
+    },
+    description: {
+      pl: "Dążenie do równowagi między różnymi opcjami politycznymi, poparcie dla stopniowych reform, gospodarki mieszanej i pokojowych zmian.",
+      en: "Striving for balance between different political options, support for gradual reforms, mixed economy and peaceful change."
+    },
+    requiredYes: [82, 83, 148, 302],
+    requiredNo: [80, 86, 96, 101, 103, 115, 152, 309]
+  },
+
+  // UWAGA: ZASTĘPUJE STARĄ DEFINICJĘ "theocracy"
+  theocracy: {
+    id: "theocracy",
+    name: {
+      pl: "Teokracja",
+      en: "Theocracy"
+    },
+    description: {
+      pl: "Ustrój, w którym władza polityczna jest uzasadniana i sprawowana w imię Boga, a prawo opiera się na religii.",
+      en: "A system in which political power is justified and exercised in the name of God, and law is based on religion."
+    },
+    requiredYes: [39, 191, 193, 196, 197, 198, 199, 200],
+    requiredNo: [201, 270]
+  },
+
+  cityState: {
+    id: "cityState",
+    name: {
+      pl: "Państwo-miasto",
+      en: "City state"
+    },
+    description: {
+      pl: "Model polityczny, w którym suwerenność spoczywa na poziomie miasta lub gminy, z silną autonomią lokalną i decentralizacją.",
+      en: "A political model in which sovereignty lies at the city or municipal level, with strong local autonomy and decentralisation."
+    },
+    requiredYes: [65, 69, 70, 292, 293, 301],
+    requiredNo: [88, 206]
+  },
+
+  nationalism: {
+    id: "nationalism",
+    name: {
+      pl: "Nacjonalizm",
+      en: "Nationalism"
+    },
+    description: {
+      pl: "Doktryna, w której naród jest podstawową jednostką polityczną, a suwerenność narodowa jest nadrzędna.",
+      en: "A doctrine in which the nation is the basic political unit and national sovereignty is supreme."
+    },
+    requiredYes: [205, 206, 210, 364],
+    requiredNo: [234, 371, 372]
+  },
+
+  regionalism: {
+    id: "regionalism",
+    name: {
+      pl: "Regionalizm",
+      en: "Regionalism"
+    },
+    description: {
+      pl: "Dążenie do przyznania regionom szerokiej autonomii, ochrony różnorodności kulturowej i decentralizacji władzy.",
+      en: "Striving for broad autonomy for regions, protection of cultural diversity and decentralisation of power."
+    },
+    requiredYes: [65, 69, 70, 232, 292, 294],
+    requiredNo: [57, 233]
+  },
+
+  cosmopolitanism: {
+    id: "cosmopolitanism",
+    name: {
+      pl: "Kosmopolityzm",
+      en: "Cosmopolitanism"
+    },
+    description: {
+      pl: "Pogląd, że wszyscy ludzie są obywatelami świata, a granice narodowe są sztuczne; poparcie dla globalnej integracji.",
+      en: "The view that all people are citizens of the world and national borders are artificial; support for global integration."
+    },
+    requiredYes: [234, 273, 368, 371, 372],
+    requiredNo: [206, 228, 364]
+  },
+
+  openBorders: {
+    id: "openBorders",
+    name: {
+      pl: "Otwarte granice",
+      en: "Open borders"
+    },
+    description: {
+      pl: "Postulat zniesienia barier w przepływie ludzi między państwami, umożliwiający swobodną migrację.",
+      en: "Demand for the abolition of barriers to the movement of people between states, enabling free migration."
+    },
+    requiredYes: [227, 368, 369],
+    requiredNo: [228, 229, 231]
+  },
+
+  closedBorders: {
+    id: "closedBorders",
+    name: {
+      pl: "Zamknięte granice",
+      en: "Closed borders"
+    },
+    description: {
+      pl: "Postulat całkowitego zamknięcia granic państwa dla imigracji, z naciskiem na izolacjonizm.",
+      en: "Demand for complete closure of state borders to immigration, with emphasis on isolationism."
+    },
+    requiredYes: [],
+    requiredNo: [135, 227, 368, 369]
+  },
+
+  economicDemocracy: {
+    id: "economicDemocracy",
+    name: {
+      pl: "Demokracja ekonomiczna",
+      en: "Economic democracy"
+    },
+    description: {
+      pl: "Koncepcja, w której decyzje gospodarcze są podejmowane demokratycznie przez pracowników i obywateli, z preferencją dla spółdzielni.",
+      en: "A concept in which economic decisions are taken democratically by workers and citizens, with a preference for cooperatives."
+    },
+    requiredYes: [124, 259, 287],
+    requiredNo: [103]
+  },
+
+  landValueTax: {
+    id: "landValueTax",
+    name: {
+      pl: "Podatek od wartości gruntu",
+      en: "Land value tax"
+    },
+    description: {
+      pl: "System opodatkowania oparty wyłącznie na wartości gruntu, bez podatków od pracy czy kapitału.",
+      en: "A tax system based solely on land value, without taxes on labour or capital."
+    },
+    requiredYes: [97, 98, 99],
+    requiredNo: [101]
+  },
+
+  freedomOfSpeechAbsolutism: {
+    id: "freedomOfSpeechAbsolutism",
+    name: {
+      pl: "Absolutyzm wolności słowa",
+      en: "Freedom of speech absolutism"
+    },
+    description: {
+      pl: "Absolutna ochrona wolności słowa, bez żadnych ograniczeń prawnych, nawet dla treści obraźliwych.",
+      en: "Absolute protection of freedom of speech, without any legal restrictions, even for offensive content."
+    },
+    requiredYes: [153, 154, 156, 157, 158],
+    requiredNo: [155, 159, 160, 161, 336]
+  },
+
+  hateSpeechRestrictions: {
+    id: "hateSpeechRestrictions",
+    name: {
+      pl: "Ograniczenia mowy nienawiści",
+      en: "Hate speech restrictions"
+    },
+    description: {
+      pl: "Postulat zakazu publicznego nawoływania do nienawiści wobec grup chronionych.",
+      en: "Demand for a ban on public incitement to hatred against protected groups."
+    },
+    requiredYes: [155],
+    requiredNo: [154, 156]
+  },
+
+  blasphemyRestrictions: {
+    id: "blasphemyRestrictions",
+    name: {
+      pl: "Ograniczenie bluźnierstwa",
+      en: "Blasphemy restrictions"
+    },
+    description: {
+      pl: "Postulat ograniczenia wypowiedzi uznawanych za bluźniercze wobec religii.",
+      en: "Demand for restrictions on speech considered blasphemous towards religion."
+    },
+    requiredYes: [161, 162, 191],
+    requiredNo: [154, 270]
+  },
+
+  secularism: {
+    id: "secularism",
+    name: {
+      pl: "Sekularyzm",
+      en: "Secularism"
+    },
+    description: {
+      pl: "Oddzielenie religii od państwa, neutralność światopoglądowa władz publicznych.",
+      en: "Separation of religion from the state, worldview neutrality of public authorities."
+    },
+    requiredYes: [201, 270],
+    requiredNo: [39, 191, 193, 196, 197, 198, 251]
+  },
+
+  integralism: {
+    id: "integralism",
+    name: {
+      pl: "Integryzm religijny",
+      en: "Integralism"
+    },
+    description: {
+      pl: "Doktryna, że religia powinna przenikać wszystkie aspekty życia społecznego i politycznego, a państwo powinno być podporządkowane prawu Bożemu.",
+      en: "Doctrine that religion should permeate all aspects of social and political life, and the state should be subordinate to divine law."
+    },
+    requiredYes: [20, 32, 39, 191, 194, 196, 197, 198, 199, 251],
+    requiredNo: [38, 201, 270, 344]
+  },
+
+  genderEgalitarianism: {
+    id: "genderEgalitarianism",
+    name: {
+      pl: "Równość płci",
+      en: "Gender egalitarianism"
+    },
+    description: {
+      pl: "Postulat pełnej równości płci we wszystkich sferach życia, bez narzucania tradycyjnych ról.",
+      en: "Demand for full gender equality in all spheres of life, without imposing traditional roles."
+    },
+    requiredYes: [183, 184, 186, 187],
+    requiredNo: [352]
+  },
+
+  technoSkepticism: {
+    id: "technoSkepticism",
+    name: {
+      pl: "Technosceptycyzm",
+      en: "Techno-skepticism"
+    },
+    description: {
+      pl: "Sceptyczne podejście do nowych technologii, obawa przed ich negatywnymi skutkami.",
+      en: "Sceptical approach to new technologies, concern about their negative effects."
+    },
+    requiredYes: [245],
+    requiredNo: []
+  },
+
+  technoOptimism: {
+    id: "technoOptimism",
+    name: {
+      pl: "Technooptymizm",
+      en: "Techno-optimism"
+    },
+    description: {
+      pl: "Przekonanie, że postęp technologiczny przynosi głównie korzyści, i że należy go wspierać.",
+      en: "Belief that technological progress brings mainly benefits and should be supported."
+    },
+    requiredYes: [244, 246],
+    requiredNo: [245, 247, 248, 250]
+  },
+
+  statusQuo: {
+    id: "statusQuo",
+    name: {
+      pl: "Obrońca status quo",
+      en: "Status quo defender"
+    },
+    description: {
+      pl: "Pogląd, że istniejący porządek społeczny i instytucje są na ogół słuszne i należy je chronić przed radykalnymi zmianami.",
+      en: "View that the existing social order and institutions are generally right and should be protected from radical change."
+    },
+    requiredYes: [33, 82, 337, 343],
+    requiredNo: [80, 152]
+  }
   }
 };
