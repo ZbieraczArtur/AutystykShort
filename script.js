@@ -2024,6 +2024,7 @@ function initCompassModal() {
       if (modalContainer) {
         window.modalCompassInstance = new CompassUI(modalContainer, {
           mode: currentCompassMode,
+          interactive: true,
           onModeChange: (mode) => {
             currentCompassMode = mode;
             if (mode === 'creative') {
