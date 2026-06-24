@@ -1,14 +1,6 @@
-// canvas-compass.js – interaktywny kompas na canvas z zoomem i przesuwaniem
+// canvas-compass.js – interaktywny kompas na canvas z zoomem i przesuwaniem (kwadratowy, stałe kolory, logo)
 
 class CanvasCompass {
-  /**
-   * @param {HTMLElement} container - element, w którym zostanie umieszczony canvas
-   * @param {Object} options
-   * @param {string} options.mode - tryb kompasu ('weighted', 'equal', 'institutional', 'creative')
-   * @param {Object} options.creativeConfig - konfiguracja kreatywna
-   * @param {Function} options.onModeChange - callback przy zmianie trybu
-   * @param {Function} options.onCreativeConfigChange - callback przy zmianie konfiguracji kreatywnej
-   */
   constructor(container, options = {}) {
     this.container = container;
     this.options = options;
@@ -24,10 +16,11 @@ class CanvasCompass {
     this.viewport = {
       offsetX: 0,      // przesunięcie w osi X (w jednostkach danych)
       offsetY: 0,      // przesunięcie w osi Y (w jednostkach danych)
-      scale: 1,        // skala (1 = domyślny widok od -10 do 10)
+      scale: 1,        // skala (1 = widoczny cały zakres -10..10)
     };
+    this.dataRange = 20; // stały zakres danych (od -10 do 10)
 
-    // Dane
+    // Dane użytkownika
     this.userX = 0;
     this.userY = 0;
     this.activePairs = 0;
@@ -35,6 +28,7 @@ class CanvasCompass {
 
     // Nakładki (partie, ideologie, użytkownicy)
     this.overlays = [];
+    this.imageCache = {}; // cache dla załadowanych obrazów
 
     // Stan przeciągania
     this.isDragging = false;
@@ -43,9 +37,12 @@ class CanvasCompass {
     this.dragStartOffsetX = 0;
     this.dragStartOffsetY = 0;
 
-    // Czy canvas jest gotowy
-    this.ready = false;
+    // Wymiary i offset canvas (kwadratowy obszar)
+    this.baseSize = 0;
+    this.offsetXCanvas = 0;
+    this.offsetYCanvas = 0;
 
+    this.ready = false;
     this.init();
   }
 
@@ -60,51 +57,47 @@ class CanvasCompass {
   }
 
   init() {
-    // Usuń zawartość kontenera
     this.container.innerHTML = '';
 
-    // Stwórz wrapper dla canvas (zapewnia responsywność)
+    // Wrapper
     this.wrapper = document.createElement('div');
     this.wrapper.style.cssText = 'width: 100%; height: 100%; position: relative; overflow: hidden; touch-action: none;';
     this.container.appendChild(this.wrapper);
 
-    // Stwórz canvas
+    // Canvas
     this.canvas = document.createElement('canvas');
     this.canvas.style.cssText = 'display: block; width: 100%; height: 100%; background: transparent; cursor: grab;';
     this.wrapper.appendChild(this.canvas);
-
     this.ctx = this.canvas.getContext('2d');
 
-    // Obsługa zdarzeń
+    // Zdarzenia
     this.setupEvents();
 
-    // Obserwator zmiany rozmiaru
+    // Obserwator rozmiaru
     this.resizeObserver = new ResizeObserver(() => this.resize());
     this.resizeObserver.observe(this.wrapper);
 
-    // Dodatkowe elementy UI – etykiety osi (subtelna skala)
+    // Etykiety osi (subtelna skala)
     this.createAxisLabels();
 
-    // Wstępne wymiarowanie
     requestAnimationFrame(() => {
       this.resize();
       this.render();
       this.ready = true;
     });
 
-    // Etykiety w ramce – aktualizacja przy zmianie konfiguracji
     this.updateLabels();
   }
 
   createAxisLabels() {
-    // Usuń stare etykiety
-    const oldLabels = this.wrapper.querySelectorAll('.axis-label-overlay');
-    oldLabels.forEach(el => el.remove());
+    // Usuń stare
+    this.wrapper.querySelectorAll('.axis-label-overlay, .axis-label-overlay-y, .axis-label-y-top, .axis-label-y-bottom')
+      .forEach(el => el.remove());
 
-    // Kontener na etykiety osi
-    const labelContainer = document.createElement('div');
-    labelContainer.className = 'axis-label-overlay';
-    labelContainer.style.cssText = `
+    // Etykiety X (dół)
+    const xContainer = document.createElement('div');
+    xContainer.className = 'axis-label-overlay';
+    xContainer.style.cssText = `
       position: absolute;
       bottom: 0;
       left: 0;
@@ -121,20 +114,24 @@ class CanvasCompass {
       font-family: monospace;
       user-select: none;
     `;
-    labelContainer.innerHTML = `
+    xContainer.innerHTML = `
       <span id="axis-label-left">←</span>
       <span id="axis-label-center">0</span>
       <span id="axis-label-right">→</span>
     `;
-    this.wrapper.appendChild(labelContainer);
+    this.wrapper.appendChild(xContainer);
+    this.axisLabelLeft = xContainer.querySelector('#axis-label-left');
+    this.axisLabelCenter = xContainer.querySelector('#axis-label-center');
+    this.axisLabelRight = xContainer.querySelector('#axis-label-right');
 
-    // Etykiety dla osi Y (po lewej i prawej stronie)
-    const yLabelLeft = document.createElement('div');
-    yLabelLeft.className = 'axis-label-overlay-y';
-    yLabelLeft.style.cssText = `
+    // Etykiety Y (góra i dół)
+    const yTop = document.createElement('div');
+    yTop.className = 'axis-label-y-top axis-label-overlay-y';
+    yTop.style.cssText = `
       position: absolute;
       top: 4px;
-      left: 4px;
+      left: 50%;
+      transform: translateX(-50%);
       pointer-events: none;
       z-index: 10;
       font-size: 10px;
@@ -143,19 +140,16 @@ class CanvasCompass {
       opacity: 0.7;
       font-family: monospace;
       user-select: none;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
-      transform: rotate(180deg);
     `;
-    yLabelLeft.textContent = '↑';
-    this.wrapper.appendChild(yLabelLeft);
+    this.wrapper.appendChild(yTop);
 
-    const yLabelRight = document.createElement('div');
-    yLabelRight.className = 'axis-label-overlay-y';
-    yLabelRight.style.cssText = `
+    const yBottom = document.createElement('div');
+    yBottom.className = 'axis-label-y-bottom axis-label-overlay-y';
+    yBottom.style.cssText = `
       position: absolute;
-      top: 4px;
-      right: 4px;
+      bottom: 4px;
+      left: 50%;
+      transform: translateX(-50%);
       pointer-events: none;
       z-index: 10;
       font-size: 10px;
@@ -164,49 +158,52 @@ class CanvasCompass {
       opacity: 0.7;
       font-family: monospace;
       user-select: none;
-      writing-mode: vertical-rl;
-      text-orientation: mixed;
     `;
-    yLabelRight.textContent = '↓';
-    this.wrapper.appendChild(yLabelRight);
+    this.wrapper.appendChild(yBottom);
 
-    this.axisLabelLeft = labelContainer.querySelector('#axis-label-left');
-    this.axisLabelCenter = labelContainer.querySelector('#axis-label-center');
-    this.axisLabelRight = labelContainer.querySelector('#axis-label-right');
+    this.axisLabelYTop = yTop;
+    this.axisLabelYBottom = yBottom;
   }
 
   setupEvents() {
     const canvas = this.canvas;
     const wrapper = this.wrapper;
 
-    // === Zoom kółkiem myszy ===
+    // Zoom kółkiem
     canvas.addEventListener('wheel', (e) => {
       e.preventDefault();
       const rect = canvas.getBoundingClientRect();
       const mouseX = (e.clientX - rect.left) / rect.width;
       const mouseY = (e.clientY - rect.top) / rect.height;
 
-      // Oblicz współrzędne danych pod kursorem (przed zoomem)
       const dataCoords = this.screenToData(mouseX, mouseY);
 
-      // Zmiana skali
       const delta = e.deltaY > 0 ? 0.9 : 1.1;
-      const newScale = Math.min(Math.max(this.viewport.scale * delta, 0.1), 50);
+      let newScale = this.viewport.scale * delta;
+      newScale = Math.min(Math.max(newScale, 1), 50); // skala >= 1
 
-      // Oblicz nowe przesunięcie, aby punkt pod kursorem pozostał w tym samym miejscu
       const oldScale = this.viewport.scale;
       const scaleRatio = newScale / oldScale;
 
-      // Nowe przesunięcie = stare + (pozycja kursora w danych - stare przesunięcie) * (1 - scaleRatio)
-      this.viewport.offsetX = this.viewport.offsetX + (dataCoords.x - this.viewport.offsetX) * (1 - scaleRatio);
-      this.viewport.offsetY = this.viewport.offsetY + (dataCoords.y - this.viewport.offsetY) * (1 - scaleRatio);
+      // Oblicz nowe przesunięcie, aby punkt pod kursorem został
+      let newOffsetX = this.viewport.offsetX + (dataCoords.x - this.viewport.offsetX) * (1 - scaleRatio);
+      let newOffsetY = this.viewport.offsetY + (dataCoords.y - this.viewport.offsetY) * (1 - scaleRatio);
+
+      // Ogranicz przesunięcie, aby nie wyjść poza zakres -10..10
+      const halfRange = this.dataRange / 2; // 10
+      const visibleHalf = halfRange / newScale; // połowa widocznego zakresu
+      newOffsetX = Math.min(Math.max(newOffsetX, -halfRange + visibleHalf), halfRange - visibleHalf);
+      newOffsetY = Math.min(Math.max(newOffsetY, -halfRange + visibleHalf), halfRange - visibleHalf);
+
       this.viewport.scale = newScale;
+      this.viewport.offsetX = newOffsetX;
+      this.viewport.offsetY = newOffsetY;
 
       this.render();
       this.updateAxisLabels();
     }, { passive: false });
 
-    // === Przeciąganie (pan) ===
+    // Przeciąganie (pan)
     const startDrag = (e) => {
       const pos = this.getEventPos(e);
       this.isDragging = true;
@@ -223,14 +220,22 @@ class CanvasCompass {
       const dx = pos.x - this.dragStartX;
       const dy = pos.y - this.dragStartY;
 
-      // Przesunięcie w jednostkach danych
       const dataRangeX = this.getDataRangeX();
       const dataRangeY = this.getDataRangeY();
-      const pixelToDataX = dataRangeX / this.canvas.width;
-      const pixelToDataY = dataRangeY / this.canvas.height;
+      const pixelToDataX = dataRangeX / this.baseSize;
+      const pixelToDataY = dataRangeY / this.baseSize;
 
-      this.viewport.offsetX = this.dragStartOffsetX - dx * pixelToDataX;
-      this.viewport.offsetY = this.dragStartOffsetY + dy * pixelToDataY;
+      let newOffsetX = this.dragStartOffsetX - dx * pixelToDataX;
+      let newOffsetY = this.dragStartOffsetY + dy * pixelToDataY;
+
+      // Ograniczenie przesunięcia
+      const halfRange = this.dataRange / 2;
+      const visibleHalf = halfRange / this.viewport.scale;
+      newOffsetX = Math.min(Math.max(newOffsetX, -halfRange + visibleHalf), halfRange - visibleHalf);
+      newOffsetY = Math.min(Math.max(newOffsetY, -halfRange + visibleHalf), halfRange - visibleHalf);
+
+      this.viewport.offsetX = newOffsetX;
+      this.viewport.offsetY = newOffsetY;
 
       this.render();
       this.updateAxisLabels();
@@ -241,12 +246,11 @@ class CanvasCompass {
       canvas.style.cursor = 'grab';
     };
 
-    // Mysz
     canvas.addEventListener('mousedown', startDrag);
     window.addEventListener('mousemove', moveDrag);
     window.addEventListener('mouseup', endDrag);
 
-    // Dotyk (urządzenia mobilne)
+    // Dotyk
     canvas.addEventListener('touchstart', (e) => {
       e.preventDefault();
       const touch = e.touches[0];
@@ -269,7 +273,7 @@ class CanvasCompass {
       endDrag();
     }, { passive: false });
 
-    // Podwójne kliknięcie – reset widoku
+    // Podwójne kliknięcie reset
     canvas.addEventListener('dblclick', () => {
       this.viewport.offsetX = 0;
       this.viewport.offsetY = 0;
@@ -288,36 +292,25 @@ class CanvasCompass {
   }
 
   getDataRangeX() {
-    // Zakres danych widoczny na ekranie (w jednostkach danych)
-    const totalWidth = this.canvas.width;
-    const halfWidth = totalWidth / 2;
-    // Zakres danych = 20 jednostek (od -10 do 10) podzielone przez skalę
-    // plus przesunięcie
-    const range = 20 / this.viewport.scale;
-    return range;
+    return this.dataRange / this.viewport.scale;
   }
 
   getDataRangeY() {
-    const totalHeight = this.canvas.height;
-    const halfHeight = totalHeight / 2;
-    const range = 20 / this.viewport.scale;
-    return range;
+    return this.dataRange / this.viewport.scale;
   }
 
   screenToData(screenX, screenY) {
-    // screenX, screenY w zakresie 0-1 (ułamek szerokości/wysokości)
-    const dataRangeX = this.getDataRangeX();
-    const dataRangeY = this.getDataRangeY();
-    const dataX = (screenX - 0.5) * dataRangeX + this.viewport.offsetX;
-    const dataY = -(screenY - 0.5) * dataRangeY + this.viewport.offsetY;
+    // screenX, screenY w zakresie 0-1 (ułamek szerokości/wysokości canvas)
+    const dataRange = this.getDataRangeX(); // obie osie takie same
+    const dataX = (screenX - 0.5) * dataRange + this.viewport.offsetX;
+    const dataY = -(screenY - 0.5) * dataRange + this.viewport.offsetY;
     return { x: dataX, y: dataY };
   }
 
   dataToScreen(dataX, dataY) {
-    const dataRangeX = this.getDataRangeX();
-    const dataRangeY = this.getDataRangeY();
-    const screenX = (dataX - this.viewport.offsetX) / dataRangeX + 0.5;
-    const screenY = -(dataY - this.viewport.offsetY) / dataRangeY + 0.5;
+    const dataRange = this.getDataRangeX();
+    const screenX = (dataX - this.viewport.offsetX) / dataRange + 0.5;
+    const screenY = -(dataY - this.viewport.offsetY) / dataRange + 0.5;
     return { x: screenX, y: screenY };
   }
 
@@ -329,15 +322,18 @@ class CanvasCompass {
 
     if (width === 0 || height === 0) return;
 
+    // Ustaw wymiary canvas
     this.canvas.width = width * dpr;
     this.canvas.height = height * dpr;
     this.canvas.style.width = width + 'px';
     this.canvas.style.height = height + 'px';
-
-    // Skala dla rysowania (aby linie były ostre)
     this.ctx.scale(dpr, dpr);
 
-    // Zapisz wymiary logiczne
+    // Oblicz kwadratowy obszar wykresu (wyśrodkowany)
+    this.baseSize = Math.min(width, height);
+    this.offsetXCanvas = (width - this.baseSize) / 2;
+    this.offsetYCanvas = (height - this.baseSize) / 2;
+
     this.logicalWidth = width;
     this.logicalHeight = height;
     this.dpr = dpr;
@@ -349,76 +345,29 @@ class CanvasCompass {
   updateAxisLabels() {
     if (!this.axisLabelCenter) return;
 
-    // Pokaż współrzędne środka widoku
-    const centerDataX = this.viewport.offsetX;
-    const centerDataY = this.viewport.offsetY;
+    const centerX = this.viewport.offsetX;
+    const centerY = this.viewport.offsetY;
+    const halfRange = this.dataRange / 2;
+    const visibleHalf = halfRange / this.viewport.scale;
 
-    // Oblicz wartości na krawędziach
-    const dataRangeX = this.getDataRangeX();
-    const dataRangeY = this.getDataRangeY();
-    const leftX = centerDataX - dataRangeX / 2;
-    const rightX = centerDataX + dataRangeX / 2;
-    const topY = centerDataY + dataRangeY / 2;
-    const bottomY = centerDataY - dataRangeY / 2;
+    const leftX = centerX - visibleHalf;
+    const rightX = centerX + visibleHalf;
+    const topY = centerY + visibleHalf;
+    const bottomY = centerY - visibleHalf;
 
-    // Formatowanie liczb
     const fmt = (v) => {
       const abs = Math.abs(v);
-      if (abs >= 10) return Math.round(v);
+      if (abs >= 10) return Math.round(v).toString();
       if (abs >= 1) return v.toFixed(1);
       if (abs >= 0.01) return v.toFixed(2);
       return v.toExponential(1);
     };
 
-    if (this.axisLabelLeft) this.axisLabelLeft.textContent = fmt(leftX);
-    if (this.axisLabelCenter) this.axisLabelCenter.textContent = fmt(centerDataX);
-    if (this.axisLabelRight) this.axisLabelRight.textContent = fmt(rightX);
-
-    // Etykiety Y - aktualizuj istniejące lub stwórz nowe
-    let yTop = this.wrapper.querySelector('.axis-label-y-top');
-    let yBottom = this.wrapper.querySelector('.axis-label-y-bottom');
-
-    if (!yTop) {
-      yTop = document.createElement('div');
-      yTop.className = 'axis-label-y-top axis-label-overlay-y';
-      yTop.style.cssText = `
-        position: absolute;
-        top: 4px;
-        left: 50%;
-        transform: translateX(-50%);
-        pointer-events: none;
-        z-index: 10;
-        font-size: 10px;
-        color: var(--text-secondary, #475569);
-        font-weight: 600;
-        opacity: 0.7;
-        font-family: monospace;
-        user-select: none;
-      `;
-      this.wrapper.appendChild(yTop);
-    }
-    if (!yBottom) {
-      yBottom = document.createElement('div');
-      yBottom.className = 'axis-label-y-bottom axis-label-overlay-y';
-      yBottom.style.cssText = `
-        position: absolute;
-        bottom: 4px;
-        left: 50%;
-        transform: translateX(-50%);
-        pointer-events: none;
-        z-index: 10;
-        font-size: 10px;
-        color: var(--text-secondary, #475569);
-        font-weight: 600;
-        opacity: 0.7;
-        font-family: monospace;
-        user-select: none;
-      `;
-      this.wrapper.appendChild(yBottom);
-    }
-
-    yTop.textContent = fmt(topY);
-    yBottom.textContent = fmt(bottomY);
+    this.axisLabelLeft.textContent = fmt(leftX);
+    this.axisLabelCenter.textContent = fmt(centerX);
+    this.axisLabelRight.textContent = fmt(rightX);
+    this.axisLabelYTop.textContent = fmt(topY);
+    this.axisLabelYBottom.textContent = fmt(bottomY);
   }
 
   // ===== METODY PUBLICZNE =====
@@ -455,9 +404,6 @@ class CanvasCompass {
   }
 
   updateLabels() {
-    // Aktualizacja etykiet w ramce (jeśli istnieją)
-    const labels = this.creativeConfig.labels || { top: 'Heteronomia', bottom: 'Autonomia', left: 'Socjalizm', right: 'Kapitalizm' };
-    // Etykiety są rysowane na canvas, więc nie ma potrzeby aktualizować divów
     this.render();
   }
 
@@ -470,6 +416,20 @@ class CanvasCompass {
       name: name || '',
       description: description || ''
     });
+    // Załaduj obrazek do cache
+    if (logoUrl && !this.imageCache[logoUrl]) {
+      const img = new Image();
+      img.crossOrigin = 'anonymous';
+      img.src = logoUrl;
+      img.onload = () => {
+        this.imageCache[logoUrl] = img;
+        this.render();
+      };
+      img.onerror = () => {
+        this.imageCache[logoUrl] = null; // fallback
+        this.render();
+      };
+    }
     this.render();
   }
 
@@ -479,11 +439,7 @@ class CanvasCompass {
   }
 
   destroy() {
-    if (this.resizeObserver) {
-      this.resizeObserver.disconnect();
-    }
-    // Usuń nasłuchiwacze zdarzeń
-    // (w praktyce można po prostu usunąć canvas)
+    if (this.resizeObserver) this.resizeObserver.disconnect();
     this.canvas.remove();
     this.container.innerHTML = '';
   }
@@ -494,7 +450,6 @@ class CanvasCompass {
     const ctx = this.ctx;
     const w = this.logicalWidth || this.canvas.width / (this.dpr || 1);
     const h = this.logicalHeight || this.canvas.height / (this.dpr || 1);
-
     if (w === 0 || h === 0) return;
 
     const dpr = this.dpr || 1;
@@ -503,186 +458,201 @@ class CanvasCompass {
     ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     ctx.scale(dpr, dpr);
 
-    // --- Tło ---
-    this.drawBackground(ctx, w, h);
+    // Przesunięcie do kwadratowego obszaru
+    ctx.save();
+    ctx.translate(this.offsetXCanvas, this.offsetYCanvas);
 
-    // --- Siatka ---
-    this.drawGrid(ctx, w, h);
+    // Rozmiar obszaru wykresu
+    const size = this.baseSize;
+    const halfSize = size / 2;
 
-    // --- Etykiety osi ---
-    this.drawAxisLabels(ctx, w, h);
+    // ---- Tło (ćwiartki) ----
+    this.drawQuadrants(ctx, size);
 
-    // --- Nakładki (partie, ideologie, użytkownicy) ---
-    this.drawOverlays(ctx, w, h);
+    // ---- Siatka ----
+    this.drawGrid(ctx, size);
 
-    // --- Znacznik użytkownika ---
-    this.drawUserMarker(ctx, w, h);
+    // ---- Etykiety osi (strzałki) ----
+    this.drawAxisArrows(ctx, size);
 
-    // --- Etykiety narożne (tryb kreatywny) ---
-    this.drawCornerLabels(ctx, w, h);
+    // ---- Nakładki ----
+    this.drawOverlays(ctx, size);
 
+    // ---- Znacznik użytkownika ----
+    this.drawUserMarker(ctx, size);
+
+    // ---- Etykiety narożne (tryb kreatywny) ----
+    this.drawCornerLabels(ctx, size);
+
+    ctx.restore();
     ctx.restore();
   }
 
-  drawBackground(ctx, w, h) {
-    // Tło – gradient lub jednolity kolor
-    const grad = ctx.createRadialGradient(w/2, h/2, 0, w/2, h/2, Math.max(w, h) * 0.8);
-    const isDark = document.body.classList.contains('dark');
-    if (isDark) {
-      grad.addColorStop(0, '#1a2744');
-      grad.addColorStop(1, '#0a0f1c');
-    } else {
-      grad.addColorStop(0, '#f0f4f8');
-      grad.addColorStop(1, '#dce3ed');
-    }
-    ctx.fillStyle = grad;
-    ctx.fillRect(0, 0, w, h);
+  drawQuadrants(ctx, size) {
+    const half = size / 2;
 
-    // Narysuj cztery ćwiartki z przezroczystością
-    const cx = w / 2;
-    const cy = h / 2;
-
-    // Ćwiartki (z przezroczystością, aby tło było widoczne)
-    const alpha = 0.25;
+    // Kolory dokładnie takie jak w starym kompasie (bez przezroczystości)
     const colors = [
-      { x: 0, y: 0, color: 'rgba(220, 0, 0, ' + alpha + ')' },      // TL
-      { x: cx, y: 0, color: 'rgba(0, 100, 200, ' + alpha + ')' },    // TR
-      { x: 0, y: cy, color: 'rgba(20, 20, 30, ' + alpha + ')' },     // BL
-      { x: cx, y: cy, color: 'rgba(200, 180, 0, ' + alpha + ')' }    // BR
+      { x: 0, y: 0, color: '#DD0000' },      // TL
+      { x: half, y: 0, color: '#0183be' },   // TR
+      { x: 0, y: half, color: '#101010' },   // BL
+      { x: half, y: half, color: '#F4DC00' } // BR
     ];
 
     for (const q of colors) {
       ctx.fillStyle = q.color;
-      ctx.fillRect(q.x, q.y, cx, cy);
+      ctx.fillRect(q.x, q.y, half, half);
     }
 
-    // Linie podziału (krzyż)
-    ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.15)' : 'rgba(0,0,0,0.12)';
-    ctx.lineWidth = 1;
+    // Kreski (jak w starym kompasie) – dodajemy delikatne linie
+    ctx.strokeStyle = 'rgba(255,255,255,0.15)';
+    ctx.lineWidth = 0.5;
+    // Poziome i pionowe linie w każdej ćwiartce (co 10% rozmiaru)
+    for (let i = 0; i < 10; i++) {
+      const pos = (i / 10) * half;
+      // pionowe w lewej górnej
+      ctx.beginPath();
+      ctx.moveTo(pos, 0);
+      ctx.lineTo(pos, half);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(half + pos, 0);
+      ctx.lineTo(half + pos, half);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(pos, half);
+      ctx.lineTo(pos, size);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(half + pos, half);
+      ctx.lineTo(half + pos, size);
+      ctx.stroke();
+      // poziome
+      ctx.beginPath();
+      ctx.moveTo(0, pos);
+      ctx.lineTo(half, pos);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(half, pos);
+      ctx.lineTo(size, pos);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(0, half + pos);
+      ctx.lineTo(half, half + pos);
+      ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(half, half + pos);
+      ctx.lineTo(size, half + pos);
+      ctx.stroke();
+    }
+
+    // Linie krzyża (środkowe)
+    ctx.strokeStyle = 'rgba(0,0,0,0.3)';
+    ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.moveTo(cx, 0);
-    ctx.lineTo(cx, h);
-    ctx.moveTo(0, cy);
-    ctx.lineTo(w, cy);
+    ctx.moveTo(half, 0);
+    ctx.lineTo(half, size);
+    ctx.moveTo(0, half);
+    ctx.lineTo(size, half);
     ctx.stroke();
   }
 
-  drawGrid(ctx, w, h) {
-    const dataRangeX = this.getDataRangeX();
-    const dataRangeY = this.getDataRangeY();
+  drawGrid(ctx, size) {
+    const halfRange = this.dataRange / 2; // 10
+    const visibleHalf = halfRange / this.viewport.scale;
 
-    // Oblicz odstęp siatki w jednostkach danych
-    let gridSpacing = this.calculateGridSpacing(dataRangeX, dataRangeY);
+    // Oblicz odstęp siatki
+    let spacing = this.calculateGridSpacing(visibleHalf * 2);
 
-    const cx = w / 2;
-    const cy = h / 2;
+    const centerX = this.viewport.offsetX;
+    const centerY = this.viewport.offsetY;
 
-    // Przelicz przesunięcie na piksele
-    const offsetPxX = -this.viewport.offsetX / dataRangeX * w;
-    const offsetPxY = this.viewport.offsetY / dataRangeY * h;
+    // Konwersja danych na piksele w obrębie kwadratowego obszaru
+    const dataToPixel = (dataX, dataY) => {
+      const px = (dataX - centerX + visibleHalf) / (2 * visibleHalf) * size;
+      const py = (centerY + visibleHalf - dataY) / (2 * visibleHalf) * size;
+      return { px, py };
+    };
 
-    const isDark = document.body.classList.contains('dark');
-
-    // --- Linie siatki ---
-    ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(0,0,0,0.07)';
+    // Rysuj linie siatki
+    ctx.strokeStyle = 'rgba(255,255,255,0.2)';
     ctx.lineWidth = 0.5;
 
-    // Linie pionowe
-    const startX = Math.ceil((-10 - this.viewport.offsetX) / gridSpacing) * gridSpacing;
-    const endX = Math.floor((10 - this.viewport.offsetX) / gridSpacing) * gridSpacing;
-    for (let v = startX; v <= endX; v += gridSpacing) {
-      const px = cx + (v - this.viewport.offsetX) / dataRangeX * w;
+    const startX = Math.ceil((-halfRange - centerX) / spacing) * spacing;
+    const endX = Math.floor((halfRange - centerX) / spacing) * spacing;
+    for (let v = startX; v <= endX; v += spacing) {
+      if (Math.abs(v) < 0.0001) continue;
+      const { px } = dataToPixel(v, 0);
       ctx.beginPath();
       ctx.moveTo(px, 0);
-      ctx.lineTo(px, h);
+      ctx.lineTo(px, size);
       ctx.stroke();
     }
 
-    // Linie poziome
-    const startY = Math.ceil((-10 - this.viewport.offsetY) / gridSpacing) * gridSpacing;
-    const endY = Math.floor((10 - this.viewport.offsetY) / gridSpacing) * gridSpacing;
-    for (let v = startY; v <= endY; v += gridSpacing) {
-      const py = cy - (v - this.viewport.offsetY) / dataRangeY * h;
+    const startY = Math.ceil((-halfRange - centerY) / spacing) * spacing;
+    const endY = Math.floor((halfRange - centerY) / spacing) * spacing;
+    for (let v = startY; v <= endY; v += spacing) {
+      if (Math.abs(v) < 0.0001) continue;
+      const { py } = dataToPixel(0, v);
       ctx.beginPath();
       ctx.moveTo(0, py);
-      ctx.lineTo(w, py);
+      ctx.lineTo(size, py);
       ctx.stroke();
     }
 
-    // --- Linie główne (co 5 jednostek) ---
-    ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.2)' : 'rgba(0,0,0,0.15)';
+    // Główne linie co 5
+    ctx.strokeStyle = 'rgba(255,255,255,0.4)';
     ctx.lineWidth = 1;
-
-    const majorSpacing = 5;
-    // Pionowe co 5
-    for (let v = -10; v <= 10; v += majorSpacing) {
-      const px = cx + (v - this.viewport.offsetX) / dataRangeX * w;
-      if (px < 0 || px > w) continue;
+    for (let v = -10; v <= 10; v += 5) {
+      if (Math.abs(v) < 0.0001) continue;
+      const { px } = dataToPixel(v, 0);
       ctx.beginPath();
       ctx.moveTo(px, 0);
-      ctx.lineTo(px, h);
+      ctx.lineTo(px, size);
       ctx.stroke();
-    }
-    // Poziome co 5
-    for (let v = -10; v <= 10; v += majorSpacing) {
-      const py = cy - (v - this.viewport.offsetY) / dataRangeY * h;
-      if (py < 0 || py > h) continue;
+      const { py } = dataToPixel(0, v);
       ctx.beginPath();
       ctx.moveTo(0, py);
-      ctx.lineTo(w, py);
+      ctx.lineTo(size, py);
       ctx.stroke();
     }
 
-    // --- Etykiety liczbowe na osiach (przy większym zoomie) ---
+    // Etykiety liczbowe przy większym zoomie
     if (this.viewport.scale > 2) {
-      ctx.fillStyle = isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.4)';
+      ctx.fillStyle = 'rgba(255,255,255,0.6)';
       ctx.font = '9px monospace';
       ctx.textAlign = 'center';
       ctx.textBaseline = 'top';
-
-      // Etykiety na osi X
-      for (let v = startX; v <= endX; v += gridSpacing) {
+      for (let v = startX; v <= endX; v += spacing) {
         if (Math.abs(v) < 0.001) continue;
-        const px = cx + (v - this.viewport.offsetX) / dataRangeX * w;
-        if (px < 10 || px > w - 10) continue;
-        const label = this.formatNumber(v);
-        ctx.fillText(label, px, cy + 4);
+        const { px } = dataToPixel(v, 0);
+        if (px < 10 || px > size - 10) continue;
+        ctx.fillText(this.formatNumber(v), px, halfSize + 4);
       }
-
-      // Etykiety na osi Y
       ctx.textAlign = 'right';
       ctx.textBaseline = 'middle';
-      for (let v = startY; v <= endY; v += gridSpacing) {
+      for (let v = startY; v <= endY; v += spacing) {
         if (Math.abs(v) < 0.001) continue;
-        const py = cy - (v - this.viewport.offsetY) / dataRangeY * h;
-        if (py < 10 || py > h - 10) continue;
-        const label = this.formatNumber(v);
-        ctx.fillText(label, cx - 6, py);
+        const { py } = dataToPixel(0, v);
+        if (py < 10 || py > size - 10) continue;
+        ctx.fillText(this.formatNumber(v), halfSize - 6, py);
       }
-
-      // Zero na środku
+      // Zero
       ctx.textAlign = 'center';
       ctx.textBaseline = 'top';
-      ctx.fillStyle = isDark ? 'rgba(255,255,255,0.6)' : 'rgba(0,0,0,0.5)';
+      ctx.fillStyle = 'rgba(255,255,255,0.7)';
       ctx.font = 'bold 10px monospace';
-      ctx.fillText('0', cx + 2, cy + 4);
+      ctx.fillText('0', halfSize + 2, halfSize + 4);
     }
   }
 
-  calculateGridSpacing(dataRangeX, dataRangeY) {
-    // Wybierz mniejszy zakres, aby siatka była czytelna
-    const range = Math.min(dataRangeX, dataRangeY);
-    // Pożądana liczba linii siatki: między 6 a 12
+  calculateGridSpacing(range) {
     const targetLines = 10;
     let spacing = range / targetLines;
-
-    // Zaokrąglij do ładnej wartości: 0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50
-    const niceValues = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50, 100];
+    const niceValues = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50];
     let best = niceValues[0];
     for (const v of niceValues) {
-      if (Math.abs(v - spacing) < Math.abs(best - spacing)) {
-        best = v;
-      }
+      if (Math.abs(v - spacing) < Math.abs(best - spacing)) best = v;
     }
     return best;
   }
@@ -695,114 +665,96 @@ class CanvasCompass {
     return v.toExponential(1);
   }
 
-  drawAxisLabels(ctx, w, h) {
-    // Etykiety osi są rysowane przez elementy HTML (subtelna skala)
-    // Tu tylko rysujemy strzałki lub dodatkowe oznaczenia
-    const isDark = document.body.classList.contains('dark');
-    ctx.fillStyle = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(0,0,0,0.2)';
-    ctx.font = '11px monospace';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'bottom';
-
-    // Strzałki na osiach (małe trójkąty)
-    const cx = w / 2;
-    const cy = h / 2;
-
-    // Strzałka X (prawa)
+  drawAxisArrows(ctx, size) {
+    const half = size / 2;
+    ctx.fillStyle = 'rgba(255,255,255,0.4)';
+    // Strzałki na krawędziach
+    const arrowSize = 8;
+    // Prawa
     ctx.beginPath();
-    ctx.moveTo(w - 12, cy - 6);
-    ctx.lineTo(w - 4, cy);
-    ctx.lineTo(w - 12, cy + 6);
+    ctx.moveTo(size - 4, half - 6);
+    ctx.lineTo(size - 2, half);
+    ctx.lineTo(size - 4, half + 6);
     ctx.fill();
-
-    // Strzałka X (lewa)
+    // Lewa
     ctx.beginPath();
-    ctx.moveTo(12, cy - 6);
-    ctx.lineTo(4, cy);
-    ctx.lineTo(12, cy + 6);
+    ctx.moveTo(4, half - 6);
+    ctx.lineTo(2, half);
+    ctx.lineTo(4, half + 6);
     ctx.fill();
-
-    // Strzałka Y (góra)
+    // Góra
     ctx.beginPath();
-    ctx.moveTo(cx - 6, 12);
-    ctx.lineTo(cx, 4);
-    ctx.lineTo(cx + 6, 12);
+    ctx.moveTo(half - 6, 4);
+    ctx.lineTo(half, 2);
+    ctx.lineTo(half + 6, 4);
     ctx.fill();
-
-    // Strzałka Y (dół)
+    // Dół
     ctx.beginPath();
-    ctx.moveTo(cx - 6, h - 12);
-    ctx.lineTo(cx, h - 4);
-    ctx.lineTo(cx + 6, h - 12);
+    ctx.moveTo(half - 6, size - 4);
+    ctx.lineTo(half, size - 2);
+    ctx.lineTo(half + 6, size - 4);
     ctx.fill();
   }
 
-  drawCornerLabels(ctx, w, h) {
+  drawCornerLabels(ctx, size) {
     const labels = this.creativeConfig.labels || { top: 'Heteronomia', bottom: 'Autonomia', left: 'Socjalizm', right: 'Kapitalizm' };
-    const isDark = document.body.classList.contains('dark');
-    const color = isDark ? 'rgba(255,255,255,0.5)' : 'rgba(0,0,0,0.35)';
-    ctx.fillStyle = color;
+    ctx.fillStyle = 'rgba(255,255,255,0.6)';
     ctx.font = 'bold 11px sans-serif';
+    const half = size / 2;
 
-    // Góra
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';
-    ctx.fillText(labels.top, w / 2, 16);
+    ctx.fillText(labels.top, half, 16);
 
-    // Dół
     ctx.textBaseline = 'top';
-    ctx.fillText(labels.bottom, w / 2, h - 16);
+    ctx.fillText(labels.bottom, half, size - 16);
 
-    // Lewo
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.save();
-    ctx.translate(16, h / 2);
+    ctx.translate(16, half);
     ctx.rotate(-Math.PI / 2);
     ctx.fillText(labels.left, 0, 0);
     ctx.restore();
 
-    // Prawo
     ctx.save();
-    ctx.translate(w - 16, h / 2);
+    ctx.translate(size - 16, half);
     ctx.rotate(Math.PI / 2);
     ctx.fillText(labels.right, 0, 0);
     ctx.restore();
   }
 
-  drawUserMarker(ctx, w, h) {
-    const cx = w / 2;
-    const cy = h / 2;
-    const dataRangeX = this.getDataRangeX();
-    const dataRangeY = this.getDataRangeY();
+  drawUserMarker(ctx, size) {
+    const half = size / 2;
+    const halfRange = this.dataRange / 2;
+    const visibleHalf = halfRange / this.viewport.scale;
 
-    const px = cx + (this.userX - this.viewport.offsetX) / dataRangeX * w;
-    const py = cy - (this.userY - this.viewport.offsetY) / dataRangeY * h;
+    const dataToPixel = (dataX, dataY) => {
+      const px = (dataX - this.viewport.offsetX + visibleHalf) / (2 * visibleHalf) * size;
+      const py = (this.viewport.offsetY + visibleHalf - dataY) / (2 * visibleHalf) * size;
+      return { px, py };
+    };
 
-    // Sprawdź, czy znacznik jest widoczny
-    if (px < -20 || px > w + 20 || py < -20 || py > h + 20) return;
+    const { px, py } = dataToPixel(this.userX, this.userY);
+    if (px < -20 || px > size + 20 || py < -20 || py > size + 20) return;
 
-    const radius = 8; // stały rozmiar w pikselach
+    const radius = 8;
     const isDark = document.body.classList.contains('dark');
 
-    // Cień
     ctx.shadowColor = 'rgba(0,0,0,0.3)';
     ctx.shadowBlur = 8;
-    ctx.shadowOffsetX = 0;
     ctx.shadowOffsetY = 2;
 
-    // Zewnętrzny pierścień (pulsujący)
+    // Pulsujący pierścień
     const time = Date.now() / 1000;
     const pulse = 1 + 0.15 * Math.sin(time * 1.8);
     const ringRadius = radius * 1.6 * pulse;
-
     ctx.shadowBlur = 12;
     ctx.beginPath();
     ctx.arc(px, py, ringRadius, 0, Math.PI * 2);
     ctx.fillStyle = isDark ? 'rgba(250, 204, 21, 0.15)' : 'rgba(34, 197, 94, 0.2)';
     ctx.fill();
 
-    // Główny znacznik
     ctx.shadowBlur = 6;
     ctx.shadowOffsetY = 1;
     ctx.beginPath();
@@ -820,81 +772,89 @@ class CanvasCompass {
     ctx.fillStyle = grad;
     ctx.fill();
 
-    // Obrys
     ctx.shadowBlur = 0;
     ctx.strokeStyle = isDark ? '#0a0f1c' : '#ffffff';
     ctx.lineWidth = 2;
     ctx.stroke();
-
-    // Reset cienia
-    ctx.shadowBlur = 0;
   }
 
-  drawOverlays(ctx, w, h) {
-    const cx = w / 2;
-    const cy = h / 2;
-    const dataRangeX = this.getDataRangeX();
-    const dataRangeY = this.getDataRangeY();
+  drawOverlays(ctx, size) {
+    const half = size / 2;
+    const halfRange = this.dataRange / 2;
+    const visibleHalf = halfRange / this.viewport.scale;
 
-    const isDark = document.body.classList.contains('dark');
+    const dataToPixel = (dataX, dataY) => {
+      const px = (dataX - this.viewport.offsetX + visibleHalf) / (2 * visibleHalf) * size;
+      const py = (this.viewport.offsetY + visibleHalf - dataY) / (2 * visibleHalf) * size;
+      return { px, py };
+    };
+
+    const overlaySize = 18; // stały rozmiar w pikselach
 
     for (const overlay of this.overlays) {
-      const px = cx + (overlay.x - this.viewport.offsetX) / dataRangeX * w;
-      const py = cy - (overlay.y - this.viewport.offsetY) / dataRangeY * h;
+      const { px, py } = dataToPixel(overlay.x, overlay.y);
+      if (px < -30 || px > size + 30 || py < -30 || py > size + 30) continue;
 
-      // Sprawdź widoczność
-      if (px < -30 || px > w + 30 || py < -30 || py > h + 30) continue;
+      // Spróbuj narysować obrazek
+      const img = this.imageCache[overlay.logoUrl];
+      if (img && img.complete && img.naturalWidth > 0) {
+        // Rysuj obrazek
+        ctx.save();
+        ctx.shadowColor = 'rgba(0,0,0,0.3)';
+        ctx.shadowBlur = 6;
+        ctx.shadowOffsetX = 0;
+        ctx.shadowOffsetY = 1;
 
-      // Stały rozmiar w pikselach
-      const size = 16;
-      const half = size / 2;
+        // Przycięcie do koła (jeśli obrazek ma przezroczystość, będzie okrągły)
+        ctx.beginPath();
+        ctx.arc(px, py, overlaySize/2, 0, Math.PI * 2);
+        ctx.clip();
+        ctx.drawImage(img, px - overlaySize/2, py - overlaySize/2, overlaySize, overlaySize);
+        ctx.restore();
 
-      // Tło dla czytelności
-      ctx.shadowColor = 'rgba(0,0,0,0.2)';
-      ctx.shadowBlur = 6;
-      ctx.shadowOffsetX = 0;
-      ctx.shadowOffsetY = 1;
+        // Obrys
+        ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.arc(px, py, overlaySize/2, 0, Math.PI * 2);
+        ctx.stroke();
+      } else {
+        // Fallback – kolorowe kółko z inicjałem
+        const bgColor = overlay.type === 'party' ? 'rgba(59, 130, 246, 0.7)' :
+                        overlay.type === 'ideology' ? 'rgba(139, 92, 246, 0.7)' :
+                        overlay.type === 'user' ? 'rgba(34, 197, 94, 0.7)' :
+                        'rgba(100, 100, 100, 0.6)';
+        ctx.shadowColor = 'rgba(0,0,0,0.2)';
+        ctx.shadowBlur = 4;
+        ctx.beginPath();
+        ctx.arc(px, py, overlaySize/2, 0, Math.PI * 2);
+        ctx.fillStyle = bgColor;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+        ctx.strokeStyle = 'rgba(255,255,255,0.3)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
 
-      // Rysuj jako okrąg z inicjałem lub ikoną
-      ctx.shadowBlur = 4;
-      ctx.beginPath();
-      ctx.arc(px, py, half + 2, 0, Math.PI * 2);
-      const bgColor = overlay.type === 'party' ? 'rgba(59, 130, 246, 0.75)' :
-                      overlay.type === 'ideology' ? 'rgba(139, 92, 246, 0.75)' :
-                      overlay.type === 'user' ? 'rgba(34, 197, 94, 0.75)' :
-                      'rgba(100, 100, 100, 0.6)';
-      ctx.fillStyle = bgColor;
-      ctx.fill();
+        ctx.fillStyle = '#ffffff';
+        ctx.font = 'bold 8px sans-serif';
+        ctx.textAlign = 'center';
+        ctx.textBaseline = 'middle';
+        const initial = (overlay.name || '?')[0].toUpperCase();
+        ctx.fillText(initial, px, py + 0.5);
+      }
 
-      // Obrys
-      ctx.shadowBlur = 0;
-      ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.3)' : 'rgba(255,255,255,0.5)';
-      ctx.lineWidth = 1;
-      ctx.stroke();
-
-      // Inicjał lub pierwsza litera nazwy
-      ctx.fillStyle = '#ffffff';
-      ctx.font = 'bold 8px sans-serif';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      const initial = (overlay.name || '?')[0].toUpperCase();
-      ctx.fillText(initial, px, py + 0.5);
-
-      // Etykieta nazwy (przy większym zoomie)
+      // Etykieta nazwy przy dużym zoomie
       if (this.viewport.scale > 4) {
-        ctx.fillStyle = isDark ? 'rgba(255,255,255,0.7)' : 'rgba(0,0,0,0.6)';
+        ctx.fillStyle = 'rgba(255,255,255,0.7)';
         ctx.font = '8px sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'bottom';
-        ctx.fillText(overlay.name, px, py - half - 4);
+        ctx.fillText(overlay.name, px, py - overlaySize/2 - 4);
       }
-
-      // Reset cienia
-      ctx.shadowBlur = 0;
     }
   }
 
-  // ===== METODY DLA PANELU KREATYWNEGO (zgodność z CompassUI) =====
+  // ===== METODY DLA PANELU KREATYWNEGO (zgodność) =====
 
   setCreativeConfigPanel(areaElement, listContainer, topInput, bottomInput, leftInput, rightInput, applyLabelsBtn, applyCreativeBtn) {
     this.creativeArea = areaElement;
