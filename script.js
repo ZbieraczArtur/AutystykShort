@@ -2182,4 +2182,4 @@ importAnswersFromExportCode = function(rawCode) {
   return success;
 };
 
-loadConfig();
+window.__neoAutystykBoot = loadConfig;
