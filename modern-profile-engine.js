@@ -29,7 +29,9 @@
 
   function getProfileCollection(type) {
     const key = profileKey(type);
-    return Array.isArray(politicalProfiles?.[key]) ? politicalProfiles[key] : [];
+    const expectedType = type === 'party' ? 'party' : type === 'ideology' ? 'ideology' : 'user';
+    const list = Array.isArray(politicalProfiles?.[key]) ? politicalProfiles[key] : [];
+    return list.filter(profile => !profile.type || profile.type === expectedType);
   }
 
   function getLegacyCollection(type) {
@@ -111,7 +113,10 @@
     let buffer = '';
     let depth = 0;
 
-    for (const char of String(rawCode || '')) {
+    const normalizedCode = String(rawCode || '')
+      .replace(/(\d+#(?:opis|note):[^;\r\n]*?)(?=\s+\d+\s*:\s*\()/gi, '$1;');
+
+    for (const char of normalizedCode) {
       if (char === '(') depth++;
       if (char === ')' && depth > 0) depth--;
 
@@ -252,11 +257,11 @@
     let maxPossible = 0;
     let compared = 0;
 
-    for (const question of config.questions) {
-      const userAnswer = answersByQuestion.get(Number(question.id));
-      const allowed = reference.get(Number(question.id));
+    for (const [questionId, allowed] of reference.entries()) {
+      if (!allowed?.length) continue;
+      const userAnswer = answersByQuestion.get(Number(questionId));
       const userValue = userAnswer ? Number(userAnswer.answerValue) : 0;
-      const best = allowed?.length ? Math.max(...allowed.map(answer => profilePairScoreModern(userValue, answer))) : 0;
+      const best = Math.max(...allowed.map(answer => profilePairScoreModern(userValue, answer)));
       score += best;
       maxPossible += 1.5;
       compared++;
@@ -341,6 +346,42 @@
     const parsed = firstAnswersFromReference(profile);
     return parsed.length ? parsed : [];
   }
+  function legacyEntityAnswersFromMappings(name, type) {
+    const entity = getLegacyEntity(name, type);
+    const aliases = [name, entity?.name, entity?.key, entity?.id]
+      .filter(Boolean)
+      .map(normalizeProfileText);
+
+    return (config?.questions || []).map(question => {
+      let bestAnswer = null;
+      let bestAbsValue = -1;
+
+      for (const answer of question.answers || []) {
+        const forList = type === 'party' ? (answer.parties_for || []) : (answer.ideologies_for || []);
+        const againstList = type === 'party' ? (answer.parties_against || []) : (answer.ideologies_against || []);
+        const isFor = forList.some(item => aliases.includes(normalizeProfileText(item)));
+        const isAgainst = againstList.some(item => aliases.includes(normalizeProfileText(item)));
+        if (!isFor && !isAgainst) continue;
+
+        const sourceValue = Number(answer.value || 0);
+        const targetValue = isFor ? sourceValue : -sourceValue;
+        const selected = question.answers.find(candidate => Math.abs(Number(candidate.value) - targetValue) < 0.01) || answer;
+        const absVal = Math.abs(Number(selected.value || 0));
+        if (absVal > bestAbsValue) {
+          bestAbsValue = absVal;
+          bestAnswer = selected;
+        }
+      }
+
+      if (!bestAnswer) bestAnswer = getSkipAnswer(question);
+      return {
+        questionId: question.id,
+        answerIndex: question.answers.indexOf(bestAnswer),
+        answerValue: Number(bestAnswer?.value || 0),
+        answerData: bestAnswer
+      };
+    });
+  }
 
   const originalComputeScores = window.computeScores || computeScores;
   computeScores = function (mode = currentScoringMode) {
@@ -377,6 +418,18 @@
         return;
       }
     } else {
+      const legacyType = getLegacyEntity(selectedName, 'party') ? 'party' :
+        getLegacyEntity(selectedName, 'ideology') ? 'ideology' : null;
+
+      if (legacyType) {
+        const entity = getLegacyEntity(selectedName, legacyType);
+        simulatedEntity = { type: legacyType, name: entity.name };
+        userAnswers = legacyEntityAnswersFromMappings(entity.name, legacyType);
+        updateDOMSelections();
+        computeAndDisplayResults();
+        return;
+      }
+
       const user = getProfile(selectedName, 'user');
       if (user) {
         simulatedEntity = { type: 'user', name: user.name };
@@ -453,12 +506,12 @@
       ? [
           ['party', translations?.ui?.partiesGroup || 'Partie polityczne', getProfileCollection('party')],
           ['ideology', translations?.ui?.ideologiesGroup || 'Ideologie', getProfileCollection('ideology')],
-          ['user', translations?.ui?.usersGroup || 'Użytkownicy', getProfileCollection('user')]
+          ['user', translations?.ui?.usersGroup || 'UĹĽytkownicy', getProfileCollection('user')]
         ]
       : [
           ['party', translations?.ui?.partiesGroup || 'Partie polityczne', getLegacyCollection('party')],
           ['ideology', translations?.ui?.ideologiesGroup || 'Ideologie', getLegacyCollection('ideology')],
-          ['user', translations?.ui?.usersGroup || 'Użytkownicy', getProfileCollection('user')]
+          ['user', translations?.ui?.usersGroup || 'UĹĽytkownicy', getProfileCollection('user')]
         ];
 
     for (const [, label, list] of groups) {
@@ -498,7 +551,7 @@
     for (const question of config.questions) {
       const answer = userAnswers.find(row => Number(row.questionId) === Number(question.id) && !row.noteOnly);
       const note = answer?.note || '';
-      const label = answer?.answerData?.label || (answer ? 'Pomiń pytanie' : 'Brak odpowiedzi');
+      const label = answer?.answerData?.label || (answer ? 'PomiĹ„ pytanie' : 'Brak odpowiedzi');
       lines.push(`${question.id}:(${label});`);
       if (note.trim()) lines.push(`${question.id}#opis:${encodeURIComponent(note.trim())}`);
     }
@@ -513,14 +566,14 @@
     const noteRows = parsed.filter(row => row.note);
 
     if (!answerRows.length && !noteRows.length) {
-      showPopup(translations?.ui?.importNoAnswers || 'Nie znaleziono prawidłowych odpowiedzi w kodzie.');
+      showPopup(translations?.ui?.importNoAnswers || 'Nie znaleziono prawidĹ‚owych odpowiedzi w kodzie.');
       return false;
     }
 
     userAnswers = answerRows;
     updateDOMSelections();
     if (resultsDiv.style.display !== 'none') computeAndDisplayResults();
-    else showPopup((translations?.ui?.importSuccess || `Zaimportowano ${answerRows.length} odpowiedzi.`) + ' ' + (translations?.ui?.clickShowResults || 'Kliknij "Pokaż wyniki", aby zobaczyć zaktualizowany profil.'));
+    else showPopup((translations?.ui?.importSuccess || `Zaimportowano ${answerRows.length} odpowiedzi.`) + ' ' + (translations?.ui?.clickShowResults || 'Kliknij "PokaĹĽ wyniki", aby zobaczyÄ‡ zaktualizowany profil.'));
     return true;
   };
   window.importAnswersFromExportCode = importAnswersFromExportCode;
@@ -549,3 +602,5 @@
 
   loadConfig();
 })();
+
+
