@@ -220,35 +220,3 @@ body.dark .compass-overlay {
     gap: 0.35rem;
   }
 }
-
-/* canvas-compass – styl dla interaktywnego kompasu */
-.canvas-compass-wrapper {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  overflow: hidden;
-  touch-action: none;
-}
-
-.canvas-compass-wrapper canvas {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: transparent;
-  cursor: grab;
-}
-
-.canvas-compass-wrapper canvas:active {
-  cursor: grabbing;
-}
-
-.axis-label-overlay,
-.axis-label-overlay-y {
-  pointer-events: none;
-  user-select: none;
-  font-family: monospace;
-  font-size: 10px;
-  color: var(--text-secondary, #475569);
-  opacity: 0.7;
-  font-weight: 600;
-}
