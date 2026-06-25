@@ -1,4 +1,4 @@
-// canvas-compass.js – interaktywny kompas na canvas z zoomem i przesuwaniem (kwadratowy, stonowana siatka, stałe punkty)
+// canvas-compass.js – interaktywny kompas z zoomem, stałą siatką i zawsze widocznymi punktami
 
 class CanvasCompass {
   constructor(container, options = {}) {
@@ -12,38 +12,38 @@ class CanvasCompass {
     this.onModeChange = options.onModeChange || (() => {});
     this.onCreativeConfigChange = options.onCreativeConfigChange || (() => {});
 
+    // Stan widoku
     this.viewport = {
       offsetX: 0,
       offsetY: 0,
       scale: 1,
     };
-    this.dataRange = 20;
+    this.dataRange = 20; // od -10 do 10
 
     this.userX = 0;
     this.userY = 0;
     this.activePairs = 0;
-    this.modeLabel = this.getModeLabel();
 
     this.overlays = [];
     this.imageCache = {};
 
+    // Przeciąganie
     this.isDragging = false;
     this.dragStartX = 0;
     this.dragStartY = 0;
     this.dragStartOffsetX = 0;
     this.dragStartOffsetY = 0;
 
-    this.baseSize = 0;
-    this.offsetXCanvas = 0;
-    this.offsetYCanvas = 0;
+    // Wymiary
+    this.canvasWidth = 0;
+    this.canvasHeight = 0;
+    this.drawSize = 0; // rozmiar kwadratowego obszaru rysowania
+    this.offsetX = 0;
+    this.offsetY = 0;
+    this.isSquare = true; // czy obszar jest kwadratowy
 
     this.ready = false;
     this.init();
-  }
-
-  getModeLabel() {
-    const labels = { weighted: 'Wagowy', equal: 'Jednakowe wagi', institutional: 'Instytucjonalny', creative: 'Kreatywny' };
-    return labels[this.mode] || 'Wagowy';
   }
 
   init() {
@@ -69,8 +69,6 @@ class CanvasCompass {
       this.render();
       this.ready = true;
     });
-
-    this.updateLabels();
   }
 
   createAxisLabels() {
@@ -92,23 +90,18 @@ class CanvasCompass {
       font-size: 10px;
       color: rgba(255,255,255,0.7);
       font-weight: 600;
-      opacity: 0.8;
       font-family: monospace;
       user-select: none;
-      text-shadow: 0 0 4px rgba(0,0,0,0.5);
+      text-shadow: 0 0 4px rgba(0,0,0,0.6);
     `;
-    xContainer.innerHTML = `
-      <span id="axis-label-left">←</span>
-      <span id="axis-label-center">0</span>
-      <span id="axis-label-right">→</span>
-    `;
+    xContainer.innerHTML = `<span id="axis-label-left">-10</span><span id="axis-label-center">0</span><span id="axis-label-right">10</span>`;
     this.wrapper.appendChild(xContainer);
     this.axisLabelLeft = xContainer.querySelector('#axis-label-left');
     this.axisLabelCenter = xContainer.querySelector('#axis-label-center');
     this.axisLabelRight = xContainer.querySelector('#axis-label-right');
 
     const yTop = document.createElement('div');
-    yTop.className = 'axis-label-y-top axis-label-overlay-y';
+    yTop.className = 'axis-label-y-top';
     yTop.style.cssText = `
       position: absolute;
       top: 4px;
@@ -119,15 +112,15 @@ class CanvasCompass {
       font-size: 10px;
       color: rgba(255,255,255,0.7);
       font-weight: 600;
-      opacity: 0.8;
       font-family: monospace;
       user-select: none;
-      text-shadow: 0 0 4px rgba(0,0,0,0.5);
+      text-shadow: 0 0 4px rgba(0,0,0,0.6);
     `;
+    yTop.textContent = '10';
     this.wrapper.appendChild(yTop);
 
     const yBottom = document.createElement('div');
-    yBottom.className = 'axis-label-y-bottom axis-label-overlay-y';
+    yBottom.className = 'axis-label-y-bottom';
     yBottom.style.cssText = `
       position: absolute;
       bottom: 4px;
@@ -138,11 +131,11 @@ class CanvasCompass {
       font-size: 10px;
       color: rgba(255,255,255,0.7);
       font-weight: 600;
-      opacity: 0.8;
       font-family: monospace;
       user-select: none;
-      text-shadow: 0 0 4px rgba(0,0,0,0.5);
+      text-shadow: 0 0 4px rgba(0,0,0,0.6);
     `;
+    yBottom.textContent = '-10';
     this.wrapper.appendChild(yBottom);
 
     this.axisLabelYTop = yTop;
@@ -152,6 +145,7 @@ class CanvasCompass {
   setupEvents() {
     const canvas = this.canvas;
 
+    // Zoom kółkiem
     canvas.addEventListener('wheel', (e) => {
       e.preventDefault();
       const rect = canvas.getBoundingClientRect();
@@ -160,9 +154,9 @@ class CanvasCompass {
 
       const dataCoords = this.screenToData(mouseX, mouseY);
 
-      const delta = e.deltaY > 0 ? 0.9 : 1.1;
+      const delta = e.deltaY > 0 ? 0.92 : 1.08;
       let newScale = this.viewport.scale * delta;
-      newScale = Math.max(newScale, 1); // minimalna skala 1, brak górnego ograniczenia
+      newScale = Math.max(newScale, 1);
 
       const oldScale = this.viewport.scale;
       const scaleRatio = newScale / oldScale;
@@ -170,6 +164,7 @@ class CanvasCompass {
       let newOffsetX = this.viewport.offsetX + (dataCoords.x - this.viewport.offsetX) * (1 - scaleRatio);
       let newOffsetY = this.viewport.offsetY + (dataCoords.y - this.viewport.offsetY) * (1 - scaleRatio);
 
+      // Ograniczenie: nie wychodzimy poza -10..10
       const halfRange = this.dataRange / 2;
       const visibleHalf = halfRange / newScale;
       newOffsetX = Math.min(Math.max(newOffsetX, -halfRange + visibleHalf), halfRange - visibleHalf);
@@ -179,10 +174,12 @@ class CanvasCompass {
       this.viewport.offsetX = newOffsetX;
       this.viewport.offsetY = newOffsetY;
 
+      this.updateLayout();
       this.render();
       this.updateAxisLabels();
     }, { passive: false });
 
+    // Przeciąganie
     const startDrag = (e) => {
       const pos = this.getEventPos(e);
       this.isDragging = true;
@@ -199,11 +196,12 @@ class CanvasCompass {
       const dx = pos.x - this.dragStartX;
       const dy = pos.y - this.dragStartY;
 
-      const dataRange = this.getDataRangeX();
-      const pixelToData = dataRange / this.baseSize;
+      const dataRange = this.dataRange / this.viewport.scale;
+      const pixelToDataX = dataRange / this.drawSize;
+      const pixelToDataY = dataRange / this.drawSize;
 
-      let newOffsetX = this.dragStartOffsetX - dx * pixelToData;
-      let newOffsetY = this.dragStartOffsetY + dy * pixelToData;
+      let newOffsetX = this.dragStartOffsetX - dx * pixelToDataX;
+      let newOffsetY = this.dragStartOffsetY + dy * pixelToDataY;
 
       const halfRange = this.dataRange / 2;
       const visibleHalf = halfRange / this.viewport.scale;
@@ -252,6 +250,7 @@ class CanvasCompass {
       this.viewport.offsetX = 0;
       this.viewport.offsetY = 0;
       this.viewport.scale = 1;
+      this.updateLayout();
       this.render();
       this.updateAxisLabels();
     });
@@ -262,23 +261,15 @@ class CanvasCompass {
     return { x: (e.clientX - rect.left), y: (e.clientY - rect.top) };
   }
 
-  getDataRangeX() {
-    return this.dataRange / this.viewport.scale;
-  }
-
-  getDataRangeY() {
-    return this.dataRange / this.viewport.scale;
-  }
-
   screenToData(screenX, screenY) {
-    const dataRange = this.getDataRangeX();
+    const dataRange = this.dataRange / this.viewport.scale;
     const dataX = (screenX - 0.5) * dataRange + this.viewport.offsetX;
     const dataY = -(screenY - 0.5) * dataRange + this.viewport.offsetY;
     return { x: dataX, y: dataY };
   }
 
   dataToScreen(dataX, dataY) {
-    const dataRange = this.getDataRangeX();
+    const dataRange = this.dataRange / this.viewport.scale;
     const screenX = (dataX - this.viewport.offsetX) / dataRange + 0.5;
     const screenY = -(dataY - this.viewport.offsetY) / dataRange + 0.5;
     return { x: screenX, y: screenY };
@@ -298,30 +289,35 @@ class CanvasCompass {
     this.canvas.style.height = height + 'px';
     this.ctx.scale(dpr, dpr);
 
-    this.baseSize = Math.min(width, height);
-    this.offsetXCanvas = (width - this.baseSize) / 2;
-    this.offsetYCanvas = (height - this.baseSize) / 2;
-
-    this.logicalWidth = width;
-    this.logicalHeight = height;
+    this.canvasWidth = width;
+    this.canvasHeight = height;
     this.dpr = dpr;
 
+    this.updateLayout();
     this.render();
     this.updateAxisLabels();
   }
 
-  updateAxisLabels() {
-    if (!this.axisLabelCenter) return;
+  updateLayout() {
+    // Przy skali 1 – kwadrat, przy większej skali – prostokąt (pełna szerokość)
+    if (this.viewport.scale === 1) {
+      this.isSquare = true;
+      this.drawSize = Math.min(this.canvasWidth, this.canvasHeight);
+      this.offsetX = (this.canvasWidth - this.drawSize) / 2;
+      this.offsetY = (this.canvasHeight - this.drawSize) / 2;
+    } else {
+      this.isSquare = false;
+      this.drawSize = this.canvasWidth; // pełna szerokość
+      this.offsetX = 0;
+      this.offsetY = 0;
+    }
+  }
 
-    const centerX = this.viewport.offsetX;
-    const centerY = this.viewport.offsetY;
+  updateAxisLabels() {
     const halfRange = this.dataRange / 2;
     const visibleHalf = halfRange / this.viewport.scale;
-
-    const leftX = centerX - visibleHalf;
-    const rightX = centerX + visibleHalf;
-    const topY = centerY + visibleHalf;
-    const bottomY = centerY - visibleHalf;
+    const centerX = this.viewport.offsetX;
+    const centerY = this.viewport.offsetY;
 
     const fmt = (v) => {
       const abs = Math.abs(v);
@@ -331,11 +327,11 @@ class CanvasCompass {
       return v.toExponential(1);
     };
 
-    this.axisLabelLeft.textContent = fmt(leftX);
+    this.axisLabelLeft.textContent = fmt(centerX - visibleHalf);
     this.axisLabelCenter.textContent = fmt(centerX);
-    this.axisLabelRight.textContent = fmt(rightX);
-    this.axisLabelYTop.textContent = fmt(topY);
-    this.axisLabelYBottom.textContent = fmt(bottomY);
+    this.axisLabelRight.textContent = fmt(centerX + visibleHalf);
+    this.axisLabelYTop.textContent = fmt(centerY + visibleHalf);
+    this.axisLabelYBottom.textContent = fmt(centerY - visibleHalf);
   }
 
   // ===== METODY PUBLICZNE =====
@@ -353,25 +349,17 @@ class CanvasCompass {
 
   updateModeLabel(mode) {
     this.mode = mode || this.mode;
-    this.modeLabel = this.getModeLabel();
     this.render();
   }
 
   setMode(mode) {
     this.mode = mode;
-    this.modeLabel = this.getModeLabel();
     this.onModeChange(mode);
     this.render();
   }
 
   setCreativeConfig(config) {
     this.creativeConfig = config;
-    this.updateLabels();
-    this.onCreativeConfigChange(config);
-    this.render();
-  }
-
-  updateLabels() {
     this.render();
   }
 
@@ -408,8 +396,8 @@ class CanvasCompass {
 
   render() {
     const ctx = this.ctx;
-    const w = this.logicalWidth || this.canvas.width / (this.dpr || 1);
-    const h = this.logicalHeight || this.canvas.height / (this.dpr || 1);
+    const w = this.canvasWidth;
+    const h = this.canvasHeight;
     if (w === 0 || h === 0) return;
 
     const dpr = this.dpr || 1;
@@ -418,29 +406,27 @@ class CanvasCompass {
     ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     ctx.scale(dpr, dpr);
 
+    // Przesunięcie do obszaru rysowania
     ctx.save();
-    ctx.translate(this.offsetXCanvas, this.offsetYCanvas);
+    ctx.translate(this.offsetX, this.offsetY);
 
-    const size = this.baseSize;
+    const size = this.drawSize;
     const halfSize = size / 2;
 
     // ---- Tło (ćwiartki) ----
     this.drawQuadrants(ctx, size);
 
-    // ---- Siatka (stonowana) ----
+    // ---- Stała siatka (jak w małym kompasie) ----
     this.drawGrid(ctx, size);
 
-    // ---- Etykiety osi (strzałki) ----
-    this.drawAxisArrows(ctx, size);
+    // ---- Etykiety narożne ----
+    this.drawCornerLabels(ctx, size);
 
     // ---- Nakładki ----
     this.drawOverlays(ctx, size);
 
     // ---- Znacznik użytkownika ----
     this.drawUserMarker(ctx, size);
-
-    // ---- Etykiety narożne ----
-    this.drawCornerLabels(ctx, size);
 
     ctx.restore();
     ctx.restore();
@@ -449,7 +435,7 @@ class CanvasCompass {
   drawQuadrants(ctx, size) {
     const half = size / 2;
 
-    // Kolory ćwiartek – dokładnie jak w starym kompasie
+    // Kolory ćwiartek – dokładnie jak w oryginalnym kompasie
     const colors = [
       { x: 0, y: 0, color: '#DD0000' },
       { x: half, y: 0, color: '#0183be' },
@@ -462,12 +448,12 @@ class CanvasCompass {
       ctx.fillRect(q.x, q.y, half, half);
     }
 
-    // Delikatna kratka wewnątrz ćwiartek (bardzo jasne linie)
-    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
+    // Delikatna kratka wewnątrz ćwiartek (co 10% – tak jak w małym kompasie)
+    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
     ctx.lineWidth = 0.5;
     for (let i = 1; i < 10; i++) {
       const pos = (i / 10) * half;
-      // pionowe
+      // Pionowe
       ctx.beginPath();
       ctx.moveTo(pos, 0);
       ctx.lineTo(pos, half);
@@ -484,7 +470,7 @@ class CanvasCompass {
       ctx.moveTo(half + pos, half);
       ctx.lineTo(half + pos, size);
       ctx.stroke();
-      // poziome
+      // Poziome
       ctx.beginPath();
       ctx.moveTo(0, pos);
       ctx.lineTo(half, pos);
@@ -503,8 +489,8 @@ class CanvasCompass {
       ctx.stroke();
     }
 
-    // Główne linie krzyża (czarne)
-    ctx.strokeStyle = 'rgba(0,0,0,0.4)';
+    // Główne linie krzyża
+    ctx.strokeStyle = 'rgba(0,0,0,0.35)';
     ctx.lineWidth = 2;
     ctx.beginPath();
     ctx.moveTo(half, 0);
@@ -515,150 +501,32 @@ class CanvasCompass {
   }
 
   drawGrid(ctx, size) {
-    const halfRange = this.dataRange / 2;
-    const visibleHalf = halfRange / this.viewport.scale;
-
-    let spacing = this.calculateGridSpacing(visibleHalf * 2);
-
-    const centerX = this.viewport.offsetX;
-    const centerY = this.viewport.offsetY;
-
-    const dataToPixel = (dataX, dataY) => {
-      const px = (dataX - centerX + visibleHalf) / (2 * visibleHalf) * size;
-      const py = (centerY + visibleHalf - dataY) / (2 * visibleHalf) * size;
-      return { px, py };
-    };
-
-    // Siatka – bardzo delikatna, ciemna (nie biała)
-    ctx.strokeStyle = 'rgba(0,0,0,0.15)';
+    // To jest stała siatka na obszarze kompasu – niezależna od zoomu
+    // Rysujemy linie co 10% obszaru, tak jak w małym kompasie
+    const half = size / 2;
+    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
     ctx.lineWidth = 0.5;
 
-    const startX = Math.ceil((-halfRange - centerX) / spacing) * spacing;
-    const endX = Math.floor((halfRange - centerX) / spacing) * spacing;
-    for (let v = startX; v <= endX; v += spacing) {
-      if (Math.abs(v) < 0.0001) continue;
-      const { px } = dataToPixel(v, 0);
+    for (let i = 1; i < 10; i++) {
+      const pos = (i / 10) * size;
+      // Pionowe
       ctx.beginPath();
-      ctx.moveTo(px, 0);
-      ctx.lineTo(px, size);
+      ctx.moveTo(pos, 0);
+      ctx.lineTo(pos, size);
+      ctx.stroke();
+      // Poziome
+      ctx.beginPath();
+      ctx.moveTo(0, pos);
+      ctx.lineTo(size, pos);
       ctx.stroke();
     }
-
-    const startY = Math.ceil((-halfRange - centerY) / spacing) * spacing;
-    const endY = Math.floor((halfRange - centerY) / spacing) * spacing;
-    for (let v = startY; v <= endY; v += spacing) {
-      if (Math.abs(v) < 0.0001) continue;
-      const { py } = dataToPixel(0, v);
-      ctx.beginPath();
-      ctx.moveTo(0, py);
-      ctx.lineTo(size, py);
-      ctx.stroke();
-    }
-
-    // Główne linie co 5 – nieco ciemniejsze
-    ctx.strokeStyle = 'rgba(0,0,0,0.25)';
-    ctx.lineWidth = 1;
-    for (let v = -10; v <= 10; v += 5) {
-      if (Math.abs(v) < 0.0001) continue;
-      const { px } = dataToPixel(v, 0);
-      ctx.beginPath();
-      ctx.moveTo(px, 0);
-      ctx.lineTo(px, size);
-      ctx.stroke();
-      const { py } = dataToPixel(0, v);
-      ctx.beginPath();
-      ctx.moveTo(0, py);
-      ctx.lineTo(size, py);
-      ctx.stroke();
-    }
-
-    // Etykiety liczbowe przy większym zoomie (jasne, z cieniem)
-    if (this.viewport.scale > 2) {
-      ctx.shadowColor = 'rgba(0,0,0,0.5)';
-      ctx.shadowBlur = 4;
-      ctx.fillStyle = 'rgba(255,255,255,0.7)';
-      ctx.font = '9px monospace';
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'top';
-      for (let v = startX; v <= endX; v += spacing) {
-        if (Math.abs(v) < 0.001) continue;
-        const { px } = dataToPixel(v, 0);
-        if (px < 10 || px > size - 10) continue;
-        ctx.fillText(this.formatNumber(v), px, halfSize + 4);
-      }
-      ctx.textAlign = 'right';
-      ctx.textBaseline = 'middle';
-      for (let v = startY; v <= endY; v += spacing) {
-        if (Math.abs(v) < 0.001) continue;
-        const { py } = dataToPixel(0, v);
-        if (py < 10 || py > size - 10) continue;
-        ctx.fillText(this.formatNumber(v), halfSize - 6, py);
-      }
-      // Zero
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'top';
-      ctx.fillStyle = 'rgba(255,255,255,0.8)';
-      ctx.font = 'bold 10px monospace';
-      ctx.shadowBlur = 6;
-      ctx.fillText('0', halfSize + 2, halfSize + 4);
-      ctx.shadowBlur = 0;
-    }
-  }
-
-  calculateGridSpacing(range) {
-    const targetLines = 10;
-    let spacing = range / targetLines;
-    const niceValues = [0.01, 0.02, 0.05, 0.1, 0.2, 0.5, 1, 2, 5, 10, 20, 50];
-    let best = niceValues[0];
-    for (const v of niceValues) {
-      if (Math.abs(v - spacing) < Math.abs(best - spacing)) best = v;
-    }
-    return best;
-  }
-
-  formatNumber(v) {
-    const abs = Math.abs(v);
-    if (abs >= 10) return Math.round(v).toString();
-    if (abs >= 1) return v.toFixed(1);
-    if (abs >= 0.01) return v.toFixed(2);
-    return v.toExponential(1);
-  }
-
-  drawAxisArrows(ctx, size) {
-    const half = size / 2;
-    ctx.fillStyle = 'rgba(255,255,255,0.3)';
-    const a = 8;
-    // prawa
-    ctx.beginPath();
-    ctx.moveTo(size - 4, half - 6);
-    ctx.lineTo(size - 2, half);
-    ctx.lineTo(size - 4, half + 6);
-    ctx.fill();
-    // lewa
-    ctx.beginPath();
-    ctx.moveTo(4, half - 6);
-    ctx.lineTo(2, half);
-    ctx.lineTo(4, half + 6);
-    ctx.fill();
-    // góra
-    ctx.beginPath();
-    ctx.moveTo(half - 6, 4);
-    ctx.lineTo(half, 2);
-    ctx.lineTo(half + 6, 4);
-    ctx.fill();
-    // dół
-    ctx.beginPath();
-    ctx.moveTo(half - 6, size - 4);
-    ctx.lineTo(half, size - 2);
-    ctx.lineTo(half + 6, size - 4);
-    ctx.fill();
   }
 
   drawCornerLabels(ctx, size) {
     const labels = this.creativeConfig.labels || { top: 'Heteronomia', bottom: 'Autonomia', left: 'Socjalizm', right: 'Kapitalizm' };
     ctx.shadowColor = 'rgba(0,0,0,0.5)';
     ctx.shadowBlur = 6;
-    ctx.fillStyle = 'rgba(255,255,255,0.6)';
+    ctx.fillStyle = 'rgba(255,255,255,0.7)';
     ctx.font = 'bold 11px sans-serif';
     const half = size / 2;
 
@@ -686,10 +554,10 @@ class CanvasCompass {
   }
 
   drawUserMarker(ctx, size) {
-    const half = size / 2;
     const halfRange = this.dataRange / 2;
     const visibleHalf = halfRange / this.viewport.scale;
 
+    // Konwersja danych na współrzędne na canvas (w obrębie obszaru rysowania)
     const dataToPixel = (dataX, dataY) => {
       const px = (dataX - this.viewport.offsetX + visibleHalf) / (2 * visibleHalf) * size;
       const py = (this.viewport.offsetY + visibleHalf - dataY) / (2 * visibleHalf) * size;
@@ -697,7 +565,9 @@ class CanvasCompass {
     };
 
     const { px, py } = dataToPixel(this.userX, this.userY);
-    if (px < -20 || px > size + 20 || py < -20 || py > size + 20) return;
+
+    // Szerszy margines widoczności – punkty nie znikają przy lekkim przesunięciu
+    if (px < -50 || px > size + 50 || py < -50 || py > size + 50) return;
 
     const radius = 8;
     const isDark = document.body.classList.contains('dark');
@@ -739,7 +609,6 @@ class CanvasCompass {
   }
 
   drawOverlays(ctx, size) {
-    const half = size / 2;
     const halfRange = this.dataRange / 2;
     const visibleHalf = halfRange / this.viewport.scale;
 
@@ -753,7 +622,9 @@ class CanvasCompass {
 
     for (const overlay of this.overlays) {
       const { px, py } = dataToPixel(overlay.x, overlay.y);
-      if (px < -30 || px > size + 30 || py < -30 || py > size + 30) continue;
+
+      // Szerszy margines – punkty nie znikają
+      if (px < -50 || px > size + 50 || py < -50 || py > size + 50) continue;
 
       const img = this.imageCache[overlay.logoUrl];
       if (img && img.complete && img.naturalWidth > 0) {
@@ -773,7 +644,7 @@ class CanvasCompass {
         ctx.arc(px, py, overlaySize/2, 0, Math.PI * 2);
         ctx.stroke();
       } else {
-        // fallback
+        // Fallback – kolorowe kółko
         const bgColor = overlay.type === 'party' ? 'rgba(59, 130, 246, 0.7)' :
                         overlay.type === 'ideology' ? 'rgba(139, 92, 246, 0.7)' :
                         overlay.type === 'user' ? 'rgba(34, 197, 94, 0.7)' :
@@ -794,18 +665,6 @@ class CanvasCompass {
         ctx.textBaseline = 'middle';
         const initial = (overlay.name || '?')[0].toUpperCase();
         ctx.fillText(initial, px, py + 0.5);
-      }
-
-      // etykieta nazwy przy dużym zoomie
-      if (this.viewport.scale > 4) {
-        ctx.shadowColor = 'rgba(0,0,0,0.5)';
-        ctx.shadowBlur = 4;
-        ctx.fillStyle = 'rgba(255,255,255,0.7)';
-        ctx.font = '8px sans-serif';
-        ctx.textAlign = 'center';
-        ctx.textBaseline = 'bottom';
-        ctx.fillText(overlay.name, px, py - overlaySize/2 - 4);
-        ctx.shadowBlur = 0;
       }
     }
   }
@@ -830,7 +689,7 @@ class CanvasCompass {
           left: this.creativeLeftInput.value,
           right: this.creativeRightInput.value
         };
-        this.updateLabels();
+        this.render();
         this.onCreativeConfigChange(this.creativeConfig);
       };
     }
