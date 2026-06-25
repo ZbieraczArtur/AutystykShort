@@ -9,29 +9,10 @@ class CompassUI {
     this.overlays = [];
     this.onModeChange = options.onModeChange || (() => {});
     this.onCreativeConfigChange = options.onCreativeConfigChange || (() => {});
-
-    // ===== NOWE: obsługa trybu interaktywnego (canvas) =====
-    this.interactive = options.interactive || false;   // czy używamy canvas
-    this.canvasCompass = null;                         // instancja CanvasCompass
-    // =====================================================
-
     this.init();
   }
 
   init() {
-    // ===== NOWE: jeśli tryb interaktywny, uruchamiamy CanvasCompass i kończymy =====
-    if (this.interactive) {
-      this.canvasCompass = new CanvasCompass(this.container, {
-        mode: this.mode,
-        creativeConfig: this.creativeConfig,
-        onModeChange: this.onModeChange,
-        onCreativeConfigChange: this.onCreativeConfigChange
-      });
-      return; // reszta init() nie jest wykonywana
-    }
-    // ============================================================================
-
-    // --- dalsza część init() dla trybu statycznego (div-owego) ---
     this.container.innerHTML = `
       <div class="compass-frame">
         <div></div>
@@ -72,12 +53,6 @@ class CompassUI {
   }
 
   updateLabels() {
-    // Dla trybu interaktywnego – przekazujemy do canvasCompass
-    if (this.canvasCompass) {
-      this.canvasCompass.updateLabels();
-      return;
-    }
-    // Dla trybu statycznego
     const top = this.container.querySelector('#compassLabelTop');
     const bottom = this.container.querySelector('#compassLabelBottom');
     const left = this.container.querySelector('#compassLabelLeft');
@@ -89,12 +64,6 @@ class CompassUI {
   }
 
   updateMarker(x, y) {
-    // Dla trybu interaktywnego
-    if (this.canvasCompass) {
-      this.canvasCompass.updateMarker(x, y);
-      return;
-    }
-    // Dla trybu statycznego
     if (!this.marker) return;
     const leftPercent = ((x + 10) / 20) * 100;
     const topPercent = ((10 - y) / 20) * 100;
@@ -105,47 +74,27 @@ class CompassUI {
   }
 
   updateActivePairs(count) {
-    if (this.canvasCompass) {
-      this.canvasCompass.updateActivePairs(count);
-      return;
-    }
     if (this.activeSpan) this.activeSpan.innerText = count;
   }
 
   updateModeLabel(mode) {
     this.mode = mode;
-    if (this.canvasCompass) {
-      this.canvasCompass.updateModeLabel(mode);
-      return;
-    }
     if (this.modeLabelSpan) this.modeLabelSpan.innerText = this.getModeLabel();
   }
 
   setMode(mode) {
     this.mode = mode;
-    if (this.canvasCompass) {
-      this.canvasCompass.setMode(mode);
-      return;
-    }
     this.updateModeLabel(mode);
     if (this.onModeChange) this.onModeChange(mode);
   }
 
   setCreativeConfig(config) {
     this.creativeConfig = config;
-    if (this.canvasCompass) {
-      this.canvasCompass.setCreativeConfig(config);
-      return;
-    }
     this.updateLabels();
     if (this.onCreativeConfigChange) this.onCreativeConfigChange(config);
   }
 
   addOverlay(logoUrl, x, y, type, name, description) {
-    if (this.canvasCompass) {
-      this.canvasCompass.addOverlay(logoUrl, x, y, type, name, description);
-      return;
-    }
     if (!this.compass) return;
     const leftPercent = ((x + 10) / 20) * 100;
     const topPercent = ((10 - y) / 20) * 100;
@@ -176,30 +125,17 @@ class CompassUI {
   }
 
   clearOverlays() {
-    if (this.canvasCompass) {
-      this.canvasCompass.clearOverlays();
-      return;
-    }
     for (let ov of this.overlays) ov.remove();
     this.overlays = [];
   }
 
   destroy() {
-    if (this.canvasCompass) {
-      this.canvasCompass.destroy();
-      return;
-    }
     this.clearOverlays();
     this.container.innerHTML = '';
   }
 
-  // ===== Metody dla panelu kreatywnego (przekazanie do canvasCompass jeśli trzeba) =====
+  // Metoda do podpinania panelu kreatywnego (dla modala)
   setCreativeConfigPanel(areaElement, listContainer, topInput, bottomInput, leftInput, rightInput, applyLabelsBtn, applyCreativeBtn) {
-    if (this.canvasCompass) {
-      this.canvasCompass.setCreativeConfigPanel(areaElement, listContainer, topInput, bottomInput, leftInput, rightInput, applyLabelsBtn, applyCreativeBtn);
-      return;
-    }
-    // Wersja dla trybu statycznego (stary kod)
     this.creativeArea = areaElement;
     this.creativeListContainer = listContainer;
     this.creativeTopInput = topInput;
@@ -222,6 +158,7 @@ class CompassUI {
     }
     if (this.applyCreativeBtn) {
       this.applyCreativeBtn.onclick = () => {
+        // Zbierz aktywne pary z listy
         const active = [];
         const rows = this.creativeListContainer.querySelectorAll('.creative-pair-row');
         rows.forEach(row => {
@@ -242,10 +179,6 @@ class CompassUI {
   }
 
   renderCreativePairsList() {
-    if (this.canvasCompass) {
-      this.canvasCompass.renderCreativePairsList();
-      return;
-    }
     if (!this.creativeListContainer) return;
     this.creativeListContainer.innerHTML = '';
     const allPairs = [...corePairs, ...extraPairs];
