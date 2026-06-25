@@ -1,4 +1,4 @@
-// canvas-compass.js – interaktywny kompas z zoomem, stałą siatką i zawsze widocznymi punktami
+// canvas-compass.js – interaktywny kompas z siatką jak w oryginale, punkty zawsze widoczne
 
 class CanvasCompass {
   constructor(container, options = {}) {
@@ -37,10 +37,10 @@ class CanvasCompass {
     // Wymiary
     this.canvasWidth = 0;
     this.canvasHeight = 0;
-    this.drawSize = 0; // rozmiar kwadratowego obszaru rysowania
+    this.drawSize = 0;
     this.offsetX = 0;
     this.offsetY = 0;
-    this.isSquare = true; // czy obszar jest kwadratowy
+    this.isSquare = true;
 
     this.ready = false;
     this.init();
@@ -145,7 +145,6 @@ class CanvasCompass {
   setupEvents() {
     const canvas = this.canvas;
 
-    // Zoom kółkiem
     canvas.addEventListener('wheel', (e) => {
       e.preventDefault();
       const rect = canvas.getBoundingClientRect();
@@ -164,7 +163,6 @@ class CanvasCompass {
       let newOffsetX = this.viewport.offsetX + (dataCoords.x - this.viewport.offsetX) * (1 - scaleRatio);
       let newOffsetY = this.viewport.offsetY + (dataCoords.y - this.viewport.offsetY) * (1 - scaleRatio);
 
-      // Ograniczenie: nie wychodzimy poza -10..10
       const halfRange = this.dataRange / 2;
       const visibleHalf = halfRange / newScale;
       newOffsetX = Math.min(Math.max(newOffsetX, -halfRange + visibleHalf), halfRange - visibleHalf);
@@ -179,7 +177,6 @@ class CanvasCompass {
       this.updateAxisLabels();
     }, { passive: false });
 
-    // Przeciąganie
     const startDrag = (e) => {
       const pos = this.getEventPos(e);
       this.isDragging = true;
@@ -299,7 +296,6 @@ class CanvasCompass {
   }
 
   updateLayout() {
-    // Przy skali 1 – kwadrat, przy większej skali – prostokąt (pełna szerokość)
     if (this.viewport.scale === 1) {
       this.isSquare = true;
       this.drawSize = Math.min(this.canvasWidth, this.canvasHeight);
@@ -307,7 +303,7 @@ class CanvasCompass {
       this.offsetY = (this.canvasHeight - this.drawSize) / 2;
     } else {
       this.isSquare = false;
-      this.drawSize = this.canvasWidth; // pełna szerokość
+      this.drawSize = this.canvasWidth;
       this.offsetX = 0;
       this.offsetY = 0;
     }
@@ -406,18 +402,14 @@ class CanvasCompass {
     ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
     ctx.scale(dpr, dpr);
 
-    // Przesunięcie do obszaru rysowania
     ctx.save();
     ctx.translate(this.offsetX, this.offsetY);
 
     const size = this.drawSize;
     const halfSize = size / 2;
 
-    // ---- Tło (ćwiartki) ----
-    this.drawQuadrants(ctx, size);
-
-    // ---- Stała siatka (jak w małym kompasie) ----
-    this.drawGrid(ctx, size);
+    // ---- Tło i siatka ćwiartek (z kolorowymi liniami) ----
+    this.drawQuadrantsWithGrid(ctx, size);
 
     // ---- Etykiety narożne ----
     this.drawCornerLabels(ctx, size);
@@ -432,94 +424,49 @@ class CanvasCompass {
     ctx.restore();
   }
 
-  drawQuadrants(ctx, size) {
+  drawQuadrantsWithGrid(ctx, size) {
     const half = size / 2;
 
-    // Kolory ćwiartek – dokładnie jak w oryginalnym kompasie
-    const colors = [
-      { x: 0, y: 0, color: '#DD0000' },
-      { x: half, y: 0, color: '#0183be' },
-      { x: 0, y: half, color: '#101010' },
-      { x: half, y: half, color: '#F4DC00' }
+    // Definicje ćwiartek: kolor tła, kolor linii siatki
+    const quadrants = [
+      { x: 0, y: 0, bg: '#DD0000', gridColor: 'rgba(127,0,0,0.6)' },      // TL
+      { x: half, y: 0, bg: '#0183be', gridColor: 'rgba(0,59,110,0.6)' }, // TR
+      { x: 0, y: half, bg: '#101010', gridColor: 'rgba(80,80,80,0.6)' }, // BL
+      { x: half, y: half, bg: '#F4DC00', gridColor: 'rgba(157,140,0,0.6)' } // BR
     ];
 
-    for (const q of colors) {
-      ctx.fillStyle = q.color;
+    for (const q of quadrants) {
+      // Tło
+      ctx.fillStyle = q.bg;
       ctx.fillRect(q.x, q.y, half, half);
+
+      // Siatka 10x10 pól (linie co 10% ćwiartki)
+      ctx.strokeStyle = q.gridColor;
+      ctx.lineWidth = 0.5;
+      for (let i = 1; i < 10; i++) {
+        const pos = (i / 10) * half;
+        // Pionowe
+        ctx.beginPath();
+        ctx.moveTo(q.x + pos, q.y);
+        ctx.lineTo(q.x + pos, q.y + half);
+        ctx.stroke();
+        // Poziome
+        ctx.beginPath();
+        ctx.moveTo(q.x, q.y + pos);
+        ctx.lineTo(q.x + half, q.y + pos);
+        ctx.stroke();
+      }
     }
 
-    // Delikatna kratka wewnątrz ćwiartek (co 10% – tak jak w małym kompasie)
-    ctx.strokeStyle = 'rgba(255,255,255,0.06)';
-    ctx.lineWidth = 0.5;
-    for (let i = 1; i < 10; i++) {
-      const pos = (i / 10) * half;
-      // Pionowe
-      ctx.beginPath();
-      ctx.moveTo(pos, 0);
-      ctx.lineTo(pos, half);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(half + pos, 0);
-      ctx.lineTo(half + pos, half);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(pos, half);
-      ctx.lineTo(pos, size);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(half + pos, half);
-      ctx.lineTo(half + pos, size);
-      ctx.stroke();
-      // Poziome
-      ctx.beginPath();
-      ctx.moveTo(0, pos);
-      ctx.lineTo(half, pos);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(half, pos);
-      ctx.lineTo(size, pos);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(0, half + pos);
-      ctx.lineTo(half, half + pos);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(half, half + pos);
-      ctx.lineTo(size, half + pos);
-      ctx.stroke();
-    }
-
-    // Główne linie krzyża
-    ctx.strokeStyle = 'rgba(0,0,0,0.35)';
-    ctx.lineWidth = 2;
+    // Grube linie krzyża (środkowe)
+    ctx.strokeStyle = 'rgba(0,0,0,0.5)';
+    ctx.lineWidth = 2.5;
     ctx.beginPath();
     ctx.moveTo(half, 0);
     ctx.lineTo(half, size);
     ctx.moveTo(0, half);
     ctx.lineTo(size, half);
     ctx.stroke();
-  }
-
-  drawGrid(ctx, size) {
-    // To jest stała siatka na obszarze kompasu – niezależna od zoomu
-    // Rysujemy linie co 10% obszaru, tak jak w małym kompasie
-    const half = size / 2;
-    ctx.strokeStyle = 'rgba(255,255,255,0.08)';
-    ctx.lineWidth = 0.5;
-
-    for (let i = 1; i < 10; i++) {
-      const pos = (i / 10) * size;
-      // Pionowe
-      ctx.beginPath();
-      ctx.moveTo(pos, 0);
-      ctx.lineTo(pos, size);
-      ctx.stroke();
-      // Poziome
-      ctx.beginPath();
-      ctx.moveTo(0, pos);
-      ctx.lineTo(size, pos);
-      ctx.stroke();
-    }
   }
 
   drawCornerLabels(ctx, size) {
@@ -557,7 +504,6 @@ class CanvasCompass {
     const halfRange = this.dataRange / 2;
     const visibleHalf = halfRange / this.viewport.scale;
 
-    // Konwersja danych na współrzędne na canvas (w obrębie obszaru rysowania)
     const dataToPixel = (dataX, dataY) => {
       const px = (dataX - this.viewport.offsetX + visibleHalf) / (2 * visibleHalf) * size;
       const py = (this.viewport.offsetY + visibleHalf - dataY) / (2 * visibleHalf) * size;
@@ -566,8 +512,8 @@ class CanvasCompass {
 
     const { px, py } = dataToPixel(this.userX, this.userY);
 
-    // Szerszy margines widoczności – punkty nie znikają przy lekkim przesunięciu
-    if (px < -50 || px > size + 50 || py < -50 || py > size + 50) return;
+    // Bardzo duży margines – punkty zawsze widoczne
+    if (px < -200 || px > size + 200 || py < -200 || py > size + 200) return;
 
     const radius = 8;
     const isDark = document.body.classList.contains('dark');
@@ -623,8 +569,8 @@ class CanvasCompass {
     for (const overlay of this.overlays) {
       const { px, py } = dataToPixel(overlay.x, overlay.y);
 
-      // Szerszy margines – punkty nie znikają
-      if (px < -50 || px > size + 50 || py < -50 || py > size + 50) continue;
+      // Bardzo duży margines – punkty nie znikają
+      if (px < -200 || px > size + 200 || py < -200 || py > size + 200) continue;
 
       const img = this.imageCache[overlay.logoUrl];
       if (img && img.complete && img.naturalWidth > 0) {
@@ -644,7 +590,7 @@ class CanvasCompass {
         ctx.arc(px, py, overlaySize/2, 0, Math.PI * 2);
         ctx.stroke();
       } else {
-        // Fallback – kolorowe kółko
+        // Fallback
         const bgColor = overlay.type === 'party' ? 'rgba(59, 130, 246, 0.7)' :
                         overlay.type === 'ideology' ? 'rgba(139, 92, 246, 0.7)' :
                         overlay.type === 'user' ? 'rgba(34, 197, 94, 0.7)' :
