@@ -1,4 +1,4 @@
-// canvas-compass.js – interaktywny kompas z siatką jak w oryginale, punkty zawsze widoczne
+// canvas-compass.js – interaktywny kompas (kwadratowy, wolne przybliżanie, duże punkty, gruba siatka)
 
 class CanvasCompass {
   constructor(container, options = {}) {
@@ -18,7 +18,7 @@ class CanvasCompass {
       offsetY: 0,
       scale: 1,
     };
-    this.dataRange = 20; // od -10 do 10
+    this.dataRange = 20;
 
     this.userX = 0;
     this.userY = 0;
@@ -27,20 +27,17 @@ class CanvasCompass {
     this.overlays = [];
     this.imageCache = {};
 
-    // Przeciąganie
     this.isDragging = false;
     this.dragStartX = 0;
     this.dragStartY = 0;
     this.dragStartOffsetX = 0;
     this.dragStartOffsetY = 0;
 
-    // Wymiary
     this.canvasWidth = 0;
     this.canvasHeight = 0;
     this.drawSize = 0;
     this.offsetX = 0;
     this.offsetY = 0;
-    this.isSquare = true;
 
     this.ready = false;
     this.init();
@@ -153,7 +150,8 @@ class CanvasCompass {
 
       const dataCoords = this.screenToData(mouseX, mouseY);
 
-      const delta = e.deltaY > 0 ? 0.92 : 1.08;
+      // Bardzo wolne przybliżanie
+      const delta = e.deltaY > 0 ? 0.98 : 1.02;
       let newScale = this.viewport.scale * delta;
       newScale = Math.max(newScale, 1);
 
@@ -172,7 +170,7 @@ class CanvasCompass {
       this.viewport.offsetX = newOffsetX;
       this.viewport.offsetY = newOffsetY;
 
-      this.updateLayout();
+      this.resize(); // aktualizacja wymiarów (kwadrat zawsze)
       this.render();
       this.updateAxisLabels();
     }, { passive: false });
@@ -247,7 +245,7 @@ class CanvasCompass {
       this.viewport.offsetX = 0;
       this.viewport.offsetY = 0;
       this.viewport.scale = 1;
-      this.updateLayout();
+      this.resize();
       this.render();
       this.updateAxisLabels();
     });
@@ -290,23 +288,13 @@ class CanvasCompass {
     this.canvasHeight = height;
     this.dpr = dpr;
 
-    this.updateLayout();
+    // Zawsze kwadrat (niezależnie od skali)
+    this.drawSize = Math.min(width, height);
+    this.offsetX = (width - this.drawSize) / 2;
+    this.offsetY = (height - this.drawSize) / 2;
+
     this.render();
     this.updateAxisLabels();
-  }
-
-  updateLayout() {
-    if (this.viewport.scale === 1) {
-      this.isSquare = true;
-      this.drawSize = Math.min(this.canvasWidth, this.canvasHeight);
-      this.offsetX = (this.canvasWidth - this.drawSize) / 2;
-      this.offsetY = (this.canvasHeight - this.drawSize) / 2;
-    } else {
-      this.isSquare = false;
-      this.drawSize = this.canvasWidth;
-      this.offsetX = 0;
-      this.offsetY = 0;
-    }
   }
 
   updateAxisLabels() {
@@ -427,30 +415,26 @@ class CanvasCompass {
   drawQuadrantsWithGrid(ctx, size) {
     const half = size / 2;
 
-    // Definicje ćwiartek: kolor tła, kolor linii siatki
     const quadrants = [
-      { x: 0, y: 0, bg: '#DD0000', gridColor: 'rgba(127,0,0,0.6)' },      // TL
-      { x: half, y: 0, bg: '#0183be', gridColor: 'rgba(0,59,110,0.6)' }, // TR
-      { x: 0, y: half, bg: '#101010', gridColor: 'rgba(80,80,80,0.6)' }, // BL
-      { x: half, y: half, bg: '#F4DC00', gridColor: 'rgba(157,140,0,0.6)' } // BR
+      { x: 0, y: 0, bg: '#DD0000', gridColor: 'rgba(127,0,0,0.7)' },
+      { x: half, y: 0, bg: '#0183be', gridColor: 'rgba(0,59,110,0.7)' },
+      { x: 0, y: half, bg: '#101010', gridColor: 'rgba(80,80,80,0.7)' },
+      { x: half, y: half, bg: '#F4DC00', gridColor: 'rgba(157,140,0,0.7)' }
     ];
 
     for (const q of quadrants) {
-      // Tło
       ctx.fillStyle = q.bg;
       ctx.fillRect(q.x, q.y, half, half);
 
-      // Siatka 10x10 pól (linie co 10% ćwiartki)
+      // Grubsza siatka 10x10
       ctx.strokeStyle = q.gridColor;
-      ctx.lineWidth = 0.5;
+      ctx.lineWidth = 1.2;
       for (let i = 1; i < 10; i++) {
         const pos = (i / 10) * half;
-        // Pionowe
         ctx.beginPath();
         ctx.moveTo(q.x + pos, q.y);
         ctx.lineTo(q.x + pos, q.y + half);
         ctx.stroke();
-        // Poziome
         ctx.beginPath();
         ctx.moveTo(q.x, q.y + pos);
         ctx.lineTo(q.x + half, q.y + pos);
@@ -458,9 +442,9 @@ class CanvasCompass {
       }
     }
 
-    // Grube linie krzyża (środkowe)
+    // Grube linie krzyża
     ctx.strokeStyle = 'rgba(0,0,0,0.5)';
-    ctx.lineWidth = 2.5;
+    ctx.lineWidth = 3;
     ctx.beginPath();
     ctx.moveTo(half, 0);
     ctx.lineTo(half, size);
@@ -473,27 +457,27 @@ class CanvasCompass {
     const labels = this.creativeConfig.labels || { top: 'Heteronomia', bottom: 'Autonomia', left: 'Socjalizm', right: 'Kapitalizm' };
     ctx.shadowColor = 'rgba(0,0,0,0.5)';
     ctx.shadowBlur = 6;
-    ctx.fillStyle = 'rgba(255,255,255,0.7)';
-    ctx.font = 'bold 11px sans-serif';
+    ctx.fillStyle = 'rgba(255,255,255,0.8)';
+    ctx.font = 'bold 12px sans-serif';
     const half = size / 2;
 
     ctx.textAlign = 'center';
     ctx.textBaseline = 'bottom';
-    ctx.fillText(labels.top, half, 16);
+    ctx.fillText(labels.top, half, 18);
 
     ctx.textBaseline = 'top';
-    ctx.fillText(labels.bottom, half, size - 16);
+    ctx.fillText(labels.bottom, half, size - 18);
 
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
     ctx.save();
-    ctx.translate(16, half);
+    ctx.translate(20, half);
     ctx.rotate(-Math.PI / 2);
     ctx.fillText(labels.left, 0, 0);
     ctx.restore();
 
     ctx.save();
-    ctx.translate(size - 16, half);
+    ctx.translate(size - 20, half);
     ctx.rotate(Math.PI / 2);
     ctx.fillText(labels.right, 0, 0);
     ctx.restore();
@@ -512,44 +496,37 @@ class CanvasCompass {
 
     const { px, py } = dataToPixel(this.userX, this.userY);
 
-    // Bardzo duży margines – punkty zawsze widoczne
-    if (px < -200 || px > size + 200 || py < -200 || py > size + 200) return;
+    // bardzo duży margines – punkty zawsze widoczne
+    if (px < -300 || px > size + 300 || py < -300 || py > size + 300) return;
 
-    const radius = 8;
-    const isDark = document.body.classList.contains('dark');
+    const radius = 12; // większy marker
 
     ctx.shadowColor = 'rgba(0,0,0,0.3)';
-    ctx.shadowBlur = 8;
+    ctx.shadowBlur = 10;
     ctx.shadowOffsetY = 2;
 
     const time = Date.now() / 1000;
-    const pulse = 1 + 0.15 * Math.sin(time * 1.8);
-    const ringRadius = radius * 1.6 * pulse;
-    ctx.shadowBlur = 12;
+    const pulse = 1 + 0.12 * Math.sin(time * 1.6);
+    const ringRadius = radius * 1.5 * pulse;
+    ctx.shadowBlur = 14;
     ctx.beginPath();
     ctx.arc(px, py, ringRadius, 0, Math.PI * 2);
-    ctx.fillStyle = isDark ? 'rgba(250, 204, 21, 0.15)' : 'rgba(34, 197, 94, 0.2)';
+    ctx.fillStyle = 'rgba(34, 197, 94, 0.2)';
     ctx.fill();
 
-    ctx.shadowBlur = 6;
+    ctx.shadowBlur = 8;
     ctx.shadowOffsetY = 1;
     ctx.beginPath();
     ctx.arc(px, py, radius, 0, Math.PI * 2);
     const grad = ctx.createRadialGradient(px - radius*0.3, py - radius*0.3, 0, px, py, radius);
-    if (isDark) {
-      grad.addColorStop(0, '#fde047');
-      grad.addColorStop(0.7, '#eab308');
-      grad.addColorStop(1, '#a16207');
-    } else {
-      grad.addColorStop(0, '#86efac');
-      grad.addColorStop(0.7, '#22c55e');
-      grad.addColorStop(1, '#15803d');
-    }
+    grad.addColorStop(0, '#86efac');
+    grad.addColorStop(0.7, '#22c55e');
+    grad.addColorStop(1, '#15803d');
     ctx.fillStyle = grad;
     ctx.fill();
 
     ctx.shadowBlur = 0;
-    ctx.strokeStyle = isDark ? '#0a0f1c' : '#ffffff';
+    ctx.strokeStyle = '#ffffff';
     ctx.lineWidth = 2;
     ctx.stroke();
   }
@@ -564,19 +541,18 @@ class CanvasCompass {
       return { px, py };
     };
 
-    const overlaySize = 18;
+    const overlaySize = 24; // większe
 
     for (const overlay of this.overlays) {
       const { px, py } = dataToPixel(overlay.x, overlay.y);
 
-      // Bardzo duży margines – punkty nie znikają
-      if (px < -200 || px > size + 200 || py < -200 || py > size + 200) continue;
+      if (px < -300 || px > size + 300 || py < -300 || py > size + 300) continue;
 
       const img = this.imageCache[overlay.logoUrl];
       if (img && img.complete && img.naturalWidth > 0) {
         ctx.save();
         ctx.shadowColor = 'rgba(0,0,0,0.3)';
-        ctx.shadowBlur = 6;
+        ctx.shadowBlur = 8;
         ctx.shadowOffsetX = 0;
         ctx.shadowOffsetY = 1;
         ctx.beginPath();
@@ -584,29 +560,29 @@ class CanvasCompass {
         ctx.clip();
         ctx.drawImage(img, px - overlaySize/2, py - overlaySize/2, overlaySize, overlaySize);
         ctx.restore();
-        ctx.strokeStyle = 'rgba(255,255,255,0.4)';
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = 'rgba(255,255,255,0.5)';
+        ctx.lineWidth = 1.5;
         ctx.beginPath();
         ctx.arc(px, py, overlaySize/2, 0, Math.PI * 2);
         ctx.stroke();
       } else {
-        // Fallback
-        const bgColor = overlay.type === 'party' ? 'rgba(59, 130, 246, 0.7)' :
-                        overlay.type === 'ideology' ? 'rgba(139, 92, 246, 0.7)' :
-                        overlay.type === 'user' ? 'rgba(34, 197, 94, 0.7)' :
-                        'rgba(100, 100, 100, 0.6)';
+        // fallback
+        const bgColor = overlay.type === 'party' ? 'rgba(59, 130, 246, 0.8)' :
+                        overlay.type === 'ideology' ? 'rgba(139, 92, 246, 0.8)' :
+                        overlay.type === 'user' ? 'rgba(34, 197, 94, 0.8)' :
+                        'rgba(100, 100, 100, 0.7)';
         ctx.shadowColor = 'rgba(0,0,0,0.2)';
-        ctx.shadowBlur = 4;
+        ctx.shadowBlur = 6;
         ctx.beginPath();
         ctx.arc(px, py, overlaySize/2, 0, Math.PI * 2);
         ctx.fillStyle = bgColor;
         ctx.fill();
         ctx.shadowBlur = 0;
-        ctx.strokeStyle = 'rgba(255,255,255,0.3)';
-        ctx.lineWidth = 1;
+        ctx.strokeStyle = 'rgba(255,255,255,0.4)';
+        ctx.lineWidth = 1.5;
         ctx.stroke();
         ctx.fillStyle = '#ffffff';
-        ctx.font = 'bold 8px sans-serif';
+        ctx.font = 'bold 10px sans-serif';
         ctx.textAlign = 'center';
         ctx.textBaseline = 'middle';
         const initial = (overlay.name || '?')[0].toUpperCase();
