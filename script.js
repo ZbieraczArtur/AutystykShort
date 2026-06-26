@@ -1734,14 +1734,13 @@ function updateCompassDisplay() {
 }
 
 // Ładowanie nakładek (partie, ideologie, użytkownicy)
-async function loadOverlays(showParties, showIdeologies, compassInstance) {
-  const showUsers = document.getElementById('toggle-users')?.checked || false;
+async function loadOverlays(showParties, showIdeologies, compassInstance, showUsers = false) {
   if (!compassInstance || !compassInstance.clearOverlays) return;
   compassInstance.clearOverlays();
   if (!config) return;
   if (showParties && config.parties) {
     for (const party of config.parties) {
-      const coords = await getEntityCoordinates(party.key || party.name, 'party');
+      const coords = await window.getEntityCoordinates(party.key || party.name, 'party');
       if (coords) {
         const logoUrl = getPartyLogoUrl(party.name);
         compassInstance.addOverlay(logoUrl, coords.x, coords.y, 'party', party.name, party.description);
@@ -1750,7 +1749,7 @@ async function loadOverlays(showParties, showIdeologies, compassInstance) {
   }
   if (showIdeologies && config.ideologies) {
     for (const ideology of config.ideologies) {
-      const coords = await getEntityCoordinates(ideology.key || ideology.name, 'ideology');
+      const coords = await window.getEntityCoordinates(ideology.key || ideology.name, 'ideology');
       if (coords) {
         const logoUrl = getIdeologyLogoUrl(ideology.name);
         compassInstance.addOverlay(logoUrl, coords.x, coords.y, 'ideology', ideology.name, ideology.description);
@@ -1759,10 +1758,10 @@ async function loadOverlays(showParties, showIdeologies, compassInstance) {
   }
   if (showUsers && config.users) {
     for (const user of config.users) {
-      const coords = await getEntityCoordinates(user.name, 'user');
+      const coords = await window.getEntityCoordinates(user.name, 'user');
       if (coords) {
         const avatarUrl = user.avatar ? `images/IUsers/${user.avatar}` : null;
-        const logoUrl = avatarUrl || 'images/default-user.png'; // możesz zastąpić domyślną ikoną
+        const logoUrl = avatarUrl || 'images/ALogo.svg';
         compassInstance.addOverlay(logoUrl, coords.x, coords.y, 'user', user.name, user.description || '');
       }
     }
