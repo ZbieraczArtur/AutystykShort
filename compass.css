@@ -1,3 +1,13 @@
+.compass-modal-body {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1rem;
+  min-height: 0;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+
 /* compass.css – dodatkowe style dla kompasu i nakładek */
 .compass-frame {
   display: grid;
