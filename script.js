@@ -1781,12 +1781,14 @@ function setupMatchingModeSelector() {
       if (typeof updateCompassDisplay === 'function') updateCompassDisplay();
       const showParties = document.getElementById('toggle-parties')?.checked || false;
       const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
+      const showUsers = document.getElementById('toggle-users')?.checked || false; // DODANE
       if (typeof loadOverlays === 'function') {
-        loadOverlays(showParties, showIdeologies, window.compassInstance);
+        loadOverlays(showParties, showIdeologies, window.compassInstance, showUsers); // ZMIENIONE
         if (window.modalCompassInstance) {
           const modalShowParties = document.getElementById('modal-toggle-parties')?.checked || false;
           const modalShowIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
-          loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance);
+          const modalShowUsers = document.getElementById('modal-toggle-users')?.checked || false; // DODANE
+          loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance, modalShowUsers); // ZMIENIONE
         }
       }
     });
@@ -1960,14 +1962,16 @@ function initCompassAfterResults() {
       // Odśwież nakładki
       const showParties = document.getElementById('toggle-parties')?.checked || false;
       const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
-      loadOverlays(showParties, showIdeologies, window.compassInstance);
+      const showUsers = document.getElementById('toggle-users')?.checked || false; // DODANE
+      loadOverlays(showParties, showIdeologies, window.compassInstance, showUsers); // ZMIENIONE
     },
     onCreativeConfigChange: (config) => {
       currentCreativeConfig = config;
       updateCompassDisplay();
       const showParties = document.getElementById('toggle-parties')?.checked || false;
       const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
-      loadOverlays(showParties, showIdeologies, window.compassInstance);
+      const showUsers = document.getElementById('toggle-users')?.checked || false; // DODANE
+      loadOverlays(showParties, showIdeologies, window.compassInstance, showUsers); // ZMIENIONE
     }
   });
   // Ustaw wartości użytkownika
@@ -1982,16 +1986,19 @@ function initCompassAfterResults() {
   const toggleIdeologies = document.getElementById('toggle-ideologies');
   if (toggleParties) {
     toggleParties.addEventListener('change', () => {
-      loadOverlays(toggleParties.checked, toggleIdeologies.checked, window.compassInstance);
+      const showUsers = document.getElementById('toggle-users')?.checked || false; // DODANE
+      loadOverlays(toggleParties.checked, toggleIdeologies.checked, window.compassInstance, showUsers); // ZMIENIONE
     });
   }
   if (toggleIdeologies) {
     toggleIdeologies.addEventListener('change', () => {
-      loadOverlays(toggleParties.checked, toggleIdeologies.checked, window.compassInstance);
+      const showUsers = document.getElementById('toggle-users')?.checked || false; // DODANE
+      loadOverlays(toggleParties.checked, toggleIdeologies.checked, window.compassInstance, showUsers); // ZMIENIONE
     });
   }
   // Inicjalne załadowanie nakładek
-  loadOverlays(false, false, window.compassInstance);
+  const showUsersInit = document.getElementById('toggle-users')?.checked || false; // DODANE
+  loadOverlays(false, false, window.compassInstance, showUsersInit); // ZMIENIONE
 }
 
 // Modyfikacja funkcji computeAndDisplayResults – dodanie budowania wartości kompasu i inicjalizacji
@@ -2006,7 +2013,8 @@ computeAndDisplayResults = function() {
     updateCompassDisplay();
     const showParties = document.getElementById('toggle-parties')?.checked || false;
     const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
-    loadOverlays(showParties, showIdeologies, window.compassInstance);
+    const showUsers = document.getElementById('toggle-users')?.checked || false; // DODANE
+    loadOverlays(showParties, showIdeologies, window.compassInstance, showUsers); // ZMIENIONE
   }
 };
 
@@ -2123,11 +2131,13 @@ simulateAnswers = function(selectedName) {
   updateCompassDisplay();
   const showParties = document.getElementById('toggle-parties')?.checked || false;
   const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
-  loadOverlays(showParties, showIdeologies, window.compassInstance);
+  const showUsers = document.getElementById('toggle-users')?.checked || false; // DODANE
+  loadOverlays(showParties, showIdeologies, window.compassInstance, showUsers); // ZMIENIONE
   if (window.modalCompassInstance) {
     const modalShowParties = document.getElementById('modal-toggle-parties')?.checked || false;
     const modalShowIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
-    loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance);
+    const modalShowUsers = document.getElementById('modal-toggle-users')?.checked || false; // DODANE
+    loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance, modalShowUsers); // ZMIENIONE
   }
 };
 
@@ -2139,11 +2149,13 @@ restoreUserAnswers = function() {
   updateCompassDisplay();
   const showParties = document.getElementById('toggle-parties')?.checked || false;
   const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
-  loadOverlays(showParties, showIdeologies, window.compassInstance);
+  const showUsers = document.getElementById('toggle-users')?.checked || false; // DODANE
+  loadOverlays(showParties, showIdeologies, window.compassInstance, showUsers); // ZMIENIONE
   if (window.modalCompassInstance) {
     const modalShowParties = document.getElementById('modal-toggle-parties')?.checked || false;
     const modalShowIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
-    loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance);
+    const modalShowUsers = document.getElementById('modal-toggle-users')?.checked || false; // DODANE
+    loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance, modalShowUsers); // ZMIENIONE
   }
 };
 
@@ -2157,11 +2169,13 @@ importAnswersFromExportCode = function(rawCode) {
     updateCompassDisplay();
     const showParties = document.getElementById('toggle-parties')?.checked || false;
     const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
-    loadOverlays(showParties, showIdeologies, window.compassInstance);
+    const showUsers = document.getElementById('toggle-users')?.checked || false; // DODANE
+    loadOverlays(showParties, showIdeologies, window.compassInstance, showUsers); // ZMIENIONE
     if (window.modalCompassInstance) {
       const modalShowParties = document.getElementById('modal-toggle-parties')?.checked || false;
       const modalShowIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
-      loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance);
+      const modalShowUsers = document.getElementById('modal-toggle-users')?.checked || false; // DODANE
+      loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance, modalShowUsers); // ZMIENIONE
     }
   }
   return success;
