@@ -565,7 +565,7 @@
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
-          "value": 1.5,
+          "value": 3.0,
           "values_for": ["Indywidualizm", "Kontraktualizm"],
           "values_against": ["Kolektywizm", "Organicyzm"],
           "ideologies_for": ["Liberalizm klasyczny"],
@@ -575,7 +575,7 @@
         },
         {
           "label": "Częściowo zgadzam się",
-          "value": 1.0,
+          "value": 2.0,
           "values_for": ["Indywidualizm", "Kontraktualizm"],
           "values_against": ["Kolektywizm", "Organicyzm"],
           "ideologies_for": ["Liberalizm klasyczny"],
@@ -585,7 +585,7 @@
         },
         {
           "label": "Częściowo nie zgadzam się",
-          "value": -1.0,
+          "value": -2.0,
           "values_for": ["Kolektywizm", "Organicyzm"],
           "values_against": ["Indywidualizm", "Kontraktualizm"],
           "ideologies_for": [],
@@ -595,7 +595,7 @@
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
-          "value": -1.5,
+          "value": -3.0,
           "values_for": ["Kolektywizm", "Organicyzm"],
           "values_against": ["Indywidualizm", "Kontraktualizm"],
           "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Marksizm klasyczny", "Nacjonalizm konserwatywny", "Faszyzm", "Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
@@ -679,7 +679,7 @@
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
-          "value": 1.5,
+          "value": 3.0,
           "values_for": ["Indywidualizm", "Autonomia", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "values_against": ["Kolektywizm", "Heteronomia", "Organicyzm", "Obowiązkowość wspólnoty"],
           "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny", "Ordoliberalizm"],
@@ -689,7 +689,7 @@
         },
         {
           "label": "Częściowo zgadzam się",
-          "value": 1.0,
+          "value": 2.0,
           "values_for": ["Indywidualizm", "Autonomia", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "values_against": ["Kolektywizm", "Heteronomia", "Organicyzm", "Obowiązkowość wspólnoty"],
           "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Ordoliberalizm"],
@@ -699,7 +699,7 @@
         },
         {
           "label": "Częściowo nie zgadzam się",
-          "value": -1.0,
+          "value": -2.0,
           "values_for": ["Kolektywizm", "Heteronomia", "Organicyzm", "Obowiązkowość wspólnoty"],
           "values_against": ["Indywidualizm", "Autonomia", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "ideologies_for": ["Socjaldemokracja", "Marksizm klasyczny"],
@@ -709,7 +709,7 @@
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
-          "value": -1.5,
+          "value": -3.0,
           "values_for": ["Kolektywizm", "Heteronomia", "Organicyzm", "Obowiązkowość wspólnoty"],
           "values_against": ["Indywidualizm", "Autonomia", "Kontraktualizm", "Dobrowolność wspólnoty"],
           "ideologies_for": ["Marksizm klasyczny", "Nacjonalizm konserwatywny", "Faszyzm", "Głęboka ekologia", "Nacjonalizm liberalny"],
@@ -736,7 +736,7 @@
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
-          "value": 1.5,
+          "value": 3.0,
           "values_for": ["Autonomia", "Indywidualizm", "Ograniczenie władzy", "Dobrowolność wspólnoty"],
           "values_against": ["Kolektywizm", "Heteronomia"],
           "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny", "Nacjonalizm liberalny", "Ordoliberalizm"],
@@ -746,7 +746,7 @@
         },
         {
           "label": "Częściowo zgadzam się",
-          "value": 1.0,
+          "value": 2.0,
           "values_for": ["Autonomia", "Indywidualizm", "Ograniczenie władzy", "Dobrowolność wspólnoty"],
           "values_against": ["Kolektywizm", "Heteronomia"],
           "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Nacjonalizm liberalny", "Ordoliberalizm"],
@@ -756,7 +756,7 @@
         },
         {
           "label": "Częściowo nie zgadzam się",
-          "value": -1.0,
+          "value": -2.0,
           "values_for": ["Kolektywizm", "Heteronomia"],
           "values_against": ["Autonomia", "Indywidualizm", "Ograniczenie władzy", "Dobrowolność wspólnoty"],
           "ideologies_for": ["Socjaldemokracja", "Nacjonalizm liberalny"],
@@ -766,7 +766,7 @@
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
-          "value": -1.5,
+          "value": -3.0,
           "values_for": ["Kolektywizm", "Heteronomia"],
           "values_against": ["Autonomia", "Indywidualizm", "Ograniczenie władzy", "Dobrowolność wspólnoty"],
           "ideologies_for": ["Nacjonalizm konserwatywny", "Faszyzm", "Głęboka ekologia"],
