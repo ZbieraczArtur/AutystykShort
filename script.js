@@ -2016,117 +2016,102 @@ function initCompassModal() {
   const openBtn = document.getElementById('open-compass-modal');
   const closeBtn = document.getElementById('close-modal-btn');
   if (!modal || !openBtn) return;
+
   openBtn.addEventListener('click', () => {
     modal.classList.remove('hidden');
+
     if (!window.modalCompassInstance) {
       const modalContainer = document.getElementById('modal-compass-container');
       if (modalContainer) {
-        window.modalCompassInstance = new CompassUI(modalContainer, {
-          mode: currentCompassMode,
-          interactive: true,
-          onModeChange: (mode) => {
-            currentCompassMode = mode;
-            if (mode === 'creative') {
-              if (window.modalCompassInstance.getCreativeConfig) {
-                currentCreativeConfig = window.modalCompassInstance.getCreativeConfig();
-              }
-            }
-            updateCompassDisplay();
-            const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
-            const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
-            loadOverlays(showParties, showIdeologies, window.modalCompassInstance);
-            // Synchronizacja z głównym kompasem
-            if (window.compassInstance && window.compassInstance.setMode) window.compassInstance.setMode(mode);
-          },
-          onCreativeConfigChange: (config) => {
-            currentCreativeConfig = config;
-            updateCompassDisplay();
-            const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
-            const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
-            loadOverlays(showParties, showIdeologies, window.modalCompassInstance);
-            if (window.compassInstance && window.compassInstance.setCreativeConfig) window.compassInstance.setCreativeConfig(config);
+        // Tworzymy nową instancję interaktywnego kompasu
+        window.modalCompassInstance = new InteractiveCompass(modalContainer, {
+          labels: {
+            top: currentCreativeConfig.labels.top,
+            bottom: currentCreativeConfig.labels.bottom,
+            left: currentCreativeConfig.labels.left,
+            right: currentCreativeConfig.labels.right
           }
         });
-        // Przekaż wartości użytkownika
+
+        // Ustaw marker użytkownika
         if (compassUserValues) {
           const coords = computeCoordinatesFromValues(compassUserValues, currentCompassMode, currentCreativeConfig);
-          window.modalCompassInstance.updateMarker(coords.x, coords.y);
-          window.modalCompassInstance.updateActivePairs(coords.activePairsCount);
-          window.modalCompassInstance.updateModeLabel(currentCompassMode);
+          window.modalCompassInstance.updateUserMarker(coords.x, coords.y);
         }
-        // Obsługa przełączników nakładek w modalu
+
+        // Załaduj nakładki (partie, ideologie, użytkownicy)
+        const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
+        const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
+        const showUsers = document.getElementById('modal-toggle-users')?.checked || false;
+        loadOverlays(showParties, showIdeologies, window.modalCompassInstance, showUsers);
+
+        // Obsługa przełączników w modalu
         const modalToggleParties = document.getElementById('modal-toggle-parties');
         const modalToggleIdeologies = document.getElementById('modal-toggle-ideologies');
-        if (modalToggleParties && modalToggleIdeologies) {
+        const modalToggleUsers = document.getElementById('modal-toggle-users');
+        if (modalToggleParties && modalToggleIdeologies && modalToggleUsers) {
           const updateModalOverlays = () => {
-            loadOverlays(modalToggleParties.checked, modalToggleIdeologies.checked, window.modalCompassInstance);
+            loadOverlays(
+              modalToggleParties.checked,
+              modalToggleIdeologies.checked,
+              window.modalCompassInstance,
+              modalToggleUsers.checked
+            );
           };
           modalToggleParties.addEventListener('change', updateModalOverlays);
           modalToggleIdeologies.addEventListener('change', updateModalOverlays);
-          updateModalOverlays();
+          modalToggleUsers.addEventListener('change', updateModalOverlays);
         }
-        // Konfiguracja kreatywna – przekażemy przez interfejs CompassUI
-        if (window.modalCompassInstance.setCreativeConfigPanel) {
-          window.modalCompassInstance.setCreativeConfigPanel(document.getElementById('creative-config-area'), document.getElementById('modal-creative-pairs-list'), document.getElementById('modal-label-top'), document.getElementById('modal-label-bottom'), document.getElementById('modal-label-left'), document.getElementById('modal-label-right'), document.getElementById('modal-apply-labels'), document.getElementById('modal-apply-creative'));
+
+        // Przycisk "Zmień etykiety" (tryb kreatywny)
+        const applyLabelsBtn = document.getElementById('modal-apply-labels');
+        if (applyLabelsBtn) {
+          applyLabelsBtn.addEventListener('click', () => {
+            const top = document.getElementById('modal-label-top').value;
+            const bottom = document.getElementById('modal-label-bottom').value;
+            const left = document.getElementById('modal-label-left').value;
+            const right = document.getElementById('modal-label-right').value;
+            currentCreativeConfig.labels = { top, bottom, left, right };
+            window.modalCompassInstance.updateLabels(currentCreativeConfig.labels);
+            if (window.compassInstance && window.compassInstance.updateLabels) {
+              window.compassInstance.updateLabels(currentCreativeConfig.labels);
+            }
+          });
+        }
+
+        // Przycisk "Zastosuj konfigurację kreatywną" – odświeża dane
+        const applyCreativeBtn = document.getElementById('modal-apply-creative');
+        if (applyCreativeBtn) {
+          applyCreativeBtn.addEventListener('click', () => {
+            updateCompassDisplay();
+            const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
+            const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
+            const showUsers = document.getElementById('modal-toggle-users')?.checked || false;
+            loadOverlays(showParties, showIdeologies, window.modalCompassInstance, showUsers);
+          });
         }
       }
     } else {
-      // odświeżenie
-      const coords = computeCoordinatesFromValues(compassUserValues, currentCompassMode, currentCreativeConfig);
-      window.modalCompassInstance.updateMarker(coords.x, coords.y);
-      window.modalCompassInstance.updateActivePairs(coords.activePairsCount);
-      window.modalCompassInstance.updateModeLabel(currentCompassMode);
+      // Jeśli instancja już istnieje – tylko odświeżamy
+      if (compassUserValues) {
+        const coords = computeCoordinatesFromValues(compassUserValues, currentCompassMode, currentCreativeConfig);
+        window.modalCompassInstance.updateUserMarker(coords.x, coords.y);
+      }
       const showParties = document.getElementById('modal-toggle-parties')?.checked || false;
       const showIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
-      loadOverlays(showParties, showIdeologies, window.modalCompassInstance);
+      const showUsers = document.getElementById('modal-toggle-users')?.checked || false;
+      loadOverlays(showParties, showIdeologies, window.modalCompassInstance, showUsers);
     }
   });
+
   closeBtn.addEventListener('click', () => {
     modal.classList.add('hidden');
   });
+
   modal.addEventListener('click', (e) => {
     if (e.target === modal) modal.classList.add('hidden');
   });
 }
-
-// Po załadowaniu configu, dodajemy dodatkowe inicjalizacje
-const originalLoadConfig = loadConfig;
-loadConfig = async function() {
-  await originalLoadConfig();
-  // Po załadowaniu configu, ustawiamy nasłuchiwanie na zmianę trybu kompasu
-  const compassModeSelect = document.getElementById('compass-mode-select');
-  if (compassModeSelect) {
-    compassModeSelect.addEventListener('change', (e) => {
-      currentCompassMode = e.target.value;
-      if (window.compassInstance && window.compassInstance.setMode) window.compassInstance.setMode(currentCompassMode);
-      if (window.modalCompassInstance && window.modalCompassInstance.setMode) window.modalCompassInstance.setMode(currentCompassMode);
-      updateCompassDisplay();
-      const showParties = document.getElementById('toggle-parties')?.checked || false;
-      const showIdeologies = document.getElementById('toggle-ideologies')?.checked || false;
-      loadOverlays(showParties, showIdeologies, window.compassInstance);
-      if (window.modalCompassInstance) {
-        const modalShowParties = document.getElementById('modal-toggle-parties')?.checked || false;
-        const modalShowIdeologies = document.getElementById('modal-toggle-ideologies')?.checked || false;
-        loadOverlays(modalShowParties, modalShowIdeologies, window.modalCompassInstance);
-      }
-    });
-    // ustawienie opisu trybu
-    const modeDesc = document.getElementById('compass-mode-desc');
-    if (modeDesc) {
-      const descriptions = {
-        weighted: 'Wagowy – uwzględnia domyślne wagi poszczególnych par.',
-        equal: 'Jednakowe wagi – każda para ma wagę 1.',
-        institutional: 'Instytucjonalny – tylko pary związane z instytucjami państwowymi.',
-        creative: 'Kreatywny – ręczny wybór par i wag.'
-      };
-      compassModeSelect.addEventListener('change', () => {
-        modeDesc.textContent = descriptions[compassModeSelect.value] || '';
-      });
-      modeDesc.textContent = descriptions[compassModeSelect.value];
-    }
-  }
-  initCompassModal();
-};
 
 // Przeładowanie funkcji symulacji, aby po symulacji odświeżyć kompas
 const originalSimulateAnswers = simulateAnswers;
