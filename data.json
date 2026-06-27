@@ -13056,29 +13056,29 @@
     },
         {
       "id": 217,
-      "text": "Istnieje międzynarodowy spisek pewnych grup ludzi mający na celu osłabienie narodu",
+      "text": "Istnieją prawa lub wartości, które powinny obowiązywać wszystkich ludzi",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Partykularyzm narodowy", "Homogenizacja"],
-          "values_against": ["Pluralizm kulturowy"],
+          "values_for": [],
+          "values_against": [],
           "ideologies_for": [],
-          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
-          "parties_for": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
-          "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
         },
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Partykularyzm narodowy", "Homogenizacja"],
-          "values_against": ["Pluralizm kulturowy"],
+          "values_for": [],
+          "values_against": [],
           "ideologies_for": [],
-          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
-          "parties_for": ["Prawo i Sprawiedliwość", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"],
-          "parties_against": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
         },
         {
           "label": "Częściowo nie zgadzam się",
@@ -13087,18 +13087,18 @@
           "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
-          "parties_against": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
+          "parties_for": [],
+          "parties_against": []
         },
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
           "values_for": [],
           "values_against": [],
-          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny"],
+          "ideologies_for": [],
           "ideologies_against": [],
-          "parties_for": ["Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
-          "parties_against": ["Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja"]
+          "parties_for": [],
+          "parties_against": []
         },
         {
           "label": "Pomiń pytanie",
