@@ -29,9 +29,7 @@
 
   function getProfileCollection(type) {
     const key = profileKey(type);
-    const expectedType = type === 'party' ? 'party' : type === 'ideology' ? 'ideology' : 'user';
-    const list = Array.isArray(politicalProfiles?.[key]) ? politicalProfiles[key] : [];
-    return list.filter(profile => !profile.type || profile.type === expectedType);
+    return Array.isArray(politicalProfiles?.[key]) ? politicalProfiles[key] : [];
   }
 
   function getLegacyCollection(type) {
@@ -56,6 +54,10 @@
       normalizeProfileText(item.key) === needle ||
       normalizeProfileText(item.id) === needle
     ) || null;
+  }
+
+  function hasExportCode(profile) {
+    return !!String(profile?.exportCode || '').trim();
   }
 
   function getSkipAnswer(question) {
@@ -113,10 +115,7 @@
     let buffer = '';
     let depth = 0;
 
-    const normalizedCode = String(rawCode || '')
-      .replace(/(\d+#(?:opis|note):[^;\r\n]*?)(?=\s+\d+\s*:\s*\()/gi, '$1;');
-
-    for (const char of normalizedCode) {
+    for (const char of String(rawCode || '')) {
       if (char === '(') depth++;
       if (char === ')' && depth > 0) depth--;
 
@@ -214,22 +213,34 @@
     return reference;
   }
 
-  function answerKind(answerValue) {
-    const value = Number(answerValue);
+  function answerKindFromLabel(label) {
+    const normalized = normalizeProfileText(label);
+    if (normalized === 'zdecydowanie zgadzam sie') return 'stronglyAgree';
+    if (normalized === 'czesciowo zgadzam sie') return 'partlyAgree';
+    if (normalized === 'czesciowo nie zgadzam sie') return 'partlyDisagree';
+    if (normalized === 'zdecydowanie nie zgadzam sie') return 'stronglyDisagree';
+    return null;
+  }
+
+  function answerKind(answer) {
+    const fromLabel = answerKindFromLabel(answer?.answerData?.label || answer?.label);
+    if (fromLabel) return fromLabel;
+
+    const value = Number(answer?.answerValue ?? answer?.value);
     if (Math.abs(value - ANSWER_VALUES.STRONGLY_AGREE) < 0.01) return 'stronglyAgree';
-    if (Math.abs(value - ANSWER_VALUES.PARTLY_AGREE) < 0.01) return 'partlyAgree';
-    if (Math.abs(value - ANSWER_VALUES.PARTLY_DISAGREE) < 0.01) return 'partlyDisagree';
+    if (value > 0 && Math.abs(value) < Math.abs(ANSWER_VALUES.STRONGLY_AGREE)) return 'partlyAgree';
+    if (value < 0 && Math.abs(value) < Math.abs(ANSWER_VALUES.STRONGLY_DISAGREE)) return 'partlyDisagree';
     if (Math.abs(value - ANSWER_VALUES.STRONGLY_DISAGREE) < 0.01) return 'stronglyDisagree';
     return null;
   }
 
-  function profilePairScoreModern(userValue, referenceAnswer) {
-    const current = Number(userValue);
+  function profilePairScoreModern(userAnswer, referenceAnswer) {
+    const current = Number(userAnswer?.answerValue);
     if (!referenceAnswer || Number.isNaN(current) || current === 0) return 0;
     if (referenceAnswer.neither) return -1.0;
 
-    const userKind = answerKind(current);
-    const refKind = answerKind(referenceAnswer.value);
+    const userKind = answerKind(userAnswer);
+    const refKind = answerKind(referenceAnswer);
     if (!userKind || !refKind) return 0;
 
     const scoreTable = {
@@ -257,11 +268,10 @@
     let maxPossible = 0;
     let compared = 0;
 
-    for (const [questionId, allowed] of reference.entries()) {
-      if (!allowed?.length) continue;
-      const userAnswer = answersByQuestion.get(Number(questionId));
-      const userValue = userAnswer ? Number(userAnswer.answerValue) : 0;
-      const best = Math.max(...allowed.map(answer => profilePairScoreModern(userValue, answer)));
+    for (const question of config.questions) {
+      const userAnswer = answersByQuestion.get(Number(question.id));
+      const allowed = reference.get(Number(question.id));
+      const best = allowed?.length ? Math.max(...allowed.map(answer => profilePairScoreModern(userAnswer, answer))) : 0;
       score += best;
       maxPossible += 1.5;
       compared++;
@@ -346,42 +356,6 @@
     const parsed = firstAnswersFromReference(profile);
     return parsed.length ? parsed : [];
   }
-  function legacyEntityAnswersFromMappings(name, type) {
-    const entity = getLegacyEntity(name, type);
-    const aliases = [name, entity?.name, entity?.key, entity?.id]
-      .filter(Boolean)
-      .map(normalizeProfileText);
-
-    return (config?.questions || []).map(question => {
-      let bestAnswer = null;
-      let bestAbsValue = -1;
-
-      for (const answer of question.answers || []) {
-        const forList = type === 'party' ? (answer.parties_for || []) : (answer.ideologies_for || []);
-        const againstList = type === 'party' ? (answer.parties_against || []) : (answer.ideologies_against || []);
-        const isFor = forList.some(item => aliases.includes(normalizeProfileText(item)));
-        const isAgainst = againstList.some(item => aliases.includes(normalizeProfileText(item)));
-        if (!isFor && !isAgainst) continue;
-
-        const sourceValue = Number(answer.value || 0);
-        const targetValue = isFor ? sourceValue : -sourceValue;
-        const selected = question.answers.find(candidate => Math.abs(Number(candidate.value) - targetValue) < 0.01) || answer;
-        const absVal = Math.abs(Number(selected.value || 0));
-        if (absVal > bestAbsValue) {
-          bestAbsValue = absVal;
-          bestAnswer = selected;
-        }
-      }
-
-      if (!bestAnswer) bestAnswer = getSkipAnswer(question);
-      return {
-        questionId: question.id,
-        answerIndex: question.answers.indexOf(bestAnswer),
-        answerValue: Number(bestAnswer?.value || 0),
-        answerData: bestAnswer
-      };
-    });
-  }
 
   const originalComputeScores = window.computeScores || computeScores;
   computeScores = function (mode = currentScoringMode) {
@@ -409,6 +383,10 @@
 
       if (type) {
         const profile = getProfile(selectedName, type);
+        if (!hasExportCode(profile)) {
+          showPopup('Ten profil nie ma jeszcze exportCode, więc w trybie Nowoczesnym nie można go zasymulować.');
+          return;
+        }
         simulatedEntity = { type, name: profile.name };
         userAnswers = type === 'user'
           ? parseExportCodeModern(profile.exportCode).filter(row => !row.noteOnly && row.answerData)
@@ -418,18 +396,6 @@
         return;
       }
     } else {
-      const legacyType = getLegacyEntity(selectedName, 'party') ? 'party' :
-        getLegacyEntity(selectedName, 'ideology') ? 'ideology' : null;
-
-      if (legacyType) {
-        const entity = getLegacyEntity(selectedName, legacyType);
-        simulatedEntity = { type: legacyType, name: entity.name };
-        userAnswers = legacyEntityAnswersFromMappings(entity.name, legacyType);
-        updateDOMSelections();
-        computeAndDisplayResults();
-        return;
-      }
-
       const user = getProfile(selectedName, 'user');
       if (user) {
         simulatedEntity = { type: 'user', name: user.name };
@@ -504,14 +470,14 @@
     select.innerHTML = '';
     const groups = isModernMatching()
       ? [
-          ['party', translations?.ui?.partiesGroup || 'Partie polityczne', getProfileCollection('party')],
-          ['ideology', translations?.ui?.ideologiesGroup || 'Ideologie', getProfileCollection('ideology')],
-          ['user', translations?.ui?.usersGroup || 'UĹĽytkownicy', getProfileCollection('user')]
+          ['party', translations?.ui?.partiesGroup || 'Partie polityczne', getProfileCollection('party').filter(hasExportCode)],
+          ['ideology', translations?.ui?.ideologiesGroup || 'Ideologie', getProfileCollection('ideology').filter(hasExportCode)],
+          ['user', translations?.ui?.usersGroup || 'Użytkownicy', getProfileCollection('user').filter(hasExportCode)]
         ]
       : [
           ['party', translations?.ui?.partiesGroup || 'Partie polityczne', getLegacyCollection('party')],
           ['ideology', translations?.ui?.ideologiesGroup || 'Ideologie', getLegacyCollection('ideology')],
-          ['user', translations?.ui?.usersGroup || 'UĹĽytkownicy', getProfileCollection('user')]
+          ['user', translations?.ui?.usersGroup || 'Użytkownicy', getProfileCollection('user')]
         ];
 
     for (const [, label, list] of groups) {
@@ -551,7 +517,7 @@
     for (const question of config.questions) {
       const answer = userAnswers.find(row => Number(row.questionId) === Number(question.id) && !row.noteOnly);
       const note = answer?.note || '';
-      const label = answer?.answerData?.label || (answer ? 'PomiĹ„ pytanie' : 'Brak odpowiedzi');
+      const label = answer?.answerData?.label || (answer ? 'Pomiń pytanie' : 'Brak odpowiedzi');
       lines.push(`${question.id}:(${label});`);
       if (note.trim()) lines.push(`${question.id}#opis:${encodeURIComponent(note.trim())}`);
     }
@@ -566,14 +532,14 @@
     const noteRows = parsed.filter(row => row.note);
 
     if (!answerRows.length && !noteRows.length) {
-      showPopup(translations?.ui?.importNoAnswers || 'Nie znaleziono prawidĹ‚owych odpowiedzi w kodzie.');
+      showPopup(translations?.ui?.importNoAnswers || 'Nie znaleziono prawidłowych odpowiedzi w kodzie.');
       return false;
     }
 
     userAnswers = answerRows;
     updateDOMSelections();
     if (resultsDiv.style.display !== 'none') computeAndDisplayResults();
-    else showPopup((translations?.ui?.importSuccess || `Zaimportowano ${answerRows.length} odpowiedzi.`) + ' ' + (translations?.ui?.clickShowResults || 'Kliknij "PokaĹĽ wyniki", aby zobaczyÄ‡ zaktualizowany profil.'));
+    else showPopup((translations?.ui?.importSuccess || `Zaimportowano ${answerRows.length} odpowiedzi.`) + ' ' + (translations?.ui?.clickShowResults || 'Kliknij "Pokaż wyniki", aby zobaczyć zaktualizowany profil.'));
     return true;
   };
   window.importAnswersFromExportCode = importAnswersFromExportCode;
@@ -602,5 +568,3 @@
 
   loadConfig();
 })();
-
-
