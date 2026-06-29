@@ -761,23 +761,50 @@ function renderQuestions() {
       else if (label.includes('Częściowo nie zgadzam się') || label.includes('Somewhat disagree')) ansEl.classList.add('answer-mild-disagree');
       else if (label.includes('Zdecydowanie nie zgadzam się') || label.includes('Strongly disagree')) ansEl.classList.add('answer-strong-disagree');
       else if (label.includes('Pomiń') || label.includes('Skip')) ansEl.classList.add('answer-skip');
-      ansEl.addEventListener('click', () => {
+ansEl.addEventListener('click', () => {
         const siblings = answersDiv.querySelectorAll('.answer-option');
         siblings.forEach(sib => sib.classList.remove('selected'));
         ansEl.classList.add('selected');
         const existing = userAnswers.findIndex(a => a.questionId === q.id);
+        const existingNote = existing !== -1 ? (userAnswers[existing].userNote || '') : '';
         const answerObj = {
           questionId: q.id,
           answerIndex: ansIdx,
           answerValue: ans.value,
-          answerData: ans
+          answerData: ans,
+          userNote: existingNote
         };
         if (existing !== -1) userAnswers[existing] = answerObj;
         else userAnswers.push(answerObj);
       });
+      });
       answersDiv.appendChild(ansEl);
     });
     card.appendChild(answersDiv);
+  const noteWrapper = document.createElement('div');
+    noteWrapper.className = 'user-note-wrapper';
+    const noteTextarea = document.createElement('textarea');
+    noteTextarea.className = 'user-note-textarea';
+    noteTextarea.placeholder = '💬 Twój komentarz do tej tezy (opcjonalnie)...';
+    noteTextarea.rows = 2;
+    noteTextarea.dataset.questionId = q.id;
+    noteTextarea.addEventListener('input', () => {
+      const existing = userAnswers.findIndex(a => a.questionId === q.id);
+      if (existing !== -1) {
+        userAnswers[existing].userNote = noteTextarea.value;
+      } else {
+        userAnswers.push({
+          questionId: q.id,
+          answerIndex: -1,
+          answerValue: 0,
+          answerData: null,
+          userNote: noteTextarea.value,
+          noteOnly: true
+        });
+      }
+    });
+    noteWrapper.appendChild(noteTextarea);
+    card.appendChild(noteWrapper);
     questionsContainer.appendChild(card);
   });
   updateDOMSelections();
@@ -793,6 +820,10 @@ function updateDOMSelections() {
     if (!card) continue;
     const targetOption = card.querySelector(`.answer-option[data-answer-index='${ans.answerIndex}']`);
     if (targetOption) targetOption.classList.add('selected');
+    if (ans.userNote) {
+      const noteTextarea = card.querySelector('.user-note-textarea');
+      if (noteTextarea) noteTextarea.value = ans.userNote;
+    }
   }
 }
 
@@ -819,7 +850,12 @@ function generateExportCode() {
     } else if (userAns && userAns.answerValue === 0) {
       answerText = 'Pomiń';
     }
-    output += `[id:${q.id}]: (${answerText});\n`;
+    const note = (userAns && userAns.userNote) ? userAns.userNote.replace(/\n/g, ' ').trim() : '';
+    if (note) {
+      output += `[id:${q.id}]: (${answerText}); [note: ${note}]\n`;
+    } else {
+      output += `[id:${q.id}]: (${answerText});\n`;
+    }
   }
   return output;
 }
@@ -864,19 +900,22 @@ function importAnswersFromExportCode(rawCode) {
   const lines = rawCode.split(/\r?\n/);
   const newAnswers = [];
   let matchedCount = 0;
-  for (const line of lines) {
-    // Nowy format: [id:123]: (odpowiedź);
-    let match = line.match(/^\[id:(\d+)\]:\s*\((.*?)\);?$/);
-    let questionId, answerText;
+for (const line of lines) {
+    // Nowy format: [id:123]: (odpowiedź); [note: komentarz]
+    let match = line.match(/^\[id:(\d+)\]:\s*\((.*?)\);?\s*(?:\[note:\s*(.*?)\])?$/);
+    let questionId, answerText, userNote;
     if (match) {
       questionId = parseInt(match[1], 10);
       answerText = match[2].trim();
+      userNote = match[3] ? match[3].trim() : '';
     } else {
       // Stary format: 1. treść [id:123]: (odpowiedź);
-      match = line.match(/^\d+\.\s*(.+?)\s*\[id:(\d+)\]:\s*\((.*?)\);?$/);
+      match = line.match(/^\d+\.\s*(.+?)\s*\[id:(\d+)\]:\s*\((.*?)\);?\s*(?:\[note:\s*(.*?)\])?$/);
       if (!match) continue;
       questionId = parseInt(match[2], 10);
       answerText = match[3].trim();
+      userNote = match[4] ? match[4].trim() : '';
+    }
     }
     if (answerText === 'Brak odpowiedzi') continue;
     const question = config.questions.find(q => q.id === questionId);
@@ -901,12 +940,13 @@ function importAnswersFromExportCode(rawCode) {
         }
       }
     }
-    if (matchedAnswer) {
+  if (matchedAnswer) {
       newAnswers.push({
         questionId: question.id,
         answerIndex: matchedIndex,
         answerValue: matchedAnswer.value,
-        answerData: matchedAnswer
+        answerData: matchedAnswer,
+        userNote: userNote || ''
       });
       matchedCount++;
     }
