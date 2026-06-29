@@ -56,10 +56,6 @@
     ) || null;
   }
 
-  function hasExportCode(profile) {
-    return !!String(profile?.exportCode || '').trim();
-  }
-
   function getSkipAnswer(question) {
     if (!question?.answers?.length) return null;
     return question.answers.find(answer => Number(answer.value) === 0 && /pomin|skip/i.test(normalizeProfileText(answer.label))) ||
@@ -213,34 +209,22 @@
     return reference;
   }
 
-  function answerKindFromLabel(label) {
-    const normalized = normalizeProfileText(label);
-    if (normalized === 'zdecydowanie zgadzam sie') return 'stronglyAgree';
-    if (normalized === 'czesciowo zgadzam sie') return 'partlyAgree';
-    if (normalized === 'czesciowo nie zgadzam sie') return 'partlyDisagree';
-    if (normalized === 'zdecydowanie nie zgadzam sie') return 'stronglyDisagree';
-    return null;
-  }
-
-  function answerKind(answer) {
-    const fromLabel = answerKindFromLabel(answer?.answerData?.label || answer?.label);
-    if (fromLabel) return fromLabel;
-
-    const value = Number(answer?.answerValue ?? answer?.value);
+  function answerKind(answerValue) {
+    const value = Number(answerValue);
     if (Math.abs(value - ANSWER_VALUES.STRONGLY_AGREE) < 0.01) return 'stronglyAgree';
-    if (value > 0 && Math.abs(value) < Math.abs(ANSWER_VALUES.STRONGLY_AGREE)) return 'partlyAgree';
-    if (value < 0 && Math.abs(value) < Math.abs(ANSWER_VALUES.STRONGLY_DISAGREE)) return 'partlyDisagree';
+    if (Math.abs(value - ANSWER_VALUES.PARTLY_AGREE) < 0.01) return 'partlyAgree';
+    if (Math.abs(value - ANSWER_VALUES.PARTLY_DISAGREE) < 0.01) return 'partlyDisagree';
     if (Math.abs(value - ANSWER_VALUES.STRONGLY_DISAGREE) < 0.01) return 'stronglyDisagree';
     return null;
   }
 
-  function profilePairScoreModern(userAnswer, referenceAnswer) {
-    const current = Number(userAnswer?.answerValue);
+  function profilePairScoreModern(userValue, referenceAnswer) {
+    const current = Number(userValue);
     if (!referenceAnswer || Number.isNaN(current) || current === 0) return 0;
     if (referenceAnswer.neither) return -1.0;
 
-    const userKind = answerKind(userAnswer);
-    const refKind = answerKind(referenceAnswer);
+    const userKind = answerKind(current);
+    const refKind = answerKind(referenceAnswer.value);
     if (!userKind || !refKind) return 0;
 
     const scoreTable = {
@@ -271,7 +255,8 @@
     for (const question of config.questions) {
       const userAnswer = answersByQuestion.get(Number(question.id));
       const allowed = reference.get(Number(question.id));
-      const best = allowed?.length ? Math.max(...allowed.map(answer => profilePairScoreModern(userAnswer, answer))) : 0;
+      const userValue = userAnswer ? Number(userAnswer.answerValue) : 0;
+      const best = allowed?.length ? Math.max(...allowed.map(answer => profilePairScoreModern(userValue, answer))) : 0;
       score += best;
       maxPossible += 1.5;
       compared++;
@@ -383,10 +368,6 @@
 
       if (type) {
         const profile = getProfile(selectedName, type);
-        if (!hasExportCode(profile)) {
-          showPopup('Ten profil nie ma jeszcze exportCode, więc w trybie Nowoczesnym nie można go zasymulować.');
-          return;
-        }
         simulatedEntity = { type, name: profile.name };
         userAnswers = type === 'user'
           ? parseExportCodeModern(profile.exportCode).filter(row => !row.noteOnly && row.answerData)
@@ -470,9 +451,9 @@
     select.innerHTML = '';
     const groups = isModernMatching()
       ? [
-          ['party', translations?.ui?.partiesGroup || 'Partie polityczne', getProfileCollection('party').filter(hasExportCode)],
-          ['ideology', translations?.ui?.ideologiesGroup || 'Ideologie', getProfileCollection('ideology').filter(hasExportCode)],
-          ['user', translations?.ui?.usersGroup || 'Użytkownicy', getProfileCollection('user').filter(hasExportCode)]
+          ['party', translations?.ui?.partiesGroup || 'Partie polityczne', getProfileCollection('party')],
+          ['ideology', translations?.ui?.ideologiesGroup || 'Ideologie', getProfileCollection('ideology')],
+          ['user', translations?.ui?.usersGroup || 'Użytkownicy', getProfileCollection('user')]
         ]
       : [
           ['party', translations?.ui?.partiesGroup || 'Partie polityczne', getLegacyCollection('party')],
