@@ -1,5 +1,5 @@
 {
-  "version": 
+  "version": 2,
   "defaultMatchingMode": "modern",
   "exportCodeFormat": "short-v2: id:(answer[, answer]); optional note line id#opis:text",
   "logoSources": {
