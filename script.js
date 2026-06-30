@@ -386,7 +386,7 @@ function getIdeologyLogoUrl(ideologyName) {
 
 // Mapowanie par wartości na kategorie (na podstawie lewej wartości)
 const categoryMapping = {
-  "Autonomia": 1, "Indywidualizm": 1, "Kontraktualizm": 1, "Dobrowolność wspólnoty": 1,
+  "Autonomia": 1, "Antypaternalizm": 1, "Indywidualizm": 1, "Kontraktualizm": 1, "Dobrowolność wspólnoty": 1,
   "Egalitaryzm": 1, "Wolność ekspresji": 1,
   "Samoorganizacja": 2, "Decentralizacja": 2, "Ograniczenie władzy": 2, "Sakralizacja autorytetu": 2,
   "Różnorodność norm": 2, "Demokracja": 2, "Autokracja": 2,
@@ -421,7 +421,7 @@ const valueColors = {
   "Wolność ekspresji": "#FECB1D", "Cenzura": "#613B28", "Antropocentryzm": "#E57160", "Ekocentryzm": "#14832A",
   "Postęp technologiczny": "#E57160", "Prymitywizm": "#14832A", "Desakralizacja autorytetu": "#73B0BE", "Sakralizacja autorytetu": "#2F3944",
   "Różnorodność norm": "#2F3944", "Uniformizacja norm": "#73B0BE", "Kontraktualizm": "#FECB1D", "Organicyzm": "#613B28",
-  "Dobrowolność wspólnoty": "#FECB1D", "Obowiązkowość wspólnoty": "#613B28"
+  "Dobrowolność wspólnoty": "#FECB1D", "Obowiązkowość wspólnoty": "#613B28", "Paternalizm": "#613B28", "Antypaternalizm": "#FECB1D"
 };
 
 function showPopup(message) {
