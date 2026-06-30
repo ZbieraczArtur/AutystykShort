@@ -10,6 +10,7 @@ const corePairs = [
   { id: "p8", axis: "y", negativeLabel: "Minimalizacja granic", positiveLabel: "Kontrola granic", weight: 0.5, institutional: true },
   { id: "p9", axis: "y", negativeLabel: "Wolność ekspresji", positiveLabel: "Cenzura", weight: 1, institutional: true },
   { id: "p10", axis: "y", negativeLabel: "Autonomia", positiveLabel: "Heteronomia", weight: 2, institutional: false },
+  { id: "p14", axis: "y", negativeLabel: "Antypaternalizm", positiveLabel: "Paternalizm", weight: 1.5, institutional: false, extra: true },
   { id: "p11", axis: "y", negativeLabel: "Kontraktualizm", positiveLabel: "Organicyzm", weight: 1.5, institutional: false },
   { id: "p12", axis: "y", negativeLabel: "Dobrowolność wspólnoty", positiveLabel: "Obowiązkowość wspólnoty", weight: 1.5, institutional: false },
   { id: "p13", axis: "y", negativeLabel: "Desakralizacja autorytetu", positiveLabel: "Sakralizacja autorytetu", weight: 1.75, institutional: false }
