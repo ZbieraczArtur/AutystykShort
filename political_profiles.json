@@ -27,15 +27,6 @@
   "parties": [
     {
       "type": "party",
-      "id": "party:p0",
-      "key": "PunktZero",
-      "name": "PunktZero",
-      "description": "",
-      "exportCode": ""
-      }
-    },
-    {
-      "type": "party",
       "id": "party:pis",
       "key": "Prawo i Sprawiedliwość",
       "name": "Prawo i Sprawiedliwość",
