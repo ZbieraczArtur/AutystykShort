@@ -8196,35 +8196,35 @@
     },
         {
       "id": 133,
-      "text": "Państwo powinno całkowicie zrezygnować z emitowania pieniędzy i pozwolić na swobodną konkurencję na rynku pieniężnym",
+      "text": "Państwo nie powinno emitować pieniędzy",
       "description": "XXXXXX",
       "comment": "Pomiń jeśli nie zgadzasz się z żadną opcją",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Samoorganizacja", "Rynek", "Samoregulacja"],
-          "values_against": ["Etatyzm", "Regulacja instytucjonalna", "Planowanie"],
-          "ideologies_for": ["Liberalizm klasyczny"],
-          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Marksizm klasyczny", "Faszyzm", "Nacjonalizm konserwatywny", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Samoorganizacja", "Rynek", "Samoregulacja"],
-          "values_against": ["Etatyzm", "Regulacja instytucjonalna", "Planowanie"],
-          "ideologies_for": ["Liberalizm klasyczny"],
-          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Marksizm klasyczny", "Faszyzm", "Nacjonalizm konserwatywny", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
           "parties_for": [],
           "parties_against": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"]
         },
         {
           "label": "Częściowo nie zgadzam się",
           "value": -1.0,
-          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Planowanie"],
-          "values_against": ["Samoorganizacja", "Rynek", "Samoregulacja"],
+          "values_for": [],
+          "values_against": [],
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
@@ -8233,11 +8233,68 @@
         {
           "label": "Zdecydowanie nie zgadzam się",
           "value": -1.5,
-          "values_for": ["Etatyzm", "Regulacja instytucjonalna", "Planowanie"],
-          "values_against": ["Samoorganizacja", "Rynek", "Samoregulacja"],
-          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Marksizm klasyczny", "Faszyzm", "Nacjonalizm konserwatywny", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Konfederacja Korony Polskiej", "Ruch Narodowy", "Nowa Nadzieja", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni", "Polska 2050 Rzeczypospolitej Polskiej"],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 391,
+      "text": "Należy pozwolić na swobodną konkurencję na rynku pieniężnym",
+      "description": "XXXXXX",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": ["Rynek", "Samoregulacja", "Samoorganizacja"],
+          "values_against": ["Planowanie", "Regulacja instytucjonalna", "Etatyzm"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Rynek", "Samoregulacja", "Samoorganizacja"],
+          "values_against": ["Planowanie", "Regulacja instytucjonalna", "Etatyzm"],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
           "parties_against": []
         },
         {
