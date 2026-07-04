@@ -303,6 +303,20 @@
         "migratedAt": "2026-06-24"
       }
     },
+  {
+    "type": "ideology",
+    "id": "ideology:karlizm",
+    "key": "Karlizm",
+    "name": "Karlizm",
+    "description": "Karliści wierzą, że fundamentem trwałego ładu politycznego jest wierność zasadom religijnym, historycznej ciągłości oraz tradycyjnym prawom wspólnot lokalnych, co streszcza ich hasło: Bóg, Ojczyzna, Fueros (prawa lokalne), Król. Odrzucają oni nowożytny racjonalizm i koncepcję suwerenności ludu na rzecz organicznej wizji społeczeństwa jako „ciała mistycznego”, w którym władza monarsza wywodzi się od Boga i jest ograniczona prawem naturalnym oraz wielowiekowym zwyczajem\n\nOpowiadają się za monarchią tradycyjną, która nie jest ani absolutna, ani parlamentarna, lecz łączy realne sprawowanie władzy przez króla z szeroką decentralizacją i autogestią regionów. Ich wizja gospodarcza sprzeciwia się zarówno liberalnemu kapitalizmowi, jak i państwowemu socjalizmowi, promując model korporacyjny oparty na cechach, rzemiośle i własności społecznej. W tym systemie państwo działa zgodnie z zasadą subsydiarności (pomocniczości), wytyczając ogólne cele, ale nie zastępując rodzin i instytucji pośredniczących w ich naturalnych funkcjach.\n\nNa polu kwestii społecznych karlizm promuje wartości wspólnotowości i hierarchii, kładąc nacisk na „człowieka konkretnego” – zakorzenionego w rodzinie, gminie i zawodzie – zamiast liberalnej koncepcji jednostki abstrakcyjnej. Karliści uważają, że jedność katolicka jest niezbędnym spoiwem narodu, dlatego rząd powinien aktywnie wspierać misję Kościoła i dążyć do zaprowadzenia społecznego panowania Jezusa Chrystusa. Celem polityki jest ochrona konkretnych wolności lokalnych przed centralizmem, co ma zapewniać harmonijny rozwój społeczeństwa w zgodzie z jego religijną i historyczną tożsamością\n\nPrzedstawiciele: Karol V (1788–1855), Karol VII (1848–1909), Juan Vázquez de Mella (1861–1928), Francisco Elías de Tejada (1917–1978), Rafael Gambra (1920–2004)",
+    "logo": "images/Ideologie/Karlizm.webp",
+    "exportCode": "",
+    "metadata": {
+      "source": "data.json",
+      "generatedFromLegacy": true,
+      "migratedAt": "2026-06-24"
+    }
+  },
     {
       "type": "ideology",
       "id": "ideology:korwinizm",
@@ -401,6 +415,20 @@
         "migratedAt": "2026-06-24"
       }
     },
+      {
+    "type": "ideology",
+    "id": "ideology:dirigisme",
+    "key": "Dirigisme",
+    "name": "Dirigisme",
+    "description": "Dyrygiści wierzą, że państwo powinno odgrywać aktywną i kierowniczą rolę w kształtowaniu oraz modernizacji gospodarki rynkowej, wykraczając poza funkcje czysto regulacyjne. Popierają model, w którym sektor publiczny staje się głównym narzędziem realizacji narodowych celów rozwojowych, współpracując z wielkimi przedsiębiorstwami – tzw. czempionami narodowymi – w celu budowy trwałych przewag konkurencyjnych kraju. Doktryna ta nie dąży do zastąpienia mechanizmów rynkowych, lecz do ich uzupełnienia tam, gdzie prywatna inicjatywa okazuje się niewystarczająca do przeprowadzenia głębokich zmian strukturalnych.\n\nOpowiadają się za systemem planowania orientacyjnego, w którym rząd wyznacza priorytety inwestycyjne i koordynuje działania podmiotów gospodarczych, nie stosując jednak przymusu typowego dla gospodarek nakazowych. Ich wizja opiera się na koncepcji woluntaryzmu, zakładającej, że bariery rozwojowe można przełamać dzięki odgórnej inicjatywie państwa, kierowanej przez merytokratyczne i technokratyczne elity. W ten sposób państwo aktywnie wspiera kluczowe sektory, takie jak energetyka, transport czy wysokie technologie, oferując im dostęp do taniego kredytu, zamówień publicznych oraz wsparcia w badaniach i rozwoju.\n\nNa polu społecznym dyrygizm promuje wartości suwerenności narodowej i autonomii technologicznej. Zwolennicy tego nurtu uważają, że dobrobyt jednostki jest ściśle powiązany z siłą i niezależnością państwa, dlatego rząd powinien inicjować „wielkie projekty” o znaczeniu strategicznym. W tej wizji interwencja państwowa służy nie tylko stabilizacji makroekonomicznej, ale przede wszystkim budowie nowoczesnego i spójnego systemu produkcyjnego, który jest w stanie skutecznie konkurować na rynkach międzynarodowych.",
+    "logo": "images/Ideologie/Dirigisme.svg",
+    "exportCode": "",
+    "metadata": {
+      "source": "data.json",
+      "generatedFromLegacy": true,
+      "migratedAt": "2026-06-24"
+    }
+  },
     {
       "type": "ideology",
       "id": "ideology:agraryzm",
@@ -499,6 +527,20 @@
         "migratedAt": "2026-06-24"
       }
     },
+      {
+    "type": "ideology",
+    "id": "ideology:keynesizm",
+    "key": "Keynesizm",
+    "name": "Liberalizm Keynesistowski",
+    "description": "Keynesiści wierzą, że państwo powinno aktywnie dążyć do połączenia efektywności ekonomicznej, sprawiedliwości społecznej oraz wolności jednostki. Uważają, że system rynkowy nie posiada wrodzonych mechanizmów gwarantujących stałe pełne zatrudnienie, dlatego niezbędne jest wprowadzenie centralnego kierowania w celu korygowania tych niedoskonałości. Popierają model, w którym rząd oddziałuje na skłonność do konsumpcji i inwestowania, starając się zapobiegać przewlekłemu bezrobociu oraz niesprawiedliwemu podziałowi bogactwa i dochodów.\n\nOpowiadają się za popytowym modelem gospodarki, w którym poziom produkcji i zatrudnienia jest bezpośrednio uzależniony od wielkości zagregowanych wydatków. Ich wizja opiera się na aktywnym interwencjonizmie, obejmującym regulację stóp procentowych, stosowanie redystrybucyjnego systemu podatkowego oraz prowadzenie inwestycji publicznych, które mają uzupełniać inicjatywę prywatną w sytuacjach niedostatecznego popytu. W ten sposób państwo tworzy odpowiednie środowisko dla swobodnej gry sił ekonomicznych, chroniąc jednocześnie system przed destrukcyjnymi skutkami gwałtownych fluktuacji i kryzysów gospodarczych.\n\nNa polu filozofii społecznej keynesiści promują dążenie do „dobrego życia”, w którym postęp technologiczny i akumulacja kapitału służą docelowemu uwolnieniu ludzkości od trosk materialnych. Wierzą, że harmonijne społeczeństwo można ukształtować poprzez racjonalne wybory ukierunkowane na dobro wspólne, co w długim okresie pozwoli na stopniowe zastępowanie chciwości wartościami etycznymi, mądrością i cnotą. Dzięki takiemu podejściu gospodarka staje się narzędziem służącym zwiększeniu ilości czasu wolnego oraz umożliwiającym każdemu obywatelowi realizację potrzeb pozamaterialnych w warunkach wolności od przymusu ekonomicznego.\n\nPrzedstawiciele: John Maynard Keynes (Wielka Brytania), Paul Samuelson (USA), Michał Kalecki (Polska)",
+    "logo": "images/Ideologie/Keynes.svg",
+    "exportCode": "",
+    "metadata": {
+      "source": "data.json",
+      "generatedFromLegacy": true,
+      "migratedAt": "2026-06-24"
+    }
+  },
     {
       "type": "ideology",
       "id": "ideology:konserwatywny_liberalizm",
@@ -765,6 +807,34 @@
         "migratedAt": "2026-06-24"
       }
     },
+      {
+    "type": "ideology",
+    "id": "ideology:nilssonianizm",
+    "key": "Nilssonianizm",
+    "name": "Nilssonianizm",
+    "description": "Nilssonianiści wierzą, że fundamentem trwałego ładu społecznego jest organiczna wspólnota oparta na tożsamości, więzach krwi oraz prawie natury, która musi posiadać realną zdolność do obrony własnego sposobu życia przed zewnętrznymi zagrożeniami. Popierają model, w którym dążenie do wolności jednostki łączy się z potrzebą wewnętrznej spójności i siły grupy, tworząc syntezę zdolną do przetrwania w warunkach nieuchronnego konfliktu interesów. Uważają, że polityka ma charakter antagonistyczny i opiera się na podstawowym rozróżnieniu między przyjacielem a wrogiem, co wymaga od grupy zachowania stałej czujności i gotowości bojowej.\n\nOpowiadają się za radykalną decentralizacją władzy aż do poziomu najmniejszych suwerennych jednostek, takich jak rodziny i plemiona, co określane jest mianem anarcho-faszyzmu. Ich wizja opiera się na zniesieniu państwowego monopolu na przemoc na rzecz formowania wolnych milicji oraz przywrócenia obywatelom prawa do posiadania broni, co stanowi jedyną skuteczną barierę dla tyranii rządu. W tym ujęciu struktura państwowa powinna być jednocześnie jak najmniejsza, by nie ograniczać wolności wspólnoty, oraz wystarczająco silna, by skutecznie eliminować wrogie podmioty zewnętrzne\n\nNa polu kwestii społecznych nilssonianiści promują wartości męstwa, honoru oraz fizycznej i psychicznej sprawności, uznając agresję męską za niezbędny czynnik cywilizacyjny. Odrzucają koncepcję uniwersalnej równości jako szkodliwą fikcję, promując w zamian „naturalną miłość do swoich” i priorytetyzację interesów własnej grupy ponad interesy innych. Wierzą, że stabilność cywilizacji zależy od przywrócenia tradycyjnych wzorców zachowań oraz uznania, że wszelkie prawa i wolności mają wartość tylko wtedy, gdy wspólnota jest w stanie wywalczyć je i obronić własną siłą.\n\nPrzedstawiciele: Jonas Nilsson (Szwecja)",
+    "logo": "images/Ideologie/Nilssonianism.svg",
+    "exportCode": "",
+    "metadata": {
+      "source": "data.json",
+      "generatedFromLegacy": true,
+      "migratedAt": "2026-06-24"
+    }
+  },
+  {
+    "type": "ideology",
+    "id": "ideology:mroczneoswiecenie",
+    "key": "Mroczne Oświecenie",
+    "name": "Mroczne Oświecenie",
+    "description": "Zwolennicy Mrocznego Oświecenia (neoreakcjoniści) wierzą, że współczesna demokracja liberalna jest systemem niewydolnym, który maskuje rzeczywiste mechanizmy władzy pod postacią nieformalnego konsensusu medialno-akademickiego zwanego „Katedrą”. Uważają, że fundamentem stabilnego społeczeństwa nie jest egalitaryzm, lecz naturalna hierarchia i porządek, które pozwalają na efektywne zarządzanie i zachowanie ciągłości cywilizacyjnej. Odrzucają wigowską interpretację historii jako nieuchronnego postępu ku większej wolności, postrzegając demokratyzację jako proces degeneracji struktur społecznych i osłabiania suwerenności państwa.\n\nOpowiadają się za modelem neokameralizmu, w którym państwo funkcjonuje jako suwerenna spółka akcyjna („gov-corp”), zarządzana przez dyrektora generalnego o kompetencjach zbliżonych do monarchy (CEO-monarch). W tej wizji obywatele pełnią rolę klientów lub udziałowców, a ich wolność nie opiera się na demokratycznym współdecydowaniu (głosie), lecz na „prawie wyjścia” – możliwości zmiany miejsca zamieszkania na obszar innej, konkurencyjnej korporacji państwowej. System ten kładzie nacisk na formalizm, technokratyczną sprawność oraz akcelerację technologiczną, która ma docelowo umożliwić powstanie nowych form organizacji społecznej, wykraczających poza tradycyjne ramy polityczne\n\nNa polu kwestii społecznych zwolennicy tego nurtu promują wartości realizmu, dyscypliny i intelektualnego elitaryzmu. Przyjmują pesymistyczną antropologię, według której ludzie są istotami o zróżnicowanych możliwościach, co czyni powszechne uczestnictwo w polityce źródłem chaosu i nieefektywności. Wierzą, że społeczeństwo oparte na jasnych strukturach władzy i autorytecie kompetentnych elit sprzyja długofalowemu rozwojowi. Dzięki temu postęp technologiczny i gospodarczy może przebiegać bez ograniczeń wynikających z procedur demokratycznych czy presji ideologicznej opinii publicznej\n\nPrzedstawiciele: Curtis Yarvin (pseudonim Mencius Moldbug), Nick Land, Peter Thiel",
+    "logo": "images/Ideologie/Dark_Enlightenment.png",
+    "exportCode": "",
+    "metadata": {
+      "source": "data.json",
+      "generatedFromLegacy": true,
+      "migratedAt": "2026-06-24"
+    }
+  },
     {
       "type": "ideology",
       "id": "ideology:mutualizm",
@@ -947,6 +1017,20 @@
         "migratedAt": "2026-06-24"
       }
     },
+      {
+    "type": "ideology",
+    "id": "ideology:sorelianizm",
+    "key": "Sorelianizm",
+    "name": "Sorelianizm",
+    "description": "Sorelianie wierzą, że fundamentem odnowionego społeczeństwa powinna być całkowita autonomia producentów zorganizowanych w dobrowolnych związkach zawodowych (syndykatach), które funkcjonują niezależnie od struktur państwowych i partii politycznych. Odrzucają model demokracji parlamentarnej i scentralizowaną władzę państwową, postrzegając je jako formy biurokratycznej kontroli, które prowadzą do moralnej dekadencji i korupcji życia społecznego. Popierają model, w którym to same instytucje robotnicze – takie jak giełdy pracy (bourses du travail) – tworzą własny system prawny i etyczny, kształtując zdolności administracyjne i juridyczne klasy pracującej.\n\nW ich wizji kluczową rolę odgrywa koncepcja mitu społecznego, zwłaszcza mitu strajku generalnego, który nie jest opisem przyszłego planu gospodarczego, lecz potężnym obrazem mobilizującym do działania. Strajk generalny służy jako narzędzie radykalnej polaryzacji klasowej, która ma na celu wymuszenie na burżuazji powrotu do jej dawnej energii produkcyjnej oraz rozbudzenie w robotnikach heroicznego ducha walki. Sorelianizm opiera się na \"etyce producenta\", w której praca w nowoczesnym warsztacie staje się polem nieustannego wynalazku i moralnego doskonalenia, przekształcając wysiłek techniczny w akt twórczy o wartości estetycznej i heroicznej.\n\nNa polu filozoficznym sorelianie kładą nacisk na wartości antyracjonalizmu, intuicji i pesymizmu, sprzeciwiając się oświeceniowemu optymizmowi i wierze w mechaniczny postęp. Uważają, że odrodzenie cywilizacji wymaga odwołania się do sublimacji, poświęcenia i siły woli, które pozwalają jednostkom wznieść się ponad materialne korzyści i utylitaryzm. Przemoc proletariacka jest w ich ujęciu zjawiskiem o charakterze wychowawczym – czystym przejawem walki o prawo, który chroni społeczeństwo przed barbarzyństwem dekadencji i umożliwia budowę wspólnoty wolnych ludzi, zdolnych do samodzielnego rządzenia sobą.",
+    "logo": "images/Ideologie/Sorelianizm.png",
+    "exportCode": "",
+    "metadata": {
+      "source": "data.json",
+      "generatedFromLegacy": true,
+      "migratedAt": "2026-06-24"
+    }
+  },
     {
       "type": "ideology",
       "id": "ideology:demokratyczny_konfederalizm",
