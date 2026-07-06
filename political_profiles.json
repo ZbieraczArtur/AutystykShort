@@ -45,6 +45,20 @@
         "source": "data.json"
       }
     },
+          {
+    "type": "ideology",
+    "id": "ideology:jmkeynes",
+    "key": "Keynes",
+    "name": "John Maynard Keynes",
+    "description": "John Maynard Keynes",
+    "logo": "images/Ideologie/Estymat_Keynes.jpg",
+    "exportCode": "",
+    "metadata": {
+      "source": "data.json",
+      "generatedFromLegacy": true,
+      "migratedAt": "2026-06-24"
+    }
+  },
             {
       "type": "user",
       "id": "user:grzegorzbraun",
