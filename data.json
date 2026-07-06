@@ -17525,7 +17525,65 @@
     },
     {
       "id": 293,
-      "text": "Kompetencje w zakresie ustalania podatków i ceł powinny przede wszystkim należeć do władz regionalnych",
+      "text": "Kompetencje w zakresie ustalania podatków powinny przede wszystkim należeć do władz regionalnych",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": ["Decentralizacja", "Anty-Autokracja", "Partykularyzm narodowy", "Ograniczenie władzy"],
+          "values_against": ["Centralizacja", "Etatyzm", "Absolutyzm władzy"],
+          "ideologies_for": [],
+          "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny", "Socjaldemokracja", "Nacjonalizm konserwatywny", "Faszyzm", "Marksizm klasyczny", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "parties_for": ["Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej", "Konfederacja Korony Polskiej"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Nowa Nadzieja", "Nowa Lewica", "Partia Razem", "Ruch Narodowy", "Polska Partia Socjalistyczna", "Partia Zieloni"]
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Decentralizacja", "Anty-Autokracja", "Partykularyzm narodowy", "Ograniczenie władzy"],
+          "values_against": ["Centralizacja", "Etatyzm", "Absolutyzm władzy"],
+          "ideologies_for": ["Liberalizm klasyczny"],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Nacjonalizm konserwatywny", "Faszyzm", "Marksizm klasyczny", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "parties_for": ["Nowa Nadzieja", "Polska 2050 Rzeczypospolitej Polskiej", "Konfederacja Korony Polskiej"],
+          "parties_against": ["Prawo i Sprawiedliwość", "Nowa Nadzieja", "Nowa Lewica", "Partia Razem", "Ruch Narodowy", "Polska Partia Socjalistyczna", "Partia Zieloni"]
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": ["Centralizacja", "Etatyzm", "Absolutyzm władzy"],
+          "values_against": ["Decentralizacja", "Anty-Autokracja", "Partykularyzm narodowy", "Ograniczenie władzy"],
+          "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny", "Socjaldemokracja", "Nacjonalizm konserwatywny", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": ["Centralizacja", "Etatyzm", "Absolutyzm władzy"],
+          "values_against": ["Decentralizacja", "Anty-Autokracja", "Partykularyzm narodowy", "Ograniczenie władzy"],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Nacjonalizm konserwatywny", "Faszyzm", "Marksizm klasyczny", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+},
+        {
+      "id": 394,
+      "text": "Kompetencje w zakresie ustalania ceł powinny przede wszystkim należeć do władz regionalnych",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -23201,7 +23259,7 @@
       ]
 },
     {
-      "id": 391,
+      "id": 392,
       "text": "Jeżeli konsumenci mają dostęp do rzetelnych informacji, państwo nie powinno ograniczać ich wyborów gospodarczych",
       "description": "XXXXXX",
       "answers": [
@@ -23258,7 +23316,7 @@
       ]
 },
     {
-      "id": 390,
+      "id": 393,
       "text": "Państwo nie powinno prowadzić jakiejkolwiek polityki gospodarczej",
       "description": "XXXXXX",
       "answers": [
