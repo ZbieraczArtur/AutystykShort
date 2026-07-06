@@ -2524,7 +2524,7 @@
     },
         {
       "id": 35,
-      "text": "Struktury gospodarcze i warunki materialne są ważniejszym źródłem zmiany społecznej niż idee i przekonania moralne",
+      "text": "Struktury gospodarcze i warunki materialne są nadrzędnym źródłem zmiany społecznej niż idee i przekonania moralne",
       "description": "Teza ta zakłada, że rzeczywistym fundamentem rozwoju każdego społeczeństwa jest sposób wytwarzania dóbr oraz materialne warunki życia, a nie same idee. Zgodnie z tym podejściem, to proces produkcji materialnej i podział bogactwa kształtują instytucje państwowe, systemy prawne oraz dominujące przekonania religijne czy filozoficzne. Zmiany w strukturze gospodarczej, wywołane na przykład postępem techniki, uznawane są za główną przyczynę rewolucji i głębokich przeobrażeń ustrojowych. Idee i normy moralne nie są tu traktowane jako siły niezależne, lecz jako odzwierciedlenie rzeczywistości ekonomicznej; gdy zmienia się baza materialna, ludzie z czasem dostosowują do niej swoje poglądy i wartości. W tej perspektywie to byt społeczny kształtuje ludzką świadomość.",
       "comment": "Placeholder",
       "answers": [
@@ -3911,14 +3911,14 @@
     },
         {
       "id": 59,
-      "text": "Decyzje polityczne powinny być podejmowane bezpośrednio przez obywateli w głosowaniach, *zamiast* przez wybranych przedstawicieli",
+      "text": "Obywatele nie powinni przekazywać prawa do podejmowania decyzji politycznych wybranym przedstawicielom.",
       "description": "XXXXXX",
       "comment": "Pomiń, jeśli nie zgadzasz się z żadną z dostępnych opcji",
       "answers": [
         {
           "label": "Zdecydowanie zgadzam się",
           "value": 1.5,
-          "values_for": ["Demokracja", "Decentralizacja", "Anty-autokracja", "Ograniczenie władzy", "Kontraktualizm"],
+          "values_for": ["Decentralizacja", "Anty-autokracja", "Ograniczenie władzy", "Kontraktualizm"],
           "values_against": ["Autokracja", "Hierarchiczność", "Centralizacja"],
           "ideologies_for": ["Głęboka ekologia"],
           "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny", "Socjaldemokracja"],
@@ -3928,7 +3928,7 @@
         {
           "label": "Częściowo zgadzam się",
           "value": 1.0,
-          "values_for": ["Demokracja", "Decentralizacja", "Anty-autokracja", "Ograniczenie władzy", "Kontraktualizm"],
+          "values_for": ["Decentralizacja", "Anty-autokracja", "Ograniczenie władzy", "Kontraktualizm"],
           "values_against": ["Autokracja", "Hierarchiczność", "Centralizacja"],
           "ideologies_for": ["Marksizm klasyczny", "Głęboka ekologia"],
           "ideologies_against": ["Nacjonalizm konserwatywny", "Faszyzm", "Nacjonalizm liberalny", "Ordoliberalizm"],
@@ -5590,7 +5590,7 @@
     },
         {
       "id": 88,
-      "text": "Represje wobec ruchów secesyjnych i separatyzmów są uzasadnione w celu zachowania integralności państwa",
+      "text": "Zwalczanie ruchów secesyjnych lub separatyzmów jest uzasadnione w celu zachowania integralności państwa",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -11266,7 +11266,7 @@
     },
         {
       "id": 185,
-      "text": "Patriarchat jest głęboko zakorzeniony w naszej kulturze i należy go zwalczać",
+      "text": "Kulturowo zakorzenioną dyskryminację i marginalizację kobiet należy zwalczać",
       "description": "Podejście to zakłada, że społeczeństwo opiera się na systematycznej, zinstytucjonalizowanej strukturze władzy, w której mężczyźni dominują nad kobietami. Patriarchat jest tu rozumiany jako zjawisko przenikające wszystkie dziedziny życia – od rodziny, przez edukację i pracę, aż po politykę, religię i kulturę. Zgodnie z tą tezą nierówność płci nie jest przypadkowa, lecz wynika z utrwalonych wzorców społecznych, które faworyzują jedną grupę kosztem drugiej. Zwalczanie patriarchatu wymaga zatem nie tylko zmian w prawie, ale przede wszystkim przekształcenia świadomości społecznej oraz zakwestionowania tradycyjnych ról, które utrzymują kobiety w pozycji podporządkowanej.",
       "answers": [
         {
@@ -13873,7 +13873,7 @@
     },
         {
       "id": 230,
-      "text": "Istnienie bogatych i biednych ludzi jest czymś akceptowalnym",
+      "text": "Istnienie mniej i bardziej zamożnych ludzi jest czymś akceptowalnym",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -15942,6 +15942,64 @@
           "values_against": ["Autonomia", "Indywidualizm", "Samoorganizacja", "Dobrowolność wspólnoty"],
           "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Liberalizm klasyczny", "Marksizm klasyczny", "Faszyzm", "Nacjonalizm konserwatywny", "Głęboka ekologia", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+        {
+      "id": 297,
+      "text": "Różnorodność form i stylów życia stanowi cenną i pożądaną wartość",
+      "description": "",
+      "comment": "",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": ["Pluralizm kulturowy", "Włączanie", "Różnorodność norm"],
+          "values_against": ["Homogenizacja", "Wykluczenie"],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "ideologies_against": ["Liberalizm klasyczny"],
+          "parties_for": ["Koalicja Obywatelska", "Nowa Lewica", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Pluralizm kulturowy", "Włączanie", "Różnorodność norm"],
+          "values_against": ["Homogenizacja", "Wykluczenie"],
+          "ideologies_for": ["Socjalliberalizm", "Socjaldemokracja", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "ideologies_against": ["Liberalizm klasyczny"],
+          "parties_for": ["Koalicja Obywatelska", "Nowa Lewica", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Razem", "Polska Partia Socjalistyczna", "Partia Zieloni"],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": ["Homogenizacja"],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Nacjonalizm liberalny", "Ordoliberalizm"],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": ["Homogenizacja"],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": ["Socjalliberalizm", "Socjaldemokracja", "Nacjonalizm liberalny", "Ordoliberalizm"],
           "parties_for": [],
           "parties_against": []
         },
@@ -19845,7 +19903,7 @@
     },
     {
       "id": 332,
-      "text": "Samodzielne, rodzinne gospodarstwo rolne jest lepszą formą organizacji produkcji niż wielka farma przemysłowa",
+      "text": "Samodzielne, rodzinne gospodarstwo rolne są warte szczególnej ochrony",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -21991,7 +22049,7 @@
     },
     {
       "id": 369,
-      "text": "*Emigracja* z kraju nie powinna być regulowana lub utrudniana przez państwo",
+      "text": "W czasie pokoju emigracja z kraju nie powinna być regulowana lub utrudniana przez państwo",
       "description": "XXXXXX",
       "comment": "Placeholder",
       "answers": [
@@ -22013,6 +22071,64 @@
           "ideologies_for": [],
           "ideologies_against": [],
           "parties_for": ["Nowa Nadzieja", "Prawo i Sprawiedliwość", "Koalicja Obywatelska", "Polskie Stronnictwo Ludowe", "Nowa Lewica", "Polska 2050 Rzeczypospolitej Polskiej", "Partia Razem", "Konfederacja Korony Polskiej", "Polska Partia Socjalistyczna", "Partia Zieloni", "Ruch Narodowy"],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo nie zgadzam się",
+          "value": -1.0,
+          "values_for": ["Kontrola granic", "Etatyzm", "Obowiązkowość wspólnoty"],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny", "Socjaldemokracja"],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Zdecydowanie nie zgadzam się",
+          "value": -1.5,
+          "values_for": ["Kontrola granic", "Etatyzm", "Obowiązkowość wspólnoty"],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": ["Socjalliberalizm", "Liberalizm klasyczny", "Socjaldemokracja"],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Pomiń pytanie",
+          "value": 0,
+          "values_for": [],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        }
+      ]
+    },
+    {
+      "id": 396,
+      "text": "*W czasie kryzysu emigracja z kraju nie powinna być ograniczana przez państwo",
+      "description": "XXXXXX",
+      "comment": "Placeholder",
+      "answers": [
+        {
+          "label": "Zdecydowanie zgadzam się",
+          "value": 1.5,
+          "values_for": ["Minimalizacja granic", "Dobrowolność wspólnoty"],
+          "values_against": [],
+          "ideologies_for": ["Socjalliberalizm", "Liberalizm klasyczny", "Socjaldemokracja"],
+          "ideologies_against": [],
+          "parties_for": [],
+          "parties_against": []
+        },
+        {
+          "label": "Częściowo zgadzam się",
+          "value": 1.0,
+          "values_for": ["Minimalizacja granic", "Dobrowolność wspólnoty"],
+          "values_against": [],
+          "ideologies_for": [],
+          "ideologies_against": [],
+          "parties_for": [],
           "parties_against": []
         },
         {
