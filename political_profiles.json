@@ -45,6 +45,28 @@
         "source": "data.json"
       }
     },
+            {
+      "type": "user",
+      "id": "user:janpawel",
+      "key": "KarolWojtyla",
+      "name": "Karol Wojtyła (Jan Paweł II)",
+      "description": "Lorem ipsum placeholder lalala https://x.com/CusterKnuckle",
+      "logo": "images/Figury/Estymat_JP2.jpg",
+        "metadata": {
+        "source": "data.json"
+      }
+    },
+      {
+      "type": "user",
+      "id": "user:rogerscruton",
+      "key": "Roger_Scruton",
+      "name": "Roger Scruton",
+      "description": "Lorem ipsum placeholder lalala https://x.com/CusterKnuckle",
+      "logo": "images/Figury/Estymat_Roger_Scruton.jpg",
+        "metadata": {
+        "source": "data.json"
+      }
+    },
           {
     "type": "ideology",
     "id": "ideology:jmkeynes",
