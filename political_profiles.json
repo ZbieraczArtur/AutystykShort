@@ -59,6 +59,17 @@
         "source": "data.json"
       }
     },
+          {
+      "type": "user",
+      "id": "user:robertbiedron",
+      "key": "robertbiedron",
+      "name": "Robert Biedroń",
+      "description": "Lorem ipsum placeholder lalala https://x.com/CusterKnuckle",
+      "logo": "images/Figury/Estymat_Biedron.webp",
+        "metadata": {
+        "source": "data.json"
+      }
+    },
             {
       "type": "user",
       "id": "user:janpawel",
