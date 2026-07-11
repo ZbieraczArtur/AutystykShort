@@ -44,7 +44,10 @@ const DEFAULT_UI_TEXTS = {
     expandBtn: 'Rozwin teze',
     collapseBtn: 'Zwin teze',
     skipIfBadge: 'Pomin jesli',
-    noDescription: 'Brak dodatkowego opisu.'
+    noDescription: 'Brak dodatkowego opisu.',
+    // ---- NOWE POLA DLA NOTATEK ----
+    noteLabel: '✏️ Uzasadnienie odpowiedzi (opcjonalne):',
+    notePlaceholder: 'Wpisz swoje uzasadnienie...'
   }
 };
 
@@ -761,23 +764,67 @@ function renderQuestions() {
       else if (label.includes('Częściowo nie zgadzam się') || label.includes('Somewhat disagree')) ansEl.classList.add('answer-mild-disagree');
       else if (label.includes('Zdecydowanie nie zgadzam się') || label.includes('Strongly disagree')) ansEl.classList.add('answer-strong-disagree');
       else if (label.includes('Pomiń') || label.includes('Skip')) ansEl.classList.add('answer-skip');
+      
+      // ===== ZMODYFIKOWANY KLIK (zachowanie notatki) =====
       ansEl.addEventListener('click', () => {
         const siblings = answersDiv.querySelectorAll('.answer-option');
         siblings.forEach(sib => sib.classList.remove('selected'));
         ansEl.classList.add('selected');
         const existing = userAnswers.findIndex(a => a.questionId === q.id);
+        // Pobierz notatkę z istniejącego wpisu, jeśli jest
+        const existingNote = (existing !== -1 && userAnswers[existing].note) ? userAnswers[existing].note : '';
         const answerObj = {
           questionId: q.id,
           answerIndex: ansIdx,
           answerValue: ans.value,
-          answerData: ans
+          answerData: ans,
+          note: existingNote   // <-- zachowujemy notatkę
         };
         if (existing !== -1) userAnswers[existing] = answerObj;
         else userAnswers.push(answerObj);
       });
+      // ==================================================
+      
       answersDiv.appendChild(ansEl);
     });
     card.appendChild(answersDiv);
+    
+    // ===== NOWE POLE NOTATKI =====
+    const noteDiv = document.createElement('div');
+    noteDiv.className = 'note-input-container';
+
+    const noteLabel = document.createElement('label');
+    noteLabel.textContent = translations?.ui?.noteLabel || '✏️ Uzasadnienie odpowiedzi (opcjonalne):';
+    noteLabel.className = 'note-label';
+
+    const noteTextarea = document.createElement('textarea');
+    noteTextarea.className = 'note-textarea';
+    noteTextarea.rows = 2;
+    noteTextarea.placeholder = translations?.ui?.notePlaceholder || 'Wpisz swoje uzasadnienie...';
+
+    // Jeśli w userAnswers istnieje już notatka dla tego pytania – wypełnij textarea
+    const existingNote = userAnswers.find(a => a.questionId === q.id);
+    if (existingNote && existingNote.note) {
+      noteTextarea.value = existingNote.note;
+    }
+
+    // Nasłuch na zmianę tekstu – aktualizujemy userAnswers
+    noteTextarea.addEventListener('input', (e) => {
+      const val = e.target.value.trim();
+      const existing = userAnswers.find(a => a.questionId === q.id);
+      if (existing) {
+        existing.note = val;
+      } else {
+        // Jeśli nie ma jeszcze wpisu dla tego pytania, tworzymy go z samą notatką
+        userAnswers.push({ questionId: q.id, note: val });
+      }
+    });
+
+    noteDiv.appendChild(noteLabel);
+    noteDiv.appendChild(noteTextarea);
+    card.appendChild(noteDiv);
+    // =============================
+
     questionsContainer.appendChild(card);
   });
   updateDOMSelections();
@@ -793,6 +840,13 @@ function updateDOMSelections() {
     if (!card) continue;
     const targetOption = card.querySelector(`.answer-option[data-answer-index='${ans.answerIndex}']`);
     if (targetOption) targetOption.classList.add('selected');
+
+    // ----- nowy kod: ustaw notatkę w textarea -----
+    const textarea = card.querySelector('.note-textarea');
+    if (textarea && ans.note !== undefined) {
+      textarea.value = ans.note;
+    }
+    // ----------------------------------------------
   }
 }
 
