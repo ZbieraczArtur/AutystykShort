@@ -71,6 +71,18 @@
         "source": "data.json"
       }
     },
+              {
+      "type": "user",
+      "id": "user:abdullahocalan",
+      "key": "AbdullahOcalan",
+      "name": "Abdullah Öcalan",
+      "description": "Lorem ipsum placeholder lalala https://x.com/CusterKnuckle",
+      "logo": "images/Figury/Estymat_Abdullah.jpg",
+      "exportCode": "",
+        "metadata": {
+        "source": "data.json"
+      }
+    },
             {
       "type": "user",
       "id": "user:janpawel",
