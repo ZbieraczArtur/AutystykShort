@@ -555,6 +555,48 @@
         "migratedAt": "2026-06-24"
       }
     },
+        {
+      "type": "ideology",
+      "id": "ideology:kemalizm",
+      "key": "Kemalizm",
+      "name": "Kemalizm",
+      "description": "",
+      "logo": "images/Ideologie/Kemalizm.svg",
+      "exportCode": "",
+      "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      }
+    },
+            {
+      "type": "ideology",
+      "id": "ideology:chavism",
+      "key": "Chavism",
+      "name": "Chavism",
+      "description": "",
+      "logo": "images/Ideologie/Chavismo.webp",
+      "exportCode": "",
+      "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      }
+    },
+            {
+      "type": "ideology",
+      "id": "ideology:socjalizmgildyjny",
+      "key": "socjalizmgildyjny",
+      "name": "Socjalizm gildyjny",
+      "description": "",
+      "logo": "images/Ideologie/Socjalizm_gildyjny.jpeg",
+      "exportCode": "",
+      "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      }
+    },
     {
       "type": "ideology",
       "id": "ideology:neokonserwatyzm",
