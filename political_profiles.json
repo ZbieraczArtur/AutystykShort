@@ -47,6 +47,16 @@
         "migratedAt": "2026-06-24"
       }
     },
+            {
+      "type": "user",
+      "id": "user:charliekirk",
+      "key": "CharlieKirk",
+      "name": "Charlie Kirk",
+      "description": "TBA",
+      "logo": "images/Figury/Estymat_Kirk.webp",
+      "exportCode": ""
+      }
+    },
       {
       "type": "user",
       "id": "user:adrianzandberg",
