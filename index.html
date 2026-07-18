@@ -13,6 +13,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 </head>
 <body>
+  <button id="floating-theme-toggle" class="floating-theme-toggle" type="button" aria-label="Przełącz tryb jasny lub ciemny">🌙</button>
+  <section id="landing-page" class="landing-page" aria-labelledby="landing-title">
+    <div class="landing-card">
+      <img src="images/ALogo.svg" alt="Logo NeoAutystyk" class="landing-logo">
+      <p class="landing-kicker">POLITYCZNY PROFIL WARTOŚCI</p>
+      <h1 id="landing-title">NeoAutystyk</h1>
+      <p class="landing-description">Poznaj swój profil polityczny, sprawdź zgodność z ideologiami, partiami i figurami politycznymi oraz zobacz wynik na kompasie wartości.</p>
+      <button id="start-full-test" class="landing-start" type="button">Rozpocznij pełny test <span aria-hidden="true">→</span></button>
+      <section class="landing-future" aria-label="Przyszłe funkcje">
+        <p>Wkrótce</p>
+        <div>
+          <button type="button" disabled>Krótki test</button>
+          <button type="button" disabled>Porównaj profile</button>
+          <button type="button" disabled>Twoje zapisy</button>
+        </div>
+      </section>
+    </div>
+  </section>
   <div class="container">
     <header>
       <div class="header-top">
@@ -43,6 +61,7 @@
       <div class="import-panel">
         <label id="importLabel">📂 Import odpowiedzi</label>
         <textarea id="importCodeArea" rows="2" placeholder="Wklej tutaj kod wyeksportowany z testu..."></textarea>
+        <label class="file-import-label">Lub wybierz plik .txt <input id="importFileInput" type="file" accept=".txt,text/plain"></label>
         <button id="importBtn" class="import-action-btn">📥 Importuj i odtwórz</button>
         <small id="importInfo">Wklej kod wygenerowany po poprzednim ukończeniu testu. Wszystkie odpowiedzi zostaną przywrócone, a wyniki przeliczone.</small>
       </div>
@@ -95,6 +114,7 @@
         <div id="ideologies-results"></div>
         <div id="parties-results"></div>
         <div id="users-results"></div>
+        <div id="figures-results"></div>
       </div>
 
       <!-- KOMPAS POLITYCZNY -->
@@ -114,8 +134,10 @@
           <label><input type="checkbox" id="toggle-parties"> 🏛️ Partie polityczne</label>
           <label><input type="checkbox" id="toggle-ideologies"> 💡 Ideologie</label>
           <label><input type="checkbox" id="toggle-users"> 🐻 Użytkownicy</label>
+          <label><input type="checkbox" id="toggle-figures"> 👤 Figury polityczne</label>
         </div>
-        <button id="open-compass-modal" class="open-modal-btn">🔍 Otwórz pełnoekranowy panel kompasu</button>
+        <div id="compass-tag-filters" class="tag-filters" aria-label="Filtry nakładek"></div>
+        <button id="open-compass-modal" class="open-modal-btn">🧭 Otwórz interaktywny kompas</button>
       </div>
     </div>
 
@@ -156,7 +178,9 @@
             <label><input type="checkbox" id="modal-toggle-parties"> 🏛️ Partie polityczne</label>
             <label><input type="checkbox" id="modal-toggle-ideologies"> 💡 Ideologie</label>
             <label><input type="checkbox" id="modal-toggle-users"> 🐻 Użytkownicy</label>
+            <label><input type="checkbox" id="modal-toggle-figures"> 👤 Figury polityczne</label>
           </div>
+          <div id="modal-compass-tag-filters" class="tag-filters" aria-label="Filtry nakładek"></div>
           <div id="creative-config-area" class="creative-config-area" style="display: none;">
             <h4>⚙️ Konfiguracja trybu kreatywnego</h4>
             <div class="creative-label-edit">
@@ -180,5 +204,6 @@
   <script src="compass-ui.js"></script>
   <script src="compass-enhancements.js"></script>
   <script src="modern-profile-engine.js"></script>
+  <script src="app-features.js"></script>
 </body>
 </html>
