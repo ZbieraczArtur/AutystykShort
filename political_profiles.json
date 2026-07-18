@@ -140,7 +140,7 @@
         "migratedAt": "2026-06-24"
       },
       "tags": [
-        "Pozaparlamentarne"
+        "Parlamentarne"
       ]
     },
     {
@@ -157,7 +157,7 @@
         "migratedAt": "2026-06-24"
       },
       "tags": [
-        "Pozaparlamentarne"
+        "Parlamentarne"
       ]
     },
     {
@@ -174,7 +174,7 @@
         "migratedAt": "2026-06-24"
       },
       "tags": [
-        "Pozaparlamentarne"
+        "Parlamentarne"
       ]
     },
     {
@@ -191,7 +191,7 @@
         "migratedAt": "2026-06-24"
       },
       "tags": [
-        "Pozaparlamentarne"
+        "Parlamentarne"
       ]
     },
     {
@@ -208,7 +208,7 @@
         "migratedAt": "2026-06-24"
       },
       "tags": [
-        "Pozaparlamentarne"
+        "Parlamentarne"
       ]
     },
     {
@@ -1805,16 +1805,42 @@
       "Zawód / dziedzina": [
         "Filozof",
         "Ekonomista",
-        "Polityk"
+        "Polityk",
+        "Rewolucjonista",
+        "Wojskowy",
+        "Prawnik",
+        "Przedsiębiorca",
+        "Duchowny",
+        "Socjolog",
+        "Publicysta",
+        "Pisarz",
+        "Ekolog"
       ],
       "Rola / urząd": [
         "Autokrata",
         "Prezydent",
-        "Premier"
+        "Premier",
+        "Monarcha",
+        "Papież",
+        "Dyktator",
+        "Parlamentarzysta",
+        "Myśliciel społeczny",
+        "Kanclerz",
+        "Więzień polityczny",
+        "Reformator",
+        "Założyciel partii/ruchu",
+        "Lider partii"
       ],
       "Narodowość": [
         "Amerykanin",
-        "Brytyjczyk"
+        "Brytyjczyk",
+        "Niemiec",
+        "Polak",
+        "Francuz",
+        "Rosjanin",
+        "Argentyńczyk",
+        "Włoch",
+        "Chińczyk"
       ],
       "Status": [
         "Żyje",
@@ -1878,9 +1904,15 @@
       },
       "tags": [
         "Polityk",
+        "Parlamentarzysta",
+        "Przedsiębiorca",
+        "Założyciel partii",
+        "Założyciel partii/ruchu",
+        "Polak",
         "Żyje",
         "Mężczyzna",
-        "Konserwatyzm"
+        "Konserwatyzm",
+        "XXI wiek"
       ]
     },
     {
@@ -1898,10 +1930,13 @@
       },
       "tags": [
         "Filozof",
+        "Ekolog",
+        "Anarchizm",
+        "Socjalizm",
         "Martwy",
         "Mężczyzna",
-        "XX wiek",
-        "Anarchizm"
+        "Amerykanin",
+        "XX wiek"
       ]
     },
     {
@@ -1917,9 +1952,13 @@
       },
       "tags": [
         "Polityk",
+        "Parlamentarzysta",
+        "Założyciel partii/ruchu",
+        "Socjalizm",
+        "Polak",
         "Żyje",
         "Mężczyzna",
-        "Socjalizm"
+        "XXI wiek"
       ]
     },
     {
@@ -1935,7 +1974,9 @@
       },
       "tags": [
         "Polityk",
-        "Żyje",
+        "Publicysta",
+        "Założyciel partii/ruchu",
+        "Martwy",
         "Mężczyzna",
         "Amerykanin",
         "Konserwatyzm"
@@ -1954,7 +1995,11 @@
       },
       "tags": [
         "Polityk",
+        "Parlamentarzysta",
+        "Liberalizm",
+        "Polak",
         "Żyje",
+        "XXI wiek",
         "Mężczyzna"
       ]
     },
@@ -1971,9 +2016,17 @@
       },
       "tags": [
         "Polityk",
+        "Rewolucjonista",
+        "Działacz społeczny",
+        "Założyciel partii/ruchu",
+        "Więzień polityczny",
+        "Inne",
+        "XX wiek",
+        "XXI wiek",
         "Żyje",
         "Mężczyzna",
-        "Nacjonalizm"
+        "Anarchizm",
+        "Socjalizm"
       ]
     },
     {
@@ -1988,10 +2041,14 @@
         "source": "data.json"
       },
       "tags": [
-        "Polityk",
+        "Duchowny",
+        "Papież",
+        "Filozof",
         "Martwy",
+        "Polak",
         "Mężczyzna",
         "XX wiek",
+        "XXI wiek",
         "Konserwatyzm"
       ]
     },
@@ -2007,9 +2064,13 @@
         "source": "data.json"
       },
       "tags": [
-        "Polityk",
-        "Żyje",
+        "Duchowny",
+        "Papież",
+        "Martwy",
+        "Argentyńczyk",
         "Mężczyzna",
+        "XX wiek",
+        "XXI wiek",
         "Konserwatyzm"
       ]
     },
@@ -2027,10 +2088,13 @@
       "tags": [
         "Polityk",
         "Prezydent",
+        "Przedsiębiorca",
+        "Nacjonalizm",
         "Żyje",
+        "XX wiek",
+        "XXI wiek",
         "Mężczyzna",
-        "Amerykanin",
-        "Konserwatyzm"
+        "Amerykanin"
       ]
     },
     {
@@ -2046,7 +2110,10 @@
       },
       "tags": [
         "Filozof",
+        "Publicysta",
         "Martwy",
+        "XX wiek",
+        "XXI wiek",
         "Mężczyzna",
         "Brytyjczyk",
         "Konserwatyzm"
@@ -2067,6 +2134,7 @@
       },
       "tags": [
         "Ekonomista",
+        "XX wiek",
         "Martwy",
         "Mężczyzna",
         "Brytyjczyk",
@@ -2088,9 +2156,17 @@
       },
       "tags": [
         "Polityk",
+        "Parlamentarzysta",
+        "Nacjonalizm",
+        "Konserwatyzm",
+        "Monarchizm",
+        "XX wiek",
+        "XXI wiek",
+        "Założyciel partii/ruchu",
+        "Lider partii",
+        "Polak",
         "Żyje",
-        "Mężczyzna",
-        "Konserwatyzm"
+        "Mężczyzna"
       ]
     },
     {
@@ -2106,9 +2182,13 @@
       },
       "tags": [
         "Filozof",
+        "Pisarz",
         "Martwy",
+        "Amerykanin",
+        "Rosjanin",
         "Kobieta",
         "XX wiek",
+        "Liberalizm",
         "Libertarianizm"
       ]
     },
@@ -2128,6 +2208,7 @@
         "Martwy",
         "Mężczyzna",
         "Amerykanin",
+        "XX wiek",
         "Libertarianizm"
       ]
     },
@@ -2144,9 +2225,16 @@
       },
       "tags": [
         "Polityk",
+        "Publicysta",
+        "Parlamentarzysta",
+        "Założyciel partii/ruchu",
+        "Lider partii",
         "Żyje",
         "Mężczyzna",
-        "Libertarianizm",
+        "Polak",
+        "XX wiek",
+        "XXI wiek",
+        "Konserwatyzm",
         "Monarchizm"
       ]
     },
@@ -2162,9 +2250,14 @@
         "source": "data.json"
       },
       "tags": [
-        "Autokrata",
+        "Przedsiębiorca",
+        "Monarcha",
         "Żyje",
         "Mężczyzna",
+        "Inne",
+        "XX wiek",
+        "XXI wiek",
+        "Liberalizm",
         "Monarchizm"
       ]
     },
@@ -2181,9 +2274,12 @@
       },
       "tags": [
         "Polityk",
+        "Parlamentarzysta",
         "Żyje",
+        "Polak",
+        "XXI wiek",
         "Mężczyzna",
-        "Libertarianizm"
+        "Liberalizm"
       ]
     },
     {
@@ -2200,9 +2296,10 @@
       "tags": [
         "Polityk",
         "Premier",
+        "Inne",
         "Martwy",
         "Mężczyzna",
-        "Socjalizm"
+        "XX wiek"
       ]
     },
     {
@@ -2217,8 +2314,12 @@
       "tags": [
         "Polityk",
         "Premier",
+        "Ekonomista",
+        "Polak",
         "Żyje",
         "Mężczyzna",
+        "XXI wiek",
+        "XX wiek",
         "Konserwatyzm"
       ]
     }
