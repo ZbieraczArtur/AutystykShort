@@ -4,15 +4,38 @@
 
   const TAG_CATALOG = {
     figures: {
-      'Zawód / dziedzina': ['Filozof', 'Ekonomista', 'Polityk'],
-      'Rola / urząd': ['Autokrata', 'Prezydent', 'Premier'],
-      'Narodowość': ['Amerykanin', 'Brytyjczyk'],
-      Status: ['Żyje', 'Martwy'], Płeć: ['Kobieta', 'Mężczyzna'],
+      'Zawód / dziedzina': [
+        'Filozof', 'Ekonomista', 'Polityk', 'Rewolucjonista',
+        'Wojskowy', 'Prawnik', 'Przedsiębiorca', 'Duchowny',
+        'Socjolog', 'Publicysta', 'Pisarz', 'Ekolog'
+      ],
+      'Rola / urząd': [
+        'Autokrata', 'Prezydent', 'Premier', 'Monarcha',
+        'Papież', 'Dyktator', 'Parlamentarzysta',
+        'Myśliciel społeczny', 'Kanclerz', 'Więzień polityczny',
+        'Reformator', 'Założyciel partii/ruchu', 'Lider partii'
+      ],
+      'Narodowość': [
+        'Amerykanin', 'Brytyjczyk', 'Niemiec', 'Polak',
+        'Francuz', 'Rosjanin', 'Argentyńczyk', 'Włoch', 'Chińczyk'
+      ],
+      Status: ['Żyje', 'Martwy'],
+      Płeć: ['Kobieta', 'Mężczyzna'],
       'Okres życia': ['XVII wiek', 'XVIII wiek', 'XIX wiek', 'XX wiek', 'XXI wiek'],
-      Ideologia: ['Liberalizm', 'Libertarianizm', 'Konserwatyzm', 'Socjalizm', 'Komunizm', 'Faszyzm', 'Nacjonalizm', 'Monarchizm', 'Anarchizm', 'Republikanizm']
+      Ideologia: [
+        'Liberalizm', 'Libertarianizm', 'Konserwatyzm', 'Socjalizm',
+        'Komunizm', 'Faszyzm', 'Nacjonalizm', 'Monarchizm',
+        'Anarchizm', 'Republikanizm'
+      ]
     },
     parties: { Status: ['Parlamentarne', 'Pozaparlamentarne'] },
-    ideologies: { Kierunek: ['Lewicowe', 'Prawicowe', 'Centrowe', 'Liberalne', 'Konserwatywne', 'Socjalistyczne', 'Libertariańskie', 'Anarchistyczne', 'Monarchistyczne'] }
+    ideologies: {
+      Kierunek: [
+        'Lewicowe', 'Prawicowe', 'Centrowe', 'Liberalne',
+        'Konserwatywne', 'Socjalistyczne', 'Libertariańskie',
+        'Anarchistyczne', 'Monarchistyczne'
+      ]
+    }
   };
   const selectedTags = new Set();
   const originalCreateRankingSection = window.createRankingSection || createRankingSection;
