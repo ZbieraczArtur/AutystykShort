@@ -33,6 +33,8 @@ const extraPairs = [
   { id: "ex14", axis: null, negativeLabel: "Suprematyzm biologiczny", positiveLabel: "Egalitaryzm biologiczny", weight: 1, institutional: false, extra: true },
   { id: "ex15", axis: null, negativeLabel: "Ekocentryzm", positiveLabel: "Antropocentryzm", weight: 1, institutional: false, extra: true },
   { id: "ex16", axis: null, negativeLabel: "Prymitywizm", positiveLabel: "Postęp technologiczny", weight: 1, institutional: false, extra: true }
+  ,{ id: "ex17", axis: null, negativeLabel: "Transformacja", positiveLabel: "Stabilność", weight: 1, institutional: false, extra: true }
+  ,{ id: "ex18", axis: null, negativeLabel: "Projektywizm", positiveLabel: "Retrospektywizm", weight: 1, institutional: false, extra: true }
 ];
 
 const allCompassPairs = [...corePairs, ...extraPairs];
@@ -79,4 +81,3 @@ function computeCoordinatesFromValues(valuesMap, mode, creativeConfig = { active
 window.corePairs = corePairs;
 window.extraPairs = extraPairs;
 window.allCompassPairs = [...corePairs, ...extraPairs];
-
