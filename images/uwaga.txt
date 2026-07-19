@@ -1,0 +1,228 @@
+Wprowadź poniższe zmiany do mojego programu. Zachowaj całą istniejącą funkcjonalność, strukturę projektu oraz kompatybilność ze starymi plikami danych. Zmiany mają być wdrożone w sposób spójny, nowoczesny i estetyczny. Napisz kompletny kod gotowy do podmiany, bez skrótów, pseudokodu i pomijania fragmentów.
+
+1. Modernizacja UI/UX
+
+Przeprojektuj interfejs tak, aby był wizualnie nowoczesny, spójny i czytelny.
+
+Obszary wymagające poprawy:
+
+* ekran startowy (obecna kolorystyka nie pasuje do reszty aplikacji),
+* tryb ciemny (napraw problem zlewającego się tekstu z tłem),
+* ekran importu/wczytywania kodu eksportu,
+* elementy rankingów,
+* filtry i sortowanie.
+
+Wymagania:
+
+* zachować obecny charakter aplikacji,
+* poprawić kontrast, czytelność i hierarchię informacji,
+* ograniczyć wizualny chaos,
+* zastosować bardziej współczesne komponenty UI,
+* zapewnić pełną responsywność.
+
+2. Dodanie figur politycznych
+
+Rozszerz system o nową kategorię: figury polityczne.
+
+Figury polityczne mają działać analogicznie do:
+
+* użytkowników,
+* partii,
+* ideologii.
+
+Powinny:
+
+* posiadać własne profile,
+* uczestniczyć w rankingach,
+* uczestniczyć w obliczeniach wyników,
+* być obsługiwane przez eksport i import danych,
+* być uwzględniane w trybie deweloperskim.
+
+3. Ukrycie tagów w rankingach
+
+Obecnie tagi są stale widoczne, co powoduje nadmierny szum informacyjny.
+
+Zmień działanie tak, aby:
+
+* tagi nie były widoczne bezpośrednio w rankingach,
+* tagi były wyświetlane dopiero po kliknięciu danego elementu,
+* po kliknięciu otwierał się popup/modal ze szczegółami,
+* w popupie znajdowały się wszystkie tagi, opisy i dodatkowe informacje.
+
+4. Przebudowa systemu filtrowania i sortowania
+
+Obecny system jest zbyt chaotyczny.
+
+Przeprojektuj go tak, aby:
+
+* był bardziej kompaktowy,
+* zajmował mniej miejsca,
+* nie wyświetlał jednocześnie wszystkich tagów,
+* był intuicyjny dla użytkownika.
+
+Możliwe rozwiązania:
+
+* zakładki,
+* menu rozwijane,
+* panele boczne,
+* grupowanie filtrów.
+
+Najważniejszy cel:
+maksymalna czytelność i estetyka.
+
+5. Poprawa działania nakładek figur
+
+Aktualne zachowanie jest niespójne.
+
+Nowe działanie:
+
+* po aktywowaniu nakładki „Figury” wszystkie podkategorie powinny być początkowo widoczne,
+* dopiero zaznaczenie konkretnego filtra ma ukrywać niepasujące elementy,
+* logika filtrowania ma działać identycznie jak w pozostałych sekcjach.
+
+Dodatkowo:
+
+* awatary figur politycznych mają być wyświetlane w okrągłych ramkach,
+* wygląd ma być identyczny jak dla użytkowników,
+* usuń obecny kwadratowy styl.
+
+6. System pytań dynamicznych
+
+Dodaj obsługę pytań warunkowych w data.json.
+
+Każde pytanie może posiadać opcjonalne pola:
+
+```json
+{
+  "id": 81,
+  "require_yes": [10, 20],
+  "require_no": [6, 12]
+}
+```
+
+Znaczenie:
+
+* require_yes = pytania, które muszą mieć odpowiedź pozytywną,
+* require_no = pytania, które muszą mieć odpowiedź negatywną.
+
+Pytanie pojawia się wyłącznie wtedy, gdy wszystkie warunki są spełnione.
+
+Jeżeli warunki nie są spełnione:
+
+* pytanie pozostaje ukryte,
+* użytkownik go nie widzi,
+* pytanie nie pojawia się w nawigacji.
+
+Na start zaimplementuj i przetestuj następującą regułę:
+
+* jeśli pytanie ID 82 otrzyma odpowiedź negatywną, pokaż pytanie ID 81,
+* jeśli pytanie ID 82 otrzyma odpowiedź pozytywną, pytanie ID 81 pozostaje ukryte.
+
+Dodatkowe wymagania:
+
+* pytania bez warunków są dostępne od początku,
+* system musi obsługiwać dowolną liczbę zależności,
+* rozwiązanie ma być łatwe do dalszej rozbudowy.
+
+7. Automatyczne przypisywanie Neither dla pytań ukrytych
+
+Wprowadź nowy stan odpowiedzi: Neither.
+
+Dla wszystkich pytań, które:
+
+* są ukryte,
+* nie zostały aktywowane,
+* nie zostały wyświetlone użytkownikowi,
+
+system automatycznie zapisuje odpowiedź Neither.
+
+Nie zapisuj dla nich odpowiedzi „Pomiń”.
+
+8. Ukryty tryb deweloperski
+
+Dodaj ukryty tryb deweloperski.
+
+Aktywacja:
+
+* w interfejsie ma znajdować się emoji 🐻,
+* emoji powinno wyglądać niepozornie,
+* powinno być dostępne przez cały czas działania testu,
+* szybkie podwójne kliknięcie przełącza tryb deweloperski,
+* pojedyncze kliknięcie nie wykonuje żadnej akcji.
+
+Tryb ma działać jak przełącznik ON/OFF.
+
+9. Funkcja A – podgląd danych źródłowych
+
+Po aktywacji trybu deweloperskiego pod każdym pytaniem pojawia się zwijany panel.
+
+Domyślnie:
+
+* panel jest zamknięty.
+
+Po rozwinięciu pokazuje:
+
+* wartości odpowiedzi z data.json,
+* ideologie przypisane do odpowiedzi,
+* partie przypisane do odpowiedzi,
+* użytkowników przypisanych do odpowiedzi,
+* figury polityczne przypisane do odpowiedzi.
+
+Dane mają być pobierane bezpośrednio z aktualnych źródeł programu.
+
+10. Funkcja B – przycisk Neither
+
+Widoczny wyłącznie w trybie deweloperskim.
+
+Wymagania:
+
+* znajduje się obok przycisku „Pomiń”,
+* jest czerwony,
+* wyraźnie odróżnia się wizualnie,
+* etykieta: „Neither”.
+
+Po wyłączeniu trybu deweloperskiego przycisk całkowicie znika.
+
+11. Funkcja C – wielokrotny wybór odpowiedzi
+
+W trybie deweloperskim użytkownik może:
+
+* zaznaczyć więcej niż jedną odpowiedź dla tego samego pytania,
+* odznaczyć wcześniej wybraną odpowiedź,
+* tworzyć dowolne kombinacje odpowiedzi.
+
+Po wyłączeniu trybu deweloperskiego:
+
+* zachowanie wraca do standardowego trybu jednokrotnego wyboru.
+
+12. Logika działania Neither
+
+Neither służy głównie do obsługi pytań dynamicznych i sytuacji, w których pytanie nie powinno wpływać pozytywnie na żaden profil.
+
+Po wybraniu Neither:
+
+Dla każdej ideologii, partii, użytkownika i figury politycznej:
+
+* każda odpowiedź merytoryczna otrzymuje wagę -1.0,
+* odpowiedź „Pomiń” otrzymuje wagę 0.
+
+Przykład:
+
+Pytanie ID=1 ustawione jako Neither:
+
+* Zdecydowanie zgadzam się = -1.0
+* Częściowo zgadzam się = -1.0
+* Częściowo nie zgadzam się = -1.0
+* Zdecydowanie nie zgadzam się = -1.0
+* Pomiń = 0
+
+Neither nie jest widoczny dla zwykłych użytkowników.
+
+13. Wymagania techniczne
+
+* Zachowaj pełną zgodność wsteczną z istniejącymi plikami.
+* Nie usuwaj żadnej obecnej funkcjonalności.
+* Nie zmieniaj sposobu działania importu i eksportu poza rozszerzeniem o figury polityczne i stan Neither.
+* Wszystkie nowe funkcje mają działać zarówno w trybie jasnym, jak i ciemnym.
+* Kod ma być kompletny, produkcyjny i gotowy do uruchomienia bez dodatkowych poprawek.
+* Jeżeli istnieją ograniczenia architektury obecnego projektu, dostosuj implementację tak, aby zmiany były możliwie najmniej inwazyjne dla istniejącego kodu.
