@@ -149,6 +149,7 @@ Aktywacja:
 * powinno być dostępne przez cały czas działania testu,
 * szybkie podwójne kliknięcie przełącza tryb deweloperski,
 * pojedyncze kliknięcie nie wykonuje żadnej akcji.
+* Po włączeniu powinno pojawić się subtelne powiadomienie Tryb deweloperski włączony/wyłączony
 
 Tryb ma działać jak przełącznik ON/OFF.
 
@@ -218,7 +219,12 @@ Pytanie ID=1 ustawione jako Neither:
 
 Neither nie jest widoczny dla zwykłych użytkowników.
 
-13. Wymagania techniczne
+13. Gdy tryb deweloperski jest aktywny, na końcu programu kod eksportu powinien się zmienić na "Deweloperski kod eksportu" z lekko inną strukturą. Wyniki muszą wyświetlać się w jednej ciągłej linii w formacie dokładnie takim jak poniżej (wszystkie wpisy w jednej linii rozdzielone średnikami ze spacją, bez znaków nowej linii między nimi):
+0:(Brak odpowiedzi); 1:(Zdecydowanie zgadzam się); 2:(Zdecydowanie nie zgadzam się); ...; 393:(Zdecydowanie zgadzam się); (zachowaj strukturę `ID:(Odpowiedź);` dla wszystkich pytań).
+W normalnym trybie (gdy tryb deweloperski jest wyłączony) wyniki mają nadal wyświetlać się w dotychczasowym formacie (każda odpowiedź w nowej linii, poprzedzona datą wykonania testu). 
+Dodaj prosty przełącznik lub flagę w kodzie (np. `DEV_MODE = True/False`), aby łatwo sterować tym trybem.
+
+14. Wymagania techniczne
 
 * Zachowaj pełną zgodność wsteczną z istniejącymi plikami.
 * Nie usuwaj żadnej obecnej funkcjonalności.
