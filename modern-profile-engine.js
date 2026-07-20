@@ -256,10 +256,9 @@
       const userAnswer = answersByQuestion.get(Number(question.id));
       const allowed = reference.get(Number(question.id));
       const userValue = userAnswer ? Number(userAnswer.answerValue) : 0;
-      const questionWeight = Number(question.weight || 1);
       const best = allowed?.length ? Math.max(...allowed.map(answer => profilePairScoreModern(userValue, answer))) : 0;
-      score += best * questionWeight;
-      maxPossible += 1.5 * questionWeight;
+      score += best;
+      maxPossible += 1.5;
       compared++;
     }
 
@@ -315,9 +314,6 @@
   function syncProfilesIntoConfig() {
     if (!config || !politicalProfiles) return;
     if (Array.isArray(politicalProfiles.users)) config.users = politicalProfiles.users;
-    // Dane prezentacyjne i profile należą do political_profiles.json; data.json zawiera tylko test.
-    if (Array.isArray(politicalProfiles.parties)) config.parties = politicalProfiles.parties;
-    if (Array.isArray(politicalProfiles.ideologies)) config.ideologies = politicalProfiles.ideologies;
 
     for (const type of ['party', 'ideology']) {
       const legacyList = getLegacyCollection(type);
