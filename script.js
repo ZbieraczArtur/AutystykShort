@@ -395,7 +395,7 @@ const categoryMapping = {
   "Różnorodność norm": 2, "Demokracja": 2, "Autokracja": 2,
   "Własność kolektywna": 3, "Planowanie": 3, "Regulacja instytucjonalna": 3, "Ograniczanie wymiany": 3,
   "Minimalizacja granic": 4, "Uniwersalizm humanistyczny": 4, "Interwencjonizm zagraniczny": 4,
-  "Preferencja użycia siły": 5, "Rewolucja": 5, "Transformacja": 5, "Projektywizm": 5, "Progresywizm": 5, "Pluralizm kulturowy": 5,
+  "Preferencja użycia siły": 5, "Rewolucja": 5, "Progresywizm": 5, "Pluralizm kulturowy": 5,
   "Neutralność religijna": 5, "Włączanie": 5, "Egalitaryzm biologiczny": 5,
   "Antropocentryzm": 6, "Postęp technologiczny": 6
 };
@@ -418,7 +418,7 @@ const valueColors = {
   "Regulacja instytucjonalna": "#E44341", "Samoregulacja": "#448A3A", "Ograniczanie wymiany": "#E44341", "Swobodna wymiana": "#448A3A",
   "Minimalizacja granic": "#4C59CB", "Kontrola granic": "#FFA219", "Uniwersalizm humanistyczny": "#4C59CB", "Partykularyzm narodowy": "#FFA219",
   "Interwencjonizm zagraniczny": "#4C59CB", "Izolacjonizm": "#FFA219", "Preferencja użycia siły": "#DD59C7", "Unikanie przemocy": "#86D040",
-  "Rewolucja": "#DD59C7", "Gradualizm": "#86D040", "Transformacja": "#DD59C7", "Stabilność": "#86D040", "Projektywizm": "#DD59C7", "Retrospektywizm": "#86D040", "Progresywizm": "#DD59C7", "Konserwatyzm": "#86D040",
+  "Rewolucja": "#DD59C7", "Gradualizm": "#86D040", "Progresywizm": "#DD59C7", "Konserwatyzm": "#86D040",
   "Pluralizm kulturowy": "#DD59C7", "Homogenizacja": "#86D040", "Neutralność religijna": "#DD59C7", "Instytucjonalna religia": "#86D040",
   "Włączanie": "#DD59C7", "Wykluczenie": "#86D040", "Egalitaryzm biologiczny": "#DD59C7", "Suprematyzm biologiczny": "#86D040",
   "Wolność ekspresji": "#FECB1D", "Cenzura": "#613B28", "Antropocentryzm": "#E57160", "Ekocentryzm": "#14832A",
@@ -890,7 +890,6 @@ function createExportSection() {
     <p>${exportDesc}</p>
     <textarea id="exportCodeArea" class="export-code" rows="5" readonly></textarea>
     <button id="copyExportBtn" class="copy-export-btn">${copyBtnText}</button>
-    <button id="downloadExportBtn" class="copy-export-btn" type="button">💾 Pobierz plik .txt</button>
   `;
   const textarea = exportDiv.querySelector('#exportCodeArea');
   textarea.value = generateExportCode();
@@ -901,16 +900,6 @@ function createExportSection() {
       copyBtn.textContent = '✅ ' + (translations?.ui?.copied || 'Skopiowano!');
       setTimeout(() => { copyBtn.textContent = copyBtnText; }, 2000);
     }).catch(() => showPopup(translations?.ui?.copyError || 'Nie udało się skopiować. Zaznacz kod ręcznie.'));
-  });
-  exportDiv.querySelector('#downloadExportBtn').addEventListener('click', () => {
-    const now = new Date();
-    const date = [String(now.getDate()).padStart(2, '0'), String(now.getMonth() + 1).padStart(2, '0'), now.getFullYear()].join('.');
-    const blob = new Blob([textarea.value], { type: 'text/plain;charset=utf-8' });
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(blob);
-    link.download = `NeoAutystyk_Wynik_${date}.txt`;
-    link.click();
-    URL.revokeObjectURL(link.href);
   });
   return exportDiv;
 }
@@ -1007,20 +996,6 @@ function setupImportExport() {
       }
     });
   }
-  const importFile = document.getElementById('importFileInput');
-  importFile?.addEventListener('change', async () => {
-    const file = importFile.files?.[0];
-    if (!file) return;
-    try {
-      const code = await file.text();
-      if (!code.trim()) throw new Error('Plik jest pusty.');
-      const success = importAnswersFromExportCode(code);
-      showPopup(success ? `Zaimportowano odpowiedzi z pliku „${file.name}”.` : `Nie udało się odczytać odpowiedzi z pliku „${file.name}”. Upewnij się, że jest to plik eksportu NeoAutystyk.`);
-      if (success) questionsContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } catch (error) {
-      showPopup(`Nie udało się odczytać pliku: ${error.message || 'nieznany błąd'}`);
-    } finally { importFile.value = ''; }
-  });
 }
 
 function computeScores(mode = currentScoringMode) {
@@ -1040,23 +1015,22 @@ function computeScores(mode = currentScoringMode) {
     const weight = ans.answerValue;
     if (weight === 0) continue;
     const answer = ans.answerData;
-    const questionWeight = Number(config.questions.find(q => Number(q.id) === Number(ans.questionId))?.weight || 1);
-    const absWeight = Math.abs(weight) * questionWeight;
+    const absWeight = Math.abs(weight);
 
     if (currentMatchingMode === 'legacy' && mode === 'full') {
       for (const ideo of (answer.ideologies_for || [])) {
         const rec = ideologyScores.get(ideo);
-        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5 * questionWeight; if (weight > 0) rec.agreements++; else rec.disagreements++; }
+        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; if (weight > 0) rec.agreements++; else rec.disagreements++; }
       }
       for (const ideo of (answer.ideologies_against || [])) {
         const rec = ideologyScores.get(ideo);
-        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5 * questionWeight; if (weight < 0) rec.agreements++; else rec.disagreements++; }
+        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; if (weight < 0) rec.agreements++; else rec.disagreements++; }
       }
     } else if (currentMatchingMode === 'legacy') {
       if (weight > 0) {
         for (const ideo of (answer.ideologies_for || [])) {
           const rec = ideologyScores.get(ideo);
-          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5 * questionWeight; rec.agreements++; }
+          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; rec.agreements++; }
         }
       }
     }
@@ -1064,17 +1038,17 @@ function computeScores(mode = currentScoringMode) {
     if (currentMatchingMode === 'legacy' && mode === 'full') {
       for (const party of (answer.parties_for || [])) {
         const rec = partyScores.get(party);
-        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5 * questionWeight; if (weight > 0) rec.agreements++; else rec.disagreements++; }
+        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; if (weight > 0) rec.agreements++; else rec.disagreements++; }
       }
       for (const party of (answer.parties_against || [])) {
         const rec = partyScores.get(party);
-        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5 * questionWeight; if (weight < 0) rec.agreements++; else rec.disagreements++; }
+        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; if (weight < 0) rec.agreements++; else rec.disagreements++; }
       }
     } else if (currentMatchingMode === 'legacy') {
       if (weight > 0) {
         for (const party of (answer.parties_for || [])) {
           const rec = partyScores.get(party);
-          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5 * questionWeight; rec.agreements++; }
+          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; rec.agreements++; }
         }
       }
     }
@@ -1082,17 +1056,17 @@ function computeScores(mode = currentScoringMode) {
     if (mode === 'full') {
       for (const val of (answer.values_for || [])) {
         const rec = valueScores.get(val);
-        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5 * questionWeight; }
+        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
       }
       for (const val of (answer.values_against || [])) {
         const rec = valueScores.get(val);
-        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5 * questionWeight; }
+        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; }
       }
     } else {
       if (weight > 0) {
         for (const val of (answer.values_for || [])) {
           const rec = valueScores.get(val);
-          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5 * questionWeight; }
+          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
         }
       }
     }
@@ -1952,23 +1926,22 @@ function computeScoresForAnswers(answers, mode) {
     const weight = ans.answerValue;
     if (weight === 0) continue;
     const answer = ans.answerData;
-    const questionWeight = Number(config.questions.find(q => Number(q.id) === Number(ans.questionId))?.weight || 1);
-    const absWeight = Math.abs(weight) * questionWeight;
+    const absWeight = Math.abs(weight);
 
     if (mode === 'full') {
       for (const ideo of (answer.ideologies_for || [])) {
         const rec = ideologyScores.get(ideo);
-        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5 * questionWeight; }
+        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
       }
       for (const ideo of (answer.ideologies_against || [])) {
         const rec = ideologyScores.get(ideo);
-        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5 * questionWeight; }
+        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; }
       }
     } else {
       if (weight > 0) {
         for (const ideo of (answer.ideologies_for || [])) {
           const rec = ideologyScores.get(ideo);
-          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5 * questionWeight; }
+          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
         }
       }
     }
@@ -1977,17 +1950,17 @@ function computeScoresForAnswers(answers, mode) {
     if (mode === 'full') {
       for (const val of (answer.values_for || [])) {
         const rec = valueScores.get(val);
-        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5 * questionWeight; }
+        if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
       }
       for (const val of (answer.values_against || [])) {
         const rec = valueScores.get(val);
-        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5 * questionWeight; }
+        if (rec) { rec.sum -= absWeight; rec.maxPossible += 1.5; }
       }
     } else {
       if (weight > 0) {
         for (const val of (answer.values_for || [])) {
           const rec = valueScores.get(val);
-          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5 * questionWeight; }
+          if (rec) { rec.sum += absWeight; rec.maxPossible += 1.5; }
         }
       }
     }
