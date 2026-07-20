@@ -1,234 +1,110 @@
-Wprowadź poniższe zmiany do mojego programu. Zachowaj całą istniejącą funkcjonalność, strukturę projektu oraz kompatybilność ze starymi plikami danych. Zmiany mają być wdrożone w sposób spójny, nowoczesny i estetyczny. Napisz kompletny kod gotowy do podmiany, bez skrótów, pseudokodu i pomijania fragmentów.
+Wprowadź jeszcze kilka zmian
 
-1. Modernizacja UI/UX
+1. Dodaj możliwość symulowania wyników figur politycznych, podobnie jak partii i ideologii
 
-Przeprojektuj interfejs tak, aby był wizualnie nowoczesny, spójny i czytelny.
+2. Dodaj nową opcję - Dodanie porównywarki
+Dodaj do aplikacji nową funkcję: rozbudowaną porównywarkę wyników testu politycznego znajdującą się bezpośrednio pod ekranem końcowego wyniku użytkownika.
 
-Obszary wymagające poprawy:
+Przy porównywarce dodaj funkcje dodawania wyników znajomych/swoich starych przez kod importowy
 
-* ekran startowy (obecna kolorystyka nie pasuje do reszty aplikacji),
-* tryb ciemny (napraw problem zlewającego się tekstu z tłem),
-* ekran importu/wczytywania kodu eksportu,
-* elementy rankingów,
-* filtry i sortowanie.
+- Po imporcie kodu znajomego lub starego wyniku:
+  - wynik automatycznie pojawia się na kompasie,
+  - zostaje zapisany jako dostępny użytkownik w porównywarce,
+- Cała funkcja szczegółowego porównania zostaje przeniesiona pod wynik testu.
 
-Wymagania:
+Pod wynikiem testu utwórz nowy panel "Porównywarka".
 
-* zachować obecny charakter aplikacji,
-* poprawić kontrast, czytelność i hierarchię informacji,
-* ograniczyć wizualny chaos,
-* zastosować bardziej współczesne komponenty UI,
-* zapewnić pełną responsywność.
+Panel powinien mieć dwie główne zakładki:
 
-2. Dodanie figur politycznych
+1. "Porównaj z..."
+- domyślny widok,
+- pozwala porównać wynik użytkownika z obiektami zapisanymi w teście:
+  - ideologie,
+  - partie,
+  - stałe profile użytkowników dodane przez autora testu.
+  - figury
+- na dole/obok dodaj rozwijane menu filtrowania podobne do obecnej funkcji symulowania wyników:
+  - Wszystko,
+  - lista ideologii,
+  - lista partii,
+  - lista użytkowników.
+  - lista figur politycznych
 
-Rozszerz system o nową kategorię: figury polityczne.
+2. "Ze znajomym"
+- pozwala wkleić kod importowy innego wyniku,
+- po dodaniu kodu wynik jest zapisywany i dodawany również do kompasu,
+- można porównywać:
+  - znajomych,
+  - własne stare wyniki,
+  - dowolne poprawnie zaimportowane kody.
 
-Figury polityczne mają działać analogicznie do:
+Interfejs porównywarki:
 
-* użytkowników,
-* partii,
-* ideologii.
+Domyślnie pokazuj 50 pytań.
+Dodaj przyciski:
+- "+50 pytań",
+- "Pokaż wszystko".
 
-Powinny:
+Każde pytanie powinno być początkowo zwinięte i pokazywać tylko nazwę/treść skróconą.
 
-* posiadać własne profile,
-* uczestniczyć w rankingach,
-* uczestniczyć w obliczeniach wyników,
-* być obsługiwane przez eksport i import danych,
-* być uwzględniane w trybie deweloperskim.
+Dodaj:
+- rozwinięcie/zwinięcie pojedynczego pytania,
+- przycisk "Rozwiń/Zwiń wszystkie"
 
-3. Ukrycie tagów w rankingach
+Po rozwinięciu pytania pokazuj:
 
-Obecnie tagi są stale widoczne, co powoduje nadmierny szum informacyjny.
+- pełną treść pytania,
+- skalę odpowiedzi:
+  - Zdecydowanie się zgadzam,
+  - Częściowo się zgadzam,
+  - Neutralnie,
+  - Częściowo się nie zgadzam,
+  - Zdecydowanie się nie zgadzam.
 
-Zmień działanie tak, aby:
+Jeśli porównujemy wynik z jakąś partią/ideologią/userem pamiętaj by na pod odpowiedziami dodaj (jeśli występuje) pole tekstowe:
+"Uzasadnienie swojej odpowiedzi"
+"Uzasadnienie odpowiedzi partii/ideologii/użytkownika"
 
-* tagi nie były widoczne bezpośrednio w rankingach,
-* tagi były wyświetlane dopiero po kliknięciu danego elementu,
-* po kliknięciu otwierał się popup/modal ze szczegółami,
-* w popupie znajdowały się wszystkie tagi, opisy i dodatkowe informacje.
+Odpowiedź wybrana przez aktualnego użytkownika musi być wizualnie wyróżniona.
 
-4. Przebudowa systemu filtrowania i sortowania
+W widoku "Porównaj z...":
 
-Obecny system jest zbyt chaotyczny.
+Przy każdej odpowiedzi dodaj rozwijane kolumny:
 
-Przeprojektuj go tak, aby:
+1. Ideologie
+2. Partie
+3. Użytkownicy
+4. Figury
 
-* był bardziej kompaktowy,
-* zajmował mniej miejsca,
-* nie wyświetlał jednocześnie wszystkich tagów,
-* był intuicyjny dla użytkownika.
+W każdej kolumnie pokazuj wszystkie pasujące obiekty wraz z ich logotypami.
 
-Możliwe rozwiązania:
+Kliknięcie logotypu powinno otwierać popup zawierający:
+- nazwę,
+- opis,
+- informacje,
+- dane pobrane z istniejących plików JSON.
 
-* zakładki,
-* menu rozwijane,
-* panele boczne,
-* grupowanie filtrów.
+W widoku "Ze znajomym":
 
-Najważniejszy cel:
-maksymalna czytelność i estetyka.
+Na samej górze dodaj podsumowanie zgodności:
+- procent podobieństwa,
+- prosty wizualny diagram zgodności.
 
-5. Poprawa działania nakładek figur
+Następnie przy każdym pytaniu pokazuj:
 
-Aktualne zachowanie jest niespójne.
+- odpowiedź użytkownika,
+- odpowiedź znajomego,
+- wizualne oznaczenie:
+  - zgodne,
+  - częściowo zgodne,
+  - niezgodne.
 
-Nowe działanie:
+W każdej chwili użytkownik musi móc przełączać:
+- porównanie z ideologiami/partiami/użytkownikami,
+- porównanie z importowanymi wynikami.
 
-* po aktywowaniu nakładki „Figury” wszystkie podkategorie powinny być początkowo widoczne,
-* dopiero zaznaczenie konkretnego filtra ma ukrywać niepasujące elementy,
-* logika filtrowania ma działać identycznie jak w pozostałych sekcjach.
+Nie usuwaj obecnych funkcji kompasu ani systemu kodów importowych. Zmień jedynie architekturę tak, aby importowane wyniki zasilały zarówno kompas, jak i nową porównywarkę.
 
-Dodatkowo:
-
-* awatary figur politycznych mają być wyświetlane w okrągłych ramkach,
-* wygląd ma być identyczny jak dla użytkowników,
-* usuń obecny kwadratowy styl.
-
-6. System pytań dynamicznych
-
-Dodaj obsługę pytań warunkowych w data.json.
-
-Każde pytanie może posiadać opcjonalne pola:
-
-```json
-{
-  "id": 81,
-  "require_yes": [10, 20],
-  "require_no": [6, 12]
-}
-```
-
-Znaczenie:
-
-* require_yes = pytania, które muszą mieć odpowiedź pozytywną,
-* require_no = pytania, które muszą mieć odpowiedź negatywną.
-
-Pytanie pojawia się wyłącznie wtedy, gdy wszystkie warunki są spełnione.
-
-Jeżeli warunki nie są spełnione:
-
-* pytanie pozostaje ukryte,
-* użytkownik go nie widzi,
-* pytanie nie pojawia się w nawigacji.
-
-Na start zaimplementuj i przetestuj następującą regułę:
-
-* jeśli pytanie ID 82 otrzyma odpowiedź negatywną, pokaż pytanie ID 81,
-* jeśli pytanie ID 82 otrzyma odpowiedź pozytywną, pytanie ID 81 pozostaje ukryte.
-
-Dodatkowe wymagania:
-
-* pytania bez warunków są dostępne od początku,
-* system musi obsługiwać dowolną liczbę zależności,
-* rozwiązanie ma być łatwe do dalszej rozbudowy.
-
-7. Automatyczne przypisywanie Neither dla pytań ukrytych
-
-Wprowadź nowy stan odpowiedzi: Neither.
-
-Dla wszystkich pytań, które:
-
-* są ukryte,
-* nie zostały aktywowane,
-* nie zostały wyświetlone użytkownikowi,
-
-system automatycznie zapisuje odpowiedź Neither.
-
-Nie zapisuj dla nich odpowiedzi „Pomiń”.
-
-8. Ukryty tryb deweloperski
-
-Dodaj ukryty tryb deweloperski.
-
-Aktywacja:
-
-* w interfejsie ma znajdować się emoji 🐻,
-* emoji powinno wyglądać niepozornie,
-* powinno być dostępne przez cały czas działania testu,
-* szybkie podwójne kliknięcie przełącza tryb deweloperski,
-* pojedyncze kliknięcie nie wykonuje żadnej akcji.
-* Po włączeniu powinno pojawić się subtelne powiadomienie Tryb deweloperski włączony/wyłączony
-
-Tryb ma działać jak przełącznik ON/OFF.
-
-9. Funkcja A – podgląd danych źródłowych
-
-Po aktywacji trybu deweloperskiego pod każdym pytaniem pojawia się zwijany panel.
-
-Domyślnie:
-
-* panel jest zamknięty.
-
-Po rozwinięciu pokazuje:
-
-* wartości odpowiedzi z data.json,
-* ideologie przypisane do odpowiedzi,
-* partie przypisane do odpowiedzi,
-* użytkowników przypisanych do odpowiedzi,
-* figury polityczne przypisane do odpowiedzi.
-
-Dane mają być pobierane bezpośrednio z aktualnych źródeł programu.
-
-10. Funkcja B – przycisk Neither
-
-Widoczny wyłącznie w trybie deweloperskim.
-
-Wymagania:
-
-* znajduje się obok przycisku „Pomiń”,
-* jest czerwony,
-* wyraźnie odróżnia się wizualnie,
-* etykieta: „Neither”.
-
-Po wyłączeniu trybu deweloperskiego przycisk całkowicie znika.
-
-11. Funkcja C – wielokrotny wybór odpowiedzi
-
-W trybie deweloperskim użytkownik może:
-
-* zaznaczyć więcej niż jedną odpowiedź dla tego samego pytania,
-* odznaczyć wcześniej wybraną odpowiedź,
-* tworzyć dowolne kombinacje odpowiedzi.
-
-Po wyłączeniu trybu deweloperskiego:
-
-* zachowanie wraca do standardowego trybu jednokrotnego wyboru.
-
-12. Logika działania Neither
-
-Neither służy głównie do obsługi pytań dynamicznych i sytuacji, w których pytanie nie powinno wpływać pozytywnie na żaden profil.
-
-Po wybraniu Neither:
-
-Dla każdej ideologii, partii, użytkownika i figury politycznej:
-
-* każda odpowiedź merytoryczna otrzymuje wagę -1.0,
-* odpowiedź „Pomiń” otrzymuje wagę 0.
-
-Przykład:
-
-Pytanie ID=1 ustawione jako Neither:
-
-* Zdecydowanie zgadzam się = -1.0
-* Częściowo zgadzam się = -1.0
-* Częściowo nie zgadzam się = -1.0
-* Zdecydowanie nie zgadzam się = -1.0
-* Pomiń = 0
-
-Neither nie jest widoczny dla zwykłych użytkowników.
-
-13. Gdy tryb deweloperski jest aktywny, na końcu programu kod eksportu powinien się zmienić na "Deweloperski kod eksportu" z lekko inną strukturą. Wyniki muszą wyświetlać się w jednej ciągłej linii w formacie dokładnie takim jak poniżej (wszystkie wpisy w jednej linii rozdzielone średnikami ze spacją, bez znaków nowej linii między nimi):
-0:(Brak odpowiedzi); 1:(Zdecydowanie zgadzam się); 2:(Zdecydowanie nie zgadzam się); ...; 393:(Zdecydowanie zgadzam się); (zachowaj strukturę `ID:(Odpowiedź);` dla wszystkich pytań).
-W normalnym trybie (gdy tryb deweloperski jest wyłączony) wyniki mają nadal wyświetlać się w dotychczasowym formacie (każda odpowiedź w nowej linii, poprzedzona datą wykonania testu). 
-Dodaj prosty przełącznik lub flagę w kodzie (np. `DEV_MODE = True/False`), aby łatwo sterować tym trybem.
-
-14. Wymagania techniczne
-
-* Zachowaj pełną zgodność wsteczną z istniejącymi plikami.
-* Nie usuwaj żadnej obecnej funkcjonalności.
-* Nie zmieniaj sposobu działania importu i eksportu poza rozszerzeniem o figury polityczne i stan Neither.
-* Wszystkie nowe funkcje mają działać zarówno w trybie jasnym, jak i ciemnym.
-* Kod ma być kompletny, produkcyjny i gotowy do uruchomienia bez dodatkowych poprawek.
-* Jeżeli istnieją ograniczenia architektury obecnego projektu, dostosuj implementację tak, aby zmiany były możliwie najmniej inwazyjne dla istniejącego kodu.
+Ważne:
+- gdy się z kimś porównujesz, dodaj opcję filtrowania - pokazania tylko tych pytań, z którymi użytkownicy się różnią, lub tylko te z którymi się zgadzają
+- w trybie deweloperskim daj opcję pokazania tylko tych pytań gdzie użytkownik zgadza lub nie zgadza się z jakąś wartością np. sprawdzić które pytanie daje punkty np. w autonomię, kolektywizm czy własność prywatną - do wyboru powinna być każda wartość z data.json i za pomocą tej opcji możemy zobaczyć która odpowiedź na które pytanie dodaje użytkownikowi punkty w dane wartości
