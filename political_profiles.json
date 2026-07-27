@@ -464,6 +464,20 @@
         "migratedAt": "2026-06-24"
       }
     },
+     {
+      "type": "party",
+      "id": "party:europachristi",
+      "key": "Europa_Christi",
+      "name": "Ruch Prawdziwa Europa – Europa Christi",
+      "description": "",
+      "logo": "images/Partie/Europa_Christi.webp",
+      "exportCode": "",
+        "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      }
+    },
         {
       "type": "party",
       "id": "party:alternatywa",
