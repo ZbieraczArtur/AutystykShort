@@ -380,6 +380,20 @@
         "migratedAt": "2026-06-24"
       }
     },
+            {
+      "type": "party",
+      "id": "party:konfederacja",
+      "key": "Konfederacja",
+      "name": "Konfederacja",
+      "description": "Formacja o charakterze prawicowej koalicji, której trzon stanowią dwie główne partie: Nowa Nadzieja oraz Ruch Narodowy. W sferze gospodarczej ugrupowanie postuluje obniżkę i uproszczenie podatków, dobrowolność składek ZUS dla przedsiębiorców oraz wprowadzenie mechanizmów konkurencji w usługach publicznych poprzez bony oświatowe, zdrowotne i kulturalne. Program łączy wolny rynek z dążeniem do ochrony interesów rodzimych producentów i kapitału w sektorach takich jak rolnictwo czy transport. W kwestiach ustrojowych partia dąży do usprawnienia sądownictwa, wzmocnienia pozycji ustrojowej prezydenta oraz zapewnienia bezwzględnego prymatu polskiej konstytucji nad prawem międzynarodowym. Światopoglądowo formacja akcentuje przywiązanie do etyki chrześcijańskiej, tradycyjnego modelu rodziny oraz ochrony życia od poczęcia, opowiadając się za swobodą posiadania broni i poszerzeniem zakresu obrony koniecznej. W polityce międzynarodowej nadrzędnym celem jest asertywna obrona suwerenności państwa, co przejawia się w oporze wobec federalizacji struktur europejskich, unijnej polityki klimatycznej, paktu migracyjnego, rozszerzaniu wolnego handlu, oraz planów przyjęcia waluty euro.",
+      "logo": "images/Partie/Konfederacja.webp",
+      "exportCode": "",
+          "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      }
+     },
         {
       "type": "party",
       "id": "party:rn",
