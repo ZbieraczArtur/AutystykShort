@@ -492,6 +492,104 @@
         "migratedAt": "2026-06-24"
       }
     },
+         {
+      "type": "party",
+      "id": "party:rnp",
+      "key": "Ruch Naprawy Polski",
+      "name": "Ruch Naprawy Polski",
+      "description": "Formacja reprezentuje nurt narodowego konserwatyzmu oraz solidaryzmu, opierając swój program na prymacie narodu jako jedynego suwerena i gospodarza państwa. W sferze gospodarczej ugrupowanie odwołuje się do zasad ordoliberalizmu, postulując ochronę rodzimego kapitału, repolonizację banków oraz przejęcie przez Skarb Państwa strategicznych sektorów przemysłu. Program zakłada reformę fiskalną polegającą na likwidacji podatków PIT i CIT na rzecz 2-procentowego podatku przychodowego oraz obniżeniu stawki VAT do 15%. W kwestiach ustrojowych formacja dąży do likwidacji systemów 'partyjno-wodzowskich' poprzez wprowadzenie wyborów większościowych, rozszerzenie mechanizmów demokracji bezpośredniej oraz powołanie Powszechnego Samorządu Gospodarczego jako siły współrządzącej krajem. Światopoglądowo akcentuje prymat prawa naturalnego, wartości chrześcijańskich i ochronę rodziny, postulując wprowadzenie bonu oświatowego oraz zastąpienie Ministerstwa Edukacji społeczną Komisją Edukacji Narodowej. W polityce międzynarodowej priorytetem jest odzyskanie pełnej suwerenności zewnętrznej oraz budowa Unii Państw Środkowoeuropejskich.",
+      "logo": "images/Partie/RNP.webp",
+      "exportCode": "",
+        "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      }
+               },
+         {
+      "type": "party",
+      "id": "party:polska_liberalna",
+      "key": "Polska Liberalna Przedsiębiorcy PL!",
+      "name": "Polska Liberalna Przedsiębiorcy PL!",
+      "description": "Formacja reprezentuje nurt radykalnego liberalizmu rynkowego oraz demokracji bezpośredniej, opierając swoją tożsamość na środowisku mikro, małych i średnich przedsiębiorców oraz klasy średniej. W gospodarce opowiada się za minimalizacją roli państwa do funkcji dozorcy i dąży do gruntownej deregulacji poprzez masowe wykreślanie przepisów ograniczających swobodę działalności. Program odrzuca redystrybucję środków publicznych i transfery socjalne, postulując w ich miejsce wypłatę pełnej pensji brutto bezpośrednio do kieszeni pracownika oraz wprowadzenie dobrowolności składek na ubezpieczenia społeczne i zdrowotne. W kwestiach ustrojowych ugrupowanie dąży do oddania realnej władzy suwerenowi poprzez system wiążących referendów bezprogowych (WIR) oraz wprowadzenie osobistej i karnej odpowiedzialności urzędników za błędy administracyjne. Światopoglądowo formacja akcentuje całkowitą neutralność państwa w sprawach prywatnych, domagając się rozdziału Kościoła od państwa, liberalizacji prawa aborcyjnego oraz pełnej autonomii jednostki w decydowaniu o własnym stylu życia. W polityce międzynarodowej priorytetem jest pragmatyczna integracja w ramach wspólnego rynku Unii Europejskiej przy jednoczesnym budowaniu armii europejskiej jako gwaranta bezpieczeństwa majątków i rodzin.",
+      "logo": "images/Partie/polska_tanajna.webp",
+      "exportCode": "",
+        "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      }
+               },
+         {
+      "type": "party",
+      "id": "party:normalnykraj",
+      "key": "Normalny Kraj",
+      "name": "Normalny Kraj",
+      "description": "Formacja reprezentuje nurt 'nacjokratyzmu', opierając swój program na syntezie tradycyjnej polskiej myśli narodowej, nauki społecznej Kościoła oraz zasadach cybernetyki społecznej. W gospodarce partia postuluje pełną suwerenność monetarną poprzez wyłączne prawo państwa do kreacji pieniądza oraz powszechne uwłaszczenie obywateli na zasobach naturalnych kraju. Opowiada się za ochroną strategicznych sektorów przed obcym kapitałem i budową autonomicznego, bezodsetkowego obiegu finansowego opartego na realnej wymianie dóbr i usług. Model ustrojowy opiera na koncepcji cyberdemokracji, dążąc do upodmiotowienia narodu poprzez mechanizmy demokracji bezpośredniej oraz zastąpienie tradycyjnych polityków merytokratycznym zarządzaniem przez fachowych managerów. Światopoglądowo akcentuje fundamenty cywilizacji łacińskiej, chroniąc tradycyjny model rodziny i uznając prymat obiektywnej prawdy oraz etyki nad siłą i ideologią. W polityce międzynarodowej priorytetem jest przekształcenie państwa w system autonomiczny, zdolny do samodzielnego sterowania się w interesie narodu i obrony przed zewnętrzną wojną informacyjną oraz inwigilacją.",
+      "logo": "images/Partie/normalny_kraj.webp",
+      "exportCode": "",
+        "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      }
+               },
+         {
+      "type": "party",
+      "id": "party:piraci",
+      "key": "Polska Partia Piratów",
+      "name": "Polska Partia Piratów",
+      "description": "Formacja stanowi część międzynarodowego ruchu politycznego o charakterze centrowym i proeuropejskim, kładącego nacisk na ochronę swobód obywatelskich nowej generacji. W gospodarce opowiada się za wolnością rynkową oraz wspieraniem sektora małych i średnich przedsiębiorstw przed dominacją monopoli korporacyjnych i państwowych. Program zakłada uproszczenie systemu podatkowego oraz zapewnienie powszechnego, darmowego dostępu do dóbr kultury, wiedzy i oprogramowania. Model ustrojowy opiera się na koncepcji demokracji płynnej i demokracji bezpośredniej, dążąc do radykalnej przejrzystości instytucji, ochrony prywatności przed inwigilacją oraz szerokiej cyfryzacji administracji. Światopoglądowo formacja bazuje na racjonalizmie i prawach człowieka, postulując świeckość państwa oraz sprzeciwiając się narzucaniu tradycyjnych ról społecznych i dyskryminacji. W polityce międzynarodowej priorytetem jest reforma Unii Europejskiej w kierunku większej partycypacji obywatelskiej oraz współpraca w ramach sojuszu NATO.",
+      "logo": "images/Partie/piraci.webp",
+      "exportCode": "",
+        "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      }
+    },
+             {
+      "type": "party",
+      "id": "party:XXX",
+      "key": "XXX",
+      "name": "XXX",
+      "description": "XXX",
+      "logo": "images/Partie/XXX",
+      "exportCode": "",
+        "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      }
+               },
+         {
+      "type": "party",
+      "id": "party:wolnirepublikanie",
+      "key": "Wolni Republikanie",
+      "name": "Wolni Republikanie",
+      "description": "Formacja o profilu narodowo-republikańskim, łącząca liberalizm gospodarczy z postulatami demokracji bezpośredniej. W sferze ekonomicznej opowiada się za prymatem własności prywatnej i deregulacją, dążąc do uproszczenia systemu podatkowego poprzez wprowadzenie podatku przychodowego zamiast CIT oraz docelową likwidację PIT. Państwo ma pełnić rolę strategiczną głównie w obszarze bezpieczeństwa i realizacji wielkich projektów infrastrukturalnych, takich jak CPK czy energetyka jądrowa. Program społeczny zakłada odrzucenie powszechnych transferów socjalnych na rzecz emerytury obywatelskiej oraz urynkowienia usług publicznych poprzez mechanizmy bonu edukacyjnego i kasy chorych. W kwestiach ustrojowych formacja dąży do wprowadzenia systemu prezydenckiego, jednomandatowych okręgów wyborczych oraz narzędzi weta obywatelskiego i referendów bezprogowych. Światopoglądowo akcentuje ochronę tradycyjnego modelu rodziny oraz dziedzictwa chrześcijańskiego jako fundamentów tożsamości narodowej, postulując jednocześnie przywrócenie powszechnego poboru do wojska. W polityce międzynarodowej priorytetem jest pełna suwerenność państwa, sprzeciw wobec federalizacji Unii Europejskiej w ramach koncepcji Europy ojczyzn oraz asertywna obrona interesów narodowych.",
+      "logo": "images/Partie/wolni-republikanie.webp",
+      "exportCode": "",
+        "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      }
+               },
+         {
+      "type": "party",
+      "id": "party:bs",
+      "key": "Bezpartyjni Samorządowcy",
+      "name": "Bezpartyjni Samorządowcy",
+      "description": "Formacja reprezentuje nurt centroprawicowy, łączący idee regionalizmu i samorządności z personalizmem chrześcijańskim oraz polskim solidaryzmem narodowym. W gospodarce promuje model społecznej gospodarki rynkowej, dążąc do ochrony rodzimego kapitału, unarodowienia produkcji w sektorach strategicznych oraz systemowej deregulacji dla małych i średnich przedsiębiorstw. Program ustrojowy opiera na zasadzie pomocniczości i głębokiej decentralizacji państwa, postulując wzmocnienie samodzielności finansowej samorządów, wprowadzenie systemu prezydencko-parlamentarnego oraz odejście od finansowania partii z budżetu państwa. Światopoglądowo akcentuje nienaruszalność godności osoby ludzkiej, ochronę życia oraz tradycyjnego modelu rodziny, uznając chrześcijańskie dziedzictwo za fundament ładu moralnego i suwerenności narodu. W polityce międzynarodowej priorytetem jest budowa wielowymiarowego bezpieczeństwa narodowego w oparciu o bliski sojusz z USA i NATO oraz renegocjacja traktatów unijnych w duchu eurokooperacji suwerennych państw.",
+      "logo": "images/Partie/Bezpartyjni.webp",
+      "exportCode": "",
+        "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      }
+               },
         {
       "type": "party",
       "id": "party:alternatywa",
