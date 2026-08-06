@@ -22,7 +22,7 @@
       }
           },
             {
-      "type": "figure",
+      "type": "user",
       "id": "figure:destefani",
       "key": "Alberto de' Stefani",
       "name": "Alberto de' Stefani",
@@ -84,6 +84,33 @@
         "generatedFromLegacy": true,
         "migratedAt": "2026-06-24"
       }
+    },
+            {
+      "type": "figure",
+      "id": "figure:phk",
+      "key": "Paulina Hennig-Kloska",
+      "name": "Paulina Hennig-Kloska",
+      "description": "TBA",
+      "logo": "images/Figury/Estymat_Kloska.jpg",
+      "exportCode": "",
+      "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      },
+        {
+      "type": "figure",
+      "id": "figure:rutte",
+      "key": "Mark Rutte",
+      "name": "Mark Rutte",
+      "description": "TBA",
+      "logo": "images/Figury/Estymat_Rutte.webp",
+      "exportCode": "",
+      "metadata": {
+        "source": "data.json",
+        "generatedFromLegacy": true,
+        "migratedAt": "2026-06-24"
+      },
     },
       {
       "type": "user",
