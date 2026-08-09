@@ -21,6 +21,18 @@
         "source": "data.json"
       }
           },
+        {
+      "type": "user",
+      "id": "user:nawrocki",
+      "key": "Karol Nawrocki",
+      "name": "Karol Nawrocki",
+      "description": "Karol Nawrocki",
+      "logo": "images/IUsers/Estymat_Nawrocki.webp",
+      "exportCode": "",
+      "metadata": {
+        "source": "data.json"
+      }
+          },
             {
       "type": "user",
       "id": "figure:destefani",
