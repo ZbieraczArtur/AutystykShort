@@ -21,6 +21,17 @@
         "source": "data.json"
       }
           },
+        {
+      "type": "user",
+      "id": "user:edmundburke",
+      "key": "EdmundBurke",
+      "name": "Edmund Burke",
+      "description": "TBA",
+      "logo": "images/Figury/Estymat_Burke.jpg",
+      "metadata": {
+        "source": "data.json"
+      }
+          },
             {
       "type": "user",
       "id": "user:andrzejlepper",
