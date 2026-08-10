@@ -21,6 +21,78 @@
         "source": "data.json"
       }
           },
+            {
+      "type": "user",
+      "id": "user:andrzejlepper",
+      "key": "AndrzejLepper",
+      "name": "Andrzej Lepper",
+      "description": "TBA",
+      "logo": "images/Figury/Estymat_Lepper.jpg",
+      "exportCode": "",
+      "metadata": {
+        "source": "data.json"
+      }
+          },
+        {
+      "type": "user",
+      "id": "user:dominiktarczynski",
+      "key": "DominikTarczynski",
+      "name": "Dominik Tarczyński",
+      "description": "TBA",
+      "logo": "images/Figury/Estymat_Tarczynski.jpg",
+      "exportCode": "",
+      "metadata": {
+        "source": "data.json"
+      }
+          },
+        {
+      "type": "user",
+      "id": "user:liborvondracek",
+      "key": "LiborVondracek",
+      "name": "Libor Vondráček",
+      "description": "TBA",
+      "logo": "images/Figury/Estymat_Vondráček.jpg",
+      "exportCode": "",
+      "metadata": {
+        "source": "data.json"
+      }
+          },
+        {
+      "type": "user",
+      "id": "user:lechkaczynski",
+      "key": "LechKaczynski",
+      "name": "Lech Kaczyński",
+      "description": "TBA",
+      "logo": "images/Figury/Estymat_Lech_Kaczynski.jpg",
+      "exportCode": "",
+      "metadata": {
+        "source": "data.json"
+      }
+          },
+        {
+      "type": "user",
+      "id": "user:javiermilei",
+      "key": "JavierMilei",
+      "name": "Javier Milei",
+      "description": "TBA",
+      "logo": "images/Figury/Estymat_Milei.jpg",
+      "exportCode": "",
+      "metadata": {
+        "source": "data.json"
+      }
+          },
+        {
+      "type": "user",
+      "id": "user:andrzejduda",
+      "key": "AndrzejDuda",
+      "name": "Andrzej Duda",
+      "description": "TBA",
+      "logo": "images/Figury/Estymat_Duda.jpg",
+      "exportCode": "",
+      "metadata": {
+        "source": "data.json"
+      }
+          },
         {
       "type": "user",
       "id": "user:nawrocki",
